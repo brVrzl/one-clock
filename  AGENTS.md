@@ -92,6 +92,19 @@ infrastructure.
 - Do not claim completion until the relevant runnable path has actually been
   exercised when the environment permits it.
 
+## Git Workflow
+
+- At the end of a task, if tracked files were meaningfully changed and the
+  resulting state is coherent, commit the changes and push them to the current
+  remote branch.
+- Run the relevant narrow validation before committing.
+- Do not create commits for tasks that made no tracked-file changes.
+- Do not create many incremental checkpoint commits during one task.
+- Do not force-push or rewrite history.
+- A task may still be committed when externally blocked if the completed code
+  changes are independently useful and their validation status is reported
+  accurately.
+
 ## Completion Report
 
 At the end of a task, report concisely:

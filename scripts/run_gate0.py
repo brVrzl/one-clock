@@ -171,6 +171,43 @@ def query_full_act_chunk(act_model: Any) -> np.ndarray:
     return np.asarray(act_model.post_process(normalized_chunk))
 
 
+def summarize_run(
+    episode_records: list[list[dict[str, object]]], successes: int
+) -> dict[str, object]:
+    """Summarize execution counts from the already-written step records."""
+
+    episodes = len(episode_records)
+    environment_steps = sum(len(records) for records in episode_records)
+    policy_queries = sum(
+        int(record["policy_query"])
+        for records in episode_records
+        for record in records
+    )
+    source_age_totals: dict[str, int] = {}
+    source_age_counts: dict[str, int] = {}
+    for records in episode_records:
+        for record in records:
+            for group, age in record["source_ages"].items():
+                source_age_totals[group] = source_age_totals.get(group, 0) + int(age)
+                source_age_counts[group] = source_age_counts.get(group, 0) + 1
+
+    summary: dict[str, object] = {
+        "episodes": episodes,
+        "successes": successes,
+        "success_rate": successes / episodes,
+        "environment_steps": environment_steps,
+        "policy_queries": policy_queries,
+        "policy_queries_per_episode": policy_queries / episodes,
+        "policy_query_rate": policy_queries / environment_steps,
+    }
+    if source_age_totals:
+        summary["mean_source_age_by_group"] = {
+            group: source_age_totals[group] / source_age_counts[group]
+            for group in source_age_totals
+        }
+    return summary
+
+
 def run_episode(
     *,
     official: Any,
@@ -300,6 +337,7 @@ def main() -> None:
     (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
     successes = 0
+    episode_records: list[list[dict[str, object]]] = []
     with (output_dir / "steps.jsonl").open("w", encoding="utf-8") as log_file:
         for episode_index in range(int(config.get("episodes", 1))):
             success, records = run_episode(
@@ -313,16 +351,12 @@ def main() -> None:
                 seed=int(config.get("seed", 0)) + episode_index,
             )
             successes += int(success)
+            episode_records.append(records)
             for record in records:
                 record["episode"] = episode_index
                 log_file.write(json.dumps(record) + "\n")
 
-    episodes = int(config.get("episodes", 1))
-    summary = {
-        "episodes": episodes,
-        "successes": successes,
-        "success_rate": successes / episodes,
-    }
+    summary = summarize_run(episode_records, successes)
     (output_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
 

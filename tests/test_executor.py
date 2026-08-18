@@ -5,6 +5,7 @@ import unittest
 import numpy as np
 
 from one_clock import ActionGroup, FixedChunkExecutor
+from scripts.run_gate0 import summarize_run
 
 
 def tagged_chunk(generation: int, chunk_size: int = 4, action_dim: int = 4) -> np.ndarray:
@@ -18,6 +19,28 @@ def tagged_chunk(generation: int, chunk_size: int = 4, action_dim: int = 4) -> n
 
 
 class FixedChunkExecutorTest(unittest.TestCase):
+    def test_run_summary_counts_policy_query_budget(self) -> None:
+        episode_records = [
+            [
+                {"policy_query": True, "source_ages": {"arm": 0, "gripper": 0}},
+                {"policy_query": False, "source_ages": {"arm": 1, "gripper": 1}},
+            ],
+            [
+                {"policy_query": True, "source_ages": {"arm": 0, "gripper": 0}},
+            ],
+        ]
+
+        summary = summarize_run(episode_records, successes=1)
+
+        self.assertEqual(summary["environment_steps"], 3)
+        self.assertEqual(summary["policy_queries"], 2)
+        self.assertAlmostEqual(summary["policy_queries_per_episode"], 1.0)
+        self.assertAlmostEqual(summary["policy_query_rate"], 2 / 3)
+        self.assertEqual(
+            summary["mean_source_age_by_group"],
+            {"arm": 1 / 3, "gripper": 1 / 3},
+        )
+
     def test_global_fixed_repeats_the_ordinary_fixed_horizon_sequence(self) -> None:
         generations = iter(range(10))
         executor = FixedChunkExecutor.global_fixed(
