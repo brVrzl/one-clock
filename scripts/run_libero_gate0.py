@@ -14,7 +14,6 @@ import sys
 from typing import Any
 
 import numpy as np
-import torch
 import yaml
 
 
@@ -44,6 +43,15 @@ def parse_args() -> argparse.Namespace:
         help="Comma-separated group=horizon values for groupwise_fixed.",
     )
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--episodes", type=int, help="Number of paired episodes to run.")
+    parser.add_argument(
+        "--init-state-start",
+        type=int,
+        default=0,
+        help="Official LIBERO initial-state ID for the first episode.",
+    )
+    parser.add_argument("--record-video", action="store_true")
+    parser.add_argument("--video-path", type=Path)
     return parser.parse_args()
 
 
@@ -168,6 +176,7 @@ def load_policy_and_processors(config: dict[str, Any], checkpoint: Path) -> tupl
         camera_name_mapping=camera_mapping,
         observation_width=int(config["observation_width"]),
         observation_height=int(config["observation_height"]),
+        fps=int(config.get("control_freq", 20)),
         init_states=bool(config["init_states"]),
         hard_reset=bool(config["hard_reset"]),
         control_mode=str(config["control_mode"]),
@@ -203,6 +212,8 @@ def query_full_act_chunk(
     env_preprocessor: Any,
     env_postprocessor: Any,
 ) -> np.ndarray:
+    import torch
+
     from lerobot.utils.constants import ACTION
 
     model_observation = prepare_policy_observation(
@@ -256,6 +267,63 @@ def summarize_run(
     return summary
 
 
+def make_episode_record(
+    *,
+    episode: int,
+    init_state_id: int,
+    seed: int,
+    strategy: str,
+    configured_horizons: dict[str, int],
+    success: bool,
+    records: list[dict[str, object]],
+    task_name: str,
+    task_description: str,
+    initial_eef_pos: np.ndarray,
+    initial_image_means: dict[str, float],
+) -> dict[str, object]:
+    environment_steps = len(records)
+    policy_queries = sum(int(record["policy_query"]) for record in records)
+    return {
+        "episode": episode,
+        "init_state_id": init_state_id,
+        "seed": seed,
+        "strategy": strategy,
+        "arm_horizon": configured_horizons["arm"],
+        "gripper_horizon": configured_horizons["gripper"],
+        "success": bool(success),
+        "environment_steps": environment_steps,
+        "policy_queries": policy_queries,
+        "policy_query_rate": policy_queries / environment_steps,
+        "mean_source_age_arm": sum(
+            int(record["source_ages"]["arm"]) for record in records
+        )
+        / environment_steps,
+        "mean_source_age_gripper": sum(
+            int(record["source_ages"]["gripper"]) for record in records
+        )
+        / environment_steps,
+        "task_name": task_name,
+        "task_description": task_description,
+        "initial_eef_pos": initial_eef_pos.tolist(),
+        "initial_image_means": dict(initial_image_means),
+    }
+
+
+def set_episode_seed(seed: int) -> None:
+    import torch
+
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
+def append_video_frame(video_writer: Any, observation: dict[str, Any]) -> None:
+    agentview = np.asarray(observation["pixels"]["image"])
+    wristview = np.asarray(observation["pixels"]["wrist_image"])
+    video_writer.append_data(np.concatenate((agentview, wristview), axis=1))
+
+
 def run_episode(
     *,
     env: Any,
@@ -265,14 +333,27 @@ def run_episode(
     env_preprocessor: Any,
     env_postprocessor: Any,
     executor: FixedChunkExecutor,
+    episode: int,
+    init_state_id: int,
     seed: int,
-) -> tuple[bool, list[dict[str, object]], tuple[int, ...]]:
+    video_writer: Any | None,
+) -> tuple[bool, list[dict[str, object]], tuple[int, ...], dict[str, object]]:
+    set_episode_seed(seed)
+    env.init_state_id = init_state_id
     observation, _ = env.reset(seed=seed)
     policy.reset()
     executor.reset()
     records: list[dict[str, object]] = []
     observed_chunk_shapes: list[tuple[int, ...]] = []
+    initial_eef_pos = np.asarray(observation["robot_state"]["eef"]["pos"])
+    initial_image_means = {
+        name: float(np.asarray(image).mean())
+        for name, image in observation["pixels"].items()
+    }
     for _ in range(env._max_episode_steps):
+        if video_writer is not None:
+            append_video_frame(video_writer, observation)
+
         def query() -> np.ndarray:
             chunk = query_full_act_chunk(
                 observation=observation,
@@ -292,12 +373,34 @@ def run_episode(
         records.append(record)
         if terminated or truncated:
             break
-    return bool(info["is_success"]), records, tuple(observed_chunk_shapes)
+    if video_writer is not None:
+        append_video_frame(video_writer, observation)
+    success = bool(info["is_success"])
+    episode_record = make_episode_record(
+        episode=episode,
+        init_state_id=init_state_id,
+        seed=seed,
+        strategy=executor.strategy,
+        configured_horizons=executor._configured_horizons,
+        success=success,
+        records=records,
+        task_name=env.task,
+        task_description=env.task_description,
+        initial_eef_pos=initial_eef_pos,
+        initial_image_means=initial_image_means,
+    )
+    return success, records, tuple(observed_chunk_shapes), episode_record
 
 
 def main() -> None:
     args = parse_args()
     config = load_config(args.config)
+    episodes = int(config["episodes"] if args.episodes is None else args.episodes)
+    init_state_start = int(args.init_state_start)
+    if episodes < 1 or init_state_start < 0:
+        raise ValueError("episodes must be positive and init-state-start must be non-negative")
+    if args.video_path is not None and not args.record_video:
+        raise ValueError("--video-path requires --record-video")
     checkpoint = args.checkpoint.resolve()
     if not checkpoint.is_dir():
         raise FileNotFoundError(f"ACT checkpoint directory does not exist: {checkpoint}")
@@ -348,14 +451,36 @@ def main() -> None:
         camera_name_mapping=dict(config["camera_name_mapping"]),
         observation_width=int(config["observation_width"]),
         observation_height=int(config["observation_height"]),
+        control_freq=int(config.get("control_freq", 20)),
         init_states=bool(config["init_states"]),
         hard_reset=bool(config["hard_reset"]),
         control_mode=str(config["control_mode"]),
     )
+    official_init_state_count = len(env._init_states)
+    init_state_ids = list(range(init_state_start, init_state_start + episodes))
+    if init_state_ids[-1] >= official_init_state_count:
+        raise ValueError(
+            f"requested init state {init_state_ids[-1]} but task has "
+            f"{official_init_state_count} official initial states"
+        )
 
     output_dir = args.output_dir
     output_dir.parent.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(exist_ok=False)
+    video_path = None
+    video_writer = None
+    if args.record_video:
+        import imageio.v2 as imageio
+
+        video_path = (args.video_path or output_dir / "rollout.mp4").resolve()
+        video_path.parent.mkdir(parents=True, exist_ok=True)
+        video_writer = imageio.get_writer(
+            video_path,
+            fps=int(config.get("control_freq", 20)),
+            codec="libx264",
+        )
+    import torch
+
     lerobot_root = Path(__import__("lerobot").__file__).resolve().parents[2]
     metadata = {
         "strategy": args.strategy,
@@ -367,6 +492,7 @@ def main() -> None:
         "task_name": task.name,
         "task_description": task.language,
         "control_mode": config["control_mode"],
+        "control_frequency": int(config.get("control_freq", 20)),
         "chunk_size": chunk_size,
         "action_dim": action_dim,
         "checkpoint": str(checkpoint),
@@ -382,14 +508,23 @@ def main() -> None:
         "policy_temporal_ensemble_coeff": policy.config.temporal_ensemble_coeff,
         "policy_input_features": feature_summary(policy.config.input_features),
         "policy_output_features": feature_summary(policy.config.output_features),
+        "episodes": episodes,
+        "init_state_start": init_state_start,
+        "init_state_ids": init_state_ids,
+        "official_init_state_count": official_init_state_count,
+        "base_seed": int(config["seed"]),
+        "video_path": str(video_path) if video_path is not None else None,
     }
     (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
     successes = 0
     episode_records: list[list[dict[str, object]]] = []
-    with (output_dir / "steps.jsonl").open("w", encoding="utf-8") as log_file:
-        for episode_index in range(int(config["episodes"])):
-            success, records, chunk_shapes = run_episode(
+    with (
+        (output_dir / "steps.jsonl").open("w", encoding="utf-8") as log_file,
+        (output_dir / "episodes.jsonl").open("w", encoding="utf-8") as episode_log,
+    ):
+        for episode_index, init_state_id in enumerate(init_state_ids):
+            success, records, chunk_shapes, episode_record = run_episode(
                 env=env,
                 policy=policy,
                 policy_preprocessor=policy_preprocessor,
@@ -397,16 +532,24 @@ def main() -> None:
                 env_preprocessor=env_preprocessor,
                 env_postprocessor=env_postprocessor,
                 executor=executor,
-                seed=int(config["seed"]) + episode_index,
+                episode=episode_index,
+                init_state_id=init_state_id,
+                seed=int(config["seed"]) + init_state_id,
+                video_writer=video_writer,
             )
             successes += int(success)
             episode_records.append(records)
+            episode_log.write(json.dumps(episode_record) + "\n")
             for record in records:
                 record["episode"] = episode_index
+                record["init_state_id"] = init_state_id
+                record["seed"] = int(config["seed"]) + init_state_id
                 log_file.write(json.dumps(record) + "\n")
-            if chunk_shapes:
+            if chunk_shapes and "observed_chunk_shape" not in metadata:
                 metadata["observed_chunk_shape"] = list(chunk_shapes[0])
 
+    if video_writer is not None:
+        video_writer.close()
     env.close()
     (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     summary = summarize_run(

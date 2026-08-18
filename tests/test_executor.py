@@ -5,6 +5,7 @@ import unittest
 import numpy as np
 
 from one_clock import ActionGroup, FixedChunkExecutor
+from scripts.run_libero_gate0 import make_episode_record
 from scripts.run_gate0 import summarize_run
 
 
@@ -136,6 +137,35 @@ class FixedChunkExecutorTest(unittest.TestCase):
         self.assertEqual(decisions[1].action[6], 106)
         self.assertEqual(decisions[1].source_chunk_ids, {"arm": 0, "gripper": 1})
         self.assertEqual(decisions[1].source_positions, {"arm": 1, "gripper": 0})
+
+    def test_libero_episode_record_logs_pairing_and_query_budget(self) -> None:
+        records = [
+            {"policy_query": True, "source_ages": {"arm": 0, "gripper": 0}},
+            {"policy_query": False, "source_ages": {"arm": 1, "gripper": 1}},
+        ]
+
+        result = make_episode_record(
+            episode=0,
+            init_state_id=7,
+            seed=1007,
+            strategy="groupwise_fixed",
+            configured_horizons={"arm": 8, "gripper": 2},
+            success=True,
+            records=records,
+            task_name="task",
+            task_description="description",
+            initial_eef_pos=np.asarray([1.0, 2.0, 3.0]),
+            initial_image_means={"image": 4.0},
+        )
+
+        self.assertEqual(result["init_state_id"], 7)
+        self.assertEqual(result["seed"], 1007)
+        self.assertEqual(result["environment_steps"], 2)
+        self.assertEqual(result["policy_queries"], 1)
+        self.assertAlmostEqual(result["policy_query_rate"], 0.5)
+        self.assertAlmostEqual(result["mean_source_age_arm"], 0.5)
+        self.assertEqual(result["arm_horizon"], 8)
+        self.assertEqual(result["gripper_horizon"], 2)
 
 
 if __name__ == "__main__":

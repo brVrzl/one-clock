@@ -9,6 +9,7 @@ camera_name_mapping:
   robot0_eye_in_hand_image: wrist_image
 observation_width: 256
 observation_height: 256
+control_freq: 20
 init_states: true
 hard_reset: true
 episodes: 1
