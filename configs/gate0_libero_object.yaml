@@ -1,0 +1,29 @@
+task_suite: libero_object
+task_id: 0
+task_name: pick_up_the_alphabet_soup_and_place_it_in_the_basket
+control_mode: relative
+obs_type: pixels_agent_pos
+camera_name: agentview_image,robot0_eye_in_hand_image
+camera_name_mapping:
+  agentview_image: image
+  robot0_eye_in_hand_image: wrist_image
+observation_width: 256
+observation_height: 256
+init_states: true
+hard_reset: true
+episodes: 1
+seed: 1000
+chunk_size: 100
+device: cuda
+
+action_groups:
+  arm: [0, 1, 2, 3, 4, 5]
+  gripper: [6]
+
+global_horizons: [1, 2, 4, 8, 16]
+groupwise_horizons:
+  arm: 8
+  gripper: 2
+
+# The real checkpoint is supplied at runtime.
+checkpoint: null

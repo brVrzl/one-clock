@@ -44,3 +44,23 @@ The upstream RoboTwin and XPolicyLab checkouts are external dependencies. Their
 commits used for the audit are recorded in
 `experiments/roboTwin_act_execution_audit.md` and should be passed through the
 runner metadata for each rollout.
+
+## LIBERO Gate-0 on Jetson Thor
+
+The second Gate-0 path uses the current LeRobot LIBERO integration and the
+verified 7-D LIBERO action (`arm` indices 0--5, `gripper` index 6). Use the
+native environment with `MUJOCO_GL=egl` and supply a legitimate LeRobot ACT
+checkpoint:
+
+```bash
+MUJOCO_GL=egl PYTHONPATH=src \
+  /home/thor/projects/upstreams/lerobot-env/bin/python scripts/run_libero_gate0.py \
+  --checkpoint /absolute/path/to/act_libero_object \
+  --strategy global_fixed --horizon 8 \
+  --output-dir experiments/runs/libero_object_global_h8
+```
+
+The LIBERO source/runtime audit is in
+`experiments/libero_execution_audit.md`. The runner calls ACT's full-chunk
+prediction method directly; LeRobot's queued action selection and temporal
+aggregation remain disabled.

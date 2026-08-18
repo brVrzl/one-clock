@@ -116,6 +116,27 @@ class FixedChunkExecutorTest(unittest.TestCase):
         self.assertEqual([decision.policy_query for decision in decisions], [True, False, False])
         self.assertEqual(decisions[-1].source_chunk_ids, {"a": 0, "b": 0})
 
+    def test_libero_arm_gripper_groups_preserve_mixed_generations(self) -> None:
+        generations = iter(range(10))
+        executor = FixedChunkExecutor.groupwise_fixed(
+            action_dim=7,
+            chunk_size=4,
+            groups=(
+                ActionGroup("arm", tuple(range(6)), horizon=3),
+                ActionGroup("gripper", (6,), horizon=1),
+            ),
+        )
+
+        decisions = [
+            executor.step(lambda: tagged_chunk(next(generations), action_dim=7))
+            for _ in range(2)
+        ]
+
+        np.testing.assert_array_equal(decisions[1].action[:6], [10, 11, 12, 13, 14, 15])
+        self.assertEqual(decisions[1].action[6], 106)
+        self.assertEqual(decisions[1].source_chunk_ids, {"arm": 0, "gripper": 1})
+        self.assertEqual(decisions[1].source_positions, {"arm": 1, "gripper": 0})
+
 
 if __name__ == "__main__":
     unittest.main()
