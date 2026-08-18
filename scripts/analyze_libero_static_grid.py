@@ -43,7 +43,11 @@ def parse_args() -> argparse.Namespace:
 
 def load_runs(runs_root: Path) -> dict[tuple[str, int, int], dict[str, Any]]:
     runs: dict[tuple[str, int, int], dict[str, Any]] = {}
-    for run_dir in sorted(path for path in runs_root.iterdir() if path.is_dir()):
+    for run_dir in sorted(
+        path
+        for path in runs_root.iterdir()
+        if path.is_dir() and (path / "metadata.json").is_file()
+    ):
         metadata = json.loads((run_dir / "metadata.json").read_text(encoding="utf-8"))
         episodes = [
             json.loads(line)
