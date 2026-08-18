@@ -1,0 +1,31 @@
+task_name: place_can_basket
+task_config: demo_clean
+env_cfg_type: aloha_agilex
+action_type: joint
+instruction_type: seen
+frequency: 30
+seed: 0
+episodes: 1
+expert_check: true
+eval_video_log: false
+chunk_size: 50
+
+# Verified RoboTwin aloha-agilex joint-action packing:
+# left arm (6), left gripper (1), right arm (6), right gripper (1).
+action_groups:
+  left_arm: [0, 1, 2, 3, 4, 5]
+  left_gripper: [6]
+  right_arm: [7, 8, 9, 10, 11, 12]
+  right_gripper: [13]
+
+global_horizons: [1, 2, 4, 8, 16]
+# Initial diagnostic pair; edit only for a deliberately chosen pilot.
+groupwise_horizons:
+  left_arm: 8
+  left_gripper: 2
+  right_arm: 8
+  right_gripper: 2
+
+# The checkpoint is intentionally supplied at runtime so it cannot be confused
+# with a fabricated or stale artifact.
+checkpoint: null
