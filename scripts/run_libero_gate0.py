@@ -31,6 +31,8 @@ def parse_args() -> argparse.Namespace:
         default=ONE_CLOCK_ROOT / "configs/gate0_libero_object.yaml",
     )
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--task-id", type=int)
+    parser.add_argument("--task-name", type=str)
     parser.add_argument(
         "--strategy",
         choices=("global_fixed", "groupwise_fixed"),
@@ -409,14 +411,19 @@ def main() -> None:
     from lerobot.envs.libero import LiberoEnv
 
     task_suite_name = str(config["task_suite"])
-    task_id = int(config["task_id"])
+    task_id = int(config["task_id"] if args.task_id is None else args.task_id)
     suite = benchmark.get_benchmark_dict()[task_suite_name]()
     task = suite.get_task(task_id)
-    if str(config["task_name"]) != task.name:
+    if args.task_name is not None and args.task_name != task.name:
+        raise ValueError(f"--task-name does not match LIBERO task: {task.name}")
+    if args.task_id is None and str(config["task_name"]) != task.name:
         raise ValueError(f"config task_name does not match LIBERO task: {task.name}")
 
+    runtime_config = dict(config)
+    runtime_config["task_id"] = task_id
+    runtime_config["task_name"] = task.name
     policy, policy_preprocessor, policy_postprocessor, env_preprocessor, env_postprocessor = (
-        load_policy_and_processors(config, checkpoint)
+        load_policy_and_processors(runtime_config, checkpoint)
     )
     chunk_size = int(policy.config.chunk_size)
     action_dim = int(policy.config.output_features["action"].shape[0])
