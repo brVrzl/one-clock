@@ -44,21 +44,29 @@ per-task best points are retrospective over the evaluated set, not estimates of
 a continuously optimized method.
 
 Table~\ref{tab:protocols} summarizes the two protocols.  The 2,180 cross-task
-episodes include a 20-episode global/diagonal duplicate used only to verify
-equivalence.  Scientific comparisons use 12 unique static points per task.
+episodes include one additional 20-episode raw diagonal duplicate on task 1,
+run for implementation validation; scientific comparisons use 12 unique static
+configurations per task.
 
 \begin{table}[t]
-\caption{Evaluation protocols}
+\caption{Evaluation protocols and configuration accounting.  Task 0 uses five
+global and 25 group-specific configurations, with five diagonal group-specific
+entries duplicating the corresponding global semantics as controls.  Cross-task
+comparisons use 12 unique static configurations per task plus one additional
+20-episode raw diagonal duplicate on task 1 for implementation validation
+(2,180 rollouts total).}
 \label{tab:protocols}
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3.0pt}
-\begin{tabular}{lcccc}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
 \toprule
-Protocol & Tasks & States/task & Unique points & Episodes \\
+Protocol & States/task & Configuration accounting & Episodes \\
 \midrule
-Full landscape & 0 & 50 & 30 & 1,500 \\
-Cross-task & 1--9 & 20 & 12 & 2,180 \\
+Task 0 landscape & 50 & 5 global + 25 group-specific; 5 diagonal controls & 1,500 \\
+Cross-task (1--9) & 20/task & 12 unique/task + 1 task-1 validation duplicate & 2,180 \\
 \bottomrule
 \end{tabular}
+}%
 \end{table}

@@ -36,3 +36,12 @@ $\mathbf h=[h,\ldots,h]$ is exactly the global rule: every group expires
 together, accepts the same fresh chunk, and advances at the same local index.
 Off-diagonal vectors change only the acceptance schedule; observation
 preprocessing, policy inference, and low-level action application remain fixed.
+
+More specifically, $h_g$ is the number of environment steps for which group
+$g$ retains its currently accepted predicted subsequence before accepting a fresh
+subsequence.  It is not an independent policy-query interval for group $g$.
+Policy observation and querying remain shared: whenever any group expires, the
+frozen policy is queried once for a new full joint chunk.  Thus, for example,
+with $(h_a,h_g)=(4,16)$, arm expiry can trigger a full-policy query every four
+environment steps while the gripper retains its accepted subsequence for sixteen
+steps before replacing it.

@@ -10,10 +10,16 @@ evaluation are pending directions rather than reported experiments.
 
 All evaluated horizons are static.  Per-task best configurations are
 retrospective oracle-style analyses and cannot be deployed without a selection
-rule.  The strong common $(4,16)$ baseline further means that current results do
-not demonstrate a need for within-episode adaptation.  A next-stage study must
-separate task-level static selection from genuine phase-dependent gain, define
-an online observable signal, and compare at controlled query budgets.
+rule.  The universal static $(4,16)$ pair is a strong baseline, but current
+experiments do not establish a within-episode dynamic benefit: the common-set
+per-task group oracle reaches macro success 0.779 versus 0.734 for universal
+$(4,16)$, leaving a 0.045 task-dependent static oracle gap.  Moreover, $(4,16)$
+uses substantially more policy queries than low-query global $h=16$ (0.252
+versus 0.065 queries per environment step).  These observations motivate
+testing whether online adaptation can use short horizons selectively rather than
+throughout an episode.  A next-stage study must separate task-level static
+selection from genuine phase-dependent gain, define an online observable signal,
+and compare at controlled query budgets.
 
 Finally, group-specific execution deliberately composes actions from different
 source chunks.  The retained components were jointly predicted with components
