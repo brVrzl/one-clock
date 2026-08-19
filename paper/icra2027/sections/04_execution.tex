@@ -1,0 +1,55 @@
+\section{Group-Specific Fixed Execution}
+\label{sec:execution}
+
+The executor maintains one action-sequence buffer $B^{(g)}$, cursor $c_g$, and
+remaining counter $r_g$ for each group.  If any $r_g=0$, the current observation
+is passed once through the frozen policy to obtain a fresh full chunk.  Every
+expired group copies its slice of that chunk into $B^{(g)}$, resets $c_g=0$, and
+sets $r_g=h_g$.  A non-expired group keeps both its buffer and cursor.  The
+executed action is then assembled as
+\begin{equation}
+\mathbf a_t=
+\bigl[B^{(1)}[c_1],\ldots,B^{(G)}[c_G]\bigr],
+\label{eq:compose}
+\end{equation}
+after which all cursors advance and all remaining counters decrease.
+
+This rule has three consequences.  First, a policy query always predicts a full
+joint chunk, even if only one group accepts it; query rate therefore measures
+full policy evaluations, not accepted components.  Second, non-expired groups
+continue along their own previously predicted sequence rather than holding their
+last action.  Third, components in (\ref{eq:compose}) can have different source
+observations and group-local sequence positions.
+
+Starting with all groups expired at step 0, the nominal query-boundary set for a
+fixed-length episode is
+\begin{equation}
+\mathcal Q(\mathbf h)=
+\bigcup_{g=1}^{G}\{k h_g\mid k=0,1,2,\ldots\}.
+\label{eq:query_set}
+\end{equation}
+If several groups expire together, their update uses one shared query.  Swapping
+the same horizon values between groups leaves $\mathcal Q$ unchanged.  The
+symmetric comparisons in Sec.~\ref{sec:results} therefore have the same nominal
+query schedule; small differences in aggregate query rate arise only because
+configurations can terminate episodes at different steps.  For the evaluated
+powers-of-two pairs, the shorter horizon divides the longer and the query
+schedule is set by the shorter one.  This property makes horizon swaps a direct
+test of assignment rather than policy-call frequency.
+
+Fig.~\ref{fig:timeline} shows the exact schedule for global $h=4$ and
+$(h_a,h_g)=(4,16)$.  At steps 4, 8, and 12, the policy produces a fresh full
+chunk, but only the expired arm group accepts it; the gripper continues chunk
+$C0$.  At step 16 both groups expire and accept $C4$.  This mechanism tests
+independent horizon assignment without modifying policy weights, but it does not
+guarantee cross-group temporal consistency.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.96\textwidth]{execution_timeline.pdf}
+    \caption{Fixed execution schedules.  Colors and labels denote the policy-query
+    generation supplying each group.  Global execution replaces all components
+    together.  With $(h_a,h_g)=(4,16)$, arm refreshes trigger full policy queries,
+    but the non-expired gripper retains its earlier sequence until step 16.}
+    \label{fig:timeline}
+\end{figure*}

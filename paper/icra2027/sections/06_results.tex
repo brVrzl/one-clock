@@ -1,0 +1,131 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{The global execution horizon matters}
+
+On task 0, global success is 29/50, 31/50, 42/50, 45/50, and 42/50 for
+$h=1,2,4,8,16$, respectively.  Thus neither the most frequent replanning nor
+the longest evaluated open-loop execution is best.  Policy-query rate decreases
+from 1.000 at $h=1$ to 0.065 at $h=16$, making success and computation separate
+deployment axes.
+
+\subsection{Horizon assignment to action groups matters}
+
+Fig.~\ref{fig:results}(a) shows the complete task-0 group landscape.  The best
+evaluated point is $(4,16)$ with 47/50 success.  More importantly than this
+single maximum, performance is asymmetric about the diagonal.  For every one of
+the ten distinct horizon pairs, assigning the longer value to the gripper
+outperforms the reversed assignment.  Differences range from 0.08 for $(1,2)$
+versus $(2,1)$ to 0.28 for both $(1,8)$ versus $(8,1)$ and $(2,16)$ versus
+$(16,2)$.  This does not establish a universal longer-gripper rule.  It shows
+that the same horizon values and essentially the same query cadence can yield
+different outcomes when assigned to different action groups.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.93\textwidth]{results_overview.pdf}
+    \caption{Static horizon structure.  (a) Complete task-0 success landscape;
+    diagonal cells are global-equivalent controls.  (b) Best evaluated global
+    and off-diagonal success for each of tasks 1--9.  Panel (b) is a retrospective
+    per-task oracle-style diagnostic, not the performance of one deployable
+    selector.}
+    \label{fig:results}
+\end{figure*}
+
+\subsection{Improvements persist at controlled query rates}
+
+Table~\ref{tab:budget} isolates three pairs whose policy-query rates are nearly
+identical.  On task 0, global $h=4$ and $(4,16)$ both query at approximately
+0.252 per step.  The group-specific configuration gains five paired successes
+with no reverse discordance; the exact two-sided diagnostic is $p=0.0625$, which
+we do not describe as statistically significant.  Tasks 1 and 4 show larger
+paired differences at approximately 0.50 queries per step.  These examples rule
+out increased policy-query frequency as the explanation for those particular
+gains, but do not identify their causal mechanism.
+
+\begin{table}[t]
+\caption{Budget-controlled paired comparisons}
+\label{tab:budget}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{clccc}
+\toprule
+Task & Comparison & Success & Query rate & Discord. / $p$ \\
+\midrule
+0 & $h=4$ vs. $(4,16)$ & 42/50 $\to$ 47/50 & .252/.252 & 5--0 / .0625 \\
+1 & $h=2$ vs. $(2,16)$ & 6/20 $\to$ 14/20 & .500/.501 & 8--0 / .0078 \\
+4 & $h=2$ vs. $(2,16)$ & 10/20 $\to$ 17/20 & .501/.502 & 7--0 / .0156 \\
+\bottomrule
+\end{tabular}
+\vspace{-1mm}
+\begin{flushleft}\footnotesize
+`Discord.' gives group-specific-only versus global-only successes.  $p$ is an
+uncorrected exact two-sided McNemar diagnostic.
+\end{flushleft}
+\end{table}
+
+\subsection{Off-diagonal structure recurs across tasks}
+
+Across tasks 1--9, the retrospective per-task best global success averages
+0.700, while the best evaluated off-diagonal point averages 0.761
+[Fig.~\ref{fig:results}(b), Table~\ref{tab:cross_task}].  This $+0.061$ is a static oracle-style diagnostic:
+it selects a configuration after observing each task's results and is not a
+deployable method.  The best evaluated class is strictly off-diagonal on six
+tasks and tied between diagonal and off-diagonal on three; none is diagonal-only.
+At least one off-diagonal point strictly improves a global point at no higher
+measured query rate on 6/9 tasks.
+
+Directionality is recurring but not universal.  Across 36 symmetric comparisons
+on these tasks, the longer-gripper assignment wins 24, the reversed assignment
+wins 6, and 6 tie.  The reversals are important: group identity matters, but a
+single directional explanation is not supported.
+
+\begin{table*}[t]
+\caption{Cross-task retrospective best evaluated static configurations}
+\label{tab:cross_task}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5.0pt}
+\begin{tabular}{cclclc}
+\toprule
+Task & Best global horizon(s) & Global success & Best off-diagonal pair(s) & Off-diagonal success & Difference \\
+\midrule
+1 & 4, 16 & .50 & $(2,16)$ & .70 & +.20 \\
+2 & 4 & .75 & $(2,16)$, $(4,16)$ & .80 & +.05 \\
+3 & 16 & .90 & $(16,8)$ & .90 & .00 \\
+4 & 4, 16 & .80 & $(2,16)$ & .85 & +.05 \\
+5 & 16 & .85 & $(16,8)$ & .90 & +.05 \\
+6 & 16 & .65 & $(8,16)$ & .65 & .00 \\
+7 & 8, 16 & .55 & $(4,16)$ & .65 & +.10 \\
+8 & 2, 4 & .40 & $(2,8)$, $(8,2)$ & .40 & .00 \\
+9 & 2, 4, 8 & .90 & $(16,8)$, $(4,16)$ & 1.00 & +.10 \\
+\midrule
+Macro & --- & .700 & per-task selection & .761 & +.061 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Preferred static settings vary, but a common pair is strong}
+
+The best evaluated pairs differ by task in the coarse grid.  A separate post-hoc
+common-set check across all ten tasks nevertheless selects $(4,16)$ as the best
+single group-specific pair, with macro success 0.734; the best global point is
+$h=16$ at 0.699.  Their query rates differ (0.252 versus 0.065), so this is not a
+budget-matched superiority claim.  The retrospective per-task group oracle over
+the same common set reaches 0.779, a 0.045 gap, while leave-one-task-out static
+selection chooses $(4,16)$ in every split.  Current evidence therefore supports
+a strong universal static baseline and leaves the need for dynamic scheduling
+open.
+
+\subsection{Exploratory execution-trace context}
+
+The step logs permit a descriptive, non-causal check of the executed controls.
+Across all 50 task-0 rollouts, mean absolute gripper step change is 0.090 for
+global $h=4$, 0.053 for global $h=8$, 0.048 for $(4,16)$, and 0.067 for
+$(16,4)$.  Mean arm $\ell_2$ step change is 0.085, 0.077, 0.082, and 0.085 in
+the same order; mean gripper sign changes per episode are 8.12, 3.84, 3.64, and
+5.74.  These aggregates mix successful and failed trajectories of different
+lengths.  They show that the executor changes realized action traces, but they
+do not show that reduced gripper variation causes success or isolate one
+mechanism for the horizon preference.

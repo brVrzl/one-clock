@@ -1,0 +1,24 @@
+\section{Limitations and Open Questions}
+\label{sec:limitations}
+
+The evidence is simulation-only and limited to the related pick-and-place tasks
+of LIBERO Object, one frozen ACT checkpoint, and one partition: six
+arm/end-effector dimensions versus a one-dimensional gripper.  It does not
+establish cross-suite, cross-policy, cross-embodiment, dexterous-hand, or
+real-robot generalization.  RoboTwin, RoboDojo, force sensing, and physical-robot
+evaluation are pending directions rather than reported experiments.
+
+All evaluated horizons are static.  Per-task best configurations are
+retrospective oracle-style analyses and cannot be deployed without a selection
+rule.  The strong common $(4,16)$ baseline further means that current results do
+not demonstrate a need for within-episode adaptation.  A next-stage study must
+separate task-level static selection from genuine phase-dependent gain, define
+an online observable signal, and compare at controlled query budgets.
+
+Finally, group-specific execution deliberately composes actions from different
+source chunks.  The retained components were jointly predicted with components
+that may no longer be executed, so temporal inconsistency can arise across
+groups.  We have not established why particular horizon assignments succeed.
+Exploratory trace differences in action variation and sign changes are
+descriptive, not causal.  Future work should test synchronization rules and
+cross-chunk consistency controls before learning a group-specific scheduler.
