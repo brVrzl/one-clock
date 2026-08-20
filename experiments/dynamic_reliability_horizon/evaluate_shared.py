@@ -8,9 +8,7 @@ from pathlib import Path
 from .decoder import GroupHorizonDecoder, HorizonDecodeConfig
 from .evaluation import (
     evaluate_shared_checkpoint,
-    plot_vector_calibration_curve,
-    plot_vector_reliability_diagram,
-    save_evaluation_report,
+    write_evaluation_artifacts,
 )
 from .vector_dataset import VectorReliabilityDataset
 
@@ -46,14 +44,7 @@ def main() -> None:
         n_bins=args.bins,
         device=args.device,
     )
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    save_evaluation_report(report, args.output_dir / f"evaluation_{args.mode}.json")
-    plot_vector_reliability_diagram(
-        report, args.output_dir / f"reliability_diagram_{args.mode}.png"
-    )
-    plot_vector_calibration_curve(
-        report, args.output_dir / f"calibration_curve_{args.mode}.png"
-    )
+    write_evaluation_artifacts(report, args.output_dir)
 
 
 if __name__ == "__main__":  # pragma: no cover - CLI wrapper

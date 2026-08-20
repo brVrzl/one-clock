@@ -23,7 +23,9 @@ from .dataset import (
 )
 from .evaluation import (
     EvaluationResult,
+    average_precision,
     auroc,
+    auprc,
     brier_score,
     calibration_error,
     evaluate_by_group_offset,
@@ -63,6 +65,8 @@ __all__ = [
     "TemporalReliabilityDatasetBuilder",
     "TemporalValidityTarget",
     "action_chunk_statistics",
+    "average_precision",
+    "auprc",
     "auroc",
     "brier_score",
     "build_lerobot_manifest",

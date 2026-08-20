@@ -13,7 +13,10 @@ from pathlib import Path
 
 from .config import TrainingConfig
 from .vector_dataset import VectorReliabilityDataset
-from .vector_training import train_shared_reliability_model
+from .vector_training import (
+    train_monotone_shared_survival_model,
+    train_shared_reliability_model,
+)
 
 
 def main() -> None:
@@ -21,6 +24,7 @@ def main() -> None:
     parser.add_argument("--dataset", type=Path, required=True, help="prepared vector .npz")
     parser.add_argument("--checkpoint", type=Path, required=True, help="output .pt")
     parser.add_argument("--mode", choices=("combined", "arm", "gripper"), default="combined")
+    parser.add_argument("--model", choices=("independent", "monotone"), default="independent")
     parser.add_argument("--config", type=Path, help="optional TrainingConfig JSON")
     parser.add_argument("--summary", type=Path, help="optional training summary JSON")
     args = parser.parse_args()
@@ -29,14 +33,17 @@ def main() -> None:
     if args.config is not None:
         config = TrainingConfig.from_dict(json.loads(args.config.read_text(encoding="utf-8")))
     dataset = VectorReliabilityDataset.load(args.dataset)
-    result = train_shared_reliability_model(
-        dataset,
-        mode=args.mode,
-        config=config,
-        checkpoint_path=args.checkpoint,
+    train_fn = (
+        train_shared_reliability_model
+        if args.model == "independent"
+        else train_monotone_shared_survival_model
+    )
+    result = train_fn(
+        dataset, mode=args.mode, config=config, checkpoint_path=args.checkpoint
     )
     summary = {
         "mode": result.mode,
+        "model": args.model,
         "best_epoch": result.best_epoch,
         "history": list(result.history),
         "checkpoint": str(result.checkpoint_path),

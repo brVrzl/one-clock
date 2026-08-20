@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from collections.abc import Mapping, Sequence
 
 import numpy as np
@@ -32,9 +32,34 @@ class HorizonRegret:
 
     count: int
     by_group: dict[str, dict[str, float]]
+    overall: dict[str, float] = field(default_factory=dict)
 
     def as_dict(self) -> dict[str, object]:
-        return {"count": self.count, "by_group": self.by_group}
+        return {"count": self.count, "by_group": self.by_group, "overall": self.overall}
+
+
+def _average_ranks(values: np.ndarray) -> np.ndarray:
+    order = np.argsort(values, kind="mergesort")
+    ranks = np.empty(values.size, dtype=np.float64)
+    sorted_values = values[order]
+    start = 0
+    while start < values.size:
+        end = start + 1
+        while end < values.size and sorted_values[end] == sorted_values[start]:
+            end += 1
+        ranks[order[start:end]] = (start + end - 1) / 2.0 + 1.0
+        start = end
+    return ranks
+
+
+def _spearman_correlation(predicted: np.ndarray, oracle: np.ndarray) -> float:
+    if predicted.size < 2:
+        return float("nan")
+    predicted_ranks = _average_ranks(predicted)
+    oracle_ranks = _average_ranks(oracle)
+    if np.std(predicted_ranks) == 0.0 or np.std(oracle_ranks) == 0.0:
+        return float("nan")
+    return float(np.corrcoef(predicted_ranks, oracle_ranks)[0, 1])
 
 
 def horizon_regret(
@@ -49,6 +74,8 @@ def horizon_regret(
     if groups != sorted({group for mapping in oracle_horizons for group in mapping}):
         raise ValueError("predicted and oracle schedules must contain the same groups")
     by_group: dict[str, dict[str, float]] = {}
+    all_predicted: list[float] = []
+    all_oracle: list[float] = []
     for group in groups:
         predicted: list[float] = []
         oracle: list[float] = []
@@ -58,14 +85,40 @@ def horizon_regret(
             predicted.append(float(prediction[group]))
             oracle.append(float(reference[group]))
         difference = np.asarray(predicted) - np.asarray(oracle)
+        all_predicted.extend(predicted)
+        all_oracle.extend(oracle)
         by_group[group] = {
             "mean_absolute_regret": float(np.abs(difference).mean()),
+            "mae": float(np.abs(difference).mean()),
+            "median_absolute_error": float(np.median(np.abs(difference))),
+            "within_plus_minus_2_rate": float(np.mean(np.abs(difference) <= 2.0)),
+            "within_plus_minus_5_rate": float(np.mean(np.abs(difference) <= 5.0)),
             "mean_signed_regret": float(difference.mean()),
             "exact_match_rate": float(np.mean(difference == 0.0)),
             "undercommit_rate": float(np.mean(difference < 0.0)),
             "overcommit_rate": float(np.mean(difference > 0.0)),
+            "spearman_correlation": _spearman_correlation(
+                np.asarray(predicted), np.asarray(oracle)
+            ),
         }
-    return HorizonRegret(len(predicted_horizons), by_group)
+    overall_predicted = np.asarray(all_predicted)
+    overall_oracle = np.asarray(all_oracle)
+    overall_difference = overall_predicted - overall_oracle
+    overall = {
+        "mean_absolute_regret": float(np.abs(overall_difference).mean()),
+        "mae": float(np.abs(overall_difference).mean()),
+        "median_absolute_error": float(np.median(np.abs(overall_difference))),
+        "within_plus_minus_2_rate": float(np.mean(np.abs(overall_difference) <= 2.0)),
+        "within_plus_minus_5_rate": float(np.mean(np.abs(overall_difference) <= 5.0)),
+        "mean_signed_regret": float(overall_difference.mean()),
+        "exact_match_rate": float(np.mean(overall_difference == 0.0)),
+        "undercommit_rate": float(np.mean(overall_difference < 0.0)),
+        "overcommit_rate": float(np.mean(overall_difference > 0.0)),
+        "spearman_correlation": _spearman_correlation(
+            overall_predicted, overall_oracle
+        ),
+    }
+    return HorizonRegret(len(predicted_horizons), by_group, overall)
 
 
 def summarize_horizon_schedule(

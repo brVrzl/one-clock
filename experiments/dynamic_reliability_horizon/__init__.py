@@ -14,8 +14,11 @@ from .config import DynamicHorizonConfig, TrainingConfig
 from .decoder import GroupHorizonDecoder, HorizonDecodeConfig
 from .evaluation import (
     evaluate_shared_checkpoint,
+    evaluate_tau_sweep,
     evaluate_vector_horizon_regret,
     evaluate_vector_predictions,
+    vector_horizon_pairs,
+    write_evaluation_artifacts,
 )
 from .horizon_analysis import (
     HorizonRegret,
@@ -26,7 +29,7 @@ from .horizon_analysis import (
     summarize_horizon_schedule,
     vector_rows_to_curves,
 )
-from .model import SharedReliabilityMLP
+from .model import MonotoneSharedSurvivalMLP, SharedReliabilityMLP
 from .scheduler import (
     AdaptiveHorizonScheduler,
     HorizonPrediction,
@@ -40,6 +43,7 @@ from .vector_training import (
     SharedTrainingResult,
     load_shared_checkpoint,
     predict_reliability_curves,
+    train_monotone_shared_survival_model,
     train_shared_reliability_model,
 )
 
@@ -56,6 +60,7 @@ __all__ = [
     "HorizonRegret",
     "HorizonScheduleSummary",
     "PreparedReliabilityDataset",
+    "MonotoneSharedSurvivalMLP",
     "SharedReliabilityMLP",
     "SharedHorizonScheduler",
     "SharedTrainingResult",
@@ -68,6 +73,7 @@ __all__ = [
     "constant_prior_scores",
     "evaluate_vector_predictions",
     "evaluate_shared_checkpoint",
+    "evaluate_tau_sweep",
     "evaluate_vector_horizon_regret",
     "horizon_regret",
     "load_shared_checkpoint",
@@ -76,6 +82,9 @@ __all__ = [
     "predict_reliability_curves",
     "rows_to_curves",
     "vector_rows_to_curves",
+    "vector_horizon_pairs",
+    "write_evaluation_artifacts",
     "summarize_horizon_schedule",
+    "train_monotone_shared_survival_model",
     "train_shared_reliability_model",
 ]

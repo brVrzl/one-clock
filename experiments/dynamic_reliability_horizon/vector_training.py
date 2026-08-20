@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from .config import TrainingConfig
-from .model import SharedReliabilityMLP
+from .model import MonotoneSharedSurvivalMLP, SharedReliabilityMLP
 from .vector_dataset import VectorReliabilityDataset
 
 
@@ -63,36 +63,57 @@ def _masked_bce(logits, labels, mask):
     return weighted.sum() / denominator
 
 
-def train_shared_reliability_model(
+def _masked_probability_bce(probabilities, labels, mask):
+    torch = _require_torch()
+    losses = torch.nn.functional.binary_cross_entropy(
+        probabilities, labels, reduction="none"
+    )
+    weighted = losses * mask
+    denominator = mask.sum()
+    if float(denominator.detach().cpu()) <= 0.0:
+        raise ValueError("at least one observed target is required")
+    return weighted.sum() / denominator
+
+
+def _headline_target_mask(dataset: VectorReliabilityDataset) -> np.ndarray:
+    """Mask the trivial identity event from every training loss."""
+
+    mask = dataset.label_mask.copy()
+    if mask.shape[1] > 0:
+        mask[:, 0] = False
+    return mask
+
+
+def _train_shared_model(
     dataset: VectorReliabilityDataset,
     *,
-    mode: str = "combined",
-    config: TrainingConfig | None = None,
-    checkpoint_path: str | Path | None = None,
+    mode: str,
+    config: TrainingConfig,
+    checkpoint_path: str | Path | None,
+    model_type: str,
 ) -> SharedTrainingResult:
-    """Train a shared curve head on episode-disjoint source rows.
-
-    ``mode`` is an evaluation/training ablation selector.  In ``combined``
-    mode the group one-hot in the causal feature contract lets one head share
-    parameters across arm and gripper rows.  The optimizer sees source rows,
-    not overlapping frame windows, and validation loss selects the checkpoint.
-    """
-
     torch = _require_torch()
-    config = config or TrainingConfig()
-    config.validate()
     if dataset.split is None:
         raise ValueError("training requires an episode-level train/validation/test split")
     mode_rows = _mode_mask(dataset, mode)
-    train_mask = mode_rows & (dataset.split == "train")
-    validation_mask = mode_rows & (dataset.split == "validation")
-    if not train_mask.any() or not validation_mask.any():
+    train_rows = mode_rows & (dataset.split == "train")
+    validation_rows = mode_rows & (dataset.split == "validation")
+    if not train_rows.any() or not validation_rows.any():
         raise ValueError(f"mode {mode!r} needs non-empty train and validation rows")
-    if not dataset.label_mask[train_mask].any() or not dataset.label_mask[validation_mask].any():
-        raise ValueError("train and validation must contain observed target cells")
+
+    headline_mask = _headline_target_mask(dataset)
+    train_mask = headline_mask[train_rows]
+    validation_mask = headline_mask[validation_rows]
+    if not train_mask.any() or not validation_mask.any():
+        raise ValueError("train and validation must contain observed offsets k>=1")
 
     _set_seed(config.seed)
-    model = SharedReliabilityMLP(
+    model_class = (
+        SharedReliabilityMLP
+        if model_type == "shared_reliability_mlp"
+        else MonotoneSharedSurvivalMLP
+    )
+    model = model_class(
         dataset.input_dim,
         dataset.horizon_dim,
         hidden_dims=config.hidden_dims,
@@ -102,18 +123,16 @@ def train_shared_reliability_model(
     optimizer = torch.optim.Adam(
         model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay
     )
-    x_train = torch.as_tensor(dataset.features[train_mask], dtype=torch.float32, device=device)
-    y_train = torch.as_tensor(dataset.labels[train_mask], dtype=torch.float32, device=device)
-    m_train = torch.as_tensor(dataset.label_mask[train_mask], dtype=torch.float32, device=device)
+    x_train = torch.as_tensor(dataset.features[train_rows], dtype=torch.float32, device=device)
+    y_train = torch.as_tensor(dataset.labels[train_rows], dtype=torch.float32, device=device)
+    m_train = torch.as_tensor(train_mask, dtype=torch.float32, device=device)
     x_validation = torch.as_tensor(
-        dataset.features[validation_mask], dtype=torch.float32, device=device
+        dataset.features[validation_rows], dtype=torch.float32, device=device
     )
     y_validation = torch.as_tensor(
-        dataset.labels[validation_mask], dtype=torch.float32, device=device
+        dataset.labels[validation_rows], dtype=torch.float32, device=device
     )
-    m_validation = torch.as_tensor(
-        dataset.label_mask[validation_mask], dtype=torch.float32, device=device
-    )
+    m_validation = torch.as_tensor(validation_mask, dtype=torch.float32, device=device)
 
     best_loss = float("inf")
     best_epoch = 0
@@ -122,6 +141,7 @@ def train_shared_reliability_model(
     history: list[dict[str, float]] = []
     generator = torch.Generator(device="cpu")
     generator.manual_seed(config.seed)
+    use_logits = model_type == "shared_reliability_mlp"
 
     for epoch in range(config.epochs):
         model.train()
@@ -130,18 +150,28 @@ def train_shared_reliability_model(
         for start in range(0, x_train.shape[0], config.batch_size):
             indices = order[start : start + config.batch_size].to(device)
             optimizer.zero_grad(set_to_none=True)
-            loss = _masked_bce(
-                model.logits(x_train[indices]), y_train[indices], m_train[indices]
-            )
+            if use_logits:
+                loss = _masked_bce(
+                    model.logits(x_train[indices]), y_train[indices], m_train[indices]
+                )
+            else:
+                loss = _masked_probability_bce(
+                    model(x_train[indices]), y_train[indices], m_train[indices]
+                )
             loss.backward()
             optimizer.step()
             train_losses.append(float(loss.detach().cpu()))
 
         model.eval()
         with torch.no_grad():
-            validation_loss = _masked_bce(
-                model.logits(x_validation), y_validation, m_validation
-            )
+            if use_logits:
+                validation_loss = _masked_bce(
+                    model.logits(x_validation), y_validation, m_validation
+                )
+            else:
+                validation_loss = _masked_probability_bce(
+                    model(x_validation), y_validation, m_validation
+                )
         row = {
             "epoch": float(epoch + 1),
             "train_bce": float(np.mean(train_losses)),
@@ -165,7 +195,7 @@ def train_shared_reliability_model(
         checkpoint.parent.mkdir(parents=True, exist_ok=True)
         torch.save(
             {
-                "model_type": "shared_reliability_mlp",
+                "model_type": model_type,
                 "state_dict": model.state_dict(),
                 "input_dim": dataset.input_dim,
                 "horizon_dim": dataset.horizon_dim,
@@ -173,11 +203,52 @@ def train_shared_reliability_model(
                 "mode": mode,
                 "config": config.as_dict(),
                 "feature_names": list(dataset.feature_names),
+                "identity_offset_masked": True,
                 "best_epoch": best_epoch,
             },
             checkpoint,
         )
     return SharedTrainingResult(model, tuple(history), best_epoch, checkpoint, mode)
+
+
+def train_shared_reliability_model(
+    dataset: VectorReliabilityDataset,
+    *,
+    mode: str = "combined",
+    config: TrainingConfig | None = None,
+    checkpoint_path: str | Path | None = None,
+) -> SharedTrainingResult:
+    """Train the independent per-offset shared MLP ablation."""
+
+    config = config or TrainingConfig()
+    config.validate()
+    return _train_shared_model(
+        dataset,
+        mode=mode,
+        config=config,
+        checkpoint_path=checkpoint_path,
+        model_type="shared_reliability_mlp",
+    )
+
+
+def train_monotone_shared_survival_model(
+    dataset: VectorReliabilityDataset,
+    *,
+    mode: str = "combined",
+    config: TrainingConfig | None = None,
+    checkpoint_path: str | Path | None = None,
+) -> SharedTrainingResult:
+    """Train the conditional-survival product parameterization."""
+
+    config = config or TrainingConfig()
+    config.validate()
+    return _train_shared_model(
+        dataset,
+        mode=mode,
+        config=config,
+        checkpoint_path=checkpoint_path,
+        model_type="monotone_shared_survival_mlp",
+    )
 
 
 def load_shared_checkpoint(path: str | Path, *, device: str = "cpu") -> object:
@@ -189,9 +260,17 @@ def load_shared_checkpoint(path: str | Path, *, device: str = "cpu") -> object:
         payload = torch.load(path, map_location=device, weights_only=False)
     except TypeError:  # Older Torch versions do not expose weights_only.
         payload = torch.load(path, map_location=device)
-    if payload.get("model_type") != "shared_reliability_mlp":
-        raise ValueError("checkpoint is not a shared vector reliability model")
-    model = SharedReliabilityMLP(
+    model_type = payload.get("model_type", "shared_reliability_mlp")
+    model_class = (
+        SharedReliabilityMLP
+        if model_type == "shared_reliability_mlp"
+        else MonotoneSharedSurvivalMLP
+        if model_type == "monotone_shared_survival_mlp"
+        else None
+    )
+    if model_class is None:
+        raise ValueError("checkpoint is not a supported shared vector reliability model")
+    model = model_class(
         int(payload["input_dim"]),
         int(payload["horizon_dim"]),
         hidden_dims=tuple(payload["hidden_dims"]),
@@ -224,6 +303,7 @@ def predict_reliability_curves(
 
 
 __all__ = [
+    "train_monotone_shared_survival_model",
     "SharedTrainingResult",
     "load_shared_checkpoint",
     "predict_reliability_curves",

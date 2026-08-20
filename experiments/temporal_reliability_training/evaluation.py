@@ -50,6 +50,24 @@ def roc_auc(labels: Sequence[int], scores: Sequence[float]) -> float:
 auroc = roc_auc
 
 
+def average_precision(labels: Sequence[int], scores: Sequence[float]) -> float:
+    """Compute binary AUPRC as precision averaged over positive ranks."""
+
+    y, p = _validate_binary_inputs(labels, scores)
+    positives = int(y.sum())
+    if positives == 0:
+        return float("nan")
+    order = np.argsort(-p, kind="mergesort")
+    sorted_labels = y[order]
+    cumulative_true = np.cumsum(sorted_labels, dtype=np.float64)
+    ranks = np.arange(1, y.size + 1, dtype=np.float64)
+    precision = cumulative_true / ranks
+    return float(precision[sorted_labels == 1].sum() / positives)
+
+
+auprc = average_precision
+
+
 @dataclass(frozen=True)
 class ReliabilityCurve:
     bin_edges: np.ndarray

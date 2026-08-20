@@ -12,16 +12,21 @@ from experiments.dynamic_reliability_horizon.causal_features import CausalFeatur
 from experiments.dynamic_reliability_horizon.config import TrainingConfig
 from experiments.dynamic_reliability_horizon.decoder import GroupHorizonDecoder, HorizonDecodeConfig
 from experiments.dynamic_reliability_horizon.evaluation import (
+    evaluate_shared_checkpoint,
     evaluate_vector_horizon_regret,
     evaluate_vector_predictions,
 )
 from experiments.dynamic_reliability_horizon.horizon_analysis import horizon_regret
-from experiments.dynamic_reliability_horizon.model import SharedReliabilityMLP
+from experiments.dynamic_reliability_horizon.model import (
+    MonotoneSharedSurvivalMLP,
+    SharedReliabilityMLP,
+)
 from experiments.dynamic_reliability_horizon.scheduler import SharedHorizonScheduler
 from experiments.dynamic_reliability_horizon.split_manifest import EpisodeSplitManifest
 from experiments.dynamic_reliability_horizon.vector_dataset import build_vector_dataset
 from experiments.dynamic_reliability_horizon.vector_training import (
     predict_reliability_curves,
+    train_monotone_shared_survival_model,
     train_shared_reliability_model,
 )
 from experiments.temporal_reliability_training.config import SplitConfig
@@ -178,7 +183,41 @@ class SharedEstimatorTest(unittest.TestCase):
             )
             self.assertIn("overall", report)
             self.assertIn("task", report)
-            self.assertEqual(report["observed_cells"], 48)
+            self.assertIn("auprc", report["overall"])
+            self.assertEqual(report["observed_cells"], 32)
+            self.assertNotIn("0", report["offset"])
+            monotone = train_monotone_shared_survival_model(
+                dataset,
+                config=TrainingConfig(epochs=2, batch_size=4, patience=1, hidden_dims=(8,), seed=5),
+                checkpoint_path=Path(directory) / "monotone.pt",
+            )
+            monotone_scores = predict_reliability_curves(monotone.model, dataset.features)
+            self.assertTrue(np.all(monotone_scores[:, 0] == 1.0))
+            self.assertTrue(np.all(monotone_scores[:, 1:] <= monotone_scores[:, :-1] + 1e-8))
+            evaluation = evaluate_shared_checkpoint(
+                dataset,
+                checkpoint,
+                mode="combined",
+                decoder=GroupHorizonDecoder(
+                    HorizonDecodeConfig(threshold_tau=0.5, max_horizon=3)
+                ),
+                n_bins=3,
+                tau_values=np.asarray([0.3, 0.5, 0.7]),
+            )
+            self.assertIn("brier_skill_score_vs_empirical", evaluation)
+            self.assertEqual(len(evaluation["validation_tau_sweep"]), 6)
+            self.assertIn("overall", evaluation["offline_horizon_regret"])
+
+    def test_monotone_survival_head_guarantees_prefix_nonincrease(self) -> None:
+        try:
+            import torch
+        except ImportError:
+            self.skipTest("torch is an optional training dependency")
+        torch.manual_seed(9)
+        model = MonotoneSharedSurvivalMLP(5, 4, hidden_dims=(8,))
+        curves = model(torch.randn((32, 5), dtype=torch.float32)).detach().numpy()
+        self.assertTrue(np.all(curves[:, 0] == 1.0))
+        self.assertTrue(np.all(curves[:, 1:] <= curves[:, :-1] + 1e-8))
 
     def test_shared_scheduler_decodes_one_curve_per_group(self) -> None:
         contract = CausalFeatureContract.for_groups(DEFAULT_LIBERO_GROUPS, observation_embedding_dim=0)
