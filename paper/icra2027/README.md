@@ -1,4 +1,4 @@
-# ICRA 2027 paper draft
+# ICRA 2027 paper draft (v1.2)
 
 Provisional title: **One Clock Does Not Fit All: Group-Specific Execution
 Horizons for Action-Chunking Robot Policies**.
@@ -59,7 +59,7 @@ pdflatex main.tex
 
 The host environment has no `pdflatex`, `bibtex`, or `latexmk`, but an existing
 local `embodied-latex:texlive2023` Docker image was used without installing a TeX
-distribution. The complete draft compiles to seven US-letter, double-column
+distribution. The complete draft compiles to eight US-letter, double-column
 pages, including acknowledgments and references. The final build has no
 unresolved citations, undefined labels, BibTeX errors, or overfull boxes; it
-emits one benign underfull vertical-box warning.
+emits only non-fatal underfull-box warnings.

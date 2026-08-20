@@ -17,6 +17,7 @@ status is not inferred beyond what the primary source states.
 | Computing a new chunk concurrently with execution | **asynchronous action-chunk execution**, **real-time chunking** | Reserve for RTC/FutureRTC; the current executor is synchronous at query boundaries. |
 | Transition between predicted chunks | **chunk boundary**, **chunk transition** | Use for synchronized replacement; explain explicitly that group-specific execution can create multiple group boundaries. |
 | Different horizons for physical components | No established term found in the audited set | Use the transparent descriptive extension **group-specific execution horizons** (occasionally **group-wise execution horizons**). Do not present it as established terminology and introduce no acronym. |
+| Probability that a prediction remains valid through a future offset | **survival probability**, **survival curve**, **time-to-event** (statistical framing) | Use for the proposed reliability estimator only; do not imply an established robotics term or an available ground-truth horizon. |
 
 Avoid as technical terms: `structured continuation`, `temporal urgency`, and
 `multi-clock scheduling`. They do not appear as standard names in the audited

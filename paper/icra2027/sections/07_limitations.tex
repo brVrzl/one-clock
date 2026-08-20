@@ -27,8 +27,16 @@ teacher-forced comparison with demonstrated future actions, and Gate-2A uses
 right-censored targets with a common 38-step analysis window; neither contains
 closed-loop success labels.  We therefore do not claim that the proposed
 $R_g(k)$ estimator is calibrated, that Eq.~\ref{eq:adaptive_horizon} improves
-execution, or that any online dynamic horizon rule works.  Training a
-group-wise estimator and evaluating dynamic execution remain future validation.
+execution, or that any online reliability-derived horizon rule works.  Training
+a group-wise estimator and evaluating adaptive execution remain future
+validation.
+
+No ground-truth execution horizon is available in the demonstration data.  The
+validity variable $Y_g(k)$ and reliability curve $R_g(k)$ are therefore proxies
+whose tolerance, distance, and censoring choices may affect the derived horizon.
+The proposed rule has not been validated as a dynamic scheduler, and the
+offline-to-online shift from teacher-forced future actions to closed-loop
+observations may change both reliability calibration and group synchronization.
 
 Finally, group-specific execution deliberately composes actions from different
 source chunks.  The retained components were jointly predicted with components

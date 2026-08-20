@@ -1,7 +1,9 @@
-\section{Experimental Protocol}
+\section{Experiments}
 \label{sec:experiments}
 
-\subsection{Common setup}
+\subsection{Static horizon analysis}
+
+\paragraph{Common setup.}
 
 All experiments use the same frozen ACT checkpoint for LIBERO Object, with a
 prediction horizon of 100 and seven-dimensional relative actions.  Dimensions
@@ -23,7 +25,7 @@ We report paired success counts and, for selected comparisons, a two-sided exact
 McNemar diagnostic.  These small-sample diagnostics are descriptive; task-level
 tests are not corrected for the many explored configurations.
 
-\subsection{Full task-0 landscape}
+\paragraph{Task-0 landscape.}
 
 For `pick up the alphabet soup and place it in the basket,' we evaluate official
 initial states 0--49.  Global controls use
@@ -32,16 +34,15 @@ $5\!\times\!5$ Cartesian product over the same horizon set, producing exact
 diagonal controls and ten symmetric assignment pairs $(h_a,h_g)$ versus
 $(h_g,h_a)$.  This protocol comprises 1,500 paired episodes.
 
-\subsection{Cross-task diagnostic}
+\paragraph{Cross-task diagnostic.}
 
 We next evaluate LIBERO Object tasks 1--9 on official states 0--19 per task,
 with seeds 1000--1019.  The common coarse set contains diagonal/global-equivalent
 horizons 2, 4, 8, and 16 and eight off-diagonal pairs:
 $(2,8)$, $(2,16)$, $(8,2)$, $(8,16)$, $(16,2)$, $(16,8)$,
 $(4,16)$, and $(16,4)$.  No task-specific policy training or tuning is performed.
-This grid is deliberately coarser than the task-0 landscape, so comparisons of
-per-task best points are retrospective over the evaluated set, not estimates of
-a continuously optimized method.
+The coarser grid makes per-task best points retrospective over the evaluated set,
+not estimates of a continuously optimized method.
 
 Table~\ref{tab:protocols} summarizes the two protocols.  The 2,180 cross-task
 episodes include one additional 20-episode raw diagonal duplicate on task 1,
@@ -71,7 +72,7 @@ Cross-task (1--9) & 20/task & 12 unique/task + 1 task-1 validation duplicate & 2
 }%
 \end{table}
 
-\subsection{Offline temporal-persistence audits}
+\subsection{Group temporal persistence analysis}
 
 The static rollout protocols are complemented by two read-only audits of the
 same frozen ACT policy on LIBERO Object demonstrations.  Gate-1 evaluates
@@ -90,3 +91,16 @@ phase comparisons use the common future range $k=0,\ldots,37$ and average within
 episode before aggregating.  Episode-bootstrap intervals are descriptive.  The
 phase audit likewise does not train a predictor, change the executor, or measure
 closed-loop task success.
+
+\subsection{Reliability estimator evaluation (planned)}
+
+No group-wise reliability estimator has been trained, calibrated, or evaluated
+in this paper.  The planned evaluation will first use held-out demonstration
+episodes to measure validity-proxy discrimination and survival calibration at
+each offset, with censoring and task identity reported explicitly.  It will
+then compare the resulting observation-to-horizon rule against fixed global and
+fixed group-wise schedules under the same frozen policy, seeds, and policy-query
+accounting.  Closed-loop success, policy-inference demand, source-age disparity,
+and cross-group consistency will be reported together.  This subsection is a
+protocol placeholder for future validation, not a completed experiment or an
+adaptive-execution result.

@@ -61,6 +61,15 @@ candidate self-supervised targets in Sec.~\ref{sec:method} make this distinction
 explicit.  No such estimator or dynamic trigger is implemented in the present
 paper.
 
+Survival and event prediction provide a useful vocabulary for separating
+validity from the time at which validity fails.  A survival curve models the
+probability that an event has not occurred by a future offset, while an event
+model may predict the failure time directly.  We use this distinction to define
+$R_g(k)$ as survival of a group prediction, with validity labels derived from a
+predeclared consistency proxy rather than an observed ground-truth horizon.
+This is a proposed modeling choice, not a claim that an existing robot policy
+already supplies group-wise survival estimates.
+
 \subsection{Manipulation benchmark}
 
 LIBERO is a language-conditioned robot-manipulation benchmark organized into
