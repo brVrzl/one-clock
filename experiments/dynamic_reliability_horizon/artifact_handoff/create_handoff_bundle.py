@@ -29,6 +29,7 @@ METADATA = ROOT / "experiments/temporal_reliability/metadata.jsonl"
 DATASET_MANIFEST = ROOT / "experiments/temporal_reliability/dataset_manifest.json"
 CONSTRUCT_SCRIPT = ROOT / "experiments/temporal_reliability/construct_dataset.py"
 ORACLE_SCRIPT = ROOT / "experiments/dynamic_reliability_horizon/analyze_oracle_and_pace.py"
+HANDOFF_SCRIPT = ROOT / "experiments/dynamic_reliability_horizon/artifact_handoff/create_handoff_bundle.py"
 SPLIT_PATH = HANDOFF / "episode_split_manifest.json"
 BUNDLE_PATH = HANDOFF / "minimal_y_refresh_training_bundle.npz"
 GROUPS = ("arm", "gripper")
@@ -234,6 +235,7 @@ def build_manifest(schema: dict[str, Any], split: dict[str, Any]) -> dict[str, A
         file_record(CONSTRUCT_SCRIPT, role="original Y_demo validity construction and threshold definition", estimator_visible=False),
         file_record(DATASET_MANIFEST, role="frozen checkpoint/action normalization provenance", estimator_visible=False),
         file_record(ORACLE_SCRIPT, role="oracle horizon derivation and sensitivity analysis", estimator_visible=False),
+        file_record(HANDOFF_SCRIPT, role="portable bundle and manifest generation script", estimator_visible=False),
     ]
     checkpoint_root = Path("/home/thor/projects/checkpoints/zeromidnight_act_libero_object")
     dataset_root = Path("/home/thor/datasets/libero_object_25_08_23_lerobotv2.1")
