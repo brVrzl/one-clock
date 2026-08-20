@@ -20,6 +20,54 @@ class HorizonScheduleSummary:
         return {"source": self.source, "count": self.count, "by_group": self.by_group}
 
 
+@dataclass(frozen=True)
+class HorizonRegret:
+    """Offline discrepancy between a decoded schedule and an oracle schedule.
+
+    Regret is reported in horizon steps.  Positive signed regret means the
+    prediction over-commits relative to the oracle; negative means it
+    under-commits.  The oracle here is only a held-out target diagnostic and
+    is never an executor input.
+    """
+
+    count: int
+    by_group: dict[str, dict[str, float]]
+
+    def as_dict(self) -> dict[str, object]:
+        return {"count": self.count, "by_group": self.by_group}
+
+
+def horizon_regret(
+    predicted_horizons: Sequence[Mapping[str, int]],
+    oracle_horizons: Sequence[Mapping[str, int]],
+) -> HorizonRegret:
+    """Measure decoded horizon error against an offline oracle schedule."""
+
+    if not predicted_horizons or len(predicted_horizons) != len(oracle_horizons):
+        raise ValueError("predicted and oracle schedules must be non-empty and aligned")
+    groups = sorted({group for mapping in predicted_horizons for group in mapping})
+    if groups != sorted({group for mapping in oracle_horizons for group in mapping}):
+        raise ValueError("predicted and oracle schedules must contain the same groups")
+    by_group: dict[str, dict[str, float]] = {}
+    for group in groups:
+        predicted: list[float] = []
+        oracle: list[float] = []
+        for prediction, reference in zip(predicted_horizons, oracle_horizons):
+            if group not in prediction or group not in reference:
+                raise ValueError("every schedule must contain every group")
+            predicted.append(float(prediction[group]))
+            oracle.append(float(reference[group]))
+        difference = np.asarray(predicted) - np.asarray(oracle)
+        by_group[group] = {
+            "mean_absolute_regret": float(np.abs(difference).mean()),
+            "mean_signed_regret": float(difference.mean()),
+            "exact_match_rate": float(np.mean(difference == 0.0)),
+            "undercommit_rate": float(np.mean(difference < 0.0)),
+            "overcommit_rate": float(np.mean(difference > 0.0)),
+        }
+    return HorizonRegret(len(predicted_horizons), by_group)
+
+
 def summarize_horizon_schedule(
     horizons: Sequence[Mapping[str, int]],
     *,
@@ -81,6 +129,41 @@ def rows_to_curves(
     return tuple(curves)
 
 
+def vector_rows_to_curves(
+    *,
+    episode_ids: Sequence[str],
+    source_steps: Sequence[int],
+    groups: Sequence[str],
+    scores: np.ndarray,
+) -> tuple[dict[str, np.ndarray], ...]:
+    """Group vector-head rows into one curve mapping per source observation."""
+
+    episode_array = np.asarray(episode_ids).astype(str)
+    source_array = np.asarray(source_steps, dtype=np.int64)
+    group_array = np.asarray(groups).astype(str)
+    score_array = np.asarray(scores, dtype=np.float64)
+    if score_array.ndim != 2 or any(
+        array.shape != (score_array.shape[0],)
+        for array in (episode_array, source_array, group_array)
+    ):
+        raise ValueError("vector curve rows must have matching metadata and score shapes")
+    curves: list[dict[str, np.ndarray]] = []
+    keys = list(dict.fromkeys(zip(episode_array, source_array)))
+    for episode_id, source_step in keys:
+        selected = (episode_array == episode_id) & (source_array == source_step)
+        curve: dict[str, np.ndarray] = {}
+        for group in sorted(set(group_array[selected])):
+            group_selected = selected & (group_array == group)
+            if int(group_selected.sum()) != 1:
+                raise ValueError("vector dataset must have one row per source/group")
+            curve[group] = score_array[group_selected][0].copy()
+        if curve:
+            curves.append(curve)
+    if not curves:
+        raise ValueError("no vector source curves could be constructed")
+    return tuple(curves)
+
+
 def compare_horizon_sources(
     predicted_curves: Sequence[Mapping[str, Sequence[float]]],
     oracle_curves: Sequence[Mapping[str, Sequence[float]]],
@@ -88,7 +171,7 @@ def compare_horizon_sources(
     decoder: GroupHorizonDecoder,
     static_horizons: Mapping[str, int],
     global_horizon: int | None = None,
-) -> dict[str, HorizonScheduleSummary]:
+) -> dict[str, HorizonScheduleSummary | HorizonRegret]:
     if len(predicted_curves) != len(oracle_curves):
         raise ValueError("predicted and oracle curve collections must match")
     predicted = [decoder.decode_curves(curves) for curves in predicted_curves]
@@ -98,6 +181,7 @@ def compare_horizon_sources(
         "static_group": summarize_horizon_schedule(static, source="static_group"),
         "learned_reliability": summarize_horizon_schedule(predicted, source="learned_reliability"),
         "oracle_reliability": summarize_horizon_schedule(oracle, source="oracle_reliability"),
+        "horizon_regret": horizon_regret(predicted, oracle),
     }
     if global_horizon is not None:
         global_static = [

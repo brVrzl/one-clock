@@ -34,8 +34,12 @@ class GroupHorizonDecoder:
             raise ValueError("reliability curve must be one-dimensional and non-empty")
         if not np.isfinite(values).all() or np.any((values < 0.0) | (values > 1.0)):
             raise ValueError("reliability scores must be finite probabilities in [0, 1]")
+        self.config.validate()
         maximum = min(values.size, self.config.max_horizon or values.size)
-        self.config.validate(chunk_size=values.size)
+        if maximum < self.config.min_horizon:
+            raise ValueError(
+                "available reliability curve is shorter than min_horizon after clipping"
+            )
         valid = values[:maximum] > self.config.threshold_tau
         if self.config.require_prefix:
             horizon = 0

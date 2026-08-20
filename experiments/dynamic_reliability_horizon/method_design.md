@@ -11,20 +11,28 @@ The base ACT policy remains frozen:
 \hat A_t = \pi(o_t) = [\hat a_{t|t}, \ldots, \hat a_{t+H-1|t}].
 \]
 
-For action group \(g\) and offset \(k\), the auxiliary estimator consumes
-source-time information and predicts
+For action group \(g\), the auxiliary estimator consumes source-time
+information and predicts the complete offset curve
 
 \[
-\hat R_g(k \mid o_t, \hat A_t, g) =
-P(Y_g(k)=1 \mid x_t, \hat A_t, g, k),
+\hat R_g(0{:}K-1 \mid o_t, \hat A_t, g).
 \]
 
-where \(Y_g(k)\) is the precomputed temporal-validity target. The feature
-encoder uses only the source observation embedding placeholder, source chunk
-statistics, group ID, and offset. Future observations are target-only.
+where \(Y_g(k)\) is the precomputed temporal-validity target. The next-stage
+feature contract uses only the source observation/history embedding, the
+current frozen-policy chunk, and group ID. It deliberately has no offset
+feature: one shared MLP call returns the complete vector
 
-The first implementation uses a small MLP with a single sigmoid output. It is
-not a horizon classifier and is not trained on rollout success.
+\[
+[\hat R_g(0),\ldots,\hat R_g(K-1)].
+\]
+
+Future observations, future actions, episode length, normalized phase, and
+terminal metadata are target-generation or dataset bookkeeping inputs only;
+they are not estimator features. The head is a small shared MLP and is not a
+horizon classifier or a model trained on rollout success. The earlier row-wise
+single-output preparation head remains available only for compatibility with
+the original artifact format.
 
 ## Existing target
 
@@ -48,14 +56,17 @@ target without a predeclared study.
 ## Episode split and training
 
 Examples inherit a split made on episode IDs before temporal examples are
-expanded. The intended LIBERO Object paths are recorded in
+expanded. `EpisodeSplitManifest` stores only the disjoint train,
+validation, and test episode-ID lists, plus the deterministic seed and split
+fractions; it contains no frame IDs. The intended LIBERO Object paths are recorded in
 `configs/default.json`; the current checkout does not contain those external
 paths, so no real checkpoint or target artifact is produced here.
 
-The train command consumes a prepared `.npz` artifact containing source-only
-features, precomputed labels, group/offset metadata, and train/validation/test
-assignment. It trains with binary cross entropy on logits, early-stopping on
-validation BCE, and writes one checkpoint for each ablation:
+The shared train command consumes a prepared vector `.npz` artifact containing
+one source/group row, source-only features, a masked precomputed
+`Y_g(0...K-1)` curve, and train/validation/test assignment. It trains with
+masked binary cross entropy on logits, early-stopping on validation BCE, and
+writes one checkpoint for each ablation:
 
 - `combined`: arm and gripper rows in one model with group ID;
 - `arm`: arm rows only;
@@ -63,6 +74,24 @@ validation BCE, and writes one checkpoint for each ablation:
 
 The frozen ACT checkpoint is never updated. The MLP is deliberately small and
 does not receive future observations, episode outcomes, or benchmark success.
+
+The shared-head command is:
+
+```sh
+PYTHONPATH=src:. python -m experiments.dynamic_reliability_horizon.train_shared \
+  --dataset /path/to/prepared_vector_reliability.npz \
+  --checkpoint experiments/dynamic_reliability_horizon/checkpoints/shared_mlp.pt
+```
+
+Held-out metrics, reliability diagrams, offset calibration curves, and
+offline horizon regret are emitted with:
+
+```sh
+PYTHONPATH=src:. python -m experiments.dynamic_reliability_horizon.evaluate_shared \
+  --dataset /path/to/prepared_vector_reliability.npz \
+  --checkpoint experiments/dynamic_reliability_horizon/checkpoints/shared_mlp.pt \
+  --output-dir experiments/dynamic_reliability_horizon/evaluation
+```
 
 The commands are module entry points from the repository root:
 
@@ -80,8 +109,8 @@ PYTHONPATH=src:. python -m experiments.dynamic_reliability_horizon.evaluate \
 
 ## Horizon decoder
 
-Given a group reliability curve, the default decoder uses a strict threshold
-`tau`:
+Given a group reliability curve, the decoder uses the strict threshold `tau`
+and zero-based offsets:
 
 \[
 h_g(t) = \max\{k+1 : \hat R_g(k) > \tau\}.
@@ -91,8 +120,9 @@ The `+1` converts a zero-based valid offset into an action count. By default,
 decoding requires a contiguous valid prefix; this prevents an isolated high
 score after a failed offset from extending open-loop execution. If no score is
 above threshold, `min_horizon` is used as a conservative fallback. Both the
-threshold and horizon bounds are configurable. A non-prefix mode is available
-for diagnostics only.
+threshold and horizon bounds are configurable. A configured `max_horizon`
+clips the available curve; it does not require the incoming curve to have
+exactly that length. A non-prefix mode is available for diagnostics only.
 
 ## Adaptive execution adapter
 
@@ -125,7 +155,9 @@ not establish that dynamic horizons improve robot performance. The offline
 schedule report contains four explicit sources when requested: global fixed,
 static group horizons, learned reliability horizons, and label-oracle
 reliability horizons. The last is an upper-bound diagnostic using held-out
-validity labels, not a deployable controller.
+validity labels, not a deployable controller. Horizon regret is reported as
+absolute and signed horizon-step discrepancy, plus exact-match, under-commit,
+and over-commit rates against that oracle. It is not a robot-success metric.
 
 ## Limitations
 

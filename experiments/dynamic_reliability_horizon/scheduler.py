@@ -11,6 +11,7 @@ import numpy as np
 from experiments.temporal_reliability_training.features import FeatureEncoder
 from experiments.temporal_reliability_training.schema import GroupSpec, TemporalExample
 
+from .causal_features import CausalFeatureContract
 from .decoder import GroupHorizonDecoder
 
 
@@ -34,6 +35,27 @@ class TorchModelScorer:
         tensor = torch.as_tensor(features, dtype=torch.float32, device=self.device)
         with torch.no_grad():
             return self.model(tensor).detach().cpu().numpy()
+
+
+class SharedTorchModelScorer:
+    """Adapt a vector-output Torch head to the NumPy scheduler interface."""
+
+    def __init__(self, model: object, *, device: str = "cpu") -> None:
+        self.model = model
+        self.device = device
+
+    def __call__(self, features: np.ndarray) -> np.ndarray:
+        try:
+            import torch
+        except ImportError as error:  # pragma: no cover - host-dependent
+            raise ImportError("SharedTorchModelScorer requires torch") from error
+        values = np.asarray(features, dtype=np.float32)
+        if values.ndim != 2:
+            raise ValueError("shared scorer features must be two-dimensional")
+        tensor = torch.as_tensor(values, dtype=torch.float32, device=self.device)
+        with torch.no_grad():
+            scores = self.model(tensor)
+        return scores.detach().cpu().numpy()
 
 
 @dataclass(frozen=True)
@@ -114,6 +136,74 @@ class AdaptiveHorizonScheduler:
             cursor += horizon_length
         horizons = self.decoder.decode_curves(reliability_by_group)
         return HorizonPrediction(reliability_by_group, horizons, batch.features)
+
+    def predict_horizons(
+        self,
+        observation_embedding: np.ndarray | None,
+        action_chunk: np.ndarray,
+    ) -> dict[str, int]:
+        return self.predict(observation_embedding, action_chunk).horizons
+
+
+class SharedHorizonScheduler:
+    """Decode vector reliability curves from the causal feature contract.
+
+    This is an offline/online interface boundary only.  It does not execute
+    actions or alter the production executor; callers can use its prediction
+    record in a separately audited integration stage.
+    """
+
+    def __init__(
+        self,
+        *,
+        groups: Sequence[GroupSpec],
+        feature_contract: CausalFeatureContract,
+        scorer: ReliabilityScorer,
+        decoder: GroupHorizonDecoder,
+        max_offset: int | None = None,
+    ) -> None:
+        if tuple(groups) != feature_contract.groups:
+            raise ValueError("groups must match the causal feature contract")
+        if max_offset is not None and max_offset < 1:
+            raise ValueError("max_offset must be positive")
+        self.groups = tuple(groups)
+        self.feature_contract = feature_contract
+        self.scorer = scorer
+        self.decoder = decoder
+        self.max_offset = max_offset
+
+    def predict(
+        self,
+        observation_embedding: np.ndarray | None,
+        action_chunk: np.ndarray,
+    ) -> HorizonPrediction:
+        chunk = np.asarray(action_chunk, dtype=np.float32)
+        if chunk.ndim != 2 or chunk.shape[0] < 1:
+            raise ValueError("action_chunk must have shape [chunk_step, action_dim]")
+        features = np.vstack(
+            [
+                self.feature_contract.encode(
+                    observation_embedding=observation_embedding,
+                    action_chunk=chunk,
+                    group=group.name,
+                )
+                for group in self.groups
+            ]
+        )
+        raw_scores = np.asarray(self.scorer(features), dtype=np.float64)
+        if raw_scores.ndim != 2 or raw_scores.shape[0] != len(self.groups):
+            raise ValueError("shared scorer must return one [K] curve per group")
+        horizon_length = min(chunk.shape[0], self.max_offset or chunk.shape[0], raw_scores.shape[1])
+        if horizon_length < 1:
+            raise ValueError("shared scorer returned an empty reliability curve")
+        curves = {
+            group.name: raw_scores[index, :horizon_length].copy()
+            for index, group in enumerate(self.groups)
+        }
+        if not np.isfinite(raw_scores).all() or np.any((raw_scores < 0.0) | (raw_scores > 1.0)):
+            raise ValueError("shared reliability scorer must return probabilities in [0, 1]")
+        horizons = self.decoder.decode_curves(curves)
+        return HorizonPrediction(curves, horizons, features)
 
     def predict_horizons(
         self,
