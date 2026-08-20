@@ -1,6 +1,8 @@
 {
   "oracle": {
     "coverage": {
+      "both_uncensored_fraction": 0.5128342245989305,
+      "both_uncensored_windows": 1918,
       "episodes": 454,
       "observed_pairs": 259279,
       "positive_offset_pairs": 255539,
@@ -132,6 +134,29 @@
         }
       },
       "wasted_commitment_positive_rate_lower_bound": 0.9232620320855615
+    },
+    "heterogeneity_bootstrap": {
+      "estimand_population": "rows uncensored for both groups",
+      "metrics": {
+        "discarded_commitment_fraction": {
+          "ci95_high": 0.42329556893005976,
+          "ci95_low": 0.39598807611076053,
+          "point_estimate": 0.4092679925656518
+        },
+        "mean_discarded_valid_positions": {
+          "ci95_high": 24.028200219750843,
+          "ci95_low": 22.109158590443478,
+          "point_estimate": 23.063607924921794
+        },
+        "p_h_arm_not_equal_h_gripper": {
+          "ci95_high": 0.9673007620769827,
+          "ci95_low": 0.9497599499262256,
+          "point_estimate": 0.9588112617309698
+        }
+      },
+      "replicates": 2000,
+      "seed": 20260820,
+      "unit": "episode"
     },
     "horizon_convention": {
       "censoring": "horizon equals last observed action count when all observed positive offsets remain valid",
@@ -332,6 +357,29 @@
           }
         },
         "wasted_commitment_positive_rate_lower_bound": 0.9232620320855615
+      },
+      "heterogeneity_bootstrap": {
+        "estimand_population": "rows uncensored for both groups",
+        "metrics": {
+          "discarded_commitment_fraction": {
+            "ci95_high": 0.42329556893005976,
+            "ci95_low": 0.39598807611076053,
+            "point_estimate": 0.4092679925656518
+          },
+          "mean_discarded_valid_positions": {
+            "ci95_high": 24.028200219750843,
+            "ci95_low": 22.109158590443478,
+            "point_estimate": 23.063607924921794
+          },
+          "p_h_arm_not_equal_h_gripper": {
+            "ci95_high": 0.9673007620769827,
+            "ci95_low": 0.9497599499262256,
+            "point_estimate": 0.9588112617309698
+          }
+        },
+        "replicates": 2000,
+        "seed": 20260820,
+        "unit": "episode"
       },
       "horizon_distributions": {
         "arm": {
@@ -1403,6 +1451,9 @@
     "task_phase": {
       "phase": {
         "early": {
+          "both_uncensored_discarded_commitment_fraction": 0.5769455020967736,
+          "both_uncensored_horizon_difference_rate": 0.942381562099872,
+          "both_uncensored_mean_discarded_valid_positions": 30.62740076824584,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -1596,6 +1647,9 @@
           "n_rows": 1091
         },
         "late": {
+          "both_uncensored_discarded_commitment_fraction": 0.24972890824685445,
+          "both_uncensored_horizon_difference_rate": 0.9622641509433962,
+          "both_uncensored_mean_discarded_valid_positions": 9.317610062893081,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -1789,6 +1843,9 @@
           "n_rows": 1314
         },
         "middle": {
+          "both_uncensored_discarded_commitment_fraction": 0.3113159704283762,
+          "both_uncensored_horizon_difference_rate": 0.9731379731379731,
+          "both_uncensored_mean_discarded_valid_positions": 21.188034188034187,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -1984,6 +2041,9 @@
       },
       "task": {
         "pick up the alphabet soup and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.4668720059446732,
+          "both_uncensored_horizon_difference_rate": 0.9806763285024155,
+          "both_uncensored_mean_discarded_valid_positions": 23.342995169082126,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -2177,6 +2237,9 @@
           "n_rows": 376
         },
         "pick up the bbq sauce and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.32520194268695357,
+          "both_uncensored_horizon_difference_rate": 0.9918032786885246,
+          "both_uncensored_mean_discarded_valid_positions": 20.66393442622951,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -2370,6 +2433,9 @@
           "n_rows": 379
         },
         "pick up the butter and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.4604016624119155,
+          "both_uncensored_horizon_difference_rate": 0.9740932642487047,
+          "both_uncensored_mean_discarded_valid_positions": 27.40414507772021,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -2563,6 +2629,9 @@
           "n_rows": 389
         },
         "pick up the chocolate pudding and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.39627492552830035,
+          "both_uncensored_horizon_difference_rate": 0.9745222929936306,
+          "both_uncensored_mean_discarded_valid_positions": 24.21656050955414,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -2756,6 +2825,9 @@
           "n_rows": 427
         },
         "pick up the cream cheese and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.46390095577200235,
+          "both_uncensored_horizon_difference_rate": 0.9333333333333333,
+          "both_uncensored_mean_discarded_valid_positions": 24.438095238095237,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -2949,6 +3021,9 @@
           "n_rows": 365
         },
         "pick up the ketchup and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.35003416419679856,
+          "both_uncensored_horizon_difference_rate": 0.9227272727272727,
+          "both_uncensored_mean_discarded_valid_positions": 19.322727272727274,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -3142,6 +3217,9 @@
           "n_rows": 375
         },
         "pick up the milk and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.43293778617958484,
+          "both_uncensored_horizon_difference_rate": 0.9876543209876543,
+          "both_uncensored_mean_discarded_valid_positions": 27.419753086419753,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -3335,6 +3413,9 @@
           "n_rows": 361
         },
         "pick up the orange juice and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.4510870578433572,
+          "both_uncensored_horizon_difference_rate": 0.9864864864864865,
+          "both_uncensored_mean_discarded_valid_positions": 22.873873873873872,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -3528,6 +3609,9 @@
           "n_rows": 362
         },
         "pick up the salad dressing and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.3326608536604871,
+          "both_uncensored_horizon_difference_rate": 0.9337016574585635,
+          "both_uncensored_mean_discarded_valid_positions": 21.022099447513813,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -3721,6 +3805,9 @@
           "n_rows": 361
         },
         "pick up the tomato sauce and place it in the basket": {
+          "both_uncensored_discarded_commitment_fraction": 0.43439317041828585,
+          "both_uncensored_horizon_difference_rate": 0.8688524590163934,
+          "both_uncensored_mean_discarded_valid_positions": 21.008196721311474,
           "heterogeneity": {
             "all_rows_lower_bound_comparison": {
               "h_arm_minus_h_gripper": {
@@ -3914,6 +4001,53 @@
           "n_rows": 345
         }
       }
+    },
+    "threshold_sensitivity": {
+      "base_thresholds": {
+        "arm_rotation_normalized_rms": 1.0,
+        "arm_translation_normalized_rms": 1.0,
+        "gripper_normalized_absolute_error": 1.0,
+        "gripper_sign_agreement": "unchanged"
+      },
+      "predeclared_multipliers": [
+        0.75,
+        1.0,
+        1.25
+      ],
+      "results": {
+        "0.75": {
+          "arm_censoring_rate": 0.18235294117647058,
+          "both_uncensored_fraction": 0.8125668449197861,
+          "both_uncensored_windows": 3039,
+          "discarded_commitment_fraction": 0.37410644712788865,
+          "gripper_censoring_rate": 0.05320855614973262,
+          "mean_discarded_valid_positions": 16.162882527147087,
+          "p_h_arm_not_equal_h_gripper": 0.9522869364922671,
+          "threshold_multiplier": 0.75
+        },
+        "1.0": {
+          "arm_censoring_rate": 0.4839572192513369,
+          "both_uncensored_fraction": 0.5128342245989305,
+          "both_uncensored_windows": 1918,
+          "discarded_commitment_fraction": 0.4092679925656518,
+          "gripper_censoring_rate": 0.058823529411764705,
+          "mean_discarded_valid_positions": 23.063607924921794,
+          "p_h_arm_not_equal_h_gripper": 0.9588112617309698,
+          "threshold_multiplier": 1.0
+        },
+        "1.25": {
+          "arm_censoring_rate": 0.7871657754010695,
+          "both_uncensored_fraction": 0.21229946524064172,
+          "both_uncensored_windows": 794,
+          "discarded_commitment_fraction": 0.4652382699129431,
+          "gripper_censoring_rate": 0.058823529411764705,
+          "mean_discarded_valid_positions": 28.580604534005037,
+          "p_h_arm_not_equal_h_gripper": 0.9546599496221663,
+          "threshold_multiplier": 1.25
+        }
+      },
+      "uses_new_frozen_policy_inference": false,
+      "uses_rollout_success": false
     }
   },
   "pace": {

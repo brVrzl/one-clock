@@ -31,6 +31,11 @@ MIN_VALLEY_SEPARATION = 10
 PACE_PERCENTILE = 5.0
 CALIBRATION_FRACTION = 0.8
 CALIBRATION_SEED = 20260820
+BOOTSTRAP_DRAWS = 2000
+BOOTSTRAP_SEED = 20260820
+# Predeclared before inspecting sensitivity outputs.  These are multipliers
+# on the existing normalized error tolerances; sign agreement is unchanged.
+REFRESH_THRESHOLD_MULTIPLIERS = (0.75, 1.0, 1.25)
 
 
 def parse_args() -> argparse.Namespace:
@@ -90,6 +95,8 @@ def validate(data: Any, metadata: list[dict[str, Any]]) -> None:
         raise RuntimeError("unexpected observed_offsets shape")
     if data["old_predicted_actions"].shape != (n, CHUNK_SIZE, 7):
         raise RuntimeError("unexpected old_predicted_actions shape")
+    if data["refresh_first_actions"].shape != (n, CHUNK_SIZE, 7):
+        raise RuntimeError("unexpected refresh_first_actions shape")
     episodes = data["episode_index"].astype(np.int64)
     frames = data["frame_index"].astype(np.int64)
     expected_episodes = np.asarray([int(row["episode_index"]) for row in metadata], dtype=np.int64)
@@ -157,6 +164,46 @@ def derive_oracle_horizon(survival: np.ndarray, observed: np.ndarray) -> tuple[n
     horizon = np.maximum(horizon, 1)
     censored = (available <= 1) | (horizon == available)
     return horizon, censored
+
+
+def refresh_validity_from_cached_actions(
+    old_actions: np.ndarray,
+    refreshed_actions: np.ndarray,
+    observed: np.ndarray,
+    action_std: np.ndarray,
+    threshold_multiplier: float,
+) -> dict[str, np.ndarray]:
+    """Recompute Y_refresh from cached actions, without policy inference.
+
+    This intentionally mirrors ``construct_dataset.py`` and
+    ``compare_targets.py``.  The multiplier is applied to the three existing
+    normalized-error tolerances only; the gripper sign criterion is fixed.
+    """
+
+    difference = old_actions.astype(np.float32) - refreshed_actions.astype(np.float32)
+    with np.errstate(invalid="ignore", divide="ignore"):
+        translation = np.sqrt(np.mean((difference[:, :, :3] / action_std[:3]) ** 2, axis=2))
+        rotation = np.sqrt(np.mean((difference[:, :, 3:6] / action_std[3:6]) ** 2, axis=2))
+        gripper = np.abs(difference[:, :, 6]) / float(action_std[6])
+    target_sign = np.where(refreshed_actions[:, :, 6] >= 0.0, 1, -1)
+    predicted_sign = np.where(old_actions[:, :, 6] >= 0.0, 1, -1)
+    sign_match = predicted_sign == target_sign
+    arm_pointwise = (
+        (translation <= threshold_multiplier)
+        & (rotation <= threshold_multiplier)
+        & observed
+    )
+    gripper_pointwise = (
+        (gripper <= threshold_multiplier)
+        & sign_match
+        & observed
+    )
+    return {
+        "arm_pointwise": arm_pointwise,
+        "gripper_pointwise": gripper_pointwise,
+        "arm_survival": np.logical_and.accumulate(arm_pointwise, axis=1) & observed,
+        "gripper_survival": np.logical_and.accumulate(gripper_pointwise, axis=1) & observed,
+    }
 
 
 def grouped_rows(metadata: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
@@ -269,6 +316,131 @@ def heterogeneity(horizons: dict[str, np.ndarray], censoring: dict[str, np.ndarr
     }
 
 
+def bootstrap_heterogeneity_intervals(
+    horizons: dict[str, np.ndarray],
+    censoring: dict[str, np.ndarray],
+    episodes: np.ndarray,
+) -> dict[str, Any]:
+    """Episode-cluster bootstrap for the uncensored heterogeneity estimands."""
+
+    unique_episodes = np.asarray(sorted(set(int(value) for value in episodes.tolist())), dtype=np.int32)
+    rows_by_episode = {
+        int(episode): np.flatnonzero(episodes == episode)
+        for episode in unique_episodes.tolist()
+    }
+    rng = np.random.default_rng(BOOTSTRAP_SEED)
+    draws: list[tuple[float, float, float]] = []
+    for _ in range(BOOTSTRAP_DRAWS):
+        sampled_episodes = rng.choice(unique_episodes, size=len(unique_episodes), replace=True)
+        row_indices = np.concatenate([rows_by_episode[int(episode)] for episode in sampled_episodes])
+        arm = horizons["arm"][row_indices]
+        gripper = horizons["gripper"][row_indices]
+        both_uncensored = ~censoring["arm"][row_indices] & ~censoring["gripper"][row_indices]
+        if not np.any(both_uncensored):
+            continue
+        arm = arm[both_uncensored].astype(np.float64)
+        gripper = gripper[both_uncensored].astype(np.float64)
+        minimum = np.minimum(arm, gripper)
+        wasted = (arm - minimum) + (gripper - minimum)
+        total = arm + gripper
+        discarded_fraction = np.divide(
+            wasted,
+            total,
+            out=np.zeros_like(wasted, dtype=float),
+            where=total > 0,
+        )
+        draws.append(
+            (
+                float(np.mean(arm != gripper)),
+                float(np.mean(wasted)),
+                float(np.mean(discarded_fraction)),
+            )
+        )
+    if not draws:
+        raise RuntimeError("episode bootstrap produced no valid both-uncensored draws")
+    values = np.asarray(draws, dtype=float)
+    point = heterogeneity(horizons, censoring)
+    exact = point["both_uncensored_exact_comparison"]
+    point_values = np.asarray(
+        [
+            exact["p_different"],
+            point["wasted_commitment_actions_both_uncensored"]["mean"],
+            point["wasted_commitment_fraction_both_uncensored"]["mean"],
+        ],
+        dtype=float,
+    )
+    intervals = np.percentile(values, [2.5, 97.5], axis=0)
+    names = (
+        "p_h_arm_not_equal_h_gripper",
+        "mean_discarded_valid_positions",
+        "discarded_commitment_fraction",
+    )
+    return {
+        "unit": "episode",
+        "seed": BOOTSTRAP_SEED,
+        "replicates": int(len(values)),
+        "estimand_population": "rows uncensored for both groups",
+        "metrics": {
+            name: {
+                "point_estimate": float(point_values[index]),
+                "ci95_low": float(intervals[0, index]),
+                "ci95_high": float(intervals[1, index]),
+            }
+            for index, name in enumerate(names)
+        },
+    }
+
+
+def threshold_sensitivity_analysis(
+    old_actions: np.ndarray,
+    refreshed_actions: np.ndarray,
+    observed: np.ndarray,
+    action_std: np.ndarray,
+    episodes: np.ndarray,
+) -> dict[str, Any]:
+    """Offline tolerance sensitivity using only cached action arrays."""
+
+    result: dict[str, Any] = {
+        "predeclared_multipliers": list(REFRESH_THRESHOLD_MULTIPLIERS),
+        "base_thresholds": {
+            "arm_translation_normalized_rms": 1.0,
+            "arm_rotation_normalized_rms": 1.0,
+            "gripper_normalized_absolute_error": 1.0,
+            "gripper_sign_agreement": "unchanged",
+        },
+        "uses_new_frozen_policy_inference": False,
+        "uses_rollout_success": False,
+        "results": {},
+    }
+    for multiplier in REFRESH_THRESHOLD_MULTIPLIERS:
+        targets = refresh_validity_from_cached_actions(
+            old_actions,
+            refreshed_actions,
+            observed,
+            action_std,
+            multiplier,
+        )
+        horizons: dict[str, np.ndarray] = {}
+        censoring: dict[str, np.ndarray] = {}
+        for group in GROUPS:
+            horizons[group], censoring[group] = derive_oracle_horizon(
+                targets[f"{group}_survival"], observed
+            )
+        het = heterogeneity(horizons, censoring)
+        both = het["both_uncensored_exact_comparison"]
+        result["results"][str(multiplier)] = {
+            "threshold_multiplier": multiplier,
+            "both_uncensored_windows": int(both["n"]),
+            "both_uncensored_fraction": float(both["n"] / len(episodes)),
+            "p_h_arm_not_equal_h_gripper": both["p_different"],
+            "mean_discarded_valid_positions": het["wasted_commitment_actions_both_uncensored"]["mean"],
+            "discarded_commitment_fraction": het["wasted_commitment_fraction_both_uncensored"]["mean"],
+            "arm_censoring_rate": float(np.mean(censoring["arm"])),
+            "gripper_censoring_rate": float(np.mean(censoring["gripper"])),
+        }
+    return result
+
+
 def task_phase_analysis(
     horizons: dict[str, np.ndarray],
     censoring: dict[str, np.ndarray],
@@ -280,6 +452,10 @@ def task_phase_analysis(
         result[name] = {}
         for condition in sorted(set(values.tolist())):
             selected = values == condition
+            local_heterogeneity = heterogeneity(
+                {group: horizons[group][selected] for group in GROUPS},
+                {group: censoring[group][selected] for group in GROUPS},
+            )
             result[name][str(condition)] = {
                 "n_rows": int(np.sum(selected)),
                 "horizons": {
@@ -290,10 +466,16 @@ def task_phase_analysis(
                     }
                     for group in GROUPS
                 },
-                "heterogeneity": heterogeneity(
-                    {group: horizons[group][selected] for group in GROUPS},
-                    {group: censoring[group][selected] for group in GROUPS},
-                ),
+                "heterogeneity": local_heterogeneity,
+                "both_uncensored_horizon_difference_rate": local_heterogeneity[
+                    "both_uncensored_exact_comparison"
+                ]["p_different"],
+                "both_uncensored_mean_discarded_valid_positions": local_heterogeneity[
+                    "wasted_commitment_actions_both_uncensored"
+                ]["mean"],
+                "both_uncensored_discarded_commitment_fraction": local_heterogeneity[
+                    "wasted_commitment_fraction_both_uncensored"
+                ]["mean"],
             }
     return result
 
@@ -588,8 +770,9 @@ def render_oracle_report(metrics: dict[str, Any], figures: list[str]) -> str:
         "convention; positive evidence begins at `k=1`. Rows valid through the "
         "last observed action are right-censored.",
         "",
-        f"Rows: {metrics['oracle']['coverage']['rows']}; episodes: {metrics['oracle']['coverage']['episodes']}; "
-        f"positive-offset uncensored comparison rows: {het['both_uncensored_exact_comparison']['n']}.",
+        f"Total windows: {metrics['oracle']['coverage']['rows']}; episodes: {metrics['oracle']['coverage']['episodes']}; "
+        f"both-uncensored windows: {metrics['oracle']['coverage']['both_uncensored_windows']} "
+        f"({metrics['oracle']['coverage']['both_uncensored_fraction']:.3f}).",
         "",
         "## Group distributions",
         "",
@@ -630,6 +813,24 @@ def render_oracle_report(metrics: dict[str, Any], figures: list[str]) -> str:
         f"{waste_fraction['mean']:.3f} of the two groups' observed oracle commitment. "
         "This is commitment discarded by the global clock, not a success gain.",
         "",
+        "### Episode-bootstrap uncertainty",
+        "",
+        "The following 95% intervals resample whole episodes (2,000 draws; seed "
+        f"{metrics['oracle']['heterogeneity_bootstrap']['seed']}) and use only "
+        "windows uncensored for both groups:",
+        "",
+        "| estimand | point estimate | episode-bootstrap 95% CI |",
+        "|---|---:|---:|",
+    ]
+    bootstrap = metrics["oracle"]["heterogeneity_bootstrap"]["metrics"]
+    lines += [
+        f"| P(h*_arm != h*_gripper) | {bootstrap['p_h_arm_not_equal_h_gripper']['point_estimate']:.3f} | "
+        f"[{bootstrap['p_h_arm_not_equal_h_gripper']['ci95_low']:.3f}, {bootstrap['p_h_arm_not_equal_h_gripper']['ci95_high']:.3f}] |",
+        f"| mean discarded valid positions | {bootstrap['mean_discarded_valid_positions']['point_estimate']:.2f} | "
+        f"[{bootstrap['mean_discarded_valid_positions']['ci95_low']:.2f}, {bootstrap['mean_discarded_valid_positions']['ci95_high']:.2f}] |",
+        f"| discarded commitment fraction | {bootstrap['discarded_commitment_fraction']['point_estimate']:.3f} | "
+        f"[{bootstrap['discarded_commitment_fraction']['ci95_low']:.3f}, {bootstrap['discarded_commitment_fraction']['ci95_high']:.3f}] |",
+        "",
         "## Offset prevalence",
         "",
         "The complete per-offset pointwise and prefix-survival arrays are in "
@@ -645,6 +846,27 @@ def render_oracle_report(metrics: dict[str, Any], figures: list[str]) -> str:
         lines.append(f"| {k} | {arm['survival']:.3f} | {grip['survival']:.3f} | {arm['n_observed']} |")
     lines += [
         "",
+        "## Fixed threshold sensitivity",
+        "",
+        "This predeclared audit rescored the cached old/refreshed action pairs "
+        "at tolerance multipliers 0.75, 1.0, and 1.25. It performed no new "
+        "frozen-policy inference, did not use rollout success, and did not tune "
+        "the threshold toward a desired result. `k=0` remains excluded from "
+        "horizon evidence.",
+        "",
+        "| tolerance multiplier | both-uncensored fraction | P(different horizons) | mean discarded positions | discarded fraction | arm censoring | gripper censoring |",
+        "|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for multiplier, item in metrics["oracle"]["threshold_sensitivity"]["results"].items():
+        lines.append(
+            f"| {multiplier} | {item['both_uncensored_fraction']:.3f} | "
+            f"{item['p_h_arm_not_equal_h_gripper']:.3f} | "
+            f"{item['mean_discarded_valid_positions']:.2f} | "
+            f"{item['discarded_commitment_fraction']:.3f} | "
+            f"{item['arm_censoring_rate']:.3f} | {item['gripper_censoring_rate']:.3f} |"
+        )
+    lines += [
+        "",
         "## Task and offline phase variation",
         "",
         "Task and normalized-episode-phase summaries are retrospective analyses. "
@@ -653,14 +875,16 @@ def render_oracle_report(metrics: dict[str, Any], figures: list[str]) -> str:
         "",
         "### Task-conditioned lower-bound distributions",
         "",
-        "| task | rows | arm mean | gripper mean | arm censoring | gripper censoring |",
-        "|---|---:|---:|---:|---:|---:|",
+        "| task | rows | difference rate | discarded positions | discarded fraction | arm mean | gripper mean |",
+        "|---|---:|---:|---:|---:|---:|---:|",
     ]
     for task, item in metrics["oracle"]["task_phase"]["task"].items():
         lines.append(
-            f"| {task} | {item['n_rows']} | {item['horizons']['arm']['all_rows_lower_bound']['mean']:.2f} | "
-            f"{item['horizons']['gripper']['all_rows_lower_bound']['mean']:.2f} | "
-            f"{item['horizons']['arm']['censoring_rate']:.3f} | {item['horizons']['gripper']['censoring_rate']:.3f} |"
+            f"| {task} | {item['n_rows']} | {item['both_uncensored_horizon_difference_rate']:.3f} | "
+            f"{item['both_uncensored_mean_discarded_valid_positions']:.2f} | "
+            f"{item['both_uncensored_discarded_commitment_fraction']:.3f} | "
+            f"{item['horizons']['arm']['all_rows_lower_bound']['mean']:.2f} | "
+            f"{item['horizons']['gripper']['all_rows_lower_bound']['mean']:.2f} |"
         )
     lines += [
         "",
@@ -829,6 +1053,12 @@ def main() -> None:
             "episodes": int(len(set(episodes.tolist()))),
             "observed_pairs": int(np.sum(observed)),
             "positive_offset_pairs": int(np.sum(observed[:, 1:])),
+            "both_uncensored_windows": int(
+                np.sum(~oracle_censoring["arm"] & ~oracle_censoring["gripper"])
+            ),
+            "both_uncensored_fraction": float(
+                np.mean(~oracle_censoring["arm"] & ~oracle_censoring["gripper"])
+            ),
         },
         "horizon_convention": {
             "definition": "h* = max action count h such that Y_refresh(h-1) remains true",
@@ -848,12 +1078,16 @@ def main() -> None:
         },
         "refresh_prevalence": horizon_prevalence(data, observed, np.ones(len(metadata), dtype=bool)),
         "heterogeneity": heterogeneity(oracle_horizons, oracle_censoring),
+        "heterogeneity_bootstrap": bootstrap_heterogeneity_intervals(
+            oracle_horizons, oracle_censoring, episodes
+        ),
         "task_phase": task_phase_analysis(oracle_horizons, oracle_censoring, tasks, phases),
     }
     oracle_metrics["overall"] = {
         "horizon_distributions": oracle_metrics["horizon_distributions"],
         "refresh_prevalence": oracle_metrics["refresh_prevalence"],
         "heterogeneity": oracle_metrics["heterogeneity"],
+        "heterogeneity_bootstrap": oracle_metrics["heterogeneity_bootstrap"],
     }
     oracle_figures = plot_oracle(
         figure_dir,
@@ -866,6 +1100,14 @@ def main() -> None:
     )
 
     actions = data["old_predicted_actions"].astype(np.float32)
+    refreshed_actions = data["refresh_first_actions"].astype(np.float32)
+    oracle_metrics["threshold_sensitivity"] = threshold_sensitivity_analysis(
+        actions,
+        refreshed_actions,
+        observed,
+        action_std,
+        episodes,
+    )
     raw_profiles = signal_profiles(actions, action_std)
     smoothed = {group: moving_average(raw_profiles[group], SMOOTHING_WINDOW) for group in GROUPS}
     valley_indices: dict[str, np.ndarray] = {}
