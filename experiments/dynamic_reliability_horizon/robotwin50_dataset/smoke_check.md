@@ -29,5 +29,5 @@ there was no policy forward, no smoke success claim, and no `z_t` result.
 Resume after an explicitly compatible checkpoint is available:
 
 ```bash
-tmux new-session -d -s oneclock_robotwin50 'experiments/dynamic_reliability_horizon/robotwin50_dataset/run_overnight.sh'
+tmux new-session -d -s oneclock_robotwin50 '/home/wjq/workspace/one-clock/experiments/dynamic_reliability_horizon/robotwin50_dataset/run_overnight.sh'
 ```
