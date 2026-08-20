@@ -1,0 +1,192 @@
+{
+  "purpose": "Offline oracle reliability target; not a ground-truth horizon and not a task-success label.",
+  "dataset": {
+    "repo_id": "DorayakiLin/libero_object_25_08_23_lerobotv2.1",
+    "root": "/home/thor/datasets/libero_object_25_08_23_lerobotv2.1",
+    "revision": "cbf7122bbdbaa0c50517a6a4b2ae663d0e96e51a",
+    "total_episodes": 454,
+    "total_frames": 66984,
+    "total_tasks": 10
+  },
+  "checkpoint": {
+    "root": "/home/thor/projects/checkpoints/zeromidnight_act_libero_object",
+    "chunk_size": 100,
+    "action_std": [
+      0.2681190073490143,
+      0.4384443759918213,
+      0.4475117325782776,
+      0.024448219686746597,
+      0.04936208948493004,
+      0.042103495448827744,
+      0.9974462985992432
+    ],
+    "frozen": true,
+    "temporal_ensemble_coeff": null
+  },
+  "sampling": {
+    "all_episodes": true,
+    "fixed_interval_frames": 25,
+    "additional_starts": "ceil(L/3), ceil(2L/3)",
+    "right_censoring": "offsets after episode end are masked, never labelled invalid"
+  },
+  "groups": {
+    "arm": {
+      "dimensions": "action[0:6]",
+      "pointwise_validity": "translation normalized RMS <= 1.0 AND rotation normalized RMS <= 1.0"
+    },
+    "gripper": {
+      "dimensions": "action[6]",
+      "pointwise_validity": "normalized absolute error <= 1.0 AND sign(prediction) == sign(demonstration)"
+    }
+  },
+  "survival_target": "Y_g(t,k) = product_{j=0..k} V_g(t,j), evaluated only where observed_offsets[t,k] is true.",
+  "arrays": {
+    "predicted_actions": {
+      "shape": [
+        3740,
+        100,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "observed_offsets": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    },
+    "episode_index": {
+      "shape": [
+        3740
+      ],
+      "dtype": "int32"
+    },
+    "task_index": {
+      "shape": [
+        3740
+      ],
+      "dtype": "int16"
+    },
+    "frame_index": {
+      "shape": [
+        3740
+      ],
+      "dtype": "int16"
+    },
+    "episode_length": {
+      "shape": [
+        3740
+      ],
+      "dtype": "int16"
+    },
+    "progress": {
+      "shape": [
+        3740
+      ],
+      "dtype": "float32"
+    },
+    "phase_code": {
+      "shape": [
+        3740
+      ],
+      "dtype": "int8"
+    },
+    "arm_translation_error": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "float32"
+    },
+    "arm_rotation_error": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "float32"
+    },
+    "gripper_normalized_absolute_error": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "float32"
+    },
+    "gripper_sign_match": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    },
+    "arm_pointwise_valid": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    },
+    "gripper_pointwise_valid": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    },
+    "arm_survival_valid": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    },
+    "gripper_survival_valid": {
+      "shape": [
+        3740,
+        100
+      ],
+      "dtype": "bool"
+    }
+  },
+  "coverage": {
+    "episodes_analyzed": 454,
+    "observation_points_analyzed": 3740,
+    "predicted_action_steps": 374000,
+    "observed_target_pairs": 259279,
+    "task_distribution_points": {
+      "pick up the alphabet soup and place it in the basket": 376,
+      "pick up the bbq sauce and place it in the basket": 379,
+      "pick up the butter and place it in the basket": 389,
+      "pick up the chocolate pudding and place it in the basket": 427,
+      "pick up the cream cheese and place it in the basket": 365,
+      "pick up the ketchup and place it in the basket": 375,
+      "pick up the milk and place it in the basket": 361,
+      "pick up the orange juice and place it in the basket": 362,
+      "pick up the salad dressing and place it in the basket": 361,
+      "pick up the tomato sauce and place it in the basket": 345
+    },
+    "task_distribution_episodes": {
+      "pick up the alphabet soup and place it in the basket": 44,
+      "pick up the bbq sauce and place it in the basket": 46,
+      "pick up the butter and place it in the basket": 45,
+      "pick up the chocolate pudding and place it in the basket": 50,
+      "pick up the cream cheese and place it in the basket": 45,
+      "pick up the ketchup and place it in the basket": 45,
+      "pick up the milk and place it in the basket": 45,
+      "pick up the orange juice and place it in the basket": 45,
+      "pick up the salad dressing and place it in the basket": 47,
+      "pick up the tomato sauce and place it in the basket": 42
+    },
+    "episode_points_min": 6,
+    "episode_points_max": 13,
+    "episode_points_mean": 8.237885462555067
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true,
+    "device_requested": "cuda"
+  }
+}
