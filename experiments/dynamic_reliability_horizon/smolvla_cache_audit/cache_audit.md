@@ -99,18 +99,35 @@ versus a compact projection before choosing the production estimator input.
 
 ## Scaling estimate
 
-The dataset metadata reports 273,465 frames for the complete 40-task LIBERO
-conversion. A four-suite run should be planned from the actual suite frame
-counts after downloading metadata, with one policy forward per unique frame
-and storage approximately equal to:
+The dataset metadata reports 1,693 episodes and 273,465 frames for the
+complete 40-task LIBERO conversion. Treating the four requested suites as
+that complete conversion, a full chunk cache has the following exact binary
+field sizes before small metadata overhead:
+
+- `A_t`: `273465 * 50 * 7 * 4 = 382,851,000` bytes (365.1 MiB).
+- With `K=49`, valid source windows are
+  `273465 - 1693 * 49 = 190,508`. The current label schema’s uint8 `Y_refresh`
+  and censor mask plus int64 future lookup require
+  `190508 * (2*49 + 2*49 + 2*49*8) = 186,697,840` bytes (178.0 MiB).
+- Thus the action-plus-label lower bound is `569,548,840` bytes (543.2 MiB),
+  excluding source-frame metadata and the checkpoint.
+
+If the candidate prefix vector is retained at `D` float32 values per frame,
+add `273465 * D * 4` bytes. For example, `D=960` would add 1,050,105,600
+bytes and bring the action-plus-label-plus-latent estimate to 1,619,654,440
+bytes (1.51 GiB). The hook must confirm the actual tensor shape before using
+that optional number operationally. One frozen-policy inference is still
+required per unique frame.
+
+The general storage formula is:
 
 ```text
 N_frames * (50 * 7 * sizeof(float32) + sizeof(z_t) + metadata)
 ```
 
-At the action-chunk field alone this is about 383 MB for 273,465 frames. The
-latent field and label-side lookup/targets are additional. This is a planning
-estimate, not a completed four-suite extraction.
+The dataset videos/parquet files and the roughly 1.2 GB pinned checkpoint are
+additional input storage; the figures above are generated cache fields only.
+This is a planning estimate, not a completed four-suite extraction.
 
 ## References
 
