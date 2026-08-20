@@ -1,0 +1,25 @@
+{
+  "status": "blocked_before_scientific_training",
+  "reason": "Thor portable Y_refresh training bundle is absent from this machine",
+  "required_artifact": "experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz",
+  "required_artifact_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
+  "required_handoff_commit_prefixes": [
+    "191b65e2 target construction",
+    "fc86c2f3 oracle analysis",
+    "f4a2cc3 final handoff lineage"
+  ],
+  "expected_bundle_contract": {
+    "windows": 3740,
+    "source_predicted_chunks": [3740, 100, 7],
+    "offsets": "1..99",
+    "k0_in_training_labels": false,
+    "episode_level_split": true
+  },
+  "metrics": null,
+  "per_group_metrics_csv": null,
+  "per_offset_metrics_csv": null,
+  "horizon_metrics_csv": null,
+  "plots": [],
+  "scientific_run": false,
+  "rollout_run": false
+}
