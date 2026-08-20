@@ -35,6 +35,13 @@ normalizer is a shape/semantic contract mismatch. The cache builder refuses to
 truncate, reorder, or invent a six-dimensional state. The model weights were
 not downloaded and no invalid cache was generated.
 
+The public SmolVLA config declares only `action.shape=[14]`; it does not declare
+the semantic action names. The cache builder therefore additionally requires a
+checkpoint-local `action_schema.json` whose ordering exactly matches the
+verified dataset ordering before it will accept any future compatible
+checkpoint. The current public candidate has no such resolved policy-side
+ordering, so no policy-group equivalence is claimed.
+
 This is a structural integration failure, not a low smoke success result.
 
 ## Fallback audit

@@ -13,6 +13,10 @@ normalization mapping, group-schema path, and the rule that future outputs are
 label-side only. `checkpoint_contract.json` records the locally audited model
 and camera contract.
 
+Before inference, the checkpoint must also provide `action_schema.json` with an
+`action_names` (or `ordering`) list equal to the dataset's verified motor
+ordering. A matching width alone is not sufficient to define the four clocks.
+
 - `episode_index`: `int64 [N]` repeated episode identifier.
 - `frame_index`: `int64 [N]`, dataset frame indices in episode order.
 - `task_index`: `int64 [N]`.
