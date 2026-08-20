@@ -1,0 +1,16 @@
+{
+  "blocker": "ImportError: Package `num2words` is required to run SmolVLM processor. Install it with `pip install num2words`.",
+  "compatibility_status": "blocked",
+  "dataset_revision": "a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4",
+  "dataset_root": "/home/thor/datasets/lerobot_libero_a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4",
+  "dataset_root_bytes": null,
+  "downloader_return_code": 0,
+  "handoff": "/home/thor/projects/one-clock/experiments/dynamic_reliability_horizon/libero4_dataset/handoff_to_5080.md",
+  "output": "/home/thor/projects/one-clock/experiments/dynamic_reliability_horizon/libero4_dataset/smolvla_compatibility.json",
+  "policy_cache_status": "not_started",
+  "return_code": 2,
+  "status": "ready",
+  "step": "handoff",
+  "updated_unix": 1787236608,
+  "worker_pid": 920008
+}

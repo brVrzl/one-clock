@@ -1,0 +1,10 @@
+# Generated large/reproducible artifacts stay in the recorded external paths.
+frame_index.parquet
+source_window_index.npz
+overnight.log
+overnight.lock
+__pycache__/
+*.pyc
+*.tmp
+*.part
+*.partial
