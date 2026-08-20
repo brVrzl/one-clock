@@ -1,0 +1,46 @@
+[
+  {
+    "name": "phase_oracle_global_combined",
+    "kind": "phase_oracle_combined",
+    "strategy": "global",
+    "target_phase": null,
+    "arm_horizon": null,
+    "gripper_horizon": null,
+    "phase_map": {
+      "early": {
+        "arm": 4,
+        "gripper": 4
+      },
+      "middle": {
+        "arm": 16,
+        "gripper": 16
+      },
+      "late": {
+        "arm": 8,
+        "gripper": 8
+      }
+    }
+  },
+  {
+    "name": "phase_oracle_group_combined",
+    "kind": "phase_oracle_combined",
+    "strategy": "group",
+    "target_phase": null,
+    "arm_horizon": null,
+    "gripper_horizon": null,
+    "phase_map": {
+      "early": {
+        "arm": 4,
+        "gripper": 16
+      },
+      "middle": {
+        "arm": 16,
+        "gripper": 16
+      },
+      "late": {
+        "arm": 16,
+        "gripper": 8
+      }
+    }
+  }
+]
