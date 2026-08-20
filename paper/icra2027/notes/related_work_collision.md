@@ -1,6 +1,6 @@
 # Related-work and terminology collision audit
 
-Audit date: 2026-08-19. All entries below were checked against the primary paper
+Audit date: 2026-08-20. All entries below were checked against the primary paper
 PDF or official proceedings page, not a search-engine summary. Section and
 equation references refer to the cited version. For 2026 manuscripts, venue
 status is not inferred beyond what the primary source states.
@@ -48,6 +48,19 @@ primary literature.
 | DREAM-Chunk — Chen et al., *DREAM-Chunk: Reactive Action Chunking with Latent World Model*, arXiv:2606.18589 | Samples candidate full chunks and uses predicted latent futures versus observed rollout to select behavior. | Full action chunks; auxiliary learned latent world model/test-time scaling. | Improves reactivity under stochasticity without per-group execution schedules. |
 | FutureRTC — Jiang et al., *FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking*, arXiv:2607.24008 | Predicts execution-time observations/states for asynchronous policy calls and aligns the resulting chunk. | Full-vector asynchronous chunk transitions; learned prediction modules. | Latency/misalignment collision, not horizon granularity. |
 | TempoWAM — Ye et al., *Rethink Before You Execute: Adaptive Execution for World Action Models*, arXiv:2608.09492 | A progress monitor judges whether the current world-action-model chunk is advancing the task and triggers replanning. | One full-chunk keep/replan decision; learned monitor with online calibration. | Very recent dynamic scalar execution work; no independent physical-group decisions reported. |
+
+## Adjacent concepts for the proposed estimator
+
+| Concept / primary citation | Decision or signal | Granularity | Relationship |
+|---|---|---|---|
+| Adaptive Computation Time — Graves, *Adaptive Computation Time for Recurrent Neural Networks*, arXiv:1603.08983 | Learns how many recurrent updates to spend before emitting an output. | Variable internal computation, not robot action groups | Conceptual analogy for input-dependent commitment; it is not an execution-horizon or uncertainty estimator for chunked control. |
+| Event-triggered scheduling — Tabuada, *Event-Triggered Real-Time Scheduling of Stabilizing Control Tasks*, IEEE TAC 2007 | Replaces periodic control-task updates with a state-dependent trigger while retaining feedback semantics. | Trigger for a control task | Provides control-theoretic context for event-triggered replanning; it does not supply group-wise prediction reliability. |
+
+The proposed $R_g(k)$ target is intentionally narrower than these adjacent ideas:
+it is a group-wise validity probability for a predicted action subsequence.  Its
+candidate labels (future-action consistency, fresh-query disagreement, or
+calibrated predictive uncertainty) remain future design choices and are not
+reported as implemented methods.
 
 ## Novelty consequence
 

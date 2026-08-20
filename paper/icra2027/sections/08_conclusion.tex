@@ -6,6 +6,8 @@ of a chunked robot action.  Fixed arm/gripper experiments with a frozen ACT
 policy show that relaxing this constraint changes success systematically,
 including under matched policy-query rates and across multiple LIBERO Object
 tasks.  The present result is a static empirical characterization, not a dynamic
-method.  It identifies group-specific horizon assignment---and the consistency
-cost of mixed source chunks---as concrete questions for future adaptive
-execution.
+method.  Offline audits additionally show that prediction-error structure differs
+across groups and changes with episode phase, which motivates replacing $h_g$ by
+a reliability-conditioned $h_g(t)$.  We formulate that estimator as proposed
+future work, while leaving training, calibration, and closed-loop dynamic
+validation to the next stage.

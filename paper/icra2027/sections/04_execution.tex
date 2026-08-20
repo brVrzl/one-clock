@@ -47,9 +47,11 @@ guarantee cross-group temporal consistency.
 \begin{figure*}[t]
     \centering
     \includegraphics[width=0.96\textwidth]{execution_timeline.pdf}
-    \caption{Fixed execution schedules.  Colors and labels denote the policy-query
-    generation supplying each group.  Global execution replaces all components
-    together.  With $(h_a,h_g)=(4,16)$, arm refreshes trigger full policy queries,
-    but the non-expired gripper retains its earlier sequence until step 16.}
+    \caption{Verified fixed execution schedules.  Colors and labels denote the
+    policy-query generation supplying each group.  Global execution replaces all
+    components together.  With $(h_a,h_g)=(4,16)$, arm refreshes trigger full
+    policy queries, but the non-expired gripper retains its earlier sequence until
+    step 16.  Reliability-driven adaptive clocks are proposed in Sec.~\ref{sec:method}
+    and are not depicted or evaluated here.}
     \label{fig:timeline}
 \end{figure*}

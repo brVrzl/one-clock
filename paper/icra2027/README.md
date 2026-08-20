@@ -3,7 +3,7 @@
 Provisional title: **One Clock Does Not Fit All: Group-Specific Execution
 Horizons for Action-Chunking Robot Policies**.
 
-## Submission format audit (2026-08-19)
+## Submission format audit (2026-08-20)
 
 The current official [ICRA 2027 call for papers](https://2027.ieee-icra.org/contribute/call-for-icra-2027-papers-now-accepting-submissions/)
 specifies:
@@ -59,6 +59,7 @@ pdflatex main.tex
 
 The host environment has no `pdflatex`, `bibtex`, or `latexmk`, but an existing
 local `embodied-latex:texlive2023` Docker image was used without installing a TeX
-distribution. The complete draft compiles to five US-letter, double-column
+distribution. The complete draft compiles to seven US-letter, double-column
 pages, including acknowledgments and references. The final build has no
-unresolved citations, undefined labels, BibTeX errors, or overfull boxes.
+unresolved citations, undefined labels, BibTeX errors, or overfull boxes; it
+emits one benign underfull vertical-box warning.

@@ -70,3 +70,23 @@ Cross-task (1--9) & 20/task & 12 unique/task + 1 task-1 validation duplicate & 2
 \end{tabular}
 }%
 \end{table}
+
+\subsection{Offline temporal-persistence audits}
+
+The static rollout protocols are complemented by two read-only audits of the
+same frozen ACT policy on LIBERO Object demonstrations.  Gate-1 evaluates
+complete 100-step predictions at 1,098 observation points from all 454
+demonstration episodes.  Starts are sampled every 50 frames, with the final
+valid full-chunk start included; predicted actions are compared with the
+demonstrated future actions separately for arm translation, arm rotation, and
+gripper metrics.  This is teacher-forced prediction analysis, not an executor
+rollout or a success evaluation.
+
+Gate-2A tests phase dependence with a separate predeclared protocol: starts are
+sampled every 25 frames together with the one-third and two-thirds episode
+locations, producing 3,740 points and 454 episodes in each normalized phase
+(early, middle, late).  Because late targets are right-censored, all primary
+phase comparisons use the common future range $k=0,\ldots,37$ and average within
+episode before aggregating.  Episode-bootstrap intervals are descriptive.  The
+phase audit likewise does not train a predictor, change the executor, or measure
+closed-loop task success.

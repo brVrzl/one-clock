@@ -1,0 +1,69 @@
+\section{Proposed Adaptive Extension}
+\label{sec:method}
+
+\textit{This section specifies a proposed mechanism; it was not implemented or
+evaluated in the current study.}  The fixed executor in Sec.~\ref{sec:execution}
+tests whether different groups can retain predictions for different durations.
+The next step is to make those durations depend on the current prediction rather
+than fixing them per task.
+
+\subsection{Group-wise temporal reliability}
+
+At a policy query, let the frozen policy predict a $K$-step chunk
+\begin{equation}
+\widehat{\mathbf A}_t=\pi_\theta(o_t)
+ = (\widehat{\mathbf a}_{t\mid t},\ldots,
+    \widehat{\mathbf a}_{t+K-1\mid t}).
+\label{eq:method_chunk}
+\end{equation}
+For action group $g$ and future offset $k$, we define a temporal-reliability
+quantity
+\begin{equation}
+R_g(k\mid o_t,\widehat{\mathbf A}_t)
+ = \Pr\!\left[\mathcal V_g(t,k)=1\mid o_t,\widehat{\mathbf A}_t\right],
+\label{eq:reliability}
+\end{equation}
+where $\mathcal V_g(t,k)$ denotes that the group-$g$ prediction at offset $k$
+remains valid under a predeclared group-wise criterion.  The criterion is not
+assumed to be a task-success label: it can measure agreement with a future
+target, consistency with a fresh policy query, or calibrated predictive
+uncertainty.
+
+The proposed horizon rule is
+\begin{equation}
+h_g(t)=\max\left\{k\in\{1,\ldots,K\}:
+R_g(k\mid o_t,\widehat{\mathbf A}_t)>\tau\right\},
+\label{eq:adaptive_horizon}
+\end{equation}
+with a reliability threshold $\tau$.  In a deployment implementation, the
+resulting $h_g(t)$ would control how long group $g$ retains its accepted
+subsequence.  It would not create an independent policy-query stream: if any
+group expires, the frozen policy is queried once for a new full joint chunk, and
+only expired groups accept their slices, exactly as in Sec.~\ref{sec:execution}.
+Thus the proposed rule changes group acceptance horizons, not the policy's
+observation or query semantics.
+
+\subsection{Candidate self-supervised targets}
+
+No target or estimator architecture is selected in this draft.  The following
+choices are concrete hypotheses for the next study:
+\begin{enumerate}
+    \item \textbf{Future action consistency.}  On demonstration data, label
+    $\mathcal V_g(t,k)$ when the predicted group action agrees with the
+    demonstrated action at the same offset under a predeclared distance and
+    tolerance.  This is directly self-supervised but does not include
+    closed-loop success labels.
+    \item \textbf{Policy re-query disagreement.}  Compare the stored prediction
+    with the corresponding slice of a fresh prediction at a later observation.
+    This targets stale predictions at deployment, but requires an additional
+    policy query during training or calibration.
+    \item \textbf{Predictive uncertainty.}  Estimate a group-wise distribution
+    or dispersion from an ensemble, sampled action chunks, or model-specific
+    denoising statistics, and calibrate it to the validity event.
+\end{enumerate}
+
+These choices may produce nonmonotonic, task-dependent reliability curves, as
+suggested by the offline persistence audits in Sec.~\ref{sec:results}.  The
+current paper therefore treats Eq.~\ref{eq:adaptive_horizon} as a proposed
+adaptive execution mechanism and reports no learned-estimator accuracy,
+closed-loop dynamic horizon result, or causal benefit from it.

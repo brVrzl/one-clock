@@ -33,6 +33,48 @@ different outcomes when assigned to different action groups.
     \label{fig:results}
 \end{figure*}
 
+\subsection{Prediction structure varies by group and phase}
+
+Gate-1 provides an offline check that the group distinction is visible before
+execution.  Across the 454 demonstration episodes, arm translation, arm
+rotation, and gripper prediction-error curves have different shapes and
+magnitudes.  The aggregate curves are oscillatory rather than a simple
+monotone decay, so a single threshold crossing is not interpreted as a
+persistence horizon.  The audit supports group-dependent temporal structure,
+not a universal ordering of arm and gripper reliability.
+
+Gate-2A then conditions the same error measurements on normalized episode phase.
+Table~\ref{tab:phase_persistence} reports episode-balanced AUCs over the common
+future range $k=0,\ldots,37$.  Arm translation error is lower late than early,
+and both gripper metrics vary strongly across phases; the early--late AUC
+differences are $0.199$ (95\% bootstrap interval $[0.184,0.214]$) and $0.267$
+($[0.237,0.298]$), respectively.  Arm rotation is lowest in the middle and
+higher late than early.  Thus phase dependence is material but nonmonotonic and
+group dependent.  These audits use demonstrated future actions and do not show
+that an online horizon rule improves closed-loop success.
+
+\begin{table}[t]
+\caption{Offline phase-conditioned prediction-error AUCs.  Values are
+episode-balanced over the common $k=0$--$37$ range; higher values indicate
+larger prediction error.  This is a diagnostic, not a dynamic-execution result.}
+\label{tab:phase_persistence}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Metric & Early & Middle & Late & Early--late \\
+\midrule
+Arm translation & .759 & .672 & .561 & +.199 \\
+Arm rotation & .862 & .790 & .924 & $-$ .062 \\
+Gripper abs. error & .857 & .480 & .590 & +.267 \\
+Gripper mismatch & .409 & .206 & .252 & +.157 \\
+\bottomrule
+\end{tabular}
+}%
+\end{table}
+
 \subsection{Improvements persist at controlled query rates}
 
 Table~\ref{tab:budget} isolates three pairs whose policy-query rates are nearly
@@ -116,8 +158,8 @@ $h=16$ at 0.699.  Their query rates differ (0.252 versus 0.065), so this is not 
 budget-matched superiority claim.  The retrospective per-task group oracle over
 the same common set reaches 0.779, a 0.045 gap, while leave-one-task-out static
 selection chooses $(4,16)$ in every split.  Current evidence therefore supports
-a strong universal static baseline and leaves the need for dynamic scheduling
-open.
+a strong universal static baseline.  The phase-conditioned audits motivate
+testing dynamic scheduling, but they do not establish a within-episode benefit.
 
 \subsection{Exploratory execution-trace context}
 

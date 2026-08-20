@@ -41,6 +41,26 @@ selector.  SEAM's treatment of cross-chunk inconsistency is also relevant
 explicit limitation rather than assuming that independently retained components
 remain coordinated.
 
+\subsection{Uncertainty, selective computation, and event-triggered updates}
+
+Uncertainty and value signals offer adjacent ways to decide when a prediction is
+no longer worth executing.  AAC and DVAC use sampled-action entropy and denoising
+variance as test-time signals, respectively, while DEHP learns a horizon choice
+through online value optimization with a frozen base policy.  These methods
+still select one synchronized commitment length.  Adaptive Computation Time
+learns how much recurrent computation to spend on an input
+\cite{graves2016adaptive}; it is a useful analogy for variable commitment, but
+does not address action-chunk execution.  Event-triggered control similarly
+replaces periodic updates with state-dependent triggers while preserving a
+feedback controller's semantics~\cite{tabuada2007event}.
+
+Our proposed extension differs in the object being estimated: $R_g(k)$ is a
+group-wise probability that a predicted action subsequence remains valid, rather
+than a task-return estimate, a raw uncertainty score, or a global trigger.  The
+candidate self-supervised targets in Sec.~\ref{sec:method} make this distinction
+explicit.  No such estimator or dynamic trigger is implemented in the present
+paper.
+
 \subsection{Manipulation benchmark}
 
 LIBERO is a language-conditioned robot-manipulation benchmark organized into

@@ -32,25 +32,28 @@ followed before the policy observes and replans.  Recent adaptive-execution work
 primarily chooses one prefix or boundary for the chunk as a whole; even audited
 methods with component-aware signals aggregate them into one synchronized
 decision.  We study whether physically meaningful action groups must accept new
-predictions on the same schedule.  Our fixed group-specific executor leaves the
-base policy frozen: an expired group accepts its part of a fresh full chunk,
-while non-expired groups retain their earlier predicted sequences.  On a frozen
-ACT policy in LIBERO Object, a complete $5\!\times\!5$ arm/gripper landscape over
-50 official states yields 47/50 successes for $(h_a,h_g)=(4,16)$, versus 42/50
-for budget-matched global $h=4$ at approximately 0.252 policy queries per step;
-the paired difference comprises five additional successes and no reversals
-($p=0.0625$, exact two-sided diagnostic).  Across the remaining nine tasks, an
-off-diagonal configuration is strictly best on six and tied on three, and six
-tasks contain a strict off-diagonal improvement over a global point at no higher
-query rate.  These static results expose systematic group-dependent execution
-structure.  They motivate, but do not establish, dynamic group-specific
-adaptation.
+predictions on the same schedule, and whether their temporal reliability varies
+within an episode.  Our fixed group-specific executor leaves the base policy
+frozen: an expired group accepts its part of a fresh full chunk, while
+non-expired groups retain their earlier predicted sequences.  On a frozen ACT
+policy in LIBERO Object, a complete $5\!\times\!5$ arm/gripper landscape over 50
+official states yields 47/50 successes for $(h_a,h_g)=(4,16)$, versus 42/50 for
+budget-matched global $h=4$ at approximately 0.252 policy queries per step.  An
+offline, teacher-forced audit over 454 demonstration episodes further finds
+group-dependent prediction-error structure and phase-conditioned error profiles,
+including early--late differences for arm translation and gripper error.
+Across the remaining nine tasks, off-diagonal configurations are repeatedly
+competitive, including six no-higher-query-rate improvements over global points.
+We formulate, but do not implement or evaluate, group-wise temporal reliability
+estimation as a route to horizons $h_g(t)$.  No dynamic-horizon performance claim
+is made.
 \end{abstract}
 
 \input{sections/01_introduction}
 \input{sections/02_related_work}
 \input{sections/03_problem}
 \input{sections/04_execution}
+\input{sections/05_method}
 \input{sections/05_experiments}
 \input{sections/06_results}
 \input{sections/07_limitations}

@@ -49,17 +49,35 @@ more slowly, nor do they establish a dynamic scheduler.  They show that assignin
 the same two horizon values to different physical groups can change execution
 outcomes while preserving policy-query cadence.
 
-This draft makes four evidence-bounded contributions:
+Fixed group horizons are still only a static approximation if predictive
+reliability changes during a task.  We therefore audit the frozen policy itself
+before proposing an adaptive rule.  A teacher-forced analysis of 454 LIBERO
+Object demonstration episodes finds different temporal error profiles for the
+arm and gripper groups.  A phase-stratified follow-up, using a common 38-step
+future window, finds phase-dependent profiles for arm translation and gripper
+error, while arm rotation changes direction across phases.  These are offline
+prediction diagnostics, not closed-loop success results: they establish a
+motivation for studying $h_g(t)$, not that dynamic execution improves a task.
+
+This paper consequently separates a verified static executor from a proposed
+adaptive extension.  The extension estimates group-wise temporal reliability
+from the current observation and predicted chunk, then derives a horizon for
+each group.  We do not select a training target, train an estimator, or evaluate
+an online scheduler in the present draft.
+
+This draft makes five evidence-bounded contributions:
 \begin{itemize}
     \item a controlled execution formulation that permits physically meaningful
     action groups to use different fixed horizons without changing the
     pretrained chunk policy;
     \item a complete $5\!\times\!5$ arm/gripper horizon landscape on all 50
-    official states of one LIBERO Object task, with diagonal controls and query
-    accounting;
+    official states of one LIBERO Object task, with diagonal controls, query
+    accounting, and paired budget-matched comparisons;
     \item a coarse cross-task diagnostic over the remaining nine LIBERO Object
     tasks, separating deployable static settings from retrospective per-task
     oracle-style comparisons; and
-    \item paired, budget-controlled evidence that swapping or separating group
-    horizons can change success under essentially identical policy-query rates.
+    \item offline group- and phase-conditioned prediction-error audits that
+    motivate, but do not validate, adaptive horizons; and
+    \item a proposed group-wise temporal reliability formulation that makes the
+    unimplemented adaptive decision explicit and testable.
 \end{itemize}

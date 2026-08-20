@@ -21,6 +21,15 @@ throughout an episode.  A next-stage study must separate task-level static
 selection from genuine phase-dependent gain, define an online observable signal,
 and compare at controlled query budgets.
 
+The persistence audits establish heterogeneous and phase-conditioned prediction
+error structure, not the performance of a reliability estimator.  Gate-1 is a
+teacher-forced comparison with demonstrated future actions, and Gate-2A uses
+right-censored targets with a common 38-step analysis window; neither contains
+closed-loop success labels.  We therefore do not claim that the proposed
+$R_g(k)$ estimator is calibrated, that Eq.~\ref{eq:adaptive_horizon} improves
+execution, or that any online dynamic horizon rule works.  Training a
+group-wise estimator and evaluating dynamic execution remain future validation.
+
 Finally, group-specific execution deliberately composes actions from different
 source chunks.  The retained components were jointly predicted with components
 that may no longer be executed, so temporal inconsistency can arise across
