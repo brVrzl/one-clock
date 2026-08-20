@@ -41,6 +41,15 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _feature_names(feature: dict[str, Any]) -> list[str] | None:
+    names = feature.get("names")
+    if isinstance(names, dict):
+        names = names.get("motors")
+    if isinstance(names, list) and all(isinstance(name, str) for name in names):
+        return list(names)
+    return None
+
+
 def audit_checkpoint_contract(dataset_root: Path, checkpoint: Path) -> dict[str, Any]:
     """Check actual pinned JSON contracts without constructing the model."""
 
@@ -50,6 +59,7 @@ def audit_checkpoint_contract(dataset_root: Path, checkpoint: Path) -> dict[str,
     action_feature = dataset_info["features"]["action"]
     state_shape = list(state_feature["shape"])
     action_shape = list(action_feature["shape"])
+    dataset_action_names = _feature_names(action_feature)
     policy_state = list(config["input_features"]["observation.state"]["shape"])
     policy_action = list(config["output_features"]["action"]["shape"])
     preprocessor_path = checkpoint / "policy_preprocessor.json"
@@ -64,6 +74,11 @@ def audit_checkpoint_contract(dataset_root: Path, checkpoint: Path) -> dict[str,
         "observation.images.cam_left_wrist": "observation.images.camera2",
         "observation.images.cam_right_wrist": "observation.images.camera3",
     }
+    action_schema_path = checkpoint / "action_schema.json"
+    action_schema = _load_json(action_schema_path) if action_schema_path.is_file() else {}
+    policy_action_names = action_schema.get("action_names", action_schema.get("ordering"))
+    if not isinstance(policy_action_names, list) or not all(isinstance(name, str) for name in policy_action_names):
+        policy_action_names = None
     report = {
         "dataset_state_shape": state_shape,
         "dataset_action_shape": action_shape,
@@ -74,6 +89,10 @@ def audit_checkpoint_contract(dataset_root: Path, checkpoint: Path) -> dict[str,
         "policy_n_obs_steps": int(config.get("n_obs_steps", -1)),
         "policy_num_steps": int(config.get("num_steps", -1)),
         "policy_normalization_mapping": config.get("normalization_mapping"),
+        "dataset_action_names": dataset_action_names,
+        "policy_action_names": policy_action_names,
+        "action_schema_path": str(action_schema_path) if action_schema_path.is_file() else None,
+        "action_order_contract_match": policy_action_names == dataset_action_names,
         "camera_rename_map": rename_map,
         "camera_contract_match": rename_map == expected_cameras,
         "config_sha256": _sha256(checkpoint / "config.json"),
@@ -83,6 +102,12 @@ def audit_checkpoint_contract(dataset_root: Path, checkpoint: Path) -> dict[str,
         mismatches.append(f"state shape dataset={state_shape} policy={policy_state}")
     if action_shape != policy_action:
         mismatches.append(f"action shape dataset={action_shape} policy={policy_action}")
+    if dataset_action_names is None:
+        mismatches.append("dataset action ordering is absent from meta/info.json")
+    elif policy_action_names is None:
+        mismatches.append("exact policy action ordering is not declared in checkpoint action_schema.json")
+    elif policy_action_names != dataset_action_names:
+        mismatches.append("policy action ordering does not match the verified RoboTwin dataset ordering")
     if int(config.get("chunk_size", -1)) != 50:
         mismatches.append("primary cache schema requires the actual policy chunk size to be 50")
     if int(config.get("n_action_steps", -1)) != int(config.get("chunk_size", -2)):

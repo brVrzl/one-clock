@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import json
+
 import numpy as np
+import pytest
 
 from experiments.dynamic_reliability_horizon.robotwin50_dataset.target_builder import (
     GROUP_INDICES,
@@ -12,6 +15,10 @@ from experiments.dynamic_reliability_horizon.robotwin50_dataset.smoke_check impo
     _snapshot_contract,
 )
 from experiments.dynamic_reliability_horizon.robotwin50_dataset.data_audit import _split
+from experiments.dynamic_reliability_horizon.robotwin50_dataset.cache_builder import (
+    ContractMismatch,
+    audit_checkpoint_contract,
+)
 
 
 def test_robotwin_groups_are_verified_four_clock_partition() -> None:
@@ -105,3 +112,56 @@ def test_episode_split_is_deterministic_task_bucket_holdout() -> None:
     locations = {episode: split for split, values in first.items() for episode in values}
     for start in range(0, 20, 2):
         assert locations[str(start)] == locations[str(start + 1)]
+
+
+def test_cache_contract_requires_policy_action_order_sidecar(tmp_path) -> None:
+    dataset_root = tmp_path / "dataset"
+    checkpoint = tmp_path / "checkpoint"
+    (dataset_root / "meta").mkdir(parents=True)
+    checkpoint.mkdir()
+    names = [f"joint-{i}" for i in range(14)]
+    (dataset_root / "meta" / "info.json").write_text(
+        json.dumps(
+            {
+                "features": {
+                    "observation.state": {"shape": [14]},
+                    "action": {"shape": [14], "names": {"motors": names}},
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    (checkpoint / "config.json").write_text(
+        json.dumps(
+            {
+                "input_features": {"observation.state": {"shape": [14]}},
+                "output_features": {"action": {"shape": [14]}},
+                "chunk_size": 50,
+                "n_action_steps": 50,
+                "n_obs_steps": 1,
+                "num_steps": 10,
+            }
+        ),
+        encoding="utf-8",
+    )
+    (checkpoint / "policy_preprocessor.json").write_text(
+        json.dumps(
+            {
+                "steps": [
+                    {
+                        "registry_name": "rename_observations_processor",
+                        "config": {
+                            "rename_map": {
+                                "observation.images.cam_high": "observation.images.camera1",
+                                "observation.images.cam_left_wrist": "observation.images.camera2",
+                                "observation.images.cam_right_wrist": "observation.images.camera3",
+                            }
+                        },
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ContractMismatch, match="exact policy action ordering"):
+        audit_checkpoint_contract(dataset_root, checkpoint)
