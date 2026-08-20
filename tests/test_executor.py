@@ -138,6 +138,35 @@ class FixedChunkExecutorTest(unittest.TestCase):
         self.assertEqual(decisions[1].source_chunk_ids, {"arm": 0, "gripper": 1})
         self.assertEqual(decisions[1].source_positions, {"arm": 1, "gripper": 0})
 
+    def test_robotwin_type_tied_dual_arm_groups_share_horizon(self) -> None:
+        generations = iter(range(10))
+        executor = FixedChunkExecutor.groupwise_fixed(
+            action_dim=14,
+            chunk_size=8,
+            groups=(
+                ActionGroup("left_arm", tuple(range(0, 6)), horizon=2),
+                ActionGroup("left_gripper", (6,), horizon=4),
+                ActionGroup("right_arm", tuple(range(7, 13)), horizon=2),
+                ActionGroup("right_gripper", (13,), horizon=4),
+            ),
+        )
+
+        decisions = [
+            executor.step(lambda: tagged_chunk(next(generations), chunk_size=8, action_dim=14))
+            for _ in range(4)
+        ]
+
+        self.assertEqual(decisions[0].refreshed_groups,
+                         ("left_arm", "left_gripper", "right_arm", "right_gripper"))
+        self.assertEqual(decisions[2].refreshed_groups, ("left_arm", "right_arm"))
+        self.assertEqual(decisions[2].source_chunk_ids,
+                         {"left_arm": 1, "left_gripper": 0,
+                          "right_arm": 1, "right_gripper": 0})
+        self.assertEqual(decisions[2].source_positions,
+                         {"left_arm": 0, "left_gripper": 2,
+                          "right_arm": 0, "right_gripper": 2})
+        self.assertEqual(decisions[2].policy_query, True)
+
     def test_libero_episode_record_logs_pairing_and_query_budget(self) -> None:
         records = [
             {"policy_query": True, "source_ages": {"arm": 0, "gripper": 0}},
