@@ -22,6 +22,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[3]
 HANDOFF = Path(__file__).resolve().parent
 TARGET_CACHE = ROOT / "experiments/temporal_reliability_target_comparison/target_comparison.npz"
+REFRESH_CACHE = ROOT / "experiments/temporal_reliability_target_comparison/refresh_first_actions.npz"
 TARGET_SCRIPT = ROOT / "experiments/temporal_reliability_target_comparison/compare_targets.py"
 TARGET_REPORT = ROOT / "experiments/temporal_reliability_target_comparison/target_comparison_report.md"
 METADATA = ROOT / "experiments/temporal_reliability/metadata.jsonl"
@@ -209,6 +210,7 @@ def verification_command(bundle_sha: str, split_sha: str) -> str:
 
 def build_manifest(schema: dict[str, Any], split: dict[str, Any]) -> dict[str, Any]:
     data = np.load(TARGET_CACHE, allow_pickle=False)
+    refresh_cache = np.load(REFRESH_CACHE, allow_pickle=False)
     metadata = load_metadata()
     episodes = data["episode_index"].astype(np.int32)
     tasks = np.asarray([int(row["task_index"]) for row in metadata], dtype=np.int32)
@@ -221,6 +223,10 @@ def build_manifest(schema: dict[str, Any], split: dict[str, Any]) -> dict[str, A
             "rows": int(len(episodes)),
             "episodes": sorted(set(int(value) for value in episodes.tolist())),
             "task_names": task_names,
+        }),
+        file_record(REFRESH_CACHE, role="cached frozen-policy future-observation re-queries used to construct Y_refresh; label-side only", estimator_visible=False, schema={
+            "arrays": {name: {"shape": list(refresh_cache[name].shape), "dtype": str(refresh_cache[name].dtype)} for name in refresh_cache.files},
+            "episodes": int(refresh_cache["episode_index"].shape[0]),
         }),
         file_record(TARGET_SCRIPT, role="Y_refresh construction/re-query code; working-tree artifact if git_commit is null", estimator_visible=False),
         file_record(TARGET_REPORT, role="target comparison report", estimator_visible=False),
@@ -261,6 +267,22 @@ def build_manifest(schema: dict[str, Any], split: dict[str, Any]) -> dict[str, A
             "consequence": "bundle is the minimal known causal source-chunk contract, not certified equivalent to the unavailable estimator contract",
         },
         "required_code_commits": sorted({record["git_commit"] for record in records if record["git_commit"]}),
+        "repository_provenance": {
+            "temporal_reliability_target_construction": "191b65e2bd7d188920e31f9ce3eb3fdcffe24e4d",
+            "initial_oracle_related_work_analysis": "fc86c2f3249d5e0afc8a266fac9afa69d15c6f19",
+            "strengthened_oracle_and_portable_bundle": git("rev-parse", "HEAD"),
+        },
+        "preexisting_artifact_search": {
+            "episode_level_split_manifest": {
+                "found_in_reachable_history": False,
+                "created_for_this_handoff": relative_or_absolute(SPLIT_PATH),
+                "note": "The source metadata and target cache have no split membership; the new manifest is deterministic and episode-level."
+            },
+            "causal_source_time_estimator_features": {
+                "found_materialized": False,
+                "note": "The target cache contains old predicted actions but no current observation/state/image or ACT latent feature tensor."
+            },
+        },
         "provenance_records": records,
         "episode_rows": {
             "rows": int(len(episodes)),
