@@ -1,0 +1,21 @@
+{
+  "dataset": "/home/thor/datasets/libero_object_25_08_23_lerobotv2.1",
+  "frozen_act_checkpoint": "/home/thor/projects/checkpoints/zeromidnight_act_libero_object",
+  "target_mode": "fresh_policy",
+  "threshold_tau": 0.5,
+  "min_horizon": 1,
+  "max_horizon": 100,
+  "require_prefix": true,
+  "global_horizon": 4,
+  "static_group_horizons": {"arm": 4, "gripper": 16},
+  "training": {
+    "epochs": 50,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "patience": 10,
+    "seed": 20260820,
+    "hidden_dims": [128, 64],
+    "device": "cpu"
+  }
+}
