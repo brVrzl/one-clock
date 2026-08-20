@@ -1371,21 +1371,32 @@
       "role": "oracle horizon derivation and sensitivity analysis",
       "sha256": "b89a442930725f6388f61ea8795305d7db69bf41bda9cfc46df4dbb0a14485db",
       "size_bytes": 61147
+    },
+    {
+      "absolute_path_at_generation": "/home/thor/projects/one-clock/experiments/dynamic_reliability_horizon/artifact_handoff/create_handoff_bundle.py",
+      "estimator_visible": false,
+      "exists": true,
+      "git_commit": "bd9245e152e549f4252579ee2f9f04a256c8dd6b",
+      "path": "experiments/dynamic_reliability_horizon/artifact_handoff/create_handoff_bundle.py",
+      "role": "portable bundle and manifest generation script",
+      "sha256": "89bb9644eabea808706f1c9bdbd127ef2b62fc76fde0c8ff0f0205efeeb08d41",
+      "size_bytes": 22210
     }
   ],
   "purpose": "portable offline Y_refresh reliability-estimator handoff; no training or rollout performed here",
   "repository_provenance": {
     "initial_oracle_related_work_analysis": "fc86c2f3249d5e0afc8a266fac9afa69d15c6f19",
-    "strengthened_oracle_and_portable_bundle": "85cad9b46d48285547a984d6c14639209438f7dc",
+    "strengthened_oracle_and_portable_bundle": "bd9245e152e549f4252579ee2f9f04a256c8dd6b",
     "temporal_reliability_target_construction": "191b65e2bd7d188920e31f9ce3eb3fdcffe24e4d"
   },
   "required_code_commits": [
     "191b65e2bd7d188920e31f9ce3eb3fdcffe24e4d",
-    "b99f4bd27b9e21f8d88eca1c3486ad25b637e5e5"
+    "b99f4bd27b9e21f8d88eca1c3486ad25b637e5e5",
+    "bd9245e152e549f4252579ee2f9f04a256c8dd6b"
   ],
   "schema_version": 1,
   "source_repository_dirty_at_generation": true,
-  "source_repository_sha": "85cad9b46d48285547a984d6c14639209438f7dc",
+  "source_repository_sha": "bd9245e152e549f4252579ee2f9f04a256c8dd6b",
   "verification": {
     "bundle_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
     "command": "HANDOFF_DIR=/path/to/experiments/dynamic_reliability_horizon/artifact_handoff; sha256sum \"$HANDOFF_DIR/minimal_y_refresh_training_bundle.npz\" \"$HANDOFF_DIR/episode_split_manifest.json\"; python3 -c 'import hashlib, pathlib, sys; expected={\"minimal_y_refresh_training_bundle.npz\":\"45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4\", \"episode_split_manifest.json\":\"1b57c9d12e17292e66276002966e0aea44ff1c7e54f35d335cc5670ce9de439a\"}; [(_ for _ in ()).throw(SystemExit(\"checksum mismatch:\"+p)) if hashlib.sha256((pathlib.Path(sys.argv[1])/p).read_bytes()).hexdigest()!=v else None for p,v in expected.items()]' \"$HANDOFF_DIR\"",
