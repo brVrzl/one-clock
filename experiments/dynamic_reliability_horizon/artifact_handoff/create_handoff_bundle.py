@@ -203,8 +203,7 @@ def verification_command(bundle_sha: str, split_sha: str) -> str:
     return (
         'HANDOFF_DIR=/path/to/experiments/dynamic_reliability_horizon/artifact_handoff; '
         f'sha256sum "$HANDOFF_DIR/minimal_y_refresh_training_bundle.npz" "$HANDOFF_DIR/episode_split_manifest.json"; '
-        f'python3 -c "import hashlib, pathlib, sys; expected={{\"minimal_y_refresh_training_bundle.npz\":\"{bundle_sha}\", \"episode_split_manifest.json\":\"{split_sha}\"}}; '
-        '[(lambda p: (_ for _ in ()).throw(SystemExit(f\"checksum mismatch: {p}\")) if hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()!=v else None)(str(pathlib.Path(sys.argv[1])/p)) for p,v in expected.items()]" "$HANDOFF_DIR"'
+        f'python3 -c \'import hashlib, pathlib, sys; expected={{"minimal_y_refresh_training_bundle.npz":"{bundle_sha}", "episode_split_manifest.json":"{split_sha}"}}; [(_ for _ in ()).throw(SystemExit("checksum mismatch:"+p)) if hashlib.sha256((pathlib.Path(sys.argv[1])/p).read_bytes()).hexdigest()!=v else None for p,v in expected.items()]\' "$HANDOFF_DIR"'
     )
 
 
