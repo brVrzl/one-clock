@@ -1,0 +1,39 @@
+{
+  "schema_version": "robotwin_action_groups_v1",
+  "action_dim": 14,
+  "source": "lerobot/robotwin_unified meta/info.json feature names at revision 1287871839fae2296bc27b88a5457c3e1eba8e1f",
+  "ordering": [
+    "left_waist",
+    "left_shoulder",
+    "left_elbow",
+    "left_forearm_roll",
+    "left_wrist_angle",
+    "left_wrist_rotate",
+    "left_gripper",
+    "right_waist",
+    "right_shoulder",
+    "right_elbow",
+    "right_forearm_roll",
+    "right_wrist_angle",
+    "right_wrist_rotate",
+    "right_gripper"
+  ],
+  "groups": {
+    "left_arm": {"indices": [0, 1, 2, 3, 4, 5], "kind": "arm"},
+    "left_gripper": {"indices": [6], "kind": "gripper"},
+    "right_arm": {"indices": [7, 8, 9, 10, 11, 12], "kind": "arm"},
+    "right_gripper": {"indices": [13], "kind": "gripper"}
+  },
+  "distance": {
+    "name": "groupwise_linf_absolute_action_distance",
+    "formula": "max(abs(old - fresh)) over the verified group indices",
+    "thresholds": {"left_arm": 0.05, "left_gripper": 0.05, "right_arm": 0.05, "right_gripper": 0.05},
+    "threshold_selection": "predeclared before test evaluation; no test tuning"
+  },
+  "offsets": {
+    "source_offset": "old=A_t^g[k]",
+    "fresh_offset": "fresh=A_{t+k}^g[0]",
+    "maximum": 49,
+    "identity_offset": "k=0 is stored and must be valid; it is excluded from estimator headline metrics by the existing evaluation code"
+  }
+}

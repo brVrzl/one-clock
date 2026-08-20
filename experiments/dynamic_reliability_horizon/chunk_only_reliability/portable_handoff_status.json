@@ -1,0 +1,25 @@
+{
+  "status": "blocked_missing_portable_bundle",
+  "checked_at_utc": "2026-08-20",
+  "artifact": "minimal_y_refresh_training_bundle.npz",
+  "expected_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
+  "searched_roots": [
+    "/home/wjq",
+    "/home/thor",
+    "/mnt",
+    "/data",
+    "/tmp",
+    "workspace checkout"
+  ],
+  "found_path": null,
+  "pilot_started": false,
+  "reason": "The exact Thor portable handoff is absent, so the chunk-only pilot was not reconstructed from another source.",
+  "intended_evaluation": [
+    "empirical P(Y_refresh=1 | g,k) baseline",
+    "independent-vector shared MLP",
+    "monotone conditional-survival MLP",
+    "fixed-offset AUROC/AUPRC",
+    "Brier and Brier Skill Score",
+    "refresh-oracle horizon recovery"
+  ]
+}

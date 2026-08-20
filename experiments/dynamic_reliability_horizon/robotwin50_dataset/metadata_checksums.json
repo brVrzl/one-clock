@@ -1,0 +1,19 @@
+{
+  "dataset_revision": "1287871839fae2296bc27b88a5457c3e1eba8e1f",
+  "dataset_root": "/home/wjq/datasets/robotwin_unified",
+  "files": {
+    "meta/info.json": {
+      "bytes": 4674,
+      "sha256": "d9d7880523c2d80fe2cce95c2e8b6bc198a96ace7e735c8aed29ba7c1850251c"
+    },
+    "meta/tasks.parquet": {
+      "bytes": 740974,
+      "sha256": "db9675ee40ed5ecc8a13a89c8c6fccffecc7663e238bb4655a5ad32c68ca02a1"
+    },
+    "meta/episodes/chunk-000/file-000.parquet": {
+      "bytes": 22044385,
+      "sha256": "68b9d56020aa7b5317f3d6af24c487990869955b7a1213ce4f09356760578ed8"
+    }
+  },
+  "scope": "metadata-only audit inputs; policy-response cache and checkpoint remain outside git"
+}
