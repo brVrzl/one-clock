@@ -1,0 +1,245 @@
+{
+  "canonical_task_count": 50,
+  "canonical_task_source": {
+    "mapping_policy": "episode task prompt remains authoritative; no guessed semantic remapping",
+    "path": "/home/wjq/workspace/upstreams/RoboTwin/envs",
+    "task_count": 50
+  },
+  "canonical_tasks": [
+    "adjust_bottle",
+    "beat_block_hammer",
+    "blocks_ranking_rgb",
+    "blocks_ranking_size",
+    "click_alarmclock",
+    "click_bell",
+    "dump_bin_bigbin",
+    "grab_roller",
+    "handover_block",
+    "handover_mic",
+    "hanging_mug",
+    "lift_pot",
+    "move_can_pot",
+    "move_pillbottle_pad",
+    "move_playingcard_away",
+    "move_stapler_pad",
+    "open_laptop",
+    "open_microwave",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_bread_skillet",
+    "place_burger_fries",
+    "place_can_basket",
+    "place_cans_plasticbox",
+    "place_container_plate",
+    "place_dual_shoes",
+    "place_empty_cup",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "place_shoe",
+    "press_stapler",
+    "put_bottles_dustbin",
+    "put_object_cabinet",
+    "rotate_qrcode",
+    "scan_object",
+    "shake_bottle",
+    "shake_bottle_horizontally",
+    "stack_blocks_three",
+    "stack_blocks_two",
+    "stack_bowls_three",
+    "stack_bowls_two",
+    "stamp_seal",
+    "turn_switch"
+  ],
+  "clean_demo_provenance": "not represented in LeRobot v3 metadata; verify source subset before claiming demo_clean",
+  "codebase_version": "v3.0",
+  "dataset_repo": "lerobot/robotwin_unified",
+  "dataset_revision": "1287871839fae2296bc27b88a5457c3e1eba8e1f",
+  "dataset_revision_source": "caller-pinned revision; local files do not encode the Hub commit",
+  "dataset_root": "/home/wjq/datasets/robotwin_unified",
+  "environment_action_contract": {
+    "action_order_source": "meta/info.json features.action.names",
+    "action_units": "RoboTwin/LeRobot joint-space values as stored; no conversion applied",
+    "state_equals_action_order": true,
+    "verified_group_schema": "group_schema.json"
+  },
+  "episode_metadata_rows": 27500,
+  "features": {
+    "action": {
+      "dtype": "float32",
+      "fps": 30,
+      "names": {
+        "motors": [
+          "left_waist",
+          "left_shoulder",
+          "left_elbow",
+          "left_forearm_roll",
+          "left_wrist_angle",
+          "left_wrist_rotate",
+          "left_gripper",
+          "right_waist",
+          "right_shoulder",
+          "right_elbow",
+          "right_forearm_roll",
+          "right_wrist_angle",
+          "right_wrist_rotate",
+          "right_gripper"
+        ]
+      },
+      "shape": [
+        14
+      ]
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "names": null,
+      "shape": [
+        1
+      ]
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "names": null,
+      "shape": [
+        1
+      ]
+    },
+    "index": {
+      "dtype": "int64",
+      "names": null,
+      "shape": [
+        1
+      ]
+    },
+    "observation.images.cam_high": {
+      "dtype": "video",
+      "info": {
+        "has_audio": false,
+        "video.channels": 3,
+        "video.codec": "av1",
+        "video.fps": 30.0,
+        "video.height": 480,
+        "video.is_depth_map": false,
+        "video.pix_fmt": "yuv420p",
+        "video.width": 640
+      },
+      "names": [
+        "height",
+        "width",
+        "rgb"
+      ],
+      "shape": [
+        480,
+        640,
+        3
+      ]
+    },
+    "observation.images.cam_left_wrist": {
+      "dtype": "video",
+      "info": {
+        "has_audio": false,
+        "video.channels": 3,
+        "video.codec": "av1",
+        "video.fps": 30.0,
+        "video.height": 480,
+        "video.is_depth_map": false,
+        "video.pix_fmt": "yuv420p",
+        "video.width": 640
+      },
+      "names": [
+        "height",
+        "width",
+        "rgb"
+      ],
+      "shape": [
+        480,
+        640,
+        3
+      ]
+    },
+    "observation.images.cam_right_wrist": {
+      "dtype": "video",
+      "info": {
+        "has_audio": false,
+        "video.channels": 3,
+        "video.codec": "av1",
+        "video.fps": 30.0,
+        "video.height": 480,
+        "video.is_depth_map": false,
+        "video.pix_fmt": "yuv420p",
+        "video.width": 640
+      },
+      "names": [
+        "height",
+        "width",
+        "rgb"
+      ],
+      "shape": [
+        480,
+        640,
+        3
+      ]
+    },
+    "observation.state": {
+      "dtype": "float32",
+      "fps": 30,
+      "names": {
+        "motors": [
+          "left_waist",
+          "left_shoulder",
+          "left_elbow",
+          "left_forearm_roll",
+          "left_wrist_angle",
+          "left_wrist_rotate",
+          "left_gripper",
+          "right_waist",
+          "right_shoulder",
+          "right_elbow",
+          "right_forearm_roll",
+          "right_wrist_angle",
+          "right_wrist_rotate",
+          "right_gripper"
+        ]
+      },
+      "shape": [
+        14
+      ]
+    },
+    "task_index": {
+      "dtype": "int64",
+      "names": null,
+      "shape": [
+        1
+      ]
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "names": null,
+      "shape": [
+        1
+      ]
+    }
+  },
+  "fps": 30,
+  "intended_subset": {
+    "expected_canonical_tasks": 50,
+    "expected_demonstrations_per_task": 50,
+    "name": "canonical RoboTwin 2.0 demo_clean demonstrations",
+    "selection_status": "not verified from the unified LeRobot metadata; no clean/random provenance field is present"
+  },
+  "large_data": {
+    "cache_root": "/home/wjq/robotwin_reliability_cache",
+    "git_tracked": false
+  },
+  "metadata_checksums_manifest": "metadata_checksums.json",
+  "status": "audited",
+  "total_episodes": 27500,
+  "total_frames": 6075103,
+  "total_task_rows": 23559
+}

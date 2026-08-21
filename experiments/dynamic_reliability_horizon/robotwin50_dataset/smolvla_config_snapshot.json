@@ -1,0 +1,27 @@
+{
+  "source": "https://huggingface.co/lerobot/smolvla_robotwin/resolve/967623a0f38c7e1236c66b3893c830398d793ff7/config.json",
+  "revision": "967623a0f38c7e1236c66b3893c830398d793ff7",
+  "sha256": "d7da5f3281abb825fb917e64c028a536279a9cc6e9eb64c28224ff899e6f11c1",
+  "policy_type": "smolvla",
+  "input_features": {
+    "observation.state": {"type": "STATE", "shape": [6]},
+    "observation.images.camera1": {"type": "VISUAL", "shape": [3, 256, 256]},
+    "observation.images.camera2": {"type": "VISUAL", "shape": [3, 256, 256]},
+    "observation.images.camera3": {"type": "VISUAL", "shape": [3, 256, 256]}
+  },
+  "output_features": {
+    "action": {"type": "ACTION", "shape": [14]}
+  },
+  "chunk_size": 50,
+  "n_action_steps": 50,
+  "n_obs_steps": 1,
+  "num_steps": 10,
+  "use_cache": true,
+  "normalization_mapping": {
+    "VISUAL": "IDENTITY",
+    "STATE": "MEAN_STD",
+    "ACTION": "MEAN_STD"
+  },
+  "resize_size": [512, 512],
+  "base_vlm": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct"
+}

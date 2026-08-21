@@ -1,0 +1,3786 @@
+{
+  "task": "place_can_basket",
+  "task_config": "demo_clean",
+  "evaluation_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "configurations": [
+    {
+      "label": "G2",
+      "strategy": "global_fixed",
+      "arm_horizon": 2,
+      "gripper_horizon": 2,
+      "metadata": {
+        "strategy": "global_fixed",
+        "global_horizon": 2,
+        "group_horizons": {
+          "left_arm": 2,
+          "left_gripper": 2,
+          "right_arm": 2,
+          "right_gripper": 2
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 2,
+        "anomaly_seed_count": 18
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 1400,
+        "policy_queries": 700,
+        "policy_queries_per_episode": 35.0,
+        "policy_query_rate": 0.5,
+        "mean_source_age_by_group": {
+          "left_arm": 0.5,
+          "left_gripper": 0.5,
+          "right_arm": 0.5,
+          "right_gripper": 0.5
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 2,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 2,
+            "right_arm": 2,
+            "right_gripper": 2
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 0.5,
+            "right_arm": 0.5,
+            "right_gripper": 0.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 2,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 2,
+            "right_arm": 2,
+            "right_gripper": 2
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 0.5,
+            "right_arm": 0.5,
+            "right_gripper": 0.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "timeout_or_error",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "G4",
+      "strategy": "global_fixed",
+      "arm_horizon": 4,
+      "gripper_horizon": 4,
+      "metadata": {
+        "strategy": "global_fixed",
+        "global_horizon": 4,
+        "group_horizons": {
+          "left_arm": 4,
+          "left_gripper": 4,
+          "right_arm": 4,
+          "right_gripper": 4
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 525,
+        "policy_queries_per_episode": 26.25,
+        "policy_query_rate": 0.25,
+        "mean_source_age_by_group": {
+          "left_arm": 1.5,
+          "left_gripper": 1.5,
+          "right_arm": 1.5,
+          "right_gripper": 1.5
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 4,
+            "right_arm": 4,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 1.5,
+            "right_arm": 1.5,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 4,
+            "right_arm": 4,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 1.5,
+            "right_arm": 1.5,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 4,
+            "right_arm": 4,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 1.5,
+            "right_arm": 1.5,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "G8",
+      "strategy": "global_fixed",
+      "arm_horizon": 8,
+      "gripper_horizon": 8,
+      "metadata": {
+        "strategy": "global_fixed",
+        "global_horizon": 8,
+        "group_horizons": {
+          "left_arm": 8,
+          "left_gripper": 8,
+          "right_arm": 8,
+          "right_gripper": 8
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 264,
+        "policy_queries_per_episode": 13.2,
+        "policy_query_rate": 0.12571428571428572,
+        "mean_source_age_by_group": {
+          "left_arm": 3.4885714285714284,
+          "left_gripper": 3.4885714285714284,
+          "right_arm": 3.4885714285714284,
+          "right_gripper": 3.4885714285714284
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 8,
+            "right_arm": 8,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 8,
+            "right_arm": 8,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 8,
+            "right_arm": 8,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "G16",
+      "strategy": "global_fixed",
+      "arm_horizon": 16,
+      "gripper_horizon": 16,
+      "metadata": {
+        "strategy": "global_fixed",
+        "global_horizon": 16,
+        "group_horizons": {
+          "left_arm": 16,
+          "left_gripper": 16,
+          "right_arm": 16,
+          "right_gripper": 16
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 132,
+        "policy_queries_per_episode": 6.6,
+        "policy_query_rate": 0.06285714285714286,
+        "mean_source_age_by_group": {
+          "left_arm": 7.465714285714285,
+          "left_gripper": 7.465714285714285,
+          "right_arm": 7.465714285714285,
+          "right_gripper": 7.465714285714285
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 44,
+          "policy_query_rate": 0.06285714285714286,
+          "arm_horizon": 16,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 16,
+            "right_arm": 16,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 44,
+          "policy_query_rate": 0.06285714285714286,
+          "arm_horizon": 16,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 16,
+            "right_arm": 16,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 44,
+          "policy_query_rate": 0.06285714285714286,
+          "arm_horizon": 16,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 16,
+            "right_arm": 16,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A2G8",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 2,
+      "gripper_horizon": 8,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 2,
+          "left_gripper": 8,
+          "right_arm": 2,
+          "right_gripper": 8
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 1050,
+        "policy_queries_per_episode": 52.5,
+        "policy_query_rate": 0.5,
+        "mean_source_age_by_group": {
+          "left_arm": 0.5,
+          "left_gripper": 3.4885714285714284,
+          "right_arm": 0.5,
+          "right_gripper": 3.4885714285714284
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 8,
+            "right_arm": 2,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 0.5,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 8,
+            "right_arm": 2,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 0.5,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 8,
+            "right_arm": 2,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 0.5,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A2G16",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 2,
+      "gripper_horizon": 16,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 2,
+          "left_gripper": 16,
+          "right_arm": 2,
+          "right_gripper": 16
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 2,
+        "anomaly_seed_count": 18
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 1400,
+        "policy_queries": 700,
+        "policy_queries_per_episode": 35.0,
+        "policy_query_rate": 0.5,
+        "mean_source_age_by_group": {
+          "left_arm": 0.5,
+          "left_gripper": 7.465714285714285,
+          "right_arm": 0.5,
+          "right_gripper": 7.465714285714285
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 16,
+            "right_arm": 2,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 0.5,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 2,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 2,
+            "left_gripper": 16,
+            "right_arm": 2,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 0.5,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 0.5,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "timeout_or_error",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A4G16",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 4,
+      "gripper_horizon": 16,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 4,
+          "left_gripper": 16,
+          "right_arm": 4,
+          "right_gripper": 16
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 525,
+        "policy_queries_per_episode": 26.25,
+        "policy_query_rate": 0.25,
+        "mean_source_age_by_group": {
+          "left_arm": 1.5,
+          "left_gripper": 7.465714285714285,
+          "right_arm": 1.5,
+          "right_gripper": 7.465714285714285
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 16,
+            "right_arm": 4,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 1.5,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 16,
+            "right_arm": 4,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 1.5,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 4,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 4,
+            "left_gripper": 16,
+            "right_arm": 4,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 1.5,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 1.5,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A8G16",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 8,
+      "gripper_horizon": 16,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 8,
+          "left_gripper": 16,
+          "right_arm": 8,
+          "right_gripper": 16
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 264,
+        "policy_queries_per_episode": 13.2,
+        "policy_query_rate": 0.12571428571428572,
+        "mean_source_age_by_group": {
+          "left_arm": 3.4885714285714284,
+          "left_gripper": 7.465714285714285,
+          "right_arm": 3.4885714285714284,
+          "right_gripper": 7.465714285714285
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 16,
+            "right_arm": 8,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 16,
+            "right_arm": 8,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 8,
+          "gripper_horizon": 16,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 16,
+            "right_arm": 8,
+            "right_gripper": 16
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 7.465714285714285,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 7.465714285714285
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A8G2",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 8,
+      "gripper_horizon": 2,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 8,
+          "left_gripper": 2,
+          "right_arm": 8,
+          "right_gripper": 2
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 2,
+        "anomaly_seed_count": 18
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 1400,
+        "policy_queries": 700,
+        "policy_queries_per_episode": 35.0,
+        "policy_query_rate": 0.5,
+        "mean_source_age_by_group": {
+          "left_arm": 3.4885714285714284,
+          "left_gripper": 0.5,
+          "right_arm": 3.4885714285714284,
+          "right_gripper": 0.5
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 8,
+          "gripper_horizon": 2,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 2,
+            "right_arm": 8,
+            "right_gripper": 2
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 0.5,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 0.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 350,
+          "policy_query_rate": 0.5,
+          "arm_horizon": 8,
+          "gripper_horizon": 2,
+          "configured_horizons": {
+            "left_arm": 8,
+            "left_gripper": 2,
+            "right_arm": 8,
+            "right_gripper": 2
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 3.4885714285714284,
+            "left_gripper": 0.5,
+            "right_arm": 3.4885714285714284,
+            "right_gripper": 0.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "timeout_or_error",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A16G2",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 16,
+      "gripper_horizon": 2,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 16,
+          "left_gripper": 2,
+          "right_arm": 16,
+          "right_gripper": 2
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 0,
+        "anomaly_seed_count": 20
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 0,
+        "policy_queries": 0,
+        "policy_queries_per_episode": 0.0,
+        "policy_query_rate": 0.0,
+        "mean_source_age_by_group": {}
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "timeout_or_error",
+        "timeout_or_error",
+        "timeout_or_error",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A16G4",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 16,
+      "gripper_horizon": 4,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 16,
+          "left_gripper": 4,
+          "right_arm": 16,
+          "right_gripper": 4
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 3,
+        "anomaly_seed_count": 17
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 2100,
+        "policy_queries": 525,
+        "policy_queries_per_episode": 26.25,
+        "policy_query_rate": 0.25,
+        "mean_source_age_by_group": {
+          "left_arm": 7.465714285714285,
+          "left_gripper": 1.5,
+          "right_arm": 7.465714285714285,
+          "right_gripper": 1.5
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 16,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 4,
+            "right_arm": 16,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 1.5,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 16,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 4,
+            "right_arm": 16,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 1.5,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 175,
+          "policy_query_rate": 0.25,
+          "arm_horizon": 16,
+          "gripper_horizon": 4,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 4,
+            "right_arm": 16,
+            "right_gripper": 4
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 1.5,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 1.5
+          },
+          "status": "complete"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "complete",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    },
+    {
+      "label": "A16G8",
+      "strategy": "groupwise_fixed",
+      "arm_horizon": 16,
+      "gripper_horizon": 8,
+      "metadata": {
+        "strategy": "groupwise_fixed",
+        "global_horizon": null,
+        "group_horizons": {
+          "left_arm": 16,
+          "left_gripper": 8,
+          "right_arm": 16,
+          "right_gripper": 8
+        },
+        "action_groups": {
+          "left_arm": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "left_gripper": [
+            6
+          ],
+          "right_arm": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "right_gripper": [
+            13
+          ]
+        },
+        "task_name": "place_can_basket",
+        "task_config": "demo_clean",
+        "action_type": "joint",
+        "chunk_size": 50,
+        "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+        "robotwin_root": "/home/wjq/workspace/upstreams/RoboTwin",
+        "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+        "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+        "evaluation_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "planner": "mplib_RRT",
+        "expert_check": false,
+        "skip_planner": false,
+        "direct_qpos": false,
+        "safe_qpos": true,
+        "isolated_seed_processes": true,
+        "complete_seed_count": 2,
+        "anomaly_seed_count": 18
+      },
+      "summary": {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "environment_steps": 1400,
+        "policy_queries": 176,
+        "policy_queries_per_episode": 8.8,
+        "policy_query_rate": 0.12571428571428572,
+        "mean_source_age_by_group": {
+          "left_arm": 7.465714285714285,
+          "left_gripper": 3.4885714285714284,
+          "right_arm": 7.465714285714285,
+          "right_gripper": 3.4885714285714284
+        }
+      },
+      "episodes": [
+        {
+          "episode": 0,
+          "seed": 0,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 16,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 8,
+            "right_arm": 16,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 1,
+          "success": false,
+          "environment_steps": 700,
+          "policy_queries": 88,
+          "policy_query_rate": 0.12571428571428572,
+          "arm_horizon": 16,
+          "gripper_horizon": 8,
+          "configured_horizons": {
+            "left_arm": 16,
+            "left_gripper": 8,
+            "right_arm": 16,
+            "right_gripper": 8
+          },
+          "mean_source_age_by_group": {
+            "left_arm": 7.465714285714285,
+            "left_gripper": 3.4885714285714284,
+            "right_arm": 7.465714285714285,
+            "right_gripper": 3.4885714285714284
+          },
+          "status": "complete"
+        },
+        {
+          "episode": 0,
+          "seed": 2,
+          "success": false,
+          "environment_steps": 0,
+          "policy_queries": 0,
+          "policy_query_rate": 0.0,
+          "arm_horizon": null,
+          "gripper_horizon": null,
+          "configured_horizons": {},
+          "mean_source_age_by_group": {},
+          "status": "timeout_or_error"
+        },
+        {
+          "seed": 3,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 4,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 5,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 6,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 7,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 8,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 9,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 10,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 11,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 12,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 13,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 14,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 15,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 16,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 17,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 18,
+          "success": false,
+          "status": "missing"
+        },
+        {
+          "seed": 19,
+          "success": false,
+          "status": "missing"
+        }
+      ],
+      "success_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "statuses": [
+        "complete",
+        "complete",
+        "timeout_or_error",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing",
+        "missing"
+      ],
+      "complete": false
+    }
+  ],
+  "symmetric_comparisons": [
+    {
+      "a": "A2G8",
+      "b": "A8G2",
+      "a_success": 0,
+      "b_success": 0,
+      "a_minus_b": 0,
+      "a_wins": 0,
+      "b_wins": 0,
+      "ties": 2,
+      "paired_complete_seeds": 2,
+      "paired_incomplete_seeds": 18
+    },
+    {
+      "a": "A2G16",
+      "b": "A16G2",
+      "a_success": 0,
+      "b_success": 0,
+      "a_minus_b": 0,
+      "a_wins": 0,
+      "b_wins": 0,
+      "ties": 0,
+      "paired_complete_seeds": 0,
+      "paired_incomplete_seeds": 20
+    },
+    {
+      "a": "A4G16",
+      "b": "A16G4",
+      "a_success": 0,
+      "b_success": 0,
+      "a_minus_b": 0,
+      "a_wins": 0,
+      "b_wins": 0,
+      "ties": 3,
+      "paired_complete_seeds": 3,
+      "paired_incomplete_seeds": 17
+    },
+    {
+      "a": "A8G16",
+      "b": "A16G8",
+      "a_success": 0,
+      "b_success": 0,
+      "a_minus_b": 0,
+      "a_wins": 0,
+      "b_wins": 0,
+      "ties": 2,
+      "paired_complete_seeds": 2,
+      "paired_incomplete_seeds": 18
+    }
+  ],
+  "best_global": {
+    "labels": [
+      "G2",
+      "G4",
+      "G8",
+      "G16"
+    ],
+    "success_rate": 0.0
+  },
+  "best_offdiagonal_success_rate": 0.0,
+  "empirical_pareto_labels": [],
+  "classification": "BLOCKED",
+  "complete": false,
+  "anomalies": {
+    "G2": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "G4": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "G8": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "G16": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A2G8": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A2G16": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A4G16": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A8G16": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A8G2": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A16G2": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A16G4": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "A16G8": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "execution_blocker": {
+    "reason": "Pinned headless SAPIEN/MPLIB qpos rollout stalled before terminal completion for some fixed-horizon cells.",
+    "timeout_seconds": 120,
+    "observed_timeout_attempts": 7
+  }
+}

@@ -41,6 +41,27 @@ def parse_args() -> argparse.Namespace:
         type=str,
         help="Comma-separated group=horizon values for groupwise_fixed.",
     )
+    parser.add_argument(
+        "--seeds",
+        type=str,
+        help="Comma-separated deterministic evaluation seeds (overrides config episodes/seed).",
+    )
+    parser.add_argument(
+        "--planner",
+        choices=("curobo", "mplib_screw", "mplib_RRT"),
+        default=None,
+        help="Override the official embodiment planner when an environment fallback is required.",
+    )
+    parser.add_argument(
+        "--skip-expert-check",
+        action="store_true",
+        help="Skip the expensive official expert replay after a reset-only smoke has been recorded.",
+    )
+    parser.add_argument(
+        "--direct-qpos",
+        action="store_true",
+        help="Use one simulator step per qpos target in the headless fallback path.",
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     return parser.parse_args()
 
@@ -62,6 +83,21 @@ def parse_group_horizons(raw: str | None, defaults: dict[str, int]) -> dict[str,
             raise ValueError(f"group horizon must be name=value: {item!r}")
         result[name.strip()] = int(value)
     return result
+
+
+def parse_evaluation_seeds(raw: str | None, config: dict[str, Any]) -> list[int]:
+    """Return the ordered seed list used by every paired configuration."""
+
+    if raw is not None:
+        seeds = [int(item.strip()) for item in raw.split(",") if item.strip()]
+        if not seeds:
+            raise ValueError("--seeds must contain at least one integer")
+        return seeds
+    episodes = int(config.get("episodes", 1))
+    if episodes < 1:
+        raise ValueError("config episodes must be positive")
+    start = int(config.get("seed", 0))
+    return [start + index for index in range(episodes)]
 
 
 def add_upstream_paths(robotwin_root: Path) -> None:
@@ -125,6 +161,17 @@ def verify_action_dim(config: dict[str, Any]) -> int:
             f"configured action groups have dim {configured_dim}, "
             f"but RoboTwin metadata declares {upstream_dim}"
         )
+    if config["env_cfg_type"] == "aloha_agilex":
+        expected_groups = {
+            "left_arm": [0, 1, 2, 3, 4, 5],
+            "left_gripper": [6],
+            "right_arm": [7, 8, 9, 10, 11, 12],
+            "right_gripper": [13],
+        }
+        if config["action_groups"] != expected_groups:
+            raise ValueError(
+                "aloha_agilex action groups do not match the verified 14-D joint contract"
+            )
     return upstream_dim
 
 
@@ -248,19 +295,30 @@ def run_episode(
     success = False
     try:
         while not official.is_episode_end(task_env):
-            observation = task_env.get_obs()
-            xpl_obs = official.robotwin_obs_to_xpolicylab(
-                observation,
-                instruction=task_env.get_instruction(),
-                env_idx=0,
-                frequency=int(config.get("frequency", 30)),
-                task_env=task_env,
-            )
-            act_wrapper.update_obs(xpl_obs)
-            decision = executor.step(lambda: query_full_act_chunk(act_wrapper.model))
+            # Keep observation/render work inside the executor's query
+            # callback.  Non-expiring groups reuse their source chunk and do
+            # not require a new observation; this preserves the policy-query
+            # contract while avoiding hidden inference or action buffering.
+            def query_chunk() -> np.ndarray:
+                observation = task_env.get_obs()
+                xpl_obs = official.robotwin_obs_to_xpolicylab(
+                    observation,
+                    instruction=task_env.get_instruction(),
+                    env_idx=0,
+                    frequency=int(config.get("frequency", 30)),
+                    task_env=task_env,
+                )
+                act_wrapper.update_obs(xpl_obs)
+                return query_full_act_chunk(act_wrapper.model)
+
+            decision = executor.step(query_chunk)
             task_env.take_action(decision.action, action_type="qpos")
             records.append(decision.as_log_record())
-        success = bool(task_env.eval_success)
+        # qpos take_action uses a reset-only headless path that defers the
+        # expensive/fragile contact query until the terminal state.  This
+        # leaves the episode length and action stream unchanged while avoiding
+        # success-check stalls inside SAPIEN's interpolated control loop.
+        success = bool(task_env.eval_success or task_env.check_success())
     finally:
         task_env.close_env()
 
@@ -306,14 +364,43 @@ def main() -> None:
         "seed": int(config.get("seed", 0)),
     }
     task_args, _ = official.load_task_args(usr_args)
+    evaluation_seeds = parse_evaluation_seeds(args.seeds, config)
+    # The instruction builder uses this count for episode-level wording. It
+    # does not affect policy execution or executor state.
+    config["episodes"] = len(evaluation_seeds)
+    if args.skip_expert_check:
+        config["expert_check"] = False
+        task_args["safe_qpos"] = True
+    if args.planner is not None:
+        for key in ("left_embodiment_config", "right_embodiment_config"):
+            if key in task_args:
+                task_args[key]["planner"] = args.planner
+    if args.direct_qpos:
+        task_args["direct_qpos"] = True
     action_dim = verify_action_dim(config)
     group_horizons = parse_group_horizons(
         args.group_horizons,
         {name: int(value) for name, value in config["groupwise_horizons"].items()},
     )
+    if args.strategy == "global_fixed":
+        group_horizons = {
+            name: int(args.horizon)
+            for name in config["action_groups"]
+        }
     executor = build_executor(config, args.strategy, args.horizon, group_horizons)
     if executor.action_dim != action_dim:
         raise ValueError("executor action dimension does not match verified RoboTwin metadata")
+    if args.strategy == "groupwise_fixed":
+        if group_horizons["left_arm"] != group_horizons["right_arm"]:
+            raise ValueError("RoboTwin validation ties both arm groups to one horizon")
+        if group_horizons["left_gripper"] != group_horizons["right_gripper"]:
+            raise ValueError("RoboTwin validation ties both gripper groups to one horizon")
+    config["arm_horizon"] = (
+        args.horizon if args.strategy == "global_fixed" else group_horizons["left_arm"]
+    )
+    config["gripper_horizon"] = (
+        args.horizon if args.strategy == "global_fixed" else group_horizons["left_gripper"]
+    )
     act_wrapper = load_act_model(robotwin_root, config, checkpoint)
     task_env = official.class_decorator(task_name)
 
@@ -333,28 +420,62 @@ def main() -> None:
         "robotwin_root": str(robotwin_root.resolve()),
         "robotwin_commit": git_commit(robotwin_root),
         "xpolicylab_commit": git_commit(robotwin_root / "XPolicyLab"),
+        "evaluation_seeds": evaluation_seeds,
+        "planner": args.planner
+        or task_args.get("left_embodiment_config", {}).get("planner"),
+        "expert_check": bool(config.get("expert_check", True)),
+        "skip_planner": bool(task_args.get("skip_planner", False)),
+        "direct_qpos": bool(task_args.get("direct_qpos", False)),
+        "safe_qpos": bool(task_args.get("safe_qpos", False)),
     }
     (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
     successes = 0
     episode_records: list[list[dict[str, object]]] = []
     with (output_dir / "steps.jsonl").open("w", encoding="utf-8") as log_file:
-        for episode_index in range(int(config.get("episodes", 1))):
-            success, records = run_episode(
-                official=official,
-                task_env=task_env,
-                task_args=task_args,
-                act_wrapper=act_wrapper,
-                executor=executor,
-                config=config,
-                episode_index=episode_index,
-                seed=int(config.get("seed", 0)) + episode_index,
-            )
-            successes += int(success)
-            episode_records.append(records)
-            for record in records:
-                record["episode"] = episode_index
-                log_file.write(json.dumps(record) + "\n")
+        with (output_dir / "episodes.jsonl").open("w", encoding="utf-8") as episode_log:
+            for episode_index, seed in enumerate(evaluation_seeds):
+                success, records = run_episode(
+                    official=official,
+                    task_env=task_env,
+                    task_args=task_args,
+                    act_wrapper=act_wrapper,
+                    executor=executor,
+                    config=config,
+                    episode_index=episode_index,
+                    seed=seed,
+                )
+                successes += int(success)
+                episode_records.append(records)
+                for record in records:
+                    record["episode"] = episode_index
+                    log_file.write(json.dumps(record) + "\n")
+
+                policy_queries = sum(int(record["policy_query"]) for record in records)
+                source_age_values: dict[str, list[int]] = {}
+                for record in records:
+                    for group, age in record["source_ages"].items():
+                        source_age_values.setdefault(group, []).append(int(age))
+                episode_log.write(
+                    json.dumps(
+                        {
+                            "episode": episode_index,
+                            "seed": seed,
+                            "success": bool(success),
+                            "environment_steps": len(records),
+                            "policy_queries": policy_queries,
+                            "policy_query_rate": policy_queries / len(records) if records else 0.0,
+                            "arm_horizon": config.get("arm_horizon"),
+                            "gripper_horizon": config.get("gripper_horizon"),
+                            "configured_horizons": records[0]["configured_horizons"] if records else {},
+                            "mean_source_age_by_group": {
+                                group: sum(values) / len(values)
+                                for group, values in source_age_values.items()
+                            },
+                        }
+                    )
+                    + "\n"
+                )
 
     summary = summarize_run(episode_records, successes)
     (output_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")

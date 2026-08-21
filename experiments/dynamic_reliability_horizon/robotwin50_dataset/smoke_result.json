@@ -1,0 +1,66 @@
+{
+  "checkpoint_revision": "967623a0f38c7e1236c66b3893c830398d793ff7",
+  "contract": {
+    "camera_rename_map": {
+      "observation.images.cam_high": "observation.images.camera1",
+      "observation.images.cam_left_wrist": "observation.images.camera2",
+      "observation.images.cam_right_wrist": "observation.images.camera3"
+    },
+    "dataset_action_shape": [
+      14
+    ],
+    "dataset_state_shape": [
+      14
+    ],
+    "mismatches": [
+      "state shape dataset=[14] policy=[6]"
+    ],
+    "normalization_mapping": {
+      "ACTION": "MEAN_STD",
+      "STATE": "MEAN_STD",
+      "VISUAL": "IDENTITY"
+    },
+    "policy_action_shape": [
+      14
+    ],
+    "policy_chunk_size": 50,
+    "policy_n_action_steps": 50,
+    "policy_n_obs_steps": 1,
+    "policy_num_steps": 10,
+    "policy_state_shape": [
+      6
+    ]
+  },
+  "contract_error": "state shape dataset=[14] policy=[6]",
+  "dataset_revision": "1287871839fae2296bc27b88a5457c3e1eba8e1f",
+  "dataset_root": "/home/wjq/datasets/robotwin_unified",
+  "note": "Pinned public config was audited, but no model forward was attempted because the dataset/policy contract is invalid.",
+  "selection_policy": "fixed source-declared subset; no outcome-based selection",
+  "smoke_tasks": [
+    {
+      "coverage": "single-side manipulation",
+      "task": "move_can_pot"
+    },
+    {
+      "coverage": "bimanual coordination",
+      "task": "pick_dual_bottles"
+    },
+    {
+      "coverage": "handover",
+      "task": "handover_block"
+    },
+    {
+      "coverage": "stacking",
+      "task": "stack_blocks_two"
+    },
+    {
+      "coverage": "precision/contact",
+      "task": "place_object_scale"
+    },
+    {
+      "coverage": "longer manipulation",
+      "task": "stack_blocks_three"
+    }
+  ],
+  "status": "blocked_contract"
+}

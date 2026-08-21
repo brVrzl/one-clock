@@ -1,0 +1,20 @@
+{
+  "source": "https://huggingface.co/lerobot/smolvla_robotwin/resolve/967623a0f38c7e1236c66b3893c830398d793ff7/policy_preprocessor.json",
+  "revision": "967623a0f38c7e1236c66b3893c830398d793ff7",
+  "sha256": "7f8edfe4b9477706facccb44748abc2dc58a35285daa9c62f7348f66001d3a75",
+  "camera_rename_map": {
+    "observation.images.cam_high": "observation.images.camera1",
+    "observation.images.cam_left_wrist": "observation.images.camera2",
+    "observation.images.cam_right_wrist": "observation.images.camera3"
+  },
+  "state_shape": [6],
+  "action_shape": [14],
+  "visual_shape": [3, 256, 256],
+  "task_key": "task",
+  "tokenizer_max_length": 48,
+  "normalization_mapping": {
+    "VISUAL": "IDENTITY",
+    "STATE": "MEAN_STD",
+    "ACTION": "MEAN_STD"
+  }
+}
