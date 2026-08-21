@@ -1,0 +1,1957 @@
+{
+  "audit_script": "research/audit_tools/gate3a0_sparse_group_consistency.py",
+  "cohort": {
+    "all_sparse_overlap_targets": 55634,
+    "expert_count_range": [
+      2,
+      6
+    ],
+    "mean_experts": 4.45642952151562,
+    "test_episodes": 41,
+    "test_sparse_overlap_targets": 5118,
+    "test_tasks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "validation_sparse_overlap_targets": 5126,
+    "within_episode_source_spacing_counts_dataset_steps": {
+      "1": 78,
+      "10": 58,
+      "11": 46,
+      "12": 46,
+      "13": 46,
+      "14": 46,
+      "15": 58,
+      "16": 60,
+      "17": 79,
+      "18": 66,
+      "19": 84,
+      "2": 85,
+      "20": 80,
+      "21": 83,
+      "22": 73,
+      "23": 85,
+      "24": 78,
+      "25": 1610,
+      "3": 73,
+      "4": 83,
+      "5": 80,
+      "6": 84,
+      "7": 66,
+      "8": 79,
+      "9": 60
+    }
+  },
+  "decision_scope": "Gate-3A0 sparse-data sanity audit only; no dense cache, policy modification, or rollout.",
+  "interpretation_limits": [
+    "The cache is sparse (source observations roughly 25 dataset steps apart), not dense ACT temporal ensembling.",
+    "All rows are teacher-forced demonstration states; offline semantic error is not closed-loop success.",
+    "Every oracle observes the demonstrated target and is unattainable at deployment.",
+    "The gripper transition metrics use the prior demonstrated gripper sign, not the policy's prior closed-loop command.",
+    "Raw baselines linearly average axis-angle vectors because that is the audited policy representation; explicitly named semantic-aggregation ablations instead use a projected SO(3) chordal mean and sign vote.",
+    "Nearest-full-source and boundary distances are diagnostics, not validated detectors of physical consistency or failure.",
+    "Dataset ages are reported at 10 Hz (0.1 s/step); they must not be equated with the audited rollout controller's 20 Hz ticks."
+  ],
+  "metric_contract": {
+    "arm_gripper_balanced_semantic_error": "Equal arm/gripper average; retained only to expose weighting sensitivity.",
+    "dimension_weighted_semantic_error": "(3*translation_normalized_mse + 3*rotation_normalized_sq + gripper_sign_error)/7.",
+    "equal_group_semantic_error": "Equal average over translation, rotation, and gripper semantic losses; sensitivity metric, not a privileged control objective.",
+    "gripper": "Sign error. Transition errors assume the previous demonstrated sign as the teacher-forced prior command; magnitude MSE is not used.",
+    "rotation": "SO(3) geodesic angle between rotations represented by the predicted and demonstrated axis-angle increments; squared angle is normalized by the sum of audited rotation-component variances.",
+    "semantic_aggregation": "One shared source-weight vector; Euclidean translation mean, projected SO(3) chordal rotation mean, and weighted gripper-sign vote.",
+    "translation": "Mean squared component error normalized by audited training-action standard deviations; raw L2 action-unit error is also reported."
+  },
+  "oracle_age_disparity_frontiers": {
+    "arm_gripper": {
+      "0": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 0,
+          "maximum_age_disparity_seconds": 0.0
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "16": {
+        "arm_gripper_balanced_semantic_error": 0.3487796998917349,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.17518561938257132,
+          "age_disparity_steps": 1.7518561938257131,
+          "mixed_source": 0.22762797967956233,
+          "nearest_full_semantic_distance": 0.0025064882096534954,
+          "teacher_forced_boundary_semantic_distance": 0.4954579789361698
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 16,
+          "maximum_age_disparity_seconds": 1.6
+        },
+        "dimension_weighted_semantic_error": 0.4792791282462679,
+        "equal_group_semantic_error": 0.4096794331238503,
+        "gripper_false_transition": 0.16275889019148104,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.16608050019538884,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.4483825104138927,
+          "1": 0.24211666958710734,
+          "2": 0.522757373299847,
+          "3": 0.5419136462137993,
+          "4": 0.426494451331137,
+          "5": 0.4466340643734439,
+          "6": 0.47958715802964896,
+          "7": 0.5459598221849141,
+          "8": 0.9034102968574771,
+          "9": 0.32162797231207635
+        },
+        "rotation_geodesic_radians": 0.04888863152041201,
+        "rotation_normalized_sq": 0.7448874388697456,
+        "translation_l2_action_units": 0.33309482315477607,
+        "translation_normalized_mse": 0.31807036030641644
+      },
+      "25": {
+        "arm_gripper_balanced_semantic_error": 0.32217086826755204,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 1.3696365767878078,
+          "age_disparity_steps": 13.696365767878078,
+          "mixed_source": 0.6692067213755373,
+          "nearest_full_semantic_distance": 0.012864414448225012,
+          "teacher_forced_boundary_semantic_distance": 0.48706111876066244
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 25,
+          "maximum_age_disparity_seconds": 2.5
+        },
+        "dimension_weighted_semantic_error": 0.46995048416010654,
+        "equal_group_semantic_error": 0.39113468901741083,
+        "gripper_false_transition": 0.11371629542790153,
+        "gripper_missed_transition": 0.0015631105900742479,
+        "gripper_sign_error": 0.11527940601797577,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44318009990101603,
+          "1": 0.22926620323811145,
+          "2": 0.513569320563369,
+          "3": 0.5356829099740317,
+          "4": 0.417248739046816,
+          "5": 0.43803319834625565,
+          "6": 0.4726909118020326,
+          "7": 0.5418544672568374,
+          "8": 0.8815700084224474,
+          "9": 0.31185421484710135
+        },
+        "rotation_geodesic_radians": 0.04860940618511934,
+        "rotation_normalized_sq": 0.7390912446566628,
+        "translation_l2_action_units": 0.3336102979138697,
+        "translation_normalized_mse": 0.319033416377594
+      },
+      "4": {
+        "arm_gripper_balanced_semantic_error": 0.35393193566387343,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.013970300898788588,
+          "age_disparity_steps": 0.1397030089878859,
+          "mixed_source": 0.05529503712387651,
+          "nearest_full_semantic_distance": 0.00013280980957937433,
+          "teacher_forced_boundary_semantic_distance": 0.4970731661890298
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 4,
+          "maximum_age_disparity_seconds": 0.4
+        },
+        "dimension_weighted_semantic_error": 0.4812729235955019,
+        "equal_group_semantic_error": 0.41335773003196674,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24295865667663863,
+          "2": 0.5253447964469851,
+          "3": 0.5425285488569108,
+          "4": 0.4317760649622764,
+          "5": 0.4481350259844044,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.048891396534735586,
+        "rotation_normalized_sq": 0.7449408540928509,
+        "translation_l2_action_units": 0.33397365490945935,
+        "translation_normalized_mse": 0.3194777834434557
+      },
+      "50": {
+        "arm_gripper_balanced_semantic_error": 0.3151058666153426,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 2.6724110980851896,
+          "age_disparity_steps": 26.724110980851894,
+          "mixed_source": 0.7514654161781946,
+          "nearest_full_semantic_distance": 0.015594511419243078,
+          "teacher_forced_boundary_semantic_distance": 0.4846360321614104
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 50,
+          "maximum_age_disparity_seconds": 5.0
+        },
+        "dimension_weighted_semantic_error": 0.46732936705319816,
+        "equal_group_semantic_error": 0.3861435001530086,
+        "gripper_false_transition": 0.10082063305978899,
+        "gripper_missed_transition": 0.0011723329425556857,
+        "gripper_sign_error": 0.10199296600234467,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.4389526472949988,
+          "1": 0.22300625388419354,
+          "2": 0.5134033749690116,
+          "3": 0.5320132077333181,
+          "4": 0.4152424492721329,
+          "5": 0.43698261838667435,
+          "6": 0.46968788566242153,
+          "7": 0.5412741819516684,
+          "8": 0.8782318190705901,
+          "9": 0.3097425192935632
+        },
+        "rotation_geodesic_radians": 0.04854941594546064,
+        "rotation_normalized_sq": 0.7380958472378377,
+        "translation_l2_action_units": 0.3331364228694457,
+        "translation_normalized_mse": 0.3183416872188434
+      },
+      "8": {
+        "arm_gripper_balanced_semantic_error": 0.3517606856539148,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0694021101992966,
+          "age_disparity_steps": 0.694021101992966,
+          "mixed_source": 0.1397030089878859,
+          "nearest_full_semantic_distance": 0.0011391898226547985,
+          "teacher_forced_boundary_semantic_distance": 0.4962224783258002
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 8,
+          "maximum_age_disparity_seconds": 0.8
+        },
+        "dimension_weighted_semantic_error": 0.4803420496321339,
+        "equal_group_semantic_error": 0.41176532217708367,
+        "gripper_false_transition": 0.1684251660805002,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17174677608440797,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.4483825104138927,
+          "1": 0.24211666958710734,
+          "2": 0.5252439094036458,
+          "3": 0.5421316139356138,
+          "4": 0.4297315978015302,
+          "5": 0.4466340643734439,
+          "6": 0.4804993858710978,
+          "7": 0.54619404402545,
+          "8": 0.9066647556643616,
+          "9": 0.32205423505885045
+        },
+        "rotation_geodesic_radians": 0.04888638461251418,
+        "rotation_normalized_sq": 0.7451361889820884,
+        "translation_l2_action_units": 0.33335088428368737,
+        "translation_normalized_mse": 0.3184130014647546
+      },
+      "99": {
+        "arm_gripper_balanced_semantic_error": 0.3143338364462383,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 3.5452325127002737,
+          "age_disparity_steps": 35.45232512700274,
+          "mixed_source": 0.7706135209066042,
+          "nearest_full_semantic_distance": 0.01582273489920438,
+          "teacher_forced_boundary_semantic_distance": 0.48425156887604814
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 99,
+          "maximum_age_disparity_seconds": 9.9
+        },
+        "dimension_weighted_semantic_error": 0.46698283088210163,
+        "equal_group_semantic_error": 0.3855700338496411,
+        "gripper_false_transition": 0.09945291129347401,
+        "gripper_missed_transition": 0.0011723329425556857,
+        "gripper_sign_error": 0.1006252442360297,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.4382187920216336,
+          "1": 0.22210753361042104,
+          "2": 0.5133087121975831,
+          "3": 0.5319987777636075,
+          "4": 0.4152424492721329,
+          "5": 0.43577364937161067,
+          "6": 0.46930448845046124,
+          "7": 0.5412741819516684,
+          "8": 0.8781521045674665,
+          "9": 0.3095677056098671
+        },
+        "rotation_geodesic_radians": 0.04855732388026715,
+        "rotation_normalized_sq": 0.7380663419957388,
+        "translation_l2_action_units": 0.33292186039037874,
+        "translation_normalized_mse": 0.318018515317155
+      }
+    },
+    "scalar": {
+      "0": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 0,
+          "maximum_age_disparity_seconds": 0.0
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "16": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 16,
+          "maximum_age_disparity_seconds": 1.6
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "25": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 25,
+          "maximum_age_disparity_seconds": 2.5
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "4": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 4,
+          "maximum_age_disparity_seconds": 0.4
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "50": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 50,
+          "maximum_age_disparity_seconds": 5.0
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "8": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 8,
+          "maximum_age_disparity_seconds": 0.8
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "99": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 99,
+          "maximum_age_disparity_seconds": 9.9
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      }
+    },
+    "semantic_three": {
+      "0": {
+        "arm_gripper_balanced_semantic_error": 0.35398786015196104,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.0,
+          "age_disparity_steps": 0.0,
+          "mixed_source": 0.0,
+          "nearest_full_semantic_distance": 2.5451401905489077e-15,
+          "teacher_forced_boundary_semantic_distance": 0.49715927417660927
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 0,
+          "maximum_age_disparity_seconds": 0.0
+        },
+        "dimension_weighted_semantic_error": 0.4813687941465093,
+        "equal_group_semantic_error": 0.41343229601608356,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.24297253008648262,
+          "2": 0.525665119271598,
+          "3": 0.5425285488569108,
+          "4": 0.4320511445151673,
+          "5": 0.4485258700590969,
+          "6": 0.48070764079046635,
+          "7": 0.5471407193853829,
+          "8": 0.9087381589831098,
+          "9": 0.3221194185176218
+        },
+        "rotation_geodesic_radians": 0.04890605200212084,
+        "rotation_normalized_sq": 0.7452384438127708,
+        "translation_l2_action_units": 0.33392076645406876,
+        "translation_normalized_mse": 0.3194038916758863
+      },
+      "16": {
+        "arm_gripper_balanced_semantic_error": 0.34126445964868946,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.26518171160609616,
+          "age_disparity_steps": 2.651817116060961,
+          "mixed_source": 0.340758108636186,
+          "nearest_full_semantic_distance": 0.009634103710395202,
+          "teacher_forced_boundary_semantic_distance": 0.4837489807842924
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 16,
+          "maximum_age_disparity_seconds": 1.6
+        },
+        "dimension_weighted_semantic_error": 0.468070620604698,
+        "equal_group_semantic_error": 0.40044066809482687,
+        "gripper_false_transition": 0.16041422430636967,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.16373583431027744,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.42777569057260395,
+          "1": 0.23539115635777055,
+          "2": 0.5095056235018625,
+          "3": 0.5310278557276451,
+          "4": 0.41134985069735513,
+          "5": 0.43552058204886207,
+          "6": 0.46733032239679234,
+          "7": 0.5386459950863899,
+          "8": 0.8956929654891369,
+          "9": 0.31332273447634484
+        },
+        "rotation_geodesic_radians": 0.04810351552798585,
+        "rotation_normalized_sq": 0.7311322073346307,
+        "translation_l2_action_units": 0.323865389707831,
+        "translation_normalized_mse": 0.30645396263957236
+      },
+      "25": {
+        "arm_gripper_balanced_semantic_error": 0.3023053527769345,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 1.7808518952715904,
+          "age_disparity_steps": 17.808518952715904,
+          "mixed_source": 0.8280578350918327,
+          "nearest_full_semantic_distance": 0.0366650411313592,
+          "teacher_forced_boundary_semantic_distance": 0.452987842679741
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 25,
+          "maximum_age_disparity_seconds": 2.5
+        },
+        "dimension_weighted_semantic_error": 0.43547662441099216,
+        "equal_group_semantic_error": 0.3644519462061614,
+        "gripper_false_transition": 0.11430246189917936,
+        "gripper_missed_transition": 0.0015631105900742479,
+        "gripper_sign_error": 0.11586557248925361,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.39576239539678615,
+          "1": 0.2084951207763074,
+          "2": 0.48242490159458895,
+          "3": 0.4994630833912435,
+          "4": 0.37208487466928175,
+          "5": 0.4055896156059508,
+          "6": 0.43786610296561307,
+          "7": 0.5079088904357233,
+          "8": 0.8421601335931699,
+          "9": 0.2860492130558375
+        },
+        "rotation_geodesic_radians": 0.04619352934632513,
+        "rotation_normalized_sq": 0.6968096289719075,
+        "translation_l2_action_units": 0.30628192872892074,
+        "translation_normalized_mse": 0.28068063715732317
+      },
+      "4": {
+        "arm_gripper_balanced_semantic_error": 0.352968703032714,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.023134036733098867,
+          "age_disparity_steps": 0.23134036733098867,
+          "mixed_source": 0.08792497069167643,
+          "nearest_full_semantic_distance": 0.0007789975691070314,
+          "teacher_forced_boundary_semantic_distance": 0.49544437228566085
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 4,
+          "maximum_age_disparity_seconds": 0.4
+        },
+        "dimension_weighted_semantic_error": 0.4796216676563715,
+        "equal_group_semantic_error": 0.4120734198570875,
+        "gripper_false_transition": 0.17233294255568582,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17565455255959359,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.44969021230675477,
+          "1": 0.2417140117012863,
+          "2": 0.5249404395505539,
+          "3": 0.5411622690337766,
+          "4": 0.4307209090960677,
+          "5": 0.4428072300171411,
+          "6": 0.4773290756516408,
+          "7": 0.545830360811852,
+          "8": 0.9083868133384813,
+          "9": 0.32015726220493984
+        },
+        "rotation_geodesic_radians": 0.04880764263789728,
+        "rotation_normalized_sq": 0.7433066714876996,
+        "translation_l2_action_units": 0.33187470316278933,
+        "translation_normalized_mse": 0.31725903552396933
+      },
+      "50": {
+        "arm_gripper_balanced_semantic_error": 0.2883454876280906,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 3.441520125048848,
+          "age_disparity_steps": 34.41520125048847,
+          "mixed_source": 0.9015240328253223,
+          "nearest_full_semantic_distance": 0.04553242013975692,
+          "teacher_forced_boundary_semantic_distance": 0.4387024429501834
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 50,
+          "maximum_age_disparity_seconds": 5.0
+        },
+        "dimension_weighted_semantic_error": 0.4210357413098535,
+        "equal_group_semantic_error": 0.3502676060129133,
+        "gripper_false_transition": 0.10140679953106682,
+        "gripper_missed_transition": 0.0011723329425556857,
+        "gripper_sign_error": 0.1025791324736225,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.37477213832081135,
+          "1": 0.19601093455539606,
+          "2": 0.46336026238633937,
+          "3": 0.4847081182384084,
+          "4": 0.36555738574680385,
+          "5": 0.3754108598620164,
+          "6": 0.42732306206541165,
+          "7": 0.4935629201486557,
+          "8": 0.828667071601595,
+          "9": 0.27900796641915765
+        },
+        "rotation_geodesic_radians": 0.04507007632185219,
+        "rotation_normalized_sq": 0.6784978603998882,
+        "translation_l2_action_units": 0.2973740351110605,
+        "translation_normalized_mse": 0.269725825165229
+      },
+      "8": {
+        "arm_gripper_balanced_semantic_error": 0.34860968134543807,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 0.10824540836264165,
+          "age_disparity_steps": 1.0824540836264165,
+          "mixed_source": 0.21707698319656116,
+          "nearest_full_semantic_distance": 0.0037222697127854594,
+          "teacher_forced_boundary_semantic_distance": 0.491321665267452
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 8,
+          "maximum_age_disparity_seconds": 0.8
+        },
+        "dimension_weighted_semantic_error": 0.47535901829708654,
+        "equal_group_semantic_error": 0.40775937192287404,
+        "gripper_false_transition": 0.16783899960922236,
+        "gripper_missed_transition": 0.0033216100039077765,
+        "gripper_sign_error": 0.17116060961313012,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.4442300745298569,
+          "1": 0.23539115635777055,
+          "2": 0.5227273537533108,
+          "3": 0.5370878244048934,
+          "4": 0.4264793814606443,
+          "5": 0.44046801989721845,
+          "6": 0.4713714785738773,
+          "7": 0.5415789298476023,
+          "8": 0.9044273279104514,
+          "9": 0.3164974661630022
+        },
+        "rotation_geodesic_radians": 0.048552101818211776,
+        "rotation_normalized_sq": 0.7393487711777111,
+        "translation_l2_action_units": 0.3285524576771753,
+        "translation_normalized_mse": 0.3127687349777809
+      },
+      "99": {
+        "arm_gripper_balanced_semantic_error": 0.2849738216551057,
+        "composition_diagnostics": {
+          "age_disparity_seconds": 4.602246971473233,
+          "age_disparity_steps": 46.02246971473232,
+          "mixed_source": 0.9155920281359906,
+          "nearest_full_semantic_distance": 0.04788148418827891,
+          "teacher_forced_boundary_semantic_distance": 0.43429235501778757
+        },
+        "constraint": {
+          "maximum_age_disparity_dataset_steps": 99,
+          "maximum_age_disparity_seconds": 9.9
+        },
+        "dimension_weighted_semantic_error": 0.4166513769544457,
+        "equal_group_semantic_error": 0.3464233474614644,
+        "gripper_false_transition": 0.09945291129347401,
+        "gripper_missed_transition": 0.0011723329425556857,
+        "gripper_sign_error": 0.1006252442360297,
+        "per_task_dimension_weighted_semantic_error": {
+          "0": 0.365643968558124,
+          "1": 0.19085855064786622,
+          "2": 0.4588441837287366,
+          "3": 0.4831392379919855,
+          "4": 0.36336878766286274,
+          "5": 0.3698963347361609,
+          "6": 0.4215868516956775,
+          "7": 0.4891830534324368,
+          "8": 0.8243146724621472,
+          "9": 0.2766849079288506
+        },
+        "rotation_geodesic_radians": 0.04467233712290098,
+        "rotation_normalized_sq": 0.6737753936060559,
+        "translation_l2_action_units": 0.2937281127826131,
+        "translation_normalized_mse": 0.26486940454230745
+      }
+    }
+  },
+  "oracle_unconstrained_comparisons": {
+    "oracle_arm_gripper_minus_oracle_scalar": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.04798126345107584,
+          -0.02792899863122811
+        ],
+        "episode_weighted_mean_difference": -0.037573324746609425,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.03965402370572278
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.016912893735177712,
+          -0.010703388848149201
+        ],
+        "episode_weighted_mean_difference": -0.013720401400867995,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.014385963264407706
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.03347818596132248,
+          -0.019957827632817716
+        ],
+        "episode_weighted_mean_difference": -0.02644196051859676,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.02786226216644241
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.09148146487295482,
+          -0.051914782025429186
+        ],
+        "episode_weighted_mean_difference": -0.07096741743064744,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.07502930832356389
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.00044289271906472217,
+          -0.00023048687174198666
+        ],
+        "episode_weighted_mean_difference": -0.0003352546828380233,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.00034872812185368147
+      }
+    },
+    "oracle_semantic_three_minus_oracle_scalar": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.07788377394859221,
+          -0.05710739880431702
+        ],
+        "episode_weighted_mean_difference": -0.06705101168912483,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.06901403849685538
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.07095212847979773,
+          -0.057580393277258765
+        ],
+        "episode_weighted_mean_difference": -0.06425357901660869,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.06471741719206356
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.07386713992243768,
+          -0.05778034999939734
+        ],
+        "episode_weighted_mean_difference": -0.0657455431086173,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.0670089485546192
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.09148146487295482,
+          -0.051914782025429186
+        ],
+        "episode_weighted_mean_difference": -0.07096741743064744,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.07502930832356389
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.004719404573663742,
+          -0.0037455836986322677
+        ],
+        "episode_weighted_mean_difference": -0.0042220718747301746,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.004233714879219852
+      }
+    }
+  },
+  "paired_test_comparisons": {
+    "consistency_gated_semantic_three_similarity_minus_validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.001338321000824106,
+          0.0035860576962528025
+        ],
+        "episode_weighted_mean_difference": 0.0009125053599313015,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0009076912136075743
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.000603810701201211,
+          0.0020698703222805505
+        ],
+        "episode_weighted_mean_difference": 0.0006536192043377059,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0005790979616737212
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.0009386770607295607,
+          0.0028148902406319853
+        ],
+        "episode_weighted_mean_difference": 0.0007916918206542899,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0007543476960384429
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.002707497666171753,
+          0.006145747210353992
+        ],
+        "episode_weighted_mean_difference": 0.0012749459777623333,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0013677217663149667
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -7.51473274747161e-05,
+          3.798884744687111e-05
+        ],
+        "episode_weighted_mean_difference": -1.868118992874827e-05,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -1.7739515203348426e-05
+      }
+    },
+    "validation_selected_arm_gripper_similarity_minus_validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          0.005681572433510498,
+          0.020707484588546713
+        ],
+        "episode_weighted_mean_difference": 0.012917492644935434,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.012612999729792568
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          0.002669230747560462,
+          0.00723837347226536
+        ],
+        "episode_weighted_mean_difference": 0.00490305322439999,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.004595544894907063
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          0.004317106052051936,
+          0.014271405522534274
+        ],
+        "episode_weighted_mean_difference": 0.009177420915352227,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.008871520806846002
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          0.009485848676529584,
+          0.03993589126727901
+        ],
+        "episode_weighted_mean_difference": 0.024137707833685053,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.023837436498632278
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -3.397215989418106e-05,
+          9.696065731367974e-05
+        ],
+        "episode_weighted_mean_difference": 3.2076345209841435e-05,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 1.929697370170426e-05
+      }
+    },
+    "validation_selected_cogact_cosine_semantic_aggregation_minus_validation_selected_cogact_cosine": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.0005428412324987259,
+          0.0015456248033747916
+        ],
+        "episode_weighted_mean_difference": 0.0005552750542202336,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0005863130181791457
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.00015493390852357514,
+          0.0004426876021927469
+        ],
+        "episode_weighted_mean_difference": 0.00015885766009555977,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.00016772735791018698
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.0003618450230801885,
+          0.0010309215834068157
+        ],
+        "episode_weighted_mean_difference": 0.0003702802702953857,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0003909730433869651
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.0010863565439495867,
+          0.0030908742003339044
+        ],
+        "episode_weighted_mean_difference": 0.0011102594059947753,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0011723329425556857
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -4.6384329649660635e-08,
+          1.0576674734783951e-07
+        ],
+        "episode_weighted_mean_difference": 3.182356567104324e-08,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 3.4191576271834e-08
+      }
+    },
+    "validation_selected_scalar_semantic_similarity_minus_validation_selected_age_exponential": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.011221013565147509,
+          0.0018143221781078136
+        ],
+        "episode_weighted_mean_difference": -0.004636992906188734,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.0037085209064074394
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.007147466652365216,
+          0.002105571470432428
+        ],
+        "episode_weighted_mean_difference": -0.002507605094976953,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.002310124490256216
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.008908989109628822,
+          0.0014288792498951724
+        ],
+        "episode_weighted_mean_difference": -0.003643278594289905,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.0030559359122035346
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.020214605503810136,
+          0.004625897626914244
+        ],
+        "episode_weighted_mean_difference": -0.007618135841885228,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.005666275889019148
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.0003143345345753907,
+          0.00022917099389234001
+        ],
+        "episode_weighted_mean_difference": -4.7284450896688174e-05,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -5.0759370760259225e-05
+      }
+    },
+    "validation_selected_scalar_semantic_similarity_semantic_aggregation_minus_validation_selected_age_exponential_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.017326482372262912,
+          -0.0024823688329111623
+        ],
+        "episode_weighted_mean_difference": -0.009978571446294122,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.00869060306277665
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.008821359565742034,
+          0.0007704555374187187
+        ],
+        "episode_weighted_mean_difference": -0.004033283490857697,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.0037331010356582033
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.01284991892109801,
+          -0.0015693641386320869
+        ],
+        "episode_weighted_mean_difference": -0.0072041037337571235,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.006377102116788042
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.03263426447988276,
+          -0.004007566850095596
+        ],
+        "episode_weighted_mean_difference": -0.01830197458390512,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.015631105900742476
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.00031428455770808524,
+          0.00022916361743482454
+        ],
+        "episode_weighted_mean_difference": -4.725485893870293e-05,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -5.072650080800227e-05
+      }
+    },
+    "validation_selected_scalar_semantic_similarity_semantic_aggregation_minus_validation_selected_cogact_cosine_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.02319780287090881,
+          -0.006478255402880407
+        ],
+        "episode_weighted_mean_difference": -0.01407425557498284,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.014252593177711334
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.01613474841326993,
+          -0.002025103670242575
+        ],
+        "episode_weighted_mean_difference": -0.008423391054414028,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.008941474420876434
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.019594309758745567,
+          -0.004550167186020391
+        ],
+        "episode_weighted_mean_difference": -0.01143718546538406,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.011774071091188382
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.035066305744208555,
+          -0.010370941139377157
+        ],
+        "episode_weighted_mean_difference": -0.021985465903779165,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.021688159437280186
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.0008445974381237338,
+          -0.00017441101479552876
+        ],
+        "episode_weighted_mean_difference": -0.0004948620827985956,
+        "episodes": 41,
+        "sample_weighted_mean_difference": -0.0004951793614687701
+      }
+    },
+    "validation_selected_scalar_semantic_similarity_semantic_aggregation_minus_validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.002441317581337616,
+          0.00608866244283669
+        ],
+        "episode_weighted_mean_difference": 0.0018481845243094072,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0018569656283644884
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.0006968935336441184,
+          0.0017408435972770004
+        ],
+        "episode_weighted_mean_difference": 0.0005292479786454978,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0005316641833203085
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.001627253025747316,
+          0.0040596803149088355
+        ],
+        "episode_weighted_mean_difference": 0.0012326808029995834,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0012384916206772047
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.004883511248108516,
+          0.012175608826620256
+        ],
+        "episode_weighted_mean_difference": 0.003694695688238879,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0037123876514263384
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          5.677551101777785e-08,
+          2.004364154627333e-07
+        ],
+        "episode_weighted_mean_difference": 1.2581798849998698e-07,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 1.1809332004186587e-07
+      }
+    },
+    "validation_selected_semantic_three_similarity_minus_validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.0014217712258481684,
+          0.010385270188260956
+        ],
+        "episode_weighted_mean_difference": 0.004280376146466592,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.005067345568326613
+      },
+      "dimension_weighted_semantic_error": {
+        "episode_bootstrap_ci95": [
+          0.00018641738562816476,
+          0.013023518721388665
+        ],
+        "episode_weighted_mean_difference": 0.00683155433586743,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.007709933998334933
+      },
+      "equal_group_semantic_error": {
+        "episode_bootstrap_ci95": [
+          -0.00035346987366508806,
+          0.011514779154767332
+        ],
+        "episode_weighted_mean_difference": 0.005470925968186983,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.006300553502330497
+      },
+      "gripper_sign_error": {
+        "episode_bootstrap_ci95": [
+          -0.007169256518691088,
+          0.009571401691001697
+        ],
+        "episode_weighted_mean_difference": 0.0007087266813054192,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 0.0013677217663149667
+      },
+      "rotation_geodesic_radians": {
+        "episode_bootstrap_ci95": [
+          -0.0004359672686649825,
+          0.0003953776546633607
+        ],
+        "episode_weighted_mean_difference": -1.2329344948838358e-05,
+        "episodes": 41,
+        "sample_weighted_mean_difference": 4.6210180124764184e-05
+      }
+    }
+  },
+  "provenance": {
+    "cache": {
+      "bytes": 12857759,
+      "path": "/home/thor/projects/one-clock/experiments/temporal_reliability/reliability_dataset.npz",
+      "sha256": "6e72b16a1acc90b6187f4c007848345e73090db3e362ba39f0e7f3095b4c0c60"
+    },
+    "dataset": "/home/thor/datasets/libero_object_25_08_23_lerobotv2.1",
+    "dataset_frequency_hz": 10.0,
+    "split_bundle": {
+      "bytes": 9955742,
+      "path": "/home/thor/projects/one-clock/experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz",
+      "sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4"
+    }
+  },
+  "test_methods": {
+    "consistency_gated_arm_gripper_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.471270504375038,
+      "dimension_weighted_semantic_error": 0.6253433064449654,
+      "equal_group_semantic_error": 0.5431711453410041,
+      "gripper_false_transition": 0.24970691676436108,
+      "gripper_missed_transition": 0.005861664712778429,
+      "gripper_sign_error": 0.2555685814771395,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6176474003454996,
+        "1": 0.3311000141213204,
+        "2": 0.6876943703209124,
+        "3": 0.6838169729814375,
+        "4": 0.5806990399560131,
+        "5": 0.6126369667345362,
+        "6": 0.6365461061955552,
+        "7": 0.6625631021077808,
+        "8": 1.123138914425914,
+        "9": 0.42720729808245167
+      },
+      "rotation_geodesic_radians": 0.055223201498623135,
+      "rotation_normalized_sq": 0.9328681560308225,
+      "translation_l2_action_units": 0.4027483594229995,
+      "translation_normalized_mse": 0.44107669851505044
+    },
+    "consistency_gated_semantic_three_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.4711549086939077,
+      "dimension_weighted_semantic_error": 0.6252847058657132,
+      "equal_group_semantic_error": 0.5430821473740837,
+      "gripper_false_transition": 0.2495115279406018,
+      "gripper_missed_transition": 0.005861664712778429,
+      "gripper_sign_error": 0.2553731926533802,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.617679691374312,
+        "1": 0.331085509658125,
+        "2": 0.6878411000165966,
+        "3": 0.6832922584811735,
+        "4": 0.5806200736052644,
+        "5": 0.6125828849155245,
+        "6": 0.6366407436142836,
+        "7": 0.662455470757068,
+        "8": 1.1230722471589647,
+        "9": 0.42718174965399475
+      },
+      "rotation_geodesic_radians": 0.05522225439914098,
+      "rotation_normalized_sq": 0.9328364149019281,
+      "translation_l2_action_units": 0.4027074157097405,
+      "translation_normalized_mse": 0.4410368345669424
+    },
+    "newest": {
+      "arm_gripper_balanced_semantic_error": 0.4999819913455078,
+      "dimension_weighted_semantic_error": 0.6575362580381765,
+      "equal_group_semantic_error": 0.5735073158020866,
+      "gripper_false_transition": 0.27452129738178976,
+      "gripper_missed_transition": 0.0048847205939820245,
+      "gripper_sign_error": 0.2794060179757718,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7089956774374669,
+        "1": 0.3332632703002524,
+        "2": 0.7415917602694082,
+        "3": 0.6763376723881669,
+        "4": 0.6010621470109175,
+        "5": 0.6652257471836084,
+        "6": 0.6688670150716614,
+        "7": 0.6960270175944964,
+        "8": 1.1894575409907846,
+        "9": 0.4233502509876044
+      },
+      "rotation_geodesic_radians": 0.057148812038119785,
+      "rotation_normalized_sq": 0.9863485409447112,
+      "translation_l2_action_units": 0.3971690862886542,
+      "translation_normalized_mse": 0.4547673884857767
+    },
+    "official_cogact_cosine_alpha_0_1": {
+      "arm_gripper_balanced_semantic_error": 0.4902445884678184,
+      "dimension_weighted_semantic_error": 0.6531251505984352,
+      "equal_group_semantic_error": 0.5662555174621062,
+      "gripper_false_transition": 0.2553731926533802,
+      "gripper_missed_transition": 0.006838608831574834,
+      "gripper_sign_error": 0.26221180148495504,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6026607832893902,
+        "1": 0.3860820947408689,
+        "2": 0.7043697745757002,
+        "3": 0.7250318143624299,
+        "4": 0.6343195138498534,
+        "5": 0.6071284083157508,
+        "6": 0.6461932556649027,
+        "7": 0.711303315573661,
+        "8": 1.1310849034268629,
+        "9": 0.4757248628387631
+      },
+      "rotation_geodesic_radians": 0.05555314693213735,
+      "rotation_normalized_sq": 0.9383505772504799,
+      "translation_l2_action_units": 0.4413212829096948,
+      "translation_normalized_mse": 0.49820417365088393
+    },
+    "uniform": {
+      "arm_gripper_balanced_semantic_error": 0.4974238436217114,
+      "dimension_weighted_semantic_error": 0.658175145979764,
+      "equal_group_semantic_error": 0.5724411180554693,
+      "gripper_false_transition": 0.26533802266510353,
+      "gripper_missed_transition": 0.007033997655334115,
+      "gripper_sign_error": 0.27237202032043767,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6038681323814219,
+        "1": 0.39538392193757677,
+        "2": 0.7043166921529205,
+        "3": 0.7290846475686298,
+        "4": 0.6458705673327684,
+        "5": 0.6111380786045044,
+        "6": 0.6476332263234482,
+        "7": 0.7204376686309345,
+        "8": 1.1322599959674693,
+        "9": 0.48192543523935333
+      },
+      "rotation_geodesic_radians": 0.05561696242111277,
+      "rotation_normalized_sq": 0.9396638143449094,
+      "translation_l2_action_units": 0.44508797245616977,
+      "translation_normalized_mse": 0.5052875195010608
+    },
+    "validation_selected_age_exponential": {
+      "arm_gripper_balanced_semantic_error": 0.47395573838670757,
+      "dimension_weighted_semantic_error": 0.6270157323942955,
+      "equal_group_semantic_error": 0.5453837355902487,
+      "gripper_false_transition": 0.2536146932395467,
+      "gripper_missed_transition": 0.00605705353653771,
+      "gripper_sign_error": 0.2596717467760844,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6126543191962394,
+        "1": 0.34342918886111806,
+        "2": 0.6805171089500878,
+        "3": 0.6774968714289443,
+        "4": 0.5834046171125278,
+        "5": 0.6108757699683364,
+        "6": 0.6328230829491022,
+        "7": 0.6735858756344371,
+        "8": 1.133532055004209,
+        "9": 0.42916827380239875
+      },
+      "rotation_geodesic_radians": 0.055290753285104584,
+      "rotation_normalized_sq": 0.9307671686347364,
+      "translation_l2_action_units": 0.40839929655859303,
+      "translation_normalized_mse": 0.4457122913599252
+    },
+    "validation_selected_age_exponential_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.4807947861714412,
+      "dimension_weighted_semantic_error": 0.6289703731230178,
+      "equal_group_semantic_error": 0.5499433934155104,
+      "gripper_false_transition": 0.2669011332551778,
+      "gripper_missed_transition": 0.006447831184056272,
+      "gripper_sign_error": 0.27334896443923407,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6120555830779874,
+        "1": 0.342869058524621,
+        "2": 0.6918172063507696,
+        "3": 0.6802266184504355,
+        "4": 0.5844277149405245,
+        "5": 0.611487832805393,
+        "6": 0.6336642565560874,
+        "7": 0.6759622038874934,
+        "8": 1.1371933847583047,
+        "9": 0.4289509078107896
+      },
+      "rotation_geodesic_radians": 0.05529083850847238,
+      "rotation_normalized_sq": 0.9307689244473719,
+      "translation_l2_action_units": 0.40839929655859303,
+      "translation_normalized_mse": 0.4457122913599252
+    },
+    "validation_selected_arm_gripper_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.4828602172100927,
+      "dimension_weighted_semantic_error": 0.6293011527989465,
+      "equal_group_semantic_error": 0.5511993204848911,
+      "gripper_false_transition": 0.2729581867917155,
+      "gripper_missed_transition": 0.0048847205939820245,
+      "gripper_sign_error": 0.27784290738569756,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6257227112251168,
+        "1": 0.3332983714472898,
+        "2": 0.6984065354755038,
+        "3": 0.6771774614011478,
+        "4": 0.5783430766841332,
+        "5": 0.6185767471179752,
+        "6": 0.6386356586481525,
+        "7": 0.6708370572574108,
+        "8": 1.1327421916034097,
+        "9": 0.430301124909201
+      },
+      "rotation_geodesic_radians": 0.05525929088804603,
+      "rotation_normalized_sq": 0.9342945388744026,
+      "translation_l2_action_units": 0.40230359396428006,
+      "translation_normalized_mse": 0.4414605151945732
+    },
+    "validation_selected_cogact_cosine": {
+      "arm_gripper_balanced_semantic_error": 0.48577046326819684,
+      "dimension_weighted_semantic_error": 0.6340110191503259,
+      "equal_group_semantic_error": 0.5549493893465237,
+      "gripper_false_transition": 0.27334896443923407,
+      "gripper_missed_transition": 0.0048847205939820245,
+      "gripper_sign_error": 0.2782336850332161,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6355702638532859,
+        "1": 0.33139165335982057,
+        "2": 0.7340348368698287,
+        "3": 0.675338929198313,
+        "4": 0.5775303684880364,
+        "5": 0.6327235138593328,
+        "6": 0.6461591378487538,
+        "7": 0.6642838972990666,
+        "8": 1.1352086207214696,
+        "9": 0.42633569802890114
+      },
+      "rotation_geodesic_radians": 0.055735257177556875,
+      "rotation_normalized_sq": 0.9478707403776898,
+      "translation_l2_action_units": 0.39543337991589833,
+      "translation_normalized_mse": 0.4387437426286652
+    },
+    "validation_selected_cogact_cosine_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.48635677628637597,
+      "dimension_weighted_semantic_error": 0.6341787465082361,
+      "equal_group_semantic_error": 0.5553403623899107,
+      "gripper_false_transition": 0.27452129738178976,
+      "gripper_missed_transition": 0.0048847205939820245,
+      "gripper_sign_error": 0.2794060179757718,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6355727645836647,
+        "1": 0.33111264313446914,
+        "2": 0.7352875877573124,
+        "3": 0.6753389529080759,
+        "4": 0.5775304208661299,
+        "5": 0.6324241737452301,
+        "6": 0.6461597803562119,
+        "7": 0.664284480564303,
+        "8": 1.136120791007297,
+        "9": 0.4265525133894967
+      },
+      "rotation_geodesic_radians": 0.05573529136913315,
+      "rotation_normalized_sq": 0.9478713265652952,
+      "translation_l2_action_units": 0.39543337991589833,
+      "translation_normalized_mse": 0.4387437426286652
+    },
+    "validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.47024721748030024,
+      "dimension_weighted_semantic_error": 0.6247056079040394,
+      "equal_group_semantic_error": 0.5423277996780451,
+      "gripper_false_transition": 0.2483391949980461,
+      "gripper_missed_transition": 0.005666275889019148,
+      "gripper_sign_error": 0.25400547088706527,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6201944004444522,
+        "1": 0.33021380543800216,
+        "2": 0.6866662386445451,
+        "3": 0.678144482242405,
+        "4": 0.5770215231059046,
+        "5": 0.616200010206777,
+        "6": 0.6382014394493298,
+        "7": 0.6633173176232972,
+        "8": 1.1221622998582796,
+        "9": 0.4252281875445226
+      },
+      "rotation_geodesic_radians": 0.055239993914344324,
+      "rotation_normalized_sq": 0.9335581227256314,
+      "translation_l2_action_units": 0.4013183499811888,
+      "translation_normalized_mse": 0.4394198054214385
+    },
+    "validation_selected_scalar_semantic_similarity_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.4721041831086647,
+      "dimension_weighted_semantic_error": 0.6252372720873597,
+      "equal_group_semantic_error": 0.5435662912987222,
+      "gripper_false_transition": 0.25185619382571317,
+      "gripper_missed_transition": 0.005861664712778429,
+      "gripper_sign_error": 0.2577178585384916,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.6207991921871223,
+        "1": 0.3299346868193734,
+        "2": 0.6910599953148934,
+        "3": 0.6769312810034269,
+        "4": 0.5765114357945608,
+        "5": 0.615295408827137,
+        "6": 0.6379235875973376,
+        "7": 0.6643748544775977,
+        "8": 1.1270476667244609,
+        "9": 0.423925482847817
+      },
+      "rotation_geodesic_radians": 0.05524011200766437,
+      "rotation_normalized_sq": 0.9335612099362368,
+      "translation_l2_action_units": 0.4013183499811888,
+      "translation_normalized_mse": 0.4394198054214385
+    },
+    "validation_selected_semantic_three_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.47531456304862674,
+      "dimension_weighted_semantic_error": 0.6324155419023743,
+      "equal_group_semantic_error": 0.5486283531803756,
+      "gripper_false_transition": 0.24931613911684253,
+      "gripper_missed_transition": 0.00605705353653771,
+      "gripper_sign_error": 0.2553731926533802,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.5955428830087364,
+        "1": 0.3493194673030616,
+        "2": 0.688300284437559,
+        "3": 0.6958571743633526,
+        "4": 0.602914453708712,
+        "5": 0.6052921125526187,
+        "6": 0.6391007829274478,
+        "7": 0.6770189700815645,
+        "8": 1.127468544546804,
+        "9": 0.44447735600654265
+      },
+      "rotation_geodesic_radians": 0.05528620409446909,
+      "rotation_normalized_sq": 0.932608763203562,
+      "translation_l2_action_units": 0.41663556715584815,
+      "translation_normalized_mse": 0.45790310368418474
+    }
+  },
+  "validation_methods": {
+    "consistency_gated_arm_gripper_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.48897546625201593,
+      "dimension_weighted_semantic_error": 0.6777174873221673,
+      "equal_group_semantic_error": 0.5770550760847533,
+      "gripper_false_transition": 0.21946937182988685,
+      "gripper_missed_transition": 0.0052672649239172845,
+      "gripper_sign_error": 0.22473663675380415,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7871480367595586,
+        "1": 0.46798406661295366,
+        "2": 0.6658991219744035,
+        "3": 0.6214815141501896,
+        "4": 0.5302350909617433,
+        "5": 0.8508481427552794,
+        "6": 0.6700835059029322,
+        "7": 0.5104368335462864,
+        "8": 1.1348625208427918,
+        "9": 0.6163146404446964
+      },
+      "rotation_geodesic_radians": 0.05856387582412753,
+      "rotation_normalized_sq": 1.053884055449838,
+      "translation_l2_action_units": 0.4064011479334413,
+      "translation_normalized_mse": 0.4525445360506175
+    },
+    "consistency_gated_semantic_three_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.48896465627660823,
+      "dimension_weighted_semantic_error": 0.677698955935754,
+      "equal_group_semantic_error": 0.5770406627842095,
+      "gripper_false_transition": 0.21946937182988685,
+      "gripper_missed_transition": 0.0052672649239172845,
+      "gripper_sign_error": 0.22473663675380415,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7871255393817108,
+        "1": 0.4678457566703519,
+        "2": 0.6656816428079915,
+        "3": 0.6215213757904066,
+        "4": 0.5301307735631808,
+        "5": 0.8510044661814279,
+        "6": 0.670016124773941,
+        "7": 0.5104407753583711,
+        "8": 1.1351661998189218,
+        "9": 0.6162394538806136
+      },
+      "rotation_geodesic_radians": 0.058566857939042184,
+      "rotation_normalized_sq": 1.053958774496196,
+      "translation_l2_action_units": 0.40630928988531445,
+      "translation_normalized_mse": 0.45242657710262846
+    },
+    "newest": {
+      "arm_gripper_balanced_semantic_error": 0.5293216545651832,
+      "dimension_weighted_semantic_error": 0.7234723152447898,
+      "equal_group_semantic_error": 0.6199252962156663,
+      "gripper_false_transition": 0.25263363246195863,
+      "gripper_missed_transition": 0.004877097151775264,
+      "gripper_sign_error": 0.2575107296137339,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.85537148831264,
+        "1": 0.4950327863392832,
+        "2": 0.7001478114446689,
+        "3": 0.6371247786484093,
+        "4": 0.5690071273796133,
+        "5": 0.9037091362239867,
+        "6": 0.740349456124194,
+        "7": 0.528960668388376,
+        "8": 1.2589464366945813,
+        "9": 0.6378013389373266
+      },
+      "rotation_geodesic_radians": 0.06191615971492567,
+      "rotation_normalized_sq": 1.1327599276967917,
+      "translation_l2_action_units": 0.4002457810107993,
+      "translation_normalized_mse": 0.46950523133647326
+    },
+    "official_cogact_cosine_alpha_0_1": {
+      "arm_gripper_balanced_semantic_error": 0.5129631977305978,
+      "dimension_weighted_semantic_error": 0.7076916620813927,
+      "equal_group_semantic_error": 0.6038364810943021,
+      "gripper_false_transition": 0.23468591494342567,
+      "gripper_missed_transition": 0.005657432696059305,
+      "gripper_sign_error": 0.24034334763948498,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7998009239916571,
+        "1": 0.49206503543919844,
+        "2": 0.7417240908761326,
+        "3": 0.6580020188362726,
+        "4": 0.5600959757348766,
+        "5": 0.8450354236847955,
+        "6": 0.6493937079434382,
+        "7": 0.5631357311819216,
+        "8": 1.1457586909318846,
+        "9": 0.6798894194670783
+      },
+      "rotation_geodesic_radians": 0.058523901763991644,
+      "rotation_normalized_sq": 1.059776061932742,
+      "translation_l2_action_units": 0.4417082393877877,
+      "translation_normalized_mse": 0.5113900337106794
+    },
+    "uniform": {
+      "arm_gripper_balanced_semantic_error": 0.521589251213072,
+      "dimension_weighted_semantic_error": 0.7128643336664199,
+      "equal_group_semantic_error": 0.6108509563579676,
+      "gripper_false_transition": 0.24736636753804137,
+      "gripper_missed_transition": 0.006437768240343348,
+      "gripper_sign_error": 0.25380413577838473,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.801856687950383,
+        "1": 0.4971678267348178,
+        "2": 0.7494912102936848,
+        "3": 0.6627252446403619,
+        "4": 0.5663463036108346,
+        "5": 0.8507069145387753,
+        "6": 0.64945804915149,
+        "7": 0.5702201065457316,
+        "8": 1.1501736803748972,
+        "9": 0.6872806062719029
+      },
+      "rotation_geodesic_radians": 0.0585594677243715,
+      "rotation_normalized_sq": 1.061126234827971,
+      "translation_l2_action_units": 0.44516303137233487,
+      "translation_normalized_mse": 0.517622498467547
+    },
+    "validation_selected_age_exponential": {
+      "arm_gripper_balanced_semantic_error": 0.5013686954138574,
+      "dimension_weighted_semantic_error": 0.6850284597373947,
+      "equal_group_semantic_error": 0.5870765854315082,
+      "gripper_false_transition": 0.23839250877877488,
+      "gripper_missed_transition": 0.005852516582130316,
+      "gripper_sign_error": 0.2442450253609052,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7921555599115802,
+        "1": 0.48292242499409854,
+        "2": 0.7035083194275996,
+        "3": 0.6244582328405721,
+        "4": 0.5341632057027825,
+        "5": 0.8492353016680501,
+        "6": 0.6453752409927638,
+        "7": 0.5184212113085699,
+        "8": 1.1474982889486167,
+        "9": 0.6264591586948349
+      },
+      "rotation_geodesic_radians": 0.05877664671021979,
+      "rotation_normalized_sq": 1.0546529907710527,
+      "translation_l2_action_units": 0.41149484831633787,
+      "translation_normalized_mse": 0.46233174016256673
+    },
+    "validation_selected_age_exponential_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.5060507077213443,
+      "dimension_weighted_semantic_error": 0.6863661761706519,
+      "equal_group_semantic_error": 0.5901979263310213,
+      "gripper_false_transition": 0.2481467030823254,
+      "gripper_missed_transition": 0.005462348809988295,
+      "gripper_sign_error": 0.2536090518923137,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7909656621669318,
+        "1": 0.47986738227273035,
+        "2": 0.7084109377111519,
+        "3": 0.6253596687119899,
+        "4": 0.5325191109879134,
+        "5": 0.8482709759714315,
+        "6": 0.6526381967838095,
+        "7": 0.5194870318401235,
+        "8": 1.154828669381145,
+        "9": 0.6258047760165016
+      },
+      "rotation_geodesic_radians": 0.05877670120383381,
+      "rotation_normalized_sq": 1.0546529869381833,
+      "translation_l2_action_units": 0.41149484831633787,
+      "translation_normalized_mse": 0.46233174016256673
+    },
+    "validation_selected_arm_gripper_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.5038511341678014,
+      "dimension_weighted_semantic_error": 0.6825954786502927,
+      "equal_group_semantic_error": 0.5872651615929638,
+      "gripper_false_transition": 0.24873195474053844,
+      "gripper_missed_transition": 0.004877097151775264,
+      "gripper_sign_error": 0.2536090518923137,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7939464119219743,
+        "1": 0.4681028800343082,
+        "2": 0.6715396084169536,
+        "3": 0.6198027947745911,
+        "4": 0.5302542966371507,
+        "5": 0.8581823190487178,
+        "6": 0.6723168044123415,
+        "7": 0.5207899863794074,
+        "8": 1.14989839050836,
+        "9": 0.6198340489902843
+      },
+      "rotation_geodesic_radians": 0.05868704296473417,
+      "rotation_normalized_sq": 1.0567113114265783,
+      "translation_l2_action_units": 0.4052327586983714,
+      "translation_normalized_mse": 0.45147512145999985
+    },
+    "validation_selected_cogact_cosine": {
+      "arm_gripper_balanced_semantic_error": 0.5082742662541251,
+      "dimension_weighted_semantic_error": 0.6886451888362896,
+      "equal_group_semantic_error": 0.5924473634591351,
+      "gripper_false_transition": 0.25087787748731954,
+      "gripper_missed_transition": 0.004877097151775264,
+      "gripper_sign_error": 0.2557549746390948,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7979449342891205,
+        "1": 0.46523449128878025,
+        "2": 0.6791249920984899,
+        "3": 0.6280957837080746,
+        "4": 0.5363061187271069,
+        "5": 0.8400351351788393,
+        "6": 0.6831919933869479,
+        "7": 0.5273533923522322,
+        "8": 1.1752065377572636,
+        "9": 0.6294451096899268
+      },
+      "rotation_geodesic_radians": 0.05909520559327047,
+      "rotation_normalized_sq": 1.0673484247414124,
+      "translation_l2_action_units": 0.40024860172022286,
+      "translation_normalized_mse": 0.45423869099689823
+    },
+    "validation_selected_cogact_cosine_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.5091526881732752,
+      "dimension_weighted_semantic_error": 0.6888969442872332,
+      "equal_group_semantic_error": 0.5930333410264556,
+      "gripper_false_transition": 0.25263363246195863,
+      "gripper_missed_transition": 0.004877097151775264,
+      "gripper_sign_error": 0.2575107296137339,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7973512522240103,
+        "1": 0.4657924812487904,
+        "2": 0.6796673380592263,
+        "3": 0.6283955476090405,
+        "4": 0.5368542997397194,
+        "5": 0.8400373851920001,
+        "6": 0.6834858345296435,
+        "7": 0.5273538347618522,
+        "8": 1.1752100823140124,
+        "9": 0.6300967261610216
+      },
+      "rotation_geodesic_radians": 0.05909528979789062,
+      "rotation_normalized_sq": 1.0673506024687345,
+      "translation_l2_action_units": 0.40024860172022286,
+      "translation_normalized_mse": 0.45423869099689823
+    },
+    "validation_selected_scalar_semantic_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.4899396511957529,
+      "dimension_weighted_semantic_error": 0.6782556107338821,
+      "equal_group_semantic_error": 0.5778204323135465,
+      "gripper_false_transition": 0.22103004291845493,
+      "gripper_missed_transition": 0.0052672649239172845,
+      "gripper_sign_error": 0.22629730784237223,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7897525078358306,
+        "1": 0.4665786212270728,
+        "2": 0.6652083821550552,
+        "3": 0.6207409345990383,
+        "4": 0.52813937365148,
+        "5": 0.8541777952514303,
+        "6": 0.6703820228733626,
+        "7": 0.5117677163599561,
+        "8": 1.1393067669684473,
+        "9": 0.6156255636535615
+      },
+      "rotation_geodesic_radians": 0.05863963888051716,
+      "rotation_normalized_sq": 1.0560607647010034,
+      "translation_l2_action_units": 0.40487630266182767,
+      "translation_normalized_mse": 0.4511032243972638
+    },
+    "validation_selected_scalar_semantic_similarity_semantic_aggregation": {
+      "arm_gripper_balanced_semantic_error": 0.49569539662643,
+      "dimension_weighted_semantic_error": 0.6799012105591927,
+      "equal_group_semantic_error": 0.5816581097950526,
+      "gripper_false_transition": 0.23253999219664456,
+      "gripper_missed_transition": 0.0052672649239172845,
+      "gripper_sign_error": 0.23780725712056183,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7903519813858729,
+        "1": 0.4674153677937585,
+        "2": 0.6706582623822696,
+        "3": 0.6210398461402206,
+        "4": 0.5289611595733775,
+        "5": 0.852565355928014,
+        "6": 0.6721280427792733,
+        "7": 0.5125676958177957,
+        "8": 1.146350527822111,
+        "9": 0.6160588345831922
+      },
+      "rotation_geodesic_radians": 0.058639781277772834,
+      "rotation_normalized_sq": 1.056063847867332,
+      "translation_l2_action_units": 0.40487630266182767,
+      "translation_normalized_mse": 0.4511032243972638
+    },
+    "validation_selected_semantic_three_similarity": {
+      "arm_gripper_balanced_semantic_error": 0.49755123463989415,
+      "dimension_weighted_semantic_error": 0.6862875967105837,
+      "equal_group_semantic_error": 0.5856282036062159,
+      "gripper_false_transition": 0.22844323058915333,
+      "gripper_missed_transition": 0.004877097151775264,
+      "gripper_sign_error": 0.2333203277409286,
+      "per_task_dimension_weighted_semantic_error": {
+        "0": 0.7785473675877939,
+        "1": 0.4735518341194599,
+        "2": 0.6999535654315514,
+        "3": 0.6356390545764156,
+        "4": 0.5365278581179487,
+        "5": 0.8432011878841792,
+        "6": 0.6488052254424059,
+        "7": 0.533416190250005,
+        "8": 1.1335936778406546,
+        "9": 0.6459804763722761
+      },
+      "rotation_geodesic_radians": 0.05834686451654753,
+      "rotation_normalized_sq": 1.0535824107062612,
+      "translation_l2_action_units": 0.41788728597586267,
+      "translation_normalized_mse": 0.46998187237145794
+    }
+  },
+  "validation_selection": {
+    "age_exponential_coefficient": 0.03,
+    "age_exponential_semantic_aggregation_coefficient": 0.03,
+    "cogact_cosine_alpha": {
+      "official_released_setting": 0.1,
+      "validation_selected_raw_linear_aggregation": 10.0,
+      "validation_selected_semantic_aggregation": 10.0
+    },
+    "consistency_gate_parameters": {
+      "arm_gripper": {
+        "gate_scale": 0.01,
+        "group_similarity_temperature": 10.0
+      },
+      "semantic_three": {
+        "gate_scale": 0.01,
+        "group_similarity_temperature": 10.0
+      }
+    },
+    "group_similarity_temperature": {
+      "arm_gripper": 0.3,
+      "semantic_three": 1.0
+    },
+    "scalar_semantic_similarity_semantic_aggregation_temperature": 0.3,
+    "scalar_semantic_similarity_temperature": 0.3,
+    "selection_rule": "Minimize dimension-weighted semantic error on validation episodes only."
+  }
+}

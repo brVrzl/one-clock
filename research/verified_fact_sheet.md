@@ -51,6 +51,11 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - Demonstration gripper horizon has weak causal-feature relationships; future gripper change rate correlates −.387 and an explanatory ridge model reaches R² .109.
 - In a new held-out sparse-overlap audit with 5,118 target actions from 41 test episodes, two to six saved temporal predictions are available per target (mean 4.46). Group-balanced normalized error is .7728 for newest, .7404 for uniform, .7112 for exponential, and .7084 for similarity weighting. The similarity-vs-newest episode-bootstrap improvement CI is `[-.0864,-.0453]`.
 - The same sparse audit’s hard oracle errors are .4788 for one scalar temporal expert and .4130 for independently selected arm/gripper experts. The group-balanced groupwise oracle advantage is .0658; under normalized dimension weighting it is .0301. These are teacher-forced upper bounds from sparse saved sources, not closed-loop results.
+- A control-semantic Gate-3A0 re-analysis uses normalized translation error, SO(3) rotation error, and gripper sign/event errors on the same 5,118 held-out sparse targets. Its dimension-weighted semantic error is .65754 for newest, .62702 for validation-selected age-exponential weighting, .63401 for validation-selected CogACT cosine, and .62471 for validation-selected control-semantic similarity. Evidence: [`gate3a0_sparse_group_consistency.json`](audit_outputs/gate3a0_sparse_group_consistency.json).
+- With the semantic aggregation operator held equal, control-semantic similarity differs from validation-selected CogACT cosine by −.00894 in dimension-weighted semantic error; the paired episode-bootstrap CI is `[-.01613,-.00203]`. Against age-exponential raw aggregation, the difference is −.00231 with CI `[-.00715,.00211]`, so that comparison is unresolved.
+- Replacing raw action interpolation with a projected SO(3) rotation mean and gripper-sign vote changes the semantic-similarity primary error by +.00053 with CI `[-.00070,.00174]`. This aggregation modification is not supported as an improvement in the sparse cohort.
+- Deployable arm/gripper and translation/rotation/gripper similarity weighting are worse than scalar semantic similarity by +.00460 (CI `[.00267,.00724]`) and +.00771 (CI `[.00019,.01302]`), respectively. The validation-selected consistency-gated semantic-three residual differs by +.00058 (CI `[-.00060,.00207]`), providing no held-out benefit.
+- Under the control-semantic hard-oracle objective, complete-action scalar, arm/gripper, and translation/rotation/gripper errors are .48137, .46698, and .41665. The latter two are unattainable teacher-forced oracles; they do not establish a deployable group method.
 
 # Strong evidence
 
@@ -59,10 +64,12 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - The particular matched-query selective group retention mechanism is harmful across the tested ten-task suite.
 - Thresholded prefix support is a lossy and unstable representation of continuous temporal prediction error.
 - Existing saved temporal predictions contain enough diversity for simple temporal ensembling to reduce held-out offline demonstration error in the sparse cohort.
+- In the sparse teacher-forced cohort, a control-semantic similarity kernel has a held-out offline advantage over validation-tuned full-vector CogACT cosine when aggregation is held fixed.
 
 # Weak evidence
 
 - A group-specific temporal selector may have extra oracle headroom over scalar selection. The advantage is modest under dimension-balanced error and may be physically inconsistent.
+- Translation/rotation/gripper oracle freedom has more control-semantic headroom than arm/gripper freedom, but tested deployable group similarities do not capture it.
 - The middle Gate-2B phase favors long point estimates more stably than early/late in split resampling, but the phase definition, in-sample selection, and absent traces prevent a semantic claim.
 - Action smoothness accounts for some temporal-support variation, especially with future/noncausal features, but tested simple causal linear predictors explain little.
 - Task or state context may affect temporal prediction competence, but current targets and ablations do not isolate the causal context signal.
@@ -89,6 +96,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - A continuous gripper-magnitude error is aligned with the LIBERO control contract.
 - The tested matched-query group-wise selective-commitment rule improves success.
 - A generic temporal-expert gate is novel relative to CogACT and Temporal Action Selection.
+- The current consistency-gated group residual improves over scalar semantic temporal aggregation.
 
 # Unknowns
 
@@ -96,6 +104,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - Whether dense every-step ACT predictions show the same oracle and non-oracle gains as the sparse cache.
 - Whether group-wise routing improves over scalar routing enough to justify cross-group consistency risk.
 - Whether a static, training-free similarity ensemble matches any learned router on this checkpoint.
+- Whether the sparse control-semantic similarity advantage over CogACT cosine survives dense every-step candidates or produces closed-loop success gains.
 - Whether contact events, semantic progress, or task-specific phases explain more than normalized time and action smoothness.
 - Whether demonstration action is an appropriate unique deployment target in this multimodal imitation setting.
 - Whether a directly defined value of fresh observation/re-querying has exploitable, learnable headroom.
