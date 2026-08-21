@@ -1,0 +1,57 @@
+# Source-of-truth map
+
+Audit date: 2026-08-21. Audit HEAD: `2373675e4f279a496f71d26511d69c96a66b1d0f`.
+
+## Evidence hierarchy
+
+1. Raw episode traces, saved predictions, dataset samples, checkpoint bytes, exact configuration, and run-time provenance.
+2. Policy, executor, metric, preprocessing, sampling, and statistics code.
+3. Generated aggregate JSON/CSV/tables/plots.
+4. README, manuscript, research notes, and prior audits.
+5. Brainstorming and model-generated interpretations.
+
+A lower tier never overrides a higher tier. “Reproducible” below means reproducible from the currently available artifacts; it does not mean that the interpretation is scientifically supported.
+
+Raw artifacts intentionally excluded from the audit commit are enumerated with
+local paths, sizes, and SHA-256/content-tree digests in
+[`local_only_evidence_manifest.md`](local_only_evidence_manifest.md).
+
+## Stable external dependencies
+
+| Object | Primary location | Identity established now | Historical identity established? | Missing link / limitation |
+|---|---|---|---|---|
+| LIBERO ACT checkpoint | `/home/thor/projects/checkpoints/zeromidnight_act_libero_object` | `model.safetensors` SHA-256 `340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410`; `config.json` SHA-256 `a76eebed357b3cbed8745c3d0f18c1335ecdd5449fcc498257676c9cbd27453d` | PARTIAL | Early metadata records a mutable path, not a file hash. Later selective-commitment artifacts record the model hash. The current bytes cannot prove that all earlier rollouts used identical bytes. |
+| LIBERO Object demonstration dataset | `/home/thor/datasets/libero_object_25_08_23_lerobotv2.1` | HF revision `cbf7122d530a6864644b13cddff9cf463f8f0bd8`; 454 episodes, 66,984 frames, 10 tasks, 10 Hz | YES for offline audits | The dataset contains successful demonstrations only; it is not a rollout success/failure dataset. |
+| LeRobot source | historical local checkout recorded in metadata | commit `f66e5128ecb2456e8c54a63d15404fa59c16aebc`, version 0.6.2 | YES for LIBERO rollout metadata | Main project commit at execution time was not recorded in early run metadata. |
+| LIBERO runtime | Python package / environment | `hf-libero` 0.1.4 in metadata | YES at package-version level | Transitive dependency lock and environment image are absent. |
+| RoboTwin upstream | `/home/thor/projects/upstreams/RoboTwin` | current checkout `266f3...` (full value available from its repository) | NO | No exact historical upstream commit/checkpoint/action-space contract is tied to a valid project rollout. RoboTwin policy results are not primary evidence for this audit. |
+
+## Experiment linkage map
+
+| Experiment | Raw input | Raw output | Project commit that introduced result | Exact config | Checkpoint link | Evaluation / recomputation code | Aggregate result | Later interpretation | Audit linkage status |
+|---|---|---|---|---|---|---|---|---|---|
+| Original RoboTwin Gate-0 scaffold | RoboTwin task/config files | No valid completed rollout trace located | `0ad042a` | `configs/gate0_horizon_sweep.yaml` and scripts at that commit | Missing / unresolved | `scripts/run_gate0.py` at commit | No primary quantitative result | README/research notes discussed Gate-0 plans | **NOT REPRODUCIBLE**; action semantics were explicitly unresolved later. |
+| Initial LIBERO pilot summaries | Official task-0 initial states; ACT checkpoint path | `experiments/runs/libero_object_global_h*` plus two group dirs contain metadata/summary but no `episodes.jsonl` or `steps.jsonl` | `56af8d3`–`20d14e4` | Metadata present | Path only | `scripts/run_libero_gate0.py` | Early summary files | Used as pilot evidence | **NOT REPRODUCIBLE** from raw traces; superseded by complete grids. |
+| LIBERO task-0 20-state static grid | Official states 0–19; seeds 1000–1019 | `experiments/runs/libero_static_grid_20/*/{metadata,episodes,steps,summary}` | `20d14e4` | Per-run metadata | Path; LeRobot commit recorded | `scripts/run_libero_gate0.py`; [audit tool](audit_tools/recompute_rollout_evidence.py) | `experiments/libero_static_grid_20.json` | Static landscape claims | **REPRODUCIBLE**; raw coverage and schedules validate. |
+| LIBERO task-0 50-state extension | Official states 20–49, merged with 20-state grid | `experiments/runs/libero_static_grid_50_extension/*` and prior 20-state traces | `4d20b6c` | Per-run metadata | Path; LeRobot commit recorded | Same runner; [audit tool](audit_tools/recompute_rollout_evidence.py) | `experiments/libero_static_grid_50.json` | Best `(4,16)`, directionality, budget-control claims | **REPRODUCIBLE**; one seed per initial state, so seed and state are confounded. |
+| Cross-task static grid | Tasks 1–9, official states 0–19; task 0 reused above | `experiments/runs/libero_object_cross_task/task_{1..9}/*` | `2a1f1fa` | Per-run metadata | Path; LeRobot commit recorded | Same runner; [audit tool](audit_tools/recompute_rollout_evidence.py) | `experiments/libero_object_cross_task_summary.json`; per-task JSON | Per-task oracle, universal-pair, “one clock” claims | **REPRODUCIBLE** for evaluated points; per-task argmax claims are in-sample and multiplicity-sensitive. |
+| Static universal-pair analysis | Completed static traces above | No new rollout; derived table | `466ce0a` | Analysis constants in script/result | Inherited | Analysis code at commit; [audit tool](audit_tools/recompute_rollout_evidence.py) | `experiments/libero_object_dynamic_readiness.json` | `(4,16)` universal benefit and dynamic-readiness story | **REPRODUCIBLE**, but the +0.035 macro difference has task-bootstrap CI `[-0.020, 0.085]` and is not query matched to global 16. |
+| Gate-1 sparse persistence | Pinned demonstrations and frozen ACT | `experiments/group_prediction_persistence/predictions.npz` (SHA-256 `ef089c...`), 1,098 source points | `e275377` | In `audit.py` and summary protocol | Current bytes identifiable; historical prediction run records path/config | `experiments/group_prediction_persistence/audit.py` | `summary.json`, plots | Group-dependent prediction persistence | **REPRODUCIBLE** for saved predictions; teacher-forced offline diagnostic only. |
+| Gate-2A phase persistence | Same demonstrations and ACT | Dense 3,740-source predictions embedded/reused by later reliability artifact | `ba20d60` | `phase_audit.py`; normalized demonstration-time phase rules | As above | `experiments/phase_conditioned_persistence/phase_audit.py`; [audit tool](audit_tools/recompute_reliability_and_smoothness.py) | `summary.json`, plots | Early/middle/late error-profile story | **REPRODUCIBLE**; thirds are arbitrary, and quartiles materially change the pattern. |
+| Demonstration-consistency reliability target | Pinned demonstrations; saved ACT chunks | `experiments/temporal_reliability/reliability_dataset.npz` (SHA-256 `6e72b1...`) and metadata | `191b65e` | Exact thresholds/scales in `construct_dataset.py` | As above | `construct_dataset.py`, `analyze_reliability.py`; [audit tool](audit_tools/recompute_reliability_and_smoothness.py) | `summary.json` | “Support” and phase-conditioned reliability | **REPRODUCIBLE**. Highly threshold-dependent; prefix validity discards recovery structure. |
+| Fresh-query target comparison | Same source chunks; ACT re-queried at future demonstrated observations | Original `target_comparison.npz`, `refresh_first_actions.npz`, and `compare_targets.py` are absent | `b99f4bd`–`f4a2cc3` preserve only handoff | Manifest records schema/checksums | Checkpoint provenance recorded by manifests | Original construction code absent; bundle loader remains | Portable bundle `minimal_y_refresh_training_bundle.npz`, SHA-256 `45a37a...` | Refresh reliability replaced demo consistency | **PARTIALLY REPRODUCIBLE**. Bundle internals are auditable, but exact target construction cannot be rerun without recomputing 66,984 fresh ACT actions. |
+| Chunk-only refresh estimator | Portable refresh bundle | Deterministic metrics/tables/plots | `1f7918c` | `chunk_only_reliability/config.json`, seeds | Target bundle hash fixed | `run_pilot.py`; exact new output under `research/audit_outputs/chunk_only_replication/` | Historical `metrics.json` | Estimator “failure” | **EXACTLY REPRODUCIBLE** relative to the bundle (max scalar delta `1.7e-16`); does not test demonstration support or control quality. |
+| Source-context ablation | Refresh bundle plus `feature_bundle.npz` (source state and ACT latent) | Deterministic metrics/tables/plots | `6ed5d06` | `source_context_ablation/config.json`, seeds | Feature and target hashes fixed | `materialize_features.py`, `run_ablation.py`; exact audit rerun | Historical `metrics.json` | State/latent context failed to help | **EXACTLY REPRODUCIBLE**; tables are byte-identical and JSON differs only in recorded Git HEAD. |
+| Gate-2B phase-conditioned rollout grid | 10 tasks; 50 task-0 and 20 each for tasks 1–9 | Only per-map/per-task success and accounting in `config_results.json` (SHA-256 `33f014...`); no episode or step traces | `a56b522` | `phase_oracle.py` constants | Inherited checkpoint path; no per-call hash record in result | `phase_oracle.py`, report scripts; [audit tool](audit_tools/recompute_gate2b.py) | `summary.json`, `selected_configs.json`, `combined_results.json` | 90 maps, two combined maps, phase optimum story | **PARTIALLY REPRODUCIBLE**. Aggregates recompute, but per-call validity, alternate phase segmentation, and episode pairing cannot be audited from saved results. |
+| Matched-query selective commitment | Same 10 tasks, 20 states/task, q in {4,8,16}; frozen ACT | 60 hashed rollout logs, 1,200 episodes, complete step traces | `9788beb` / result `2373675` | `groupwise_selective_commitment/config.json` | Model hash recorded in manifest | Runner/executor/analyzer plus [audit tool](audit_tools/recompute_rollout_evidence.py) | `metrics.json`, CSVs | Direct selective group retention test | **REPRODUCIBLE**. The particular rule causes large, stable success losses. |
+| Sparse temporal-expert oracle (new audit) | Saved Gate-2A chunks and pinned demonstration targets | New read-only output [JSON](audit_outputs/sparse_temporal_expert_oracle.json) | Audit working tree, 2026-08-21 | Constants in [script](audit_tools/sparse_temporal_expert_oracle.py) | Same saved prediction cohort | Same script | JSON only | Oracle-first evidence for routing | **REPRODUCIBLE** but sparse (roughly 25-step source spacing), teacher-forced, and offline. It is not a standard dense ACT temporal ensemble test. |
+
+## Broken provenance links that constrain all conclusions
+
+- Early LIBERO run metadata does not record the project Git commit or checkpoint hash.
+- Gate-2B does not retain episode-level or action-level traces, so arbitrary resegmentation, paired inference auditing, and exact duplicate/cache checks are impossible.
+- The original fresh-query target-construction artifacts and code are absent.
+- Offline demonstrations run at 10 Hz; rollout control runs at 20 Hz. A horizon of (k) steps therefore corresponds to different physical durations.
+- No valid RoboTwin rollout is tied to a verified policy action contract.
+- There are no left/right-arm empirical data in the valid LIBERO evidence; the project’s actual partition is one six-dimensional arm plus one gripper scalar.
+- No artifact links offline action-error improvement to closed-loop success improvement.

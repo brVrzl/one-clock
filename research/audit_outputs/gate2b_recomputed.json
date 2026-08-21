@@ -1,0 +1,925 @@
+{
+  "accounting": {
+    "all_environment_steps": 3796291,
+    "all_policy_queries": 1241647,
+    "candidate_environment_steps": 3716460,
+    "candidate_policy_queries": 1227551,
+    "combined_environment_steps": 79831,
+    "combined_policy_queries": 14096,
+    "per_call_validation_limit": "Only aggregate query counts are saved; duplicate calls, invalid outputs, and cache reuse cannot be independently checked per call."
+  },
+  "audit_script": "research/audit_tools/recompute_gate2b.py",
+  "combined_maps": {
+    "phase_oracle_global_combined": {
+      "environment_steps": 40446,
+      "episodes": 230,
+      "macro_success_rate": 0.713,
+      "policy_queries": 7099,
+      "pooled_success_rate": 0.7347826086956522,
+      "successes": 169,
+      "task_rates": [
+        0.88,
+        0.65,
+        0.75,
+        0.85,
+        0.85,
+        0.7,
+        0.55,
+        0.5,
+        0.45,
+        0.95
+      ]
+    },
+    "phase_oracle_group_combined": {
+      "environment_steps": 39385,
+      "episodes": 230,
+      "macro_success_rate": 0.747,
+      "policy_queries": 6997,
+      "pooled_success_rate": 0.7695652173913043,
+      "successes": 177,
+      "task_rates": [
+        0.92,
+        0.7,
+        0.8,
+        0.85,
+        0.8,
+        0.8,
+        0.55,
+        0.6,
+        0.45,
+        1.0
+      ]
+    }
+  },
+  "combined_vs_static_controls": {
+    "phase_oracle_global_combined": {
+      "macro_difference": 0.014000000000000002,
+      "static_control": "group_arm16_grip16",
+      "task_cluster_bootstrap_ci95": [
+        -0.045,
+        0.06999999999999999
+      ],
+      "task_differences": [
+        0.04,
+        0.15,
+        0.05,
+        -0.05,
+        0.05,
+        -0.15,
+        -0.1,
+        -0.05,
+        0.1,
+        0.1
+      ]
+    },
+    "phase_oracle_group_combined": {
+      "macro_difference": 0.013000000000000001,
+      "static_control": "group_arm4_grip16",
+      "task_cluster_bootstrap_ci95": [
+        -0.017,
+        0.045000000000000005
+      ],
+      "task_differences": [
+        -0.02,
+        0.1,
+        0.0,
+        0.05,
+        0.0,
+        -0.05,
+        0.0,
+        -0.05,
+        0.1,
+        0.0
+      ]
+    }
+  },
+  "definition": {
+    "all_rollouts": 21160,
+    "candidate_count": 90,
+    "candidate_map": "One target phase varies over 5 global or 25 arm/gripper horizons; other phases remain at global 16 or group (4,16).",
+    "candidate_rollouts": 20700,
+    "combined_map_count": 2,
+    "combined_rollouts": 460,
+    "formula": "3 phases * (5 global + 25 group) = 90",
+    "phase_boundaries": {
+      "denominator": 280,
+      "early": "steps 0..93",
+      "late": "steps 187..279",
+      "middle": "steps 94..186",
+      "warning": "These are fixed fractions of the time limit, not thirds of each realized rollout duration or semantic progress."
+    },
+    "unique_init_state_conditions_per_map": 230
+  },
+  "issues": [],
+  "phase_results": {
+    "early": {
+      "global": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_early_global_h1",
+          "phase_early_global_h2",
+          "phase_early_global_h4",
+          "phase_early_global_h8",
+          "phase_early_global_h16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.88,
+            "held_out_task": 0,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.5,
+            "held_out_task": 1,
+            "selected_name": "phase_early_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.75,
+            "held_out_task": 2,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 3,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.65,
+            "held_out_task": 4,
+            "selected_name": "phase_early_global_h2"
+          },
+          {
+            "held_out_success_rate": 0.7,
+            "held_out_task": 5,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 6,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.5,
+            "held_out_task": 7,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.45,
+            "held_out_task": 8,
+            "selected_name": "phase_early_global_h4"
+          },
+          {
+            "held_out_success_rate": 0.95,
+            "held_out_task": 9,
+            "selected_name": "phase_early_global_h4"
+          }
+        ],
+        "selected": {
+          "arm": 4,
+          "environment_steps": 40455,
+          "episodes": 230,
+          "gripper": 4,
+          "macro_query_rate": 0.16891338142410645,
+          "macro_success_rate": 0.713,
+          "name": "phase_early_global_h4",
+          "phase": "early",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 5520
+            },
+            "late": {
+              "environment_steps": 6113,
+              "episodes_reaching_phase": 77,
+              "policy_queries": 396
+            },
+            "middle": {
+              "environment_steps": 12722,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 858
+            }
+          },
+          "policy_queries": 6774,
+          "pooled_success_rate": 0.7347826086956522,
+          "strategy": "global",
+          "successes": 169,
+          "task_rates": [
+            0.88,
+            0.65,
+            0.75,
+            0.85,
+            0.85,
+            0.7,
+            0.55,
+            0.5,
+            0.45,
+            0.95
+          ]
+        },
+        "selected_point_ci95": [
+          0.6100000000000001,
+          0.8109999999999999
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.62,
+            0.7420000000000001
+          ],
+          "mean_heldout_macro_success": 0.685594,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_early_global_h1": 31,
+            "phase_early_global_h16": 239,
+            "phase_early_global_h2": 186,
+            "phase_early_global_h4": 496,
+            "phase_early_global_h8": 48
+          }
+        }
+      },
+      "group": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_early_group_arm1_grip4",
+          "phase_early_group_arm1_grip16",
+          "phase_early_group_arm2_grip1",
+          "phase_early_group_arm2_grip2",
+          "phase_early_group_arm2_grip4",
+          "phase_early_group_arm2_grip8",
+          "phase_early_group_arm2_grip16",
+          "phase_early_group_arm4_grip4",
+          "phase_early_group_arm4_grip8",
+          "phase_early_group_arm4_grip16",
+          "phase_early_group_arm8_grip16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.94,
+            "held_out_task": 0,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.6,
+            "held_out_task": 1,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.75,
+            "held_out_task": 2,
+            "selected_name": "phase_early_group_arm4_grip8"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 3,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 4,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.75,
+            "held_out_task": 5,
+            "selected_name": "phase_early_group_arm4_grip8"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 6,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.6,
+            "held_out_task": 7,
+            "selected_name": "phase_early_group_arm4_grip8"
+          },
+          {
+            "held_out_success_rate": 0.35,
+            "held_out_task": 8,
+            "selected_name": "phase_early_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 1.0,
+            "held_out_task": 9,
+            "selected_name": "phase_early_group_arm4_grip16"
+          }
+        ],
+        "selected": {
+          "arm": 4,
+          "environment_steps": 40033,
+          "episodes": 230,
+          "gripper": 16,
+          "macro_query_rate": 0.25169058192673033,
+          "macro_success_rate": 0.734,
+          "name": "phase_early_group_arm4_grip16",
+          "phase": "early",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 5520
+            },
+            "late": {
+              "environment_steps": 5707,
+              "episodes_reaching_phase": 71,
+              "policy_queries": 1415
+            },
+            "middle": {
+              "environment_steps": 12706,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 3138
+            }
+          },
+          "policy_queries": 10073,
+          "pooled_success_rate": 0.7608695652173914,
+          "strategy": "group",
+          "successes": 175,
+          "task_rates": [
+            0.94,
+            0.6,
+            0.8,
+            0.8,
+            0.8,
+            0.85,
+            0.55,
+            0.65,
+            0.35,
+            1.0
+          ]
+        },
+        "selected_point_ci95": [
+          0.6139999999999999,
+          0.844
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.6399499999999999,
+            0.768
+          ],
+          "mean_heldout_macro_success": 0.7111080000000001,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_early_group_arm16_grip16": 3,
+            "phase_early_group_arm16_grip4": 4,
+            "phase_early_group_arm16_grip8": 4,
+            "phase_early_group_arm1_grip16": 40,
+            "phase_early_group_arm1_grip4": 1,
+            "phase_early_group_arm2_grip16": 4,
+            "phase_early_group_arm2_grip2": 14,
+            "phase_early_group_arm2_grip4": 8,
+            "phase_early_group_arm2_grip8": 185,
+            "phase_early_group_arm4_grip16": 382,
+            "phase_early_group_arm4_grip2": 1,
+            "phase_early_group_arm4_grip4": 2,
+            "phase_early_group_arm4_grip8": 313,
+            "phase_early_group_arm8_grip16": 38,
+            "phase_early_group_arm8_grip4": 1
+          }
+        }
+      }
+    },
+    "late": {
+      "global": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_late_global_h1",
+          "phase_late_global_h2",
+          "phase_late_global_h4",
+          "phase_late_global_h8",
+          "phase_late_global_h16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.84,
+            "held_out_task": 0,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.5,
+            "held_out_task": 1,
+            "selected_name": "phase_late_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.7,
+            "held_out_task": 2,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.9,
+            "held_out_task": 3,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 4,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 5,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.65,
+            "held_out_task": 6,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 7,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.35,
+            "held_out_task": 8,
+            "selected_name": "phase_late_global_h8"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 9,
+            "selected_name": "phase_late_global_h8"
+          }
+        ],
+        "selected": {
+          "arm": 8,
+          "environment_steps": 40536,
+          "episodes": 230,
+          "gripper": 8,
+          "macro_query_rate": 0.07311084874503826,
+          "macro_success_rate": 0.704,
+          "name": "phase_late_global_h8",
+          "phase": "late",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 1380
+            },
+            "late": {
+              "environment_steps": 6278,
+              "episodes_reaching_phase": 73,
+              "policy_queries": 742
+            },
+            "middle": {
+              "environment_steps": 12638,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 848
+            }
+          },
+          "policy_queries": 2970,
+          "pooled_success_rate": 0.7217391304347827,
+          "strategy": "global",
+          "successes": 166,
+          "task_rates": [
+            0.84,
+            0.55,
+            0.7,
+            0.9,
+            0.8,
+            0.85,
+            0.65,
+            0.55,
+            0.35,
+            0.85
+          ]
+        },
+        "selected_point_ci95": [
+          0.594,
+          0.802024999999998
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.64,
+            0.76
+          ],
+          "mean_heldout_macro_success": 0.6995840000000001,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_late_global_h16": 498,
+            "phase_late_global_h8": 502
+          }
+        }
+      },
+      "group": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_late_group_arm1_grip1",
+          "phase_late_group_arm1_grip2",
+          "phase_late_group_arm1_grip4",
+          "phase_late_group_arm1_grip8",
+          "phase_late_group_arm1_grip16",
+          "phase_late_group_arm2_grip1",
+          "phase_late_group_arm2_grip2",
+          "phase_late_group_arm2_grip4",
+          "phase_late_group_arm2_grip8",
+          "phase_late_group_arm2_grip16",
+          "phase_late_group_arm4_grip1",
+          "phase_late_group_arm4_grip2",
+          "phase_late_group_arm4_grip4",
+          "phase_late_group_arm4_grip8",
+          "phase_late_group_arm4_grip16",
+          "phase_late_group_arm8_grip8",
+          "phase_late_group_arm8_grip16",
+          "phase_late_group_arm16_grip1",
+          "phase_late_group_arm16_grip2",
+          "phase_late_group_arm16_grip4",
+          "phase_late_group_arm16_grip8",
+          "phase_late_group_arm16_grip16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.94,
+            "held_out_task": 0,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 0.6,
+            "held_out_task": 1,
+            "selected_name": "phase_late_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 2,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 3,
+            "selected_name": "phase_late_group_arm4_grip16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 4,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 5,
+            "selected_name": "phase_late_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 6,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 0.6,
+            "held_out_task": 7,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 0.35,
+            "held_out_task": 8,
+            "selected_name": "phase_late_group_arm16_grip8"
+          },
+          {
+            "held_out_success_rate": 1.0,
+            "held_out_task": 9,
+            "selected_name": "phase_late_group_arm16_grip8"
+          }
+        ],
+        "selected": {
+          "arm": 16,
+          "environment_steps": 40077,
+          "episodes": 230,
+          "gripper": 8,
+          "macro_query_rate": 0.24246235594491644,
+          "macro_success_rate": 0.7389999999999999,
+          "name": "phase_late_group_arm16_grip8",
+          "phase": "late",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 5520
+            },
+            "late": {
+              "environment_steps": 5751,
+              "episodes_reaching_phase": 71,
+              "policy_queries": 1055
+            },
+            "middle": {
+              "environment_steps": 12706,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 3138
+            }
+          },
+          "policy_queries": 9713,
+          "pooled_success_rate": 0.7652173913043478,
+          "strategy": "group",
+          "successes": 176,
+          "task_rates": [
+            0.94,
+            0.65,
+            0.8,
+            0.85,
+            0.8,
+            0.85,
+            0.55,
+            0.6,
+            0.35,
+            1.0
+          ]
+        },
+        "selected_point_ci95": [
+          0.615,
+          0.85
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.672,
+            0.782
+          ],
+          "mean_heldout_macro_success": 0.7299820000000001,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_late_group_arm16_grip16": 445,
+            "phase_late_group_arm16_grip8": 432,
+            "phase_late_group_arm4_grip16": 100,
+            "phase_late_group_arm4_grip8": 23
+          }
+        }
+      }
+    },
+    "middle": {
+      "global": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_middle_global_h1",
+          "phase_middle_global_h2",
+          "phase_middle_global_h4",
+          "phase_middle_global_h8",
+          "phase_middle_global_h16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.84,
+            "held_out_task": 0,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.5,
+            "held_out_task": 1,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.7,
+            "held_out_task": 2,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.9,
+            "held_out_task": 3,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 4,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 5,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.65,
+            "held_out_task": 6,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 7,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.35,
+            "held_out_task": 8,
+            "selected_name": "phase_middle_global_h16"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 9,
+            "selected_name": "phase_middle_global_h16"
+          }
+        ],
+        "selected": {
+          "arm": 16,
+          "environment_steps": 40551,
+          "episodes": 230,
+          "gripper": 16,
+          "macro_query_rate": 0.0649491977936596,
+          "macro_success_rate": 0.699,
+          "name": "phase_middle_global_h16",
+          "phase": "middle",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 1380
+            },
+            "late": {
+              "environment_steps": 6293,
+              "episodes_reaching_phase": 73,
+              "policy_queries": 407
+            },
+            "middle": {
+              "environment_steps": 12638,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 848
+            }
+          },
+          "policy_queries": 2635,
+          "pooled_success_rate": 0.717391304347826,
+          "strategy": "global",
+          "successes": 165,
+          "task_rates": [
+            0.84,
+            0.5,
+            0.7,
+            0.9,
+            0.8,
+            0.85,
+            0.65,
+            0.55,
+            0.35,
+            0.85
+          ]
+        },
+        "selected_point_ci95": [
+          0.5889999999999999,
+          0.8
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.6300000000000001,
+            0.74805
+          ],
+          "mean_heldout_macro_success": 0.6933320000000001,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_middle_global_h1": 136,
+            "phase_middle_global_h16": 820,
+            "phase_middle_global_h2": 36,
+            "phase_middle_global_h4": 6,
+            "phase_middle_global_h8": 2
+          }
+        }
+      },
+      "group": {
+        "candidates_descriptively_tied_with_selected": [
+          "phase_middle_group_arm4_grip16",
+          "phase_middle_group_arm16_grip8",
+          "phase_middle_group_arm16_grip16"
+        ],
+        "leave_one_task_out": [
+          {
+            "held_out_success_rate": 0.92,
+            "held_out_task": 0,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.7,
+            "held_out_task": 1,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 2,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 3,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.8,
+            "held_out_task": 4,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.85,
+            "held_out_task": 5,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.55,
+            "held_out_task": 6,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.6,
+            "held_out_task": 7,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 0.5,
+            "held_out_task": 8,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          },
+          {
+            "held_out_success_rate": 1.0,
+            "held_out_task": 9,
+            "selected_name": "phase_middle_group_arm16_grip16"
+          }
+        ],
+        "selected": {
+          "arm": 16,
+          "environment_steps": 39359,
+          "episodes": 230,
+          "gripper": 16,
+          "macro_query_rate": 0.1956794925984413,
+          "macro_success_rate": 0.757,
+          "name": "phase_middle_group_arm16_grip16",
+          "phase": "middle",
+          "phase_exposure": {
+            "early": {
+              "environment_steps": 21620,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 5520
+            },
+            "late": {
+              "environment_steps": 5457,
+              "episodes_reaching_phase": 69,
+              "policy_queries": 1286
+            },
+            "middle": {
+              "environment_steps": 12282,
+              "episodes_reaching_phase": 230,
+              "policy_queries": 828
+            }
+          },
+          "policy_queries": 7634,
+          "pooled_success_rate": 0.7782608695652173,
+          "strategy": "group",
+          "successes": 179,
+          "task_rates": [
+            0.92,
+            0.7,
+            0.8,
+            0.85,
+            0.8,
+            0.85,
+            0.55,
+            0.6,
+            0.5,
+            1.0
+          ]
+        },
+        "selected_point_ci95": [
+          0.6599999999999999,
+          0.851
+        ],
+        "state_split": {
+          "heldout_macro_success_ci95_across_splits": [
+            0.6880000000000001,
+            0.8019999999999999
+          ],
+          "mean_heldout_macro_success": 0.7486980000000001,
+          "repeats": 1000,
+          "selection_frequency": {
+            "phase_middle_group_arm16_grip16": 805,
+            "phase_middle_group_arm16_grip2": 1,
+            "phase_middle_group_arm16_grip8": 148,
+            "phase_middle_group_arm2_grip16": 5,
+            "phase_middle_group_arm4_grip16": 35,
+            "phase_middle_group_arm8_grip8": 6
+          }
+        }
+      }
+    }
+  },
+  "saved_data_limitations": [
+    "No per-step Gate-2B action, prediction, phase, or query log is saved.",
+    "Quartile, continuous-time, semantic-progress, and no-phase resegmentation cannot be recomputed from the saved aggregate vectors.",
+    "No thresholded support metric is used here; the outcome is rollout success. Threshold sensitivity is therefore not applicable.",
+    "Candidate-grid sensitivity outside {1,2,4,8,16} is not identifiable without new rollouts.",
+    "Maps were selected and evaluated on the same 230 init-state conditions; point estimates are selection-biased."
+  ],
+  "selected_maps_recomputed": {
+    "global": {
+      "early": {
+        "arm": 4,
+        "gripper": 4
+      },
+      "late": {
+        "arm": 8,
+        "gripper": 8
+      },
+      "middle": {
+        "arm": 16,
+        "gripper": 16
+      }
+    },
+    "group": {
+      "early": {
+        "arm": 4,
+        "gripper": 16
+      },
+      "late": {
+        "arm": 16,
+        "gripper": 8
+      },
+      "middle": {
+        "arm": 16,
+        "gripper": 16
+      }
+    }
+  }
+}

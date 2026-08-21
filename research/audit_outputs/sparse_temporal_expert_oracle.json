@@ -1,0 +1,489 @@
+{
+  "audit_script": "research/audit_tools/sparse_temporal_expert_oracle.py",
+  "cohort": {
+    "age_observation_counts": {
+      "0": 3286,
+      "1": 3264,
+      "2": 3242,
+      "3": 3221,
+      "4": 3198,
+      "5": 3183,
+      "6": 3167,
+      "7": 3143,
+      "8": 3122,
+      "9": 3110,
+      "10": 3091,
+      "11": 3073,
+      "12": 3053,
+      "13": 3042,
+      "14": 3021,
+      "15": 3010,
+      "16": 2987,
+      "17": 2975,
+      "18": 2957,
+      "19": 2945,
+      "20": 2931,
+      "21": 2912,
+      "22": 2902,
+      "23": 2885,
+      "24": 2864,
+      "25": 3286,
+      "26": 3264,
+      "27": 3242,
+      "28": 3221,
+      "29": 3198,
+      "30": 3183,
+      "31": 3167,
+      "32": 3143,
+      "33": 3122,
+      "34": 3110,
+      "35": 3091,
+      "36": 3073,
+      "37": 3053,
+      "38": 3038,
+      "39": 3014,
+      "40": 2992,
+      "41": 2948,
+      "42": 2910,
+      "43": 2867,
+      "44": 2822,
+      "45": 2779,
+      "46": 2738,
+      "47": 2696,
+      "48": 2657,
+      "49": 2619,
+      "50": 2568,
+      "51": 2517,
+      "52": 2470,
+      "53": 2428,
+      "54": 2381,
+      "55": 2353,
+      "56": 2326,
+      "57": 2295,
+      "58": 2266,
+      "59": 2246,
+      "60": 2226,
+      "61": 2207,
+      "62": 2187,
+      "63": 2175,
+      "64": 2153,
+      "65": 2139,
+      "66": 2115,
+      "67": 2102,
+      "68": 2084,
+      "69": 2071,
+      "70": 2057,
+      "71": 2038,
+      "72": 2027,
+      "73": 2008,
+      "74": 1987,
+      "75": 1955,
+      "76": 1931,
+      "77": 1907,
+      "78": 1884,
+      "79": 1860,
+      "80": 1837,
+      "81": 1818,
+      "82": 1783,
+      "83": 1752,
+      "84": 1721,
+      "85": 1694,
+      "86": 1659,
+      "87": 1631,
+      "88": 1594,
+      "89": 1566,
+      "90": 1534,
+      "91": 1503,
+      "92": 1475,
+      "93": 1451,
+      "94": 1416,
+      "95": 1393,
+      "96": 1361,
+      "97": 1342,
+      "98": 1320,
+      "99": 1299
+    },
+    "all_sparse_overlap_targets": 55634,
+    "exclusion": "Targets with only one saved expert are excluded. Predictions are sparse source samples, not consecutive per-step ACT queries.",
+    "maximum_experts": 6,
+    "mean_experts": 4.45642952151562,
+    "minimum_experts": 2,
+    "test_episodes": 41,
+    "test_sparse_overlap_targets": 5118
+  },
+  "comparisons_to_newest": {
+    "oracle_groupwise_convex_mixture": {
+      "episode_bootstrap_ci95": [
+        -0.41504434877837537,
+        -0.310482649956236
+      ],
+      "method_minus_newest_mean": -0.36817820173959964
+    },
+    "oracle_per_sample_groupwise_age": {
+      "episode_bootstrap_ci95": [
+        -0.4068019388677146,
+        -0.302364233755622
+      ],
+      "method_minus_newest_mean": -0.3598019400906064
+    },
+    "oracle_per_sample_scalar_age": {
+      "episode_bootstrap_ci95": [
+        -0.33731986047762935,
+        -0.2442484094601909
+      ],
+      "method_minus_newest_mean": -0.29402200885936125
+    },
+    "oracle_scalar_convex_mixture": {
+      "episode_bootstrap_ci95": [
+        -0.34933696723579566,
+        -0.255379784365175
+      ],
+      "method_minus_newest_mean": -0.3061188863377316
+    },
+    "train_selected_similarity_ensemble": {
+      "episode_bootstrap_ci95": [
+        -0.08634952689439483,
+        -0.04532613783243324
+      ],
+      "method_minus_newest_mean": -0.06441001090650024
+    }
+  },
+  "headroom": {
+    "best_nonoracle": "train_selected_similarity_ensemble",
+    "contextual_advantage_fixed_groupwise_minus_oracle_groupwise": 0.36062680481693205,
+    "groupwise_advantage_normalized_dim_mse": 0.03012724143358292,
+    "groupwise_advantage_oracle_scalar_minus_groupwise": 0.06577993123124515,
+    "routing_headroom_best_nonoracle_minus_oracle_groupwise": 0.29539192918410623
+  },
+  "interpretation_limits": [
+    "Every oracle uses the demonstrated action and is therefore an unattainable teacher-forced upper bound.",
+    "Convex-mixture oracles can fit demonstration noise and alternative valid actions are not represented.",
+    "Offline error is not closed-loop control quality; no rollout-success inference is made.",
+    "Group-wise selections may compose action components never jointly predicted and may be physically inconsistent.",
+    "The sparse source cadence prevents conclusions about temporal ages 1..99 or standard dense ACT temporal ensembling."
+  ],
+  "selection": {
+    "exponential_coefficient": 0.03,
+    "fixed_age": 0,
+    "fixed_groupwise_age": {
+      "arm": 8,
+      "gripper": 0
+    },
+    "phase_groupwise_age": {
+      "arm": {
+        "0": 16,
+        "1": 8,
+        "2": 8
+      },
+      "gripper": {
+        "0": 25,
+        "1": 0,
+        "2": 16
+      }
+    },
+    "selection_split": "validation episodes only",
+    "similarity_temperature": 0.3
+  },
+  "test_metrics": {
+    "newest_prediction_only": {
+      "arm_normalized_mse": 0.6855379363934923,
+      "gripper_normalized_mse": 0.8600319924369187,
+      "gripper_sign_error": 0.2794060179757718,
+      "group_balanced_normalized_mse": 0.7727849644152055,
+      "normalized_dim_mse": 0.7104656586854103,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.1703878989056613,
+        "1": 0.6317030575915266,
+        "2": 0.7126927892916116
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.9248903045897039,
+        "1": 0.5526557164558495,
+        "2": 0.9355567658600231,
+        "3": 0.894610953790402,
+        "4": 0.7207213066377076,
+        "5": 0.6995472858967297,
+        "6": 0.7599207995547329,
+        "7": 0.5608687400685952,
+        "8": 1.1706022022425286,
+        "9": 0.6314397813865874
+      },
+      "raw_action_mse": 0.15242115836250952
+    },
+    "oldest_valid_prediction": {
+      "arm_normalized_mse": 0.8972882538308831,
+      "gripper_normalized_mse": 1.092164098772087,
+      "gripper_sign_error": 0.3333333333333333,
+      "group_balanced_normalized_mse": 0.9947261763014851,
+      "normalized_dim_mse": 0.925127660251055,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.5467891728449126,
+        "1": 0.9005774968821433,
+        "2": 0.8091496599452876
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.9064342074185551,
+        "1": 0.8269690422631558,
+        "2": 1.064160153122629,
+        "3": 1.174238127599721,
+        "4": 1.1213360516705748,
+        "5": 0.7985918593257796,
+        "6": 0.9652179261473458,
+        "7": 1.0179434013164297,
+        "8": 1.2473689795402532,
+        "9": 0.8686930244382397
+      },
+      "raw_action_mse": 0.21233264486536615
+    },
+    "oracle_groupwise_convex_mixture": {
+      "arm_normalized_mse": 0.5081682368307175,
+      "gripper_normalized_mse": 0.30104528852049417,
+      "gripper_sign_error": 0.1006252442360297,
+      "group_balanced_normalized_mse": 0.4046067626756058,
+      "normalized_dim_mse": 0.4785792442149713,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 0.8378657234373603,
+        "1": 0.3372511516473776,
+        "2": 0.2524084382085305
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.43952059665228954,
+        "1": 0.23677626394562964,
+        "2": 0.4539590927698294,
+        "3": 0.4998363469647299,
+        "4": 0.31784285306961946,
+        "5": 0.36481333600207144,
+        "6": 0.4483170093672472,
+        "7": 0.3679212263807232,
+        "8": 0.6738916555926477,
+        "9": 0.3138203598572046
+      },
+      "raw_action_mse": 0.06136101841225133
+    },
+    "oracle_per_sample_groupwise_age": {
+      "arm_normalized_mse": 0.5246701351994393,
+      "gripper_normalized_mse": 0.30129591344975876,
+      "gripper_sign_error": 0.1006252442360297,
+      "group_balanced_normalized_mse": 0.41298302432459905,
+      "normalized_dim_mse": 0.49275953209234213,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 0.8459054227619788,
+        "1": 0.3442303551884582,
+        "2": 0.2623580003149295
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.45197261330559596,
+        "1": 0.2479328700840623,
+        "2": 0.4627054229165328,
+        "3": 0.5081939447144356,
+        "4": 0.3274684334574534,
+        "5": 0.3731051894965943,
+        "6": 0.45762028776348257,
+        "7": 0.3743062622892674,
+        "8": 0.6799107808889255,
+        "9": 0.31845392394463173
+      },
+      "raw_action_mse": 0.0627540532606518
+    },
+    "oracle_per_sample_scalar_age": {
+      "arm_normalized_mse": 0.5405363007139574,
+      "gripper_normalized_mse": 0.4169896103977309,
+      "gripper_sign_error": 0.13931223134036733,
+      "group_balanced_normalized_mse": 0.4787629555558442,
+      "normalized_dim_mse": 0.522886773525925,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 0.9526378334157614,
+        "1": 0.3965394491674429,
+        "2": 0.3208839910629663
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.4926343066419792,
+        "1": 0.32867533770665747,
+        "2": 0.5147413677987711,
+        "3": 0.5807322291357748,
+        "4": 0.3855905269466446,
+        "5": 0.4091848910623511,
+        "6": 0.5191329374114542,
+        "7": 0.41006621825567996,
+        "8": 0.8227066051834757,
+        "9": 0.3964421385149041
+      },
+      "raw_action_mse": 0.0799320026590882
+    },
+    "oracle_scalar_convex_mixture": {
+      "arm_normalized_mse": 0.5214352259819075,
+      "gripper_normalized_mse": 0.41189693017304013,
+      "gripper_sign_error": 0.13325517780382962,
+      "group_balanced_normalized_mse": 0.46666607807747384,
+      "normalized_dim_mse": 0.5057868980092122,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 0.9471700326704936,
+        "1": 0.3846185587453903,
+        "2": 0.3052471062934996
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.4829845492990105,
+        "1": 0.3137305873840065,
+        "2": 0.5066894618456603,
+        "3": 0.559685242338474,
+        "4": 0.3798825148722663,
+        "5": 0.4062668725069242,
+        "6": 0.5100505855165499,
+        "7": 0.3956665765392113,
+        "8": 0.8022280936124173,
+        "9": 0.3819069388179106
+      },
+      "raw_action_mse": 0.07771760357577132
+    },
+    "train_selected_exponential_ensemble": {
+      "arm_normalized_mse": 0.6607586823685779,
+      "gripper_normalized_mse": 0.7616682591115324,
+      "gripper_sign_error": 0.2596717467760844,
+      "group_balanced_normalized_mse": 0.711213470740055,
+      "normalized_dim_mse": 0.6751743361889999,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.1483979534725215,
+        "1": 0.6463660677688685,
+        "2": 0.5545054390097693
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.8224768504223939,
+        "1": 0.5817884667692361,
+        "2": 0.7562330577737811,
+        "3": 0.8438557555704871,
+        "4": 0.648284541669212,
+        "5": 0.6538373720260254,
+        "6": 0.7154345231152035,
+        "7": 0.5453978477788174,
+        "8": 1.039104431457362,
+        "9": 0.5993085040289537
+      },
+      "raw_action_mse": 0.1383412200773946
+    },
+    "train_selected_fixed_age": {
+      "arm_normalized_mse": 0.6855379363934923,
+      "gripper_normalized_mse": 0.8600319924369187,
+      "gripper_sign_error": 0.2794060179757718,
+      "group_balanced_normalized_mse": 0.7727849644152055,
+      "normalized_dim_mse": 0.7104656586854103,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.1703878989056613,
+        "1": 0.6317030575915266,
+        "2": 0.7126927892916116
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.9248903045897039,
+        "1": 0.5526557164558495,
+        "2": 0.9355567658600231,
+        "3": 0.894610953790402,
+        "4": 0.7207213066377076,
+        "5": 0.6995472858967297,
+        "6": 0.7599207995547329,
+        "7": 0.5608687400685952,
+        "8": 1.1706022022425286,
+        "9": 0.6314397813865874
+      },
+      "raw_action_mse": 0.15242115836250952
+    },
+    "train_selected_fixed_groupwise_age": {
+      "arm_normalized_mse": 0.6871876658461437,
+      "gripper_normalized_mse": 0.8600319924369187,
+      "gripper_sign_error": 0.2794060179757718,
+      "group_balanced_normalized_mse": 0.7736098291415311,
+      "normalized_dim_mse": 0.7118797125019687,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.1703878989056613,
+        "1": 0.6357335966636357,
+        "2": 0.7107178995604044
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.9203743602569691,
+        "1": 0.5510086535362484,
+        "2": 0.9458723609284893,
+        "3": 0.8960718670123299,
+        "4": 0.7175598133236247,
+        "5": 0.6974140223964147,
+        "6": 0.7690724417478745,
+        "7": 0.5624976204919644,
+        "8": 1.1652871380203125,
+        "9": 0.6337576823398716
+      },
+      "raw_action_mse": 0.1527421610946621
+    },
+    "train_selected_phase_groupwise_age": {
+      "arm_normalized_mse": 0.6882108191852024,
+      "gripper_normalized_mse": 0.8052246982541781,
+      "gripper_sign_error": 0.25517780382962096,
+      "group_balanced_normalized_mse": 0.7467177587196902,
+      "normalized_dim_mse": 0.7049270876236275,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.103072400562675,
+        "1": 0.6357335966636357,
+        "2": 0.677337432861516
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.8931697435943818,
+        "1": 0.5348214307657821,
+        "2": 0.9218960430018954,
+        "3": 0.7862467852872378,
+        "4": 0.7023287145282747,
+        "5": 0.6982752032216578,
+        "6": 0.6916367179546493,
+        "7": 0.6144207676234041,
+        "8": 1.083669462400621,
+        "9": 0.6397600889404624
+      },
+      "raw_action_mse": 0.14509561982213204
+    },
+    "train_selected_similarity_ensemble": {
+      "arm_normalized_mse": 0.6579380912761391,
+      "gripper_normalized_mse": 0.7588118157412713,
+      "gripper_sign_error": 0.26651035560765923,
+      "group_balanced_normalized_mse": 0.7083749535087053,
+      "normalized_dim_mse": 0.6723486233425866,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.13124200007591,
+        "1": 0.5989719944572598,
+        "2": 0.6036614736602104
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.8427862141285815,
+        "1": 0.5022766626811106,
+        "2": 0.8079387264161741,
+        "3": 0.8508507197095088,
+        "4": 0.6721630231804842,
+        "5": 0.6409737549705125,
+        "6": 0.7321857205935087,
+        "7": 0.5183948569274632,
+        "8": 1.0631955689379393,
+        "9": 0.5642950059365587
+      },
+      "raw_action_mse": 0.13713906477814755
+    },
+    "uniform_temporal_ensemble": {
+      "arm_normalized_mse": 0.6953603533695152,
+      "gripper_normalized_mse": 0.7855065865188413,
+      "gripper_sign_error": 0.27237202032043767,
+      "group_balanced_normalized_mse": 0.7404334699441782,
+      "normalized_dim_mse": 0.7082383866765618,
+      "per_phase_group_balanced_normalized_mse": {
+        "0": 1.1928565028878209,
+        "1": 0.6879362990240269,
+        "2": 0.5635952931232279
+      },
+      "per_task_group_balanced_normalized_mse": {
+        "0": 0.8042039215928894,
+        "1": 0.6153820357055256,
+        "2": 0.7567420153479149,
+        "3": 0.8766167032671346,
+        "4": 0.715323449712322,
+        "5": 0.6696677899915771,
+        "6": 0.7402322929110388,
+        "7": 0.6285627224129959,
+        "8": 1.0211205723471741,
+        "9": 0.6468589607671398
+      },
+      "raw_action_mse": 0.1464867497648598
+    }
+  }
+}

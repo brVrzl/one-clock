@@ -1,0 +1,68 @@
+{
+  "schema_version": "2.0",
+  "review_id": "ONE-CLOCK-REDTEAM-2026-08-21",
+  "material": {
+    "status": "unpublished_confidential",
+    "contains_personal_or_sensitive_data": false
+  },
+  "authorization": {
+    "basis": "author_request",
+    "documented": true,
+    "local_processing_authorized": true,
+    "external_processing_authorized": false
+  },
+  "reviewer": {
+    "capacity": "author_requested_reader",
+    "human_accountable": true,
+    "competence_areas": [
+      "robot_learning",
+      "experimental_design",
+      "statistics",
+      "reproducibility"
+    ],
+    "competence_limits": [
+      "This is an author-requested internal red-team simulation, not an independent assigned peer review.",
+      "No new physical-robot evidence or modern VLA reproduction was available."
+    ],
+    "conflict_status": "disclosed_to_editor",
+    "conflicts": [
+      "The assessor is acting as a technical collaborator on the project and is not independent."
+    ]
+  },
+  "venue_policy": {
+    "checked": true,
+    "peer_review_model": "double_anonymized",
+    "confidential_editor_notes_supported": true
+  },
+  "ai_use": {
+    "policy": "permitted_with_disclosure",
+    "planned": "approved_ai_assistance",
+    "permission_confirmed": true,
+    "disclosure_planned": true
+  },
+  "handling": {
+    "local_only": true,
+    "external_service_use": false,
+    "data_reuse_permitted": false,
+    "retention_rule": "retain_per_venue_policy",
+    "deletion_or_retention_record_planned": true
+  },
+  "scope": {
+    "manuscript_type": "robot_learning_method",
+    "requested_focus": [
+      "novelty",
+      "methods",
+      "statistics",
+      "reproducibility",
+      "closed_loop_evidence"
+    ],
+    "out_of_scope": [
+      "editorial_decision",
+      "official_peer_review_submission"
+    ],
+    "specialist_review_needed": [
+      "real_robot_control",
+      "vla_systems"
+    ]
+  }
+}
