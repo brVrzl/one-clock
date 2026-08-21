@@ -1,0 +1,32 @@
+{
+  "status": "blocked_before_training",
+  "input_contract": {
+    "expected_bundle": "experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz",
+    "expected_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
+    "model_input": "source predicted action chunk A_t only",
+    "future_features_used": false,
+    "offsets": "k=1..99",
+    "k0_policy": "absent from labels, loss, and headline metrics"
+  },
+  "models": [
+    "constant_prior",
+    "empirical_group_offset_prior_train_only",
+    "independent_vector_shared_mlp",
+    "monotone_conditional_survival_shared_mlp"
+  ],
+  "seeds": [20260820, 20260821, 20260822],
+  "validation_only": [
+    "checkpoint_selection",
+    "calibration_choices",
+    "tau_selection"
+  ],
+  "headline_metrics": [
+    "AUROC",
+    "AUPRC",
+    "Brier",
+    "ECE",
+    "Brier Skill Score",
+    "refresh_oracle_horizon_metrics"
+  ],
+  "test_tuning": false
+}
