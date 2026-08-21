@@ -1,0 +1,180 @@
+{
+  "best_nonoracle_episode_weighted_Lsem": 0.6024207702062191,
+  "best_validation_selected_nonoracle": "b3_tuned_newest_age_exponential",
+  "conservative_scalar_convex_mixture_oracle": {
+    "episode_weighted": {
+      "arm_gripper_balanced_semantic_error": 0.19830495839056045,
+      "dimension_weighted_semantic_error": 0.3201781878813265,
+      "equal_group_semantic_error": 0.25517913215291793,
+      "gripper_sign_error": 0.027682437103488056,
+      "raw_7d_mse": 0.05787970159048955,
+      "rotation_geodesic_radians": 0.03887759796682889,
+      "rotation_normalized_sq": 0.5284229427562805,
+      "translation_l2_action_units": 0.2571428326802997,
+      "translation_normalized_mse": 0.2094320165989854
+    },
+    "episodes": 41,
+    "frame_weighted": {
+      "arm_gripper_balanced_semantic_error": 0.19756208166208267,
+      "dimension_weighted_semantic_error": 0.31798066118932317,
+      "equal_group_semantic_error": 0.2537574187747949,
+      "gripper_sign_error": 0.028976070323945956,
+      "raw_7d_mse": 0.058844604694955005,
+      "rotation_geodesic_radians": 0.038793021242227575,
+      "rotation_normalized_sq": 0.5213045795368082,
+      "translation_l2_action_units": 0.25824150187949857,
+      "translation_normalized_mse": 0.21099160646363055
+    },
+    "gripper_transition_diagnostics": {
+      "false_transition_count": 169,
+      "false_transition_denominator": 6008,
+      "false_transition_rate": 0.028129161118508654,
+      "first_frame_excluded": true,
+      "missed_transition_count": 2,
+      "missed_transition_denominator": 94,
+      "missed_transition_rate": 0.02127659574468085,
+      "teacher_forced_previous_demonstration_sign": true
+    },
+    "targets": 6143,
+    "weighted_source_age_dataset_steps": NaN,
+    "weighted_source_age_seconds": NaN
+  },
+  "convex_oracle_algorithm": {
+    "certified_global_optimum": false,
+    "initialization": "hard scalar source oracle",
+    "lambda_grid": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625
+    ],
+    "maximum_rounds_used": 32,
+    "mean_rounds_used": 9.065342957897172,
+    "rounds": 32,
+    "targets_improved_beyond_hard": 4786
+  },
+  "hard_scalar_source_oracle": {
+    "episode_weighted": {
+      "arm_gripper_balanced_semantic_error": 0.2188225036860213,
+      "dimension_weighted_semantic_error": 0.33846482245794884,
+      "equal_group_semantic_error": 0.2746555857795875,
+      "gripper_sign_error": 0.05132325740532282,
+      "raw_7d_mse": 0.05313867937017377,
+      "rotation_geodesic_radians": 0.040396292286027105,
+      "rotation_normalized_sq": 0.5443055781170126,
+      "translation_l2_action_units": 0.2740265747111995,
+      "translation_normalized_mse": 0.22833792181642687
+    },
+    "episodes": 41,
+    "frame_weighted": {
+      "arm_gripper_balanced_semantic_error": 0.21769732910185538,
+      "dimension_weighted_semantic_error": 0.3362195370357056,
+      "equal_group_semantic_error": 0.2730076928043188,
+      "gripper_sign_error": 0.051766237994465246,
+      "raw_7d_mse": 0.053822947519964005,
+      "rotation_geodesic_radians": 0.040296697836686816,
+      "rotation_normalized_sq": 0.5370598500201971,
+      "translation_l2_action_units": 0.27528087535085066,
+      "translation_normalized_mse": 0.2301969903982941
+    },
+    "gripper_transition_diagnostics": {
+      "false_transition_count": 304,
+      "false_transition_denominator": 6008,
+      "false_transition_rate": 0.05059920106524634,
+      "first_frame_excluded": true,
+      "missed_transition_count": 7,
+      "missed_transition_denominator": 94,
+      "missed_transition_rate": 0.07446808510638298,
+      "teacher_forced_previous_demonstration_sign": true
+    },
+    "targets": 6143,
+    "weighted_source_age_dataset_steps": 24.19908839329318,
+    "weighted_source_age_seconds": 2.419908839329318
+  },
+  "interpretation": "Teacher-forced target-informed upper-bound analysis; not a deployable selector or control result.",
+  "scalar_contextual_headroom_convex": {
+    "bootstrap_draws": 10000,
+    "consistent_advantage": false,
+    "episode_bootstrap_ci95": [
+      0.25936564212660307,
+      0.30605413354104205
+    ],
+    "episode_weighted_mean_difference": 0.2822425823248926,
+    "episodes": 41,
+    "leave_one_task_out_mean_difference": {
+      "0": 0.2783040034406971,
+      "1": 0.29267321498329013,
+      "2": 0.28324547975669123,
+      "3": 0.2826667438022589,
+      "4": 0.2771269487274943,
+      "5": 0.2821825889233027,
+      "6": 0.2815001466734094,
+      "7": 0.28211522309402376,
+      "8": 0.2703354523631946,
+      "9": 0.2925547281278874
+    },
+    "negative_task_count": 0,
+    "per_task_mean_difference": {
+      "0": 0.31867443700370085,
+      "1": 0.18575923023471494,
+      "2": 0.2729657810807551,
+      "3": 0.2783190886592534,
+      "4": 0.3295621931008261,
+      "5": 0.28279752128959856,
+      "6": 0.28911011210111126,
+      "7": 0.2834206552104283,
+      "8": 0.3923835344705984,
+      "9": 0.20799513254332958
+    },
+    "task_cluster_bootstrap_ci95": [
+      0.2500222097089231,
+      0.31821711929501617
+    ],
+    "task_weighted_mean_difference": 0.2840987685694317,
+    "tasks": 10
+  },
+  "scalar_contextual_headroom_hard": {
+    "bootstrap_draws": 10000,
+    "consistent_advantage": false,
+    "episode_bootstrap_ci95": [
+      0.2416546060024674,
+      0.28714378774574323
+    ],
+    "episode_weighted_mean_difference": 0.26395594774827036,
+    "episodes": 41,
+    "leave_one_task_out_mean_difference": {
+      "0": 0.2610222460800015,
+      "1": 0.27436189960616986,
+      "2": 0.26529746200726145,
+      "3": 0.2644729384062035,
+      "4": 0.25882995520282337,
+      "5": 0.26360688880984523,
+      "6": 0.26305706942341,
+      "7": 0.26312968601782083,
+      "8": 0.2527577676527025,
+      "9": 0.2732754425133588
+    },
+    "negative_task_count": 0,
+    "per_task_mean_difference": {
+      "0": 0.2910926881797565,
+      "1": 0.1677008930626991,
+      "2": 0.251546940852602,
+      "3": 0.2591737841623879,
+      "4": 0.31137137879365406,
+      "5": 0.2671847429287022,
+      "6": 0.27227057225322826,
+      "7": 0.2715988687549272,
+      "8": 0.36753911363227176,
+      "9": 0.19685558543963314
+    },
+    "task_cluster_bootstrap_ci95": [
+      0.23296121163222325,
+      0.2982126537461268
+    ],
+    "task_weighted_mean_difference": 0.2656334568059862,
+    "tasks": 10
+  }
+}

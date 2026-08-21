@@ -57,6 +57,15 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - Deployable arm/gripper and translation/rotation/gripper similarity weighting are worse than scalar semantic similarity by +.00460 (CI `[.00267,.00724]`) and +.00771 (CI `[.00019,.01302]`), respectively. The validation-selected consistency-gated semantic-three residual differs by +.00058 (CI `[-.00060,.00207]`), providing no held-out benefit.
 - Under the control-semantic hard-oracle objective, complete-action scalar, arm/gripper, and translation/rotation/gripper errors are .48137, .46698, and .41665. The latter two are unattainable teacher-forced oracles; they do not establish a deployable group method.
 
+## Dense Gate-3A1 temporal evidence
+
+- **VERIFIED OFFLINE:** Gate-3A1 contains one deterministic ACT query at every eligible step of 82 held-out demonstration episodes: 6,151 validation queries and 6,143 test queries, for 12,294 total full chunks of shape 100×7. The cache passes exact source-frame coverage, uniqueness, shape, finiteness, task/episode indexing, and checkpoint/config hash checks. Evidence: [`gate3a1_dense_cache_manifest.json`](audit_outputs/gate3a1_dense_cache_manifest.json) and [`gate3a1_dense_temporal_evidence_report.md`](gate3a1_dense_temporal_evidence_report.md).
+- **VERIFIED OFFLINE:** On the frozen 41-episode test cohort, episode-weighted dimension-weighted control-semantic error is .73971 for newest-only, .63381 for uniform averaging, .64822 for exact upstream ACT temporal ensembling, .60242 for validation-selected newest-favoring age-exponential weighting, .62581 for validation-tuned CogACT cosine, and .62707 for validation-tuned control-semantic similarity.
+- **VERIFIED OFFLINE:** Control-semantic similarity minus validation-tuned CogACT cosine is +.00126 with paired episode-bootstrap 95% CI `[-.00132,.00376]`; only five of ten task means favor semantic similarity. It is therefore not a held-out improvement. Against validation-selected newest-favoring age-exponential weighting, the difference is +.02465 with CI `[.01920,.03035]`, favoring the simpler age rule in all ten task means.
+- **VERIFIED OFFLINE:** Dense temporal aggregation improves over newest-only under the primary offline metric. The validation-selected newest-favoring age rule differs from newest-only by −.13729 with paired episode-bootstrap CI `[-.16042,-.11574]` and improves all ten task means. Uniform, exact ACT, tuned CogACT, and semantic similarity also improve the primary metric over newest-only.
+- **VERIFIED OFFLINE:** The target-informed scalar hard-source oracle has error .33846, leaving .26396 error units of contextual headroom relative to the strongest deployable scalar baseline (CI `[.24165,.28714]`). The preregistered greedy scalar convex oracle has error .32018 and corresponding headroom .28224 (CI `[.25937,.30605]`). These are teacher-forced upper bounds and do not show that the source choice is predictable from deployment-time inputs.
+- **VERIFIED OFFLINE:** Gate-3A1's preregistered semantic-kernel decision is **FAIL-SEMANTIC**. This does not constitute FAIL-TEMPORAL: dense scalar temporal aggregation retains a stable offline advantage over newest-only.
+
 # Strong evidence
 
 - Static execution horizon matters for at least this ACT checkpoint and LIBERO task 0; the complete curve is nonmonotonic.
@@ -65,6 +74,8 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - Thresholded prefix support is a lossy and unstable representation of continuous temporal prediction error.
 - Existing saved temporal predictions contain enough diversity for simple temporal ensembling to reduce held-out offline demonstration error in the sparse cohort.
 - In the sparse teacher-forced cohort, a control-semantic similarity kernel has a held-out offline advantage over validation-tuned full-vector CogACT cosine when aggregation is held fixed.
+- Dense every-step temporal aggregation reduces held-out control-semantic demonstration error for this frozen ACT checkpoint. The strongest tested deployable rule is validation-selected newest-favoring age-exponential weighting, and its advantage over newest-only is present in every task mean.
+- The sparse semantic-kernel advantage over CogACT does not survive dense every-step candidates; on Gate-3A1 the two are statistically unresolved and the semantic rule is substantially worse than the tuned age-exponential rule.
 
 # Weak evidence
 
@@ -73,6 +84,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - The middle Gate-2B phase favors long point estimates more stably than early/late in split resampling, but the phase definition, in-sample selection, and absent traces prevent a semantic claim.
 - Action smoothness accounts for some temporal-support variation, especially with future/noncausal features, but tested simple causal linear predictors explain little.
 - Task or state context may affect temporal prediction competence, but current targets and ablations do not isolate the causal context signal.
+- A target-informed scalar oracle has large dense offline headroom beyond the strongest tested deployable baseline. This is weak evidence for exploitable contextual selection because the oracle uses the demonstration target and no deployment-available predictor has captured the choice.
 
 # Unsupported previous conclusions
 
@@ -97,14 +109,15 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - The tested matched-query group-wise selective-commitment rule improves success.
 - A generic temporal-expert gate is novel relative to CogACT and Temporal Action Selection.
 - The current consistency-gated group residual improves over scalar semantic temporal aggregation.
+- The sparse control-semantic similarity advantage over tuned CogACT generalizes to dense every-step temporal candidates.
 
 # Unknowns
 
 - Whether lower offline temporal-expert error predicts higher closed-loop success.
-- Whether dense every-step ACT predictions show the same oracle and non-oracle gains as the sparse cache.
 - Whether group-wise routing improves over scalar routing enough to justify cross-group consistency risk.
-- Whether a static, training-free similarity ensemble matches any learned router on this checkpoint.
-- Whether the sparse control-semantic similarity advantage over CogACT cosine survives dense every-step candidates or produces closed-loop success gains.
+- Whether the dense offline gain of simple temporal aggregation produces closed-loop success gains under query-matched evaluation.
+- Whether any deployable, context-dependent scalar selector can recover a meaningful fraction of the dense target-informed oracle headroom.
+- Whether the oracle headroom reflects useful control alternatives rather than demonstration noise or imitation multimodality.
 - Whether contact events, semantic progress, or task-specific phases explain more than normalized time and action smoothness.
 - Whether demonstration action is an appropriate unique deployment target in this multimodal imitation setting.
 - Whether a directly defined value of fresh observation/re-querying has exploitable, learnable headroom.

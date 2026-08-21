@@ -43,6 +43,7 @@ per-run metadata, trace hashes, and validation issues for the rollout roots.
 | `/home/thor/projects/one-clock/experiments/temporal_reliability/reliability_dataset.npz` | 12,857,759 bytes | `6e72b16a1acc90b6187f4c007848345e73090db3e362ba39f0e7f3095b4c0c60` | Demonstration-support target, threshold sensitivity, smoothness analysis, sparse temporal candidates for Gate-3A0, Gate-3A1 episode/task inventory |
 | `/home/thor/projects/one-clock/experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz` | 9,955,742 bytes | `45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4` | Y_refresh estimator replication, source-context ablation, episode-level validation/test membership for Gate-3A0 and Gate-3A1 |
 | `/home/thor/projects/one-clock/experiments/phase_conditioned_oracle/config_results.json` | 1,838,818 bytes | `33f014aa81b640bc05b1fc3aaec85e516009d50eb6cd624d3e1753c499d3434b` | Gate-2B candidate-map accounting, curves, and selected maps |
+| `/home/thor/projects/one-clock/experiments/gate3a1_dense_temporal_cache` (82 prediction NPZ files; 83 files including the local manifest) | 32,949,112 bytes | content-tree `87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c` over the 82 sorted prediction-file hashes | Gate-3A1 dense validation/test analysis: 12,294 full ACT chunks with logical shape `(12,294, 100, 7)`, non-oracle comparisons, stratified diagnostics, and scalar oracle headroom |
 
 The original fresh-action arrays and construction script for the Y_refresh
 target (`target_comparison.npz`, `refresh_first_actions.npz`, and
@@ -52,9 +53,10 @@ source-of-truth map and claims ledger.
 
 ## Deliberately excluded generated files
 
-The audit commit excludes generated PNG plots, Python `__pycache__` bytecode,
-and any raw prediction/rollout cache. Non-plot replication tables and metrics
+The audit commits exclude generated PNG plots, Python `__pycache__` bytecode,
+and raw prediction/rollout caches. Non-plot replication tables and metrics
 needed for the numerical claims are committed under
 `research/audit_outputs/chunk_only_replication/` and
-`research/audit_outputs/source_context_replication/`; their plots are not
-needed to recompute or interpret the audited claims.
+`research/audit_outputs/source_context_replication/`, with Gate-3A1 compact
+outputs directly under `research/audit_outputs/`; the omitted plots and dense
+prediction arrays are not needed to inspect the reported aggregate claims.
