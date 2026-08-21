@@ -1,0 +1,503 @@
+{
+  "episodes_per_task": 20,
+  "figures": [
+    "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/figures/success_by_q.png",
+    "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/figures/discontinuity_by_q.png",
+    "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/figures/acceptance_outcomes.png"
+  ],
+  "metadata": {
+    "action_dim": 7,
+    "action_distance": "arm=max(translation dataset-std RMS, rotation dataset-std RMS); gripper=normalized absolute error with sign mismatch promoted above epsilon",
+    "action_groups": {
+      "arm": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "gripper": [
+        6
+      ]
+    },
+    "action_std": [
+      0.2681190073490143,
+      0.4384443759918213,
+      0.4475117325782776,
+      0.024448219686746597,
+      0.04936208948493004,
+      0.042103495448827744,
+      0.9974462985992432
+    ],
+    "architecture": "aarch64",
+    "base_seed": 1000,
+    "canonical_start_sha": "6ed5d06516aaddb382095e3343430c7e31cd22d7",
+    "checkpoint": "/home/thor/projects/checkpoints/zeromidnight_act_libero_object",
+    "checkpoint_model_sha256": "340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410",
+    "chunk_size": 100,
+    "control_frequency": 20,
+    "control_mode": "relative",
+    "episodes_per_task": 20,
+    "epsilon_g": {
+      "arm": 1.0,
+      "gripper": 1.0
+    },
+    "gpu": "NVIDIA Thor",
+    "init_state_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "learned_reliability_estimator": null,
+    "lerobot_version": "0.6.2",
+    "libero_version": "0.1.4",
+    "methods": [
+      "global_replace",
+      "selective_commit"
+    ],
+    "no_future_observation": true,
+    "no_y_refresh_online": true,
+    "optional_static_control": null,
+    "python": "3.12.3",
+    "query_cadences": [
+      4,
+      8,
+      16
+    ],
+    "repository_commit_at_run": "6ed5d06516aaddb382095e3343430c7e31cd22d7",
+    "task_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "task_suite": "libero_object",
+    "torch": "2.11.0+cu130",
+    "torch_cuda": "13.0"
+  },
+  "paired_success_by_q": {
+    "16": {
+      "bootstrap_95ci": [
+        -0.375,
+        -0.205
+      ],
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260836,
+      "pairs": 200,
+      "selective_minus_global_success_rate": -0.29
+    },
+    "4": {
+      "bootstrap_95ci": [
+        -0.35,
+        -0.165
+      ],
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260824,
+      "pairs": 200,
+      "selective_minus_global_success_rate": -0.26
+    },
+    "8": {
+      "bootstrap_95ci": [
+        -0.285,
+        -0.115
+      ],
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20260828,
+      "pairs": 200,
+      "selective_minus_global_success_rate": -0.2
+    }
+  },
+  "pooled_summaries": {
+    "16": {
+      "global_replace": {
+        "acceptance_counts": {
+          "both_accept": 2320,
+          "neither_accept": 0,
+          "only_arm_accept": 0,
+          "only_gripper_accept": 0
+        },
+        "acceptance_fractions": {
+          "both_accept": 1.0,
+          "neither_accept": 0.0,
+          "only_arm_accept": 0.0,
+          "only_gripper_accept": 0.0
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.37551534558921973,
+          "gripper": 0.28908554434890354,
+          "overall": 0.38878984560530727
+        },
+        "action_discontinuity_median": {
+          "arm": 0.3383313381312727,
+          "gripper": 0.25049753092898014,
+          "overall": 0.34887039173604384
+        },
+        "environment_steps": 35725,
+        "episodes": 200,
+        "mean_environment_steps": 178.625,
+        "mean_group_generation_switches": {
+          "arm": 10.6,
+          "gripper": 10.6
+        },
+        "mean_retained_generation_age": {
+          "arm": 7.343891102802686,
+          "gripper": 7.343891102802686
+        },
+        "policy_queries": 2320,
+        "queries_per_executed_step": 0.0649405178446466,
+        "queries_per_rollout": 11.6,
+        "source_exhaustion_steps": 0,
+        "success_rate": 0.7,
+        "success_rate_ci95": [
+          0.6332093162728074,
+          0.7592525531762859
+        ],
+        "successes": 140
+      },
+      "selective_commit": {
+        "acceptance_counts": {
+          "both_accept": 608,
+          "neither_accept": 1508,
+          "only_arm_accept": 582,
+          "only_gripper_accept": 250
+        },
+        "acceptance_fractions": {
+          "both_accept": 0.2062415196743555,
+          "neither_accept": 0.5115332428765265,
+          "only_arm_accept": 0.19742198100407055,
+          "only_gripper_accept": 0.08480325644504749
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.43381882671344996,
+          "gripper": 0.2850104082408398,
+          "overall": 0.4516890098059254
+        },
+        "action_discontinuity_median": {
+          "arm": 0.43628105371934167,
+          "gripper": 0.2645457430371453,
+          "overall": 0.4626441981545094
+        },
+        "environment_steps": 45590,
+        "episodes": 200,
+        "mean_environment_steps": 227.95,
+        "mean_group_generation_switches": {
+          "arm": 4.95,
+          "gripper": 3.29
+        },
+        "mean_retained_generation_age": {
+          "arm": 30.961379557612005,
+          "gripper": 39.234787591903675
+        },
+        "policy_queries": 2948,
+        "queries_per_executed_step": 0.06466330335599912,
+        "queries_per_rollout": 14.74,
+        "source_exhaustion_steps": 1979,
+        "success_rate": 0.41,
+        "success_rate_ci95": [
+          0.34415674908482885,
+          0.4792354096630791
+        ],
+        "successes": 82
+      }
+    },
+    "4": {
+      "global_replace": {
+        "acceptance_counts": {
+          "both_accept": 9450,
+          "neither_accept": 0,
+          "only_arm_accept": 0,
+          "only_gripper_accept": 0
+        },
+        "acceptance_fractions": {
+          "both_accept": 1.0,
+          "neither_accept": 0.0,
+          "only_arm_accept": 0.0,
+          "only_gripper_accept": 0.0
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.2192842510134424,
+          "gripper": 0.20647216382920708,
+          "overall": 0.2414873815973815
+        },
+        "action_discontinuity_median": {
+          "arm": 0.196745077877437,
+          "gripper": 0.10651211372991554,
+          "overall": 0.2143982684384306
+        },
+        "environment_steps": 37591,
+        "episodes": 200,
+        "mean_environment_steps": 187.955,
+        "mean_group_generation_switches": {
+          "arm": 46.25,
+          "gripper": 46.25
+        },
+        "mean_retained_generation_age": {
+          "arm": 1.4933179809062358,
+          "gripper": 1.4933179809062358
+        },
+        "policy_queries": 9450,
+        "queries_per_executed_step": 0.2513899603628528,
+        "queries_per_rollout": 47.25,
+        "source_exhaustion_steps": 0,
+        "success_rate": 0.645,
+        "success_rate_ci95": [
+          0.5765211307549043,
+          0.7080137245956883
+        ],
+        "successes": 129
+      },
+      "selective_commit": {
+        "acceptance_counts": {
+          "both_accept": 1208,
+          "neither_accept": 7138,
+          "only_arm_accept": 1126,
+          "only_gripper_accept": 1940
+        },
+        "acceptance_fractions": {
+          "both_accept": 0.10585348755695759,
+          "neither_accept": 0.6254819488257974,
+          "only_arm_accept": 0.09866806869961445,
+          "only_gripper_accept": 0.16999649491763055
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.2512266661646379,
+          "gripper": 0.3330643411239832,
+          "overall": 0.30911291876726965
+        },
+        "action_discontinuity_median": {
+          "arm": 0.24440457529582768,
+          "gripper": 0.31005295998026516,
+          "overall": 0.3021531489898426
+        },
+        "environment_steps": 45531,
+        "episodes": 200,
+        "mean_environment_steps": 227.655,
+        "mean_group_generation_switches": {
+          "arm": 10.67,
+          "gripper": 14.74
+        },
+        "mean_retained_generation_age": {
+          "arm": 20.635278415288486,
+          "gripper": 22.841555562427708
+        },
+        "policy_queries": 11412,
+        "queries_per_executed_step": 0.25064241945048427,
+        "queries_per_rollout": 57.06,
+        "source_exhaustion_steps": 0,
+        "success_rate": 0.385,
+        "success_rate_ci95": [
+          0.32033309726923215,
+          0.45400132779753916
+        ],
+        "successes": 77
+      }
+    },
+    "8": {
+      "global_replace": {
+        "acceptance_counts": {
+          "both_accept": 4610,
+          "neither_accept": 0,
+          "only_arm_accept": 0,
+          "only_gripper_accept": 0
+        },
+        "acceptance_fractions": {
+          "both_accept": 1.0,
+          "neither_accept": 0.0,
+          "only_arm_accept": 0.0,
+          "only_gripper_accept": 0.0
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.3134666205316076,
+          "gripper": 0.29620118493898284,
+          "overall": 0.33857046960571374
+        },
+        "action_discontinuity_median": {
+          "arm": 0.2638047678340275,
+          "gripper": 0.16322274620440813,
+          "overall": 0.27536032850488773
+        },
+        "environment_steps": 36463,
+        "episodes": 200,
+        "mean_environment_steps": 182.315,
+        "mean_group_generation_switches": {
+          "arm": 22.05,
+          "gripper": 22.05
+        },
+        "mean_retained_generation_age": {
+          "arm": 3.4738733992145177,
+          "gripper": 3.4738733992145177
+        },
+        "policy_queries": 4610,
+        "queries_per_executed_step": 0.12642953130570717,
+        "queries_per_rollout": 23.05,
+        "source_exhaustion_steps": 0,
+        "success_rate": 0.66,
+        "success_rate_ci95": [
+          0.5918849552683626,
+          0.7220845402909121
+        ],
+        "successes": 132
+      },
+      "selective_commit": {
+        "acceptance_counts": {
+          "both_accept": 852,
+          "neither_accept": 3241,
+          "only_arm_accept": 772,
+          "only_gripper_accept": 695
+        },
+        "acceptance_fractions": {
+          "both_accept": 0.15323741007194244,
+          "neither_accept": 0.5829136690647482,
+          "only_arm_accept": 0.13884892086330936,
+          "only_gripper_accept": 0.125
+        },
+        "action_discontinuity_mean": {
+          "arm": 0.3353560802973344,
+          "gripper": 0.3406771784039859,
+          "overall": 0.38147964610546437
+        },
+        "action_discontinuity_median": {
+          "arm": 0.31828808425111,
+          "gripper": 0.297313543825529,
+          "overall": 0.3655995929060556
+        },
+        "environment_steps": 44204,
+        "episodes": 200,
+        "mean_environment_steps": 221.02,
+        "mean_group_generation_switches": {
+          "arm": 7.12,
+          "gripper": 6.735
+        },
+        "mean_retained_generation_age": {
+          "arm": 25.627699047517645,
+          "gripper": 30.106379887098175
+        },
+        "policy_queries": 5560,
+        "queries_per_executed_step": 0.12578047235544296,
+        "queries_per_rollout": 27.8,
+        "source_exhaustion_steps": 347,
+        "success_rate": 0.46,
+        "success_rate_ci95": [
+          0.39233051799971463,
+          0.5291771081104667
+        ],
+        "successes": 92
+      }
+    }
+  },
+  "query_schedule_audit": {
+    "cadence_mismatch_count": 0,
+    "cadence_mismatches": [],
+    "interpretation": "Every method queries at t % q == 0; paired methods have identical scheduled query times through their common executed prefix. Termination can shorten total query counts.",
+    "paired_common_prefix_schedule_mismatch_count": 0,
+    "rollouts_checked": 1200
+  },
+  "rollout_log_manifest": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollout_log_manifest.json",
+  "status": "completed",
+  "task_count": 10,
+  "total_primary_rollouts": 1200,
+  "verdict": {
+    "compute_interpretation": "Queries per executed step remain matched within each fixed cadence; selective commitment performs no compute-saving inference.",
+    "continuity_by_q": {
+      "16": {
+        "global_replace": {
+          "arm": 0.37551534558921973,
+          "gripper": 0.28908554434890354,
+          "overall": 0.38878984560530727
+        },
+        "selective_commit": {
+          "arm": 0.43381882671344996,
+          "gripper": 0.2850104082408398,
+          "overall": 0.4516890098059254
+        }
+      },
+      "4": {
+        "global_replace": {
+          "arm": 0.2192842510134424,
+          "gripper": 0.20647216382920708,
+          "overall": 0.2414873815973815
+        },
+        "selective_commit": {
+          "arm": 0.2512266661646379,
+          "gripper": 0.3330643411239832,
+          "overall": 0.30911291876726965
+        }
+      },
+      "8": {
+        "global_replace": {
+          "arm": 0.3134666205316076,
+          "gripper": 0.29620118493898284,
+          "overall": 0.33857046960571374
+        },
+        "selective_commit": {
+          "arm": 0.3353560802973344,
+          "gripper": 0.3406771784039859,
+          "overall": 0.38147964610546437
+        }
+      }
+    },
+    "final_verdict": "NO-GO",
+    "interpretation": "Selective commitment lowers success at every q, with all pooled paired bootstrap intervals below zero. It also increases normalized overall and arm query-boundary discontinuity at every q. The few task-level gains do not provide a consistent mechanism advantage.",
+    "next_choice": "D: stop/reframe group-wise commitment. Do not automatically pursue learned cheap verification, current-query verification, or soft acceptance.",
+    "predeclared_rule": "NO-GO when Global Replace performs as well or better consistently and selective commitment provides no meaningful closed-loop advantage.",
+    "success_by_q": {
+      "16": {
+        "bootstrap_95ci": [
+          -0.375,
+          -0.205
+        ],
+        "global_replace": 0.7,
+        "selective_commit": 0.41,
+        "selective_minus_global": -0.29
+      },
+      "4": {
+        "bootstrap_95ci": [
+          -0.35,
+          -0.165
+        ],
+        "global_replace": 0.645,
+        "selective_commit": 0.385,
+        "selective_minus_global": -0.26
+      },
+      "8": {
+        "bootstrap_95ci": [
+          -0.285,
+          -0.115
+        ],
+        "global_replace": 0.66,
+        "selective_commit": 0.46,
+        "selective_minus_global": -0.2
+      }
+    },
+    "task_q_cells": {
+      "selective_higher": 8,
+      "selective_lower": 48,
+      "ties": 4,
+      "total": 60
+    }
+  }
+}

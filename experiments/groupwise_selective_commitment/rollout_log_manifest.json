@@ -1,0 +1,544 @@
+{
+  "logs": [
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "2e46a2ed7c0b096ae397112bd29cb4c0cc8e7f8fef522a5e8ff934023f0bd618",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "62b13df9811c8ad8a296a54184da1c4f4d61f7fa4ba20e82c73e0ea709ebf49e",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "8f966a8ddc480eec72a53b62a2dfae89828f47f658bfa877983308c9f2f9b83f",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "47dc1a0d422836fa3ce0aa881bec622d0c6f1f3bd9b331e48c31da071396324e",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "6ecf85353ebe803ef6f9b9ee32ffab54835ede6b68856a01963fafcb978b701c",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "d3b65ec3df964ce628d0eeaa9be10919f44c0600c6694d1e96386f64019571f0",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "e6b5d33ad5a08e704af7684b2fe664873ab4459e69ff15cbbd365b030678c985",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "ec16a3837ee88841a100fbd4225690f88f627fac40ca6c6d37fbde1bca3cfd72",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "d986dda21549204d0594bf1618e264ba6041da6195da7c3a7c9f461b58ccc4ff",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "007b28848c18d8c48143dbce02aae7e0823c151f00344e8082dc16f2c6ef42b3",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "88c167a7d49e6e65173bf324f1e7fb7da8c78d465a1367283c1d7040bd9f4fc7",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_00/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "caf52acc878633c869af5dcdd5cc2ea04ed86aaaaab4eaab31bfd1efb98522cf",
+      "task_id": 0
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "a270e4e03e2e98b6b45c2f79c20464690a00b1df91ba9bb1a7779daf8a846a43",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "3cc0dc798b2d2cd7bec7d68630fc1e5f8f7271c09b1034c201bfde40381e205e",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "43e4eca7e351ca32c8c9a11e2304d0d1d6e9192cff3564565d4bc3257017aa43",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "20da007193ca9d87f645d7160e674ae681140dfa6434fd5da67d76ebfca8fa36",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "bc027553f2beb630e4c0f69d68815da19551af3e8492124e7a8b0770bf7ffeab",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "09fb53b0f6d0c71de8eeddf06d1aa9dc901c69e175f41073e793a00fc4c1898c",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "730707026e555b1ca6300a169cfb63d69eec1e2331fd13ab63648c031045477d",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "3876950c2b6d66df4a9cdb835e11730ec85ec6f1fba24c3fa84d41320e320e51",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "5129207314eb838245e289b73c80e423ef8706f3b0a26df75495226d4260def3",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "5df3e572051792878d2e9d1eba4e6fd262bf8e3764a8bb96fa6309d291d29d3c",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "b0d709a1ca88242297d80f5aff48fc21e9a9a0e90d640a7b0ce514dadcc00883",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_01/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "5c3c4baea6cae41b610bdbbe703cca5dbbac480f95cf34592bad3ec86d03f44d",
+      "task_id": 1
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "6527e3270179e9adf68147a09d7e4e881f3ebe0fd230be79ea25183b170ac79e",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "dd61d5629b779ce09e337b20ba7760b1a5bfe2148e32b42a3b4ac28993cdf1b3",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "415d9ea55bb2b53df928cec314ab61a8884f236476fc44aca76ef54f6c1cc7de",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "109866904676c040d7aa68bc40347b113e4ca22fa96f51099c3646f11f765378",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "ad5212c00b96b5d4498b8205030ae871bdca7960ef5af231ae53293f07399a2a",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "8455f14154a0bb73a36772e6ec5c3b3b776c82acab8a4fcd3e2ff983514c0cec",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "06cbc649f09f631e34799eeed7b27ca0af632b3c674317d71eb5e9242229fbbb",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "fc59f08bfc8680d31004068fbc88b8049f277759c26c851dd8ae9c559695b5b3",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "129a7915a4be70f805a5e2296ce57a5c876f4a72b13b41a311c1189b4a740c3b",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "92daa964c1cbbda7095701bf3c046701ce38711e1762161f223161b65ad44a83",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "a329bd62c39f71fd1e9b34236ab71ea91aa4631db1f90e3137da54968a95dc46",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_02/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "dcdb7139f4d1c09640d2d544a5d2dd09facc144f992a2d93103b79d5eb76f571",
+      "task_id": 2
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "ab4ab1910564d536de42b360b2c66b46122ac519cbdd8ef05c4a3f9ecba1dd6c",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "97ba6262523f7053ca74009e312e286e29d790c3aeabe3167ef91c390f7a5765",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "024b96f7aa3bbc4930cb93de834a5f404944b465f0857843636ce92805383ab0",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "a21e0034f15781b14616ae2e01db62ccfa7124d2e12716d9400bf9f50483f8ad",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "f47dc10d7798f222719e189a8eab4531f71f46cc7562dabc4f5aed0f360c9049",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "bed3eb029f7eb9532b85a01465a1088ab911de667dd87e82eb2e521851b69994",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "1fe893ac9eb44158ab296afe6e2c63e3b3861ecb96e23c0d01e0fcebc5de9a94",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "cca0f98572a419d6ccbb9f40da357572355bfbae13723b56893f69a484b345bc",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "cdacb5b30f1402d6d8af858be83604c1b51246231b1223b04b60e3725a0e0bb4",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "d7ca409e60825fa6d88175a5df3cc6112d17cec0c56ea876eacd2b7a7e5e5063",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "9e8681173c15e44b09b648967b99c99d0dcb756487605c7a7a9810c594b97b34",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_03/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "ae65deb54e8833571ae186c0d83711990f173915b899cecd309721c6387481a6",
+      "task_id": 3
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "a699f03b6d663d496ef0832f962fe61e0d1cc117f91cf362f259fe46c894468e",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "3579b7551d345855c254aa9ff9a980d3256659b4cf5bfef4a3d9ae574964c901",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "f6f4c4789c1b5145a534434a3af62a5a8588c526e27b04f3bb79ddd1ca701b6a",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "e5f88ec137c094c0723eab4cc5968c752480ef7d19800bd4d5e1a04fa17b989b",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "1f5fdbf6663232f33e7eb9f1c6cc99ee7a9b359a1fa0c0d6381fd675e6423d3f",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "94aa78cbd5fd95e033edcac03e4e33205d94b741c58dfce2815f329d70893509",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "d320d84413bde1cae273c66f659501b3f0827ea268edd6de2a16f16b5f6dda26",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "74117fc6b3139c05505a845e4122a061614278c0ef18f16656a35f4379b3934d",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "b97ef37b3ac4a61806ff7dc7037edde11b89fd9404433b04a8857dda57ab8a51",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "0b225e94624e8a321a6f30f4d870719f545f2320f0e3786dbcf6ff107860fb72",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "69880718913e3074338cdca343a00531659c630c56a904c89cd2e0db9c81d8a7",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_04/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "b41c84f1a4fb9802e8baeeb96cf0153989cfd8b922acef5ea3af2b9704c93e2d",
+      "task_id": 4
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "72feda6057143f9a955a29b5422aef3ff79ae7d2f1b6c5173fbe7ab7607875b0",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "0e99cafbb19f0084e02f916872f289ec6a77f6442ae5dfc7034e1c15cd854d72",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "513482d433de3a22b89ef7253415aa159d91e1c0673c4c92b0fab75dccc64648",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "f49163a6d2961eeb0d9e5d47c3cf00dd8351533e5b9177938ee2fa09ad307fbf",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "199b22a6319a0d8fb1a64091b982233139c55e863ba54314965ac65004715832",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "bbf40289217623454be540a32c47a4ca16c83bc9ce0f9bfbace8b12602a05b01",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "f8747e03309ba1cdae7e7aa745f1fd518850cdabae3feeb5780027f2fe344a3a",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "319d51e5514ebb7d071085b567a33a556d57eef3c36707b4dbd1273568e01982",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "8c29502f8039ede696121d3977dab904ccd653652d9d6f7b7d26fb6ce2800e4b",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "3fef85c6e25ff41758c49ddb3893e210087663206823bf757ec0e09a0d027ff4",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "6d4b1bb05871037a886e96c489ee3c43c05377269c546948675d48da8289eb01",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_05/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "6a774d08bad87bc0d73e6b9e389daaca6bca423e4c2974c95e48407ccc84db17",
+      "task_id": 5
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "33b94a5e79227954abf470599ee9f15b330eff3d73a01ac3697c087219749355",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "27ccc54c0cd11a27b3fd2e1324c630fd262d0215b0f475ee2f5cf6b7837c2443",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "0c9d4498e06055a3a05a69ff3a2c5f160f0cf1c33ea069c37bdb7f91423caa60",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "b439c0a4b03f35260b173982d308c2c364583e46843eaf37856f6eb45b0ebcba",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "b062aec78d1fff0bbcce23de8878c7e7abdc627ff9e96da5798f67d8f3513a5a",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "a0ebe20b8e73fbc30f70eac6358c02e3fd5f5e1311b1db2d1a4703305c686fdd",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "c665dcc17515f0faa7fd25483a11dab7049bc1860417d29d76a5d0428d849939",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "c57becf0a6033e2d1ffdd2d5bd9291ae66f839d91db3ab1d785901f0d8727e7f",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "1bc709fd4dcb31e3ca4d5cfa87bfd77ff2e5bf99da9437e38d23b379ae288fa4",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "d49bbc7c549c78348764bb2699780efaa52d650ea82fbdaba830bb9d0de64b19",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "22bf2b0ad9842343978d59c34e53f97ce6a92904216d86e1016c42ff340b8f44",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_06/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "e6a07fecd78a7258051d710908c8dabccd371ffe56d7b467dd15702fbbe32dd6",
+      "task_id": 6
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "73c34de6c4bee676d5c5f9491dc26b56179196db9e98788b598bd6af869cb7f9",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "b257d1fbc5e5c3e72f7af42ae96f58e8ab94309d6c04c7d32fada9825feebfd2",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "ebc294937a0758d3d95ff85988945ac721e67c349a583bd9c2303d53ea71c5a5",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "efba0fee8ecc66c4fb0e99039bdf8916e2e1df78e0ba41a9f579a23e4dc89296",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "aa8ad5dd789e2ba4e0772eea5e6e3071efdb703f2ad0a79ccd53f2fc2aba6a70",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "74020d16772da61f54ce2e263468a67bc0b1bd91d93f9ad2dbc5be3a71817165",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "51a8cf7b1e95312bb3d05d4106ae339245a8fe9e4e8e01d108bb634ee59325e5",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "0138691dd1ac2497d9f66b47f7ee17701d9bc5d31f49ddc164afe7678de8f609",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "68f64a47b4d79cada78b2d5a65b6d30f4c8153ff23830d374759d1fd56a076fa",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "7a115bf125e34ee0f831c686fa48548764bec31dbcffacfa81cdf789031fab10",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "e007d5747a4ee22f84d4075d4393306968b956ce0ac494d99f509b4c31c1bf3b",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_07/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "efd8c6e3ffe7b97a0910ff135e6b68bad33bbc4ef8df7428fb1a466e707099cb",
+      "task_id": 7
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "f10858a0c56d3c4e6bb9fa3d2687f1bada91c880d05bbe4b6587191df632d057",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "5f5c09381629d7d524f2538024c94de8fa00a02c26cf12c080b2904db0a63371",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "0bf4f9da8ef2d966dd299b96253bb6c7102913722edf0729a8ac38c6e3e0f08b",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "0cafebc44bcdcffb58d5a217fb7e37aca461bea0a435e9bc43ec1ea5af48a724",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "72de239b51168bb4bcff290e0461b756475bb5a8cdcc06f728ed8f622f71c8ae",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "e0037ec4dfd0680982b9e15af700e167299e775f962a9e026bb3b7b5fca4ccea",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "92f74179b8e0023e753e02f96f81505feb111e1c505e0305f2d86c2fae0f99f4",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "e9c8ad341dee7289def773535e94bd27505b22ce7618d6ac2708e4bec7e82908",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "475c18338c7651e18f9182c9cbe1325960329dbe83465a5302fe438e0551eefd",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "6bdd82d07ab479fd5f92d6c47df228cc0e5d135e00474ea7c864e494669ae329",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "c09e00c09728a492b7ef747a4d3f148668f8ad0f84bb75c72675d37dfff63cf0",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_08/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "bc09f1b5ebec938f6fc83338dc4a73fc395bd6bff0e7160095b52c324ba34558",
+      "task_id": 8
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_04/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "822286ceb98adb6f7ae38cacfc0e3a63c37bbee6dd35174f51f601c3c161efa6",
+      "method": "global_replace",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_04/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "e903f94c4826ce134319c41a69dfc29f0e007abde1d7c09ecdf50c67d58e4354",
+      "task_id": 9
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_04/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "844f63e9bafa2ba575acf64733c35eac5ed61ba03f9018e3e80bb5d8ce49a722",
+      "method": "selective_commit",
+      "q": 4,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_04/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "d0aecff95b9324f5c652f8e9d981cd55c8b08cd6bff7eb382b73abe724f9d81c",
+      "task_id": 9
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_08/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "0b0c554a26b3351174173f67c6f6b3e43fb90de9f67f42c5fff627b36ef1ae83",
+      "method": "global_replace",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_08/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "d3fc4a50ec565787e3fbef0c3494bbb5ed7eadbe7c5fdaf05818f59cfe946c6b",
+      "task_id": 9
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_08/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "d6301ff58f443f0eac9ec819106548ecf5b56f603435d9aaac1a6cf8b4682916",
+      "method": "selective_commit",
+      "q": 8,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_08/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "23ddaaf25ecfdee71ba25d7ac8f9d4401f86c39b9b6e702180f5d5a54fa56c8c",
+      "task_id": 9
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_16/global_replace/episodes.jsonl",
+      "episodes_log_sha256": "231c92879b5572093a03a52ccfcf9b4de68d991e909831d4aab51e79d46aa7f6",
+      "method": "global_replace",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_16/global_replace/steps.jsonl.gz",
+      "steps_log_sha256": "3d19f46926efe9f4764459510bc0e95b22b41bfbf8b742e6028b31b813b5b61e",
+      "task_id": 9
+    },
+    {
+      "episodes_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_16/selective_commit/episodes.jsonl",
+      "episodes_log_sha256": "3910aafb4ae31b0fab26f0cfe0105da24fdf3bfffefcf2bea775ec1473a076eb",
+      "method": "selective_commit",
+      "q": 16,
+      "steps_log": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment/rollouts/task_09/q_16/selective_commit/steps.jsonl.gz",
+      "steps_log_sha256": "a20d5f3cc13f1264884af81e10bbacc43e8006096162821a3b7b35c5fc90c2ef",
+      "task_id": 9
+    }
+  ]
+}
