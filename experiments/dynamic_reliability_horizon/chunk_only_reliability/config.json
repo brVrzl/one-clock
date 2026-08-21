@@ -1,32 +1,56 @@
 {
-  "status": "blocked_before_training",
-  "input_contract": {
-    "expected_bundle": "experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz",
-    "expected_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
-    "model_input": "source predicted action chunk A_t only",
-    "future_features_used": false,
-    "offsets": "k=1..99",
-    "k0_policy": "absent from labels, loss, and headline metrics"
+  "batch_size": 256,
+  "bundle": "experiments/dynamic_reliability_horizon/artifact_handoff/minimal_y_refresh_training_bundle.npz",
+  "bundle_sha256": "45a37a57fc03a3850b5c87e88604d66b16886d306e5ee09aa322f52c7e6c50b4",
+  "decision_rule_fixed_before_results": {
+    "broad_signal_fraction_threshold": 0.5,
+    "fixed_offset_auroc_threshold": 0.55,
+    "horizon_useful_requires": "learned overall test MAE <= empirical baseline MAE and within +/-2 >= 0.50",
+    "minimum_valid_group_offset_slices": 10
   },
+  "epochs": 100,
+  "future_features_used": false,
+  "hidden_dims": [
+    64,
+    32
+  ],
+  "input_contract": "source predicted chunk A_t flattened plus one-hot group identity only",
+  "k0_policy": "excluded from training and headline metrics; R(0)=1 prepended only for horizon decoding",
+  "learning_rate": 0.002,
   "models": [
     "constant_prior",
     "empirical_group_offset_prior_train_only",
     "independent_vector_shared_mlp",
     "monotone_conditional_survival_shared_mlp"
   ],
-  "seeds": [20260820, 20260821, 20260822],
-  "validation_only": [
-    "checkpoint_selection",
-    "calibration_choices",
-    "tau_selection"
+  "patience": 18,
+  "runner": "NumPy CPU shared-vector pilot",
+  "scientific_scope": "causal chunk-only ablation; not task-optimal horizon and no rollout",
+  "seeds": [
+    20260820,
+    20260821,
+    20260822
   ],
-  "headline_metrics": [
-    "AUROC",
-    "AUPRC",
-    "Brier",
-    "ECE",
-    "Brier Skill Score",
-    "refresh_oracle_horizon_metrics"
+  "status": "completed",
+  "tau_selection": "minimum validation refresh-oracle MAE; ties prefer higher within +/-2 then lower tau",
+  "tau_values": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9
   ],
-  "test_tuning": false
+  "weight_decay": 1e-05
 }
