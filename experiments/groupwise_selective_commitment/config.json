@@ -1,0 +1,34 @@
+{
+  "status": "predeclared",
+  "benchmark": "LIBERO-Object",
+  "task_suite": "libero_object",
+  "task_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "init_state_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "episodes_per_task": 20,
+  "base_seed": 1000,
+  "seed_rule": "base_seed + init_state_id",
+  "checkpoint": "/home/thor/projects/checkpoints/zeromidnight_act_libero_object",
+  "action_groups": {
+    "arm": [0, 1, 2, 3, 4, 5],
+    "gripper": [6]
+  },
+  "methods": ["global_replace", "selective_commit"],
+  "query_cadences": [4, 8, 16],
+  "chunk_size": 100,
+  "action_dim": 7,
+  "control_mode": "relative",
+  "no_policy_retraining": true,
+  "no_learned_reliability_estimator": true,
+  "no_y_refresh_online": true,
+  "no_future_observation": true,
+  "epsilon_g": {
+    "arm": 1.0,
+    "gripper": 1.0
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "seed_base": 20260820,
+    "unit": "paired (task_id, init_state_id) rollout"
+  },
+  "optional_control": null
+}
