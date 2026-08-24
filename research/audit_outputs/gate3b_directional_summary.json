@@ -1,0 +1,329 @@
+{
+  "bootstrap": {
+    "draws": 20000,
+    "implementation": "Python 3 standard-library random.Random; percentile interval with linear interpolation",
+    "interval_status": "unadjusted exploratory 95% intervals",
+    "paired_state_seed": 20260830,
+    "task_cluster_seed": 20261830
+  },
+  "closed_loop_gate3b_marginal_preference": {
+    "FO_is_highest_observed_cell": true,
+    "arm": "fresh",
+    "gripper": "old",
+    "status": "secondary post-hoc pattern pending Gate-3C"
+  },
+  "contrasts": {
+    "FO_minus_FF": {
+      "estimate": 0.18,
+      "exact_diagnostic": {
+        "discordant_blocks": 22,
+        "first_only_successes": 20,
+        "p_value_holm_five_contrasts": 0.00022614840418100357,
+        "p_value_raw": 0.00012111663818359375,
+        "second_only_successes": 2,
+        "tied_blocks": 78,
+        "type": "exact two-sided McNemar/binomial diagnostic on discordant blocks"
+      },
+      "formula": "FO-FF",
+      "leave_one_task_out": [
+        0.16666666666666669,
+        0.16666666666666669,
+        0.18888888888888894,
+        0.20000000000000004,
+        0.1444444444444445,
+        0.16666666666666669,
+        0.20000000000000004,
+        0.1888888888888889,
+        0.1888888888888889,
+        0.1888888888888889
+      ],
+      "leave_one_task_out_range": [
+        0.1444444444444445,
+        0.20000000000000004
+      ],
+      "paired_state_bootstrap_ci95": [
+        0.1,
+        0.27
+      ],
+      "per_task": [
+        0.3,
+        0.3,
+        0.1,
+        0.0,
+        0.5,
+        0.3,
+        0.0,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "status": "post-hoc paired cell comparison",
+      "task_cluster_bootstrap_ci95": [
+        0.09,
+        0.27999999999999997
+      ],
+      "task_sign_counts": {
+        "negative": 0,
+        "positive": 8,
+        "zero": 2
+      }
+    },
+    "FO_minus_OF": {
+      "estimate": 0.45,
+      "exact_diagnostic": {
+        "discordant_blocks": 51,
+        "first_only_successes": 48,
+        "p_value_holm_five_contrasts": 9.837464176598587e-11,
+        "p_value_raw": 1.9674928353197174e-11,
+        "second_only_successes": 3,
+        "tied_blocks": 49,
+        "type": "exact two-sided McNemar/binomial diagnostic on discordant blocks"
+      },
+      "formula": "FO-OF",
+      "leave_one_task_out": [
+        0.4444444444444444,
+        0.43333333333333335,
+        0.4555555555555556,
+        0.4666666666666667,
+        0.41111111111111115,
+        0.43333333333333335,
+        0.5,
+        0.4555555555555556,
+        0.47777777777777775,
+        0.4222222222222223
+      ],
+      "leave_one_task_out_range": [
+        0.41111111111111115,
+        0.5
+      ],
+      "paired_state_bootstrap_ci95": [
+        0.34,
+        0.56
+      ],
+      "per_task": [
+        0.5,
+        0.6,
+        0.4,
+        0.3,
+        0.8,
+        0.6,
+        0.0,
+        0.4,
+        0.2,
+        0.7
+      ],
+      "status": "post-hoc paired cell comparison",
+      "task_cluster_bootstrap_ci95": [
+        0.30000000000000004,
+        0.59
+      ],
+      "task_sign_counts": {
+        "negative": 0,
+        "positive": 9,
+        "zero": 1
+      }
+    },
+    "FO_minus_OO": {
+      "estimate": 0.22,
+      "exact_diagnostic": {
+        "discordant_blocks": 32,
+        "first_only_successes": 27,
+        "p_value_holm_five_contrasts": 0.00022614840418100357,
+        "p_value_raw": 0.00011307420209050179,
+        "second_only_successes": 5,
+        "tied_blocks": 68,
+        "type": "exact two-sided McNemar/binomial diagnostic on discordant blocks"
+      },
+      "formula": "FO-OO",
+      "leave_one_task_out": [
+        0.21111111111111114,
+        0.2222222222222222,
+        0.2333333333333334,
+        0.2111111111111111,
+        0.2111111111111111,
+        0.23333333333333334,
+        0.23333333333333334,
+        0.2222222222222222,
+        0.23333333333333334,
+        0.1888888888888889
+      ],
+      "leave_one_task_out_range": [
+        0.1888888888888889,
+        0.2333333333333334
+      ],
+      "paired_state_bootstrap_ci95": [
+        0.12,
+        0.32
+      ],
+      "per_task": [
+        0.3,
+        0.2,
+        0.1,
+        0.3,
+        0.3,
+        0.1,
+        0.1,
+        0.2,
+        0.1,
+        0.5
+      ],
+      "status": "post-hoc paired cell comparison",
+      "task_cluster_bootstrap_ci95": [
+        0.15,
+        0.3
+      ],
+      "task_sign_counts": {
+        "negative": 0,
+        "positive": 10,
+        "zero": 0
+      }
+    },
+    "arm_fresh_main": {
+      "estimate": 0.245,
+      "exact_diagnostic": {
+        "negative_blocks": 8,
+        "nonzero_blocks": 52,
+        "p_value_holm_five_contrasts": 1.5320996951118104e-06,
+        "p_value_raw": 5.106998983706035e-07,
+        "positive_blocks": 44,
+        "type": "exact two-sided block sign-flip conditional on absolute contrasts",
+        "zero_blocks": 48
+      },
+      "formula": "0.5*(FF+FO)-0.5*(OO+OF)",
+      "leave_one_task_out": [
+        0.24444444444444446,
+        0.24444444444444446,
+        0.25,
+        0.23888888888888893,
+        0.23888888888888893,
+        0.25,
+        0.2666666666666667,
+        0.24444444444444446,
+        0.2611111111111111,
+        0.21111111111111114
+      ],
+      "leave_one_task_out_range": [
+        0.21111111111111114,
+        0.2666666666666667
+      ],
+      "paired_state_bootstrap_ci95": [
+        0.155,
+        0.33
+      ],
+      "per_task": [
+        0.25,
+        0.25,
+        0.2,
+        0.3,
+        0.3,
+        0.2,
+        0.05,
+        0.25,
+        0.1,
+        0.55
+      ],
+      "status": "post-hoc factorial main effect",
+      "task_cluster_bootstrap_ci95": [
+        0.17,
+        0.32999999999999996
+      ],
+      "task_sign_counts": {
+        "negative": 0,
+        "positive": 10,
+        "zero": 0
+      }
+    },
+    "gripper_old_main": {
+      "estimate": 0.205,
+      "exact_diagnostic": {
+        "negative_blocks": 4,
+        "nonzero_blocks": 42,
+        "p_value_holm_five_contrasts": 1.1636802810244262e-07,
+        "p_value_raw": 2.9092007025610656e-08,
+        "positive_blocks": 38,
+        "type": "exact two-sided block sign-flip conditional on absolute contrasts",
+        "zero_blocks": 58
+      },
+      "formula": "0.5*(OO+FO)-0.5*(FF+OF)",
+      "leave_one_task_out": [
+        0.2,
+        0.18888888888888888,
+        0.20555555555555555,
+        0.2277777777777778,
+        0.17222222222222222,
+        0.18333333333333332,
+        0.23333333333333334,
+        0.21111111111111114,
+        0.21666666666666667,
+        0.21111111111111114
+      ],
+      "leave_one_task_out_range": [
+        0.17222222222222222,
+        0.23333333333333334
+      ],
+      "paired_state_bootstrap_ci95": [
+        0.14,
+        0.275
+      ],
+      "per_task": [
+        0.25,
+        0.35,
+        0.2,
+        0.0,
+        0.5,
+        0.4,
+        -0.05,
+        0.15,
+        0.1,
+        0.15
+      ],
+      "status": "post-hoc factorial main effect",
+      "task_cluster_bootstrap_ci95": [
+        0.10500000000000001,
+        0.30500000000000005
+      ],
+      "task_sign_counts": {
+        "negative": 1,
+        "positive": 8,
+        "zero": 1
+      }
+    }
+  },
+  "method_success_rates": {
+    "FF": 0.44,
+    "FO": 0.62,
+    "OF": 0.17,
+    "OO": 0.4
+  },
+  "multiple_comparison_note": "Exact diagnostics are exploratory. Raw p-values and Holm-adjusted values across the five requested contrasts are both reported.",
+  "offline_d20_component_losses": {
+    "descriptive_preference": {
+      "arm": "old",
+      "gripper": "old"
+    },
+    "fresh_arm_rotation_normalized": 1.129622452,
+    "fresh_arm_translation": 0.5957820292,
+    "fresh_gripper_sign_error": 0.3076001092,
+    "old_arm_rotation_normalized": 1.0987722486,
+    "old_arm_translation": 0.5066667976,
+    "old_gripper_sign_error": 0.2740024419,
+    "status": "frozen RTX 5080 teacher-forced result from a8d49834650e17ca9cd6d413a7f64d0c5387fe4c"
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "2817411a4210b8611dc8dae5d32ec99fc6b94cf3",
+    "completed_episodes": 400,
+    "final_summary_blob_sha256": "fd97ff4643a4f05388f46f25b119476a17bd9d9ae0cbc187cf2ae45a6f9bed1a",
+    "final_summary_path": "research/audit_outputs/gate3b_success_summary.json",
+    "manifest_blob_sha256": "dc41ad08adc453a1771252b53a83d8a851d285ab1c0fef8ab14ed5dd8b216664",
+    "manifest_path": "research/audit_outputs/gate3b_rollout_manifest.json",
+    "paired_task_state_blocks": 100
+  },
+  "status": "bounded post-hoc characterization; not preregistered Gate-3B evidence",
+  "task_consistency": {
+    "FO_equal_FF_tasks": 2,
+    "FO_ge_FF_tasks": 10,
+    "FO_gt_FF_tasks": 8,
+    "FO_gt_OO_tasks": 10
+  }
+}

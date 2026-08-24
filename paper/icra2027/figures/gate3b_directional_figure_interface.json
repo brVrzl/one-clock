@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "final_validated_gate3b_posthoc",
+  "source_commit": "2817411a4210b8611dc8dae5d32ec99fc6b94cf3",
+  "source_report": "research/gate3b_cross_generation_composition_report.md",
+  "matrix": {
+    "row_order_arm": ["fresh", "old20"],
+    "column_order_gripper": ["fresh", "old20"],
+    "condition_labels": [["FF", "FO"], ["OF", "OO"]],
+    "successes": [[44, 62], [17, 40]],
+    "trials": [[100, 100], [100, 100]],
+    "rates": [[0.44, 0.62], [0.17, 0.40]]
+  },
+  "preregistered_coherence": {
+    "estimate": 0.025,
+    "paired_state_ci95": [-0.030, 0.085],
+    "task_cluster_ci95": [-0.005, 0.055],
+    "status": "suggestive_not_confirmed"
+  },
+  "posthoc_main_effects": {
+    "fresh_arm": {
+      "estimate": 0.245,
+      "paired_state_ci95": [0.155, 0.330],
+      "task_cluster_ci95": [0.170, 0.330]
+    },
+    "old_gripper": {
+      "estimate": 0.205,
+      "paired_state_ci95": [0.140, 0.275],
+      "task_cluster_ci95": [0.105, 0.305]
+    }
+  },
+  "task_directional_comparisons": [
+    {"task_id": 0, "FO_minus_FF": 0.3, "FO_minus_OO": 0.3},
+    {"task_id": 1, "FO_minus_FF": 0.3, "FO_minus_OO": 0.2},
+    {"task_id": 2, "FO_minus_FF": 0.1, "FO_minus_OO": 0.1},
+    {"task_id": 3, "FO_minus_FF": 0.0, "FO_minus_OO": 0.3},
+    {"task_id": 4, "FO_minus_FF": 0.5, "FO_minus_OO": 0.3},
+    {"task_id": 5, "FO_minus_FF": 0.3, "FO_minus_OO": 0.1},
+    {"task_id": 6, "FO_minus_FF": 0.0, "FO_minus_OO": 0.1},
+    {"task_id": 7, "FO_minus_FF": 0.1, "FO_minus_OO": 0.2},
+    {"task_id": 8, "FO_minus_FF": 0.1, "FO_minus_OO": 0.1},
+    {"task_id": 9, "FO_minus_FF": 0.1, "FO_minus_OO": 0.5}
+  ],
+  "caption_guard": "Open with the unresolved preregistered coherence result. Label all directional effects and FO-centered comparisons post-hoc."
+}

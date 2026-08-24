@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "final_gate3b_and_frozen_offline",
+  "offline_source_commit": "a8d49834650e17ca9cd6d413a7f64d0c5387fe4c",
+  "gate3b_source_commit": "2817411a4210b8611dc8dae5d32ec99fc6b94cf3",
+  "source_age_controller_ticks": 20,
+  "offline_lower_is_better": {
+    "arm_translation": {"fresh": 0.5957820292, "old20": 0.5066667976, "preferred": "old20"},
+    "arm_rotation_normalized": {"fresh": 1.1296224520, "old20": 1.0987722486, "preferred": "old20"},
+    "gripper_sign_error": {"fresh": 0.3076001092, "old20": 0.2740024419, "preferred": "old20"}
+  },
+  "closed_loop_higher_is_better": {
+    "arm_marginal_success": {"fresh": 0.530, "old20": 0.285, "preferred": "fresh", "status": "gate3b_posthoc"},
+    "gripper_marginal_success": {"fresh": 0.305, "old20": 0.510, "preferred": "old20", "status": "gate3b_posthoc"}
+  },
+  "display_guard": "Do not place heterogeneous losses and success on one quantitative axis. Show source preferences and exact within-metric values without a causal arrow."
+}
