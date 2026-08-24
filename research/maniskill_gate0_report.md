@@ -96,9 +96,14 @@ added.
 
 ## Next experiment
 
-Run the matched three-way policy test on the same validated PickCube/StackCube
-fork data: UniformBC, CriticalBC weighted by `c_t`, and ContrastBC using the
-same-state failed perturbation branches as negatives. Keep architecture,
-steps, seeds, and data budget fixed. In parallel, repair the Peg expert source
-or obtain recorded demonstrations, then repeat Gate 0 before adding recovery
-branch generation.
+The first matched state-vector MLP smoke was run with 500 optimizer steps and
+five held-out seeds per task. UniformBC, CriticalBC, and ContrastBC each scored
+0/5 on both PickCube and StackCube. The checkpoints and episode-level logs are
+preserved in `experiments/counterfactual_tournament/maniskill_policy_gate/`.
+This is a negative backbone/pipeline result, not evidence that the causal
+signal has no policy value, and no further tuning of this MLP is warranted.
+
+Next run the same three-way comparison through an existing ManiSkill
+ACT/Diffusion Policy state/image pipeline with matched steps and seeds. In
+parallel, repair the Peg expert source or obtain recorded demonstrations, then
+repeat Gate 0 before adding recovery branch generation.

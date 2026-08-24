@@ -1,0 +1,7 @@
+method,PickCube-v1,StackCube-v1,PegInsertionSide-v1,Mean,Cost,status
+UniformBC,0.0,0.0,NA,0.0,"500 steps; 5 eval episodes/task",complete
+CriticalBC,0.0,0.0,NA,0.0,"500 steps; 5 eval episodes/task",complete
+ContrastBC,0.0,0.0,NA,0.0,"500 steps; 5 eval episodes/task",complete
+RandomBranch,NA,NA,NA,NA,NA,not_run
+CriticalBranch,NA,NA,NA,NA,NA,not_run
+GeoAux,NA,NA,NA,NA,NA,not_run

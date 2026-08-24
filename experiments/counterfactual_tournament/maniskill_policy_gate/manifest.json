@@ -1,0 +1,211 @@
+{
+  "git_sha": "00403fee911d9328b458bac77f811df09df2fccc",
+  "train_steps": 500,
+  "eval_episodes": 5,
+  "tasks": {
+    "PickCube-v1": {
+      "positive_samples": 339,
+      "failed_perturbed_samples": 63,
+      "methods": {
+        "UniformBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/pickcube_UniformBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        },
+        "CriticalBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/pickcube_CriticalBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        },
+        "ContrastBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/pickcube_ContrastBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        }
+      }
+    },
+    "StackCube-v1": {
+      "positive_samples": 560,
+      "failed_perturbed_samples": 133,
+      "methods": {
+        "UniformBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/stackcube_UniformBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        },
+        "CriticalBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/stackcube_CriticalBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        },
+        "ContrastBC": {
+          "checkpoint": "experiments/counterfactual_tournament/maniskill_policy_gate/stackcube_ContrastBC.pt",
+          "successes": 0,
+          "success_rate": 0.0,
+          "outcomes": [
+            {
+              "seed": 100,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 101,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 102,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 103,
+              "success": 0,
+              "steps": 50
+            },
+            {
+              "seed": 104,
+              "success": 0,
+              "steps": 50
+            }
+          ]
+        }
+      }
+    }
+  }
+}
