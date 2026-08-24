@@ -1,345 +1,286 @@
-# Post-Gate-3B ICRA 2027 paper plan
+# Post-Gate-3B / pre-Gate-3C ICRA 2027 paper plan
 
-Status: paper infrastructure frozen on 2026-08-24 while Gate-3B remains blinded.
-This is a planning document, not a historical preregistration and not a result
-report.  The existing `main.tex` and section files are obsolete prose.
+Status: manuscript infrastructure revised on 2026-08-24 after the complete
+Gate-3B result. Gate-3C remains blinded and pending. This is a paper-planning
+artifact, not a protocol or a historical preregistration. The historical
+`main.tex` and section files remain obsolete prose.
 
-## Evidence boundary
+## Evidence boundary and story pivot
 
-The current paper question is:
+Gate-3B did not confirm the preregistered generic coherence hypothesis. Its
+coherence contrast was `+.025`, with paired-state 95% CI `[-.030,+.085]` and
+task-cluster CI `[-.005,+.055]`. The paper must not claim that cross-generation
+composition is generally harmful.
 
-> What happens when components of a jointly predicted robot action chunk are
-> refreshed from different temporal source generations?
+The completed 2x2 cells instead show a strong directional pattern:
 
-Confirmed evidence may support the following chain.
+| | Fresh gripper | Old20 gripper |
+|---|---:|---:|
+| Fresh arm | FF: 44% | FO: 62% |
+| Old20 arm | OF: 17% | OO: 40% |
 
-1. Execution choices materially affect closed-loop behavior on the frozen
-   ACT/LIBERO system.  Task 0 changes from 29/50 to 45/50 successes across the
-   evaluated global horizons, with a nonmonotonic curve.
-2. A prior matched-query selective-retention rule that independently retained
-   arm and gripper sources reduced success by 0.26, 0.20, and 0.29 at query
-   periods 4, 8, and 16.  This observation motivates a controlled composition
-   test but does not identify its mechanism.
-3. Gate-3A1 and Gate-3A2 establish that coherent full-action temporal-source
-   weighting is operationally meaningful for this frozen system.  These gates
-   are controls and prior-art-aware evidence, not a novel method contribution.
-4. The RTX 5080 audit proves that the frozen additive teacher-forced metric is
-   structurally blind to the symmetric arm--gripper source interaction.  The
-   identity holds target-by-target, and the measured residual is numerical
-   roundoff rather than an underpowered statistical null.
-5. Gate-3B alone will determine whether the mathematically invisible
-   interaction changes closed-loop success.  No direction is assumed here.
+The fresh-arm marginal is 53.0%, compared with 28.5% for the old arm. The
+old-gripper marginal is 51.0%, compared with 30.5% for the fresh gripper. These
+main effects, all pairwise comparisons centered on `FO`, and the interpretation
+of `FO` as the preferred source assignment are post-hoc. They remain candidate
+findings until the untouched-state Gate-3C confirmation.
 
-The authoritative local sources are the verified fact sheet, the Gate-3A1 and
-Gate-3A2 reports, and the RTX offline report.  The Gate-3B protocol was read
-without reading outcomes from commit `510908e` on
-`origin/exp/gate3b-cross-generation-composition`.
+The provisional paper question is:
 
-## North Star and claim architecture
+> Can heterogeneous components of a jointly predicted action chunk prefer
+> different temporal source generations?
 
-**Broad problem.** A chunk policy predicts a joint sequence, but deployment may
-refresh only part of the current action from a newer observation.
+The candidate thesis is that temporal-source utility need not be shared across
+action components. In the frozen Gate-3B sample, fresh arm predictions and
+old20 gripper predictions were associated with the highest observed success.
+The frozen offline audit provides the complementary measurement result. Its
+teacher-forced losses favored old sources for both arm and gripper, so the arm
+source preference did not transfer to closed-loop success.
 
-**Central question.** Does cross-generation arm--gripper recomposition create a
-closed-loop interaction that a separable teacher-forced action loss cannot
-represent?
+This paper does not introduce a new policy, a dynamic horizon, or a learned
+selector. If Gate-3C confirms the pattern, `FO20` becomes a simple training-free
+executor. Until then, it is an exploratory cell selected after Gate-3B.
 
-**Contribution type.** Controlled empirical finding plus a measurement-limit
-result.  This paper does not introduce a new policy or execution method.
-
-**Confirmed main claim before Gate-3B.** Any offline loss that adds independent
-arm and gripper terms has exactly zero symmetric 2x2 composition contrast.
-
-**Conditional main claim after Gate-3B.** The highest permitted claim is chosen
-by the frozen Gate-3B decision rule.  It must remain specific to one frozen ACT
-checkpoint, LIBERO Object, the arm/gripper partition, and a 20-tick source gap.
+## Claim and evidence architecture
 
 ```text
-Joint prediction and component refresh
-|-- Execution is consequential
-|   `-- Task-0 horizon curve and Gate-3A2 full-action control
-|-- Independent retention can be harmful
-|   `-- Historical matched-query selective-retention experiment
-|-- Additive offline loss cannot encode the symmetric interaction
-|   `-- Formal identity plus RTX 5080 targetwise replication
-`-- Does the hidden interaction affect closed-loop success?
-    `-- Gate-3B 2x2 matched-query experiment: outcome pending
+Overlapping action chunks predict the same physical action from different times
+|-- Published methods usually make one full-action temporal decision
+|-- Heterogeneous components may need different temporal information
+|   `-- Gate-3B: exploratory fresh-arm / old-gripper directional pattern
+|-- Teacher-forced delayed prediction quality is not closed-loop utility
+|   `-- Offline old-arm preference versus Gate-3B fresh-arm preference
+`-- Does the directional pattern transfer to untouched states and baselines?
+    `-- Gate-3C: pending, blinded confirmation
 ```
 
-Canonical terms are **source generation**, **source-coherent action**,
-**cross-generation recomposition**, **component refresh**, and **coherence
-contrast**.  Do not rotate these into “off-manifold,” “multi-clock,” or a
-universal “incoherence” claim.
+Confirmed claims available now are deliberately narrow.
 
-## Conditional manuscript versions
+1. Gate-3B did not confirm generic composition harm.
+2. Gate-3B displayed a post-hoc directional source-age asymmetry: `FO=.62`,
+   `FF=.44`, `OO=.40`, and `OF=.17`.
+3. The post-hoc fresh-arm and old-gripper marginal effects were `+.245` and
+   `+.205`. Their paired and task-cluster intervals exclude zero, but these
+   intervals are exploratory rather than confirmatory.
+4. `FO>=FF` on all ten tasks, with eight improvements and two ties. `FO>OO` on
+   all ten tasks.
+5. The frozen offline losses favored the old source for arm and gripper, while
+   the Gate-3B marginal pattern favored a fresh arm and old gripper.
+6. Any additive arm-plus-gripper loss remains structurally incapable of
+   measuring the symmetric 2x2 interaction. That identity is a measurement
+   limitation, not proof of behavioral harm.
 
-### Version A: Gate-3B positive or suggestive enough
+Claims about replication, superiority on untouched states, a practical
+executor, and general component-specific preferences remain conditional on
+Gate-3C.
 
-Working story: **Jointly Predicted, Separately Refreshed.**
+## Introduction arc
 
-The Introduction should establish that action chunks jointly predict
-heterogeneous commands, while most audited adaptive-execution methods ultimately
-make one full-action temporal decision.  Independent component refresh is a
-natural extension, but it can recombine components generated under different
-observations.  The paper then moves from historical motivation to the controlled
-2x2 intervention.  The offline identity explains why a common teacher-forced
-metric cannot answer the compositionality question.  Gate-3B supplies the only
-closed-loop test of whether that missing interaction matters.
+The final Introduction should use full paragraphs and follow this sequence.
 
-If Gate-3B is `COMPOSITION-HARM-CONFIRMED`, the practical implication may state:
-component-specific reliability signals should not be converted directly into
-independent component refresh decisions on this evaluated system.  If Gate-3B
-is only `COMPOSITION-HARM-SUGGESTIVE`, the title and abstract must avoid
-“reduces success” and describe a suggestive interaction with the exact frozen
-uncertainty qualifiers.
+1. Action chunking creates multiple predictions for the same future physical
+   action, conditioned on observations from different source times.
+2. Temporal ensembling and adaptive-execution methods usually resolve this
+   redundancy through one temporal decision for the complete action.
+3. Robot actions are heterogeneous. Continuous motion and discrete interaction
+   commands may value current feedback and retained temporal context
+   differently.
+4. A historical independent-retention failure was not mechanistically
+   diagnostic, so Gate-3B directly assigned fresh or old20 generations to arm
+   and gripper under a matched-query 2x2 intervention.
+5. Gate-3B did not confirm generic coherence harm, but it revealed an
+   exploratory asymmetry: fresh arm plus old20 gripper was the highest cell.
+6. The frozen teacher-forced audit favored old sources for both components and
+   therefore did not reproduce the fresh-arm closed-loop preference.
+7. Gate-3C supplies the untouched-state confirmation against `FF`, `OO20`,
+   age-exponential, and CogACT baselines. No result is stated until its final
+   validated report exists.
 
-Recommended Results order:
+## Conditional contribution statements
 
-1. Execution decisions alter closed-loop behavior.
-2. Independent retention motivates an isolated source-composition test.
-3. Separable offline metrics cancel the symmetric composition interaction.
-4. Gate-3B tests that interaction under matched query cadence.
-5. Secondary action diagnostics remain descriptive and cannot identify the
-   mechanism.
+### If Gate-3C confirms the directional pattern
 
-Do not invent a consistency constraint, refresh method, or deployment heuristic.
-The minimum contribution is the controlled result and its measurement
-consequence.
+The abstract, Introduction, and Discussion may present four contributions:
 
-### Version B: Gate-3B null
+1. controlled evidence that temporal-source age need not be shared across
+   heterogeneous components of a jointly predicted action chunk;
+2. identification of an asymmetric source assignment in which fresh arm
+   feedback and older gripper context outperform synchronized temporal-source
+   execution in the evaluated system;
+3. evidence that separable teacher-forced prediction metrics can disagree with
+   closed-loop temporal-source utility, especially for arm motion; and
+4. a training-free asymmetric temporal-reuse executor evaluated against
+   newest, full-old, age-exponential, and CogACT baselines.
 
-Working story: **the limits of offline reliability targets for execution
-decisions.**  The paper remains finding-led and makes no claim that
-cross-generation composition is harmful.  The evidence chain becomes:
-execution is sensitive; intuitive offline reliability targets are fragile;
-full-action temporal weighting can affect control; and the additive offline
-metric cannot measure the symmetric component-source interaction.  Gate-3B
-then places a direct null boundary on the proposed interaction for this system
-and age.
+Even after confirmation, these claims remain bounded to the frozen ACT policy,
+LIBERO Object, the arm/gripper partition, and the 20-tick source gap. The paper
+must not claim universal component incoherence or optimality over source age.
 
-The strongest defensible result would be methodological caution: component-wise
-offline improvements under a separable metric cannot establish a joint
-closed-loop benefit, because the corresponding 2x2 interaction is absent from
-the metric by construction.  The Gate-3B null must be reported as evidence
-against making cross-generation coherence the central mechanism, not explained
-away through secondary diagnostics.
+### If Gate-3C does not confirm the directional pattern
 
-Claims that become too weak under Version B and must be deleted are:
+Contributions 1, 2, and 4 become too weak and must be removed. The manuscript
+becomes a finding-led analysis of three limits: execution sensitivity, the
+failure of intuitive offline reliability targets to specify execution choices,
+and the inability of separable teacher-forced losses to encode the symmetric
+component interaction. Gate-3B's directional pattern remains explicitly
+exploratory, and Gate-3C becomes the direct failed confirmation.
 
-- cross-generation recomposition reduces task success;
-- execution coherence is a supported control mechanism;
-- the historical selective-retention loss is explained by source mixing;
-- independent component refresh should generally be avoided;
-- a coherence-preserving execution method is justified by current evidence.
-
-Version B should move the detailed Gate-2B phase grids, `Y_refresh` estimator
-architecture, semantic-kernel development, PACE audits, and abandoned candidate
-methods to project history or omit them entirely.
+The surviving conclusion is narrower: teacher-forced component accuracy does
+not establish the closed-loop value of a temporal-source assignment. A failed
+Gate-3C would also rule out presenting `FO20` as a method, practical executor,
+or reliable component preference.
 
 ## Title shortlist
 
-1. **Jointly Predicted, Separately Refreshed: Cross-Generation Composition in Robot Action Chunks** — recommended for Version A.
-2. **Cross-Generation Composition of Joint Robot Actions**
-3. **Joint Action Chunks Under Independent Component Refresh**
-4. **From Joint Prediction to Mixed-Generation Execution**
-5. **Component Refresh Across Temporal Generations of Robot Action Chunks**
-6. **Execution Coherence Under Component-Wise Action Refresh**
-7. **Cross-Generation Robot Actions: Offline Separability and Closed-Loop Interaction**
-8. **Joint Prediction, Component Refresh, and the Limits of Separable Action Metrics** — recommended for Version B.
-9. **Separable Action Metrics for Cross-Generation Component Refresh**
-10. **Temporal Source Composition in Joint Robot Actions**
+1. **Fresh Feedback, Retained Intent: Asymmetric Temporal Reuse for Action-Chunked Robot Policies**
+2. **Asymmetric Temporal Reuse for Action-Chunked Robot Policies**
+3. **Temporal Source Asymmetry in Joint Robot Action Chunks**
+4. **Group-Specific Temporal Sources for Action-Chunked Robot Policies**
+5. **Heterogeneous Temporal Source Age in Joint Robot Actions**
+6. **Action-Component Temporal Reuse in Chunked Robot Control**
+7. **Joint Prediction with Component-Specific Temporal Sources**
+8. **Fresh Motion, Retained Interaction Intent in Robot Action Chunks**
+9. **From Delayed Prediction Accuracy to Closed-Loop Temporal Utility**
+10. **Teacher-Forced Accuracy and Closed-Loop Temporal Source Utility**
+11. **One Temporal Source Does Not Fit All: Asymmetric Temporal Reuse for Action-Chunked Robot Policies**
 
-Titles 1 and 6 require Gate-3B wording calibration if the result is only
-suggestive.  Titles 7--10 remain compatible with a null because they name the
-question or measurement boundary rather than asserting harm.
+Title 1 is the recommended confirmation title. “Retained intent” is evocative,
+but the body must define it operationally as executing the old20 gripper
+prediction. It must not be presented as a measured latent mechanism. Title 10
+is the recommended fallback if Gate-3C fails.
+
+Title 11 is not recommended before confirmation. “Does not fit all” sounds
+universal and can be mistaken for a query-frequency or execution-horizon claim.
+The intervention changes source generation while holding one policy query per
+surviving controller step. Titles 3, 5, and 10 remain safe while Gate-3C is
+pending.
 
 ## Four-figure backbone
 
-### Figure 1: One joint prediction, four source compositions
+### Figure 1: Two source generations, four component assignments
 
-**Single claim:** The same fresh and old joint predictions define two
-source-coherent actions and two cross-generation recompositions while preserving
-the marginal assignment of source ages.
+**Claim:** Fresh and old chunks predict the same physical action time and define
+four deterministic arm/gripper source assignments.
 
-- **Panel A, methodological bridge:** draw the fresh chunk `F_t` and the chunk
-  queried 20 controller ticks earlier, `O_t`, both pointing to physical action
-  time `t`.
-- **Panel B, definition:** show `FF`, `OO`, `FO`, and `OF` as arm/gripper tiles.
-  Use one color family for source `F` and another for source `O`.
-- **Panel C, design consequence:** brace `FF/OO` as source-coherent and `FO/OF`
-  as cross-generation, while showing equal fresh/old arm and gripper margins.
+Panel A shows `F_t=E_{t,t}` and `O_t=E_{t,t-20}` both pointing to physical time
+`t`. Panel B forms `FF`, `OO`, `FO`, and `OF` from arm and gripper tiles. Panel C
+marks `FO` as the highest observed Gate-3B cell using an “exploratory” badge.
+It must not call `FO` an established method or call mixed actions off-manifold.
 
-The caption must define source generation and the common fresh prefix.  It must
-not call mixed actions off-manifold or imply that they are harmful.
+### Figure 2: Gate-3B directional 2x2 pattern
 
-### Figure 2: Historical evidence motivates, but does not prove, composition harm
+**Claim:** Gate-3B did not confirm generic coherence harm but displayed a large
+post-hoc directional source-age asymmetry.
 
-**Single claim:** Prior closed-loop results establish execution sensitivity and
-motivate isolating component-source composition.
+Panel A is a 2x2 success matrix with arm source on rows and gripper source on
+columns: `[[.44,.62],[.17,.40]]` in the order fresh arm then old arm, fresh
+gripper then old gripper. Use exact successes out of 100 in the annotations.
+Panel B shows the fresh-arm main effect `+.245` and old-gripper main effect
+`+.205`, with paired-state and task-cluster exploratory intervals. Panel C may
+show `FO-FF` and `FO-OO` task values or sign counts. Every directional panel is
+marked post-hoc. The caption opens with the unresolved preregistered coherence
+contrast to prevent secondary-result substitution.
 
-- **Panel A, motivation:** task-0 global horizon success for horizons
-  1, 2, 4, 8, and 16: 29, 31, 42, 45, and 42 successes out of 50.  Show query
-  rate on a secondary aligned strip or in annotations, not a misleading dual
-  axis.
-- **Panel B, failure mode:** matched-query selective retention minus global
-  replacement at q=4, 8, and 16: -0.26, -0.20, and -0.29, with paired-episode
-  confidence intervals.
-- **Chronology:** label Panel A as exploratory motivation and Panel B as the
-  later direct negative observation.  A caption sentence must state that neither
-  isolates cross-generation composition as the mechanism.
+### Figure 3: Offline accuracy and closed-loop utility prefer different arm sources
 
-Gate-2B phase maps and the retrospective cross-task configuration oracle do not
-belong in this main figure.
+**Claim:** The teacher-forced component metric and Gate-3B marginal success do
+not select the same arm source.
 
-### Figure 3: The offline interaction is structurally unidentifiable
+Panel A shows offline source preference. Both arm terms favor old20 because
+translation loss is `.50667` versus `.59578` and normalized rotation loss is
+`1.09877` versus `1.12962`. Gripper sign error also favors old20, `.27400`
+versus `.30760`. Panel B shows the Gate-3B marginal preferences: fresh arm,
+`.530` versus `.285`, and old gripper, `.510` versus `.305`. Panel C aligns the
+two decisions as a simple old/fresh source table. It must not plot incomparable
+losses and success rates on one quantitative axis or imply causation.
 
-**Single claim:** A separable arm-plus-gripper loss has exactly zero symmetric
-composition interaction, independent of sample size.
+### Figure 4: Reserved Gate-3C confirmation
 
-- **Panel A, definition:** show the additive loss as two tiles,
-  `L_arm + L_grip`, and expand all four cells.
-- **Panel B, algebraic anchor:** show
-  `L(FF)+L(OO)-L(FO)-L(OF)=0` by cancellation.
-- **Panel C, replication:** report the four RTX 5080 `L_sem` values and
-  `C_offline=-1.49e-17`, with the maximum targetwise residual `1.78e-15`.
-  Label these as floating-point residuals around an exact identity.
-- **Panel D, task check:** show all ten task contrasts at zero under the frozen
-  `1e-12` tolerance.
+**Claim:** unwritten until the complete validated Gate-3C report exists.
 
-The figure title and caption must state “structural identity,” not “no effect”
-or “insufficient power.”
-
-### Figure 4: Reserved Gate-3B result
-
-**Single claim:** To be written only after applying the frozen Gate-3B decision
-rule to the complete validated experiment.
-
-- **Panel A, primary outcomes:** four success rates for `FF`, `OO`, `FO`, `OF`.
-- **Panel B, anchor:** `C_coherence` with paired-state and task-cluster 95%
-  bootstrap intervals; show zero as the null reference.
-- **Panel C, sensitivity:** all ten task-wise coherence contrasts, preserving
-  task order 0--9.
-
-`figures/gate3b_figure4_interface.json` contains only placeholders, and
-`figures/plot_gate3b_reserved.py` refuses to render until it receives numeric
-final data and all ten task values.  No secondary diagnostic may replace Panel
-B or rescue a null primary result.
+Panel A will show success for `FO20`, `FF`, `OO20`, age-exponential, and CogACT
+on Gate-3C's new states. Panel B will show the frozen primary contrast or
+contrasts with confidence intervals. Panel C will show task-wise effects in the
+registered order. The plotting interface rejects nonnumeric placeholders and
+incomplete task arrays. No Gate-3B value may be copied into Figure 4.
 
 ## Fill-ready table plan
 
-The manuscript-ready LaTeX blocks are in
-`notes/post_gate3b_manuscript_blocks.tex`.
+**Table 1, system and experiment contract.** Include the frozen ACT policy,
+100x7 chunk, 20 Hz controller contract, 20-tick source gap, arm/gripper split,
+paired task-state design, and one policy query per surviving step. Separate the
+exploratory Gate-3B cohort from the untouched Gate-3C cohort.
 
-**Table 1, system and experiment contract.** Pre-fill the frozen ACT hash,
-100x7 chunk, 20 Hz action contract, 20-tick source gap, LIBERO Object tasks,
-100 paired blocks, randomized four-condition design, and one query per surviving
-step.  Separate registered counts from final validation status.
+**Table 2, Gate-3B directional result and Gate-3C confirmation.** The Gate-3B
+subtable contains all four observed cells, the unresolved preregistered
+coherence contrast, and the two post-hoc main effects. The Gate-3C subtable
+remains placeholder-only until final validation.
 
-**Table 2, Gate-3B primary result.** Reserve the four exact success placeholders,
-the coherence point estimate, and its bootstrap intervals.  Pairwise comparisons
-remain secondary and need not enter the main table.
+**Table 3, selected controls.** Keep only the task-0 horizon sensitivity,
+matched-query independent-retention failure, Gate-3A1/3A2 full-action control,
+the additive-loss identity, and the offline/closed-loop arm-source mismatch.
+Gate-2B phase grids, the refresh-model architecture, semantic-kernel history,
+PACE audits, and abandoned methods stay outside the main paper.
 
-**Table 3, relevant controls and prior evidence.** Keep only task-0 horizon
-sensitivity, the matched-query selective-retention negative result, Gate-3A1/3A2
-full-action controls, and the offline separability identity.  Do not turn this
-table into a chronological inventory of failed gates.
+## Related-work architecture
 
-## Related-work rewrite outline
+### Action chunking and full-action temporal decisions
 
-### 1. Action chunking and temporal ensembling
+ACT predicts joint action chunks and temporally ensembles overlapping complete
+action predictions. CogACT reweights complete historical action predictions
+using one similarity score per source. Delayed-action analysis by Lazzati et
+al. explains how older observation-conditioned predictions can match expert
+behavior under non-Markovian demonstrations. This literature supports the
+possibility that old predictions can help. It does not establish that the same
+source age is useful for every component or that delayed teacher-forced quality
+selects the best closed-loop source.
 
-- ACT establishes joint action-chunk prediction and optional exponential
-  temporal ensembling over overlapping full-action predictions.
-- CogACT similarity-weights current and historical predictions with one scalar
-  per complete action.  It is prior art for adaptive temporal ensembling.
-- Lazzati et al. analyze delayed temporal relationships and implicit ensembling
-  as mechanisms behind action chunking.  Treat their conclusions as
-  paper-reported and bounded to their evaluated settings.
+### Adaptive execution and replanning
 
-### 2. Adaptive execution and replanning
+AAC estimates uncertainty separately for translation, rotation, and gripper,
+but aggregates those estimates into one executed chunk prefix. TAS selects one
+complete cached action candidate. AutoHorizon and PACE choose one global
+execution boundary. These works motivate temporal adaptation but do not answer
+the present component-source factorial question.
 
-- SGAC uses full-action similarity for retain/replace behavior.
-- AutoHorizon, AAC, A3, PACE, DVAC, DEHP, and BCP select a scalar full-action
-  prefix, boundary, or continue/replan decision using attention, component
-  entropy, consensus, kinematics, denoising variation, or learned value.
-- AAC and PACE are important qualifications: their signals use action
-  components or arms, but the audited final decision remains synchronized.
-- These methods are baselines and context for the decision granularity.  They
-  are not targets to rename or claim as absent.
+### Stale-action and chunk-consistency methods
 
-### 3. Stale-chunk correction and consistency
+RTC, REMAC, A2C2, and SEAM repair or align stale full-action chunks. SEAM can
+apply overlap guidance to a dimension subset, which is the closest technical
+nuance in the bounded set. Its reported procedure does not independently
+assign arm and gripper predictions from different source observations for a
+controlled 2x2 execution test.
 
-- RTC inpaints around actions committed during asynchronous inference.
-- REMAC uses masked or prefix-conditioned generation for continuation.
-- SEAM uses the previous unexecuted tail as a consistency reference.
-- A2C2 corrects base actions from the newest observation at control rate.
-- These works prevent a broad novelty claim around “consistency.”  The present
-  question concerns the narrower 2x2 recomposition of arm and gripper components
-  from two fixed source generations.
+### Bounded distinction
 
-### 4. Bounded distinction
+Use only the following firstness-like sentence, and preserve its qualification:
 
-Candidate sentence for later verification:
+> We are not aware of prior controlled evaluations that independently assign
+> temporal source generations to heterogeneous action components.
 
-> In a bounded audit of primary sources, we did not locate a controlled
-> evaluation that isolates component-level cross-generation source
-> recomposition while holding the marginal arm and gripper source ages fixed.
+This sentence must be rechecked before submission. Never shorten it to “we are
+the first.” The contribution is not that old predictions can help. The
+candidate distinction is that temporal-source utility may differ across
+heterogeneous components, while teacher-forced delayed prediction quality may
+not identify the source assignment that maximizes closed-loop control.
 
-\TODO{FIRSTNESS CHECK: repeat the component-refresh and cross-generation search
-immediately before submission, verify every cited paper's current version and
-venue status, and either retain the bounded sentence above or weaken it.}
+## Gate-3C fill contract
 
-Every “we are not aware,” “no prior work,” “first,” “previously untested,” or
-“unique” sentence is firstness-like and remains blocked by this TODO.  The safer
-distinction does not require firstness: this study isolates a component-source
-interaction that is absent from separable teacher-forced action metrics.
+Only the following placeholders may carry Gate-3C-dependent information:
 
-## Formal method and analysis contract
+- `<GATE3C_STATUS>`
+- `<GATE3C_SUCCESS_FO20>`
+- `<GATE3C_SUCCESS_FF>`
+- `<GATE3C_SUCCESS_OO20>`
+- `<GATE3C_SUCCESS_AGE_EXP>`
+- `<GATE3C_SUCCESS_COGACT>`
+- `<GATE3C_PRIMARY_CONTRASTS>`
+- `<GATE3C_CI>`
+- `<GATE3C_PER_TASK>`
+- `<GATE3C_FINAL_REPORT>`
+- `<GATE3C_EXPERIMENT_CONTRACT>`
 
-The exact manuscript-ready definitions and proof are in
-`notes/post_gate3b_manuscript_blocks.tex`.  In brief, `F_t=E_{t,t}` and
-`O_t=E_{t,t-20}` define fresh and old predictions for the same physical action.
-The four deterministic compositions are `FF`, `OO`, `FO`, and `OF`.  For binary
-success in a paired task-state block,
-
-`C_coherence = 0.5(success_FF + success_OO) - 0.5(success_FO + success_OF)`.
-
-For any target and separable loss
-`L(a_arm,a_grip)=L_arm(a_arm)+L_grip(a_grip)`, the four terms contain each arm
-and gripper marginal exactly once on each side.  Therefore
-`L(FF)+L(OO)-L(FO)-L(OF)=0`.  This identity does not prove that mixed actions
-help, harm, or behave equivalently in closed loop.  It proves only that this
-class of additive offline metrics has no term capable of measuring the
-symmetric 2x2 interaction.
-
-## Gate-3B replacement checklist
-
-Do not edit the narrative before the complete validated Gate-3B report exists.
-Then perform these mechanical replacements once:
-
-- `<GATE3B_SUCCESS_FF>`
-- `<GATE3B_SUCCESS_OO>`
-- `<GATE3B_SUCCESS_FO>`
-- `<GATE3B_SUCCESS_OF>`
-- `<GATE3B_COHERENCE>`
-- `<GATE3B_CI>`
-
-Also populate the empty ten-task vector in the Figure 4 interface, record final
-episode/query validation and provenance, apply the frozen decision label, and
-choose Version A or B.  Search the complete paper tree for every placeholder
-before building.  Do not use secondary action diagnostics to change the branch.
-
-## Selective inclusion and appendix boundary
-
-Keep in the main paper: task-0 horizon sensitivity as motivation; the
-matched-query selective-retention loss as motivating observation; Gate-3A1 and
-Gate-3A2 only as full-action controls; the offline separability identity; and
-Gate-3B.
-
-Move to appendix only if needed for reviewer questions: detailed Gate-3A1
-baseline rows, Gate-3A2 secondary action diagnostics, full task-wise historical
-tables, and additional offline component values.
-
-Omit from the submission narrative: Gate-2B phase grids, `Y_refresh`
-architecture details, semantic-kernel development history, PACE reproduction
-work, and abandoned method families.
+After Gate-3C, first validate the final report and replace these placeholders.
+Then choose the confirmed or null contribution branch, revise the title and
+abstract together, and run a claim-to-evidence audit. No Gate-3C-dependent
+claim may be inferred from partial logs or from Gate-3B.

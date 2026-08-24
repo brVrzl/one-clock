@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "waiting_for_complete_validated_gate3c",
+  "source_report": "<GATE3C_FINAL_REPORT>",
+  "condition_order": ["FO20", "FF", "OO20", "age_exp", "CogACT"],
+  "success_rates": {
+    "FO20": "<GATE3C_SUCCESS_FO20>",
+    "FF": "<GATE3C_SUCCESS_FF>",
+    "OO20": "<GATE3C_SUCCESS_OO20>",
+    "age_exp": "<GATE3C_SUCCESS_AGE_EXP>",
+    "CogACT": "<GATE3C_SUCCESS_COGACT>"
+  },
+  "primary_contrasts": "<GATE3C_PRIMARY_CONTRASTS>",
+  "confidence_intervals": "<GATE3C_CI>",
+  "task_results": [],
+  "notes": {
+    "task_results_ready_shape": [{"task_id": "integer in registered order", "contrasts": "numeric mapping"}],
+    "render_guard": "The plotting script rejects this interface until status is final_validated_gate3c and all values are numeric."
+  }
+}

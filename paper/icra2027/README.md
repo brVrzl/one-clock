@@ -1,16 +1,26 @@
-# Historical ICRA 2027 paper draft (v1.2)
+# ICRA 2027 paper workspace
 
-> **Status note (2026-08-24):** `main.tex` and the existing section files are
-> historical prose from the discontinued group-specific-horizon direction.
-> They are not the current scientific source of truth.  The post-Gate-3B paper
-> architecture, evidence boundaries, and fill-ready manuscript blocks live in
-> [`notes/post_gate3b_paper_plan.md`](notes/post_gate3b_paper_plan.md) and
-> [`notes/post_gate3b_manuscript_blocks.tex`](notes/post_gate3b_manuscript_blocks.tex).
-> Do not revise the historical draft into a submission until the frozen
-> Gate-3B outcome has replaced every explicit placeholder.
+> **Status note (2026-08-24):** Gate-3B is complete, and Gate-3C is pending.
+> `main.tex` and the existing section files remain historical prose from the
+> discontinued group-specific-horizon direction. They are not the scientific
+> source of truth. The active post-Gate-3B architecture lives in
+> [`notes/post_gate3b_paper_plan.md`](notes/post_gate3b_paper_plan.md), and the
+> fill-ready prose, methods, results, and tables live in
+> [`notes/pre_gate3c_manuscript_skeleton.tex`](notes/pre_gate3c_manuscript_skeleton.tex).
+> Gate-3B's directional results are post-hoc. Do not replace any Gate-3C
+> placeholder from partial outcomes.
 
 Historical provisional title: **One Clock Does Not Fit All: Group-Specific Execution
 Horizons for Action-Chunking Robot Policies**.
+
+Safe current working title: **Temporal Source Asymmetry in Joint Robot Action
+Chunks**. The historical title above is not a candidate for the active paper.
+
+The bounded closest-work recheck is recorded in
+[`notes/gate3b_directional_related_work_update.md`](notes/gate3b_directional_related_work_update.md).
+Figure 2 has a validated Gate-3B data interface, Figure 3 has a frozen
+offline-versus-closed-loop interface, and Figure 4 remains guarded behind a
+placeholder-only Gate-3C interface under [`figures/`](figures/).
 
 ## Submission format audit (2026-08-20)
 
