@@ -1,0 +1,4399 @@
+{
+  "blocks": [
+    {
+      "episode_seed": 310000,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 0,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310007,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 7,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310011,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 11,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310013,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 13,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310025,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 25,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310030,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 30,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310036,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 36,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310041,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 41,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310042,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 42,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310043,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 43,
+      "task_id": 0
+    },
+    {
+      "episode_seed": 310100,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 0,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310107,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 7,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310111,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 11,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310113,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 13,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310125,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 25,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310130,
+      "method_order": [
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 30,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310136,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 36,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310141,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 41,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310142,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 42,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310143,
+      "method_order": [
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 43,
+      "task_id": 1
+    },
+    {
+      "episode_seed": 310200,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 0,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310207,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 7,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310211,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 11,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310213,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 13,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310225,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 25,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310230,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 30,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310236,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 36,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310241,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 41,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310242,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 42,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310243,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 43,
+      "task_id": 2
+    },
+    {
+      "episode_seed": 310300,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 0,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310307,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 7,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310311,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 11,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310313,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 13,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310325,
+      "method_order": [
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 25,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310330,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 30,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310336,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 36,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310341,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 41,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310342,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 42,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310343,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 43,
+      "task_id": 3
+    },
+    {
+      "episode_seed": 310400,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 0,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310407,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 7,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310411,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 11,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310413,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 13,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310425,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 25,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310430,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 30,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310436,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 36,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310441,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 41,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310442,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 42,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310443,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 43,
+      "task_id": 4
+    },
+    {
+      "episode_seed": 310500,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 0,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310507,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 7,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310511,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 11,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310513,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 13,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310525,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 25,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310530,
+      "method_order": [
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 30,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310536,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 36,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310541,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 41,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310542,
+      "method_order": [
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest"
+      ],
+      "state_id": 42,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310543,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 43,
+      "task_id": 5
+    },
+    {
+      "episode_seed": 310600,
+      "method_order": [
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 0,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310607,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 7,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310611,
+      "method_order": [
+        "exact_act_m001",
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 11,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310613,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 13,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310625,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 25,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310630,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 30,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310636,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 36,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310641,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 41,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310642,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 42,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310643,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 43,
+      "task_id": 6
+    },
+    {
+      "episode_seed": 310700,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 0,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310707,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 7,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310711,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 11,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310713,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 13,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310725,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 25,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310730,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 30,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310736,
+      "method_order": [
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 36,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310741,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 41,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310742,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 42,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310743,
+      "method_order": [
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 43,
+      "task_id": 7
+    },
+    {
+      "episode_seed": 310800,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 0,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310807,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 7,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310811,
+      "method_order": [
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 11,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310813,
+      "method_order": [
+        "cogact_a03",
+        "exact_act_m001",
+        "newest",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 13,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310825,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 25,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310830,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 30,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310836,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 36,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310841,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03",
+        "newest"
+      ],
+      "state_id": 41,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310842,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 42,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310843,
+      "method_order": [
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003",
+        "cogact_a03"
+      ],
+      "state_id": 43,
+      "task_id": 8
+    },
+    {
+      "episode_seed": 310900,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 0,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310907,
+      "method_order": [
+        "exact_act_m001",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest"
+      ],
+      "state_id": 7,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310911,
+      "method_order": [
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 11,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310913,
+      "method_order": [
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "newest",
+        "cogact_a03"
+      ],
+      "state_id": 13,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310925,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "exact_act_m001",
+        "newest_age_exp_b003"
+      ],
+      "state_id": 25,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310930,
+      "method_order": [
+        "newest",
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 30,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310936,
+      "method_order": [
+        "cogact_a03",
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001"
+      ],
+      "state_id": 36,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310941,
+      "method_order": [
+        "cogact_a03",
+        "newest_age_exp_b003",
+        "newest",
+        "exact_act_m001"
+      ],
+      "state_id": 41,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310942,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "exact_act_m001",
+        "cogact_a03"
+      ],
+      "state_id": 42,
+      "task_id": 9
+    },
+    {
+      "episode_seed": 310943,
+      "method_order": [
+        "newest",
+        "newest_age_exp_b003",
+        "cogact_a03",
+        "exact_act_m001"
+      ],
+      "state_id": 43,
+      "task_id": 9
+    }
+  ],
+  "episode_seed_rule": "310000 + 100 * task_id + state_id",
+  "method_order_seed": 20260825,
+  "methods": [
+    "newest",
+    "exact_act_m001",
+    "cogact_a03",
+    "newest_age_exp_b003"
+  ],
+  "planned_blocks": 100,
+  "planned_episodes": 400,
+  "registration_parent": "1ce9bf0eb1443abb7452086ac85a7c4ed0ea5752",
+  "runs": [
+    {
+      "episode_seed": 310000,
+      "method": "newest_age_exp_b003",
+      "run_index": 0,
+      "state_id": 0,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310000,
+      "method": "newest",
+      "run_index": 1,
+      "state_id": 0,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310000,
+      "method": "exact_act_m001",
+      "run_index": 2,
+      "state_id": 0,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310000,
+      "method": "cogact_a03",
+      "run_index": 3,
+      "state_id": 0,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310007,
+      "method": "newest",
+      "run_index": 4,
+      "state_id": 7,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310007,
+      "method": "newest_age_exp_b003",
+      "run_index": 5,
+      "state_id": 7,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310007,
+      "method": "exact_act_m001",
+      "run_index": 6,
+      "state_id": 7,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310007,
+      "method": "cogact_a03",
+      "run_index": 7,
+      "state_id": 7,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310011,
+      "method": "newest",
+      "run_index": 8,
+      "state_id": 11,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310011,
+      "method": "newest_age_exp_b003",
+      "run_index": 9,
+      "state_id": 11,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310011,
+      "method": "cogact_a03",
+      "run_index": 10,
+      "state_id": 11,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310011,
+      "method": "exact_act_m001",
+      "run_index": 11,
+      "state_id": 11,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310013,
+      "method": "newest_age_exp_b003",
+      "run_index": 12,
+      "state_id": 13,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310013,
+      "method": "cogact_a03",
+      "run_index": 13,
+      "state_id": 13,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310013,
+      "method": "exact_act_m001",
+      "run_index": 14,
+      "state_id": 13,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310013,
+      "method": "newest",
+      "run_index": 15,
+      "state_id": 13,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310025,
+      "method": "newest_age_exp_b003",
+      "run_index": 16,
+      "state_id": 25,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310025,
+      "method": "cogact_a03",
+      "run_index": 17,
+      "state_id": 25,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310025,
+      "method": "exact_act_m001",
+      "run_index": 18,
+      "state_id": 25,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310025,
+      "method": "newest",
+      "run_index": 19,
+      "state_id": 25,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310030,
+      "method": "newest",
+      "run_index": 20,
+      "state_id": 30,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310030,
+      "method": "newest_age_exp_b003",
+      "run_index": 21,
+      "state_id": 30,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310030,
+      "method": "cogact_a03",
+      "run_index": 22,
+      "state_id": 30,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310030,
+      "method": "exact_act_m001",
+      "run_index": 23,
+      "state_id": 30,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310036,
+      "method": "newest_age_exp_b003",
+      "run_index": 24,
+      "state_id": 36,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310036,
+      "method": "exact_act_m001",
+      "run_index": 25,
+      "state_id": 36,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310036,
+      "method": "newest",
+      "run_index": 26,
+      "state_id": 36,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310036,
+      "method": "cogact_a03",
+      "run_index": 27,
+      "state_id": 36,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310041,
+      "method": "newest",
+      "run_index": 28,
+      "state_id": 41,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310041,
+      "method": "cogact_a03",
+      "run_index": 29,
+      "state_id": 41,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310041,
+      "method": "exact_act_m001",
+      "run_index": 30,
+      "state_id": 41,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310041,
+      "method": "newest_age_exp_b003",
+      "run_index": 31,
+      "state_id": 41,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310042,
+      "method": "newest_age_exp_b003",
+      "run_index": 32,
+      "state_id": 42,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310042,
+      "method": "exact_act_m001",
+      "run_index": 33,
+      "state_id": 42,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310042,
+      "method": "newest",
+      "run_index": 34,
+      "state_id": 42,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310042,
+      "method": "cogact_a03",
+      "run_index": 35,
+      "state_id": 42,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310043,
+      "method": "exact_act_m001",
+      "run_index": 36,
+      "state_id": 43,
+      "task_id": 0,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310043,
+      "method": "cogact_a03",
+      "run_index": 37,
+      "state_id": 43,
+      "task_id": 0,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310043,
+      "method": "newest",
+      "run_index": 38,
+      "state_id": 43,
+      "task_id": 0,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310043,
+      "method": "newest_age_exp_b003",
+      "run_index": 39,
+      "state_id": 43,
+      "task_id": 0,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310100,
+      "method": "exact_act_m001",
+      "run_index": 40,
+      "state_id": 0,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310100,
+      "method": "cogact_a03",
+      "run_index": 41,
+      "state_id": 0,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310100,
+      "method": "newest_age_exp_b003",
+      "run_index": 42,
+      "state_id": 0,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310100,
+      "method": "newest",
+      "run_index": 43,
+      "state_id": 0,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310107,
+      "method": "newest",
+      "run_index": 44,
+      "state_id": 7,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310107,
+      "method": "exact_act_m001",
+      "run_index": 45,
+      "state_id": 7,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310107,
+      "method": "newest_age_exp_b003",
+      "run_index": 46,
+      "state_id": 7,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310107,
+      "method": "cogact_a03",
+      "run_index": 47,
+      "state_id": 7,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310111,
+      "method": "exact_act_m001",
+      "run_index": 48,
+      "state_id": 11,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310111,
+      "method": "newest",
+      "run_index": 49,
+      "state_id": 11,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310111,
+      "method": "newest_age_exp_b003",
+      "run_index": 50,
+      "state_id": 11,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310111,
+      "method": "cogact_a03",
+      "run_index": 51,
+      "state_id": 11,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310113,
+      "method": "exact_act_m001",
+      "run_index": 52,
+      "state_id": 13,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310113,
+      "method": "newest",
+      "run_index": 53,
+      "state_id": 13,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310113,
+      "method": "cogact_a03",
+      "run_index": 54,
+      "state_id": 13,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310113,
+      "method": "newest_age_exp_b003",
+      "run_index": 55,
+      "state_id": 13,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310125,
+      "method": "newest_age_exp_b003",
+      "run_index": 56,
+      "state_id": 25,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310125,
+      "method": "cogact_a03",
+      "run_index": 57,
+      "state_id": 25,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310125,
+      "method": "exact_act_m001",
+      "run_index": 58,
+      "state_id": 25,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310125,
+      "method": "newest",
+      "run_index": 59,
+      "state_id": 25,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310130,
+      "method": "exact_act_m001",
+      "run_index": 60,
+      "state_id": 30,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310130,
+      "method": "newest_age_exp_b003",
+      "run_index": 61,
+      "state_id": 30,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310130,
+      "method": "cogact_a03",
+      "run_index": 62,
+      "state_id": 30,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310130,
+      "method": "newest",
+      "run_index": 63,
+      "state_id": 30,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310136,
+      "method": "exact_act_m001",
+      "run_index": 64,
+      "state_id": 36,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310136,
+      "method": "newest",
+      "run_index": 65,
+      "state_id": 36,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310136,
+      "method": "newest_age_exp_b003",
+      "run_index": 66,
+      "state_id": 36,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310136,
+      "method": "cogact_a03",
+      "run_index": 67,
+      "state_id": 36,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310141,
+      "method": "newest",
+      "run_index": 68,
+      "state_id": 41,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310141,
+      "method": "exact_act_m001",
+      "run_index": 69,
+      "state_id": 41,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310141,
+      "method": "cogact_a03",
+      "run_index": 70,
+      "state_id": 41,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310141,
+      "method": "newest_age_exp_b003",
+      "run_index": 71,
+      "state_id": 41,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310142,
+      "method": "newest_age_exp_b003",
+      "run_index": 72,
+      "state_id": 42,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310142,
+      "method": "exact_act_m001",
+      "run_index": 73,
+      "state_id": 42,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310142,
+      "method": "cogact_a03",
+      "run_index": 74,
+      "state_id": 42,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310142,
+      "method": "newest",
+      "run_index": 75,
+      "state_id": 42,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310143,
+      "method": "cogact_a03",
+      "run_index": 76,
+      "state_id": 43,
+      "task_id": 1,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310143,
+      "method": "newest_age_exp_b003",
+      "run_index": 77,
+      "state_id": 43,
+      "task_id": 1,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310143,
+      "method": "newest",
+      "run_index": 78,
+      "state_id": 43,
+      "task_id": 1,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310143,
+      "method": "exact_act_m001",
+      "run_index": 79,
+      "state_id": 43,
+      "task_id": 1,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310200,
+      "method": "newest_age_exp_b003",
+      "run_index": 80,
+      "state_id": 0,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310200,
+      "method": "cogact_a03",
+      "run_index": 81,
+      "state_id": 0,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310200,
+      "method": "newest",
+      "run_index": 82,
+      "state_id": 0,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310200,
+      "method": "exact_act_m001",
+      "run_index": 83,
+      "state_id": 0,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310207,
+      "method": "newest_age_exp_b003",
+      "run_index": 84,
+      "state_id": 7,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310207,
+      "method": "cogact_a03",
+      "run_index": 85,
+      "state_id": 7,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310207,
+      "method": "newest",
+      "run_index": 86,
+      "state_id": 7,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310207,
+      "method": "exact_act_m001",
+      "run_index": 87,
+      "state_id": 7,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310211,
+      "method": "newest_age_exp_b003",
+      "run_index": 88,
+      "state_id": 11,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310211,
+      "method": "exact_act_m001",
+      "run_index": 89,
+      "state_id": 11,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310211,
+      "method": "cogact_a03",
+      "run_index": 90,
+      "state_id": 11,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310211,
+      "method": "newest",
+      "run_index": 91,
+      "state_id": 11,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310213,
+      "method": "newest_age_exp_b003",
+      "run_index": 92,
+      "state_id": 13,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310213,
+      "method": "newest",
+      "run_index": 93,
+      "state_id": 13,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310213,
+      "method": "exact_act_m001",
+      "run_index": 94,
+      "state_id": 13,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310213,
+      "method": "cogact_a03",
+      "run_index": 95,
+      "state_id": 13,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310225,
+      "method": "cogact_a03",
+      "run_index": 96,
+      "state_id": 25,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310225,
+      "method": "exact_act_m001",
+      "run_index": 97,
+      "state_id": 25,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310225,
+      "method": "newest_age_exp_b003",
+      "run_index": 98,
+      "state_id": 25,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310225,
+      "method": "newest",
+      "run_index": 99,
+      "state_id": 25,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310230,
+      "method": "cogact_a03",
+      "run_index": 100,
+      "state_id": 30,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310230,
+      "method": "exact_act_m001",
+      "run_index": 101,
+      "state_id": 30,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310230,
+      "method": "newest_age_exp_b003",
+      "run_index": 102,
+      "state_id": 30,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310230,
+      "method": "newest",
+      "run_index": 103,
+      "state_id": 30,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310236,
+      "method": "newest_age_exp_b003",
+      "run_index": 104,
+      "state_id": 36,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310236,
+      "method": "newest",
+      "run_index": 105,
+      "state_id": 36,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310236,
+      "method": "exact_act_m001",
+      "run_index": 106,
+      "state_id": 36,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310236,
+      "method": "cogact_a03",
+      "run_index": 107,
+      "state_id": 36,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310241,
+      "method": "exact_act_m001",
+      "run_index": 108,
+      "state_id": 41,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310241,
+      "method": "cogact_a03",
+      "run_index": 109,
+      "state_id": 41,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310241,
+      "method": "newest",
+      "run_index": 110,
+      "state_id": 41,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310241,
+      "method": "newest_age_exp_b003",
+      "run_index": 111,
+      "state_id": 41,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310242,
+      "method": "exact_act_m001",
+      "run_index": 112,
+      "state_id": 42,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310242,
+      "method": "newest",
+      "run_index": 113,
+      "state_id": 42,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310242,
+      "method": "cogact_a03",
+      "run_index": 114,
+      "state_id": 42,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310242,
+      "method": "newest_age_exp_b003",
+      "run_index": 115,
+      "state_id": 42,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310243,
+      "method": "cogact_a03",
+      "run_index": 116,
+      "state_id": 43,
+      "task_id": 2,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310243,
+      "method": "newest",
+      "run_index": 117,
+      "state_id": 43,
+      "task_id": 2,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310243,
+      "method": "newest_age_exp_b003",
+      "run_index": 118,
+      "state_id": 43,
+      "task_id": 2,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310243,
+      "method": "exact_act_m001",
+      "run_index": 119,
+      "state_id": 43,
+      "task_id": 2,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310300,
+      "method": "newest",
+      "run_index": 120,
+      "state_id": 0,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310300,
+      "method": "cogact_a03",
+      "run_index": 121,
+      "state_id": 0,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310300,
+      "method": "exact_act_m001",
+      "run_index": 122,
+      "state_id": 0,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310300,
+      "method": "newest_age_exp_b003",
+      "run_index": 123,
+      "state_id": 0,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310307,
+      "method": "newest",
+      "run_index": 124,
+      "state_id": 7,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310307,
+      "method": "cogact_a03",
+      "run_index": 125,
+      "state_id": 7,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310307,
+      "method": "newest_age_exp_b003",
+      "run_index": 126,
+      "state_id": 7,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310307,
+      "method": "exact_act_m001",
+      "run_index": 127,
+      "state_id": 7,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310311,
+      "method": "exact_act_m001",
+      "run_index": 128,
+      "state_id": 11,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310311,
+      "method": "newest",
+      "run_index": 129,
+      "state_id": 11,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310311,
+      "method": "newest_age_exp_b003",
+      "run_index": 130,
+      "state_id": 11,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310311,
+      "method": "cogact_a03",
+      "run_index": 131,
+      "state_id": 11,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310313,
+      "method": "exact_act_m001",
+      "run_index": 132,
+      "state_id": 13,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310313,
+      "method": "cogact_a03",
+      "run_index": 133,
+      "state_id": 13,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310313,
+      "method": "newest",
+      "run_index": 134,
+      "state_id": 13,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310313,
+      "method": "newest_age_exp_b003",
+      "run_index": 135,
+      "state_id": 13,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310325,
+      "method": "exact_act_m001",
+      "run_index": 136,
+      "state_id": 25,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310325,
+      "method": "newest_age_exp_b003",
+      "run_index": 137,
+      "state_id": 25,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310325,
+      "method": "cogact_a03",
+      "run_index": 138,
+      "state_id": 25,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310325,
+      "method": "newest",
+      "run_index": 139,
+      "state_id": 25,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310330,
+      "method": "newest_age_exp_b003",
+      "run_index": 140,
+      "state_id": 30,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310330,
+      "method": "cogact_a03",
+      "run_index": 141,
+      "state_id": 30,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310330,
+      "method": "newest",
+      "run_index": 142,
+      "state_id": 30,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310330,
+      "method": "exact_act_m001",
+      "run_index": 143,
+      "state_id": 30,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310336,
+      "method": "cogact_a03",
+      "run_index": 144,
+      "state_id": 36,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310336,
+      "method": "exact_act_m001",
+      "run_index": 145,
+      "state_id": 36,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310336,
+      "method": "newest_age_exp_b003",
+      "run_index": 146,
+      "state_id": 36,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310336,
+      "method": "newest",
+      "run_index": 147,
+      "state_id": 36,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310341,
+      "method": "newest",
+      "run_index": 148,
+      "state_id": 41,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310341,
+      "method": "cogact_a03",
+      "run_index": 149,
+      "state_id": 41,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310341,
+      "method": "newest_age_exp_b003",
+      "run_index": 150,
+      "state_id": 41,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310341,
+      "method": "exact_act_m001",
+      "run_index": 151,
+      "state_id": 41,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310342,
+      "method": "newest_age_exp_b003",
+      "run_index": 152,
+      "state_id": 42,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310342,
+      "method": "newest",
+      "run_index": 153,
+      "state_id": 42,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310342,
+      "method": "cogact_a03",
+      "run_index": 154,
+      "state_id": 42,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310342,
+      "method": "exact_act_m001",
+      "run_index": 155,
+      "state_id": 42,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310343,
+      "method": "newest",
+      "run_index": 156,
+      "state_id": 43,
+      "task_id": 3,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310343,
+      "method": "newest_age_exp_b003",
+      "run_index": 157,
+      "state_id": 43,
+      "task_id": 3,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310343,
+      "method": "cogact_a03",
+      "run_index": 158,
+      "state_id": 43,
+      "task_id": 3,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310343,
+      "method": "exact_act_m001",
+      "run_index": 159,
+      "state_id": 43,
+      "task_id": 3,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310400,
+      "method": "cogact_a03",
+      "run_index": 160,
+      "state_id": 0,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310400,
+      "method": "newest",
+      "run_index": 161,
+      "state_id": 0,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310400,
+      "method": "newest_age_exp_b003",
+      "run_index": 162,
+      "state_id": 0,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310400,
+      "method": "exact_act_m001",
+      "run_index": 163,
+      "state_id": 0,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310407,
+      "method": "newest",
+      "run_index": 164,
+      "state_id": 7,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310407,
+      "method": "exact_act_m001",
+      "run_index": 165,
+      "state_id": 7,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310407,
+      "method": "cogact_a03",
+      "run_index": 166,
+      "state_id": 7,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310407,
+      "method": "newest_age_exp_b003",
+      "run_index": 167,
+      "state_id": 7,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310411,
+      "method": "exact_act_m001",
+      "run_index": 168,
+      "state_id": 11,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310411,
+      "method": "newest",
+      "run_index": 169,
+      "state_id": 11,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310411,
+      "method": "cogact_a03",
+      "run_index": 170,
+      "state_id": 11,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310411,
+      "method": "newest_age_exp_b003",
+      "run_index": 171,
+      "state_id": 11,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310413,
+      "method": "newest_age_exp_b003",
+      "run_index": 172,
+      "state_id": 13,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310413,
+      "method": "cogact_a03",
+      "run_index": 173,
+      "state_id": 13,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310413,
+      "method": "exact_act_m001",
+      "run_index": 174,
+      "state_id": 13,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310413,
+      "method": "newest",
+      "run_index": 175,
+      "state_id": 13,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310425,
+      "method": "cogact_a03",
+      "run_index": 176,
+      "state_id": 25,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310425,
+      "method": "newest",
+      "run_index": 177,
+      "state_id": 25,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310425,
+      "method": "newest_age_exp_b003",
+      "run_index": 178,
+      "state_id": 25,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310425,
+      "method": "exact_act_m001",
+      "run_index": 179,
+      "state_id": 25,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310430,
+      "method": "cogact_a03",
+      "run_index": 180,
+      "state_id": 30,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310430,
+      "method": "newest",
+      "run_index": 181,
+      "state_id": 30,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310430,
+      "method": "exact_act_m001",
+      "run_index": 182,
+      "state_id": 30,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310430,
+      "method": "newest_age_exp_b003",
+      "run_index": 183,
+      "state_id": 30,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310436,
+      "method": "exact_act_m001",
+      "run_index": 184,
+      "state_id": 36,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310436,
+      "method": "cogact_a03",
+      "run_index": 185,
+      "state_id": 36,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310436,
+      "method": "newest",
+      "run_index": 186,
+      "state_id": 36,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310436,
+      "method": "newest_age_exp_b003",
+      "run_index": 187,
+      "state_id": 36,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310441,
+      "method": "newest_age_exp_b003",
+      "run_index": 188,
+      "state_id": 41,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310441,
+      "method": "exact_act_m001",
+      "run_index": 189,
+      "state_id": 41,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310441,
+      "method": "newest",
+      "run_index": 190,
+      "state_id": 41,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310441,
+      "method": "cogact_a03",
+      "run_index": 191,
+      "state_id": 41,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310442,
+      "method": "newest_age_exp_b003",
+      "run_index": 192,
+      "state_id": 42,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310442,
+      "method": "cogact_a03",
+      "run_index": 193,
+      "state_id": 42,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310442,
+      "method": "exact_act_m001",
+      "run_index": 194,
+      "state_id": 42,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310442,
+      "method": "newest",
+      "run_index": 195,
+      "state_id": 42,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310443,
+      "method": "cogact_a03",
+      "run_index": 196,
+      "state_id": 43,
+      "task_id": 4,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310443,
+      "method": "newest",
+      "run_index": 197,
+      "state_id": 43,
+      "task_id": 4,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310443,
+      "method": "exact_act_m001",
+      "run_index": 198,
+      "state_id": 43,
+      "task_id": 4,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310443,
+      "method": "newest_age_exp_b003",
+      "run_index": 199,
+      "state_id": 43,
+      "task_id": 4,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310500,
+      "method": "newest",
+      "run_index": 200,
+      "state_id": 0,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310500,
+      "method": "exact_act_m001",
+      "run_index": 201,
+      "state_id": 0,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310500,
+      "method": "newest_age_exp_b003",
+      "run_index": 202,
+      "state_id": 0,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310500,
+      "method": "cogact_a03",
+      "run_index": 203,
+      "state_id": 0,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310507,
+      "method": "newest_age_exp_b003",
+      "run_index": 204,
+      "state_id": 7,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310507,
+      "method": "cogact_a03",
+      "run_index": 205,
+      "state_id": 7,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310507,
+      "method": "newest",
+      "run_index": 206,
+      "state_id": 7,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310507,
+      "method": "exact_act_m001",
+      "run_index": 207,
+      "state_id": 7,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310511,
+      "method": "cogact_a03",
+      "run_index": 208,
+      "state_id": 11,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310511,
+      "method": "newest",
+      "run_index": 209,
+      "state_id": 11,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310511,
+      "method": "newest_age_exp_b003",
+      "run_index": 210,
+      "state_id": 11,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310511,
+      "method": "exact_act_m001",
+      "run_index": 211,
+      "state_id": 11,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310513,
+      "method": "newest_age_exp_b003",
+      "run_index": 212,
+      "state_id": 13,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310513,
+      "method": "exact_act_m001",
+      "run_index": 213,
+      "state_id": 13,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310513,
+      "method": "newest",
+      "run_index": 214,
+      "state_id": 13,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310513,
+      "method": "cogact_a03",
+      "run_index": 215,
+      "state_id": 13,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310525,
+      "method": "newest",
+      "run_index": 216,
+      "state_id": 25,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310525,
+      "method": "exact_act_m001",
+      "run_index": 217,
+      "state_id": 25,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310525,
+      "method": "newest_age_exp_b003",
+      "run_index": 218,
+      "state_id": 25,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310525,
+      "method": "cogact_a03",
+      "run_index": 219,
+      "state_id": 25,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310530,
+      "method": "cogact_a03",
+      "run_index": 220,
+      "state_id": 30,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310530,
+      "method": "newest_age_exp_b003",
+      "run_index": 221,
+      "state_id": 30,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310530,
+      "method": "newest",
+      "run_index": 222,
+      "state_id": 30,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310530,
+      "method": "exact_act_m001",
+      "run_index": 223,
+      "state_id": 30,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310536,
+      "method": "newest_age_exp_b003",
+      "run_index": 224,
+      "state_id": 36,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310536,
+      "method": "newest",
+      "run_index": 225,
+      "state_id": 36,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310536,
+      "method": "exact_act_m001",
+      "run_index": 226,
+      "state_id": 36,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310536,
+      "method": "cogact_a03",
+      "run_index": 227,
+      "state_id": 36,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310541,
+      "method": "newest",
+      "run_index": 228,
+      "state_id": 41,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310541,
+      "method": "newest_age_exp_b003",
+      "run_index": 229,
+      "state_id": 41,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310541,
+      "method": "exact_act_m001",
+      "run_index": 230,
+      "state_id": 41,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310541,
+      "method": "cogact_a03",
+      "run_index": 231,
+      "state_id": 41,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310542,
+      "method": "cogact_a03",
+      "run_index": 232,
+      "state_id": 42,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310542,
+      "method": "newest_age_exp_b003",
+      "run_index": 233,
+      "state_id": 42,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310542,
+      "method": "exact_act_m001",
+      "run_index": 234,
+      "state_id": 42,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310542,
+      "method": "newest",
+      "run_index": 235,
+      "state_id": 42,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310543,
+      "method": "exact_act_m001",
+      "run_index": 236,
+      "state_id": 43,
+      "task_id": 5,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310543,
+      "method": "newest",
+      "run_index": 237,
+      "state_id": 43,
+      "task_id": 5,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310543,
+      "method": "cogact_a03",
+      "run_index": 238,
+      "state_id": 43,
+      "task_id": 5,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310543,
+      "method": "newest_age_exp_b003",
+      "run_index": 239,
+      "state_id": 43,
+      "task_id": 5,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310600,
+      "method": "exact_act_m001",
+      "run_index": 240,
+      "state_id": 0,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310600,
+      "method": "newest_age_exp_b003",
+      "run_index": 241,
+      "state_id": 0,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310600,
+      "method": "newest",
+      "run_index": 242,
+      "state_id": 0,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310600,
+      "method": "cogact_a03",
+      "run_index": 243,
+      "state_id": 0,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310607,
+      "method": "cogact_a03",
+      "run_index": 244,
+      "state_id": 7,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310607,
+      "method": "newest",
+      "run_index": 245,
+      "state_id": 7,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310607,
+      "method": "exact_act_m001",
+      "run_index": 246,
+      "state_id": 7,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310607,
+      "method": "newest_age_exp_b003",
+      "run_index": 247,
+      "state_id": 7,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310611,
+      "method": "exact_act_m001",
+      "run_index": 248,
+      "state_id": 11,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310611,
+      "method": "newest",
+      "run_index": 249,
+      "state_id": 11,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310611,
+      "method": "cogact_a03",
+      "run_index": 250,
+      "state_id": 11,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310611,
+      "method": "newest_age_exp_b003",
+      "run_index": 251,
+      "state_id": 11,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310613,
+      "method": "cogact_a03",
+      "run_index": 252,
+      "state_id": 13,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310613,
+      "method": "newest",
+      "run_index": 253,
+      "state_id": 13,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310613,
+      "method": "exact_act_m001",
+      "run_index": 254,
+      "state_id": 13,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310613,
+      "method": "newest_age_exp_b003",
+      "run_index": 255,
+      "state_id": 13,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310625,
+      "method": "cogact_a03",
+      "run_index": 256,
+      "state_id": 25,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310625,
+      "method": "exact_act_m001",
+      "run_index": 257,
+      "state_id": 25,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310625,
+      "method": "newest_age_exp_b003",
+      "run_index": 258,
+      "state_id": 25,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310625,
+      "method": "newest",
+      "run_index": 259,
+      "state_id": 25,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310630,
+      "method": "cogact_a03",
+      "run_index": 260,
+      "state_id": 30,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310630,
+      "method": "exact_act_m001",
+      "run_index": 261,
+      "state_id": 30,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310630,
+      "method": "newest",
+      "run_index": 262,
+      "state_id": 30,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310630,
+      "method": "newest_age_exp_b003",
+      "run_index": 263,
+      "state_id": 30,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310636,
+      "method": "newest",
+      "run_index": 264,
+      "state_id": 36,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310636,
+      "method": "exact_act_m001",
+      "run_index": 265,
+      "state_id": 36,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310636,
+      "method": "newest_age_exp_b003",
+      "run_index": 266,
+      "state_id": 36,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310636,
+      "method": "cogact_a03",
+      "run_index": 267,
+      "state_id": 36,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310641,
+      "method": "newest",
+      "run_index": 268,
+      "state_id": 41,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310641,
+      "method": "cogact_a03",
+      "run_index": 269,
+      "state_id": 41,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310641,
+      "method": "exact_act_m001",
+      "run_index": 270,
+      "state_id": 41,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310641,
+      "method": "newest_age_exp_b003",
+      "run_index": 271,
+      "state_id": 41,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310642,
+      "method": "newest_age_exp_b003",
+      "run_index": 272,
+      "state_id": 42,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310642,
+      "method": "newest",
+      "run_index": 273,
+      "state_id": 42,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310642,
+      "method": "cogact_a03",
+      "run_index": 274,
+      "state_id": 42,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310642,
+      "method": "exact_act_m001",
+      "run_index": 275,
+      "state_id": 42,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310643,
+      "method": "newest",
+      "run_index": 276,
+      "state_id": 43,
+      "task_id": 6,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310643,
+      "method": "exact_act_m001",
+      "run_index": 277,
+      "state_id": 43,
+      "task_id": 6,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310643,
+      "method": "newest_age_exp_b003",
+      "run_index": 278,
+      "state_id": 43,
+      "task_id": 6,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310643,
+      "method": "cogact_a03",
+      "run_index": 279,
+      "state_id": 43,
+      "task_id": 6,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310700,
+      "method": "exact_act_m001",
+      "run_index": 280,
+      "state_id": 0,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310700,
+      "method": "cogact_a03",
+      "run_index": 281,
+      "state_id": 0,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310700,
+      "method": "newest_age_exp_b003",
+      "run_index": 282,
+      "state_id": 0,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310700,
+      "method": "newest",
+      "run_index": 283,
+      "state_id": 0,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310707,
+      "method": "newest",
+      "run_index": 284,
+      "state_id": 7,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310707,
+      "method": "exact_act_m001",
+      "run_index": 285,
+      "state_id": 7,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310707,
+      "method": "newest_age_exp_b003",
+      "run_index": 286,
+      "state_id": 7,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310707,
+      "method": "cogact_a03",
+      "run_index": 287,
+      "state_id": 7,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310711,
+      "method": "newest_age_exp_b003",
+      "run_index": 288,
+      "state_id": 11,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310711,
+      "method": "exact_act_m001",
+      "run_index": 289,
+      "state_id": 11,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310711,
+      "method": "cogact_a03",
+      "run_index": 290,
+      "state_id": 11,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310711,
+      "method": "newest",
+      "run_index": 291,
+      "state_id": 11,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310713,
+      "method": "newest_age_exp_b003",
+      "run_index": 292,
+      "state_id": 13,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310713,
+      "method": "newest",
+      "run_index": 293,
+      "state_id": 13,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310713,
+      "method": "exact_act_m001",
+      "run_index": 294,
+      "state_id": 13,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310713,
+      "method": "cogact_a03",
+      "run_index": 295,
+      "state_id": 13,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310725,
+      "method": "newest_age_exp_b003",
+      "run_index": 296,
+      "state_id": 25,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310725,
+      "method": "newest",
+      "run_index": 297,
+      "state_id": 25,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310725,
+      "method": "exact_act_m001",
+      "run_index": 298,
+      "state_id": 25,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310725,
+      "method": "cogact_a03",
+      "run_index": 299,
+      "state_id": 25,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310730,
+      "method": "newest",
+      "run_index": 300,
+      "state_id": 30,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310730,
+      "method": "newest_age_exp_b003",
+      "run_index": 301,
+      "state_id": 30,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310730,
+      "method": "cogact_a03",
+      "run_index": 302,
+      "state_id": 30,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310730,
+      "method": "exact_act_m001",
+      "run_index": 303,
+      "state_id": 30,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310736,
+      "method": "cogact_a03",
+      "run_index": 304,
+      "state_id": 36,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310736,
+      "method": "newest_age_exp_b003",
+      "run_index": 305,
+      "state_id": 36,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310736,
+      "method": "newest",
+      "run_index": 306,
+      "state_id": 36,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310736,
+      "method": "exact_act_m001",
+      "run_index": 307,
+      "state_id": 36,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310741,
+      "method": "newest",
+      "run_index": 308,
+      "state_id": 41,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310741,
+      "method": "newest_age_exp_b003",
+      "run_index": 309,
+      "state_id": 41,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310741,
+      "method": "cogact_a03",
+      "run_index": 310,
+      "state_id": 41,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310741,
+      "method": "exact_act_m001",
+      "run_index": 311,
+      "state_id": 41,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310742,
+      "method": "newest_age_exp_b003",
+      "run_index": 312,
+      "state_id": 42,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310742,
+      "method": "newest",
+      "run_index": 313,
+      "state_id": 42,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310742,
+      "method": "cogact_a03",
+      "run_index": 314,
+      "state_id": 42,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310742,
+      "method": "exact_act_m001",
+      "run_index": 315,
+      "state_id": 42,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310743,
+      "method": "exact_act_m001",
+      "run_index": 316,
+      "state_id": 43,
+      "task_id": 7,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310743,
+      "method": "newest_age_exp_b003",
+      "run_index": 317,
+      "state_id": 43,
+      "task_id": 7,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310743,
+      "method": "cogact_a03",
+      "run_index": 318,
+      "state_id": 43,
+      "task_id": 7,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310743,
+      "method": "newest",
+      "run_index": 319,
+      "state_id": 43,
+      "task_id": 7,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310800,
+      "method": "newest_age_exp_b003",
+      "run_index": 320,
+      "state_id": 0,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310800,
+      "method": "newest",
+      "run_index": 321,
+      "state_id": 0,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310800,
+      "method": "cogact_a03",
+      "run_index": 322,
+      "state_id": 0,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310800,
+      "method": "exact_act_m001",
+      "run_index": 323,
+      "state_id": 0,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310807,
+      "method": "newest_age_exp_b003",
+      "run_index": 324,
+      "state_id": 7,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310807,
+      "method": "exact_act_m001",
+      "run_index": 325,
+      "state_id": 7,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310807,
+      "method": "newest",
+      "run_index": 326,
+      "state_id": 7,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310807,
+      "method": "cogact_a03",
+      "run_index": 327,
+      "state_id": 7,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310811,
+      "method": "newest_age_exp_b003",
+      "run_index": 328,
+      "state_id": 11,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310811,
+      "method": "cogact_a03",
+      "run_index": 329,
+      "state_id": 11,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310811,
+      "method": "newest",
+      "run_index": 330,
+      "state_id": 11,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310811,
+      "method": "exact_act_m001",
+      "run_index": 331,
+      "state_id": 11,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310813,
+      "method": "cogact_a03",
+      "run_index": 332,
+      "state_id": 13,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310813,
+      "method": "exact_act_m001",
+      "run_index": 333,
+      "state_id": 13,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310813,
+      "method": "newest",
+      "run_index": 334,
+      "state_id": 13,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310813,
+      "method": "newest_age_exp_b003",
+      "run_index": 335,
+      "state_id": 13,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310825,
+      "method": "newest_age_exp_b003",
+      "run_index": 336,
+      "state_id": 25,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310825,
+      "method": "exact_act_m001",
+      "run_index": 337,
+      "state_id": 25,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310825,
+      "method": "newest",
+      "run_index": 338,
+      "state_id": 25,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310825,
+      "method": "cogact_a03",
+      "run_index": 339,
+      "state_id": 25,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310830,
+      "method": "newest",
+      "run_index": 340,
+      "state_id": 30,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310830,
+      "method": "cogact_a03",
+      "run_index": 341,
+      "state_id": 30,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310830,
+      "method": "exact_act_m001",
+      "run_index": 342,
+      "state_id": 30,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310830,
+      "method": "newest_age_exp_b003",
+      "run_index": 343,
+      "state_id": 30,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310836,
+      "method": "newest",
+      "run_index": 344,
+      "state_id": 36,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310836,
+      "method": "exact_act_m001",
+      "run_index": 345,
+      "state_id": 36,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310836,
+      "method": "cogact_a03",
+      "run_index": 346,
+      "state_id": 36,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310836,
+      "method": "newest_age_exp_b003",
+      "run_index": 347,
+      "state_id": 36,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310841,
+      "method": "newest_age_exp_b003",
+      "run_index": 348,
+      "state_id": 41,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310841,
+      "method": "exact_act_m001",
+      "run_index": 349,
+      "state_id": 41,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310841,
+      "method": "cogact_a03",
+      "run_index": 350,
+      "state_id": 41,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310841,
+      "method": "newest",
+      "run_index": 351,
+      "state_id": 41,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310842,
+      "method": "newest",
+      "run_index": 352,
+      "state_id": 42,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310842,
+      "method": "cogact_a03",
+      "run_index": 353,
+      "state_id": 42,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310842,
+      "method": "newest_age_exp_b003",
+      "run_index": 354,
+      "state_id": 42,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310842,
+      "method": "exact_act_m001",
+      "run_index": 355,
+      "state_id": 42,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310843,
+      "method": "newest",
+      "run_index": 356,
+      "state_id": 43,
+      "task_id": 8,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310843,
+      "method": "exact_act_m001",
+      "run_index": 357,
+      "state_id": 43,
+      "task_id": 8,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310843,
+      "method": "newest_age_exp_b003",
+      "run_index": 358,
+      "state_id": 43,
+      "task_id": 8,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310843,
+      "method": "cogact_a03",
+      "run_index": 359,
+      "state_id": 43,
+      "task_id": 8,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310900,
+      "method": "newest_age_exp_b003",
+      "run_index": 360,
+      "state_id": 0,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310900,
+      "method": "newest",
+      "run_index": 361,
+      "state_id": 0,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310900,
+      "method": "cogact_a03",
+      "run_index": 362,
+      "state_id": 0,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310900,
+      "method": "exact_act_m001",
+      "run_index": 363,
+      "state_id": 0,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310907,
+      "method": "exact_act_m001",
+      "run_index": 364,
+      "state_id": 7,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310907,
+      "method": "cogact_a03",
+      "run_index": 365,
+      "state_id": 7,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310907,
+      "method": "newest_age_exp_b003",
+      "run_index": 366,
+      "state_id": 7,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310907,
+      "method": "newest",
+      "run_index": 367,
+      "state_id": 7,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310911,
+      "method": "newest_age_exp_b003",
+      "run_index": 368,
+      "state_id": 11,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310911,
+      "method": "newest",
+      "run_index": 369,
+      "state_id": 11,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310911,
+      "method": "exact_act_m001",
+      "run_index": 370,
+      "state_id": 11,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310911,
+      "method": "cogact_a03",
+      "run_index": 371,
+      "state_id": 11,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310913,
+      "method": "newest_age_exp_b003",
+      "run_index": 372,
+      "state_id": 13,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310913,
+      "method": "exact_act_m001",
+      "run_index": 373,
+      "state_id": 13,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310913,
+      "method": "newest",
+      "run_index": 374,
+      "state_id": 13,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310913,
+      "method": "cogact_a03",
+      "run_index": 375,
+      "state_id": 13,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310925,
+      "method": "cogact_a03",
+      "run_index": 376,
+      "state_id": 25,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310925,
+      "method": "newest",
+      "run_index": 377,
+      "state_id": 25,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310925,
+      "method": "exact_act_m001",
+      "run_index": 378,
+      "state_id": 25,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310925,
+      "method": "newest_age_exp_b003",
+      "run_index": 379,
+      "state_id": 25,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310930,
+      "method": "newest",
+      "run_index": 380,
+      "state_id": 30,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310930,
+      "method": "cogact_a03",
+      "run_index": 381,
+      "state_id": 30,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310930,
+      "method": "newest_age_exp_b003",
+      "run_index": 382,
+      "state_id": 30,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310930,
+      "method": "exact_act_m001",
+      "run_index": 383,
+      "state_id": 30,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310936,
+      "method": "cogact_a03",
+      "run_index": 384,
+      "state_id": 36,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310936,
+      "method": "newest",
+      "run_index": 385,
+      "state_id": 36,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310936,
+      "method": "newest_age_exp_b003",
+      "run_index": 386,
+      "state_id": 36,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310936,
+      "method": "exact_act_m001",
+      "run_index": 387,
+      "state_id": 36,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310941,
+      "method": "cogact_a03",
+      "run_index": 388,
+      "state_id": 41,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310941,
+      "method": "newest_age_exp_b003",
+      "run_index": 389,
+      "state_id": 41,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310941,
+      "method": "newest",
+      "run_index": 390,
+      "state_id": 41,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310941,
+      "method": "exact_act_m001",
+      "run_index": 391,
+      "state_id": 41,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310942,
+      "method": "newest",
+      "run_index": 392,
+      "state_id": 42,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310942,
+      "method": "newest_age_exp_b003",
+      "run_index": 393,
+      "state_id": 42,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310942,
+      "method": "exact_act_m001",
+      "run_index": 394,
+      "state_id": 42,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310942,
+      "method": "cogact_a03",
+      "run_index": 395,
+      "state_id": 42,
+      "task_id": 9,
+      "within_block_order": 3
+    },
+    {
+      "episode_seed": 310943,
+      "method": "newest",
+      "run_index": 396,
+      "state_id": 43,
+      "task_id": 9,
+      "within_block_order": 0
+    },
+    {
+      "episode_seed": 310943,
+      "method": "newest_age_exp_b003",
+      "run_index": 397,
+      "state_id": 43,
+      "task_id": 9,
+      "within_block_order": 1
+    },
+    {
+      "episode_seed": 310943,
+      "method": "cogact_a03",
+      "run_index": 398,
+      "state_id": 43,
+      "task_id": 9,
+      "within_block_order": 2
+    },
+    {
+      "episode_seed": 310943,
+      "method": "exact_act_m001",
+      "run_index": 399,
+      "state_id": 43,
+      "task_id": 9,
+      "within_block_order": 3
+    }
+  ],
+  "schema_version": 1,
+  "state_selection": {
+    "available_state_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "note": "IDs sorted after sampling only for execution readability.",
+    "sample_without_replacement": 10,
+    "seed": 20260824,
+    "selected_state_ids": [
+      0,
+      7,
+      11,
+      13,
+      25,
+      30,
+      36,
+      41,
+      42,
+      43
+    ]
+  },
+  "task_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}
