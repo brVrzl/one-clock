@@ -1,0 +1,25 @@
+{
+  "python": "/home/wjq/workspace/venvs/robotwin/bin/python",
+  "packages": {
+    "torch": true,
+    "sapien": true,
+    "gymnasium": true,
+    "mani_skill": false,
+    "mujoco": false,
+    "robosuite": false,
+    "libero": false,
+    "lerobot": false
+  },
+  "exact_state_restore": true,
+  "snapshot_bytes": 52,
+  "pose_before": [
+    0.0,
+    0.0,
+    0.2498430460691452
+  ],
+  "pose_after_restore": [
+    0.0,
+    0.0,
+    0.2498430460691452
+  ]
+}

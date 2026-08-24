@@ -1,0 +1,51 @@
+name: icra2027_counterfactual_policy_tournament
+version: 1
+environment:
+  stack: RoboTwin
+  robotwin_root: /home/wjq/workspace/upstreams/RoboTwin
+  python: /home/wjq/workspace/venvs/robotwin/bin/python
+  task_config: demo_clean
+  planner: mplib_RRT
+  image_policy_later: true
+  selection_reason: exact local SAPIEN physics pack/unpack plus scripted task continuation and automatic task labels
+gate0:
+  tasks:
+    - place_can_basket
+    - pick_diverse_bottles
+    - stack_blocks_two
+  episodes_per_task_initial: 2
+  target_episodes_per_task: 20
+  fork_every_control_segments: 5
+  perturbations:
+    - action_pose_x_pm_0.02m
+    - robot_joint_0_pm_0.03rad
+    - object_xy_pm_0.015m
+  primary_score: 1 - mean(branch_success)
+  heuristic_scores:
+    - velocity
+    - acceleration
+    - gripper_event
+  success_screen:
+    minimum_absolute_mean_gain_points: 8
+    minimum_tasks_improved: 2
+    heuristic_advantage_under_equal_budget: true
+tracks:
+  - UniformBC
+  - CriticalBC
+  - RandomBranch
+  - CriticalBranch
+  - ContrastBC
+  - GeoAux
+budget:
+  extra_branch_trajectories_per_task: fixed
+  optimizer_steps: fixed_across_methods
+  evaluation_seeds: disjoint_from_selection_seeds
+exclusions:
+  - ChunkFix
+  - EventAlign
+  - StateTrack
+  - adaptive_horizons
+  - action_smoothing
+  - post_policy_correction
+  - visual_test_time_filtering
+  - reinforcement_learning

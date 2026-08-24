@@ -1,0 +1,14 @@
+{
+  "task": "place_can_basket",
+  "seed": 1,
+  "task_config": "demo_clean",
+  "planner": "mplib_RRT",
+  "fork_every": 5,
+  "project_git_sha": "c134f9b2aa7d0b16f5bb8346c1976584c72e3270",
+  "robotwin_git_sha": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+  "xpolicylab_git_sha": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+  "python": "/home/wjq/workspace/venvs/robotwin/bin/python",
+  "status": "failed",
+  "error": "AssertionError: target_pose cannot be None for move action.",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/wjq/workspace/icra27_fast_pivot/scripts/run_counterfactual_gate0.py\", line 336, in main\n    result = run_episode(args)\n  File \"/home/wjq/workspace/icra27_fast_pivot/scripts/run_counterfactual_gate0.py\", line 235, in run_episode\n    expert_info = task_env.play_once()\n  File \"/home/wjq/workspace/upstreams/RoboTwin/envs/place_can_basket.py\", line 113, in play_once\n    self.grasp_actor(self.basket, arm_tag=self.arm_tag.opposite, pre_grasp_dis=0.02),\n  File \"/home/wjq/workspace/upstreams/RoboTwin/envs/_base_task.py\", line 1235, in grasp_actor\n    Action(arm_tag, \"move\", target_pose=pre_grasp_pose),\n  File \"/home/wjq/workspace/upstreams/RoboTwin/envs/utils/action.py\", line 76, in __init__\n    assert (target_pose is not None), \"target_pose cannot be None for move action.\"\nAssertionError: target_pose cannot be None for move action.\n"
+}
