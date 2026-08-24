@@ -1,0 +1,136 @@
+{
+  "env_info": {
+    "env_id": "PickCube-v1",
+    "env_kwargs": {
+      "control_mode": "pd_ee_pose",
+      "obs_mode": "state",
+      "sim_backend": "physx_cpu"
+    }
+  },
+  "base_demonstrations": 10,
+  "augmentation_method": "late",
+  "added_branch_budget": 24,
+  "selected_states": [
+    {
+      "episode": 1,
+      "timestep": 35,
+      "state_id": "dcf81c42416fe779737fb3c3c81a8f870dfefbf673e438b3f5f7ffa6450396ab"
+    },
+    {
+      "episode": 6,
+      "timestep": 35,
+      "state_id": "01e6d04842ef72ae695f6ecadfc3eb86840c5ccc550b4d7e9d382af9714a81f8"
+    },
+    {
+      "episode": 0,
+      "timestep": 35,
+      "state_id": "a6eb70b01299bef13206bf26b70697e931a5bae8313fd266ab1ac5f21f50e6c4"
+    },
+    {
+      "episode": 3,
+      "timestep": 35,
+      "state_id": "c4e5da85d8b02fdc49971ddf2546de2a85ff5f9fea5fec632718d69b6760caf2"
+    },
+    {
+      "episode": 2,
+      "timestep": 35,
+      "state_id": "d81126830f4e3b9d90950bbff570159cdceee884ace7480127961768d9260f5c"
+    },
+    {
+      "episode": 4,
+      "timestep": 35,
+      "state_id": "008fa96ac5184ab70ca43de3656f92d7429390766362a6214845daf3b6ac62d1"
+    },
+    {
+      "episode": 9,
+      "timestep": 35,
+      "state_id": "a595979bc20ed605ead2ddd3c262e889f47ddae1cefd1020b8d8f3d5eee52cb3"
+    },
+    {
+      "episode": 5,
+      "timestep": 35,
+      "state_id": "26471be28b66d7cdc8d489ffeeff3bf3f175f97dec6925ce4b63c5bfdce20b8c"
+    },
+    {
+      "episode": 7,
+      "timestep": 30,
+      "state_id": "28bc5d491beed239c3e98662fb5ae16b4d8194c77be4512d40672481429ba36f"
+    },
+    {
+      "episode": 1,
+      "timestep": 30,
+      "state_id": "01db8e095833e626fb4c231ae2e32359da2ba3ef6e0a19ef1316eb088c5981cf"
+    },
+    {
+      "episode": 6,
+      "timestep": 30,
+      "state_id": "ac4c08666ddc749705f1e6e9dd685639d06f4901076672c9417297d2da5a8818"
+    },
+    {
+      "episode": 0,
+      "timestep": 30,
+      "state_id": "63f9a6f8a50e9a2dcca7645a31922517dffe8802a3c28818c11c949c2bfdd3ad"
+    },
+    {
+      "episode": 3,
+      "timestep": 30,
+      "state_id": "b03afdd6e9f71dc3462dd260c268276a94826860b8b4eaa5e7f9952b23dbc2b0"
+    },
+    {
+      "episode": 2,
+      "timestep": 30,
+      "state_id": "76369c74f14f770026980e1af3c9d1f81f9b0d6cfcf31d257ceb07f5a9b950a7"
+    },
+    {
+      "episode": 4,
+      "timestep": 30,
+      "state_id": "55dce4ea02d871d8b2f06829d35b2f566828bcef6c25399504ac04cf159adbc2"
+    },
+    {
+      "episode": 9,
+      "timestep": 30,
+      "state_id": "2bdd44c0b8908b6a0a8d55feaf40b599a5ac6347137c8eb59969c2ea325378b3"
+    },
+    {
+      "episode": 5,
+      "timestep": 30,
+      "state_id": "56bfa49260fa3a342669c1f90fc1ec8e4676336567355eeab9b4d86ca556e796"
+    },
+    {
+      "episode": 7,
+      "timestep": 25,
+      "state_id": "95bcbdabd457121fe3aa790821b80e76723fb516757463eb1072b52b13ca4515"
+    },
+    {
+      "episode": 1,
+      "timestep": 25,
+      "state_id": "ca99484a1232a8790117a9892f11265e8d0b63825a28e8c6308a72c36cbe9549"
+    },
+    {
+      "episode": 6,
+      "timestep": 25,
+      "state_id": "9b8b948ba6394df32dcae899a2c4338852314e2fb27a08af8e4119efc7a1dee7"
+    },
+    {
+      "episode": 0,
+      "timestep": 25,
+      "state_id": "731b99324ecc881d2097b4f01a95b3f68a8bfcd7361db37d8ead9d7e24c98e28"
+    },
+    {
+      "episode": 3,
+      "timestep": 25,
+      "state_id": "f6904d9ae3711d7363016365f3d048668f01e98a0640979d52c012a20311484d"
+    },
+    {
+      "episode": 2,
+      "timestep": 25,
+      "state_id": "4637503931be178b0d623f3538efe8ba13f375c9d152c7e66a60ac62e0507a95"
+    },
+    {
+      "episode": 4,
+      "timestep": 25,
+      "state_id": "f4e2fc37e6b9e96945e043d7d78f141762222ba04a19ebe5dd84c1e7f89c25b1"
+    }
+  ],
+  "branch_attempts_until_budget": 24
+}

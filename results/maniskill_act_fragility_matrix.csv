@@ -1,0 +1,13 @@
+method,task,base_demos,added_successful_branches,branch_attempts_until_budget,training_iterations,eval_iteration,num_eval_episodes,success_once,success_at_end,training_update_sec,eval_sec,checkpoint,git_sha,notes
+UniformACT,PickCube-v1,10,0,0,7000,6000,5,0.0,0.0,228.9,11.9,runs/maniskill_uniformact_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,exact matched-budget base
+RandomAug,PickCube-v1,10,24,24,7000,6000,5,0.0,0.0,205.1,11.8,runs/maniskill_randomaug_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+LateAug,PickCube-v1,10,24,24,7000,6000,5,0.0,0.0,235.4,13.2,runs/maniskill_lateaug_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+GoalDistanceAug,PickCube-v1,10,24,24,7000,6000,5,0.0,0.0,216.0,13.0,runs/maniskill_goal_distanceaug_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+MotionAug,PickCube-v1,10,24,24,7000,6000,5,0.0,0.0,221.5,11.6,runs/maniskill_motionaug_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+FragilityAug,PickCube-v1,10,24,24,7000,6000,5,0.0,0.0,214.9,11.3,runs/maniskill_fragilityaug_pick_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+UniformACT,StackCube-v1,10,0,0,7000,6000,5,0.0,0.0,228.6,16.4,runs/maniskill_uniformact_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,success_once was 0.2 at iteration 2000 but not at matched checkpoint
+RandomAug,StackCube-v1,10,24,24,7000,6000,5,0.0,0.0,217.1,18.4,runs/maniskill_randomaug_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+LateAug,StackCube-v1,10,24,24,7000,6000,5,0.0,0.0,212.9,18.5,runs/maniskill_lateaug_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+GoalDistanceAug,StackCube-v1,10,24,24,7000,6000,5,0.0,0.0,218.7,17.6,runs/maniskill_goal_distanceaug_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+MotionAug,StackCube-v1,10,24,24,7000,6000,5,0.0,0.0,221.6,16.3,runs/maniskill_motionaug_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches
+FragilityAug,StackCube-v1,10,24,24,7000,6000,5,0.0,0.0,210.2,14.6,runs/maniskill_fragilityaug_stack_7000/checkpoints/6000.pt,730ad42f2d1359dd8e135289e64f9180af7e88a9,medium-scale successful branches

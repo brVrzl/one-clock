@@ -1,0 +1,136 @@
+{
+  "env_info": {
+    "env_id": "PickCube-v1",
+    "env_kwargs": {
+      "control_mode": "pd_ee_pose",
+      "obs_mode": "state",
+      "sim_backend": "physx_cpu"
+    }
+  },
+  "base_demonstrations": 10,
+  "augmentation_method": "motion",
+  "added_branch_budget": 24,
+  "selected_states": [
+    {
+      "episode": 9,
+      "timestep": 35,
+      "state_id": "a595979bc20ed605ead2ddd3c262e889f47ddae1cefd1020b8d8f3d5eee52cb3"
+    },
+    {
+      "episode": 5,
+      "timestep": 25,
+      "state_id": "f749db948d6762b2cabd1aca12ef67829f7f66918a0e949b784497a3bc53a60b"
+    },
+    {
+      "episode": 5,
+      "timestep": 30,
+      "state_id": "56bfa49260fa3a342669c1f90fc1ec8e4676336567355eeab9b4d86ca556e796"
+    },
+    {
+      "episode": 5,
+      "timestep": 0,
+      "state_id": "4650c63ad33fc2ac9735a3b1b9c8efffd78628556ae46831123c9bacf29c82a2"
+    },
+    {
+      "episode": 5,
+      "timestep": 5,
+      "state_id": "418bfff976c69297661d2c689fec0c97295cf4bf869bae58a4e3beb0aec8aaad"
+    },
+    {
+      "episode": 9,
+      "timestep": 25,
+      "state_id": "e9b2fb43a879c9a15cff92473361d0605faa8cd0dfb0cf0bdc589192a400c3b4"
+    },
+    {
+      "episode": 9,
+      "timestep": 30,
+      "state_id": "2bdd44c0b8908b6a0a8d55feaf40b599a5ac6347137c8eb59969c2ea325378b3"
+    },
+    {
+      "episode": 5,
+      "timestep": 10,
+      "state_id": "9b842959f202c7e8353e79343aff14d8081864eb54bd5198b466b2b3dbca272d"
+    },
+    {
+      "episode": 5,
+      "timestep": 15,
+      "state_id": "cb69128b954f415584ce3842acf8a6d6f660331101eccbd3a6c5154a359b718d"
+    },
+    {
+      "episode": 5,
+      "timestep": 20,
+      "state_id": "cff0cce83aa77cff2263924498812afb9f5502c0b1dd00fed0eec8b09a572f5f"
+    },
+    {
+      "episode": 9,
+      "timestep": 0,
+      "state_id": "bd9831a5be9b036cdcf8dfc06663d9f3ef91a7f9547f5e7a45088f9dcaa6371e"
+    },
+    {
+      "episode": 9,
+      "timestep": 5,
+      "state_id": "1d0325f82ee0a88f687194c98c1fcc28407398092258b4abe170b68505b89dfd"
+    },
+    {
+      "episode": 9,
+      "timestep": 10,
+      "state_id": "2d48e5fc8a438ea0bd88adee6f1d7af273a3451ca959b3b6f0f525e8c1bbd0a6"
+    },
+    {
+      "episode": 9,
+      "timestep": 15,
+      "state_id": "ae9d6fd422ab7bab8e11e1078ea2749ef3a259e4302b89434db40264cba83fb8"
+    },
+    {
+      "episode": 9,
+      "timestep": 20,
+      "state_id": "5682f8f450ec5577041f29e4c81701689de0cf03c3f455eb6c2b4efc55a617ab"
+    },
+    {
+      "episode": 0,
+      "timestep": 35,
+      "state_id": "a6eb70b01299bef13206bf26b70697e931a5bae8313fd266ab1ac5f21f50e6c4"
+    },
+    {
+      "episode": 5,
+      "timestep": 35,
+      "state_id": "26471be28b66d7cdc8d489ffeeff3bf3f175f97dec6925ce4b63c5bfdce20b8c"
+    },
+    {
+      "episode": 1,
+      "timestep": 35,
+      "state_id": "dcf81c42416fe779737fb3c3c81a8f870dfefbf673e438b3f5f7ffa6450396ab"
+    },
+    {
+      "episode": 0,
+      "timestep": 25,
+      "state_id": "731b99324ecc881d2097b4f01a95b3f68a8bfcd7361db37d8ead9d7e24c98e28"
+    },
+    {
+      "episode": 0,
+      "timestep": 30,
+      "state_id": "63f9a6f8a50e9a2dcca7645a31922517dffe8802a3c28818c11c949c2bfdd3ad"
+    },
+    {
+      "episode": 1,
+      "timestep": 25,
+      "state_id": "ca99484a1232a8790117a9892f11265e8d0b63825a28e8c6308a72c36cbe9549"
+    },
+    {
+      "episode": 1,
+      "timestep": 30,
+      "state_id": "01db8e095833e626fb4c231ae2e32359da2ba3ef6e0a19ef1316eb088c5981cf"
+    },
+    {
+      "episode": 0,
+      "timestep": 0,
+      "state_id": "4adc8ca4eba39a48c3a140983806f4bf2903d4bac16ecb64fb547c8f36e8b7e3"
+    },
+    {
+      "episode": 0,
+      "timestep": 5,
+      "state_id": "2b9a5b622494dcf40034226c27ab92f1d50aca45d68e0d18131acb035a8e7c11"
+    }
+  ],
+  "branch_attempts_until_budget": 24
+}

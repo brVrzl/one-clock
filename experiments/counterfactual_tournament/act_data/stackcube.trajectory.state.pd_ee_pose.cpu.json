@@ -1,0 +1,153 @@
+{
+  "env_info": {
+    "env_id": "StackCube-v1",
+    "env_kwargs": {
+      "control_mode": "pd_ee_pose",
+      "obs_mode": "state",
+      "sim_backend": "physx_cpu"
+    }
+  },
+  "episodes": [
+    {
+      "traj_idx": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_000.pt",
+      "seed": 0,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 1,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_001.pt",
+      "seed": 1,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 2,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_002.pt",
+      "seed": 2,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 3,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_003.pt",
+      "seed": 3,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 4,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_004.pt",
+      "seed": 4,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 5,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_005.pt",
+      "seed": 5,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 6,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_006.pt",
+      "seed": 6,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 7,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_007.pt",
+      "seed": 7,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 8,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_008.pt",
+      "seed": 8,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    },
+    {
+      "traj_idx": 9,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_009.pt",
+      "seed": 9,
+      "obs_shape": [
+        57,
+        48
+      ],
+      "action_shape": [
+        56,
+        7
+      ],
+      "success": true
+    }
+  ],
+  "source": "ManiSkill Gate-0 cached exact states and expert actions"
+}

@@ -1,0 +1,150 @@
+{
+  "scales_m": [
+    0.0015,
+    0.003,
+    0.006
+  ],
+  "score_weights": [
+    0.2,
+    0.3,
+    0.5
+  ],
+  "tasks": {
+    "PickCube-v1": {
+      "states": 72,
+      "score_mean": 0.24768518518518523,
+      "score_std": 0.09695620573178375,
+      "score_min": 0.0,
+      "score_max": 0.4666666666666667,
+      "curve": {
+        "0.0015": 0.046296296296296294,
+        "0.003": 0.15046296296296294,
+        "0.006": 0.3865740740740741
+      },
+      "spearman": {
+        "phase": -0.011407398858688848,
+        "object_goal_distance": 0.4110494029340758,
+        "eef_object_distance": 0.049203834306729234,
+        "action_magnitude": 0.20524548867592574,
+        "action_velocity": -0.045147419680787254,
+        "action_acceleration": -0.011713607492627549,
+        "gripper_transition": -0.05260668634875193
+      },
+      "held_out_episode_ridge": {
+        "r2": -0.5379089932340531,
+        "spearman": -0.04149044369872569,
+        "top20_overlap": 0.0
+      },
+      "strongest_single_heuristic": {
+        "feature": "object_goal_distance",
+        "spearman": 0.4110494029340758,
+        "top20_overlap": 0.6
+      },
+      "high_fragility_missed_by_strongest_heuristic": [
+        {
+          "episode": 3,
+          "timestep": 25,
+          "phase": 0.6944444444444444,
+          "fragility_score": 0.41666666666666663,
+          "heuristic": 0.23462358117103577
+        },
+        {
+          "episode": 3,
+          "timestep": 30,
+          "phase": 0.8333333333333334,
+          "fragility_score": 0.41666666666666663,
+          "heuristic": 0.14155100286006927
+        },
+        {
+          "episode": 3,
+          "timestep": 20,
+          "phase": 0.5555555555555556,
+          "fragility_score": 0.3833333333333333,
+          "heuristic": 0.25968316197395325
+        },
+        {
+          "episode": 3,
+          "timestep": 35,
+          "phase": 0.9722222222222222,
+          "fragility_score": 0.3833333333333333,
+          "heuristic": 0.03264041617512703
+        },
+        {
+          "episode": 9,
+          "timestep": 25,
+          "phase": 0.6756756756756757,
+          "fragility_score": 0.35,
+          "heuristic": 0.26839324831962585
+        }
+      ]
+    },
+    "StackCube-v1": {
+      "states": 120,
+      "score_mean": 0.17555555555555552,
+      "score_std": 0.10529793122843228,
+      "score_min": 0.0,
+      "score_max": 0.3333333333333333,
+      "curve": {
+        "0.0015": 0.013888888888888888,
+        "0.003": 0.1847222222222222,
+        "0.006": 0.2347222222222222
+      },
+      "spearman": {
+        "phase": -0.5537977467265656,
+        "object_goal_distance": 0.7945853321316877,
+        "eef_object_distance": 0.267702169780464,
+        "action_magnitude": -0.11789760711140432,
+        "action_velocity": -0.05355782708174656,
+        "action_acceleration": 0.14846347976615032,
+        "gripper_transition": 0.05566127521602462
+      },
+      "held_out_episode_ridge": {
+        "r2": 0.6541597517265478,
+        "spearman": 0.7315791701362048,
+        "top20_overlap": 0.3333333333333333
+      },
+      "strongest_single_heuristic": {
+        "feature": "object_goal_distance",
+        "spearman": 0.7945853321316877,
+        "top20_overlap": 0.3333333333333333
+      },
+      "high_fragility_missed_by_strongest_heuristic": [
+        {
+          "episode": 5,
+          "timestep": 35,
+          "phase": 0.6363636363636364,
+          "fragility_score": 0.3,
+          "heuristic": 0.12932514541710932
+        },
+        {
+          "episode": 8,
+          "timestep": 20,
+          "phase": 0.36363636363636365,
+          "fragility_score": 0.26666666666666666,
+          "heuristic": 0.16809382417514313
+        },
+        {
+          "episode": 8,
+          "timestep": 25,
+          "phase": 0.45454545454545453,
+          "fragility_score": 0.26666666666666666,
+          "heuristic": 0.15634623604475092
+        },
+        {
+          "episode": 8,
+          "timestep": 35,
+          "phase": 0.6363636363636364,
+          "fragility_score": 0.26666666666666666,
+          "heuristic": 0.09330680475319586
+        },
+        {
+          "episode": 6,
+          "timestep": 15,
+          "phase": 0.2727272727272727,
+          "fragility_score": 0.26666666666666666,
+          "heuristic": 0.16813245658684994
+        }
+      ]
+    }
+  }
+}

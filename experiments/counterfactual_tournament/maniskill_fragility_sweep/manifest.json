@@ -1,0 +1,177 @@
+{
+  "backend": "ManiSkill 3.0.1",
+  "sim_backend": "physx_cpu",
+  "control_mode": "pd_ee_pose",
+  "source": "cached successful Gate-0 demonstrations; original expert suffix",
+  "scales_m": [
+    0.0015,
+    0.003,
+    0.006
+  ],
+  "branches_per_state": 6,
+  "sample_every": 5,
+  "episodes": [
+    {
+      "task": "PickCube-v1",
+      "episode": 0,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_000.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 1,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_001.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 2,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_002.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 3,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_003.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 4,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_004.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 5,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_005.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 6,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_006.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 7,
+      "states": 7,
+      "branches": 126,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_007.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 8,
+      "states": 1,
+      "branches": 18,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_008.pt"
+    },
+    {
+      "task": "PickCube-v1",
+      "episode": 9,
+      "states": 8,
+      "branches": 144,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/pickcube_episode_009.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 0,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_000.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 1,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_001.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 2,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_002.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 3,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_003.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 4,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_004.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 5,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_005.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 6,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_006.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 7,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_007.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 8,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_008.pt"
+    },
+    {
+      "task": "StackCube-v1",
+      "episode": 9,
+      "states": 12,
+      "branches": 216,
+      "invalid_branches": 0,
+      "source": "experiments/counterfactual_tournament/maniskill_gate0_final/stackcube_episode_009.pt"
+    }
+  ],
+  "rows": 3456,
+  "runtime_sec": 255.21350502967834
+}
