@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "bytes": 2539,
+      "path": "research/gate3c_state_usage_audit.md",
+      "sha256": "522d737b431f41578fa9ebfa10eb845b12d32084dc810908fd906ca7697cd7e9"
+    },
+    {
+      "bytes": 8199,
+      "path": "research/gate3c_asymmetric_temporal_reuse_protocol.md",
+      "sha256": "fbdc7382d24318505f6a24d27e028815504045b67e20a6d4630481f06aadba12"
+    },
+    {
+      "bytes": 162144,
+      "path": "research/audit_outputs/gate3c_run_schedule.json",
+      "sha256": "55c0fc25e830c9084d114bfe7f4639a944e76514a4715b059844dd5a26bc87f4"
+    },
+    {
+      "bytes": 5667,
+      "path": "research/audit_tools/gate3c_temporal_reuse.py",
+      "sha256": "2f68e9264012f82d20621657ced8728065300e4c030720acbc81816ba5c4b187"
+    },
+    {
+      "bytes": 3631,
+      "path": "research/audit_tools/gate3c_schedule.py",
+      "sha256": "4219429c061e8a806dbc308a99733be4cdb9060cd187be4bfc24d570529a17d3"
+    },
+    {
+      "bytes": 20115,
+      "path": "research/audit_tools/gate3c_rollout.py",
+      "sha256": "2446fab024e308a09ce913372e1bbf801ac3372b48d158790534d72807abba96"
+    },
+    {
+      "bytes": 14144,
+      "path": "research/audit_tools/gate3c_analyze.py",
+      "sha256": "9cd8d7afcbcf320c5ebf56ee6609b87a864fb2103c1809aae53d700ba3a51bca"
+    },
+    {
+      "bytes": 9729,
+      "path": "research/audit_tools/gate3c_validate_rollouts.py",
+      "sha256": "62d2723dad89469f229b6f9453a46995b0496710e987e7ca310716041f5300e8"
+    },
+    {
+      "bytes": 3483,
+      "path": "tests/test_gate3c_temporal_reuse.py",
+      "sha256": "2c33256793fb054f34e44a25031c3ea5f73dea0c652d2db44e7f79018cf1c3d6"
+    }
+  ],
+  "planned_episodes": 700,
+  "schedule_sha256": "55c0fc25e830c9084d114bfe7f4639a944e76514a4715b059844dd5a26bc87f4",
+  "schema_version": 1,
+  "scientific_parent": "2817411a4210b8611dc8dae5d32ec99fc6b94cf3",
+  "status": "frozen before any official Gate-3C outcome"
+}
