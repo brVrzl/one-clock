@@ -1,0 +1,80 @@
+{
+  "branch": "exp/gate3b-cross-generation-composition",
+  "checkpoint": {
+    "config_sha256": "a76eebed357b3cbed8745c3d0f18c1335ecdd5449fcc498257676c9cbd27453d",
+    "directory": "/home/thor/projects/checkpoints/zeromidnight_act_libero_object",
+    "model_sha256": "340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410"
+  },
+  "files": [
+    {
+      "bytes": 11215,
+      "path": "research/gate3b_cross_generation_preregistered_protocol.md",
+      "sha256": "cd56ff094fdf3027f97e1d352897f79da27509c78344b5559642438b443665bf"
+    },
+    {
+      "bytes": 82836,
+      "path": "research/audit_outputs/gate3b_run_schedule.json",
+      "sha256": "2cae2712ff00a1bc5bf8c3eb808b69aeaa8208acb62d2f8591e476e7b18ce4ff"
+    },
+    {
+      "bytes": 7612,
+      "path": "research/audit_tools/gate3b_composition.py",
+      "sha256": "9b1d9ed01ea2a92d010dc49eaf395868fbc541c87f76075d240e82f3b842b7f6"
+    },
+    {
+      "bytes": 3684,
+      "path": "research/audit_tools/gate3b_schedule.py",
+      "sha256": "0e8746cc8104829e0c2805211ea0b31e921fe6a9e915b529088f6d6bc81495ff"
+    },
+    {
+      "bytes": 24887,
+      "path": "research/audit_tools/gate3b_rollout.py",
+      "sha256": "16a09e907e03472be435a4e7ffec995b7c9c5a76f8281aa689e3e9a2e9725e18"
+    },
+    {
+      "bytes": 13704,
+      "path": "research/audit_tools/gate3b_analyze.py",
+      "sha256": "aa87323dcc49ef3238980b834099a1de213abe62cf218b2261132aa903776f8b"
+    },
+    {
+      "bytes": 9464,
+      "path": "research/audit_tools/gate3b_validate_rollouts.py",
+      "sha256": "9db92903f2f7394a44c2d09421d93d8e0bbf069d8eb12efac8541d94f81e536d"
+    },
+    {
+      "bytes": 4507,
+      "path": "tests/test_gate3b_composition.py",
+      "sha256": "3fa9f26439ccb59d5536b893a72e4fc040afaa3627c6d76a3c6221092ccc8602"
+    },
+    {
+      "bytes": 640,
+      "path": "configs/gate0_libero_object.yaml",
+      "sha256": "81f07ffc0740500c1c70be477e83471c7da50ca40bd50536f368aa4ba6ed9d54"
+    }
+  ],
+  "lerobot_commit": "f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+  "method_order_seed": 20260828,
+  "paired_bootstrap_seed": 20260829,
+  "planned_blocks": 100,
+  "planned_episodes": 400,
+  "schema_version": 1,
+  "selected_state_ids": [
+    24,
+    26,
+    28,
+    29,
+    32,
+    33,
+    37,
+    40,
+    46,
+    49
+  ],
+  "source_age_seconds": 1.0,
+  "source_age_ticks": 20,
+  "starting_scientific_commit": "eb4f6bfeb40a9d1444d3fb1d17c841601ca29a76",
+  "state_selection_seed": 20260827,
+  "status": "frozen before official Gate-3B success outcomes",
+  "task_cluster_bootstrap_seed": 20261829,
+  "working_tree_parent_at_generation": "eb4f6bfeb40a9d1444d3fb1d17c841601ca29a76"
+}
