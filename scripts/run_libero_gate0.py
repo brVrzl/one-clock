@@ -5,12 +5,14 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import importlib.metadata
 import json
 from pathlib import Path
 import platform
 import subprocess
 import sys
+import time
 from typing import Any
 
 import numpy as np
@@ -20,7 +22,13 @@ import yaml
 ONE_CLOCK_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ONE_CLOCK_ROOT / "src"))
 
-from one_clock import ActionGroup, FixedChunkExecutor  # noqa: E402
+from one_clock import (  # noqa: E402
+    ActionGroup,
+    AffineResidualCalibrator,
+    ExponentialChunkSmoother,
+    FixedChunkExecutor,
+    IdentityPostPolicy,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -54,6 +62,20 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--record-video", action="store_true")
     parser.add_argument("--video-path", type=Path)
+    parser.add_argument(
+        "--post-policy",
+        choices=("identity", "ema", "affine"),
+        default="identity",
+    )
+    parser.add_argument("--calibrator", type=Path)
+    parser.add_argument("--smoothing-alpha", type=float, default=0.25)
+    parser.add_argument("--correction-scale", type=float, default=1.0)
+    parser.add_argument("--gate-threshold", type=float)
+    parser.add_argument(
+        "--correction-dimensions",
+        type=str,
+        help="Comma-separated action dimensions repaired by the affine model.",
+    )
     return parser.parse_args()
 
 
@@ -125,6 +147,14 @@ def git_commit(path: Path) -> str:
     return result.stdout.strip()
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
 def feature_summary(features: dict[str, Any] | None) -> dict[str, Any] | None:
     if features is None:
         return None
@@ -154,13 +184,14 @@ def prepare_policy_observation(
     observation: dict[str, Any],
     env_preprocessor: Any,
     policy_preprocessor: Any,
-) -> dict[str, Any]:
+) -> tuple[dict[str, Any], np.ndarray]:
     from lerobot.envs.utils import preprocess_observation
 
     batched = batch_robot_state(observation)
     environment_observation = preprocess_observation(batched)
     environment_observation = env_preprocessor(environment_observation)
-    return policy_preprocessor(environment_observation)
+    state = np.asarray(environment_observation["observation.state"])[0]
+    return policy_preprocessor(environment_observation), state
 
 
 def load_policy_and_processors(config: dict[str, Any], checkpoint: Path) -> tuple[Any, Any, Any, Any, Any]:
@@ -213,12 +244,14 @@ def query_full_act_chunk(
     policy_postprocessor: Any,
     env_preprocessor: Any,
     env_postprocessor: Any,
-) -> np.ndarray:
+    post_policy: Any,
+    task_id: int,
+) -> Any:
     import torch
 
     from lerobot.utils.constants import ACTION
 
-    model_observation = prepare_policy_observation(
+    model_observation, state = prepare_policy_observation(
         observation,
         env_preprocessor,
         policy_preprocessor,
@@ -227,7 +260,10 @@ def query_full_act_chunk(
         normalized_chunk = policy.predict_action_chunk(model_observation)
         action = policy_postprocessor(normalized_chunk)
     action = env_postprocessor({ACTION: action})[ACTION]
-    return action[0].detach().cpu().numpy()
+    chunk = action[0].detach().cpu().numpy()
+    post_policy_start = time.perf_counter()
+    result = post_policy(state=state, action_chunk=chunk, task_id=task_id)
+    return result, time.perf_counter() - post_policy_start
 
 
 def summarize_run(
@@ -266,7 +302,51 @@ def summarize_run(
             group: source_age_totals[group] / source_age_counts[group]
             for group in source_age_totals
         }
+    corrections = [
+        record["post_policy"]
+        for records in episode_records
+        for record in records
+        if "post_policy" in record
+    ]
+    if corrections:
+        summary.update(
+            {
+                "corrected_policy_queries": len(corrections),
+                "gate_activation_rate": sum(int(row["gate_active"]) for row in corrections)
+                / len(corrections),
+                "mean_chunk_correction_norm": sum(float(row["correction_norm"]) for row in corrections)
+                / len(corrections),
+                "mean_chunk_correction_max_abs": sum(
+                    float(row["correction_max_abs"]) for row in corrections
+                )
+                / len(corrections),
+                "mean_post_policy_latency_seconds": sum(
+                    float(row["latency_seconds"]) for row in corrections
+                )
+                / len(corrections),
+            }
+        )
     return summary
+
+
+def build_post_policy(args: argparse.Namespace) -> Any:
+    if args.post_policy == "identity":
+        return IdentityPostPolicy()
+    if args.post_policy == "ema":
+        return ExponentialChunkSmoother(args.smoothing_alpha)
+    if args.calibrator is None:
+        raise ValueError("--calibrator is required for --post-policy affine")
+    correction_dimensions = (
+        tuple(int(value) for value in args.correction_dimensions.split(","))
+        if args.correction_dimensions
+        else None
+    )
+    return AffineResidualCalibrator.load(
+        args.calibrator,
+        correction_scale=args.correction_scale,
+        gate_threshold=args.gate_threshold,
+        correction_dimensions=correction_dimensions,
+    )
 
 
 def make_episode_record(
@@ -335,6 +415,8 @@ def run_episode(
     env_preprocessor: Any,
     env_postprocessor: Any,
     executor: FixedChunkExecutor,
+    post_policy: Any,
+    task_id: int,
     episode: int,
     init_state_id: int,
     seed: int,
@@ -357,20 +439,29 @@ def run_episode(
             append_video_frame(video_writer, observation)
 
         def query() -> np.ndarray:
-            chunk = query_full_act_chunk(
+            result, post_policy_latency = query_full_act_chunk(
                 observation=observation,
                 policy=policy,
                 policy_preprocessor=policy_preprocessor,
                 policy_postprocessor=policy_postprocessor,
                 env_preprocessor=env_preprocessor,
                 env_postprocessor=env_postprocessor,
+                post_policy=post_policy,
+                task_id=task_id,
             )
+            chunk = np.clip(result.action_chunk, -1.0, 1.0)
             observed_chunk_shapes.append(tuple(chunk.shape))
+            post_policy_record = result.as_log_record()
+            post_policy_record["latency_seconds"] = post_policy_latency
+            post_policy_records.append(post_policy_record)
             return chunk
 
+        post_policy_records: list[dict[str, float | bool]] = []
         decision = executor.step(query)
         observation, _, terminated, truncated, info = env.step(decision.action.astype(np.float32))
         record = decision.as_log_record()
+        if post_policy_records:
+            record["post_policy"] = post_policy_records[0]
         record["is_success"] = bool(info["is_success"])
         records.append(record)
         if terminated or truncated:
@@ -449,6 +540,7 @@ def main() -> None:
         group_horizons,
         chunk_size,
     )
+    post_policy = build_post_policy(args)
     env = LiberoEnv(
         task_suite=suite,
         task_id=task_id,
@@ -503,6 +595,8 @@ def main() -> None:
         "chunk_size": chunk_size,
         "action_dim": action_dim,
         "checkpoint": str(checkpoint),
+        "checkpoint_model_sha256": sha256_file(checkpoint / "model.safetensors"),
+        "project_commit_at_launch": git_commit(ONE_CLOCK_ROOT),
         "lerobot_root": str(lerobot_root),
         "lerobot_commit": git_commit(lerobot_root),
         "lerobot_version": importlib.metadata.version("lerobot"),
@@ -521,6 +615,15 @@ def main() -> None:
         "official_init_state_count": official_init_state_count,
         "base_seed": int(config["seed"]),
         "video_path": str(video_path) if video_path is not None else None,
+        "post_policy": args.post_policy,
+        "calibrator": str(args.calibrator.resolve()) if args.calibrator is not None else None,
+        "smoothing_alpha": args.smoothing_alpha if args.post_policy == "ema" else None,
+        "correction_scale": args.correction_scale if args.post_policy == "affine" else None,
+        "gate_threshold": args.gate_threshold if args.post_policy == "affine" else None,
+        "correction_dimensions": (
+            args.correction_dimensions if args.post_policy == "affine" else None
+        ),
+        "action_safety_projection": "clip[-1,1] after post-policy module",
     }
     (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
@@ -539,6 +642,8 @@ def main() -> None:
                 env_preprocessor=env_preprocessor,
                 env_postprocessor=env_postprocessor,
                 executor=executor,
+                post_policy=post_policy,
+                task_id=task_id,
                 episode=episode_index,
                 init_state_id=init_state_id,
                 seed=int(config["seed"]) + init_state_id,

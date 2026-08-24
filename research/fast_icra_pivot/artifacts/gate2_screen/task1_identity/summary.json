@@ -1,0 +1,22 @@
+{
+  "episodes": 5,
+  "success": false,
+  "successes": 3,
+  "success_rate": 0.6,
+  "environment_steps": 1004,
+  "policy_queries": 126,
+  "policy_queries_per_episode": 25.2,
+  "policy_query_rate": 0.1254980079681275,
+  "configured_horizons": {
+    "arm": 8,
+    "gripper": 8
+  },
+  "mean_source_age_by_group": {
+    "arm": 3.489043824701195,
+    "gripper": 3.489043824701195
+  },
+  "corrected_policy_queries": 126,
+  "gate_activation_rate": 0.0,
+  "mean_chunk_correction_norm": 0.0,
+  "mean_chunk_correction_max_abs": 0.0
+}

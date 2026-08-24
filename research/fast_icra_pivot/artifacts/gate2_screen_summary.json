@@ -1,0 +1,342 @@
+{
+  "status": "exploratory_screen; task set chosen from historical performance before this screen",
+  "all_completed_runs_included": true,
+  "runs": [
+    {
+      "run": "task1_affine_q25",
+      "task_id": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 1.0,
+      "gate_threshold": 3.1272796639205955,
+      "episodes": 5,
+      "successes": 1,
+      "success_rate": 0.2,
+      "wilson_ci95": [
+        0.03622410863243014,
+        0.6244653702374747
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "environment_steps": 1271,
+      "policy_queries": 159,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 6.83822041573951,
+      "rollout_wall_seconds": 28.916758060455322,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task1_ema",
+      "task_id": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "method": "ema",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 1,
+      "success_rate": 0.2,
+      "wilson_ci95": [
+        0.03622410863243014,
+        0.6244653702374747
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "environment_steps": 1247,
+      "policy_queries": 156,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 3.3664834652191553,
+      "rollout_wall_seconds": 36.423627614974976,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task1_gripper_affine",
+      "task_id": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 1.0,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.43448246478317476
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "environment_steps": 1400,
+      "policy_queries": 175,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 6.155746353559094,
+      "rollout_wall_seconds": 46.315990924835205,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task1_identity",
+      "task_id": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "method": "identity",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 3,
+      "success_rate": 0.6,
+      "wilson_ci95": [
+        0.2307242812760128,
+        0.882379225767352
+      ],
+      "episode_outcomes": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "environment_steps": 1004,
+      "policy_queries": 126,
+      "gate_activation_rate": 0.0,
+      "mean_chunk_correction_norm": 0.0,
+      "rollout_wall_seconds": 29.627734661102295,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task6_affine_s025",
+      "task_id": 6,
+      "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 0.25,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 3,
+      "success_rate": 0.6,
+      "wilson_ci95": [
+        0.2307242812760128,
+        0.882379225767352
+      ],
+      "episode_outcomes": [
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "environment_steps": 1082,
+      "policy_queries": 136,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 1.6041367406384959,
+      "rollout_wall_seconds": 36.23787522315979,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task6_ema",
+      "task_id": 6,
+      "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+      "method": "ema",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 2,
+      "success_rate": 0.4,
+      "wilson_ci95": [
+        0.11762077423264783,
+        0.769275718723987
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "environment_steps": 1232,
+      "policy_queries": 155,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 2.9977824645657694,
+      "rollout_wall_seconds": 36.19787573814392,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task6_gripper_affine",
+      "task_id": 6,
+      "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 1.0,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 1,
+      "success_rate": 0.2,
+      "wilson_ci95": [
+        0.03622410863243014,
+        0.6244653702374747
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "environment_steps": 1286,
+      "policy_queries": 161,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 6.018264490601794,
+      "rollout_wall_seconds": 37.20912981033325,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task6_identity",
+      "task_id": 6,
+      "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+      "method": "identity",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 5,
+      "success_rate": 1.0,
+      "wilson_ci95": [
+        0.5655175352168251,
+        1.0
+      ],
+      "episode_outcomes": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "environment_steps": 852,
+      "policy_queries": 108,
+      "gate_activation_rate": 0.0,
+      "mean_chunk_correction_norm": 0.0,
+      "rollout_wall_seconds": 29.30594277381897,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task8_affine_s025",
+      "task_id": 8,
+      "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 0.25,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.43448246478317476
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "environment_steps": 1400,
+      "policy_queries": 175,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 1.8453194609394568,
+      "rollout_wall_seconds": 37.65916919708252,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task8_ema",
+      "task_id": 8,
+      "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+      "method": "ema",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.43448246478317476
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "environment_steps": 1400,
+      "policy_queries": 175,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 3.0603424501419068,
+      "rollout_wall_seconds": 39.3721182346344,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task8_gripper_affine",
+      "task_id": 8,
+      "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+      "method": "affine",
+      "correction_scale": 1.0,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 1,
+      "success_rate": 0.2,
+      "wilson_ci95": [
+        0.03622410863243014,
+        0.6244653702374747
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "environment_steps": 1286,
+      "policy_queries": 161,
+      "gate_activation_rate": 1.0,
+      "mean_chunk_correction_norm": 6.8489405531760434,
+      "rollout_wall_seconds": 39.34910035133362,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    },
+    {
+      "run": "task8_identity",
+      "task_id": 8,
+      "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+      "method": "identity",
+      "correction_scale": null,
+      "gate_threshold": null,
+      "episodes": 5,
+      "successes": 1,
+      "success_rate": 0.2,
+      "wilson_ci95": [
+        0.03622410863243014,
+        0.6244653702374747
+      ],
+      "episode_outcomes": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "environment_steps": 1286,
+      "policy_queries": 161,
+      "gate_activation_rate": 0.0,
+      "mean_chunk_correction_norm": 0.0,
+      "rollout_wall_seconds": 31.793222188949585,
+      "runtime_measurement": "summary mtime minus output-directory birth time; excludes model/env setup"
+    }
+  ]
+}

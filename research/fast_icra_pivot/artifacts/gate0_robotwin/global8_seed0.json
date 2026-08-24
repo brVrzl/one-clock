@@ -1,0 +1,69 @@
+{
+  "task": "place_can_basket",
+  "task_config": "demo_clean",
+  "mode": "global8",
+  "seed": 0,
+  "planner_override": "mplib_RRT",
+  "status": "complete",
+  "success": false,
+  "environment_steps": 700,
+  "policy_queries": 88,
+  "last_phase": "close_env",
+  "timings": {
+    "model_init": {
+      "count": 1,
+      "total_s": 3.6955535570159554,
+      "mean_s": 3.6955535570159554,
+      "max_s": 3.6955535570159554
+    },
+    "setup_demo": {
+      "count": 1,
+      "total_s": 1.1936201619682834,
+      "mean_s": 1.1936201619682834,
+      "max_s": 1.1936201619682834
+    },
+    "get_obs": {
+      "count": 88,
+      "total_s": 9.673580174567178,
+      "mean_s": 0.10992704743826338,
+      "max_s": 8.982191278017126
+    },
+    "policy_inference": {
+      "count": 88,
+      "total_s": 3.1116122440434992,
+      "mean_s": 0.035359230045948854,
+      "max_s": 0.5993552339496091
+    },
+    "take_action": {
+      "count": 700,
+      "total_s": 23.12208044156432,
+      "mean_s": 0.03303154348794903,
+      "max_s": 0.4617576610762626
+    },
+    "terminal_check": {
+      "count": 1,
+      "total_s": 0.000328598078340292,
+      "mean_s": 0.000328598078340292,
+      "max_s": 0.000328598078340292
+    },
+    "close_env": {
+      "count": 1,
+      "total_s": 4.41097654402256e-06,
+      "mean_s": 4.41097654402256e-06,
+      "max_s": 4.41097654402256e-06
+    }
+  },
+  "robotwin_commit": "266f3aadf505a4f7fe9af0faa41a20f5f47cd123",
+  "xpolicylab_commit": "c37109c500be67d0dea6b36bf7337bbd26e763cd",
+  "checkpoint": "/home/wjq/checkpoints/robotwin/act-place_can_basket/demo_clean-50",
+  "step_limit": 700,
+  "renderer": {
+    "shader": "rt",
+    "headless": "surfaceless",
+    "render_freq": 0,
+    "rt_samples_per_pixel": 1,
+    "rt_path_depth": 1,
+    "rt_denoiser": "none"
+  },
+  "failure_reason": "task_not_successful_at_step_limit"
+}

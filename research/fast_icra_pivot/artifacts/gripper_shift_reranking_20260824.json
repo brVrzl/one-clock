@@ -1,0 +1,51 @@
+{
+  "status": "exploratory_test_inspected_during_method_selection",
+  "shifts_steps": [
+    -8,
+    -4,
+    0,
+    4,
+    8
+  ],
+  "training_chunks": 6151,
+  "evaluation_chunks": 6143,
+  "methods": {
+    "frozen_act": {
+      "frame_weighted_mse": 0.1804538337040299,
+      "frame_weighted_gripper_mse": 0.9377873813025173,
+      "gripper_sign_accuracy": 0.703597909322961
+    },
+    "linear_selector": {
+      "frame_weighted_mse": 0.16591572193844814,
+      "frame_weighted_gripper_mse": 0.8360205989434466,
+      "gripper_sign_accuracy": 0.7302661966695029
+    },
+    "oracle_selector": {
+      "frame_weighted_mse": 0.1522081671321045,
+      "frame_weighted_gripper_mse": 0.7400677152990406,
+      "gripper_sign_accuracy": 0.7623872614561809
+    }
+  },
+  "training_oracle_shift_distribution": {
+    "-8": 0.2874329377337018,
+    "-4": 0.11055112989757764,
+    "0": 0.1164038367745082,
+    "4": 0.13038530320273126,
+    "8": 0.3552267923914811
+  },
+  "evaluation_oracle_shift_distribution": {
+    "-8": 0.3320853003418525,
+    "-4": 0.09653263877584242,
+    "0": 0.1168810027673775,
+    "4": 0.11639264203158066,
+    "8": 0.3381084160833469
+  },
+  "learned_shift_distribution": {
+    "-8": 0.3846654728959792,
+    "-4": 0.008790493244343155,
+    "0": 0.01692983884095719,
+    "4": 0.016604265017092626,
+    "8": 0.5730099300016279
+  },
+  "selector_oracle_label_accuracy": 0.5367084486407293
+}
