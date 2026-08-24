@@ -80,6 +80,36 @@ class ExponentialChunkSmoother:
         return _result(base, corrected, gate_active=True)
 
 
+class GripperTimingShift:
+    """Shift only the gripper sequence while preserving every arm value."""
+
+    def __init__(self, shift_steps: int, gripper_dimension: int = 6) -> None:
+        self.shift_steps = int(shift_steps)
+        self.gripper_dimension = int(gripper_dimension)
+
+    def __call__(
+        self,
+        *,
+        state: np.ndarray,
+        action_chunk: np.ndarray,
+        task_id: int,
+    ) -> PostPolicyResult:
+        del state, task_id
+        base = np.asarray(action_chunk)
+        if not 0 <= self.gripper_dimension < base.shape[1]:
+            raise ValueError(
+                f"gripper dimension {self.gripper_dimension} outside [0, {base.shape[1]})"
+            )
+        corrected = base.copy()
+        source_indices = np.arange(len(base)) - self.shift_steps
+        source_indices = np.clip(source_indices, 0, len(base) - 1)
+        corrected[:, self.gripper_dimension] = base[source_indices, self.gripper_dimension]
+        arm_dimensions = np.arange(base.shape[1]) != self.gripper_dimension
+        if not np.array_equal(corrected[:, arm_dimensions], base[:, arm_dimensions]):
+            raise AssertionError("gripper timing shift modified an arm action")
+        return _result(base, corrected, gate_active=self.shift_steps != 0)
+
+
 class AffineResidualCalibrator:
     """Ridge-fit residual correction from state, task, action, and chunk phase."""
 

@@ -1,0 +1,262 @@
+{
+  "status": "exploratory paired causal upper-bound diagnostic",
+  "shift_convention": "negative advances and positive delays the nominal gripper sequence; arm dimensions 0:6 unchanged",
+  "candidate_shifts_control_steps": [
+    -8,
+    -4,
+    0,
+    4,
+    8
+  ],
+  "tasks": [
+    {
+      "task_id": 1,
+      "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+      "paired_initial_states": 10,
+      "baseline_successes": 6,
+      "baseline_success_rate": 0.6,
+      "fixed_shifts": {
+        "-8": {
+          "successes": 4,
+          "trials": 10,
+          "success_rate": 0.4,
+          "wilson_ci95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "baseline_failures_rescued": 1,
+          "baseline_successes_broken": 3,
+          "baseline_success_break_fraction": 0.5
+        },
+        "-4": {
+          "successes": 7,
+          "trials": 10,
+          "success_rate": 0.7,
+          "wilson_ci95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "baseline_failures_rescued": 2,
+          "baseline_successes_broken": 1,
+          "baseline_success_break_fraction": 0.16666666666666666
+        },
+        "0": {
+          "successes": 6,
+          "trials": 10,
+          "success_rate": 0.6,
+          "wilson_ci95": [
+            0.31267376973365824,
+            0.8318196702937638
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 0,
+          "baseline_success_break_fraction": 0.0
+        },
+        "4": {
+          "successes": 4,
+          "trials": 10,
+          "success_rate": 0.4,
+          "wilson_ci95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 2,
+          "baseline_success_break_fraction": 0.3333333333333333
+        },
+        "8": {
+          "successes": 1,
+          "trials": 10,
+          "success_rate": 0.1,
+          "wilson_ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 5,
+          "baseline_success_break_fraction": 0.8333333333333334
+        }
+      },
+      "timing_oracle_successes": 8,
+      "timing_oracle_success_rate": 0.8,
+      "timing_oracle_wilson_ci95": [
+        0.49016247153664183,
+        0.9433178485456247
+      ],
+      "baseline_failures": 4,
+      "baseline_failures_recoverable": 2,
+      "recoverable_baseline_failure_fraction": 0.5,
+      "oracle_absolute_headroom": 0.2
+    },
+    {
+      "task_id": 6,
+      "task_name": "pick_up_the_butter_and_place_it_in_the_basket",
+      "paired_initial_states": 10,
+      "baseline_successes": 7,
+      "baseline_success_rate": 0.7,
+      "fixed_shifts": {
+        "-8": {
+          "successes": 1,
+          "trials": 10,
+          "success_rate": 0.1,
+          "wilson_ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 6,
+          "baseline_success_break_fraction": 0.8571428571428571
+        },
+        "-4": {
+          "successes": 4,
+          "trials": 10,
+          "success_rate": 0.4,
+          "wilson_ci95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 3,
+          "baseline_success_break_fraction": 0.42857142857142855
+        },
+        "0": {
+          "successes": 7,
+          "trials": 10,
+          "success_rate": 0.7,
+          "wilson_ci95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 0,
+          "baseline_success_break_fraction": 0.0
+        },
+        "4": {
+          "successes": 4,
+          "trials": 10,
+          "success_rate": 0.4,
+          "wilson_ci95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 3,
+          "baseline_success_break_fraction": 0.42857142857142855
+        },
+        "8": {
+          "successes": 5,
+          "trials": 10,
+          "success_rate": 0.5,
+          "wilson_ci95": [
+            0.236593090512564,
+            0.7634069094874361
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 2,
+          "baseline_success_break_fraction": 0.2857142857142857
+        }
+      },
+      "timing_oracle_successes": 7,
+      "timing_oracle_success_rate": 0.7,
+      "timing_oracle_wilson_ci95": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "baseline_failures": 3,
+      "baseline_failures_recoverable": 0,
+      "recoverable_baseline_failure_fraction": 0.0,
+      "oracle_absolute_headroom": 0.0
+    },
+    {
+      "task_id": 8,
+      "task_name": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+      "paired_initial_states": 10,
+      "baseline_successes": 2,
+      "baseline_success_rate": 0.2,
+      "fixed_shifts": {
+        "-8": {
+          "successes": 1,
+          "trials": 10,
+          "success_rate": 0.1,
+          "wilson_ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 1,
+          "baseline_success_break_fraction": 0.5
+        },
+        "-4": {
+          "successes": 1,
+          "trials": 10,
+          "success_rate": 0.1,
+          "wilson_ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 1,
+          "baseline_success_break_fraction": 0.5
+        },
+        "0": {
+          "successes": 2,
+          "trials": 10,
+          "success_rate": 0.2,
+          "wilson_ci95": [
+            0.05668215145437519,
+            0.5098375284633583
+          ],
+          "baseline_failures_rescued": 0,
+          "baseline_successes_broken": 0,
+          "baseline_success_break_fraction": 0.0
+        },
+        "4": {
+          "successes": 2,
+          "trials": 10,
+          "success_rate": 0.2,
+          "wilson_ci95": [
+            0.05668215145437519,
+            0.5098375284633583
+          ],
+          "baseline_failures_rescued": 1,
+          "baseline_successes_broken": 1,
+          "baseline_success_break_fraction": 0.5
+        },
+        "8": {
+          "successes": 1,
+          "trials": 10,
+          "success_rate": 0.1,
+          "wilson_ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "baseline_failures_rescued": 1,
+          "baseline_successes_broken": 2,
+          "baseline_success_break_fraction": 1.0
+        }
+      },
+      "timing_oracle_successes": 3,
+      "timing_oracle_success_rate": 0.3,
+      "timing_oracle_wilson_ci95": [
+        0.10779126740630099,
+        0.6032218525388546
+      ],
+      "baseline_failures": 8,
+      "baseline_failures_recoverable": 1,
+      "recoverable_baseline_failure_fraction": 0.125,
+      "oracle_absolute_headroom": 0.1
+    }
+  ],
+  "aggregate": {
+    "paired_initial_states": 30,
+    "baseline_successes": 15,
+    "baseline_success_rate": 0.5,
+    "timing_oracle_successes": 18,
+    "timing_oracle_success_rate": 0.6,
+    "oracle_absolute_headroom": 0.1,
+    "baseline_failures": 15,
+    "baseline_failures_recoverable": 3,
+    "recoverable_baseline_failure_fraction": 0.2
+  },
+  "all_completed_runs_included": true
+}

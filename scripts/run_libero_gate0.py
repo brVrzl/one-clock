@@ -27,6 +27,7 @@ from one_clock import (  # noqa: E402
     AffineResidualCalibrator,
     ExponentialChunkSmoother,
     FixedChunkExecutor,
+    GripperTimingShift,
     IdentityPostPolicy,
 )
 
@@ -64,13 +65,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--video-path", type=Path)
     parser.add_argument(
         "--post-policy",
-        choices=("identity", "ema", "affine"),
+        choices=("identity", "ema", "affine", "event_shift"),
         default="identity",
     )
     parser.add_argument("--calibrator", type=Path)
     parser.add_argument("--smoothing-alpha", type=float, default=0.25)
     parser.add_argument("--correction-scale", type=float, default=1.0)
     parser.add_argument("--gate-threshold", type=float)
+    parser.add_argument("--gripper-shift", type=int, default=0)
     parser.add_argument(
         "--correction-dimensions",
         type=str,
@@ -334,6 +336,8 @@ def build_post_policy(args: argparse.Namespace) -> Any:
         return IdentityPostPolicy()
     if args.post_policy == "ema":
         return ExponentialChunkSmoother(args.smoothing_alpha)
+    if args.post_policy == "event_shift":
+        return GripperTimingShift(args.gripper_shift)
     if args.calibrator is None:
         raise ValueError("--calibrator is required for --post-policy affine")
     correction_dimensions = (
@@ -620,6 +624,9 @@ def main() -> None:
         "smoothing_alpha": args.smoothing_alpha if args.post_policy == "ema" else None,
         "correction_scale": args.correction_scale if args.post_policy == "affine" else None,
         "gate_threshold": args.gate_threshold if args.post_policy == "affine" else None,
+        "gripper_shift_steps": (
+            args.gripper_shift if args.post_policy == "event_shift" else None
+        ),
         "correction_dimensions": (
             args.correction_dimensions if args.post_policy == "affine" else None
         ),

@@ -1,0 +1,103 @@
+{
+  "strategy": "global_fixed",
+  "global_horizon": 8,
+  "group_horizons": {
+    "arm": 8,
+    "gripper": 8
+  },
+  "action_groups": {
+    "arm": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "gripper": [
+      6
+    ]
+  },
+  "task_suite": "libero_object",
+  "task_id": 1,
+  "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+  "task_description": "pick up the cream cheese and place it in the basket",
+  "control_mode": "relative",
+  "control_frequency": 20,
+  "chunk_size": 100,
+  "action_dim": 7,
+  "checkpoint": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+  "checkpoint_model_sha256": "340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410",
+  "project_commit_at_launch": "964ce8c08cf40d3edc04e552ad853bbc12957f16",
+  "lerobot_root": "/home/wjq/workspace/upstreams/lerobot",
+  "lerobot_commit": "f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+  "lerobot_version": "0.6.2",
+  "libero_version": "0.1.4",
+  "python": "3.12.3",
+  "architecture": "x86_64",
+  "torch": "2.11.0+cu130",
+  "torch_cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "policy_temporal_ensemble_coeff": null,
+  "policy_input_features": {
+    "observation.state": {
+      "type": "FeatureType.STATE",
+      "shape": [
+        8
+      ]
+    },
+    "observation.images.image": {
+      "type": "FeatureType.VISUAL",
+      "shape": [
+        256,
+        256,
+        3
+      ]
+    },
+    "observation.images.wrist_image": {
+      "type": "FeatureType.VISUAL",
+      "shape": [
+        256,
+        256,
+        3
+      ]
+    }
+  },
+  "policy_output_features": {
+    "action": {
+      "type": "FeatureType.ACTION",
+      "shape": [
+        7
+      ]
+    }
+  },
+  "episodes": 10,
+  "init_state_start": 0,
+  "init_state_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "official_init_state_count": 50,
+  "base_seed": 1000,
+  "video_path": null,
+  "post_policy": "event_shift",
+  "calibrator": null,
+  "smoothing_alpha": null,
+  "correction_scale": null,
+  "gate_threshold": null,
+  "gripper_shift_steps": -4,
+  "correction_dimensions": null,
+  "action_safety_projection": "clip[-1,1] after post-policy module",
+  "observed_chunk_shape": [
+    100,
+    7
+  ]
+}

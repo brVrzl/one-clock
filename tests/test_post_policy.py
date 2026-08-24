@@ -4,10 +4,21 @@ import unittest
 
 import numpy as np
 
-from one_clock import AffineResidualCalibrator, ExponentialChunkSmoother
+from one_clock import AffineResidualCalibrator, ExponentialChunkSmoother, GripperTimingShift
 
 
 class PostPolicyTest(unittest.TestCase):
+    def test_gripper_timing_shift_preserves_arm_exactly(self) -> None:
+        chunk = np.arange(35, dtype=np.float64).reshape(5, 7)
+
+        advanced = GripperTimingShift(-2)(state=np.zeros(1), action_chunk=chunk, task_id=0)
+        delayed = GripperTimingShift(2)(state=np.zeros(1), action_chunk=chunk, task_id=0)
+
+        np.testing.assert_array_equal(advanced.action_chunk[:, :6], chunk[:, :6])
+        np.testing.assert_array_equal(delayed.action_chunk[:, :6], chunk[:, :6])
+        np.testing.assert_array_equal(advanced.action_chunk[:, 6], chunk[[2, 3, 4, 4, 4], 6])
+        np.testing.assert_array_equal(delayed.action_chunk[:, 6], chunk[[0, 0, 0, 1, 2], 6])
+
     def test_exponential_smoothing_is_causal_within_chunk(self) -> None:
         chunk = np.asarray([[0.0], [2.0], [2.0]], dtype=np.float32)
 

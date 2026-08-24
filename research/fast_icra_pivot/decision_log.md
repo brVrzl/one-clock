@@ -45,3 +45,18 @@ No novelty or success claim should be made until a conservative selector improve
 ## Single next experiment
 
 Train a reject-option selector over raw and ±4/±8-step gripper shifts. Calibrate its confidence and no-change cost on validation only, freeze the threshold, then evaluate offline on a fresh, previously uninspected episode split. Proceed to paired rollouts only if it improves gripper sign accuracy and total MSE while altering at most 25% of chunks. This is higher value than scaling the failed residual model because it directly tests whether selectivity can be made real.
+
+## 2026-08-24: closed-loop EventAlign upper bound
+
+The proposed next step was superseded by a direct causal oracle test, which is more informative than classifier fitting. Across 30 paired LIBERO initial states, frozen ACT succeeded on 15 and the per-state timing oracle on 18. Only 3/15 baseline failures were recoverable by any gripper shift; task 6 had no recoverable failure. All fixed shifts underperformed the baseline in pooled success and frequently broke baseline successes.
+
+```text
+PIVOT DECISION
+Previous hypothesis: Sparse gripper-event realignment has enough causal success headroom to justify a learned reject-option selector.
+Evidence: The closed-loop oracle improves 15/30 to 18/30, recovers 3/15 failures, has zero headroom on task 6, and the best fixed shift scores only 12/30.
+Why insufficient: A deployable selector can only underperform this small, task-inconsistent oracle ceiling, while incorrect interventions often destroy successes.
+New hypothesis: None selected in this experiment; preserve the evidence and search outside gripper-only timing.
+Cheapest discriminating experiment: Completed; no selector training is warranted.
+```
+
+Decision: **KILL EVENTALIGN**.
