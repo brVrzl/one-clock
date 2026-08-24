@@ -40,9 +40,11 @@ archive provenance files.
 - Common ancestor:
   `eb4f6bfeb40a9d1444d3fb1d17c841601ca29a76`
 - Unified branch: `exp/icra27-post-gate3c-5080`
-- Final unified commit: recorded in the final push report after the metadata
-  commit below; the scientific parent and all cherry-pick identities are fixed
-  above and in the integration audit.
+- Final unified scientific-content commit:
+  `223d42d80d1a8ec79a87a468666d1258f6cddd28`
+- A subsequent metadata-only commit records this completion report; the final
+  branch head is reported with the push confirmation and contains the same
+  scientific content.
 
 All six RTX-only commits were selectively retained in chronological order.
 The resulting cherry-pick identities and decisions are recorded in
