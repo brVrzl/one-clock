@@ -127,8 +127,9 @@ The pinned LeRobot checkout is commit
 `ACTTemporalEnsembler` orders contributing sources oldest to newest and uses
 `w_i=exp(-m i)`, with source-order index zero the oldest. It documents original
 ACT's default `m=+0.01`: positive values favor older sources and negative
-values favor newer sources. The official original ACT evaluation source uses
-the same oldest-to-newest `exp(-0.01 i)` convention.
+values favor newer sources. The
+[official original ACT evaluation source](https://github.com/tonyzhaozh/act/blob/main/imitate_episodes.py)
+uses the same oldest-to-newest `exp(-0.01 i)` convention.
 
 [LeRobot PR #319, “Fix ACT temporal ensembling”](https://github.com/huggingface/lerobot/pull/319)
 was merged on 2024-07-16. Its ALOHA transfer-cube experiments report 500-episode
@@ -145,4 +146,3 @@ conversion. Gate-3A2 can proceed safely with a 20 Hz controller and
 `beta_tick=0.03`, provided all methods query once per surviving controller
 step. Had only the 10 Hz metadata been available, the mapping would have
 remained unresolved and rollout execution would have stopped here.
-

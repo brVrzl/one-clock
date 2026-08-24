@@ -1,5 +1,13 @@
 # Gate-3A1 Dense Temporal Evidence Report
 
+> **2026-08-24 time-contract correction:** The later primary-evidence audit in
+> [`gate3a2_time_contract_audit.md`](gate3a2_time_contract_audit.md) shows that
+> the local copy's 10 Hz metadata relabels an unreduced 20 Hz LIBERO sequence.
+> Gate-3A1's index-domain numerical results are unchanged, but each source-age
+> index is physically 0.05 s, `beta=0.03/index` is `0.6 s^-1`, and the original
+> `0.015` per 20 Hz tick conversion in Section 12 was wrong. The frozen
+> preregistration preserves the assumption made before this evidence was known.
+
 **GATE DECISION:** `FAIL-SEMANTIC`
 
 **DENSE TEMPORAL AGGREGATION:** passes against newest-only under the frozen
@@ -24,7 +32,7 @@ has episode-weighted `L_sem = 0.62707`. Validation-tuned CogACT cosine has
 the semantic kernel. This fails the preregistered consistency rule.
 
 The strongest validation-selected method is instead a simple newest-favoring
-age exponential with `beta = 0.03` per 10 Hz dataset step. Its held-out
+age exponential with `beta = 0.03` per stored dataset index. Its held-out
 `L_sem = 0.60242`. Semantic weighting is worse by `+0.02465`, CI
 `[0.01920, 0.03035]`, and loses on all ten task means. Therefore, the primary
 result is not “semantic similarity approximately wins.” It is
@@ -77,8 +85,10 @@ The pinned LeRobot commit is
 PyTorch 2.11.0+cu130, LeRobot 0.6.2, `policy.eval()`, inference mode, no AMP,
 and deterministic algorithms.
 
-The dataset is 10 Hz, so one source-age step is 0.1 s. Gate-3A1 does not treat
-these steps as the 0.05 s controller ticks used by the audited 20 Hz rollouts.
+The dataset metadata says 10 Hz, but the later time-contract audit establishes
+that one stored source-age index is one 0.05 s LIBERO controller tick. All
+Gate-3A1 methods used the same index axis, so this correction changes physical
+labels rather than index-domain results.
 
 ## 4. Exact temporal contracts
 
@@ -219,8 +229,9 @@ The main validity limits remain substantial. Every state is teacher-forced.
 Demonstration action can be one of several valid actions. The primary metric is
 a constructed surrogate rather than success. Only one checkpoint, policy
 family, benchmark suite, and successful-demonstration dataset are evaluated.
-The dense cache uses 10 Hz observations, while historical rollouts use 20 Hz.
-Finally, oracle selection sees the target and can exploit demonstration noise.
+The dense cache comes from demonstrations whose metadata misstates their 20 Hz
+physical cadence. Finally, oracle selection sees the target and can exploit
+demonstration noise.
 
 These limits bound both positive and negative claims. Gate-3A1 supports “the
 semantic kernel does not improve the frozen dense offline comparison.” It does
@@ -264,10 +275,10 @@ query-matched experiment:
 3. validation-selected newest-favoring age exponential.
 
 All methods should query at every 20 Hz environment tick and use the same
-complete candidates. The tuned offline decay is `0.3 s^-1` because
-`beta=0.03` applies to 0.1 s dataset steps. At 20 Hz this becomes `0.015` per
-controller tick. The exact ACT baseline retains its official per-source-order
-coefficient and must be labeled as such.
+complete candidates. The later time-contract audit corrects the tuned decay to
+`0.6 s^-1`: `beta=0.03` applies to each stored 0.05 s action index and therefore
+remains `0.03` per controller tick. The exact ACT baseline retains its official
+per-source-order coefficient and must be labeled as such.
 
 Block on all ten tasks and identical official initial states. A practical first
 gate is ten paired states per task and three methods, totaling 300 episodes.

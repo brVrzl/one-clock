@@ -1,0 +1,46 @@
+{
+  "all_actions_shape_7_and_finite": true,
+  "all_candidate_counts_match_dense_window": true,
+  "all_queries_equal_environment_steps": true,
+  "complete_unique_task_state_method_cells": 400,
+  "compressed_episode_file_bytes": 10191635,
+  "compressed_episode_files": 400,
+  "content_tree_definition": "SHA256 of concatenated sorted '<file_sha256>  <relative_path>\\n' lines.",
+  "episode_file_content_tree_sha256": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+  "first_actions_identical_across_methods_in_all_blocks": true,
+  "local_rollout_root": "/home/thor/projects/one-clock/experiments/gate3a2_temporal_aggregation",
+  "manifest_sha256": "375f3ffc2f184f6f5313b7d16c133f9c35dbf103814e2008dc76daa5c8f799e5",
+  "maximum_first_action_difference_within_block": 0.0,
+  "maximum_registered_fixed_weight_age_error_ticks": 0.0,
+  "method_position_counts": {
+    "cogact_a03": {
+      "0": 21,
+      "1": 25,
+      "2": 26,
+      "3": 28
+    },
+    "exact_act_m001": {
+      "0": 19,
+      "1": 27,
+      "2": 25,
+      "3": 29
+    },
+    "newest": {
+      "0": 27,
+      "1": 30,
+      "2": 23,
+      "3": 20
+    },
+    "newest_age_exp_b003": {
+      "0": 33,
+      "1": 18,
+      "2": 26,
+      "3": 23
+    }
+  },
+  "schedule_sha256": "d27563df989d7f497cf7aafb2f6d6a1ecafa7fe797f0555e59acc24b2e389d66",
+  "scope": "Post-result technical integrity checks; gate statistics remain those in the frozen analyzer.",
+  "task_state_blocks": 100,
+  "total_policy_queries": 85942,
+  "total_step_records": 85942
+}

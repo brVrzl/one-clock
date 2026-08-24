@@ -1,6 +1,6 @@
 # Verified fact sheet
 
-Audit date: 2026-08-21. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
+Audit date: 2026-08-21; updated 2026-08-24 through Gate-3A2. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
 
 # Verified facts
 
@@ -9,7 +9,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - The auditable empirical system is a frozen, deterministic-at-inference LeRobot ACT policy on single-arm LIBERO Object. It predicts 100 seven-dimensional actions per query; temporal ensembling is disabled in the audited rollouts. Evidence: per-run metadata, checkpoint config, `scripts/run_libero_gate0.py`, and [`system_contract_reaudit.md`](system_contract_reaudit.md).
 - The LIBERO action partition is arm/end-effector indices 0–5 and gripper index 6. The arm command is relative Cartesian translation plus axis-angle rotation; the environment consumes the gripper command by sign. Evidence: environment/controller source and [`system_contract_reaudit.md`](system_contract_reaudit.md).
 - Across 709,241 historical saved actions, 551,635 gripper scalars have magnitude above one. Gripper magnitude beyond sign does not change the LIBERO gripper command. Evidence: [`rollout_evidence_recomputed.json`](audit_outputs/rollout_evidence_recomputed.json).
-- The demonstration dataset contains 454 successful episodes, 66,984 frames, ten LIBERO Object tasks, and is sampled at 10 Hz. Audited rollouts run at 20 Hz. Evidence: pinned dataset metadata and [`reliability_and_smoothness_recomputed.json`](audit_outputs/reliability_and_smoothness_recomputed.json).
+- The demonstration dataset contains 454 successful episodes, 66,984 frames, and ten LIBERO Object tasks. Its local metadata reports 10 Hz, but content-level comparison to an independent 20 Hz conversion establishes that every original frame/action was retained and only timestamps/video playback were relabeled. One stored index is physically one 20 Hz LIBERO control action (0.05 s), not 0.1 s. Historical audited rollouts also execute at 20 Hz. Evidence: [`gate3a2_time_contract_audit.md`](gate3a2_time_contract_audit.md).
 - In fixed group execution, a single ACT query is made when any group expires; only expired groups install their fresh slices. The executed vector can combine predictions made from different observations. Diagonal group schedules are equivalent to global schedules. Evidence: executor source and complete step traces.
 - No valid project RoboTwin rollout is linked to an exact checkpoint, upstream commit, and verified policy action contract. RoboTwin scientific conclusions are currently **NOT REPRODUCIBLE**.
 
@@ -66,6 +66,16 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - **VERIFIED OFFLINE:** The target-informed scalar hard-source oracle has error .33846, leaving .26396 error units of contextual headroom relative to the strongest deployable scalar baseline (CI `[.24165,.28714]`). The preregistered greedy scalar convex oracle has error .32018 and corresponding headroom .28224 (CI `[.25937,.30605]`). These are teacher-forced upper bounds and do not show that the source choice is predictable from deployment-time inputs.
 - **VERIFIED OFFLINE:** Gate-3A1's preregistered semantic-kernel decision is **FAIL-SEMANTIC**. This does not constitute FAIL-TEMPORAL: dense scalar temporal aggregation retains a stable offline advantage over newest-only.
 
+## Closed-loop Gate-3A2 control link
+
+- **VERIFIED CLOSED LOOP:** Gate-3A2 completed all 400 preregistered episodes: ten tasks, ten independently selected official states per task, and four aggregation methods per task-state block. The 400 local logs contain 85,942 environment steps and exactly 85,942 ACT queries. Every method queried once per surviving 20 Hz step. No episode was excluded or rerun. Evidence: [`gate3a2_rollout_manifest.json`](audit_outputs/gate3a2_rollout_manifest.json) and [`gate3a2_rollout_validation.json`](audit_outputs/gate3a2_rollout_validation.json).
+- **VERIFIED CLOSED LOOP:** Success counts are 44/100 for newest-only, 41/100 for exact upstream ACT `m=+0.01`, 48/100 for validation-selected CogACT `alpha=0.3`, and 54/100 for Gate-3A1's validation-selected newest-favoring age exponential `beta=0.03` per 20 Hz tick.
+- **VERIFIED CLOSED LOOP:** Newest-age exponential minus exact ACT is +.13 absolute success, with paired-state bootstrap CI `[+.05,+.22]`, task-cluster bootstrap CI `[+.03,+.23]`, and 17 age-only versus four exact-only successes. Per-task differences are `[+.4,.0,+.2,+.2,.0,+.4,-.1,.0,+.1,+.1]`; every leave-one-task-out mean is positive.
+- **VERIFIED CLOSED LOOP:** Newest-age exponential minus newest-only is +.10, but its paired-state CI `[-.02,+.21]` and task-cluster CI `[-.08,+.28]` include zero. The per-task difference is positive on tasks 0–5 and negative on tasks 6–9. It is unresolved, not a general temporal-aggregation win over newest.
+- **VERIFIED CLOSED LOOP:** Newest-age exponential minus tuned CogACT is +.06, with paired-state CI `[-.01,+.13]` and task-cluster CI `[.00,+.13]`. Tuned CogACT minus exact ACT is +.07, with paired-state CI `[+.02,+.13]` and task-cluster CI `[.00,+.16]`. Neither meets the frozen task-stability rule.
+- **VERIFIED CLOSED LOOP:** The preregistered Gate-3A2 label is **CONTROL-LINK-POSITIVE**, not `STRONG-CONTROL-LINK`. It establishes deployment relevance for the age-rule versus exact-ACT offline ranking, not reliable superiority over newest or tuned CogACT.
+- **VERIFIED PRIOR ART:** Newest-favoring ACT temporal coefficients are not novel to one-clock. Pinned LeRobot documents negative `m` as favoring newer sources, and public [LeRobot PR #319](https://github.com/huggingface/lerobot/pull/319) evaluated this direction in 2024. Gate-3A2 is a scientific control-link experiment, not a method novelty result.
+
 # Strong evidence
 
 - Static execution horizon matters for at least this ACT checkpoint and LIBERO task 0; the complete curve is nonmonotonic.
@@ -76,6 +86,8 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - In the sparse teacher-forced cohort, a control-semantic similarity kernel has a held-out offline advantage over validation-tuned full-vector CogACT cosine when aggregation is held fixed.
 - Dense every-step temporal aggregation reduces held-out control-semantic demonstration error for this frozen ACT checkpoint. The strongest tested deployable rule is validation-selected newest-favoring age-exponential weighting, and its advantage over newest-only is present in every task mean.
 - The sparse semantic-kernel advantage over CogACT does not survive dense every-step candidates; on Gate-3A1 the two are statistically unresolved and the semantic rule is substantially worse than the tuned age-exponential rule.
+- Temporal-source weighting affects closed-loop success on this frozen system: the newest-favoring age rule is stably better than exact original ACT aggregation under the paired ten-task Gate-3A2 design.
+- Gate-3A1's offline ordering is deployment-relevant for the newest-age-exponential versus exact-ACT contrast. Evidence is not strong enough to treat demonstration `L_sem` as a general policy-ranking surrogate.
 
 # Weak evidence
 
@@ -85,6 +97,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - Action smoothness accounts for some temporal-support variation, especially with future/noncausal features, but tested simple causal linear predictors explain little.
 - Task or state context may affect temporal prediction competence, but current targets and ablations do not isolate the causal context signal.
 - A target-informed scalar oracle has large dense offline headroom beyond the strongest tested deployable baseline. This is weak evidence for exploitable contextual selection because the oracle uses the demonstration target and no deployment-available predictor has captured the choice.
+- Newest-age exponential is numerically better than tuned CogACT and newest-only in Gate-3A2, but both paired comparisons remain statistically/task-wise unresolved in the 100-block first gate.
 
 # Unsupported previous conclusions
 
@@ -106,6 +119,7 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 - The selected Gate-2B optima are sharp.
 - Reliability is generally unlearnable; binary Y_refresh cells are predicted well, while horizon decoding fails.
 - A continuous gripper-magnitude error is aligned with the LIBERO control contract.
+- The frozen demonstration copy's `fps=10` metadata gives its physical action cadence; content-level provenance shows an unreduced 20 Hz sequence with relabeled timing.
 - The tested matched-query group-wise selective-commitment rule improves success.
 - A generic temporal-expert gate is novel relative to CogACT and Temporal Action Selection.
 - The current consistency-gated group residual improves over scalar semantic temporal aggregation.
@@ -113,9 +127,10 @@ Audit date: 2026-08-21. This file is the replacement research source of truth. N
 
 # Unknowns
 
-- Whether lower offline temporal-expert error predicts higher closed-loop success.
+- Whether lower offline temporal-expert error generally predicts higher closed-loop success beyond the verified newest-age-exponential versus exact-ACT contrast.
 - Whether group-wise routing improves over scalar routing enough to justify cross-group consistency risk.
-- Whether the dense offline gain of simple temporal aggregation produces closed-loop success gains under query-matched evaluation.
+- Whether temporal aggregation reliably improves over newest-only across tasks; Gate-3A2's +.10 point estimate is heterogeneous and unresolved.
+- Whether newest-age exponential truly outperforms tuned CogACT; Gate-3A2's +.06 point estimate remains unresolved.
 - Whether any deployable, context-dependent scalar selector can recover a meaningful fraction of the dense target-informed oracle headroom.
 - Whether the oracle headroom reflects useful control alternatives rather than demonstration noise or imitation multimodality.
 - Whether contact events, semantic progress, or task-specific phases explain more than normalized time and action smoothness.
