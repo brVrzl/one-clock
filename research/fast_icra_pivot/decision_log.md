@@ -60,3 +60,16 @@ Cheapest discriminating experiment: Completed; no selector training is warranted
 ```
 
 Decision: **KILL EVENTALIGN**.
+
+## 2026-08-24: closed-loop StateTrack headroom gate
+
+```text
+PIVOT DECISION
+Previous hypothesis: A frozen ACT chunk can be executed by a monotonic nearest-state progress index, allowing repeats when physical execution lags wall-clock time.
+Evidence: On the fixed 30-state LIBERO-Object set, frozen ACT scored 15/30. StateTrack scored 2/30 (lookahead 1) and 6/30 (lookahead 2). The oracle over the two StateTrack candidates adds only one baseline failure (16/30), while breaking 13 or 10 baseline successes. Under a one-step action hold every fifth tick, frozen ACT scored 11/30 and StateTrack lookahead 1 scored 0/30.
+Why insufficient: The intervention space has almost no nominal closed-loop headroom, and the tracker remains near progress index zero with hundreds of repeated rows per episode. It fails both the nominal-improvement and mismatch-robustness continuation criteria.
+New hypothesis: None selected. StateTrack is killed; do not train a progress selector or return to residual repair.
+Cheapest discriminating experiment: Completed; no further StateTrack tuning is justified.
+```
+
+Decision: **KILL STATETRACK**.

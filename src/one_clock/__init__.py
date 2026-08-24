@@ -8,6 +8,7 @@ from .post_policy import (
     IdentityPostPolicy,
     PostPolicyResult,
 )
+from .state_track import ProgressDiagnostics, StateTrackChunk, nominal_eef_trajectory
 
 __all__ = [
     "ActionGroup",
@@ -18,4 +19,7 @@ __all__ = [
     "FixedChunkExecutor",
     "IdentityPostPolicy",
     "PostPolicyResult",
+    "ProgressDiagnostics",
+    "StateTrackChunk",
+    "nominal_eef_trajectory",
 ]

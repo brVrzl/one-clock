@@ -2,6 +2,21 @@
 
 Search date: 2026-08-24. This is a compact novelty screen, not a systematic review.
 
+## StateTrack / progress-tracking screen
+
+| Method | Timing / state mechanism | Distinction from StateTrack |
+|---|---|---|
+| [FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking](https://arxiv.org/abs/2607.24008) (2026) | Predicts execution-time visual and proprioceptive context so a frozen VLA can generate an asynchronous chunk aligned to its future state | Changes the policy-conditioning context and predicts a new chunk; StateTrack would only index rows inside an already predicted chunk and keeps the query schedule fixed. |
+| [LeRobot RTC documentation](https://github.com/huggingface/lerobot/blob/main/docs/source/rtc.mdx) | Asynchronous chunk production with prefix guidance / blending at chunk boundaries | Acts on inter-chunk continuity and is designed for high-latency generative policies; it is not measured-state progress indexing. |
+| [LeRobot action representations](https://github.com/huggingface/lerobot/blob/main/docs/source/action_representations.mdx) | Defines absolute, relative, and delta actions; relative actions share the query-time reference state, and RTC re-anchors leftovers for supported policies | This audit verified LIBERO ACT is instead sent through the environment's relative OSC controller; StateTrack reconstructs nominal EEF targets from that controller, not by re-anchoring the policy output. |
+| [TempoWAM / Rethink Before You Execute](https://arxiv.org/abs/2608.09492) (2026) | Monitors task progress and decides whether a world-action-model chunk should continue or replan | Closest conceptual progress monitor found, but it changes the replan decision and uses a trained recurrent monitor; StateTrack tests row indexing without changing policy queries. |
+
+The search found no prior method whose defining operation is a training-free,
+monotonic nearest-state index *inside* a deterministic frozen ACT chunk while
+leaving both numerical actions and the policy-query schedule untouched. This is
+only a novelty-risk observation, not a novelty claim. The negative LIBERO gate
+means this distinction is not currently sufficient for a paper.
+
 ## Requested execution and correction taxonomy
 
 | Method | What is changed | Mechanism / supervision | Relation to sparse gripper-event realignment |
