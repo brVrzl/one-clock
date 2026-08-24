@@ -1,0 +1,128 @@
+{
+  "backend": "ManiSkill 3.0.1",
+  "branches_per_state": 6,
+  "control_mode": "pd_ee_pose",
+  "episodes": [
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 0,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_000.pt",
+      "runtime_sec": 12.485010862350464,
+      "sampled_states": 12,
+      "seed": 0,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 1,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_001.pt",
+      "runtime_sec": 8.67900824546814,
+      "sampled_states": 12,
+      "seed": 1,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 2,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_002.pt",
+      "runtime_sec": 14.615927934646606,
+      "sampled_states": 12,
+      "seed": 2,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 3,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_003.pt",
+      "runtime_sec": 8.578741788864136,
+      "sampled_states": 12,
+      "seed": 3,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 4,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_004.pt",
+      "runtime_sec": 7.5635151863098145,
+      "sampled_states": 12,
+      "seed": 4,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 5,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_005.pt",
+      "runtime_sec": 7.844939231872559,
+      "sampled_states": 12,
+      "seed": 5,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 6,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_006.pt",
+      "runtime_sec": 7.78940749168396,
+      "sampled_states": 12,
+      "seed": 6,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 7,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_007.pt",
+      "runtime_sec": 7.587394952774048,
+      "sampled_states": 12,
+      "seed": 7,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 8,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_008.pt",
+      "runtime_sec": 7.602253437042236,
+      "sampled_states": 12,
+      "seed": 8,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 9,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_stack/stackcube_episode_009.pt",
+      "runtime_sec": 7.614357233047485,
+      "sampled_states": 12,
+      "seed": 9,
+      "task": "StackCube-v1"
+    }
+  ],
+  "episodes_requested": 10,
+  "expert_source": "official ManiSkill task + bundled IK controller scripted waypoints",
+  "magnitude_m": 0.003,
+  "official_mplib_status": "unavailable: mplib.Planner constructor segfaults on this host",
+  "rows": 840,
+  "runtime_sec": 92.22712469100952,
+  "sample_every": 5,
+  "sim_backend": "physx_cpu",
+  "tasks": [
+    "StackCube-v1"
+  ]
+}

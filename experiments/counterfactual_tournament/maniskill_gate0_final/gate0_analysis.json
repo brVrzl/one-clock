@@ -1,0 +1,158 @@
+{
+  "data_scope": "successful nominal experts only for causal summaries",
+  "qualitative_examples": [
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.0719805508852005,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.27600565552711487,
+      "phase": 0.1388888888888889,
+      "task": "PickCube-v1",
+      "timestep": 5.0
+    },
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.031353820115327835,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.27600565552711487,
+      "phase": 0.2777777777777778,
+      "task": "PickCube-v1",
+      "timestep": 10.0
+    },
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.0015925690531730652,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.2760056257247925,
+      "phase": 0.4166666666666667,
+      "task": "PickCube-v1",
+      "timestep": 15.0
+    },
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.06875243037939072,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.2093932851087279,
+      "phase": 0.09090909090909091,
+      "task": "StackCube-v1",
+      "timestep": 5.0
+    },
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.030789287760853767,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.20939328390645776,
+      "phase": 0.18181818181818182,
+      "task": "StackCube-v1",
+      "timestep": 10.0
+    },
+    {
+      "action_velocity": 0.0,
+      "criticality": 0.33333333333333337,
+      "eef_object_distance": 0.0013598620425909758,
+      "episode": 0.0,
+      "gripper_transition": 0.0,
+      "object_goal_distance": 0.20939328108902022,
+      "phase": 0.2727272727272727,
+      "task": "StackCube-v1",
+      "timestep": 15.0
+    }
+  ],
+  "tasks": {
+    "PickCube-v1": {
+      "criticality_max": 0.33333333333333337,
+      "criticality_mean": 0.14583333333333334,
+      "criticality_min": 0.0,
+      "criticality_nonuniform_range": 0.33333333333333337,
+      "criticality_std": 0.15558838799496974,
+      "heuristic_correlations": {
+        "action_acceleration": {
+          "pearson": -0.07359479084293523,
+          "spearman": -0.035701336927672495
+        },
+        "action_magnitude": {
+          "pearson": 0.22391299726824995,
+          "spearman": 0.12178451847341464
+        },
+        "action_velocity": {
+          "pearson": -0.07572198158926147,
+          "spearman": -0.07758292171342478
+        },
+        "eef_object_distance": {
+          "pearson": -0.1014469429873407,
+          "spearman": -0.03866017929300841
+        },
+        "gripper_transition": {
+          "pearson": -0.07581425055034353,
+          "spearman": -0.07680245771797109
+        },
+        "object_goal_distance": {
+          "pearson": 0.3416417352420468,
+          "spearman": 0.43008221712162564
+        }
+      },
+      "invalid_branches": 0,
+      "requested_episodes": 10,
+      "runtime_sec": 41.121920108795166,
+      "sampled_states": 72,
+      "successful_expert_episodes": 10,
+      "valid_perturbed_branches": 432
+    },
+    "StackCube-v1": {
+      "criticality_max": 0.33333333333333337,
+      "criticality_mean": 0.18472222222222223,
+      "criticality_min": 0.0,
+      "criticality_nonuniform_range": 0.33333333333333337,
+      "criticality_std": 0.1555026087029226,
+      "heuristic_correlations": {
+        "action_acceleration": {
+          "pearson": -0.0646088375806875,
+          "spearman": 0.134571857141593
+        },
+        "action_magnitude": {
+          "pearson": -0.15395219464348553,
+          "spearman": -0.16351316610206437
+        },
+        "action_velocity": {
+          "pearson": -0.07379398684673906,
+          "spearman": -0.02499514518346104
+        },
+        "eef_object_distance": {
+          "pearson": -0.05278794401314953,
+          "spearman": 0.02280651390254543
+        },
+        "gripper_transition": {
+          "pearson": -0.06760683933698784,
+          "spearman": -0.06668584425536654
+        },
+        "object_goal_distance": {
+          "pearson": 0.5849565779238146,
+          "spearman": 0.59533881969137
+        }
+      },
+      "invalid_branches": 0,
+      "requested_episodes": 10,
+      "runtime_sec": 90.36055636405945,
+      "sampled_states": 120,
+      "successful_expert_episodes": 10,
+      "valid_perturbed_branches": 720
+    }
+  },
+  "validation": {
+    "branch_isolation": "passed by repeated zero-branch replay at every sampled state",
+    "exact_restore_suffix": "passed for every sampled state; runner aborts on mismatch",
+    "invalid_branches": 0,
+    "total_branches_including_failed_nominal_episodes": 1344,
+    "zero_perturbation": "passed for every sampled state in included episodes"
+  }
+}

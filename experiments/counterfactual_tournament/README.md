@@ -4,15 +4,21 @@ This directory is a clean research namespace for the new sprint. The prior
 execution-time mechanisms in the repository are historical only and are not
 inputs to this tournament.
 
-## First environment choice
+## Backend split
 
-The first causal gate uses the local RoboTwin checkout and its pinned SAPIEN
-runtime. RoboTwin is selected for engineering speed because the available
-runtime exposes `scene.get_physx_system().pack()` and `unpack()`, task classes
-provide scripted `play_once()` continuations and `check_success()` labels, the
-existing data format includes images, and the local environment already has
-Torch/SAPIEN/Gymnasium. ManiSkill, MuJoCo, robosuite, and LIBERO are not
-available in the active environment at protocol creation time.
+The first causal gate now uses ManiSkill as the fast development sandbox.
+RoboTwin remains the eventual scalable benchmark. ManiSkill exposes official
+`get_state_dict` / `set_state_dict` restore, recorded-state-compatible task
+APIs, vectorization, and image-policy-compatible observations. The final Gate-0
+artifacts are under `maniskill_gate0_final/` and the protocol is in
+`maniskill_protocol.yaml`.
+
+The local RoboTwin checkout and pinned SAPIEN runtime are preserved as a
+separate recovery track. Its runtime exposes
+`scene.get_physx_system().pack()` and `unpack()`, task classes provide scripted
+`play_once()` continuations and `check_success()` labels, and the existing data
+format includes images. Asset and planner recovery must not block the ManiSkill
+causal gate.
 
 The RoboTwin checkout is user-dirty. This sprint does not edit it; every run
 records its current Git SHA and the project Git SHA.
@@ -30,10 +36,11 @@ horizons, or execution-time scheduling is part of this sprint.
 
 ## Gates
 
-* Gate 0: three tasks, initially 1--2 successful scripted episodes each for
-  smoke screening; expand to roughly 10--20 only after the fork engine passes.
-  Forks are placed every 5--10 scripted control segments. The first perturbation
-  set is limited to small robot-joint, object-position, and action-pose changes.
+* Gate 0: ManiSkill currently has 10 successful episodes each for PickCube-v1
+  and StackCube-v1, sampled every 5 control steps with six small state
+  perturbations. PegInsertionSide-v1 initialized but has no reliable fallback
+  expert yet. RoboTwin remains queued for replay-based recovery after the
+  mechanism survives.
 * Gate 1: UniformBC versus CriticalBC on identical demonstrations and optimizer
   budgets.
 * Gate 2: RandomBranch versus CriticalBranch with exactly the same added branch

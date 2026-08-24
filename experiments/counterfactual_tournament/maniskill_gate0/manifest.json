@@ -1,0 +1,239 @@
+{
+  "backend": "ManiSkill 3.0.1",
+  "branches_per_state": 6,
+  "control_mode": "pd_ee_pose",
+  "episodes": [
+    {
+      "action_count": 37,
+      "branch_count": 56,
+      "episode": 0,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_000.pt",
+      "runtime_sec": 7.204052925109863,
+      "sampled_states": 8,
+      "seed": 0,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 36,
+      "branch_count": 56,
+      "episode": 1,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_001.pt",
+      "runtime_sec": 3.825930118560791,
+      "sampled_states": 8,
+      "seed": 1,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 2,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_002.pt",
+      "runtime_sec": 5.069922208786011,
+      "sampled_states": 8,
+      "seed": 2,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 37,
+      "branch_count": 56,
+      "episode": 3,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_003.pt",
+      "runtime_sec": 4.855816841125488,
+      "sampled_states": 8,
+      "seed": 3,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 4,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_004.pt",
+      "runtime_sec": 4.980586290359497,
+      "sampled_states": 8,
+      "seed": 4,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 39,
+      "branch_count": 56,
+      "episode": 5,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_005.pt",
+      "runtime_sec": 4.615822792053223,
+      "sampled_states": 8,
+      "seed": 5,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 36,
+      "branch_count": 56,
+      "episode": 6,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_006.pt",
+      "runtime_sec": 3.8753650188446045,
+      "sampled_states": 8,
+      "seed": 6,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 35,
+      "branch_count": 49,
+      "episode": 7,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_007.pt",
+      "runtime_sec": 3.583859920501709,
+      "sampled_states": 7,
+      "seed": 7,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 5,
+      "branch_count": 7,
+      "episode": 8,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_008.pt",
+      "runtime_sec": 0.1395266056060791,
+      "sampled_states": 1,
+      "seed": 8,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 9,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/pickcube_episode_009.pt",
+      "runtime_sec": 4.376478433609009,
+      "sampled_states": 8,
+      "seed": 9,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 0,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_000.pt",
+      "runtime_sec": 7.528172016143799,
+      "sampled_states": 12,
+      "seed": 0,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 1,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_001.pt",
+      "runtime_sec": 7.737185001373291,
+      "sampled_states": 12,
+      "seed": 1,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 2,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_002.pt",
+      "runtime_sec": 7.4847633838653564,
+      "sampled_states": 12,
+      "seed": 2,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 3,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_003.pt",
+      "runtime_sec": 7.599134683609009,
+      "sampled_states": 12,
+      "seed": 3,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 4,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_004.pt",
+      "runtime_sec": 7.569916486740112,
+      "sampled_states": 12,
+      "seed": 4,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 5,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_005.pt",
+      "runtime_sec": 7.664299726486206,
+      "sampled_states": 12,
+      "seed": 5,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 6,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_006.pt",
+      "runtime_sec": 7.687471389770508,
+      "sampled_states": 12,
+      "seed": 6,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 7,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_007.pt",
+      "runtime_sec": 7.437402963638306,
+      "sampled_states": 12,
+      "seed": 7,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 8,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_008.pt",
+      "runtime_sec": 7.4402289390563965,
+      "sampled_states": 12,
+      "seed": 8,
+      "task": "StackCube-v1"
+    },
+    {
+      "action_count": 56,
+      "branch_count": 84,
+      "episode": 9,
+      "expert_success": true,
+      "raw_trajectory": "experiments/counterfactual_tournament/maniskill_gate0/stackcube_episode_009.pt",
+      "runtime_sec": 7.437334775924683,
+      "sampled_states": 12,
+      "seed": 9,
+      "task": "StackCube-v1"
+    }
+  ],
+  "episodes_requested": 10,
+  "expert_source": "official ManiSkill task + bundled IK controller scripted waypoints",
+  "magnitude_m": 0.003,
+  "official_mplib_status": "unavailable: mplib.Planner constructor segfaults on this host",
+  "rows": 1344,
+  "runtime_sec": 120.45793914794922,
+  "sample_every": 5,
+  "sim_backend": "physx_cpu",
+  "tasks": [
+    "PickCube-v1",
+    "StackCube-v1"
+  ]
+}

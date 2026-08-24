@@ -1,0 +1,33 @@
+backend: maniskill
+maniskill_version: 3.0.1
+sim_backend: physx_cpu
+control_mode: pd_ee_pose
+tasks:
+  - PickCube-v1
+  - StackCube-v1
+  - PegInsertionSide-v1
+peg_fallback: PushCube-v1 only if initialization fails
+num_expert_trajectories: 10
+sample_every_control_steps: 5
+perturbations:
+  source: state
+  types:
+    - object_pos_x_plus
+    - object_pos_x_minus
+    - object_pos_y_plus
+    - object_pos_y_minus
+    - eef_joint_1_plus
+    - eef_joint_1_minus
+  magnitude_m: 0.003
+  eef_joint_magnitude_rad: 0.02
+branches_per_state: 6
+criticality: 1 - successful_valid_perturbed_suffixes / valid_perturbed_suffixes
+invalid_branches: recorded_separately
+validation:
+  exact_restore_suffix: required
+  branch_isolation: required
+  zero_perturbation_success: required
+  invalid_state_rate: required
+expert_source:
+  intended: official_panda_motion_planning_demonstrations
+  current_host_fallback: official_task_geometry_plus_bundled_pd_ee_ik

@@ -1,0 +1,128 @@
+{
+  "backend": "ManiSkill 3.0.1",
+  "branches_per_state": 6,
+  "control_mode": "pd_ee_pose",
+  "episodes": [
+    {
+      "action_count": 37,
+      "branch_count": 56,
+      "episode": 0,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_000.pt",
+      "runtime_sec": 5.247033357620239,
+      "sampled_states": 8,
+      "seed": 0,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 36,
+      "branch_count": 56,
+      "episode": 1,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_001.pt",
+      "runtime_sec": 3.8178842067718506,
+      "sampled_states": 8,
+      "seed": 1,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 2,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_002.pt",
+      "runtime_sec": 4.249523639678955,
+      "sampled_states": 8,
+      "seed": 2,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 37,
+      "branch_count": 56,
+      "episode": 3,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_003.pt",
+      "runtime_sec": 4.021398544311523,
+      "sampled_states": 8,
+      "seed": 3,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 4,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_004.pt",
+      "runtime_sec": 4.2117087841033936,
+      "sampled_states": 8,
+      "seed": 4,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 39,
+      "branch_count": 56,
+      "episode": 5,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_005.pt",
+      "runtime_sec": 5.096812009811401,
+      "sampled_states": 8,
+      "seed": 5,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 36,
+      "branch_count": 56,
+      "episode": 6,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_006.pt",
+      "runtime_sec": 4.710476636886597,
+      "sampled_states": 8,
+      "seed": 6,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 35,
+      "branch_count": 49,
+      "episode": 7,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_007.pt",
+      "runtime_sec": 4.313623666763306,
+      "sampled_states": 7,
+      "seed": 7,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 5,
+      "branch_count": 7,
+      "episode": 8,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_008.pt",
+      "runtime_sec": 0.17114901542663574,
+      "sampled_states": 1,
+      "seed": 8,
+      "task": "PickCube-v1"
+    },
+    {
+      "action_count": 38,
+      "branch_count": 56,
+      "episode": 9,
+      "expert_success": true,
+      "raw_trajectory": "/tmp/ms_gate0_final_pick/pickcube_episode_009.pt",
+      "runtime_sec": 5.282310247421265,
+      "sampled_states": 8,
+      "seed": 9,
+      "task": "PickCube-v1"
+    }
+  ],
+  "episodes_requested": 10,
+  "expert_source": "official ManiSkill task + bundled IK controller scripted waypoints",
+  "magnitude_m": 0.003,
+  "official_mplib_status": "unavailable: mplib.Planner constructor segfaults on this host",
+  "rows": 504,
+  "runtime_sec": 42.990384340286255,
+  "sample_every": 5,
+  "sim_backend": "physx_cpu",
+  "tasks": [
+    "PickCube-v1"
+  ]
+}

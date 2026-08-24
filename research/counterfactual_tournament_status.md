@@ -4,9 +4,11 @@
 
 ### Completed
 
-* Environment audit selected RoboTwin/SAPIEN as the cheapest locally available
-  stack. The active RoboTwin venv has Torch, SAPIEN, and Gymnasium; the active
-  environment does not have ManiSkill, MuJoCo, robosuite, LIBERO, or LeRobot.
+* ManiSkill 3.0.1 is now the fast causal-development backend. PickCube-v1 and
+  StackCube-v1 completed the 10-seed Gate-0 screen with exact state restore,
+  isolated suffix branches, zero-branch controls, and zero invalid branches.
+* RoboTwin/SAPIEN remains the intended scalable benchmark and recovery work is
+  tracked separately in `research/robotwin_recovery_track.md`.
 * Exact SAPIEN physics restore passed in
   `experiments/counterfactual_tournament/stack_audit.json`: a packed state was
   restored after an actor pose change, with a 52-byte physics snapshot and
@@ -17,10 +19,14 @@
   bounded seed screening and an MPLIB-only import path that avoids editing the
   user-dirty upstream checkout.
 
-### Not yet evidence
+### ManiSkill Gate-0 evidence
 
-No Gate-0 criticality curve, policy result, closed-loop success rate, or track
-ranking is complete. The live matrix intentionally remains `NA`.
+`research/maniskill_gate0_report.md` records the final counts, distributions,
+heuristic correlations, qualitative examples, and limitations. The signal
+survives on the two validated tasks. PegInsertionSide-v1 initialized, but its
+fallback expert did not reliably grasp the peg and is not included in the
+causal decision. No policy result or track ranking is complete; the live
+matrix intentionally remains `NA`.
 
 ### Engineering blockers
 
@@ -49,5 +55,7 @@ ranking is complete. The live matrix intentionally remains `NA`.
    the deployment mechanism is less distinctive and overlaps geometric policy
    supervision literature.
 
-This is a prioritization for the next runnable environment, not a result or a
-LOCK decision. No direction can be locked until the equal-budget Gate 2 is run.
+This remains a prioritization for the next policy gate, not a LOCK decision.
+The next runnable experiment is matched UniformBC/CriticalBC/ContrastBC on the
+validated ManiSkill fork data, followed by equal-budget BranchBC only if the
+policy signal is positive.
