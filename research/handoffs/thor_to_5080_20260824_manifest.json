@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "handoff_id": "thor_to_5080_20260824",
+  "created_on": "2026-08-24",
+  "source_machine": "Thor",
+  "destination_machine": "RTX 5080",
+  "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+  "source_branch": "ops/thor-to-5080-handoff",
+  "worktree_status_at_creation": "clean",
+  "purpose": "Portable local-only evidence needed to reproduce and audit the final ICRA 2027 one-clock paper story. No new outcomes were generated.",
+  "archive": {
+    "logical_filename": "thor_to_5080_20260824.tar.zst",
+    "staging_root_absolute": "/home/thor/projects/one-clock_handoff_20260824/thor_to_5080_20260824",
+    "archive_absolute_path": "/home/thor/projects/thor_to_5080_20260824.tar.zst",
+    "archive_sha256_sidecar": "/home/thor/projects/thor_to_5080_20260824.tar.zst.sha256",
+    "binary_archive_is_not_committed": true
+  },
+  "digest_definition": "Unless noted otherwise, a content-tree SHA256 is SHA256 of concatenated sorted '<file_sha256>  <relative_path>\\n' lines. The exact scope and any historical manifest ordering exception are recorded in provenance/TREE_HASHES.json.",
+  "verification": {
+    "gate3a1_thor_reference_cache_expected_tree": "87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c",
+    "gate3a1_thor_reference_cache_status": "PASS (82 NPZ files, committed cache-manifest entry order)",
+    "gate3a2_expected_tree": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+    "gate3a2_status": "PASS",
+    "gate3b_expected_tree": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+    "gate3b_status": "PASS",
+    "gate3c_expected_tree": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+    "gate3c_status": "PASS",
+    "selective_retention_raw_log_status": "PASS (60/60 manifest records; 120/120 raw episode/step file hashes)",
+    "historical_ledger_discrepancies": "The committed expected trees for selective retention and the three static roots do not reproduce from the present directories under the stated tree definition. Observed hashes are preserved in provenance/TREE_HASHES.json; no artifact was replaced or silently relabeled."
+  },
+  "assets": [
+    {
+      "logical_name": "gate3a1_thor_reference_cache",
+      "scientific_dependency": "Archival Thor dense ACT cache supporting Gate-3A1 temporal-evidence and cache-integrity claims; RTX regeneration is a separate replication and must not overwrite this cache.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3a1_dense_temporal_cache",
+      "kind": "directory",
+      "source_file_count": 83,
+      "source_total_bytes": 32949112,
+      "transferred_file_count": 83,
+      "transferred_total_bytes": 32949112,
+      "expected_committed_manifest_or_report": [
+        "research/audit_outputs/gate3a1_dense_cache_manifest.json",
+        "research/audit_outputs/gate3a1_dense_metrics.json",
+        "research/gate3a1_dense_temporal_evidence_report.md"
+      ],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "archival",
+      "destination_relative_path": "evidence/gate3a1_thor_reference_cache/",
+      "content_tree_sha256": {
+        "expected_committed": "87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c",
+        "observed_transferred": "87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c",
+        "scope": "82 NPZ prediction files; cache-manifest entry order",
+        "status": "PASS"
+      },
+      "label": "THOR-REFERENCE-CACHE"
+    },
+    {
+      "logical_name": "gate3a2_rollouts",
+      "scientific_dependency": "Closed-loop Gate-3A2 temporal aggregation evidence and control-link audit.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3a2_temporal_aggregation",
+      "kind": "directory",
+      "source_file_count": 400,
+      "source_total_bytes": 10191635,
+      "transferred_file_count": 400,
+      "transferred_total_bytes": 10191635,
+      "expected_committed_manifest_or_report": [
+        "research/audit_outputs/gate3a2_rollout_manifest.json",
+        "research/audit_outputs/gate3a2_rollout_validation.json",
+        "research/audit_outputs/gate3a2_success_summary.json",
+        "research/gate3a2_control_link_report.md"
+      ],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required",
+      "destination_relative_path": "evidence/gate3a2_rollouts/",
+      "content_tree_sha256": {
+        "expected_committed": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+        "observed_transferred": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+        "scope": "400 compressed episode files (*.json.gz)",
+        "status": "PASS"
+      }
+    },
+    {
+      "logical_name": "gate3b_rollouts",
+      "scientific_dependency": "Gate-3B cross-generation composition developmental evidence and its symmetric coherence audit.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3b_cross_generation_composition",
+      "kind": "directory",
+      "source_file_count": 400,
+      "source_total_bytes": 20618916,
+      "transferred_file_count": 400,
+      "transferred_total_bytes": 20618916,
+      "expected_committed_manifest_or_report": [
+        "research/audit_outputs/gate3b_rollout_manifest.json",
+        "research/audit_outputs/gate3b_rollout_validation.json",
+        "research/audit_outputs/gate3b_success_summary.json",
+        "research/gate3b_cross_generation_composition_report.md"
+      ],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required-development-evidence",
+      "destination_relative_path": "evidence/gate3b_rollouts/",
+      "content_tree_sha256": {
+        "expected_committed": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+        "observed_transferred": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+        "scope": "400 compressed episode files (*.json.gz)",
+        "status": "PASS"
+      }
+    },
+    {
+      "logical_name": "gate3c_rollouts",
+      "scientific_dependency": "Final confirmatory asymmetric temporal-reuse result; primary evidence for the frozen paper claim.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3c_asymmetric_temporal_reuse",
+      "kind": "directory",
+      "source_file_count": 700,
+      "source_total_bytes": 60101395,
+      "transferred_file_count": 700,
+      "transferred_total_bytes": 60101395,
+      "expected_committed_manifest_or_report": [
+        "research/audit_outputs/gate3c_rollout_manifest.json",
+        "research/audit_outputs/gate3c_rollout_validation.json",
+        "research/audit_outputs/gate3c_success_summary.json",
+        "research/gate3c_asymmetric_temporal_reuse_report.md"
+      ],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required",
+      "destination_relative_path": "evidence/gate3c_rollouts/",
+      "content_tree_sha256": {
+        "expected_committed": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+        "observed_transferred": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+        "scope": "700 compressed episode files (*.json.gz)",
+        "status": "PASS"
+      }
+    },
+    {
+      "logical_name": "selective_retention_raw_and_provenance",
+      "scientific_dependency": "Historical matched-query negative result for naive independent group retention (approximately -20 to -29 percentage points).",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment",
+      "kind": "directory subset",
+      "source_file_count": 140,
+      "source_total_bytes": 23591126,
+      "transferred_file_count": 130,
+      "transferred_total_bytes": 23337424,
+      "transferred_scope": "rollouts/ (120 raw files) plus config, metrics, CSV diagnostics, paired_seed_manifest, rollout_log_manifest, evaluation.md, and method_spec.md",
+      "expected_committed_manifest_or_report": [
+        "research/audit_outputs/rollout_evidence_recomputed.json",
+        "research/local_only_evidence_manifest.md",
+        "research/source_of_truth_map.md",
+        "experiments/groupwise_selective_commitment/rollout_log_manifest.json"
+      ],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required-historical",
+      "destination_relative_path": "evidence/selective_retention/groupwise_selective_commitment/",
+      "content_tree_sha256": {
+        "expected_committed": "d295c50aaf35a3d0209fb9d4074b1c37b4aa6611c2a45da9e907d104baff836b",
+        "observed_source_full_root": "5c446bc40ea1974e90c3ef36d2f4d4b8c4bae6621a4a5a8a796b2a47e822d486",
+        "observed_transferred_scope": "531123b0cb45520ba41878e513d2a16cb5906c0d7f8ff6bb27616f24e536b7de",
+        "scope": "Raw rollout and provenance subset; full-root expected digest is retained for audit comparison.",
+        "status": "RAW_LOGS_PER_FILE_PASS_EXPECTED_FULL_ROOT_TREE_MISMATCH"
+      },
+      "raw_log_provenance": "60/60 records and 120/120 episode/step file SHA256 values match rollout_log_manifest.json."
+    },
+    {
+      "logical_name": "static_horizon_task0_grid20",
+      "scientific_dependency": "Task-0 20-state static horizon landscape used with the 50-state extension for paper figures.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_static_grid_20",
+      "kind": "directory",
+      "source_file_count": 140,
+      "source_total_bytes": 65729472,
+      "transferred_file_count": 140,
+      "transferred_total_bytes": 65729472,
+      "expected_committed_manifest_or_report": ["experiments/libero_static_grid_20.json", "research/local_only_evidence_manifest.md"],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required-paper",
+      "destination_relative_path": "evidence/static_horizon/task0_grid_20/",
+      "content_tree_sha256": {
+        "expected_committed": "696f3e5a70ab328815d3dede9457b396c5310d7d311dc506ef0f6c4aa5f16cd8",
+        "observed_transferred": "c79a6ca90756957c43ac7ef819f03bd4d73350e15571c8a58bec5d24ce76b2b6",
+        "status": "HISTORICAL_LEDGER_MISMATCH_RETAINED"
+      }
+    },
+    {
+      "logical_name": "static_horizon_task0_grid50_extension",
+      "scientific_dependency": "Task-0 states 20–49 static extension supporting the current 50-state horizon landscape and comparison figures.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_static_grid_50_extension",
+      "kind": "directory",
+      "source_file_count": 128,
+      "source_total_bytes": 96539228,
+      "transferred_file_count": 128,
+      "transferred_total_bytes": 96539228,
+      "expected_committed_manifest_or_report": ["experiments/libero_static_grid_50.json", "research/local_only_evidence_manifest.md"],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required-paper",
+      "destination_relative_path": "evidence/static_horizon/task0_grid_50_extension/",
+      "content_tree_sha256": {
+        "expected_committed": "01e7b951be9b6dc0afd6ecdc227027e8de098d6c95084eb0672f86e09e34eed5",
+        "observed_transferred": "3f2d1645128496a5c897f15e308244435ada7d9c248a65a4c6e1577e656d3837",
+        "status": "HISTORICAL_LEDGER_MISMATCH_RETAINED"
+      }
+    },
+    {
+      "logical_name": "static_horizon_cross_task",
+      "scientific_dependency": "Relevant tasks 1–9 cross-task static evidence for paper cross-task figures and bounded configuration claims.",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_object_cross_task",
+      "kind": "directory",
+      "source_file_count": 512,
+      "source_total_bytes": 245537731,
+      "transferred_file_count": 512,
+      "transferred_total_bytes": 245537731,
+      "expected_committed_manifest_or_report": ["experiments/libero_object_cross_task_summary.json", "research/local_only_evidence_manifest.md", "research/source_of_truth_map.md"],
+      "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "required_or_archival": "required-paper",
+      "destination_relative_path": "evidence/static_horizon/cross_task/",
+      "content_tree_sha256": {
+        "expected_committed": "1684ccf77d26784d1818824de705ef67c5584793a33cb13d6dc9b7995f6798dc",
+        "observed_transferred": "99495287b4b882bce12f74c114cc5d644a12139162fb3f312d4585df61fa068c",
+        "status": "HISTORICAL_LEDGER_MISMATCH_RETAINED"
+      }
+    }
+  ],
+  "per_file_hashes": {
+    "location": "provenance/SHA256SUMS",
+    "scope": "All transferred evidence files plus MANIFEST.json and MANIFEST.md; provenance hash files are excluded to avoid self-reference.",
+    "tree_details": "provenance/TREE_HASHES.json"
+  },
+  "deliberately_not_transferred": [
+    {"asset": "ACT checkpoint and config", "reason": "RTX 5080 independently verified exact copies; user explicitly excluded duplication."},
+    {"asset": "LIBERO dataset", "reason": "RTX 5080 independently verified required dataset revision; user explicitly excluded duplication."},
+    {"asset": "RoboTwin, PACE, incomplete SmolVLA, abandoned learned-reliability bulk", "reason": "Abandoned directions are not required for the final paper story."},
+    {"asset": "Gate-2B bulk rollout traces", "reason": "Committed summaries/history remain in Git and no final-paper claim currently depends on bulk traces."},
+    {"asset": "Selective-retention scripts, figures, and __pycache__", "reason": "Raw rollout logs and provenance are transferred; generated code/figures are available through Git or are not required raw evidence."}
+  ],
+  "provenance_files": ["MANIFEST.json", "MANIFEST.md", "provenance/SHA256SUMS", "provenance/TREE_HASHES.json"]
+}
