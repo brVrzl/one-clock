@@ -1,0 +1,65 @@
+{
+  "action_smoothing_active": false,
+  "all_actions_shape_7_and_finite": true,
+  "all_fixed_source_actions_match_registered_formulas": true,
+  "all_old_chunk_offsets_equal_20": true,
+  "all_old_sources_equal_t_minus_20": true,
+  "all_queries_equal_environment_steps": true,
+  "complete_unique_task_state_method_cells": 700,
+  "compressed_episode_file_bytes": 60101395,
+  "compressed_episode_files": 700,
+  "content_tree_definition": "SHA256 of concatenated sorted '<file_sha256>  <relative_path>\\n' lines.",
+  "episode_file_content_tree_sha256": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+  "first_20_actions_identical_across_A_B_C_in_all_blocks": true,
+  "fixed_formula_step_records": 87831,
+  "local_rollout_root": "/home/thor/projects/one-clock/experiments/gate3c_asymmetric_temporal_reuse",
+  "manifest_sha256": "618bd8cb9340cf459f670c4911ed082827aa515d6914713a7665f3c9f09b2984",
+  "maximum_first_20_A_B_C_difference": 0.0,
+  "maximum_fixed_source_formula_error": 0.0,
+  "method_position_counts": {
+    "A_NEWEST": {
+      "0": 18,
+      "1": 30,
+      "2": 28,
+      "3": 37,
+      "4": 27
+    },
+    "B_FULL_OLD20": {
+      "0": 26,
+      "1": 32,
+      "2": 25,
+      "3": 24,
+      "4": 33
+    },
+    "C_ASYMMETRIC_FO20": {
+      "0": 24,
+      "1": 29,
+      "2": 28,
+      "3": 30,
+      "4": 29
+    },
+    "D_AGE_EXP_B003": {
+      "0": 37,
+      "1": 20,
+      "2": 32,
+      "3": 30,
+      "4": 21
+    },
+    "E_COGACT_A03": {
+      "0": 35,
+      "1": 29,
+      "2": 27,
+      "3": 19,
+      "4": 30
+    }
+  },
+  "policy_temporal_ensemble_active": false,
+  "scalar_baselines_use_normalized_shared_full_action_weights": true,
+  "scalar_weight_step_records": 57441,
+  "schedule_sha256": "55c0fc25e830c9084d114bfe7f4639a944e76514a4715b059844dd5a26bc87f4",
+  "scope": "Post-result technical integrity; gate statistics come from the frozen analyzer.",
+  "source_age_ticks": 20,
+  "task_state_blocks": 140,
+  "total_policy_queries": 145272,
+  "total_step_records": 145272
+}

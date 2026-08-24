@@ -1,6 +1,6 @@
 # Local-only evidence manifest
 
-Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This manifest records primary artifacts intentionally
+Audit date: 2026-08-21; updated 2026-08-24 through Gate-3C. This manifest records primary artifacts intentionally
 excluded from the audit commit because they are raw rollouts, prediction/data
 arrays, checkpoints, or large datasets. They remain available at the paths
 below in the current workspace. No claim below should be treated as
@@ -33,14 +33,16 @@ are included for scope.
 | `/home/thor/projects/one-clock/experiments/groupwise_selective_commitment` (140 files) | 23,591,126 bytes | content-tree `d295c50aaf35a3d0209fb9d4074b1c37b4aa6611c2a45da9e907d104baff836b` | 1,200-episode matched-query selective-commitment negative result |
 | `/home/thor/projects/one-clock/experiments/gate3a2_temporal_aggregation` (400 compressed episode files) | 10,191,635 bytes | content-tree `d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c` | Gate-3A2's 400/400 binary outcomes, 85,942 executed steps/ACT queries, per-step candidate/action integrity, success differences, secondary action diagnostics, and `CONTROL-LINK-POSITIVE` decision |
 | `/home/thor/projects/one-clock/experiments/gate3b_cross_generation_composition` (400 compressed episode files) | 20,618,916 bytes | content-tree `046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d` | Gate-3B's 400/400 binary outcomes, 88,171 executed steps/ACT queries, exact fixed-age source/formula integrity, four cell rates, coherence contrast, secondary action diagnostics, and `COMPOSITION-HARM-SUGGESTIVE` decision |
+| `/home/thor/projects/one-clock/experiments/gate3c_asymmetric_temporal_reuse` (700 compressed episode files) | 60,101,395 bytes | content-tree `0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403` | Gate-3C's 700/700 binary outcomes, 145,272 executed steps/ACT queries, exact fixed-source and scalar-weight integrity, primary/sensitivity comparisons, secondary action diagnostics, and `ASYMMETRIC-REUSE-STRONG` decision |
 
 The committed `research/audit_outputs/rollout_artifact_inventory.csv` retains
 per-run metadata, trace hashes, and validation issues for the historical
 rollout roots. Gate-3A2 uses its separate committed
-`research/audit_outputs/gate3a2_rollout_manifest.json`, and Gate-3B uses
-`research/audit_outputs/gate3b_rollout_manifest.json`; each records the
+`research/audit_outputs/gate3a2_rollout_manifest.json`, Gate-3B uses
+`research/audit_outputs/gate3b_rollout_manifest.json`, and Gate-3C uses
+`research/audit_outputs/gate3c_rollout_manifest.json`; each records the
 absolute path, byte size, SHA256, outcome, step/query count, and provenance for
-each of its 400 local-only logs.
+every corresponding local-only log.
 
 ## Raw prediction and aggregate inputs
 

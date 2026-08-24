@@ -1,6 +1,6 @@
 # Verified fact sheet
 
-Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
+Audit date: 2026-08-21; updated 2026-08-24 through Gate-3C. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
 
 # Verified facts
 
@@ -85,6 +85,14 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This file is the rep
 - **VERIFIED SECONDARY OBSERVATION:** The factorial cells are highly asymmetric. Descriptive differences are `FF−FO=-.18`, `OO−OF=+.23`, `FF−OF=+.27`, and `OO−FO=-.22`. Fresh-arm cells average .530 versus .285 for old-arm cells; old-gripper cells average .510 versus .305 for fresh-gripper cells. These source-age main effects and pairwise contrasts are secondary and cannot replace the unresolved coherence interaction.
 - **VERIFIED CLAIM BOUNDARY:** Gate-3B does not establish that mixed-source actions are generally harmful, a policy-manifold violation, a universal joint-action coherence law, causation through jerk, or generalization beyond this frozen ACT/LIBERO system. It does not authorize revival of the earlier group-wise selective-retention method.
 
+## Closed-loop Gate-3C asymmetric temporal reuse
+
+- **VERIFIED CLOSED LOOP:** Gate-3C completed all 700 preregistered episodes: ten tasks, 14 states per task, and five randomized methods per block. Tasks 1–9 use the common outcome-blind historically unused cohort `[20,21,22,23,27,31,34,35,38,39,44,45,47,48]`; task 0 is a secondary sensitivity because it historically used all 50 states. The logs contain 145,272 environment steps and exactly 145,272 ACT queries. Evidence: [`gate3c_rollout_manifest.json`](audit_outputs/gate3c_rollout_manifest.json), [`gate3c_rollout_validation.json`](audit_outputs/gate3c_rollout_validation.json), and the [state-usage audit](gate3c_state_usage_audit.md).
+- **VERIFIED CLOSED LOOP:** On primary tasks 1–9, successes are 53/126 newest, 55/126 full old20, 80/126 asymmetric fresh-arm/old20-gripper, 62/126 newest-age exponential, and 59/126 tuned CogACT. The asymmetric condition's 63.5% rate exceeds all four frozen comparators.
+- **VERIFIED CLOSED LOOP:** Asymmetric minus newest is +.2143 (paired CI `[+.1429,+.2937]`, task-cluster CI `[+.1270,+.3095]`); minus full old20 is +.1984 (`[+.0952,+.3016]`, `[+.0635,+.3175]`); minus age exponential is +.1429 (`[+.0476,+.2381]`, `[+.0159,+.2778]`); minus CogACT is +.1667 (`[+.0714,+.2619]`, `[+.0397,+.2937]`). Every primary leave-one-task-out estimate for all four contrasts remains positive. The frozen label is **ASYMMETRIC-REUSE-STRONG**.
+- **VERIFIED SENSITIVITY:** Across all ten tasks, rates are 65.0% asymmetric, 45.0% newest, 42.1% full old20, 51.4% age exponential, and 49.3% CogACT. All four all-ten paired and task-cluster intervals also have positive lower bounds. Task 0 is not an untouched-state confirmation.
+- **VERIFIED CLAIM BOUNDARY:** Gate-3C supports asymmetric temporal source use for this frozen ACT/LIBERO system, not reduced query frequency, a universal law that arms require freshness or grippers require memory, proof of non-Markovianity, causation through jerk, or transfer to dexterous, bimanual, VLA, or real-robot settings. Task-wise contrasts are heterogeneous. Gate-3C closes method search.
+
 # Strong evidence
 
 - Static execution horizon matters for at least this ACT checkpoint and LIBERO task 0; the complete curve is nonmonotonic.
@@ -97,6 +105,7 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This file is the rep
 - The sparse semantic-kernel advantage over CogACT does not survive dense every-step candidates; on Gate-3A1 the two are statistically unresolved and the semantic rule is substantially worse than the tuned age-exponential rule.
 - Temporal-source weighting affects closed-loop success on this frozen system: the newest-favoring age rule is stably better than exact original ACT aggregation under the paired ten-task Gate-3A2 design.
 - Gate-3A1's offline ordering is deployment-relevant for the newest-age-exponential versus exact-ACT contrast. Evidence is not strong enough to treat demonstration `L_sem` as a general policy-ranking surrogate.
+- On the Gate-3C outcome-blind task-1–9 cohort, frozen fresh-arm/old20-gripper temporal-source assignment is stably better than newest, full old20, newest-age exponential, and tuned CogACT under paired-block, task-cluster, and leave-one-task-out criteria.
 
 # Weak evidence
 
@@ -140,8 +149,8 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This file is the rep
 - Whether lower offline temporal-expert error generally predicts higher closed-loop success beyond the verified newest-age-exponential versus exact-ACT contrast.
 - Whether group-wise routing improves over scalar routing enough to justify cross-group consistency risk.
 - Whether cross-generation arm/gripper recomposition causes a nonzero average success loss. Gate-3B is suggestive but not confirmatory, and its `FO`/`OF` cells are strongly asymmetric.
-- Whether temporal aggregation reliably improves over newest-only across tasks; Gate-3A2's +.10 point estimate is heterogeneous and unresolved.
-- Whether newest-age exponential truly outperforms tuned CogACT; Gate-3A2's +.06 point estimate remains unresolved.
+- Whether full-action temporal aggregation reliably improves over newest-only across tasks; Gate-3A2's +.10 point estimate is heterogeneous and unresolved. Gate-3C instead confirms one fixed group-specific source assignment.
+- Whether newest-age exponential truly outperforms tuned CogACT directly; Gate-3A2's +.06 point estimate remains unresolved, although Gate-3C's asymmetric condition stably beats both.
 - Whether any deployable, context-dependent scalar selector can recover a meaningful fraction of the dense target-informed oracle headroom.
 - Whether the oracle headroom reflects useful control alternatives rather than demonstration noise or imitation multimodality.
 - Whether contact events, semantic progress, or task-specific phases explain more than normalized time and action smoothness.
