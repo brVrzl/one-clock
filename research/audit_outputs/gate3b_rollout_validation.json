@@ -1,0 +1,54 @@
+{
+  "action_smoothing_active": false,
+  "all_actions_shape_7_and_finite": true,
+  "all_executed_actions_match_registered_formulas": true,
+  "all_old_chunk_offsets_equal_20": true,
+  "all_old_sources_equal_t_minus_20": true,
+  "all_queries_equal_environment_steps": true,
+  "complete_unique_task_state_method_cells": 400,
+  "composition_temporal_ensemble_active": false,
+  "compressed_episode_file_bytes": 20618916,
+  "compressed_episode_files": 400,
+  "content_tree_definition": "SHA256 of concatenated sorted '<file_sha256>  <relative_path>\\n' lines.",
+  "episode_file_content_tree_sha256": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+  "first_20_actions_identical_across_methods_in_all_blocks": true,
+  "intervention_step_records": 80171,
+  "local_rollout_root": "/home/thor/projects/one-clock/experiments/gate3b_cross_generation_composition",
+  "manifest_sha256": "dc41ad08adc453a1771252b53a83d8a851d285ab1c0fef8ab14ed5dd8b216664",
+  "maximum_executed_formula_error": 0.0,
+  "maximum_first_20_action_difference_within_block": 0.0,
+  "method_position_counts": {
+    "FF": {
+      "0": 25,
+      "1": 23,
+      "2": 23,
+      "3": 29
+    },
+    "FO": {
+      "0": 24,
+      "1": 27,
+      "2": 28,
+      "3": 21
+    },
+    "OF": {
+      "0": 27,
+      "1": 21,
+      "2": 24,
+      "3": 28
+    },
+    "OO": {
+      "0": 24,
+      "1": 29,
+      "2": 25,
+      "3": 22
+    }
+  },
+  "policy_temporal_ensemble_active": false,
+  "schedule_sha256": "2cae2712ff00a1bc5bf8c3eb808b69aeaa8208acb62d2f8591e476e7b18ce4ff",
+  "scope": "Post-result technical integrity checks; gate statistics remain those in the frozen analyzer.",
+  "source_age_seconds": 1.0,
+  "source_age_ticks": 20,
+  "task_state_blocks": 100,
+  "total_policy_queries": 88171,
+  "total_step_records": 88171
+}

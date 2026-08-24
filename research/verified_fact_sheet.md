@@ -1,6 +1,6 @@
 # Verified fact sheet
 
-Audit date: 2026-08-21; updated 2026-08-24 through Gate-3A2. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
+Audit date: 2026-08-21; updated 2026-08-24 through Gate-3B. This file is the replacement research source of truth. Numerical provenance is the named raw artifact and the read-only scripts under [`research/audit_tools/`](audit_tools/).
 
 # Verified facts
 
@@ -76,6 +76,15 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3A2. This file is the re
 - **VERIFIED CLOSED LOOP:** The preregistered Gate-3A2 label is **CONTROL-LINK-POSITIVE**, not `STRONG-CONTROL-LINK`. It establishes deployment relevance for the age-rule versus exact-ACT offline ranking, not reliable superiority over newest or tuned CogACT.
 - **VERIFIED PRIOR ART:** Newest-favoring ACT temporal coefficients are not novel to one-clock. Pinned LeRobot documents negative `m` as favoring newer sources, and public [LeRobot PR #319](https://github.com/huggingface/lerobot/pull/319) evaluated this direction in 2024. Gate-3A2 is a scientific control-link experiment, not a method novelty result.
 
+## Closed-loop Gate-3B cross-generation composition
+
+- **VERIFIED CLOSED LOOP:** Gate-3B completed all 400 preregistered episodes over ten tasks, ten states per task, and four complete factorial cells. The 400 local logs contain 88,171 environment steps and exactly 88,171 ACT queries. Runtime validation confirms exact `q=t-20`/offset-20 source mapping, exact registered action formulas, identical first 20 actions within all 100 blocks, finite 7-D actions, and no temporal ensemble or action smoothing. Evidence: [`gate3b_rollout_manifest.json`](audit_outputs/gate3b_rollout_manifest.json) and [`gate3b_rollout_validation.json`](audit_outputs/gate3b_rollout_validation.json).
+- **VERIFIED CLOSED LOOP:** Success counts are 44/100 for joint fresh `FF`, 40/100 for joint old20 `OO`, 62/100 for fresh-arm/old-gripper `FO`, and 17/100 for old-arm/fresh-gripper `OF`. Same-source cells average .420 and mixed-source cells .395.
+- **VERIFIED CLOSED LOOP:** The preregistered coherence contrast is +.025 and the equivalent standard 2×2 interaction is +.050. The 20,000-draw paired-state bootstrap CI is `[-.030,+.085]`; the 20,000-draw task-cluster CI is `[-.005,+.055]`. Task-level contrasts are `[-.05,+.05,+.10,.00,.00,+.10,-.05,+.05,.00,+.05]`.
+- **VERIFIED CLOSED LOOP:** Every leave-one-task-out coherence contrast is positive, ranging from +.0167 to +.0333, but both bootstrap intervals include zero. The frozen decision is therefore **COMPOSITION-HARM-SUGGESTIVE**, not confirmed.
+- **VERIFIED SECONDARY OBSERVATION:** The factorial cells are highly asymmetric. Descriptive differences are `FF−FO=-.18`, `OO−OF=+.23`, `FF−OF=+.27`, and `OO−FO=-.22`. Fresh-arm cells average .530 versus .285 for old-arm cells; old-gripper cells average .510 versus .305 for fresh-gripper cells. These source-age main effects and pairwise contrasts are secondary and cannot replace the unresolved coherence interaction.
+- **VERIFIED CLAIM BOUNDARY:** Gate-3B does not establish that mixed-source actions are generally harmful, a policy-manifold violation, a universal joint-action coherence law, causation through jerk, or generalization beyond this frozen ACT/LIBERO system. It does not authorize revival of the earlier group-wise selective-retention method.
+
 # Strong evidence
 
 - Static execution horizon matters for at least this ACT checkpoint and LIBERO task 0; the complete curve is nonmonotonic.
@@ -98,6 +107,7 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3A2. This file is the re
 - Task or state context may affect temporal prediction competence, but current targets and ablations do not isolate the causal context signal.
 - A target-informed scalar oracle has large dense offline headroom beyond the strongest tested deployable baseline. This is weak evidence for exploitable contextual selection because the oracle uses the demonstration target and no deployment-available predictor has captured the choice.
 - Newest-age exponential is numerically better than tuned CogACT and newest-only in Gate-3A2, but both paired comparisons remain statistically/task-wise unresolved in the 100-block first gate.
+- Source-coherent arm/gripper actions may have a small average success advantage over cross-generation recompositions at fixed marginal source-age assignment. Gate-3B's +.025 coherence contrast remains positive under every leave-one-task-out omission, but both registered bootstrap intervals include zero.
 
 # Unsupported previous conclusions
 
@@ -129,6 +139,7 @@ Audit date: 2026-08-21; updated 2026-08-24 through Gate-3A2. This file is the re
 
 - Whether lower offline temporal-expert error generally predicts higher closed-loop success beyond the verified newest-age-exponential versus exact-ACT contrast.
 - Whether group-wise routing improves over scalar routing enough to justify cross-group consistency risk.
+- Whether cross-generation arm/gripper recomposition causes a nonzero average success loss. Gate-3B is suggestive but not confirmatory, and its `FO`/`OF` cells are strongly asymmetric.
 - Whether temporal aggregation reliably improves over newest-only across tasks; Gate-3A2's +.10 point estimate is heterogeneous and unresolved.
 - Whether newest-age exponential truly outperforms tuned CogACT; Gate-3A2's +.06 point estimate remains unresolved.
 - Whether any deployable, context-dependent scalar selector can recover a meaningful fraction of the dense target-informed oracle headroom.
