@@ -1,0 +1,989 @@
+{
+  "analysis": {
+    "gate3a1_metric_script_sha256": "af6a211db60cf883c3d33c69637ef275b3012c17334855bf2477367041ae2b76",
+    "git_head_at_execution": "b6f37e494caa19c772f0da3614474a94a83230f8",
+    "script": "research/audit_tools/fast5080_cross_generation_offline.py",
+    "script_sha256": "c646c5b30b90e8488c4396154f6e551cdc8f8d26a799ab1b43910ccfaaf18d46"
+  },
+  "assets": {
+    "cache_content_tree_sha256": "7e14e1f341bc2425cb3304cc3f35b0075184b0b1f33225e2dcf05cfe67e50f65",
+    "cache_generator_provenance": {
+      "checkpoint_files_sha256": {
+        "config.json": "a76eebed357b3cbed8745c3d0f18c1335ecdd5449fcc498257676c9cbd27453d",
+        "model.safetensors": "340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410",
+        "policy_postprocessor.json": "c27cf6f42b42352f9b8f9c40da155fd4459e0ee9b85b9f23072941eb52b3ffb5",
+        "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "3cb90679b116d22c960772f75e567c32b51778df2ca065cc4784bd6cd593e941",
+        "policy_preprocessor.json": "e7e3815a9e23eabe88e3dc5697cbccf8c59e61b59cf916d947dd673123426450",
+        "policy_preprocessor_step_3_normalizer_processor.safetensors": "3cb90679b116d22c960772f75e567c32b51778df2ca065cc4784bd6cd593e941"
+      },
+      "checkpoint_root": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+      "dataset_content_tree_scope": "historical Thor local directory including Hub client records",
+      "dataset_content_tree_sha256": "2c7b87d23936dcd9d511c77234907f99e2da8ac4d23b68bb7b23af9b71297608",
+      "dataset_files_sha256": {
+        "meta/episodes.jsonl": "63c6fb6940f46d0bc74c0242c1cde2a39a945bbe7de7b1709d38f5d9a82fcfea",
+        "meta/episodes_stats.jsonl": "5bf31fb80b359c9fd1d56a0eaa27f8e7c76a7e39678487fdf76986af8fe88dca"
+      },
+      "dataset_frequency_hz": 10.0,
+      "dataset_payload_tree_scope": "all repository payload files; .cache/huggingface excluded",
+      "dataset_payload_tree_sha256": "7c5cb7e88722e0aead2fe0853bdf54e076afe77364a3204ecf46f1e5e7a05b7b",
+      "dataset_revision": "cbf7122bbdbaa0c50517a6a4b2ae663d0e96e51a",
+      "dataset_root": "/home/wjq/datasets/libero_object_25_08_23_lerobotv2.1",
+      "generator_git_head": "7ea5e0690866c10b767844aa06a85fa9a060c95c",
+      "lerobot_commit": "f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+      "lerobot_root": "/home/wjq/workspace/upstreams/lerobot",
+      "registration_commit": "d163f5a76a46c9368adbb8c2f56f09e248b3a81c"
+    },
+    "cache_manifest_sha256": "dac1ea14913234dff226896687183a155375cda4dc3adf45590a98c6fdddfa7e",
+    "cache_npz_bytes": 32935012,
+    "cache_npz_files": 82,
+    "checkpoint_config_sha256": "a76eebed357b3cbed8745c3d0f18c1335ecdd5449fcc498257676c9cbd27453d",
+    "checkpoint_model_sha256": "340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410",
+    "dataset_payload_tree_sha256": "7c5cb7e88722e0aead2fe0853bdf54e076afe77364a3204ecf46f1e5e7a05b7b",
+    "dataset_revision": "cbf7122bbdbaa0c50517a6a4b2ae663d0e96e51a",
+    "runtime": {
+      "amp": false,
+      "batch_size": 16,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "device_observed": "NVIDIA GeForce RTX 5080",
+      "device_requested": "cuda",
+      "inference_mode": true,
+      "lerobot": "0.6.2",
+      "new_forward_batches_this_invocation": 800,
+      "new_source_queries_this_invocation": 12166,
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "platform": "Linux-6.8.0-136-generic-x86_64-with-glibc2.35",
+      "policy_eval": true,
+      "pyarrow": "25.0.1",
+      "pyav": "15.1.0",
+      "python": "3.12.3",
+      "scipy": "1.18.0",
+      "seed": 20260821,
+      "torch": "2.11.0+cu130"
+    }
+  },
+  "cohort": {
+    "eligible_targets": 10654,
+    "episodes": 82,
+    "tasks": 10,
+    "test_episodes": 41,
+    "validation_episodes": 41
+  },
+  "condition_summaries": {
+    "FF": {
+      "gripper_sign": {
+        "episode_sd": 0.06963922474799526,
+        "episode_weighted_mean": 0.3076001092091202
+      },
+      "l_sem": {
+        "episode_sd": 0.3145019730145882,
+        "episode_weighted_mean": 0.783401936118862
+      },
+      "rotation_geodesic_radians": {
+        "episode_sd": 0.016973920612204513,
+        "episode_weighted_mean": 0.06176673003474122
+      },
+      "rotation_normalized": {
+        "episode_sd": 0.6389103436856426,
+        "episode_weighted_mean": 1.1296224520283487
+      },
+      "translation": {
+        "episode_sd": 0.16064469196090445,
+        "episode_weighted_mean": 0.5957820291792892
+      }
+    },
+    "FO": {
+      "gripper_sign": {
+        "episode_sd": 0.09180790773090965,
+        "episode_weighted_mean": 0.2740024419153473
+      },
+      "l_sem": {
+        "episode_sd": 0.31344975455163776,
+        "episode_weighted_mean": 0.7786022693626086
+      },
+      "rotation_geodesic_radians": {
+        "episode_sd": 0.016973920612204513,
+        "episode_weighted_mean": 0.06176673003474122
+      },
+      "rotation_normalized": {
+        "episode_sd": 0.6389103436856426,
+        "episode_weighted_mean": 1.1296224520283487
+      },
+      "translation": {
+        "episode_sd": 0.16064469196090445,
+        "episode_weighted_mean": 0.5957820291792892
+      }
+    },
+    "OF": {
+      "gripper_sign": {
+        "episode_sd": 0.06963922474799526,
+        "episode_weighted_mean": 0.3076001092091202
+      },
+      "l_sem": {
+        "episode_sd": 0.2808982663093956,
+        "episode_weighted_mean": 0.7319881782706043
+      },
+      "rotation_geodesic_radians": {
+        "episode_sd": 0.015614263006410325,
+        "episode_weighted_mean": 0.06028202009834378
+      },
+      "rotation_normalized": {
+        "episode_sd": 0.5958910516287769,
+        "episode_weighted_mean": 1.0987722485817935
+      },
+      "translation": {
+        "episode_sd": 0.13014641438049215,
+        "episode_weighted_mean": 0.5066667976465766
+      }
+    },
+    "OO": {
+      "gripper_sign": {
+        "episode_sd": 0.09180790773090965,
+        "episode_weighted_mean": 0.2740024419153473
+      },
+      "l_sem": {
+        "episode_sd": 0.2798537825889833,
+        "episode_weighted_mean": 0.7271885115143509
+      },
+      "rotation_geodesic_radians": {
+        "episode_sd": 0.015614263006410325,
+        "episode_weighted_mean": 0.06028202009834378
+      },
+      "rotation_normalized": {
+        "episode_sd": 0.5958910516287769,
+        "episode_weighted_mean": 1.0987722485817935
+      },
+      "translation": {
+        "episode_sd": 0.13014641438049215,
+        "episode_weighted_mean": 0.5066667976465766
+      }
+    }
+  },
+  "descriptive_disagreement_strata": {
+    "gripper_sign_disagreement": {
+      "different": {
+        "c_offline": 0.0,
+        "conditions": {
+          "FF": {
+            "gripper_sign": 0.5558424790187217,
+            "l_sem": 0.8789239047308326,
+            "rotation_geodesic_radians": 0.06314411392821924,
+            "rotation_normalized": 1.1811605901249882,
+            "translation": 0.6843810279073809
+          },
+          "FO": {
+            "gripper_sign": 0.44415752098127825,
+            "l_sem": 0.8629689107254835,
+            "rotation_geodesic_radians": 0.06314411392821924,
+            "rotation_normalized": 1.1811605901249882,
+            "translation": 0.6843810279073809
+          },
+          "OF": {
+            "gripper_sign": 0.5558424790187217,
+            "l_sem": 0.8062785649529123,
+            "rotation_geodesic_radians": 0.062116054488618504,
+            "rotation_normalized": 1.172382399073367,
+            "translation": 0.5236534261438545
+          },
+          "OO": {
+            "gripper_sign": 0.44415752098127825,
+            "l_sem": 0.7903235709475632,
+            "rotation_geodesic_radians": 0.062116054488618504,
+            "rotation_normalized": 1.172382399073367,
+            "translation": 0.5236534261438545
+          }
+        },
+        "targets": 3098
+      },
+      "same": {
+        "c_offline": 0.0,
+        "conditions": {
+          "FF": {
+            "gripper_sign": 0.2097670725251456,
+            "l_sem": 0.7350423672131212,
+            "rotation_geodesic_radians": 0.0606005879506685,
+            "rotation_normalized": 1.0833693766216181,
+            "translation": 0.5618071227006162
+          },
+          "FO": {
+            "gripper_sign": 0.2097670725251456,
+            "l_sem": 0.7350423672131212,
+            "rotation_geodesic_radians": 0.0606005879506685,
+            "rotation_normalized": 1.0833693766216181,
+            "translation": 0.5618071227006162
+          },
+          "OF": {
+            "gripper_sign": 0.2097670725251456,
+            "l_sem": 0.6950806340842433,
+            "rotation_geodesic_radians": 0.0588184089027391,
+            "rotation_normalized": 1.0436564798126744,
+            "translation": 0.5082759755421782
+          },
+          "OO": {
+            "gripper_sign": 0.2097670725251456,
+            "l_sem": 0.6950806340842433,
+            "rotation_geodesic_radians": 0.0588184089027391,
+            "rotation_normalized": 1.0436564798126744,
+            "translation": 0.5082759755421782
+          }
+        },
+        "targets": 7556
+      }
+    },
+    "rotation_geodesic_disagreement_radians": {
+      "bins": {
+        "Q1": {
+          "c_offline": 1.1102230246251565e-16,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.35735735735735735,
+              "l_sem": 0.7844287764358188,
+              "rotation_geodesic_radians": 0.05726477267563166,
+              "rotation_normalized": 1.0498345383555256,
+              "translation": 0.6613801542089326
+            },
+            "FO": {
+              "gripper_sign": 0.25675675675675674,
+              "l_sem": 0.7700572620643046,
+              "rotation_geodesic_radians": 0.05726477267563166,
+              "rotation_normalized": 1.0498345383555256,
+              "translation": 0.6613801542089326
+            },
+            "OF": {
+              "gripper_sign": 0.35735735735735735,
+              "l_sem": 0.7139186874667939,
+              "rotation_geodesic_radians": 0.05669926948345815,
+              "rotation_normalized": 1.031895315561738,
+              "translation": 0.5147958360749951
+            },
+            "OO": {
+              "gripper_sign": 0.25675675675675674,
+              "l_sem": 0.6995471730952794,
+              "rotation_geodesic_radians": 0.05669926948345815,
+              "rotation_normalized": 1.031895315561738,
+              "translation": 0.5147958360749951
+            }
+          },
+          "targets": 2664
+        },
+        "Q2": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.35035674051821253,
+              "l_sem": 0.7621213918691334,
+              "rotation_geodesic_radians": 0.05961605507709729,
+              "rotation_normalized": 1.0660373021315557,
+              "translation": 0.5954603653903513
+            },
+            "FO": {
+              "gripper_sign": 0.27450244085617725,
+              "l_sem": 0.7512850633459855,
+              "rotation_geodesic_radians": 0.05961605507709729,
+              "rotation_normalized": 1.0660373021315557,
+              "translation": 0.5954603653903513
+            },
+            "OF": {
+              "gripper_sign": 0.35035674051821253,
+              "l_sem": 0.6966726920304107,
+              "rotation_geodesic_radians": 0.05813765294590102,
+              "rotation_normalized": 1.02219844328627,
+              "translation": 0.48658559127861745
+            },
+            "OO": {
+              "gripper_sign": 0.27450244085617725,
+              "l_sem": 0.6858363635072628,
+              "rotation_geodesic_radians": 0.05813765294590102,
+              "rotation_normalized": 1.02219844328627,
+              "translation": 0.48658559127861745
+            }
+          },
+          "targets": 2663
+        },
+        "Q3": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.2932782576042058,
+              "l_sem": 0.7459781275895392,
+              "rotation_geodesic_radians": 0.06096415885337492,
+              "rotation_normalized": 1.075037833182689,
+              "translation": 0.5678183786581672
+            },
+            "FO": {
+              "gripper_sign": 0.2816372512204281,
+              "l_sem": 0.744315126677571,
+              "rotation_geodesic_radians": 0.06096415885337492,
+              "rotation_normalized": 1.075037833182689,
+              "translation": 0.5678183786581672
+            },
+            "OF": {
+              "gripper_sign": 0.2932782576042058,
+              "l_sem": 0.6907682426234917,
+              "rotation_geodesic_radians": 0.05871419692398749,
+              "rotation_normalized": 1.012076943794688,
+              "translation": 0.5019562031253907
+            },
+            "OO": {
+              "gripper_sign": 0.2816372512204281,
+              "l_sem": 0.6891052417115235,
+              "rotation_geodesic_radians": 0.05871419692398749,
+              "rotation_normalized": 1.012076943794688,
+              "translation": 0.5019562031253907
+            }
+          },
+          "targets": 2663
+        },
+        "Q4": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.24061561561561562,
+              "l_sem": 0.8149771406813051,
+              "rotation_geodesic_radians": 0.06751503130636044,
+              "rotation_normalized": 1.2562808642789813,
+              "translation": 0.5651272587721919
+            },
+            "FO": {
+              "gripper_sign": 0.2987987987987988,
+              "l_sem": 0.8232890239931886,
+              "rotation_geodesic_radians": 0.06751503130636044,
+              "rotation_normalized": 1.2562808642789813,
+              "translation": 0.5651272587721919
+            },
+            "OF": {
+              "gripper_sign": 0.24061561561561562,
+              "l_sem": 0.8082754027664352,
+              "rotation_geodesic_radians": 0.06555709623400571,
+              "rotation_normalized": 1.2581323413441428,
+              "translation": 0.5476383932390009
+            },
+            "OO": {
+              "gripper_sign": 0.2987987987987988,
+              "l_sem": 0.8165872860783185,
+              "rotation_geodesic_radians": 0.06555709623400571,
+              "rotation_normalized": 1.2581323413441428,
+              "translation": 0.5476383932390009
+            }
+          },
+          "targets": 2664
+        }
+      },
+      "cutpoints": [
+        0.01704259893576156,
+        0.026375850435693467,
+        0.03981205950930166
+      ]
+    },
+    "scope": "Target-weighted descriptive strata; no frame-level inference.",
+    "translation_normalized_disagreement": {
+      "bins": {
+        "Q1": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.2728978978978979,
+              "l_sem": 0.6672265373943379,
+              "rotation_geodesic_radians": 0.05975891278725937,
+              "rotation_normalized": 1.0692198365917596,
+              "translation": 0.3966761180290629
+            },
+            "FO": {
+              "gripper_sign": 0.26539039039039036,
+              "l_sem": 0.6661540363218369,
+              "rotation_geodesic_radians": 0.05975891278725937,
+              "rotation_normalized": 1.0692198365917596,
+              "translation": 0.3966761180290629
+            },
+            "OF": {
+              "gripper_sign": 0.2728978978978979,
+              "l_sem": 0.6914488592756975,
+              "rotation_geodesic_radians": 0.06101007151606911,
+              "rotation_normalized": 1.1358294029101244,
+              "translation": 0.38658530276720404
+            },
+            "OO": {
+              "gripper_sign": 0.26539039039039036,
+              "l_sem": 0.6903763582031965,
+              "rotation_geodesic_radians": 0.06101007151606911,
+              "rotation_normalized": 1.1358294029101244,
+              "translation": 0.38658530276720404
+            }
+          },
+          "targets": 2664
+        },
+        "Q2": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.28088621855050694,
+              "l_sem": 0.7234729044067502,
+              "rotation_geodesic_radians": 0.0618201036136821,
+              "rotation_normalized": 1.0913342416216734,
+              "translation": 0.5031404624772415
+            },
+            "FO": {
+              "gripper_sign": 0.28614344723995494,
+              "l_sem": 0.7242239370766713,
+              "rotation_geodesic_radians": 0.0618201036136821,
+              "rotation_normalized": 1.0913342416216734,
+              "translation": 0.5031404624772415
+            },
+            "OF": {
+              "gripper_sign": 0.28088621855050694,
+              "l_sem": 0.6939325709152492,
+              "rotation_geodesic_radians": 0.060114591553163656,
+              "rotation_normalized": 1.0652245051652813,
+              "translation": 0.46032275412013113
+            },
+            "OO": {
+              "gripper_sign": 0.28614344723995494,
+              "l_sem": 0.6946836035851703,
+              "rotation_geodesic_radians": 0.060114591553163656,
+              "rotation_normalized": 1.0652245051652813,
+              "translation": 0.46032275412013113
+            }
+          },
+          "targets": 2663
+        },
+        "Q3": {
+          "c_offline": -1.1102230246251565e-16,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.31355613969207663,
+              "l_sem": 0.7486308721533279,
+              "rotation_geodesic_radians": 0.05966257380341473,
+              "rotation_normalized": 1.0264741440219871,
+              "translation": 0.6158125111050861
+            },
+            "FO": {
+              "gripper_sign": 0.26549004881712357,
+              "l_sem": 0.7417642877426203,
+              "rotation_geodesic_radians": 0.05966257380341473,
+              "rotation_normalized": 1.0264741440219871,
+              "translation": 0.6158125111050861
+            },
+            "OF": {
+              "gripper_sign": 0.31355613969207663,
+              "l_sem": 0.6763206219937616,
+              "rotation_geodesic_radians": 0.0570738087483349,
+              "rotation_normalized": 0.9613166197752255,
+              "translation": 0.5122461183128596
+            },
+            "OO": {
+              "gripper_sign": 0.26549004881712357,
+              "l_sem": 0.6694540375830541,
+              "rotation_geodesic_radians": 0.0570738087483349,
+              "rotation_normalized": 0.9613166197752255,
+              "translation": 0.5122461183128596
+            }
+          },
+          "targets": 2663
+        },
+        "Q4": {
+          "c_offline": 0.0,
+          "conditions": {
+            "FF": {
+              "gripper_sign": 0.37424924924924924,
+              "l_sem": 0.9681616107058779,
+              "rotation_geodesic_radians": 0.06411876647067816,
+              "rotation_normalized": 1.2601535819484404,
+              "translation": 0.8741404266155249
+            },
+            "FO": {
+              "gripper_sign": 0.2946696696696697,
+              "l_sem": 0.9567930993373666,
+              "rotation_geodesic_radians": 0.06411876647067816,
+              "rotation_normalized": 1.2601535819484404,
+              "translation": 0.8741404266155249
+            },
+            "OF": {
+              "gripper_sign": 0.37424924924924924,
+              "l_sem": 0.8479265208474139,
+              "rotation_geodesic_radians": 0.060909870102529275,
+              "rotation_normalized": 1.1619296128846535,
+              "translation": 0.6918158526762288
+            },
+            "OO": {
+              "gripper_sign": 0.2946696696696697,
+              "l_sem": 0.8365580094789024,
+              "rotation_geodesic_radians": 0.060909870102529275,
+              "rotation_normalized": 1.1619296128846535,
+              "translation": 0.6918158526762288
+            }
+          },
+          "targets": 2664
+        }
+      },
+      "cutpoints": [
+        0.09562705994409045,
+        0.2215019542367106,
+        0.4240999982124295
+      ]
+    }
+  },
+  "figure_data": {
+    "panel_a": [
+      {
+        "condition": "FF",
+        "episode_weighted_l_sem": 0.783401936118862
+      },
+      {
+        "condition": "OO",
+        "episode_weighted_l_sem": 0.7271885115143509
+      },
+      {
+        "condition": "FO",
+        "episode_weighted_l_sem": 0.7786022693626086
+      },
+      {
+        "condition": "OF",
+        "episode_weighted_l_sem": 0.7319881782706043
+      }
+    ],
+    "panel_b": [
+      {
+        "condition": "FF",
+        "gripper_sign": 0.3076001092091202,
+        "rotation_geodesic_radians": 0.06176673003474122,
+        "rotation_normalized": 1.1296224520283487,
+        "translation": 0.5957820291792892
+      },
+      {
+        "condition": "OO",
+        "gripper_sign": 0.2740024419153473,
+        "rotation_geodesic_radians": 0.06028202009834378,
+        "rotation_normalized": 1.0987722485817935,
+        "translation": 0.5066667976465766
+      },
+      {
+        "condition": "FO",
+        "gripper_sign": 0.2740024419153473,
+        "rotation_geodesic_radians": 0.06176673003474122,
+        "rotation_normalized": 1.1296224520283487,
+        "translation": 0.5957820291792892
+      },
+      {
+        "condition": "OF",
+        "gripper_sign": 0.3076001092091202,
+        "rotation_geodesic_radians": 0.06028202009834378,
+        "rotation_normalized": 1.0987722485817935,
+        "translation": 0.5066667976465766
+      }
+    ],
+    "panel_c": [
+      {
+        "c_offline": -4.163336342344337e-17,
+        "task_id": 0
+      },
+      {
+        "c_offline": 6.938893903907228e-18,
+        "task_id": 1
+      },
+      {
+        "c_offline": -8.326672684688674e-17,
+        "task_id": 2
+      },
+      {
+        "c_offline": 1.3877787807814457e-17,
+        "task_id": 3
+      },
+      {
+        "c_offline": 0.0,
+        "task_id": 4
+      },
+      {
+        "c_offline": 0.0,
+        "task_id": 5
+      },
+      {
+        "c_offline": -2.7755575615628914e-17,
+        "task_id": 6
+      },
+      {
+        "c_offline": -1.3877787807814457e-17,
+        "task_id": 7
+      },
+      {
+        "c_offline": -4.163336342344337e-17,
+        "task_id": 8
+      },
+      {
+        "c_offline": 2.7755575615628914e-17,
+        "task_id": 9
+      }
+    ]
+  },
+  "identity_check": {
+    "all_targets_within_tolerance": true,
+    "definition": "targetwise L_FO+L_OF-L_FF-L_OO",
+    "interpretation": "The frozen additive metric contains no cross-component interaction term.",
+    "maximum_absolute_target_residual": 1.7763568394002505e-15,
+    "tolerance": 1e-12
+  },
+  "interpretation_limit": "Offline additive teacher-forced loss cannot establish a cross-generation closed-loop effect; integrate only after the independent Gate-3B result is complete.",
+  "metric_contract": {
+    "action_std": [
+      0.2681190073490143,
+      0.4384443759918213,
+      0.4475117325782776,
+      0.024448219686746597,
+      0.04936208948493004,
+      0.042103495448827744,
+      0.9974462985992432
+    ],
+    "continuous_gripper_mse": false,
+    "gripper": "sign error; zero is positive",
+    "l_sem": "(3*translation_normalized_mse + 3*rotation_normalized_sq + gripper_sign_error)/7"
+  },
+  "per_task": [
+    {
+      "c_offline": -4.163336342344337e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.3098677295703387,
+      "gripper_sign_FO": 0.2827526466955231,
+      "gripper_sign_OF": 0.3098677295703387,
+      "gripper_sign_OO": 0.2827526466955231,
+      "l_sem_FF": 0.8431387097783057,
+      "l_sem_FO": 0.8392651265104749,
+      "l_sem_OF": 0.7637004821689403,
+      "l_sem_OO": 0.7598268989011095,
+      "rotation_geodesic_radians_FF": 0.06381774733483674,
+      "rotation_geodesic_radians_FO": 0.06381774733483674,
+      "rotation_geodesic_radians_OF": 0.06312539318317759,
+      "rotation_geodesic_radians_OO": 0.06312539318317759,
+      "rotation_normalized_FF": 1.141109862078459,
+      "rotation_normalized_FO": 1.141109862078459,
+      "rotation_normalized_OF": 1.1093114888803495,
+      "rotation_normalized_OO": 1.1093114888803495,
+      "targets": 994,
+      "task_id": 0,
+      "translation_FF": 0.722924550880808,
+      "translation_FO": 0.722924550880808,
+      "translation_OF": 0.5693670596570651,
+      "translation_OO": 0.5693670596570651
+    },
+    {
+      "c_offline": 6.938893903907228e-18,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.29457099507440954,
+      "gripper_sign_FO": 0.3361691118330155,
+      "gripper_sign_OF": 0.29457099507440954,
+      "gripper_sign_OO": 0.3361691118330155,
+      "l_sem_FF": 0.4700532002698933,
+      "l_sem_FO": 0.47599578837826556,
+      "l_sem_OF": 0.4623881118741442,
+      "l_sem_OO": 0.4683306999825165,
+      "rotation_geodesic_radians_FF": 0.04699346766871676,
+      "rotation_geodesic_radians_FO": 0.04699346766871676,
+      "rotation_geodesic_radians_OF": 0.0450866037872395,
+      "rotation_geodesic_radians_OO": 0.0450866037872395,
+      "rotation_normalized_FF": 0.6059420584359935,
+      "rotation_normalized_FO": 0.6059420584359935,
+      "rotation_normalized_OF": 0.5601934142185352,
+      "rotation_normalized_OO": 0.5601934142185352,
+      "targets": 1063,
+      "task_id": 1,
+      "translation_FF": 0.39265841050228767,
+      "translation_FO": 0.39265841050228767,
+      "translation_OF": 0.420521848462998,
+      "translation_OO": 0.420521848462998
+    },
+    {
+      "c_offline": -8.326672684688674e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.30191603328953653,
+      "gripper_sign_FO": 0.28802819357098774,
+      "gripper_sign_OF": 0.30191603328953653,
+      "gripper_sign_OO": 0.28802819357098774,
+      "l_sem_FF": 0.7721637879948924,
+      "l_sem_FO": 0.7701798108922424,
+      "l_sem_OF": 0.7417680340158606,
+      "l_sem_OO": 0.7397840569132108,
+      "rotation_geodesic_radians_FF": 0.06167365803633476,
+      "rotation_geodesic_radians_FO": 0.06167365803633476,
+      "rotation_geodesic_radians_OF": 0.06189851018752623,
+      "rotation_geodesic_radians_OO": 0.06189851018752623,
+      "rotation_normalized_FF": 1.1124846790817235,
+      "rotation_normalized_FO": 1.1124846790817235,
+      "rotation_normalized_OF": 1.0905275768869491,
+      "rotation_normalized_OO": 1.0905275768869491,
+      "targets": 1019,
+      "task_id": 2,
+      "translation_FF": 0.5885921484765131,
+      "translation_FO": 0.5885921484765131,
+      "translation_OF": 0.5396258247202133,
+      "translation_OO": 0.5396258247202133
+    },
+    {
+      "c_offline": 1.3877787807814457e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.35082830535257065,
+      "gripper_sign_FO": 0.2419200504137758,
+      "gripper_sign_OF": 0.35082830535257065,
+      "gripper_sign_OO": 0.2419200504137758,
+      "l_sem_FF": 0.6881573630357061,
+      "l_sem_FO": 0.6725990409015926,
+      "l_sem_OF": 0.6969026904922461,
+      "l_sem_OO": 0.6813443683581326,
+      "rotation_geodesic_radians_FF": 0.05969100033289708,
+      "rotation_geodesic_radians_FO": 0.05969100033289708,
+      "rotation_geodesic_radians_OF": 0.06170248990947301,
+      "rotation_geodesic_radians_OO": 0.06170248990947301,
+      "rotation_normalized_FF": 0.9923473509439845,
+      "rotation_normalized_FO": 0.9923473509439845,
+      "rotation_normalized_OF": 1.0808785866557549,
+      "rotation_normalized_OO": 1.0808785866557549,
+      "targets": 985,
+      "task_id": 3,
+      "translation_FF": 0.4964103943551397,
+      "translation_FO": 0.4964103943551397,
+      "translation_OF": 0.4282849227086293,
+      "translation_OO": 0.4282849227086293
+    },
+    {
+      "c_offline": 0.0,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.32784655684585173,
+      "gripper_sign_FO": 0.35993379805298586,
+      "gripper_sign_OF": 0.32784655684585173,
+      "gripper_sign_OO": 0.35993379805298586,
+      "l_sem_FF": 0.7117914542578281,
+      "l_sem_FO": 0.7163753458588472,
+      "l_sem_OF": 0.6457146718167933,
+      "l_sem_OO": 0.6502985634178126,
+      "rotation_geodesic_radians_FF": 0.0539878983196343,
+      "rotation_geodesic_radians_FO": 0.0539878983196343,
+      "rotation_geodesic_radians_OF": 0.052148889064374065,
+      "rotation_geodesic_radians_OO": 0.052148889064374065,
+      "rotation_normalized_FF": 0.8619387806943983,
+      "rotation_normalized_FO": 0.8619387806943983,
+      "rotation_normalized_OF": 0.8345207929975731,
+      "rotation_normalized_OO": 0.8345207929975731,
+      "targets": 1121,
+      "task_id": 4,
+      "translation_FF": 0.6896257602919165,
+      "translation_FO": 0.6896257602919165,
+      "translation_OF": 0.5628645889596608,
+      "translation_OO": 0.5628645889596608
+    },
+    {
+      "c_offline": 0.0,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.27408775191339896,
+      "gripper_sign_FO": 0.29364005695904705,
+      "gripper_sign_OF": 0.27408775191339896,
+      "gripper_sign_OO": 0.29364005695904705,
+      "l_sem_FF": 0.8771408585644509,
+      "l_sem_FO": 0.8799340449995435,
+      "l_sem_OF": 0.7936192078143325,
+      "l_sem_OO": 0.7964123942494251,
+      "rotation_geodesic_radians_FF": 0.07098398272252635,
+      "rotation_geodesic_radians_FO": 0.07098398272252635,
+      "rotation_geodesic_radians_OF": 0.06730331845679471,
+      "rotation_geodesic_radians_OO": 0.06730331845679471,
+      "rotation_normalized_FF": 1.3791300891845044,
+      "rotation_normalized_FO": 1.3791300891845044,
+      "rotation_normalized_OF": 1.2021561862508339,
+      "rotation_normalized_OO": 1.2021561862508339,
+      "targets": 952,
+      "task_id": 5,
+      "translation_FF": 0.5761693301614147,
+      "translation_FO": 0.5761693301614147,
+      "translation_OF": 0.5582593813448091,
+      "translation_OO": 0.5582593813448091
+    },
+    {
+      "c_offline": -2.7755575615628914e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.31796262137518205,
+      "gripper_sign_FO": 0.21485821393232768,
+      "gripper_sign_OF": 0.31796262137518205,
+      "gripper_sign_OO": 0.21485821393232768,
+      "l_sem_FF": 0.7236305182852791,
+      "l_sem_FO": 0.7089013172220142,
+      "l_sem_OF": 0.7524929306226382,
+      "l_sem_OO": 0.7377637295593733,
+      "rotation_geodesic_radians_FF": 0.05891179993723418,
+      "rotation_geodesic_radians_FO": 0.05891179993723418,
+      "rotation_geodesic_radians_OF": 0.05984123401130856,
+      "rotation_geodesic_radians_OO": 0.05984123401130856,
+      "rotation_normalized_FF": 0.9949018235556606,
+      "rotation_normalized_FO": 0.9949018235556606,
+      "rotation_normalized_OF": 1.0585798647262097,
+      "rotation_normalized_OO": 1.0585798647262097,
+      "targets": 1043,
+      "task_id": 6,
+      "translation_FF": 0.5875818453182633,
+      "translation_FO": 0.5875818453182633,
+      "translation_OF": 0.5912494329348853,
+      "translation_OO": 0.5912494329348853
+    },
+    {
+      "c_offline": -1.3877787807814457e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.2356537107649997,
+      "gripper_sign_FO": 0.20937334387396653,
+      "gripper_sign_OF": 0.2356537107649997,
+      "gripper_sign_OO": 0.20937334387396653,
+      "l_sem_FF": 0.7154027620874461,
+      "l_sem_FO": 0.7116484239601556,
+      "l_sem_OF": 0.6672357020208999,
+      "l_sem_OO": 0.6634813638936095,
+      "rotation_geodesic_radians_FF": 0.060998173350617683,
+      "rotation_geodesic_radians_FO": 0.060998173350617683,
+      "rotation_geodesic_radians_OF": 0.05973057025157005,
+      "rotation_geodesic_radians_OO": 0.05973057025157005,
+      "rotation_normalized_FF": 1.0448573008700817,
+      "rotation_normalized_FO": 1.0448573008700817,
+      "rotation_normalized_OF": 1.033491093224396,
+      "rotation_normalized_OO": 1.033491093224396,
+      "targets": 1117,
+      "task_id": 7,
+      "translation_FF": 0.5458645737456258,
+      "translation_FO": 0.5458645737456258,
+      "translation_OF": 0.4448409745693706,
+      "translation_OO": 0.4448409745693706
+    },
+    {
+      "c_offline": -4.163336342344337e-17,
+      "contrast_sign": "zero",
+      "episodes": 8,
+      "gripper_sign_FF": 0.3876865978969863,
+      "gripper_sign_FO": 0.319181395807535,
+      "gripper_sign_OF": 0.3876865978969863,
+      "gripper_sign_OO": 0.319181395807535,
+      "l_sem_FF": 1.4073263286204813,
+      "l_sem_FO": 1.3975398711791311,
+      "l_sem_OF": 1.2925623290549473,
+      "l_sem_OO": 1.2827758716135973,
+      "rotation_geodesic_radians_FF": 0.09011343530550325,
+      "rotation_geodesic_radians_FO": 0.09011343530550325,
+      "rotation_geodesic_radians_OF": 0.08587941324326358,
+      "rotation_geodesic_radians_OO": 0.08587941324326358,
+      "rotation_normalized_FF": 2.3518377628939144,
+      "rotation_normalized_FO": 2.3518377628939144,
+      "rotation_normalized_OF": 2.3194585073819898,
+      "rotation_normalized_OO": 2.3194585073819898,
+      "targets": 995,
+      "task_id": 8,
+      "translation_FF": 0.8026948045882136,
+      "translation_FO": 0.8026948045882136,
+      "translation_OF": 0.5672913944472253,
+      "translation_OO": 0.5672913944472253
+    },
+    {
+      "c_offline": 2.7755575615628914e-17,
+      "contrast_sign": "zero",
+      "episodes": 10,
+      "gripper_sign_FF": 0.2819846538481662,
+      "gripper_sign_FO": 0.21013457479451633,
+      "gripper_sign_OF": 0.2819846538481662,
+      "gripper_sign_OO": 0.21013457479451633,
+      "l_sem_FF": 0.6568518898592419,
+      "l_sem_FO": 0.6465875928515776,
+      "l_sem_OF": 0.5491957339143129,
+      "l_sem_OO": 0.5389314369066487,
+      "rotation_geodesic_radians_FF": 0.05275025587823708,
+      "rotation_geodesic_radians_FO": 0.05275025587823708,
+      "rotation_geodesic_radians_OF": 0.04893942713063716,
+      "rotation_geodesic_radians_OO": 0.04893942713063716,
+      "rotation_normalized_FF": 0.8752643404414844,
+      "rotation_normalized_FO": 0.8752643404414844,
+      "rotation_normalized_OF": 0.7786384293926324,
+      "rotation_normalized_OO": 0.7786384293926324,
+      "targets": 1365,
+      "task_id": 9,
+      "translation_FF": 0.563395184614025,
+      "translation_FO": 0.563395184614025,
+      "translation_OF": 0.4088233984580424,
+      "translation_OO": 0.4088233984580424
+    }
+  ],
+  "primary_contrast": {
+    "definition": "0.5*(L_FO+L_OF)-0.5*(L_FF+L_OO); lower loss is better",
+    "episode_bootstrap_ci95": [
+      -3.9263985017231144e-17,
+      8.12358310701334e-18
+    ],
+    "episode_bootstrap_draws": 20000,
+    "episode_bootstrap_seed": 20260826,
+    "episode_weighted_mean": -1.4893235696191125e-17,
+    "leave_one_task_out": [
+      {
+        "mean_remaining_nine_tasks": -1.3106799596269209e-17,
+        "omitted_task": 0
+      },
+      {
+        "mean_remaining_nine_tasks": -1.850371707708594e-17,
+        "omitted_task": 1
+      },
+      {
+        "mean_remaining_nine_tasks": -8.480870326997724e-18,
+        "omitted_task": 2
+      },
+      {
+        "mean_remaining_nine_tasks": -1.927470528863119e-17,
+        "omitted_task": 3
+      },
+      {
+        "mean_remaining_nine_tasks": -1.7732728865540693e-17,
+        "omitted_task": 4
+      },
+      {
+        "mean_remaining_nine_tasks": -1.7732728865540693e-17,
+        "omitted_task": 5
+      },
+      {
+        "mean_remaining_nine_tasks": -1.4648776019359705e-17,
+        "omitted_task": 6
+      },
+      {
+        "mean_remaining_nine_tasks": -1.61907524424502e-17,
+        "omitted_task": 7
+      },
+      {
+        "mean_remaining_nine_tasks": -1.3106799596269209e-17,
+        "omitted_task": 8
+      },
+      {
+        "mean_remaining_nine_tasks": -2.0816681711721685e-17,
+        "omitted_task": 9
+      }
+    ],
+    "task_cluster_bootstrap_ci95": [
+      -3.608224830031759e-17,
+      2.0816681711721684e-18
+    ],
+    "task_cluster_bootstrap_draws": 20000,
+    "task_cluster_bootstrap_seed": 20260827,
+    "task_sign_counts": {
+      "negative": 0,
+      "positive": 0,
+      "zero": 10
+    },
+    "task_weighted_mean": -1.5959455978986624e-17,
+    "zero_tolerance": 1e-12
+  },
+  "protocol": {
+    "age_action_indices": 20,
+    "commit": "d9cac3ab69bd1a6d93608ebbd8311134483bc2ac",
+    "path": "research/fast5080_cross_generation_offline_protocol.md",
+    "physical_age_seconds": 1.0,
+    "sha256": "421c8c78921125727c7145941498a31eb8e4c561d1f5f802280427d8a962ca97"
+  },
+  "schema_version": 1,
+  "scope": "Frozen post-Gate-3A2 exploratory teacher-forced cross-generation composition audit; no Thor Gate-3B outcome inspected."
+}
