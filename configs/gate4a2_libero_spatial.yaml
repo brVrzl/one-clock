@@ -1,0 +1,25 @@
+task_suite: libero_spatial
+task_id: 0
+task_name: pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate
+control_mode: relative
+obs_type: pixels_agent_pos
+camera_name: agentview_image,robot0_eye_in_hand_image
+camera_name_mapping:
+  agentview_image: image
+  robot0_eye_in_hand_image: image2
+observation_width: 256
+observation_height: 256
+control_freq: 20
+init_states: true
+hard_reset: true
+episodes: 1
+seed: 340000
+chunk_size: 100
+device: cuda
+
+action_groups:
+  arm: [0, 1, 2, 3, 4, 5]
+  gripper: [6]
+
+# The immutable checkpoint directory is supplied at runtime.
+checkpoint: null

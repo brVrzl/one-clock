@@ -1,0 +1,88 @@
+{
+  "checkpoint_repository": "ishandotsh/act_libero_spatial_test",
+  "checkpoint_revision": "8f04de1472975d62db214238b2fc07e78bde2474",
+  "files": [
+    {
+      "bytes": 3162,
+      "path": "research/gate4a_spatial_asset_audit.md",
+      "sha256": "a430ff7022b4f05a6a81ea9b8abdbef05319b90826d28c9a42e84d52e7ac37b0"
+    },
+    {
+      "bytes": 4190,
+      "path": "research/audit_outputs/gate4a_spatial_asset_audit.json",
+      "sha256": "f41bb21bdef9df353ee58097cadf27eb2f604f49c31588049b75c0e484bf128b"
+    },
+    {
+      "bytes": 7164,
+      "path": "research/gate4a2_spatial_asset_audit.md",
+      "sha256": "1966e0d68aa1b561f182c22564cf1db7c3fa8dfa8ca0afeefdaa5115141ced10"
+    },
+    {
+      "bytes": 7792,
+      "path": "research/audit_outputs/gate4a2_spatial_asset_audit.json",
+      "sha256": "711398023cf9df1da4e3457d3f4343cad19799c7f407ec4f3a9ce310ce28a5da"
+    },
+    {
+      "bytes": 1897,
+      "path": "research/gate4a2_spatial_state_audit.md",
+      "sha256": "fc711aa59fea300cb2bde06aeef44641d0632ed20e4943911ea73b96558f83f6"
+    },
+    {
+      "bytes": 10796,
+      "path": "research/gate4a2_spatial_generalization_protocol.md",
+      "sha256": "f65707cf33454049d303079ac62aa2e25e66b13fcb048c31f1a5ea22a1b191db"
+    },
+    {
+      "bytes": 115085,
+      "path": "research/audit_outputs/gate4a2_spatial_schedule.json",
+      "sha256": "00ba884d488891569008ab44214e924143f1cb7992fd57383ab057f5b6c16833"
+    },
+    {
+      "bytes": 606,
+      "path": "configs/gate4a2_libero_spatial.yaml",
+      "sha256": "e1268d6a5bf5e5d13ab542ca422989c0f0d45a32e2538e18e2f61d1b1e6b0e4c"
+    },
+    {
+      "bytes": 4361,
+      "path": "research/audit_tools/gate3a2_temporal_aggregation.py",
+      "sha256": "ffcfa431a5fb94ef97dc4301b738f2021d58540287b31d43adaa646fcd14022b"
+    },
+    {
+      "bytes": 5667,
+      "path": "research/audit_tools/gate3c_temporal_reuse.py",
+      "sha256": "2f68e9264012f82d20621657ced8728065300e4c030720acbc81816ba5c4b187"
+    },
+    {
+      "bytes": 3339,
+      "path": "research/audit_tools/gate4a2_schedule.py",
+      "sha256": "31e2c82bca31dd23a1903a9efb118419e5225b90b2a37432abbf280a1f163bd3"
+    },
+    {
+      "bytes": 27337,
+      "path": "research/audit_tools/gate4a2_rollout.py",
+      "sha256": "bb818602d3a52e1692eeb58ff177ef5d816a1d5b3bda2cad4cc8363e2999c477"
+    },
+    {
+      "bytes": 13209,
+      "path": "research/audit_tools/gate4a2_analyze.py",
+      "sha256": "da563c7e0f5c3a0e6e5ef854ca68cb2e7682fc062c88332f63bc8a4bee83ea02"
+    },
+    {
+      "bytes": 12523,
+      "path": "research/audit_tools/gate4a2_validate_rollouts.py",
+      "sha256": "08afab39c86e5f9cd9c2a07e4f08a0ace18ecb189eacd346938d7f2a7b1f8876"
+    },
+    {
+      "bytes": 4729,
+      "path": "tests/test_gate4a2_spatial_generalization.py",
+      "sha256": "5c536e59ba14dc5f0c64fc6f904bd10b59159b8121612842b4f8fed956f2d5c3"
+    }
+  ],
+  "model_sha256": "912f41808962d80ca9084435aa01eccccdd97b7eae3a841c9f4ac71caaf9f8b0",
+  "planned_episodes": 500,
+  "schedule_sha256": "00ba884d488891569008ab44214e924143f1cb7992fd57383ab057f5b6c16833",
+  "schema_version": 1,
+  "scientific_parent": "36bebdace1ffbd8d36bacc061feb146cd55f894a",
+  "status": "frozen before any official Gate-4A2 outcome",
+  "training_provenance_category": "MULTI-SUITE"
+}
