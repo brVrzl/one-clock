@@ -1,0 +1,120 @@
+{
+  "audit_time": "2026-08-24T20:01:59+08:00",
+  "checkpoint": {
+    "act_implementation_version": null,
+    "action_dimension": null,
+    "action_order": null,
+    "checkpoint_model_files_used": [],
+    "chunk_size": null,
+    "device": null,
+    "dtype": null,
+    "exact_repository_revision": "73644a66b54689e4602e5d4f6a4d62a04c3f406f",
+    "hf_repository_id": "zeromidnight/act_libero_spatial",
+    "image_keys": null,
+    "input_observation_keys": null,
+    "model_sha256": null,
+    "n_action_steps": null,
+    "normalization_modes": null,
+    "normalization_statistics_sha256": null,
+    "output_action_keys": null,
+    "policy_config_sha256": null,
+    "postprocessor_sha256": null,
+    "preprocessor_sha256": null,
+    "repository_files": [
+      {
+        "blob_id": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "path": ".gitattributes",
+        "size_bytes": 1519
+      }
+    ],
+    "requested_revision": "main",
+    "state_dimension": null,
+    "stored_temporal_ensemble_configuration": null
+  },
+  "critical_compatibility": {
+    "action_dimension_equals_7": "unverifiable_missing_checkpoint",
+    "action_order_arm_0_to_5_gripper_6": "unverifiable_missing_checkpoint",
+    "chunk_size_at_least_21": "unverifiable_missing_checkpoint",
+    "complete_chunks_retrievable_every_query": "fail_no_model",
+    "deterministic_per_step_querying_possible": "fail_no_model",
+    "policy_internal_temporal_ensemble_can_be_disabled": "unverifiable_missing_checkpoint",
+    "rollout_authorized": false
+  },
+  "dataset": {
+    "downloaded": false,
+    "exact_repository_revision": "38927e939de5d2bfd40effcf27d16710aea6f864",
+    "hf_repository_id": "zeromidnight/libero_spatial_lerobot_v3.0",
+    "remote_files": [
+      {
+        "lfs_sha256": null,
+        "path": ".gitattributes",
+        "size_bytes": 2461
+      },
+      {
+        "lfs_sha256": "ef1e285fc35d174b8794784bba49ac050e895b4ae8be3813d7dc4c05b148bf1b",
+        "path": "data/chunk-000/file-000.parquet",
+        "size_bytes": 3175691
+      },
+      {
+        "lfs_sha256": "f0e3465458f876869a6ebf96946ac0170294de3d1921554d4385c0ee065d3424",
+        "path": "meta/episodes/chunk-000/file-000.parquet",
+        "size_bytes": 302141
+      },
+      {
+        "lfs_sha256": null,
+        "path": "meta/info.json",
+        "size_bytes": 3514
+      },
+      {
+        "lfs_sha256": null,
+        "path": "meta/stats.json",
+        "size_bytes": 6327
+      },
+      {
+        "lfs_sha256": "e850c2987e564a91a831702ca638af2ba0454bbfe84053eb23c9b00bb86ba3ff",
+        "path": "meta/tasks.parquet",
+        "size_bytes": 2691
+      },
+      {
+        "lfs_sha256": "cf083b74bc784520ea0a46dc21bf8a307e7598e78b1668e7cc47408ecb95795c",
+        "path": "videos/observation.images.image/chunk-000/file-000.mp4",
+        "size_bytes": 179034368
+      },
+      {
+        "lfs_sha256": "e6f2e1e66e1a9ba0060ef65aa4689c7ecbd3cf0e291baeaf66b201744ef1beb8",
+        "path": "videos/observation.images.wrist_image/chunk-000/file-000.mp4",
+        "size_bytes": 183917888
+      }
+    ],
+    "requested_revision": "main"
+  },
+  "outcome_blindness": {
+    "official_outcomes_generated": 0,
+    "preregistration_created": false,
+    "scientific_episodes_executed": 0,
+    "state_selection_performed": false,
+    "task_success_inspected": false
+  },
+  "schema_version": 1,
+  "software_context": {
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpu_count_visible": 3,
+    "gymnasium": "1.3.0",
+    "huggingface_hub": "1.28.0",
+    "lerobot_git_commit": "f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+    "lerobot_git_worktree_clean": true,
+    "lerobot_package": "0.6.2",
+    "libero_package_version": null,
+    "mujoco": "3.8.1",
+    "nvidia_driver": "595.84",
+    "os": "Linux 6.8.0-136-generic x86_64; glibc 2.35",
+    "python": "3.12.3",
+    "pytorch": "2.11.0+cu130",
+    "rendering_backend": null,
+    "robosuite": "1.4.0"
+  },
+  "status": "STOP_NO_CHECKPOINT_FILES",
+  "stop_reason": "The exact candidate model revision contains only .gitattributes and no checkpoint, config, processor, or normalization files. Critical compatibility cannot be established and no model can be instantiated."
+}
