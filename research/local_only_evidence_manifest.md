@@ -44,6 +44,28 @@ rollout roots. Gate-3A2 uses its separate committed
 absolute path, byte size, SHA256, outcome, step/query count, and provenance for
 every corresponding local-only log.
 
+## Thor-to-RTX archival relocation
+
+The Thor evidence was transferred on 2026-08-24 and verified before use. The
+archive SHA256 is
+`51e8444fe612364ef17878208ac6bd17c36d42c252ed3ce507e1b750b25218f8`. The
+stable non-Git archival root is
+`/home/wjq/one-clock-evidence/thor-era-20260824/`. Original Thor paths remain
+the provenance identifiers; the relocation map records both paths and all
+reverified digests in
+`research/handoffs/thor_evidence_relocation_5080.json`.
+
+| Historical artifact | Current RTX archival location | Reverified content-tree SHA256 | Status |
+|---|---|---|---|
+| `/home/thor/projects/one-clock/experiments/gate3a1_dense_temporal_cache` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3a1_thor_reference_cache` | `87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c` | Thor reference; separate from RTX cache |
+| `/home/thor/projects/one-clock/experiments/gate3a2_temporal_aggregation` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3a2_rollouts` | `d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c` | required; verified |
+| `/home/thor/projects/one-clock/experiments/gate3b_cross_generation_composition` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3b_rollouts` | `046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d` | developmental; verified |
+| `/home/thor/projects/one-clock/experiments/gate3c_asymmetric_temporal_reuse` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3c_rollouts` | `0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403` | authoritative confirmatory evidence; verified |
+| `/home/thor/projects/one-clock/experiments/groupwise_selective_commitment` (transferred subset) | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/selective_retention/groupwise_selective_commitment` | `531123b0cb45520ba41878e513d2a16cb5906c0d7f8ff6bb27616f24e536b7de` | raw logs verified; source full-root ledger mismatch retained |
+| `/home/thor/projects/one-clock/experiments/runs/libero_static_grid_20` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/task0_grid_20` | `c79a6ca90756957c43ac7ef819f03bd4d73350e15571c8a58bec5d24ce76b2b6` | historical ledger mismatch retained |
+| `/home/thor/projects/one-clock/experiments/runs/libero_static_grid_50_extension` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/task0_grid_50_extension` | `3f2d1645128496a5c897f15e308244435ada7d9c248a65a4c6e1577e656d3837` | historical ledger mismatch retained |
+| `/home/thor/projects/one-clock/experiments/runs/libero_object_cross_task` | `/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/cross_task` | `99495287b4b882bce12f74c114cc5d644a12139162fb3f312d4585df61fa068c` | historical ledger mismatch retained |
+
 ## Raw prediction and aggregate inputs
 
 | Local-only artifact | Size | SHA256 | Audit claims that depend on it |

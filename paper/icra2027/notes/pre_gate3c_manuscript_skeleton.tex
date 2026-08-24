@@ -1,26 +1,14 @@
-% Active post-Gate-3B / pre-Gate-3C manuscript skeleton.
+% Active post-Gate-3C manuscript skeleton.
 % This file is not included by the obsolete historical main.tex.
-% Gate-3C placeholders must be filled only from its complete validated report.
+% All Gate-3C values below come from the validated primary compact outputs at
+% scientific source commit 3b9f1209df7266160c47453e8ee66a142ea8688c.
 
-\providecommand{\gateCStatus}{\texttt{\detokenize{<GATE3C_STATUS>}}}
-\providecommand{\gateCSuccessFO}{\texttt{\detokenize{<GATE3C_SUCCESS_FO20>}}}
-\providecommand{\gateCSuccessFF}{\texttt{\detokenize{<GATE3C_SUCCESS_FF>}}}
-\providecommand{\gateCSuccessOO}{\texttt{\detokenize{<GATE3C_SUCCESS_OO20>}}}
-\providecommand{\gateCSuccessAgeExp}{\texttt{\detokenize{<GATE3C_SUCCESS_AGE_EXP>}}}
-\providecommand{\gateCSuccessCogACT}{\texttt{\detokenize{<GATE3C_SUCCESS_COGACT>}}}
-\providecommand{\gateCContrasts}{\texttt{\detokenize{<GATE3C_PRIMARY_CONTRASTS>}}}
-\providecommand{\gateCCI}{\texttt{\detokenize{<GATE3C_CI>}}}
-\providecommand{\gateCPerTask}{\texttt{\detokenize{<GATE3C_PER_TASK>}}}
-
-% Safe title while Gate-3C is pending:
-% Temporal Source Asymmetry in Joint Robot Action Chunks
-%
-% Confirmation title:
+% Recommended title:
 % Fresh Feedback, Retained Intent: Asymmetric Temporal Reuse for
 % Action-Chunked Robot Policies
 %
-% Null fallback title:
-% Teacher-Forced Accuracy and Closed-Loop Temporal Source Utility
+% The intervention is source age, not a 20-step gripper hold. The gripper
+% prediction may change at every controller tick while the policy is queried.
 
 \section{Introduction}
 
@@ -61,21 +49,22 @@ the opposite arm source from Gate-3B's closed-loop marginal pattern.
 Teacher-forced component accuracy and closed-loop temporal-source utility are
 therefore not equivalent objectives in these frozen evaluations.
 
-Gate-3C tests the selected fresh-arm, old-gripper assignment on untouched
-states against joint-fresh, joint-old, age-exponential, and CogACT executors.
-Its status and results remain \gateCStatus. The manuscript makes no confirmed
-method claim until that experiment is complete and validated.
+Gate-3C confirmed the selected fresh-arm, old20-gripper assignment on the
+untouched primary cohort of tasks 1--9, with 14 official states per task and
+126 paired blocks. FO20 achieved 80/126 successes (63.5%), compared with
+53/126 (42.1%) for newest full action, 55/126 (43.7%) for full old20, 62/126
+(49.2%) for age-exponential temporal ensembling, and 59/126 (46.8%) for tuned
+CogACT. The four registered FO20-minus-comparator contrasts were all stable
+positive under paired-block bootstrap, task-cluster bootstrap, and
+leave-one-task-out criteria. This confirmation is bounded to the frozen
+ACT/LIBERO system, the arm/gripper partition, and the 20-tick source gap.
 
-% Conditional contribution paragraph if Gate-3C confirms:
-% This study provides controlled evidence that heterogeneous action components
-% need not share one temporal source age. It identifies a fresh-arm,
-% old-gripper assignment in the evaluated ACT/LIBERO system, contrasts its
-% closed-loop utility with teacher-forced component error, and evaluates a
-% training-free executor against four full-action controls.
-%
-% Null branch: delete the preceding contribution paragraph. Retain only the
-% measurement-limit result, the exploratory Gate-3B observation, and the failed
-% untouched-state confirmation.
+The resulting contributions are an intervention-level finding that jointly
+predicted heterogeneous action components can benefit from different temporal
+source ages, a confirmed fresh-arm/old20-gripper executor for this system, and
+an offline-versus-closed-loop measurement comparison. The paper does not claim
+that all arms require freshness, all grippers require memory, that 20 ticks is
+optimal, or that the effect generalizes to other embodiments or policies.
 
 \section{Related Work}
 
@@ -211,12 +200,30 @@ closed-loop margins favored a fresh arm and old gripper. This mismatch shows
 that the two frozen evaluations optimize different objectives. It does not
 identify a causal mechanism or discredit the demonstration action.
 
-\subsection{Gate-3C untouched-state confirmation}
+\subsection{Gate-3C confirmed asymmetric temporal reuse}
 
-Gate-3C status: \gateCStatus. Success rates are `FO20' \gateCSuccessFO, `FF'
-\gateCSuccessFF, `OO20' \gateCSuccessOO, age-exponential
-\gateCSuccessAgeExp, and CogACT \gateCSuccessCogACT. The frozen contrasts are
-\gateCContrasts, with intervals \gateCCI. Task-level results are \gateCPerTask.
+Gate-3C evaluated five methods on the untouched primary cohort of tasks 1--9,
+with 14 common official states per task. The asymmetric FO20 executor achieved
+80/126 successes (63.5%). Newest full action achieved 53/126 (42.1%), full
+old20 achieved 55/126 (43.7%), age-exponential temporal ensembling achieved
+62/126 (49.2%), and tuned CogACT achieved 59/126 (46.8%).
+
+The registered paired-block contrasts were all stable positive. FO20 minus
+newest was $+.2143$, with paired-state interval $[+.1429,+.2937]$ and
+task-cluster interval $[+.1270,+.3095]$. FO20 minus full old20 was $+.1984$,
+with intervals $[+.0952,+.3016]$ and $[+.0635,+.3175]$. FO20 minus
+age-exponential was $+.1429$, with intervals $[+.0476,+.2381]$ and
+$[+.0159,+.2778]$. FO20 minus CogACT was $+.1667$, with intervals
+$[+.0714,+.2619]$ and $[+.0397,+.2937]$. Every primary leave-one-task-out
+estimate remained positive. These are paired task-state analyses; controller
+frames are not treated as independent success replicates.
+
+The effect is heterogeneous across tasks. The FO20-minus-newest differences in
+task order 1--9 were $+.3571$, $+.2143$, $+.2143$, $+.5000$, $+.2857$,
+$+.0714$, $+.1429$, $+.0714$, and $+.0714$. The corresponding differences
+against full old20 were $+.2857$, $+.2857$, $-.2143$, $+.1429$, $0$,
+$+.1429$, $+.4286$, $+.2857$, and $+.4286$. The aggregate result is therefore
+not a claim of uniform task-level improvement.
 
 \section{Discussion}
 
@@ -234,17 +241,17 @@ fresh arm in closed loop. Teacher-forced delayed prediction quality can capture
 expert temporal structure without identifying the prediction that best closes
 the control loop. This observation is descriptive and system-specific.
 
-The practical conclusion depends entirely on Gate-3C. If the directional
-pattern transfers, component-specific reliability signals should not be
-collapsed automatically into one source age, and `FO20' becomes a minimal
-training-free executor for this evaluated system. If it does not transfer, the
-paper must retain Gate-3B as exploration and reject a method claim. In either
-case, the additive-loss identity remains a measurement boundary rather than a
-behavioral result.
+Gate-3C confirms a training-free FO20 executor for this evaluated system.
+Component-specific reliability signals should not be collapsed automatically
+into one source age when the components are heterogeneous. The result does not
+establish a universal arm-fresh/gripper-memory law, dynamic horizon adaptation,
+20-tick optimality, non-Markovian causation, or transfer to other policies,
+embodiments, or real robots. The additive-loss identity remains a measurement
+boundary rather than a behavioral result.
 
 \begin{table}[t]
-\caption{Frozen system and experiment contract. Gate-3C cohort entries remain
-placeholders until its complete validation.}
+\caption{Frozen system and experiment contract. Gate-3C cohort entries are
+the validated primary cohort used for the confirmed result.}
 \label{tab:system_contract}
 \centering
 \scriptsize
@@ -259,7 +266,7 @@ Chunk / action & $100\times7$; arm $0{:}6$, gripper $6$ \\
 Controller & LIBERO relative control, 20 Hz, 280 steps \\
 Source gap & $d=20$ ticks $=1.0$ s \\
 Gate-3B & 10 tasks, 10 states/task, 100 paired blocks \\
-Gate-3C & \texttt{<GATE3C_EXPERIMENT_CONTRACT>} \\
+Gate-3C & tasks 1--9, 14 states/task, 126 paired blocks \\
 Query contract & One ACT query per surviving step \\
 Outcome & Binary task success \\
 \bottomrule
@@ -267,8 +274,9 @@ Outcome & Binary task success \\
 \end{table}
 
 \begin{table}[t]
-\caption{Gate-3B result and reserved Gate-3C confirmation. Gate-3B directional
-effects are explicitly post-hoc.}
+\caption{Gate-3B directional result and Gate-3C confirmation. Gate-3B
+directional effects are explicitly post-hoc; Gate-3C uses its untouched primary
+cohort.}
 \label{tab:directional_result}
 \centering
 \scriptsize
@@ -277,18 +285,19 @@ effects are explicitly post-hoc.}
 \toprule
 Quantity & Gate-3B & Gate-3C \\
 \midrule
-FF success & .440 & \gateCSuccessFF \\
-OO20 success & .400 & \gateCSuccessOO \\
-FO20 success & .620 & \gateCSuccessFO \\
+FF / newest success & .440 & .421 \\
+OO20 / full old20 success & .400 & .437 \\
+FO20 success & .620 & .635 \\
 OF success & .170 & not tested \\
-Age-exp success & not tested & \gateCSuccessAgeExp \\
-CogACT success & not tested & \gateCSuccessCogACT \\
+Age-exp success & not tested & .492 \\
+CogACT success & not tested & .468 \\
 \midrule
 $C_{\mathrm{coherence}}$ & +.025; CI $[-.030,.085]$ & not primary \\
 Fresh-arm effect & +.245 post-hoc & not estimated factorially \\
 Old-gripper effect & +.205 post-hoc & not estimated factorially \\
-FO20 primary contrasts & not preregistered & \gateCContrasts \\
-Gate-3C intervals & not applicable & \gateCCI \\
+FO20--newest & not tested & +.214; CI $[+.143,+.294]$ \\
+FO20--full old20 & not tested & +.198; CI $[+.095,+.302]$ \\
+FO20--age-exp / CogACT & not tested & +.143 / +.167 \\
 \bottomrule
 \end{tabular}
 \end{table}

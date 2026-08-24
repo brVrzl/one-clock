@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "handoff_id": "thor_to_5080_20260824",
+  "destination_root": "/home/wjq/one-clock-evidence/thor-era-20260824",
+  "archive_sha256": "51e8444fe612364ef17878208ac6bd17c36d42c252ed3ce507e1b750b25218f8",
+  "source_scientific_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+  "per_file_verification": {
+    "manifest": "provenance/SHA256SUMS",
+    "tree_definitions": "provenance/TREE_HASHES.json",
+    "sha256sum_check": "2495/2495 files PASS"
+  },
+  "assets": [
+    {
+      "logical_name": "gate3a1_thor_reference_cache",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3a1_dense_temporal_cache",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3a1_thor_reference_cache",
+      "original_content_tree_sha256": "87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c",
+      "reverified_rtx_content_tree_sha256": "87e97a5711a7b51ea53da908774040d2b23ca57e9c29699bfd25f28ebe31908c",
+      "generating_experiment": "Gate-3A1 dense temporal cache",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "archival; distinct from RTX regenerated cache"
+    },
+    {
+      "logical_name": "gate3a2_rollouts",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3a2_temporal_aggregation",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3a2_rollouts",
+      "original_content_tree_sha256": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+      "reverified_rtx_content_tree_sha256": "d61f9850d0ee283dc823a8e7a208c02bac7b33bee196c27bcb1d6dd565131a4c",
+      "generating_experiment": "Gate-3A2 temporal aggregation",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "required historical closed-loop evidence"
+    },
+    {
+      "logical_name": "gate3b_rollouts",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3b_cross_generation_composition",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3b_rollouts",
+      "original_content_tree_sha256": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+      "reverified_rtx_content_tree_sha256": "046eedc6921205b28eacc6d24f7ce6bbc2d250b305c98383055935c100eac83d",
+      "generating_experiment": "Gate-3B cross-generation composition",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "required developmental evidence"
+    },
+    {
+      "logical_name": "gate3c_rollouts",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/gate3c_asymmetric_temporal_reuse",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/gate3c_rollouts",
+      "original_content_tree_sha256": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+      "reverified_rtx_content_tree_sha256": "0df106c267c4651ac50182829e85e00a8e2791e68f44982b879facd7df506403",
+      "generating_experiment": "Gate-3C asymmetric temporal reuse",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "authoritative confirmatory evidence"
+    },
+    {
+      "logical_name": "selective_retention_raw_and_provenance",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/groupwise_selective_commitment",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/selective_retention/groupwise_selective_commitment",
+      "original_content_tree_sha256": "5c446bc40ea1974e90c3ef36d2f4d4b8c4bae6621a4a5a8a796b2a47e822d486",
+      "reverified_rtx_content_tree_sha256": "531123b0cb45520ba41878e513d2a16cb5906c0d7f8ff6bb27616f24e536b7de",
+      "generating_experiment": "historical groupwise selective commitment",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "raw-log subset; source full-root ledger mismatch retained"
+    },
+    {
+      "logical_name": "static_horizon_task0_grid20",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_static_grid_20",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/task0_grid_20",
+      "original_content_tree_sha256": "c79a6ca90756957c43ac7ef819f03bd4d73350e15571c8a58bec5d24ce76b2b6",
+      "reverified_rtx_content_tree_sha256": "c79a6ca90756957c43ac7ef819f03bd4d73350e15571c8a58bec5d24ce76b2b6",
+      "generating_experiment": "task-0 static horizon grid, 20-state root",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "historical ledger mismatch retained"
+    },
+    {
+      "logical_name": "static_horizon_task0_grid50_extension",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_static_grid_50_extension",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/task0_grid_50_extension",
+      "original_content_tree_sha256": "3f2d1645128496a5c897f15e308244435ada7d9c248a65a4c6e1577e656d3837",
+      "reverified_rtx_content_tree_sha256": "3f2d1645128496a5c897f15e308244435ada7d9c248a65a4c6e1577e656d3837",
+      "generating_experiment": "task-0 static horizon 50-state extension",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "historical ledger mismatch retained"
+    },
+    {
+      "logical_name": "static_horizon_cross_task",
+      "original_thor_absolute_path": "/home/thor/projects/one-clock/experiments/runs/libero_object_cross_task",
+      "current_rtx_archive_path": "/home/wjq/one-clock-evidence/thor-era-20260824/evidence/static_horizon/cross_task",
+      "original_content_tree_sha256": "99495287b4b882bce12f74c114cc5d644a12139162fb3f312d4585df61fa068c",
+      "reverified_rtx_content_tree_sha256": "99495287b4b882bce12f74c114cc5d644a12139162fb3f312d4585df61fa068c",
+      "generating_experiment": "LIBERO Object cross-task static evidence",
+      "scientific_source_commit": "3b9f1209df7266160c47453e8ee66a142ea8688c",
+      "classification": "historical ledger mismatch retained"
+    }
+  ]
+}

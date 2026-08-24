@@ -68,23 +68,33 @@ def validate_ready(data: dict[str, Any]) -> dict[str, Any]:
     intervals = data.get("confidence_intervals")
     if not isinstance(intervals, dict) or set(intervals) != set(contrasts):
         raise ValueError("confidence_intervals must match primary_contrasts")
-    numeric_contrasts: dict[str, tuple[float, tuple[float, float]]] = {}
+    numeric_contrasts: dict[str, dict[str, Any]] = {}
     for name, value in contrasts.items():
         estimate = finite(value, f"primary_contrasts.{name}")
         bounds = intervals[name]
-        if not isinstance(bounds, list) or len(bounds) != 2:
-            raise ValueError(f"confidence_intervals.{name} must be [lower, upper]")
-        lower = finite(bounds[0], f"{name}.lower")
-        upper = finite(bounds[1], f"{name}.upper")
-        if not lower <= estimate <= upper:
-            raise ValueError(f"confidence interval for {name} must contain estimate")
-        numeric_contrasts[name] = (estimate, (lower, upper))
+        if not isinstance(bounds, dict) or set(bounds) != {"paired_state", "task_cluster"}:
+            raise ValueError(
+                f"confidence_intervals.{name} must contain paired_state and task_cluster"
+            )
+        numeric_bounds: dict[str, tuple[float, float]] = {}
+        for interval_name in ("paired_state", "task_cluster"):
+            pair = bounds[interval_name]
+            if not isinstance(pair, list) or len(pair) != 2:
+                raise ValueError(f"{name}.{interval_name} must be [lower, upper]")
+            lower = finite(pair[0], f"{name}.{interval_name}.lower")
+            upper = finite(pair[1], f"{name}.{interval_name}.upper")
+            if not lower <= estimate <= upper:
+                raise ValueError(
+                    f"{name}.{interval_name} must contain the contrast estimate"
+                )
+            numeric_bounds[interval_name] = (lower, upper)
+        numeric_contrasts[name] = {"estimate": estimate, "intervals": numeric_bounds}
 
     tasks = data.get("task_results")
-    if not isinstance(tasks, list) or len(tasks) != 10:
-        raise ValueError("task_results must contain ten complete task rows")
-    if {row.get("task_id") for row in tasks} != set(range(10)):
-        raise ValueError("task_results must contain task IDs 0 through 9")
+    if not isinstance(tasks, list) or len(tasks) != 9:
+        raise ValueError("task_results must contain the nine primary task rows")
+    if {row.get("task_id") for row in tasks} != set(range(1, 10)):
+        raise ValueError("task_results must contain primary task IDs 1 through 9")
     for row in tasks:
         if not isinstance(row.get("contrasts"), dict):
             raise ValueError("each task row requires a numeric contrasts mapping")
@@ -114,28 +124,45 @@ def render(ready: dict[str, Any], output: Path) -> None:
 
     ax = axes[1]
     names = list(ready["contrasts"])
+    display_names = {
+        "FO20_minus_newest": "FO20 - newest",
+        "FO20_minus_full_old20": "FO20 - full old20",
+        "FO20_minus_age_exp": "FO20 - age exp",
+        "FO20_minus_CogACT": "FO20 - CogACT",
+    }
     y = np.arange(len(names))[::-1]
     for row, name in enumerate(names):
-        estimate, (lower, upper) = ready["contrasts"][name]
-        ax.errorbar(estimate, y[row], xerr=[[estimate - lower], [upper - estimate]],
-                    fmt="o", color="#332288", capsize=3)
+        estimate = ready["contrasts"][name]["estimate"]
+        paired = ready["contrasts"][name]["intervals"]["paired_state"]
+        cluster = ready["contrasts"][name]["intervals"]["task_cluster"]
+        ax.errorbar(estimate, y[row] + 0.08,
+                    xerr=[[estimate - paired[0]], [paired[1] - estimate]],
+                    fmt="o", color="#332288", capsize=3,
+                    label="paired" if row == 0 else None)
+        ax.errorbar(estimate, y[row] - 0.08,
+                    xerr=[[estimate - cluster[0]], [cluster[1] - estimate]],
+                    fmt="s", color="#CC6677", capsize=3,
+                    label="task cluster" if row == 0 else None)
     ax.axvline(0, color="#777777", linewidth=0.8, linestyle="--")
-    ax.set_yticks(y, names)
+    ax.set_yticks(y, [display_names.get(name, name) for name in names])
     ax.set_xlabel("Success difference")
     ax.set_title("(b) Frozen contrasts", loc="left")
+    ax.legend(frameon=False, fontsize=7, ncol=2, loc="upper center",
+              bbox_to_anchor=(0.5, -0.22))
 
     ax = axes[2]
     first_contrast = names[0]
     tasks = sorted(ready["tasks"], key=lambda row: row["task_id"])
     values = [row["contrasts"][first_contrast] for row in tasks]
-    ax.bar(range(10), values, color="#228833")
+    task_ids = [row["task_id"] for row in tasks]
+    ax.bar(task_ids, values, color="#228833")
     ax.axhline(0, color="#777777", linewidth=0.8)
-    ax.set_xticks(range(10))
+    ax.set_xticks(task_ids)
     ax.set_xlabel("LIBERO Object task")
     ax.set_ylabel(first_contrast)
     ax.set_title("(c) Task effects", loc="left")
 
-    fig.subplots_adjust(left=0.08, right=0.995, top=0.88, bottom=0.27)
+    fig.subplots_adjust(left=0.08, right=0.995, top=0.88, bottom=0.34)
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, bbox_inches="tight")
     plt.close(fig)
@@ -153,6 +180,8 @@ def main() -> None:
         print(f"schema_version={data['schema_version']}")
         print(f"status={data.get('status')}")
         print("pending=" + (", ".join(pending) if pending else "none"))
+        validate_ready(data)
+        print("validated=ready")
         return
     ready = validate_ready(data)
     render(ready, args.output)

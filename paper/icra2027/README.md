@@ -1,26 +1,31 @@
 # ICRA 2027 paper workspace
 
-> **Status note (2026-08-24):** Gate-3B is complete, and Gate-3C is pending.
+> **Status note (2026-08-24):** Gate-3C is complete and is the authoritative
+> scientific backbone. The RTX 5080 is now the primary simulation, analysis,
+> and manuscript machine; Thor is retained for historical evidence and
+> lightweight or hardware-specific verification.
 > `main.tex` and the existing section files remain historical prose from the
 > discontinued group-specific-horizon direction. They are not the scientific
-> source of truth. The active post-Gate-3B architecture lives in
+> source of truth. The active post-Gate-3C architecture lives in
 > [`notes/post_gate3b_paper_plan.md`](notes/post_gate3b_paper_plan.md), and the
 > fill-ready prose, methods, results, and tables live in
 > [`notes/pre_gate3c_manuscript_skeleton.tex`](notes/pre_gate3c_manuscript_skeleton.tex).
-> Gate-3B's directional results are post-hoc. Do not replace any Gate-3C
-> placeholder from partial outcomes.
+> Gate-3B's directional result remains developmental evidence. Gate-3C's
+> validated primary outputs are now integrated in the active skeleton and
+> Figure 4 interface.
 
 Historical provisional title: **One Clock Does Not Fit All: Group-Specific Execution
 Horizons for Action-Chunking Robot Policies**.
 
-Safe current working title: **Temporal Source Asymmetry in Joint Robot Action
-Chunks**. The historical title above is not a candidate for the active paper.
+Recommended current title: **Fresh Feedback, Retained Intent: Asymmetric Temporal
+Reuse for Action-Chunked Robot Policies**. The historical title above is not a
+candidate for the active paper.
 
 The bounded closest-work recheck is recorded in
 [`notes/gate3b_directional_related_work_update.md`](notes/gate3b_directional_related_work_update.md).
 Figure 2 has a validated Gate-3B data interface, Figure 3 has a frozen
-offline-versus-closed-loop interface, and Figure 4 remains guarded behind a
-placeholder-only Gate-3C interface under [`figures/`](figures/).
+offline-versus-closed-loop interface, and Figure 4 contains only validated
+Gate-3C primary-cohort data under [`figures/`](figures/).
 
 ## Submission format audit (2026-08-20)
 
