@@ -4,25 +4,16 @@
 > scientific backbone. The RTX 5080 is now the primary simulation, analysis,
 > and manuscript machine; Thor is retained for historical evidence and
 > lightweight or hardware-specific verification.
-> `main.tex` and the existing section files remain historical prose from the
-> discontinued group-specific-horizon direction. They are not the scientific
-> source of truth. The active post-Gate-3C architecture lives in
-> [`notes/post_gate3b_paper_plan.md`](notes/post_gate3b_paper_plan.md), and the
-> fill-ready prose, methods, results, and tables live in
-> [`notes/pre_gate3c_manuscript_skeleton.tex`](notes/pre_gate3c_manuscript_skeleton.tex).
-> Gate-3B's directional result remains developmental evidence. Gate-3C's
-> validated primary outputs are now integrated in the active skeleton and
-> Figure 4 interface.
+> `main.tex` and the seven numbered files under `sections/` are the active,
+> reconciled manuscript. Historical prose remains only under `notes/` and is
+> not included by the build. Gate-3B's directional result remains developmental
+> evidence; Gate-3C is the confirmatory result.
 
-Historical provisional title: **One Clock Does Not Fit All: Group-Specific Execution
-Horizons for Action-Chunking Robot Policies**.
+Current title: **Asymmetric Temporal Reuse for Heterogeneous Components of
+Action-Chunked Robot Policies**.
 
-Recommended current title: **Fresh Feedback, Retained Intent: Asymmetric Temporal
-Reuse for Action-Chunked Robot Policies**. The historical title above is not a
-candidate for the active paper.
-
-The bounded closest-work recheck is recorded in
-[`notes/gate3b_directional_related_work_update.md`](notes/gate3b_directional_related_work_update.md).
+The final bounded closest-work recheck is recorded in
+[`notes/final_novelty_audit_20260824.md`](notes/final_novelty_audit_20260824.md).
 Figure 2 has a validated Gate-3B data interface, Figure 3 has a frozen
 offline-versus-closed-loop interface, and Figure 4 contains only validated
 Gate-3C primary-cohort data under [`figures/`](figures/).
@@ -63,7 +54,7 @@ The unchanged template files were downloaded from the official
 From the repository root:
 
 ```sh
-python paper/icra2027/generate_figures.py
+.venv/bin/python paper/icra2027/generate_figures.py
 ```
 
 The script reads the committed experiment JSON and writes vector PDFs under
@@ -81,9 +72,9 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-The host environment has no `pdflatex`, `bibtex`, or `latexmk`, but an existing
-local `embodied-latex:texlive2023` Docker image was used without installing a TeX
-distribution. The complete draft compiles to eight US-letter, double-column
-pages, including acknowledgments and references. The final build has no
-unresolved citations, undefined labels, BibTeX errors, or overfull boxes; it
-emits only non-fatal underfull-box warnings.
+The host environment has no system `pdflatex`, `bibtex`, `latexmk`, or Docker.
+The checked build used the official portable TinyTeX 2026.08 distribution in a
+temporary directory. The complete draft compiles to six US-letter,
+double-column pages, including acknowledgments and references. The final build
+has no unresolved citations, undefined labels, BibTeX errors, or overfull boxes;
+it emits only non-fatal underfull-box warnings.

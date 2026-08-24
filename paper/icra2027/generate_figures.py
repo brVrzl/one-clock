@@ -1,204 +1,296 @@
 #!/usr/bin/env python3
-"""Generate paper figures from committed one-clock experiment aggregates."""
+"""Generate the four active ICRA manuscript figures from frozen interfaces."""
 
 from __future__ import annotations
 
+import importlib.util
 import json
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Rectangle
+from matplotlib.lines import Line2D
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 
-PAPER_DIR = Path(__file__).resolve().parent
-REPO_ROOT = PAPER_DIR.parents[1]
-FIGURE_DIR = PAPER_DIR / "figures"
-TASK0_JSON = REPO_ROOT / "experiments" / "libero_static_grid_50.json"
-CROSS_TASK_JSON = (
-    REPO_ROOT / "experiments" / "libero_object_cross_task_summary.json"
-)
+ROOT = Path(__file__).resolve().parent
+FIG_DIR = ROOT / "figures"
+STYLE_PATH = Path("/home/wjq/.codex/skills/figure-style/kernel.py")
+
+spec = importlib.util.spec_from_file_location("figure_style_kernel", STYLE_PATH)
+if spec is None or spec.loader is None:
+    raise RuntimeError(f"Cannot load figure-style helper: {STYLE_PATH}")
+style = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(style)
+
+# Mandatory editable-text rules, set before any figure is created.
+plt.rcParams["font.family"] = "sans-serif"
+plt.rcParams["font.sans-serif"] = ["Arial", "DejaVu Sans", "Liberation Sans"]
+plt.rcParams["svg.fonttype"] = "none"
+plt.rcParams["pdf.fonttype"] = 42
+style.apply_figure_style(frame="open", font="Arial", sizes=(8, 7, 6), grid=False)
+plt.rcParams["svg.fonttype"] = "none"
+plt.rcParams["pdf.fonttype"] = 42
+
+INK = "#252525"
+MID = "#707070"
+LIGHT = "#D6D6D6"
+PALE = "#F2F2F2"
+FOCAL = "#2F5D8C"
+FOCAL_PALE = "#DCE7F2"
+WHITE = "#FFFFFF"
 
 
-def configure_matplotlib() -> None:
-    plt.rcParams.update(
-        {
-            "font.family": "DejaVu Sans",
-            "font.size": 8,
-            "axes.titlesize": 8.5,
-            "axes.labelsize": 8,
-            "xtick.labelsize": 7,
-            "ytick.labelsize": 7,
-            "legend.fontsize": 7,
-            "pdf.fonttype": 42,
-            "ps.fonttype": 42,
-        }
-    )
+def load_json(name: str) -> dict:
+    with (FIG_DIR / name).open("r", encoding="utf-8") as handle:
+        return json.load(handle)
 
 
-def draw_chunk_row(ax, y: float, spans: list[tuple[int, int, int]], label: str) -> None:
-    colors = ["#4C78A8", "#F58518", "#54A24B", "#E45756", "#72B7B2"]
-    for start, end, source_id in spans:
-        ax.add_patch(
-            Rectangle(
-                (start, y - 0.30),
-                end - start,
-                0.60,
-                facecolor=colors[source_id % len(colors)],
-                edgecolor="white",
-                linewidth=0.8,
-            )
+def export(fig: plt.Figure, stem: str) -> None:
+    """Export editable SVG, vector PDF, and a 300-dpi inspection PNG."""
+    for suffix in ("svg", "pdf"):
+        fig.savefig(
+            FIG_DIR / f"{stem}.{suffix}",
+            bbox_inches="tight",
+            pad_inches=0.035,
         )
-        ax.text(
-            (start + end) / 2,
-            y,
-            f"C{source_id}",
-            ha="center",
-            va="center",
-            color="white",
-            fontsize=7,
-            fontweight="bold",
-        )
-    ax.text(-0.08, y, label, ha="right", va="center", fontsize=8)
-
-
-def make_timeline() -> None:
-    fig, ax = plt.subplots(figsize=(7.05, 1.85))
-    global_spans = [(0, 4, 0), (4, 8, 1), (8, 12, 2), (12, 16, 3), (16, 20, 4)]
-    arm_spans = global_spans
-    gripper_spans = [(0, 16, 0), (16, 20, 4)]
-
-    draw_chunk_row(ax, 3.25, global_spans, "Arm")
-    draw_chunk_row(ax, 2.55, global_spans, "Gripper")
-    draw_chunk_row(ax, 1.25, arm_spans, "Arm")
-    draw_chunk_row(ax, 0.55, gripper_spans, "Gripper")
-
-    ax.text(-1.18, 2.90, "Global\n$h=4$", ha="right", va="center", fontweight="bold")
-    ax.text(
-        -1.18,
-        0.90,
-        "Group-specific\n$(h_a,h_g)=(4,16)$",
-        ha="right",
-        va="center",
-        fontweight="bold",
+    fig.savefig(
+        FIG_DIR / f"{stem}.png",
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=0.035,
     )
-
-    for x in range(0, 21, 4):
-        ax.axvline(x, color="#888888", linewidth=0.45, linestyle=":" if x else "-")
-    for x in (4, 8, 12):
-        ax.text(x, 1.72, "query; arm accepts", ha="center", va="bottom", fontsize=6.2)
-    ax.text(16, 1.72, "query; both accept", ha="center", va="bottom", fontsize=6.2)
-
-    ax.set_xlim(-2.85, 20)
-    ax.set_ylim(0.05, 3.75)
-    ax.set_xticks(range(0, 21, 4))
-    ax.set_xlabel("Environment step")
-    ax.set_yticks([])
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-    ax.tick_params(axis="x", length=2, pad=1)
-    ax.set_title(
-        "Source chunks under synchronized and group-specific fixed execution",
-        pad=1,
-    )
-    fig.tight_layout(pad=0.25)
-    fig.savefig(FIGURE_DIR / "execution_timeline.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
-def make_results_overview() -> None:
-    with TASK0_JSON.open() as f:
-        task0 = json.load(f)
-    with CROSS_TASK_JSON.open() as f:
-        cross = json.load(f)
-
-    horizons = task0["horizons"]
-    success = np.asarray(task0["matrices"]["success_rate"], dtype=float)
-    tasks = cross["tasks"]
-    global_best = np.asarray([task["best_global_success_rate"] for task in tasks])
-    offdiag_best = np.asarray(
-        [task["best_off_diagonal_success_rate"] for task in tasks]
+def rounded_box(ax, xy, width, height, *, face, edge=INK, linewidth=0.8,
+                hatch=None, radius=0.03, zorder=2):
+    patch = FancyBboxPatch(
+        xy,
+        width,
+        height,
+        boxstyle=f"round,pad=0.015,rounding_size={radius}",
+        facecolor=face,
+        edgecolor=edge,
+        linewidth=linewidth,
+        hatch=hatch,
+        zorder=zorder,
     )
+    ax.add_patch(patch)
+    return patch
 
-    fig, (ax0, ax1) = plt.subplots(
-        1,
-        2,
-        figsize=(7.05, 2.55),
-        gridspec_kw={"width_ratios": [1.0, 1.22], "wspace": 0.42},
-    )
 
-    image = ax0.imshow(success, vmin=0.50, vmax=0.95, cmap="YlGnBu", aspect="equal")
-    for row in range(success.shape[0]):
-        for col in range(success.shape[1]):
-            color = "white" if success[row, col] >= 0.82 else "black"
-            ax0.text(
-                col,
-                row,
-                f"{100 * success[row, col]:.0f}",
-                ha="center",
-                va="center",
-                fontsize=7,
-                color=color,
+def figure1() -> None:
+    fig, ax = plt.subplots(figsize=(7.0, 2.25))
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
+
+    ax.text(0.01, 0.94, "Repeated queries predict the same physical time", weight="bold",
+            ha="left", va="top")
+    source_x = [0.08, 0.23, 0.38]
+    source_labels = [r"$q=t-20$", r"$q=t-10$", r"$q=t$"]
+    for index, (x, label) in enumerate(zip(source_x, source_labels)):
+        old = index < 2
+        rounded_box(ax, (x, 0.58), 0.105, 0.17,
+                    face=WHITE if old else INK,
+                    edge=INK,
+                    hatch="///" if old else None)
+        ax.text(x + 0.0525, 0.665, label, color=INK if old else WHITE,
+                ha="center", va="center", weight="bold")
+        arrow = FancyArrowPatch(
+            (x + 0.105, 0.665), (0.56, 0.665),
+            arrowstyle="-|>", mutation_scale=8, color=MID, linewidth=0.8,
+            connectionstyle=f"arc3,rad={0.12 * (1-index)}",
+        )
+        ax.add_patch(arrow)
+    rounded_box(ax, (0.56, 0.56), 0.12, 0.21, face=PALE, edge=INK)
+    ax.text(0.62, 0.68, r"target $t$", ha="center", va="center", weight="bold")
+    ax.text(0.62, 0.61, r"$E_{t,q}$", ha="center", va="center")
+    ax.text(0.75, 0.67, "one query every\ncontroller step", ha="left", va="center",
+            color=MID)
+
+    ax.plot([0.01, 0.99], [0.48, 0.48], color=LIGHT, linewidth=0.7)
+    ax.text(0.01, 0.44, "Execution source assignment", weight="bold",
+            ha="left", va="top", fontsize=7.5)
+    methods = [
+        (0.15, "Full fresh", [("Arm", INK, None, WHITE), ("Grip", INK, None, WHITE)]),
+        (0.43, "Full old20", [("Arm", WHITE, "///", INK), ("Grip", WHITE, "///", INK)]),
+        (0.71, "FO20", [("Arm", INK, None, WHITE), ("Grip", WHITE, "///", INK)]),
+    ]
+    for x, label, parts in methods:
+        ax.text(x, 0.30, label, ha="center", va="center", fontsize=7.3,
+                weight="bold", color=FOCAL if label == "FO20" else INK)
+        x0 = x - 0.105
+        for j, (part, face, hatch, text_color) in enumerate(parts):
+            edge = FOCAL if label == "FO20" else INK
+            rounded_box(ax, (x0 + j * 0.105, 0.08), 0.10, 0.13,
+                        face=face, edge=edge, linewidth=1.0 if label == "FO20" else 0.7,
+                        hatch=hatch, radius=0.02)
+            ax.text(x0 + j * 0.105 + 0.05, 0.145, part, ha="center", va="center",
+                    color=text_color, weight="bold", fontsize=7)
+    ax.text(0.71, 0.035, "fresh arm + old-source gripper; value may change each tick",
+            ha="center", va="top", color=FOCAL, fontsize=6.5)
+    ax.text(0.97, 0.145, "dark = fresh\nhatched = old20", ha="right", va="center",
+            color=MID, fontsize=6.5)
+    export(fig, "fig1_temporal_source")
+
+
+def figure2(data: dict) -> None:
+    rates = np.asarray(data["matrix"]["rates"], dtype=float)
+    labels = np.asarray(data["matrix"]["condition_labels"])
+    successes = np.asarray(data["matrix"]["successes"])
+    fig, ax = plt.subplots(figsize=(3.28, 2.65))
+    ax.set_xlim(-0.65, 1.72)
+    ax.set_ylim(-0.98, 2.08)
+    ax.axis("off")
+    ax.text(-0.62, 2.02, "Registered coherence unresolved", weight="bold",
+            ha="left", va="top")
+    ax.text(-0.62, 1.84,
+            r"$C_{coh}=+.025$; paired CI $[-.030,.085]$; task CI $[-.005,.055]$",
+            ha="left", va="top", fontsize=6.2, color=MID)
+    ax.text(0.73, 1.43, "Gripper source", ha="center", va="center", weight="bold")
+    ax.text(0.3, 1.25, "Fresh", ha="center", va="center")
+    ax.text(1.15, 1.25, "Old20", ha="center", va="center")
+    ax.text(-0.53, 0.33, "Arm source", rotation=90, ha="center", va="center", weight="bold")
+    row_labels = ["Fresh", "Old20"]
+    for i, row_name in enumerate(row_labels):
+        y = 0.55 - 0.82 * i
+        ax.text(-0.18, y + 0.35, row_name, ha="right", va="center")
+        for j in range(2):
+            x = 0.85 * j
+            focal = labels[i, j] == "FO"
+            rect = Rectangle(
+                (x, y), 0.6, 0.68,
+                facecolor=FOCAL_PALE if focal else PALE,
+                edgecolor=FOCAL if focal else LIGHT,
+                linewidth=1.5 if focal else 0.7,
             )
-    ax0.set_xticks(range(len(horizons)), horizons)
-    ax0.set_yticks(range(len(horizons)), horizons)
-    ax0.set_xlabel("Gripper horizon $h_g$")
-    ax0.set_ylabel("Arm horizon $h_a$")
-    ax0.set_title("(a) Task 0 success (%, 50 states)")
-    colorbar = fig.colorbar(image, ax=ax0, fraction=0.046, pad=0.03)
-    colorbar.set_label("Success rate")
-    colorbar.set_ticks([0.5, 0.7, 0.9])
+            ax.add_patch(rect)
+            ax.text(x + 0.3, y + 0.47, labels[i, j], ha="center", va="center",
+                    weight="bold", color=FOCAL if focal else INK)
+            ax.text(x + 0.3, y + 0.25,
+                    f"{successes[i,j]}/100  ({rates[i,j]*100:.0f}%)",
+                    ha="center", va="center", fontsize=7)
+            if focal:
+                ax.text(x + 0.3, y + 0.07, "post-hoc direction", ha="center", va="bottom",
+                        fontsize=5.8, color=FOCAL)
+    ax.text(-0.62, -0.74, "Post-hoc marginals", weight="bold", ha="left", va="center")
+    ax.text(-0.62, -0.90, "fresh arm +24.5 pp   |   old gripper +20.5 pp",
+            color=FOCAL, ha="left", va="center", fontsize=6.4)
+    export(fig, "fig2_developmental_factorial")
 
-    y = np.arange(len(tasks))
-    for i, (left, right) in enumerate(zip(global_best, offdiag_best)):
-        ax1.plot([left, right], [i, i], color="#B7B7B7", linewidth=1.2, zorder=1)
-    ax1.scatter(
-        global_best,
-        y,
-        s=25,
-        marker="o",
-        color="#4C78A8",
-        label=f"Global (macro {global_best.mean():.3f})",
-        zorder=2,
-    )
-    ax1.scatter(
-        offdiag_best,
-        y,
-        s=28,
-        marker="D",
-        color="#F58518",
-        label=f"Off-diagonal (macro {offdiag_best.mean():.3f})",
-        zorder=3,
-    )
-    ax1.set_yticks(y, [f"T{task['task_id']}" for task in tasks])
-    ax1.invert_yaxis()
-    ax1.set_xlim(0.25, 1.04)
-    ax1.set_xticks([0.3, 0.5, 0.7, 0.9, 1.0])
-    ax1.set_xlabel("Success rate")
-    ax1.set_title("(b) Tasks 1--9: retrospective per-task best")
-    ax1.grid(axis="x", color="#DDDDDD", linewidth=0.5)
-    ax1.legend(
-        loc="upper center",
-        bbox_to_anchor=(0.5, -0.19),
-        frameon=False,
-        handletextpad=0.35,
+
+def preference_cell(ax, x0, y0, preferred, detail):
+    left, right = x0 + 0.07, x0 + 0.37
+    ax.plot([left, right], [y0, y0], color=LIGHT, linewidth=1.3, solid_capstyle="round")
+    ax.scatter([left, right], [y0, y0], s=18, facecolor=WHITE, edgecolor=MID,
+               linewidth=0.7, zorder=2)
+    px = left if preferred == "fresh" else right
+    ax.scatter(px, y0, s=40, facecolor=FOCAL, edgecolor=WHITE, linewidth=0.7, zorder=3)
+    ax.text(x0 + 0.22, y0 - 0.11, detail, ha="center", va="top", fontsize=5.6,
+            color=INK)
+
+
+def figure3(data: dict) -> None:
+    fig, ax = plt.subplots(figsize=(3.28, 2.60))
+    ax.set_xlim(0, 1.08)
+    ax.set_ylim(-0.08, 1)
+    ax.axis("off")
+    ax.text(0.0, 0.98, "Favored source depends on the objective", weight="bold",
+            ha="left", va="top")
+    ax.text(0.40, 0.81, "Offline error", ha="center", va="center", weight="bold")
+    ax.text(0.86, 0.81, "Closed-loop post-hoc", ha="center", va="center", weight="bold")
+    ax.text(0.40, 0.73, "lower is better", ha="center", va="center", color=MID, fontsize=6)
+    ax.text(0.86, 0.73, "higher is better", ha="center", va="center", color=MID, fontsize=6)
+    for x in (0.18, 0.64):
+        ax.text(x + 0.07, 0.65, "Fresh", ha="center", va="center", fontsize=5.8)
+        ax.text(x + 0.37, 0.65, "Old20", ha="center", va="center", fontsize=5.8)
+    ax.text(0.01, 0.50, "Arm", ha="left", va="center", weight="bold")
+    ax.text(0.01, 0.20, "Gripper", ha="left", va="center", weight="bold")
+    preference_cell(ax, 0.18, 0.50, "old20", "T: .596→.507\nR: 1.130→1.099")
+    preference_cell(ax, 0.64, 0.50, "fresh", ".530 vs .285")
+    preference_cell(ax, 0.18, 0.20, "old20", ".308→.274")
+    preference_cell(ax, 0.64, 0.20, "old20", ".305 vs .510")
+    ax.text(0.54, -0.055, "Filled marker = source favored within that metric",
+            ha="center", va="bottom", color=MID, fontsize=6)
+    export(fig, "fig3_offline_closed_loop")
+
+
+def figure4a(data: dict) -> None:
+    keys = data["condition_order"]
+    display = ["FO20", "Newest", "Full\nold20", "Age\nexp.", "CogACT"]
+    rates = np.array([data["success_rates"][key] for key in keys])
+    counts = np.rint(rates * 126).astype(int)
+    colors = style.focal_palette(display, "FO20", FOCAL, other="grey")
+    fig, ax = plt.subplots(figsize=(3.05, 2.45))
+    x = np.arange(len(keys))
+    bars = ax.bar(x, rates * 100, color=colors, edgecolor=INK, linewidth=0.55, width=0.72)
+    for bar, count, rate in zip(bars, counts, rates):
+        ax.text(bar.get_x() + bar.get_width()/2, rate*100 + 1.8,
+                f"{count}/126\n{rate*100:.1f}%", ha="center", va="bottom", fontsize=6)
+    ax.set_ylabel("Task success (%)")
+    ax.set_xticks(x)
+    ax.set_xticklabels(display)
+    ax.set_ylim(0, 73)
+    ax.set_yticks([0, 20, 40, 60])
+    ax.margins(x=0.03)
+    style.panel_letter(ax, "a", dx=-0.16, dy=1.01)
+    export(fig, "fig4a_success_rates")
+
+
+def figure4b(data: dict) -> None:
+    keys = [
+        "FO20_minus_newest",
+        "FO20_minus_full_old20",
+        "FO20_minus_age_exp",
+        "FO20_minus_CogACT",
+    ]
+    labels = ["Newest", "Full old20", "Age exp.", "CogACT"]
+    estimates = np.array([data["primary_contrasts"][key] for key in keys]) * 100
+    paired = np.array([data["confidence_intervals"][key]["paired_state"] for key in keys]) * 100
+    cluster = np.array([data["confidence_intervals"][key]["task_cluster"] for key in keys]) * 100
+    fig, ax = plt.subplots(figsize=(4.05, 2.45))
+    y = np.arange(len(keys))[::-1]
+    for yi, est, pci, cci in zip(y, estimates, paired, cluster):
+        ax.plot(cci, [yi, yi], color=LIGHT, linewidth=4.2, solid_capstyle="butt", zorder=1)
+        ax.plot(pci, [yi, yi], color=FOCAL, linewidth=1.8, solid_capstyle="butt", zorder=2)
+        ax.scatter(est, yi, s=28, color=FOCAL, edgecolor=WHITE, linewidth=0.6, zorder=3)
+        ax.text(cci[1] + 0.8, yi, f"+{est:.1f}", ha="left", va="center", fontsize=6.3)
+    ax.axvline(0, color=MID, linestyle="--", linewidth=0.8)
+    ax.set_yticks(y)
+    ax.set_yticklabels(labels)
+    ax.set_xlim(-2, 36)
+    ax.set_xticks([0, 10, 20, 30])
+    ax.set_xlabel("FO20 success advantage (percentage points)")
+    ax.legend(
+        handles=[
+            Line2D([0], [0], color=FOCAL, lw=1.8, label="paired-block 95% CI"),
+            Line2D([0], [0], color=LIGHT, lw=4.2, label="task-cluster 95% CI"),
+        ],
+        loc="upper right",
+        bbox_to_anchor=(1.0, 1.05),
         ncol=2,
-        columnspacing=0.8,
+        fontsize=6,
+        handlelength=2.0,
     )
-    for spine in ("top", "right", "left"):
-        ax1.spines[spine].set_visible(False)
-    ax1.tick_params(axis="y", length=0)
-
-    fig.subplots_adjust(left=0.075, right=0.995, top=0.90, bottom=0.23, wspace=0.40)
-    fig.savefig(FIGURE_DIR / "results_overview.pdf", bbox_inches="tight")
-    plt.close(fig)
+    style.panel_letter(ax, "b", dx=-0.23, dy=1.01)
+    export(fig, "fig4b_contrasts")
 
 
 def main() -> None:
-    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
-    configure_matplotlib()
-    make_timeline()
-    make_results_overview()
+    FIG_DIR.mkdir(parents=True, exist_ok=True)
+    developmental = load_json("gate3b_directional_figure_interface.json")
+    offline = load_json("offline_closed_loop_temporal_source_interface.json")
+    confirmation = load_json("gate3c_figure4_interface.json")
+    figure1()
+    figure2(developmental)
+    figure3(offline)
+    figure4a(confirmation)
+    figure4b(confirmation)
 
 
 if __name__ == "__main__":

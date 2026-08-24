@@ -1,0 +1,81 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{Same-time candidates from different observations}
+
+Let $E_{u,q}\in\mathbb{R}^{7}$ denote the action for physical controller time
+$u$ predicted by the frozen policy query at source time $q\leq u$. Repeated
+queries create a triangular cache of predictions. At physical time $t$, define
+the fresh candidate
+\begin{equation}
+    F_t = E_{t,t}
+\end{equation}
+and, for a fixed delay $d=20$, the old candidate
+\begin{equation}
+    O_t = E_{t,t-20}.
+\end{equation}
+Both candidates target the same controller time; they differ only in the
+observation time that conditioned their source query. With a 20-Hz controller,
+$d=20$ is a 1.0-s source-observation gap.
+
+We partition each action as $a=[a^{a},a^{g}]$, where $a^{a}\in\mathbb{R}^{6}$
+contains relative translation and rotation commands and $a^{g}\in\mathbb{R}$
+is the gripper command. The four factorial assignments are
+\begin{align}
+    \mathrm{FF}_t &= [F_t^{a},F_t^{g}], &
+    \mathrm{OO}_t &= [O_t^{a},O_t^{g}], \\
+    \mathrm{FO}_t &= [F_t^{a},O_t^{g}], &
+    \mathrm{OF}_t &= [O_t^{a},F_t^{g}].
+\end{align}
+Before $O_t$ is available, all conditions execute $F_t$. No candidate is
+averaged or smoothed in this factorial.
+
+\subsection{Fixed asymmetric temporal reuse}
+
+The confirmed executor is the fixed FO20 assignment
+\begin{equation}
+    a_t^{\mathrm{FO20}}=[F_t[0{:}6],O_t[6]], \qquad t\geq20.
+    \label{eq:fo20}
+\end{equation}
+It has no learned parameters and does not modify the policy. Every step still
+uses the current observation to issue one complete policy query and cache its
+$100\!\times\!7$ prediction. FO20 changes only which cached source supplies
+each component at execution. In particular, $O_t[6]$ advances from chunk
+offset 20 of query $t-20$ to offset 20 of query $t-19$ on the next tick.
+Therefore the executed gripper value may change every controller step.
+
+The confirmatory baselines use the same query cache:
+\begin{itemize}
+    \item \textbf{Newest}: execute $F_t$ in full.
+    \item \textbf{Full old20}: execute $O_t$ in full once available.
+    \item \textbf{Age exponential}: average every valid full-action prediction
+    for $t$ with shared weights $w_q\propto\exp[-0.03(t-q)]$ across all seven
+    dimensions.
+    \item \textbf{CogACT}: use the released cosine-similarity weighting with
+    frozen $\alpha=0.3$ and one shared weight vector for all seven dimensions
+    ~\cite{li2024cogact}.
+\end{itemize}
+The two weighted baselines test whether a strong shared full-action temporal
+rule explains the benefit. The study does not search over $d$, $\beta$, or
+$\alpha$.
+
+\subsection{What a separable offline loss cannot measure}
+
+Consider any teacher-forced loss that separates by component,
+\begin{equation}
+    L(a^{a},a^{g})=L_a(a^{a})+L_g(a^{g}).
+\end{equation}
+For a fixed target, write $A_F=L_a(F_t^a)$, $A_O=L_a(O_t^a)$,
+$G_F=L_g(F_t^g)$, and $G_O=L_g(O_t^g)$. The four losses are
+\begin{align}
+L(FF)&=A_F+G_F, & L(OO)&=A_O+G_O,\\
+L(FO)&=A_F+G_O, & L(OF)&=A_O+G_F.
+\end{align}
+Their balanced interaction is exactly
+\begin{equation}
+L(FF)+L(OO)-L(FO)-L(OF)=0.
+\label{eq:separable_identity}
+\end{equation}
+This algebraic identity does not imply that the four actions are behaviorally
+equivalent. It states only that an additive teacher-forced loss contains no
+arm--gripper interaction term with which to score symmetric composition.

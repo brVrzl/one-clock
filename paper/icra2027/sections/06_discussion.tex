@@ -1,0 +1,58 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The confirmatory study establishes a narrow but consequential execution result:
+components of one jointly predicted action chunk can benefit from different
+observation-time source ages. Because every method observes and queries at the
+same controller steps, the result cannot be attributed to different feedback
+frequency, query budget, or open-loop horizon. Because newest and full old20
+use the same candidate cache, it also cannot be reduced to a general advantage
+for fresh or delayed actions. The benefit lies in the asymmetric assignment in
+this system.
+
+This conclusion differs from the developmental question. The balanced
+factorial did not support a generic incoherence penalty for mixed-source
+actions. Its directional cell pattern motivated a new, fixed hypothesis, which
+the untouched-state experiment then tested. Keeping that distinction visible
+prevents the 62\% developmental FO result from being counted as independent
+confirmation.
+
+The result also clarifies how component-aware execution differs from related
+work. DAM-VLA already demonstrates that arm and gripper can merit specialized
+architectures~\cite{peng2026damvla}; our contribution is not heterogeneity
+alone. TRACT routes predicted future behavior across procedural phases and
+corrects arm execution~\cite{liu2026tract}; our temporal variable is instead
+the past observation that generated a same-time cached prediction. TAS is the
+closest source-selection formulation, but selects a complete cached action
+~\cite{weng2025tas}. These distinctions make the controlled intervention, not
+algorithmic complexity, the main methodological contribution.
+
+The teacher-forced audit cautions against selecting a temporal source from
+offline imitation error alone. Old predictions better match demonstrations for
+both arm terms, yet the closed-loop factorial favors the fresh arm. Several
+explanations are compatible with this mismatch: fresh feedback may correct
+state deviation, demonstrations may reward temporal consistency differently
+from the closed loop, or the separable metric may omit behaviorally important
+coupling. The experiments do not distinguish these explanations. In
+particular, they do not prove retained intent, non-Markovian causation, or any
+general temporal-intent mechanism.
+
+FO20 is deliberately simple. It adds no training, estimator, or policy head,
+and its result suggests a future adaptive executor could predict source utility
+per component. Such adaptation is not evaluated here. A learned rule would
+need an independent cohort and should be compared under the same current-
+observation and matched-query contract.
+
+\subsection{Limitations}
+
+The evidence uses one frozen ACT checkpoint and the LIBERO Object suite. It
+tests one six-dimensional arm/scalar-gripper partition and confirms one source
+gap, $d=20$. The study neither proves that 20 ticks is optimal nor evaluates
+dynamic adaptation. It provides no causal proof that an old gripper prediction
+retains intent or that non-Markovian structure produces the success gain.
+There is no current confirmation on a second policy, another benchmark, a VLA,
+a dexterous or bimanual action space, or a real robot. The primary cohort spans
+nine tasks and paired unused states, which supports within-system credibility
+but not broad generalization. Finally, success is binary; logged kinematic and
+disagreement diagnostics follow treatment-dependent trajectories and are not
+used to make mechanistic claims.

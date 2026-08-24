@@ -2,21 +2,17 @@
 
 \overrideIEEEmargins
 
-% Manuscript draft version: v1.2.  Adaptive reliability estimation is proposed,
-% not experimentally evaluated.
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
-\usepackage{cite}
 \usepackage{graphicx}
 \usepackage{url}
 
 \graphicspath{{figures/}}
 
 \title{\LARGE \bf
-One Clock Does Not Fit All:\\
-Group-Specific Execution Horizons for Action-Chunking Robot Policies
+Asymmetric Temporal Reuse for Heterogeneous Components of
+Action-Chunked Robot Policies
 }
 
 % Intentionally empty for double-anonymous review.
@@ -29,43 +25,39 @@ Group-Specific Execution Horizons for Action-Chunking Robot Policies
 \pagestyle{empty}
 
 \begin{abstract}
-Action-chunking robot policies predict multiple future actions from each
-observation.  Their execution horizon determines how long this prediction is
-followed before the policy observes and replans.  Recent adaptive-execution work
-primarily chooses one prefix or boundary for the chunk as a whole; even audited
-methods with component-aware signals aggregate them into one synchronized
-decision.  We study whether physically meaningful action groups must accept new
-predictions on the same schedule, and whether their temporal reliability varies
-within an episode.  Our fixed group-specific executor leaves the base policy
-frozen: an expired group accepts its part of a fresh full chunk, while
-non-expired groups retain their earlier predicted sequences.  On a frozen ACT
-policy in LIBERO Object, a complete $5\!\times\!5$ arm/gripper landscape over 50
-official states yields 47/50 successes for $(h_a,h_g)=(4,16)$, versus 42/50 for
-budget-matched global $h=4$ at approximately 0.252 policy queries per step.  An
-offline, teacher-forced audit over 454 demonstration episodes further finds
-group-dependent prediction-error structure and phase-conditioned error profiles,
-including early--late differences for arm translation and gripper error.
-Across the remaining nine tasks, off-diagonal configurations are repeatedly
-competitive, including six no-higher-query-rate improvements over global points.
-We formulate, but do not implement or evaluate, group-wise temporal reliability
-estimation as a route to horizons $h_g(t)$.  No adaptive-execution performance
-claim is made.
+Repeated queries to an action-chunked policy produce several predictions for
+the same physical controller time, each conditioned on an observation from a
+different source time. Existing temporal ensembles and adaptive executors
+generally make one temporal decision for the complete action. We test whether
+heterogeneous action components can instead benefit from different source
+ages while holding the policy, current observation access, query cadence, and
+controller frequency fixed. Our training-free executor uses the current
+prediction for the six-dimensional arm command and the prediction generated
+20 ticks earlier for the scalar gripper command. At 20 Hz, this is a 1.0-s
+source-observation gap, not a gripper hold. In a preregistered evaluation of one
+frozen ACT checkpoint on 126 paired LIBERO Object task-state blocks, this
+assignment achieved 80/126 successes (63.5%). The newest full action achieved
+53/126 (42.1%), full old20 55/126 (43.7%), age-exponential ensembling 62/126
+(49.2%), and tuned CogACT 59/126 (46.8%). All four registered paired contrasts
+had positive paired-block and task-cluster 95\% confidence-interval lower
+bounds, and every leave-one-task-out estimate was positive. A separate
+teacher-forced audit preferred old sources for arm translation, arm rotation,
+and gripper sign, showing that component prediction accuracy and closed-loop
+temporal-source utility are not equivalent objectives in this audited system.
 \end{abstract}
 
 \input{sections/01_introduction}
 \input{sections/02_related_work}
-\input{sections/03_problem}
-\input{sections/04_execution}
-\input{sections/05_method}
-\input{sections/05_experiments}
-\input{sections/06_results}
-\input{sections/07_limitations}
-\input{sections/08_conclusion}
+\input{sections/03_method}
+\input{sections/04_experiments}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
 
 \section*{Acknowledgment}
-OpenAI Codex assisted with drafting and editing all manuscript sections and with
-writing the plotting code for Figs.~\ref{fig:timeline} and~\ref{fig:results}.
-The numerical claims and primary-source citations were checked by the authors.
+OpenAI Codex assisted with manuscript drafting, editing, and figure-code
+development. The authors verified the numerical claims, citations, and final
+artifacts against the frozen project records.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

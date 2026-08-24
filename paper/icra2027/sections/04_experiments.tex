@@ -1,0 +1,99 @@
+\section{Experimental Design}
+\label{sec:experiments}
+
+\subsection{Frozen system and execution contract}
+
+We evaluate a deterministic LeRobot ACT checkpoint~\cite{zhao2023act} on the
+ten-task LIBERO Object suite~\cite{liu2023libero}. The policy predicts
+$100\!\times\!7$ chunks for a 20-Hz relative-action controller with a maximum
+of 280 actions per episode. The policy's internal temporal ensemble and action
+smoothing are disabled. Table~\ref{tab:contract} summarizes the contract. All
+conditions receive the same current observations, preprocessing, complete
+policy queries, and postprocessing. Every completed episode satisfies one
+policy query per environment step.
+
+\begin{table}[t]
+\caption{\textbf{Frozen system and primary evaluation contract.} A paired
+block is one task and official initial-state combination.}
+\label{tab:contract}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{ll}
+\toprule
+Item & Frozen value \\
+\midrule
+Policy & LeRobot ACT; deterministic; no update \\
+Checkpoint & 340071d7\ldots da9410 \\
+Prediction & $100\times7$ action chunk \\
+Partition & arm $0{:}6$; gripper $6$ \\
+Controller & relative action; 20 Hz; 280-step cap \\
+Source gap & $d=20$ ticks $=1.0$ s \\
+Query contract & one query per surviving step \\
+Primary suite & LIBERO Object tasks 1--9 \\
+Primary units & 14 states/task; 126 paired blocks \\
+Outcome & binary task success \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Developmental factorial}
+
+The developmental experiment used all four assignments in Sec.~\ref{sec:method}
+on ten tasks and ten matched states per task, for 100 paired blocks and 400
+episodes. Method order was randomized within each block, and the four methods
+shared the episode seed. The preregistered primary estimand was the balanced
+coherence contrast
+\begin{equation}
+C_{\mathrm{coh}}=\frac{1}{N}\sum_i
+\left[\frac{S_{i,FF}+S_{i,OO}}{2}
+-\frac{S_{i,FO}+S_{i,OF}}{2}\right],
+\label{eq:coherence}
+\end{equation}
+where $S_{i,c}\in\{0,1\}$ is task success for paired block $i$ and condition
+$c$. A positive value favors same-source execution after balancing the
+marginal arm and gripper assignments. Directional arm and gripper effects were
+examined only after the four registered cells were complete; they are
+developmental post-hoc evidence.
+
+\subsection{Teacher-forced component audit}
+
+The offline audit uses 82 demonstration episodes and 10,654 targets for which
+both fresh and old20 candidates exist. It evaluates normalized translation
+loss, normalized rotation loss, and gripper sign error against the
+demonstration action. The fixed cache, checkpoint, delay, and target set were
+defined without reference to the developmental closed-loop outcomes. The
+audit is descriptive because targets within an episode are repeated
+measurements and because Eq.~\eqref{eq:separable_identity} forces the symmetric
+interaction to zero.
+
+\subsection{Preregistered confirmation}
+
+The primary cohort contains LIBERO Object tasks 1--9 and 14 official
+initial-state IDs unused by prior project rollouts for every one of those tasks:
+$\{20,21,22,23,27,31,34,35,38,39,44,45,47,48\}$. The identity audit did not
+inspect success outcomes. Each of the
+126 task-state blocks received all five methods, yielding 630 primary episodes.
+Methods shared episode seed $330000+100\,\mathrm{task\_id}+\mathrm{state\_id}$
+within each block, and a frozen random schedule with seed 20260831 permuted
+their order. A secondary 70-episode task-0 sensitivity was scheduled
+because task 0 had no untouched states; it is excluded from confirmatory
+inference. All 700 scheduled episodes completed with no exclusion or rerun.
+
+The four registered comparisons are FO20 minus newest, full old20,
+age-exponential, and CogACT. The paired task-state block is the primary
+inference unit; controller frames are not independent success replicates. For
+each comparison we report the mean paired success difference, a 20,000-draw
+paired-block percentile bootstrap interval, a 20,000-draw task-cluster
+percentile bootstrap interval, and all nine leave-one-task-out estimates.
+Intervals use the 2.5th and 97.5th percentiles. A contrast was registered as
+stable positive only if both interval lower bounds and every leave-one-task-out
+estimate exceeded zero. These four planned comparisons form the complete
+confirmatory family. Intervals are contrast-wise rather than
+multiplicity-adjusted; the registered decision required the joint
+stable-positive criterion for all four comparisons. No outcome-driven method,
+cohort, or threshold change was made.
+
+A preceding full-action control had established that temporal-source weighting
+changes closed-loop behavior in this frozen system. Its role is only to rule
+out an inert execution path; it is not a paper contribution.

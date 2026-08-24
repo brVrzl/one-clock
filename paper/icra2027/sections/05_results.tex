@@ -1,0 +1,101 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Generic mixed-source harm was not confirmed}
+
+The developmental factorial yielded 44/100 successes for FF, 40/100 for OO,
+62/100 for FO, and 17/100 for OF (Fig.~\ref{fig:development}). Same-source
+cells therefore averaged 42.0\% and mixed-source cells averaged 39.5\%. The
+preregistered coherence contrast was only $+.025$. Its paired-block 95\%
+interval was $[-.030,+.085]$, and its task-cluster interval was
+$[-.005,+.055]$. Both include zero. This experiment did not confirm a generic
+penalty for combining sources.
+
+The directional pattern was analyzed after the registered cells were complete.
+The post-hoc fresh-arm marginal effect was $+.245$, with paired-block and
+task-cluster intervals of $[.155,.330]$ and $[.170,.330]$. The post-hoc
+old-gripper effect was $+.205$, with intervals of $[.140,.275]$ and
+$[.105,.305]$. FO exceeded OO on every task and was at least as successful as
+FF on every task, improving on eight and tying on two. These observations
+selected FO20 for confirmation; they are not an independent replication of it.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig2_developmental_factorial.pdf}
+    \caption{\textbf{Developmental temporal-source factorial.} Cell labels
+    give successes from $n=100$ paired task-state blocks per condition. The
+    registered coherence contrast compares the mean of FF and OO with the mean
+    of FO and OF; its paired-block and task-cluster 95\% bootstrap intervals
+    both span zero. The highlighted FO direction and the marginal source
+    effects were identified post hoc and used only to define the later
+    confirmatory hypothesis.}
+    \label{fig:development}
+\end{figure}
+
+\subsection{Offline accuracy and closed-loop utility disagree}
+
+At $d=20$, the teacher-forced audit preferred the old source for every measured
+component (Fig.~\ref{fig:offline_closedloop}). Normalized translation loss was
+.59578 for fresh and .50667 for old; normalized rotation loss was 1.12962 for
+fresh and 1.09877 for old. Gripper sign error was .30760 for fresh and .27400
+for old. Lower is better for all three metrics. Closed-loop development instead
+favored a fresh arm and old gripper.
+
+The disagreement is component-specific: the gripper direction matches across
+offline and closed-loop views, while the arm direction reverses. It does not
+show that demonstrations are wrong or identify a causal mechanism. It shows
+that teacher-forced component prediction accuracy and closed-loop temporal-source
+utility are not equivalent objectives in this audited setting. The observed
+offline balanced interaction is numerical zero to floating-point tolerance, as
+required by Eq.~\eqref{eq:separable_identity}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig3_offline_closed_loop.pdf}
+    \caption{\textbf{Temporal-source preference depends on the measurement
+    objective.} Arrows indicate the favored source rather than placing
+    incomparable raw quantities on one axis. Teacher-forced losses over 82
+    demonstration episodes and 10,654 eligible targets favor old arm and old
+    gripper predictions. Post-hoc closed-loop marginal effects over 100 paired
+    task-state blocks favor a fresh arm and old gripper. Lower error is better
+    offline; higher success is better closed loop.}
+    \label{fig:offline_closedloop}
+\end{figure}
+
+\subsection{Asymmetric temporal reuse is confirmed}
+
+FO20 achieved 80/126 successes (63.5\%) on the primary cohort
+(Fig.~\ref{fig:confirmation}a). Newest achieved 53/126 (42.1\%), full old20
+55/126 (43.7\%), age-exponential ensembling 62/126 (49.2\%), and CogACT 59/126
+(46.8\%). Thus FO20 improved over both single-source controls and both shared
+full-action temporal-weighting baselines.
+
+All four registered contrasts were stable positive
+(Fig.~\ref{fig:confirmation}b). FO20 minus newest was $+.214$, with
+paired-block CI $[+.143,+.294]$ and task-cluster CI $[+.127,+.310]$. FO20 minus
+full old20 was $+.198$, with intervals $[+.095,+.302]$ and
+$[+.063,+.317]$. FO20 minus age-exponential was $+.143$, with intervals
+$[+.048,+.238]$ and $[+.016,+.278]$. FO20 minus CogACT was $+.167$, with
+intervals $[+.071,+.262]$ and $[+.040,+.294]$. Every leave-one-task-out
+estimate was positive for every comparison.
+
+The aggregate result does not imply uniform task-level improvement. Against
+full old20, for example, FO20 was lower on one task, tied on one, and higher on
+seven. The task-cluster intervals and leave-one-task-out checks explicitly
+carry this heterogeneity into the inference. The conclusion is therefore an
+aggregate, task-spanning effect for the frozen primary cohort.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.38\textwidth]{fig4a_success_rates.pdf}\hfill
+    \includegraphics[width=0.56\textwidth]{fig4b_contrasts.pdf}
+    \caption{\textbf{Preregistered confirmation on untouched primary states.}
+    \textbf{a}, Success counts and rates for the five executors over $n=126$
+    paired task-state blocks (nine tasks, 14 states each). \textbf{b}, Four
+    registered FO20-minus-comparator success-rate differences. Circles are
+    paired estimates; thick and thin intervals are 95\% paired-block and
+    task-cluster percentile bootstrap intervals, respectively, each from
+    20,000 draws. The dashed line marks no difference. All interval lower
+    bounds and every leave-one-task-out estimate are positive.}
+    \label{fig:confirmation}
+\end{figure*}

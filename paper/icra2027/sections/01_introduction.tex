@@ -1,84 +1,92 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Action chunking is a common interface for learned robot control: rather than
-predicting only the next action, a policy predicts a temporally structured
-sequence~\cite{zhao2023act,chi2025diffusionpolicy}.  The prediction does not by
-itself specify how it should be deployed.  A controller may execute the whole
-sequence open loop, or execute only a prefix before acquiring a new observation
-and replanning.  The length of this prefix---the \emph{execution
-horizon}---changes both the feedback rate and the frequency of transitions
-between independently predicted chunks.
+Action-chunked robot policies predict several future controls from one
+observation. When the policy is queried again before a chunk expires, its
+predictions overlap: multiple queries propose an action for the same future
+controller time, but each proposal was conditioned on a different observation.
+This temporal redundancy supports smooth chunk execution, temporal ensembling,
+and adaptive selection among cached predictions~\cite{zhao2023act,li2024cogact,weng2025tas}.
+It also exposes a basic execution choice: which observation-time source should
+control the robot now?
 
-This choice is consequential.  Receding-horizon execution in Diffusion Policy
-separates the action-prediction and action-execution horizons
-\cite{chi2025diffusionpolicy}.  More recent work adapts chunk execution to
-inference latency, prediction uncertainty, model attention, kinematic phase, or
-learned value~\cite{black2025rtc,wang2026autohorizon,liang2026aac,
-nie2026pace,feng2026dvac,zhao2026dehp,lei2026sparkvla}.  In the primary methods
-we audited, the final decision is predominantly one prefix length or boundary
-for the action vector as a whole.  There are important qualifications: AAC
-separately measures translation, rotation, and gripper entropy, and PACE forms
-arm-specific speed profiles.  Both nevertheless aggregate these signals before
-choosing one synchronized boundary.
+Most existing executors answer that question once for the complete action.
+Temporal ensembling uses shared weights across action dimensions, cached-action
+selection chooses one complete candidate, and adaptive execution chooses one
+prefix length or replan time~\cite{liang2026aac,wang2026autohorizon,nie2026pace,ye2026tempowam}.
+This shared decision is natural but not required by the policy interface. A
+robot action is heterogeneous. Continuous arm motion and an interaction command
+such as gripper opening can rely on different temporal information. A current
+arm prediction may benefit from the newest visual feedback while a gripper
+prediction from an earlier query may encode a temporally extended interaction
+decision. The latter is a possible interpretation, not an assumption of our
+method.
 
-Robot action vectors themselves are structured.  A manipulation command can
-combine end-effector motion and gripper actuation, or commands for multiple arms
-and fingers.  Sharing one execution horizon forces every component to accept a
-new prediction simultaneously.  We ask whether this synchronization is
-necessary even when the policy was trained to predict the joint action sequence.
+We isolate temporal-source age from action frequency. The frozen policy receives
+the current observation and is queried exactly once at every surviving
+controller step in every condition. Each query predicts a complete action
+chunk. At execution time only, we select the six arm dimensions and scalar
+gripper dimension from candidates that target the same physical time but were
+generated from different observations (Fig.~\ref{fig:source_assignment}). The
+gripper command can therefore change at every step even when its source query is
+20 ticks old. This is not an open-loop gripper hold, a change in controller
+frequency, or a change in query cadence.
 
-We isolate this question with a fixed, group-specific execution mechanism.  A
-pretrained chunk policy remains frozen.  When one action group reaches its
-horizon, the current observation produces a fresh full chunk; expired groups
-accept their corresponding sequences, whereas non-expired groups retain their
-existing sequences.  Consequently, an executed action can contain components
-from different policy-query generations.  This mixed-generation composition is
-both the enabling mechanism and a possible source of temporal inconsistency.
+The study separates development from confirmation. A preregistered
+$2\!\times\!2$ developmental factorial did not support the generic hypothesis
+that mixed-source actions are less coherent: the balanced coherence estimate
+was $+.025$, with paired-block and task-cluster 95\% intervals spanning zero.
+Its completed cells nevertheless showed a post-hoc directional pattern in which
+fresh-arm/old-gripper execution reached 62\% success. That observation selected
+one fixed hypothesis. A subsequent preregistered study evaluated the selected
+fresh-arm/old20-gripper assignment on an untouched-state primary cohort and
+compared it with four frozen full-action baselines.
 
-Static experiments with a frozen ACT checkpoint on LIBERO Object
-\cite{liu2023libero} reveal systematic group-dependent sensitivity.  On one task
-we evaluate all 25 arm/gripper assignments from horizons
-$\{1,2,4,8,16\}$ over all 50 official initial states.  The best evaluated pair
-improves a global control at matched policy-query rate, and all ten symmetric
-horizon swaps favor the assignment with the longer gripper horizon.  Across the
-other nine object tasks, off-diagonal pairs are repeatedly competitive and six
-tasks exhibit a strict improvement over a global point without a higher query
-rate.  These observations do not show that the gripper should generally update
-more slowly, nor do they establish a dynamic scheduler.  They show that assigning
-the same two horizon values to different physical groups can change execution
-outcomes while preserving policy-query cadence.
+The confirmatory result is substantial in this audited system. The asymmetric
+executor achieved 80/126 successes (63.5\%), versus 53/126 (42.1\%) for newest,
+55/126 (43.7\%) for full old20, 62/126 (49.2\%) for age-exponential ensembling,
+and 59/126 (46.8\%) for tuned CogACT. The registered gains were 21.4, 19.8,
+14.3, and 16.7 percentage points, respectively. Both paired-block and
+task-cluster interval lower bounds were positive for every comparison, as were
+all leave-one-task-out estimates.
 
-Fixed group horizons are still only a static approximation if predictive
-reliability changes during a task.  We therefore audit the frozen policy itself
-before proposing an adaptive rule.  A teacher-forced analysis of 454 LIBERO
-Object demonstration episodes finds different temporal error profiles for the
-arm and gripper groups.  A phase-stratified follow-up, using a common 38-step
-future window, finds phase-dependent profiles for arm translation and gripper
-error, while arm rotation changes direction across phases.  These are offline
-prediction diagnostics, not closed-loop success results: they establish a
-motivation for studying $h_g(t)$, not that reliability-derived adaptive
-execution improves a task.
+A teacher-forced audit gives a deliberately different view. At the same source
+gap, demonstration prediction error preferred old sources for arm translation,
+arm rotation, and gripper sign. Closed-loop evidence instead preferred the
+fresh arm and old gripper. Thus a separable imitation loss can recommend a
+different source from closed-loop utility. Moreover, any arm-plus-gripper
+additive loss has an identically zero balanced $2\!\times\!2$ interaction, so it
+cannot measure the symmetric composition effect by construction.
 
-This paper consequently separates a verified static executor from a proposed
-adaptive extension.  The extension estimates group-wise temporal reliability
-from the current observation and predicted chunk, then derives a horizon for
-each group.  We do not select a training target, train an estimator, or evaluate
-an online scheduler in the present draft.
+This paper makes three contributions:
 
-This draft makes five evidence-bounded contributions:
 \begin{itemize}
-    \item a controlled execution formulation that permits physically meaningful
-    action groups to use different fixed horizons without changing the
-    pretrained chunk policy;
-    \item a complete $5\!\times\!5$ arm/gripper horizon landscape on all 50
-    official states of one LIBERO Object task, with diagonal controls, query
-    accounting, and paired budget-matched comparisons;
-    \item a coarse cross-task diagnostic over the remaining nine LIBERO Object
-    tasks, separating deployable static settings from retrospective per-task
-    oracle-style comparisons; and
-    \item offline group- and phase-conditioned prediction-error audits that
-    motivate, but do not validate, adaptive horizons; and
-    \item a proposed group-wise temporal reliability formulation that makes the
-    unimplemented adaptive decision explicit and testable.
+    \item We introduce a matched-query temporal-source factorial that assigns
+    observation-time generations independently to heterogeneous action
+    components while keeping the frozen policy, current observations, and one
+    query per controller step fixed.
+    \item We confirm a zero-training fresh-arm/old20-gripper executor that
+    improves success over newest, full old20, age-exponential ensembling, and
+    tuned CogACT on the preregistered primary cohort.
+    \item We show that teacher-forced separable component error can disagree
+    with closed-loop source utility and is structurally unable to represent the
+    balanced arm--gripper interaction.
 \end{itemize}
+
+The result is bounded to one frozen ACT checkpoint, LIBERO Object, one
+arm/gripper partition, and one fixed source gap. We do not claim a universal
+arm-fresh/gripper-old rule or optimality of the 20-tick choice.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.94\textwidth]{fig1_temporal_source.pdf}
+    \caption{\textbf{Temporal-source assignment at fixed query cadence.}
+    Repeated policy queries predict the action for the same physical time $t$.
+    The fresh candidate $F_t=E_{t,t}$ and old candidate $O_t=E_{t,t-20}$ are
+    both available while the policy continues to observe and query every
+    controller step. Full-fresh and full-old execution take both components
+    from one source; the confirmed asymmetric executor takes the arm from
+    $F_t$ and the gripper from $O_t$. At 20 Hz, the source-observation gap is
+    1.0 s. It is not a 20-step gripper hold.}
+    \label{fig:source_assignment}
+\end{figure*}
