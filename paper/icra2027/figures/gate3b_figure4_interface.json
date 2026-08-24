@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "waiting_for_complete_validated_gate3b",
+  "source_report": null,
+  "condition_order": ["FF", "OO", "FO", "OF"],
+  "success_rates": {
+    "FF": "<GATE3B_SUCCESS_FF>",
+    "OO": "<GATE3B_SUCCESS_OO>",
+    "FO": "<GATE3B_SUCCESS_FO>",
+    "OF": "<GATE3B_SUCCESS_OF>"
+  },
+  "primary_coherence": "<GATE3B_COHERENCE>",
+  "confidence_intervals": "<GATE3B_CI>",
+  "task_coherence": [],
+  "notes": {
+    "confidence_intervals_ready_shape": {
+      "paired_state": ["lower", "upper"],
+      "task_cluster": ["lower", "upper"]
+    },
+    "task_coherence_ready_shape": [
+      {"task_id": "integer 0 through 9", "coherence": "number"}
+    ],
+    "render_guard": "The plotting script rejects this interface until status is final_validated_gate3b and every value is numeric."
+  }
+}

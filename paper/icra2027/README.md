@@ -1,6 +1,15 @@
-# ICRA 2027 paper draft (v1.2)
+# Historical ICRA 2027 paper draft (v1.2)
 
-Provisional title: **One Clock Does Not Fit All: Group-Specific Execution
+> **Status note (2026-08-24):** `main.tex` and the existing section files are
+> historical prose from the discontinued group-specific-horizon direction.
+> They are not the current scientific source of truth.  The post-Gate-3B paper
+> architecture, evidence boundaries, and fill-ready manuscript blocks live in
+> [`notes/post_gate3b_paper_plan.md`](notes/post_gate3b_paper_plan.md) and
+> [`notes/post_gate3b_manuscript_blocks.tex`](notes/post_gate3b_manuscript_blocks.tex).
+> Do not revise the historical draft into a submission until the frozen
+> Gate-3B outcome has replaced every explicit placeholder.
+
+Historical provisional title: **One Clock Does Not Fit All: Group-Specific Execution
 Horizons for Action-Chunking Robot Policies**.
 
 ## Submission format audit (2026-08-20)
