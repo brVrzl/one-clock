@@ -13,6 +13,25 @@ directory. It is an integrity digest for the directory contents, not a Git
 object ID. Directory sizes are apparent byte sizes from `du -sb`; file counts
 are included for scope.
 
+## RTX 5080 public rehydration (2026-08-24)
+
+These assets were downloaded independently from public immutable revisions;
+they are not copies of the Thor filesystem.
+
+| Local-only artifact | Size | SHA256 / content-tree digest | Claim dependency |
+|---|---:|---|---|
+| `/home/wjq/checkpoints/zeromidnight_act_libero_object/model.safetensors` | 206,712,028 bytes | `340071d7497238669459d93517eb3f8690862ad6fdf14207966759dfe6da9410` | Frozen ACT identity and every RTX offline/rollout result |
+| `/home/wjq/checkpoints/zeromidnight_act_libero_object/config.json` | 1,761 bytes | `a76eebed357b3cbed8745c3d0f18c1335ecdd5449fcc498257676c9cbd27453d` | ACT architecture, chunk, and feature contract |
+| `/home/wjq/datasets/libero_object_25_08_23_lerobotv2.1` scientific payload (1,367 files) | 541,468,353 regular-file bytes | stable payload-tree `7c5cb7e88722e0aead2fe0853bdf54e076afe77364a3204ecf46f1e5e7a05b7b`; revision `cbf7122bbdbaa0c50517a6a4b2ae663d0e96e51a` | 454 episodes, 66,984 frames, task identities, RTX Gate-3A1 source observations and targets |
+| `/home/wjq/datasets/libero_object_25_08_23_lerobotv2.1/meta/episodes.jsonl` | 46,501 bytes | `63c6fb6940f46d0bc74c0242c1cde2a39a945bbe7de7b1709d38f5d9a82fcfea` | Episode/task membership and accounting |
+| `/home/wjq/datasets/libero_object_25_08_23_lerobotv2.1/meta/episodes_stats.jsonl` | 1,119,439 bytes | `5bf31fb80b359c9fd1d56a0eaa27f8e7c76a7e39678487fdf76986af8fe88dca` | Episode/frame statistics |
+
+The stable dataset digest above excludes `.cache/huggingface`, whose lock and
+metadata records contain downloader-specific timestamps/endpoints. The exact
+difference from the historical Thor whole-local-directory digest is documented
+in [the RTX replication setup](fast5080_replication_setup.md); the immutable
+payload revision and preregistered metadata hashes match.
+
 ## Frozen policy and dataset
 
 | Local-only artifact | Size | SHA256 / content-tree digest | Audit claims that depend on it |

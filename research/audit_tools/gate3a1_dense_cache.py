@@ -32,6 +32,7 @@ LEROBOT_ROOT = Path("/home/thor/projects/embodied_lab/third_party/lerobot")
 REGISTRATION_COMMIT = "d163f5a76a46c9368adbb8c2f56f09e248b3a81c"
 LEROBOT_COMMIT = "f66e5128ecb2456e8c54a63d15404fa59c16aebc"
 DATASET_TREE_SHA256 = "2c7b87d23936dcd9d511c77234907f99e2da8ac4d23b68bb7b23af9b71297608"
+DATASET_PAYLOAD_TREE_SHA256 = "7c5cb7e88722e0aead2fe0853bdf54e076afe77364a3204ecf46f1e5e7a05b7b"
 DATASET_REVISION = "cbf7122bbdbaa0c50517a6a4b2ae663d0e96e51a"
 SEED = 20260821
 DATASET_HZ = 10.0
@@ -50,6 +51,10 @@ EXPECTED_HASHES = {
         "3cb90679b116d22c960772f75e567c32b51778df2ca065cc4784bd6cd593e941"
     ),
 }
+EXPECTED_DATASET_HASHES = {
+    "meta/episodes.jsonl": "63c6fb6940f46d0bc74c0242c1cde2a39a945bbe7de7b1709d38f5d9a82fcfea",
+    "meta/episodes_stats.jsonl": "5bf31fb80b359c9fd1d56a0eaa27f8e7c76a7e39678487fdf76986af8fe88dca",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -60,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device", choices=("cuda", "cpu"), default="cuda")
     parser.add_argument("--checkpoint", type=Path, default=CHECKPOINT)
     parser.add_argument("--dataset", type=Path, default=DATASET)
+    parser.add_argument("--lerobot-root", type=Path, default=LEROBOT_ROOT)
     parser.add_argument("--inventory", type=Path, default=INVENTORY)
     parser.add_argument("--cache-root", type=Path, default=CACHE_ROOT)
     parser.add_argument("--compact-manifest", type=Path, default=COMPACT_MANIFEST)
@@ -72,6 +78,18 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def payload_tree_sha256(root: Path) -> str:
+    """Hash immutable dataset payload files, excluding Hub client cache records."""
+
+    lines: list[str] = []
+    for path in sorted(root.rglob("*")):
+        relative = path.relative_to(root)
+        if not path.is_file() or relative.parts[:2] == (".cache", "huggingface"):
+            continue
+        lines.append(f"{sha256(path)}  {relative.as_posix()}\n")
+    return hashlib.sha256("".join(lines).encode("utf-8")).hexdigest()
 
 
 def git_head(path: Path) -> str:
@@ -119,12 +137,25 @@ def load_json_lines(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
-def verify_static_provenance(checkpoint: Path, dataset: Path) -> dict[str, Any]:
-    if git_head(LEROBOT_ROOT) != LEROBOT_COMMIT:
+def verify_static_provenance(
+    checkpoint: Path, dataset: Path, lerobot_root: Path
+) -> dict[str, Any]:
+    if git_head(lerobot_root) != LEROBOT_COMMIT:
         raise RuntimeError("Pinned LeRobot checkout is not at the audited commit")
     observed_hashes = {name: sha256(checkpoint / name) for name in EXPECTED_HASHES}
     if observed_hashes != EXPECTED_HASHES:
         raise RuntimeError(f"Checkpoint provenance mismatch: {observed_hashes}")
+    observed_dataset_hashes = {
+        name: sha256(dataset / name) for name in EXPECTED_DATASET_HASHES
+    }
+    if observed_dataset_hashes != EXPECTED_DATASET_HASHES:
+        raise RuntimeError(f"Dataset file provenance mismatch: {observed_dataset_hashes}")
+    observed_payload_tree = payload_tree_sha256(dataset)
+    if observed_payload_tree != DATASET_PAYLOAD_TREE_SHA256:
+        raise RuntimeError(
+            "Dataset payload-tree provenance mismatch: "
+            f"{observed_payload_tree} != {DATASET_PAYLOAD_TREE_SHA256}"
+        )
     info = json.loads((dataset / "meta/info.json").read_text(encoding="utf-8"))
     expected_info = {
         "codebase_version": "v2.1",
@@ -141,9 +172,13 @@ def verify_static_provenance(checkpoint: Path, dataset: Path) -> dict[str, Any]:
         "checkpoint_files_sha256": observed_hashes,
         "dataset_root": str(dataset.resolve()),
         "dataset_content_tree_sha256": DATASET_TREE_SHA256,
+        "dataset_content_tree_scope": "historical Thor local directory including Hub client records",
+        "dataset_payload_tree_sha256": observed_payload_tree,
+        "dataset_payload_tree_scope": "all repository payload files; .cache/huggingface excluded",
+        "dataset_files_sha256": observed_dataset_hashes,
         "dataset_revision": DATASET_REVISION,
         "dataset_frequency_hz": DATASET_HZ,
-        "lerobot_root": str(LEROBOT_ROOT),
+        "lerobot_root": str(lerobot_root.resolve()),
         "lerobot_commit": LEROBOT_COMMIT,
         "registration_commit": REGISTRATION_COMMIT,
         "generator_git_head": git_head(ROOT),
@@ -338,6 +373,7 @@ def validate_episode_file(
         for key in (
             "checkpoint_files_sha256",
             "dataset_content_tree_sha256",
+            "dataset_payload_tree_sha256",
             "dataset_revision",
             "lerobot_commit",
             "registration_commit",
@@ -393,7 +429,9 @@ def main() -> None:
     checkpoint = args.checkpoint.resolve()
     dataset = args.dataset.resolve()
     cache_root = args.cache_root.resolve()
-    provenance = verify_static_provenance(checkpoint, dataset)
+    provenance = verify_static_provenance(
+        checkpoint, dataset, args.lerobot_root.resolve()
+    )
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     episodes_meta = {int(row["episode_index"]): row for row in load_json_lines(dataset / "meta/episodes.jsonl")}

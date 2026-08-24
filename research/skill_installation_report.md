@@ -1,5 +1,41 @@
 # Scientific skill installation report
 
+## RTX 5080 refresh — 2026-08-24
+
+The skill directories were absent at the start of the fast-track session and
+were reinstalled locally without a parent-process restart.
+
+- The supported `npx skills` entry point was attempted first, but the host Node
+  runtime failed before argument parsing with `SyntaxError: Unexpected reserved
+  word`.
+- `K-Dense-AI/scientific-agent-skills` was cloned at commit
+  `390f5146bf3c1877cf15636a3dd7b775e4f0f185` for path discovery. Codex's supported
+  `install-skill-from-github.py` helper installed the complete directories for
+  `scientific-brainstorming`, `scientific-critical-thinking`,
+  `hypothesis-generation`, `experimental-design`, `literature-review`,
+  `peer-review`, and `statistical-analysis`.
+- `Boom5426/Nature-Paper-Skills` was cloned at commit
+  `47a06b35f1eed23fb943f65e86777eb37c605090`. Its documented local installer was run as
+  `bash install.sh --agent codex --set all`, installing all 26 self-contained
+  Codex skill directories. This includes the requested paper workflow,
+  bootstrap, writing, optimization, citation/claim verification, submission,
+  reviewer, and conference-writing skills.
+- Installation was verified by enumerating `~/.codex/skills` and reading the
+  relevant installed `SKILL.md` files directly. Automatic discovery will occur
+  after a later Codex restart; the current session applies the instructions
+  directly, so restart is not an execution dependency.
+
+For this fast-track work, the skills enforce a bounded source search, explicit
+candidate-versus-evidence labels, validation-only method selection, held-out
+test isolation, episode-level inference, uncertainty reporting, and refusal to
+promote offline teacher-forced gains to closed-loop success claims.
+
+## Superseded 2026-08-21 installation record
+
+The material below records the earlier machine/session and is retained for
+history. It is not the current installed-directory inventory; the RTX 5080
+refresh above is authoritative.
+
 Audit date: 2026-08-21 (Asia/Shanghai)
 
 ## Installation mechanism
