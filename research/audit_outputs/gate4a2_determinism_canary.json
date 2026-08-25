@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "FAILED",
+  "scope": "Outcome-blind fresh-action prefixes only; no diagnostic episode exceeded 20 controller steps.",
+  "outcome_fields_accessed": false,
+  "historical_outcome_analyzer_run": false,
+  "numerical_tolerance_used": false,
+  "checkpoint_revision": "8f04de1472975d62db214238b2fc07e78bde2474",
+  "model_sha256": "912f41808962d80ca9084435aa01eccccdd97b7eae3a841c9f4ac71caaf9f8b0",
+  "dataset_revision": "38927e939de5d2bfd40effcf27d16710aea6f864",
+  "selected_states": [1, 13, 15, 19, 21, 24, 31, 37, 40, 47],
+  "attempts": [
+    {
+      "name": "fresh_environment_early_seed_driver_settings",
+      "technical_changes": [
+        "seed Python, NumPy, Torch, and CUDA before each environment construction",
+        "construct a new hard-reset LIBERO environment for every repeat",
+        "set __GL_THREADED_OPTIMIZATIONS=0 before rendering-stack import",
+        "set __GL_YIELD=NOTHING before rendering-stack import"
+      ],
+      "planned_blocks": 100,
+      "completed_blocks_before_decisive_failure": 31,
+      "passed_blocks": 30,
+      "failed_blocks": 1,
+      "first_failed_block": {
+        "task_id": 3,
+        "state_id": 1,
+        "first_divergent_step": 8,
+        "earliest_divergent_layer": "L2"
+      },
+      "stopped_after_decisive_failure": true,
+      "reason_for_stopping": "Continuing the remaining blocks could not make this correction eligible for Gate-4A3."
+    },
+    {
+      "name": "fresh_process_per_repeat",
+      "technical_changes": [
+        "all changes from the first attempt",
+        "new Python process and new EGL context for every repeat"
+      ],
+      "mandated_cases_tested": [
+        {"task_id": 4, "state_id": 1, "repeats": 3, "exact": true},
+        {"task_id": 4, "state_id": 37, "repeats": 3, "exact": true},
+        {"task_id": 3, "state_id": 1, "repeats": 3, "exact": false, "first_divergent_step": 8, "earliest_divergent_layer": "L2"},
+        {"task_id": 0, "state_id": 1, "repeats": 3, "exact": true}
+      ],
+      "passed_cases": 3,
+      "failed_cases": 1
+    },
+    {
+      "name": "explicit_opengl_completion_barrier",
+      "technical_changes": [
+        "all fresh-process changes",
+        "OpenGL glFinish after every MuJoCo render and before pixel readback"
+      ],
+      "task_id": 3,
+      "state_id": 1,
+      "repeats": 5,
+      "exact": false,
+      "first_divergent_step": 8,
+      "earliest_divergent_layer": "L2"
+    }
+  ],
+  "all_100_blocks_exact": false,
+  "canary_pass": false,
+  "gate4a3_status": "NOT_READY",
+  "rerun_status": "RERUN-NOT-JUSTIFIED"
+}

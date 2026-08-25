@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "branch": "exp/gate4a2-prefix-rootcause",
+  "starting_commit": "13f87613fec4aeb99cd48aa3ad03ff7b9850d995",
+  "scope": "Gate-4A2 A/B/C first-20-prefix root-cause audit only",
+  "outcome_fields_accessed": false,
+  "historical_outcome_analyzer_run": false,
+  "historical_traces_modified": false,
+  "manuscript_modified": false,
+  "historical_reader": {
+    "implementation": "gzip JSON object_pairs_hook removes outcome-bearing keys while objects are constructed; the returned object is then projected to identity, registered state hash, and t=0..19 fresh/executed actions",
+    "rejected_or_dropped_keys": [
+      "failure_category",
+      "is_success",
+      "reward",
+      "success",
+      "terminated",
+      "truncated"
+    ],
+    "stored_layers": {
+      "L0": "state ID and registered initial-state vector SHA256",
+      "L1": false,
+      "L2": false,
+      "L3": false,
+      "L4": false,
+      "L5": "fresh action only; complete postprocessed chunk was not stored",
+      "L6": "executed action"
+    }
+  },
+  "historical_prefix_table": [
+    {"task_id": 4, "state_id": 1, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.11424273252487183, "max_L6_difference": 0.11424273252487183},
+    {"task_id": 4, "state_id": 13, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.11535894870758057, "max_L6_difference": 0.11535894870758057},
+    {"task_id": 4, "state_id": 15, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.08125185966491699, "max_L6_difference": 0.08125185966491699},
+    {"task_id": 4, "state_id": 19, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.1924603283405304, "max_L6_difference": 0.1924603283405304},
+    {"task_id": 4, "state_id": 21, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.14379483461380005, "max_L6_difference": 0.14379483461380005},
+    {"task_id": 4, "state_id": 24, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.1305442452430725, "max_L6_difference": 0.1305442452430725},
+    {"task_id": 4, "state_id": 31, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.10562640428543091, "max_L6_difference": 0.10562640428543091},
+    {"task_id": 4, "state_id": 37, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.19852697849273682, "max_L6_difference": 0.19852697849273682},
+    {"task_id": 4, "state_id": 40, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.13932576775550842, "max_L6_difference": 0.13932576775550842},
+    {"task_id": 4, "state_id": 47, "first_divergent_step": 0, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.11511990427970886, "max_L6_difference": 0.11511990427970886},
+    {"task_id": 3, "state_id": 1, "first_divergent_step": 8, "earliest_stored_divergent_layer": "L5", "max_L5_difference": 0.009960860013961792, "max_L6_difference": 0.009960860013961792},
+    {"task_id": 3, "state_id": 13, "first_divergent_step": null, "earliest_stored_divergent_layer": null, "max_L5_difference": 0.0, "max_L6_difference": 0.0},
+    {"task_id": 0, "state_id": 1, "first_divergent_step": null, "earliest_stored_divergent_layer": null, "max_L5_difference": 0.0, "max_L6_difference": 0.0},
+    {"task_id": 5, "state_id": 1, "first_divergent_step": null, "earliest_stored_divergent_layer": null, "max_L5_difference": 0.0, "max_L6_difference": 0.0}
+  ],
+  "task4_diagnosis": {
+    "reproduced": true,
+    "first_divergent_step": 0,
+    "earliest_divergent_layer": "L1",
+    "cause": "LIBERO BddlBaseDomain retains object_property_initializers across hard resets. Task 4 has an Open cabinet predicate, so every hard-reset model load appends another OpenCloseSampler. Reusing the environment changes NumPy draw consumption and fixture/object placement before the same official state vector is restored.",
+    "same_official_state_vector_sha256": "869b45eb1dafebb5a9eade1ff1580d0df51de2b9e5eecff87ad395ad14a61438",
+    "repeated_reset_evidence": [
+      {"repeat_id": 0, "open_close_sampler_count": 3, "cabinet_body_pos": [0.027200248960804058, -0.27273009686755184, 0.905], "cabinet_body_quat": [0.22224891196852384, 0.0, 0.0, 0.9749899595015362], "sim_state_sha256": "6063fd9b83ccd99418e468114b709e33788d4d86b8ce3d9d6098f4f4e5856cfe"},
+      {"repeat_id": 1, "open_close_sampler_count": 4, "cabinet_body_pos": [0.027269903132448155, -0.2698223775705248, 0.905], "cabinet_body_quat": [0.20834577084387984, 0.0, 0.0, 0.9780552334973058], "sim_state_sha256": "4be58fdbcde8ed3a8e142d0a241bbfe806603308e8e3de5cefc8e6d3b654b367"},
+      {"repeat_id": 2, "open_close_sampler_count": 5, "cabinet_body_pos": [0.030177622429475207, -0.2607587214265058, 0.905], "cabinet_body_quat": [0.2135612670496978, 0.0, 0.0, 0.9769296726050077], "sim_state_sha256": "844c7b1c50caea8a7a95be747f1b859b2fa68e47b891f85a3b31a344f5f632a8"}
+    ],
+    "official_state_limitation": "The registered flattened MuJoCo state does not contain model.body_pos or model.body_quat, so restoring it cannot restore the randomized cabinet fixture pose.",
+    "partial_technical_correction": "Construct and destroy a fresh LIBERO environment for every episode, with all RNGs seeded before construction. This removes the task-4 reset accumulator but does not resolve task 3/state 1."
+  },
+  "task3_state1_diagnosis": {
+    "reproduced": true,
+    "first_divergent_step": 8,
+    "earliest_divergent_layer": "L2",
+    "L1_persistent_simulator_state_exact_through_step": 8,
+    "L1_first_divergent_step_after_action_perturbation": 9,
+    "first_differing_observation_key": "pixels.image2",
+    "first_differing_pixel": [80, 208, 0],
+    "max_image_difference_at_first_divergence": 1,
+    "max_processed_input_difference_at_first_divergence": 0.017507001757621765,
+    "max_raw_chunk_difference_at_first_divergence": 0.00023218989372253418,
+    "max_postprocessed_chunk_difference_at_first_divergence": 0.0001741349697113037,
+    "max_fresh_action_difference_at_first_divergence": 0.000018835067749023438,
+    "max_fresh_action_difference_over_prefix": 0.009960860013961792,
+    "interpretation": "The wrist-camera RGB render differs while persistent MuJoCo state is still equal. The policy then deterministically propagates that input difference; the distinct action makes simulator state differ on the next transition.",
+    "failed_corrections": [
+      "fresh hard-reset environment per repeat",
+      "seed Python, NumPy, Torch, and CUDA before construction",
+      "__GL_THREADED_OPTIMIZATIONS=0",
+      "__GL_YIELD=NOTHING",
+      "fresh process and EGL context per repeat",
+      "OpenGL glFinish between render and readback"
+    ],
+    "validated_pairing_only_correction": null
+  },
+  "exact_input_policy_audit": {
+    "preprocessing_repeats": 20,
+    "preprocessing_unique_fingerprints": 1,
+    "raw_inference_repeats": 50,
+    "raw_chunk_unique_fingerprints": 1,
+    "postprocessing_repeats": 50,
+    "postprocessed_unique_fingerprints": 1,
+    "policy_reset_repeats": 20,
+    "policy_reset_unique_fingerprints": 1,
+    "new_policy_object_matches": true,
+    "policy_training": false,
+    "dropout_module_count": 28,
+    "dropout_modules_in_training_mode": 0,
+    "random_image_augmentation_present": false,
+    "preprocessing_rng_unchanged": true,
+    "inference_rng_unchanged": true,
+    "postprocessing_rng_unchanged": true
+  },
+  "runner_state_and_seed_audit": {
+    "runtime_reuse": "One policy, processor set, and LIBERO environment were reused for all scheduled episodes of a task.",
+    "episode_seed_position": "After process startup and policy/processor/suite/wrapper construction; immediately before env.reset.",
+    "seeded_rngs": ["NumPy", "Torch CPU", "Torch CUDA"],
+    "unseeded_rngs": ["Python random"],
+    "policy_reset_position": "After hard reset, official-state restoration, settling steps, and creation of the first observation; before the first policy query.",
+    "policy_internal_temporal_ensemble": false,
+    "policy_query_path": "predict_action_chunk directly; no old action queue was used to avoid a fresh query.",
+    "processor_mutable_state_found": false,
+    "method_order_can_influence_next_episode": true,
+    "mechanism": "Environment reuse preserves the accumulating task-4 initializer list and EGL/context history. No policy-state leakage was reproduced."
+  },
+  "primary_root_cause_classification": "RESET_STATE_NONDETERMINISM",
+  "secondary_contributors": [
+    "OBSERVATION_RENDER_NONDETERMINISM"
+  ],
+  "earliest_divergent_layer_overall": "L1",
+  "proposed_complete_technical_correction": null,
+  "rerun_status": "RERUN-NOT-JUSTIFIED",
+  "rerun_reason": "A pairing-only correction for the reproduced task-3/state-1 render divergence has not passed the exact determinism gate.",
+  "canary_status": "FAILED",
+  "gate4a3_status": "NOT_READY"
+}
