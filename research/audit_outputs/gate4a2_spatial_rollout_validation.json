@@ -1,0 +1,104 @@
+{
+  "action_smoothing_active": false,
+  "all_actions_shape_7_and_finite": true,
+  "all_age_exponential_weights_match_beta_003": true,
+  "all_fixed_source_actions_match_registered_formulas": true,
+  "all_initial_state_ids_and_vectors_match_frozen_schedule": true,
+  "all_old_chunk_offsets_equal_20": true,
+  "all_old_sources_equal_t_minus_20": true,
+  "all_queries_equal_environment_steps": true,
+  "cogact_uses_frozen_gate3c_source_identity": true,
+  "complete_unique_task_state_method_cells": 500,
+  "compressed_episode_file_bytes": 51276946,
+  "compressed_episode_files": 500,
+  "content_tree_definition": "SHA256 of concatenated sorted '<file_sha256>  <relative_path>\\n' lines.",
+  "episode_file_content_tree_sha256": "e11cacfc5dd8f15dcd8374961229df3fb33641a1ba4669032e67c89f71ec8e7c",
+  "failed_first_20_blocks": [
+    {
+      "first_mismatch_step": 8,
+      "maximum_A_B_C_absolute_difference": 0.009960860013961792,
+      "state_id": 1,
+      "task_id": 3
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.11424273252487183,
+      "state_id": 1,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.11535894870758057,
+      "state_id": 13,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.08125185966491699,
+      "state_id": 15,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.1924603283405304,
+      "state_id": 19,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.14379483461380005,
+      "state_id": 21,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.1305442452430725,
+      "state_id": 24,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.10562640428543091,
+      "state_id": 31,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.19852697849273682,
+      "state_id": 37,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.13932576775550842,
+      "state_id": 40,
+      "task_id": 4
+    },
+    {
+      "first_mismatch_step": 0,
+      "maximum_A_B_C_absolute_difference": 0.11511990427970886,
+      "state_id": 47,
+      "task_id": 4
+    }
+  ],
+  "first_20_actions_identical_across_A_B_C_in_all_blocks": false,
+  "first_20_blocks_failed": 11,
+  "first_20_blocks_passed": 89,
+  "generalization_decision": null,
+  "manifest_sha256": "6037134863168645605aa03cc99db881bc79defd8983694c55075bb0d9290470",
+  "maximum_age_exponential_weight_error": 0.0,
+  "maximum_first_20_A_B_C_difference": 0.19852697849273682,
+  "maximum_fixed_source_formula_error": 0.0,
+  "no_excluded_or_retried_official_episode_files": true,
+  "outcome_analysis_performed": false,
+  "policy_temporal_ensemble_active": false,
+  "preregistered_validator_error": "registered temporal formula or first-20 prefix validation failed",
+  "schedule_sha256": "00ba884d488891569008ab44214e924143f1cb7992fd57383ab057f5b6c16833",
+  "scalar_baselines_use_normalized_shared_full_action_weights": true,
+  "scope": "Post-result technical integrity validation performed before outcome analysis.",
+  "source_age_ticks": 20,
+  "status": "FAILED_PREREGISTERED_INTEGRITY_VALIDATION",
+  "task_state_blocks": 100,
+  "total_environment_steps": 110624,
+  "total_policy_queries": 110624
+}
