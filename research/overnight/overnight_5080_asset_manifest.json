@@ -1,0 +1,61 @@
+{
+  "date": "2026-08-24",
+  "frozen_base": "f7cb0559594a15a7ab4ab92758fad766d841af04",
+  "ops_branch": "ops/overnight-5080-prep-20260824",
+  "assets": {
+    "spatial_checkpoint": {
+      "repository": "ishandotsh/act_libero_spatial_test",
+      "revision": "8f04de1472975d62db214238b2fc07e78bde2474",
+      "local_path": "/home/wjq/research-assets/checkpoints/ishandotsh_act_libero_spatial_test",
+      "manifest": "/home/wjq/research-assets/overnight_20260824/manifests/ishandotsh_act_libero_spatial_test.json",
+      "total_bytes": 206741003,
+      "model_sha256": "912f41808962d80ca9084435aa01eccccdd97b7eae3a841c9f4ac71caaf9f8b0",
+      "config_sha256": "0e783369890d33a714cef603185c10dff4215328a9862b181eb7f511f3f1a93c"
+    },
+    "spatial_dataset": {
+      "repository": "zeromidnight/libero_spatial_lerobot_v3.0",
+      "revision": "38927e939de5d2bfd40effcf27d16710aea6f864",
+      "local_path": "/home/wjq/research-assets/datasets/libero_spatial_zeromidnight",
+      "manifest": "/home/wjq/research-assets/overnight_20260824/manifests/libero_spatial_zeromidnight.json",
+      "total_bytes": 366445081
+    },
+    "checkpoint_training_provenance": {
+      "repository": "HuggingFaceVLA/libero",
+      "revision": "86958911c0f959db2bbbdb1073e17c5f9c798e",
+      "local_metadata_path": "/home/wjq/research-assets/datasets/HuggingFaceVLA_libero_metadata",
+      "category": "MULTI_SUITE",
+      "full_mirror": "partial; see STATE.json blocker"
+    },
+    "robotwin_selected_data": {
+      "repository": "TianxingChen/RoboTwin2.0",
+      "revision": "a967b852afa21a9cbf19a198f7e653109042e87c",
+      "local_path": "/home/wjq/research-assets/robotwin/data",
+      "tasks": ["beat_block_hammer", "adjust_bottle"],
+      "task_config": "demo_clean",
+      "embodiment": "aloha_agilex",
+      "manifest": "/home/wjq/research-assets/overnight_20260824/manifests/robotwin_selected_data.json",
+      "total_bytes": 1274628876
+    },
+    "robotwin_demo_clean_50task": {
+      "repository": "TianxingChen/RoboTwin2.0",
+      "revision": "a967b852afa21a9cbf19a198f7e653109042e87c",
+      "local_path": "/home/wjq/research-assets/robotwin/data",
+      "tasks": 50,
+      "hashed_file_count": 7650,
+      "total_bytes": 58551419446,
+      "manifest": "/home/wjq/research-assets/overnight_20260824/manifests/robotwin_demo_clean_50task.json"
+    },
+    "robotwin_act_reference": {
+      "status": "complete",
+      "checkpoint_root": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints",
+      "protocol": "official train.sh defaults; demo_clean; aloha_agilex; joint; 50 trajectories; seed 0; 6000 steps",
+      "label": "INFRASTRUCTURE-ONLY; NOT-PAPER-EVIDENCE",
+      "checkpoints_manifest": "/home/wjq/research-assets/overnight_20260824/manifests/robotwin_act_reference_checkpoints.json",
+      "contracts": {
+        "beat_block_hammer": {"chunk_length": 50, "action_dimension": 14, "finite": true},
+        "adjust_bottle": {"chunk_length": 50, "action_dimension": 14, "finite": true}
+      }
+    }
+  },
+  "scientific_evaluation_performed": false
+}
