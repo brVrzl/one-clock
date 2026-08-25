@@ -1,0 +1,380 @@
+{
+  "study": "RoboTwin one-clock sealed exploratory pilot",
+  "schedule_hash": "467e11065033b12c1cf865ede301ed368e040014cde8cecf23903702d2ae705a",
+  "analysis_seed": 20270826,
+  "bootstrap_draws": 10000,
+  "completed_cells": 600,
+  "technical_reruns": 0,
+  "task_method": [
+    {
+      "task": "beat_block_hammer",
+      "method": "NATIVE_ACT",
+      "success": 9,
+      "n": 20,
+      "rate": 0.45
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "NATIVE_ACT",
+      "success": 1,
+      "n": 20,
+      "rate": 0.05
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "NATIVE_ACT",
+      "success": 1,
+      "n": 20,
+      "rate": 0.05
+    },
+    {
+      "task": "handover_block",
+      "method": "NATIVE_ACT",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "NATIVE_ACT",
+      "success": 8,
+      "n": 20,
+      "rate": 0.4
+    },
+    {
+      "task": "beat_block_hammer",
+      "method": "NEWEST",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "NEWEST",
+      "success": 4,
+      "n": 20,
+      "rate": 0.2
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "NEWEST",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "handover_block",
+      "method": "NEWEST",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "NEWEST",
+      "success": 7,
+      "n": 20,
+      "rate": 0.35
+    },
+    {
+      "task": "beat_block_hammer",
+      "method": "FULL_OLD_1S",
+      "success": 1,
+      "n": 20,
+      "rate": 0.05
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "FULL_OLD_1S",
+      "success": 2,
+      "n": 20,
+      "rate": 0.1
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "FULL_OLD_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "handover_block",
+      "method": "FULL_OLD_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "FULL_OLD_1S",
+      "success": 6,
+      "n": 20,
+      "rate": 0.3
+    },
+    {
+      "task": "beat_block_hammer",
+      "method": "FO_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "FO_1S",
+      "success": 3,
+      "n": 20,
+      "rate": 0.15
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "FO_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "handover_block",
+      "method": "FO_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "FO_1S",
+      "success": 8,
+      "n": 20,
+      "rate": 0.4
+    },
+    {
+      "task": "beat_block_hammer",
+      "method": "GRIPPER_HOLD",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "GRIPPER_HOLD",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "GRIPPER_HOLD",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "handover_block",
+      "method": "GRIPPER_HOLD",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "GRIPPER_HOLD",
+      "success": 5,
+      "n": 20,
+      "rate": 0.25
+    },
+    {
+      "task": "beat_block_hammer",
+      "method": "GRIPPER_EMA_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "click_alarmclock",
+      "method": "GRIPPER_EMA_1S",
+      "success": 3,
+      "n": 20,
+      "rate": 0.15
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "method": "GRIPPER_EMA_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "handover_block",
+      "method": "GRIPPER_EMA_1S",
+      "success": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    {
+      "task": "open_laptop",
+      "method": "GRIPPER_EMA_1S",
+      "success": 7,
+      "n": 20,
+      "rate": 0.35
+    }
+  ],
+  "pooled": {
+    "NATIVE_ACT": {
+      "success": 19,
+      "n": 100,
+      "rate": 0.19
+    },
+    "NEWEST": {
+      "success": 11,
+      "n": 100,
+      "rate": 0.11
+    },
+    "FULL_OLD_1S": {
+      "success": 9,
+      "n": 100,
+      "rate": 0.09
+    },
+    "FO_1S": {
+      "success": 11,
+      "n": 100,
+      "rate": 0.11
+    },
+    "GRIPPER_HOLD": {
+      "success": 5,
+      "n": 100,
+      "rate": 0.05
+    },
+    "GRIPPER_EMA_1S": {
+      "success": 10,
+      "n": 100,
+      "rate": 0.1
+    }
+  },
+  "contrasts": {
+    "NEWEST": {
+      "contrast": "FO_1S - NEWEST",
+      "pooled_paired_difference": 0.0,
+      "wins": 2,
+      "losses": 2,
+      "ties": 96,
+      "task_deltas": {
+        "beat_block_hammer": 0.0,
+        "click_alarmclock": -0.05,
+        "dump_bin_bigbin": 0.0,
+        "handover_block": 0.0,
+        "open_laptop": 0.05
+      },
+      "task_cluster_bootstrap_95_interval": [
+        -0.030000000000000006,
+        0.030000000000000006
+      ],
+      "leave_one_task_out": {
+        "beat_block_hammer": 0.0,
+        "click_alarmclock": 0.0125,
+        "dump_bin_bigbin": 0.0,
+        "handover_block": 0.0,
+        "open_laptop": -0.0125
+      }
+    },
+    "NATIVE_ACT": {
+      "contrast": "FO_1S - NATIVE_ACT",
+      "pooled_paired_difference": -0.07999999999999999,
+      "wins": 3,
+      "losses": 11,
+      "ties": 86,
+      "task_deltas": {
+        "beat_block_hammer": -0.45,
+        "click_alarmclock": 0.1,
+        "dump_bin_bigbin": -0.05,
+        "handover_block": 0.0,
+        "open_laptop": 0.0
+      },
+      "task_cluster_bootstrap_95_interval": [
+        -0.27,
+        0.05
+      ],
+      "leave_one_task_out": {
+        "beat_block_hammer": 0.0125,
+        "click_alarmclock": -0.125,
+        "dump_bin_bigbin": -0.0875,
+        "handover_block": -0.09999999999999999,
+        "open_laptop": -0.09999999999999999
+      }
+    },
+    "FULL_OLD_1S": {
+      "contrast": "FO_1S - FULL_OLD_1S",
+      "pooled_paired_difference": 0.02,
+      "wins": 3,
+      "losses": 1,
+      "ties": 96,
+      "task_deltas": {
+        "beat_block_hammer": -0.05,
+        "click_alarmclock": 0.05,
+        "dump_bin_bigbin": 0.0,
+        "handover_block": 0.0,
+        "open_laptop": 0.1
+      },
+      "task_cluster_bootstrap_95_interval": [
+        -0.02,
+        0.06999999999999999
+      ],
+      "leave_one_task_out": {
+        "beat_block_hammer": 0.037500000000000006,
+        "click_alarmclock": 0.0125,
+        "dump_bin_bigbin": 0.025,
+        "handover_block": 0.025,
+        "open_laptop": 0.0
+      }
+    },
+    "GRIPPER_HOLD": {
+      "contrast": "FO_1S - GRIPPER_HOLD",
+      "pooled_paired_difference": 0.06,
+      "wins": 6,
+      "losses": 0,
+      "ties": 94,
+      "task_deltas": {
+        "beat_block_hammer": 0.0,
+        "click_alarmclock": 0.15,
+        "dump_bin_bigbin": 0.0,
+        "handover_block": 0.0,
+        "open_laptop": 0.15
+      },
+      "task_cluster_bootstrap_95_interval": [
+        0.0,
+        0.12
+      ],
+      "leave_one_task_out": {
+        "beat_block_hammer": 0.075,
+        "click_alarmclock": 0.0375,
+        "dump_bin_bigbin": 0.075,
+        "handover_block": 0.075,
+        "open_laptop": 0.0375
+      }
+    },
+    "GRIPPER_EMA_1S": {
+      "contrast": "FO_1S - GRIPPER_EMA_1S",
+      "pooled_paired_difference": 0.01,
+      "wins": 2,
+      "losses": 1,
+      "ties": 97,
+      "task_deltas": {
+        "beat_block_hammer": 0.0,
+        "click_alarmclock": 0.0,
+        "dump_bin_bigbin": 0.0,
+        "handover_block": 0.0,
+        "open_laptop": 0.05
+      },
+      "task_cluster_bootstrap_95_interval": [
+        0.0,
+        0.030000000000000006
+      ],
+      "leave_one_task_out": {
+        "beat_block_hammer": 0.0125,
+        "click_alarmclock": 0.0125,
+        "dump_bin_bigbin": 0.0125,
+        "handover_block": 0.0125,
+        "open_laptop": 0.0
+      }
+    }
+  },
+  "classification": "NO_SIGNAL"
+}
