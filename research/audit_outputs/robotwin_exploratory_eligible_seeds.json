@@ -1,0 +1,1146 @@
+{
+  "schema_version": 1,
+  "purpose": "Outcome-independent official expert eligibility screen",
+  "robotwin_seed_convention": "ascending seeds beginning at 100000, matching evaluator seed argument 0",
+  "selection_rule": "first 20 expert-eligible seeds in ascending candidate-seed order, independently per frozen task",
+  "task_order": [
+    "beat_block_hammer",
+    "click_alarmclock",
+    "dump_bin_bigbin",
+    "handover_block",
+    "open_laptop"
+  ],
+  "tasks": {
+    "beat_block_hammer": {
+      "task": "beat_block_hammer",
+      "ordering": "ascending official RoboTwin seed from seed_start",
+      "seed_start": 100000,
+      "eligible_seed_count": 20,
+      "eligible_seeds": [
+        100000,
+        100003,
+        100007,
+        100008,
+        100009,
+        100010,
+        100011,
+        100012,
+        100013,
+        100014,
+        100015,
+        100017,
+        100020,
+        100021,
+        100022,
+        100023,
+        100026,
+        100027,
+        100028,
+        100029
+      ],
+      "rejected_seeds": [
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100024,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100025,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_seed": 100000,
+          "eligible": true,
+          "eligible_seed_index": 0,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100003,
+          "eligible": true,
+          "eligible_seed_index": 1,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100007,
+          "eligible": true,
+          "eligible_seed_index": 2,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": true,
+          "eligible_seed_index": 3,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": true,
+          "eligible_seed_index": 4,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100010,
+          "eligible": true,
+          "eligible_seed_index": 5,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100011,
+          "eligible": true,
+          "eligible_seed_index": 6,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100012,
+          "eligible": true,
+          "eligible_seed_index": 7,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": true,
+          "eligible_seed_index": 8,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": true,
+          "eligible_seed_index": 9,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100015,
+          "eligible": true,
+          "eligible_seed_index": 10,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": true,
+          "eligible_seed_index": 11,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100020,
+          "eligible": true,
+          "eligible_seed_index": 12,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": true,
+          "eligible_seed_index": 13,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100022,
+          "eligible": true,
+          "eligible_seed_index": 14,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100023,
+          "eligible": true,
+          "eligible_seed_index": 15,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100024,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100025,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100026,
+          "eligible": true,
+          "eligible_seed_index": 16,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100027,
+          "eligible": true,
+          "eligible_seed_index": 17,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100028,
+          "eligible": true,
+          "eligible_seed_index": 18,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100029,
+          "eligible": true,
+          "eligible_seed_index": 19,
+          "rejection_reason": null
+        }
+      ]
+    },
+    "click_alarmclock": {
+      "task": "click_alarmclock",
+      "ordering": "ascending official RoboTwin seed from seed_start",
+      "seed_start": 100000,
+      "eligible_seed_count": 20,
+      "eligible_seeds": [
+        100000,
+        100002,
+        100003,
+        100004,
+        100007,
+        100008,
+        100009,
+        100010,
+        100011,
+        100012,
+        100013,
+        100014,
+        100015,
+        100016,
+        100018,
+        100019,
+        100020,
+        100021,
+        100022,
+        100023
+      ],
+      "rejected_seeds": [
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "EXPERT_ERROR:TypeError"
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_seed": 100000,
+          "eligible": true,
+          "eligible_seed_index": 0,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": true,
+          "eligible_seed_index": 1,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100003,
+          "eligible": true,
+          "eligible_seed_index": 2,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": true,
+          "eligible_seed_index": 3,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "EXPERT_ERROR:TypeError"
+        },
+        {
+          "candidate_seed": 100007,
+          "eligible": true,
+          "eligible_seed_index": 4,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": true,
+          "eligible_seed_index": 5,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": true,
+          "eligible_seed_index": 6,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100010,
+          "eligible": true,
+          "eligible_seed_index": 7,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100011,
+          "eligible": true,
+          "eligible_seed_index": 8,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100012,
+          "eligible": true,
+          "eligible_seed_index": 9,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": true,
+          "eligible_seed_index": 10,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": true,
+          "eligible_seed_index": 11,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100015,
+          "eligible": true,
+          "eligible_seed_index": 12,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": true,
+          "eligible_seed_index": 13,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": true,
+          "eligible_seed_index": 14,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": true,
+          "eligible_seed_index": 15,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100020,
+          "eligible": true,
+          "eligible_seed_index": 16,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": true,
+          "eligible_seed_index": 17,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100022,
+          "eligible": true,
+          "eligible_seed_index": 18,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100023,
+          "eligible": true,
+          "eligible_seed_index": 19,
+          "rejection_reason": null
+        }
+      ]
+    },
+    "dump_bin_bigbin": {
+      "task": "dump_bin_bigbin",
+      "ordering": "ascending official RoboTwin seed from seed_start",
+      "seed_start": 100000,
+      "eligible_seed_count": 20,
+      "eligible_seeds": [
+        100002,
+        100003,
+        100004,
+        100005,
+        100007,
+        100010,
+        100011,
+        100012,
+        100015,
+        100016,
+        100019,
+        100022,
+        100027,
+        100029,
+        100031,
+        100033,
+        100034,
+        100035,
+        100037,
+        100038
+      ],
+      "rejected_seeds": [
+        {
+          "candidate_seed": 100000,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100020,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100023,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100024,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100025,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100026,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100028,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100030,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100032,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100036,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_seed": 100000,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": true,
+          "eligible_seed_index": 0,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100003,
+          "eligible": true,
+          "eligible_seed_index": 1,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": true,
+          "eligible_seed_index": 2,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": true,
+          "eligible_seed_index": 3,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100007,
+          "eligible": true,
+          "eligible_seed_index": 4,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100010,
+          "eligible": true,
+          "eligible_seed_index": 5,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100011,
+          "eligible": true,
+          "eligible_seed_index": 6,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100012,
+          "eligible": true,
+          "eligible_seed_index": 7,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100015,
+          "eligible": true,
+          "eligible_seed_index": 8,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": true,
+          "eligible_seed_index": 9,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": true,
+          "eligible_seed_index": 10,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100020,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100022,
+          "eligible": true,
+          "eligible_seed_index": 11,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100023,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100024,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100025,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100026,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100027,
+          "eligible": true,
+          "eligible_seed_index": 12,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100028,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100029,
+          "eligible": true,
+          "eligible_seed_index": 13,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100030,
+          "eligible": false,
+          "rejection_reason": "UNSTABLE"
+        },
+        {
+          "candidate_seed": 100031,
+          "eligible": true,
+          "eligible_seed_index": 14,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100032,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100033,
+          "eligible": true,
+          "eligible_seed_index": 15,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100034,
+          "eligible": true,
+          "eligible_seed_index": 16,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100035,
+          "eligible": true,
+          "eligible_seed_index": 17,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100036,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100037,
+          "eligible": true,
+          "eligible_seed_index": 18,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100038,
+          "eligible": true,
+          "eligible_seed_index": 19,
+          "rejection_reason": null
+        }
+      ]
+    },
+    "handover_block": {
+      "task": "handover_block",
+      "ordering": "ascending official RoboTwin seed from seed_start",
+      "seed_start": 100000,
+      "eligible_seed_count": 20,
+      "eligible_seeds": [
+        100000,
+        100002,
+        100003,
+        100004,
+        100006,
+        100007,
+        100008,
+        100009,
+        100010,
+        100011,
+        100012,
+        100013,
+        100014,
+        100015,
+        100016,
+        100017,
+        100019,
+        100020,
+        100022,
+        100023
+      ],
+      "rejected_seeds": [
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_seed": 100000,
+          "eligible": true,
+          "eligible_seed_index": 0,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": true,
+          "eligible_seed_index": 1,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100003,
+          "eligible": true,
+          "eligible_seed_index": 2,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": true,
+          "eligible_seed_index": 3,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": true,
+          "eligible_seed_index": 4,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100007,
+          "eligible": true,
+          "eligible_seed_index": 5,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": true,
+          "eligible_seed_index": 6,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": true,
+          "eligible_seed_index": 7,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100010,
+          "eligible": true,
+          "eligible_seed_index": 8,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100011,
+          "eligible": true,
+          "eligible_seed_index": 9,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100012,
+          "eligible": true,
+          "eligible_seed_index": 10,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": true,
+          "eligible_seed_index": 11,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": true,
+          "eligible_seed_index": 12,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100015,
+          "eligible": true,
+          "eligible_seed_index": 13,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": true,
+          "eligible_seed_index": 14,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": true,
+          "eligible_seed_index": 15,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": true,
+          "eligible_seed_index": 16,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100020,
+          "eligible": true,
+          "eligible_seed_index": 17,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100021,
+          "eligible": false,
+          "rejection_reason": "EXPERT_FAILED"
+        },
+        {
+          "candidate_seed": 100022,
+          "eligible": true,
+          "eligible_seed_index": 18,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100023,
+          "eligible": true,
+          "eligible_seed_index": 19,
+          "rejection_reason": null
+        }
+      ]
+    },
+    "open_laptop": {
+      "task": "open_laptop",
+      "ordering": "ascending official RoboTwin seed from seed_start",
+      "seed_start": 100000,
+      "eligible_seed_count": 20,
+      "eligible_seeds": [
+        100000,
+        100001,
+        100002,
+        100003,
+        100004,
+        100005,
+        100006,
+        100007,
+        100008,
+        100009,
+        100010,
+        100011,
+        100012,
+        100013,
+        100014,
+        100015,
+        100016,
+        100017,
+        100018,
+        100019
+      ],
+      "rejected_seeds": [],
+      "candidates": [
+        {
+          "candidate_seed": 100000,
+          "eligible": true,
+          "eligible_seed_index": 0,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100001,
+          "eligible": true,
+          "eligible_seed_index": 1,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100002,
+          "eligible": true,
+          "eligible_seed_index": 2,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100003,
+          "eligible": true,
+          "eligible_seed_index": 3,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100004,
+          "eligible": true,
+          "eligible_seed_index": 4,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100005,
+          "eligible": true,
+          "eligible_seed_index": 5,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100006,
+          "eligible": true,
+          "eligible_seed_index": 6,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100007,
+          "eligible": true,
+          "eligible_seed_index": 7,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100008,
+          "eligible": true,
+          "eligible_seed_index": 8,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100009,
+          "eligible": true,
+          "eligible_seed_index": 9,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100010,
+          "eligible": true,
+          "eligible_seed_index": 10,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100011,
+          "eligible": true,
+          "eligible_seed_index": 11,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100012,
+          "eligible": true,
+          "eligible_seed_index": 12,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100013,
+          "eligible": true,
+          "eligible_seed_index": 13,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100014,
+          "eligible": true,
+          "eligible_seed_index": 14,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100015,
+          "eligible": true,
+          "eligible_seed_index": 15,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100016,
+          "eligible": true,
+          "eligible_seed_index": 16,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100017,
+          "eligible": true,
+          "eligible_seed_index": 17,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100018,
+          "eligible": true,
+          "eligible_seed_index": 18,
+          "rejection_reason": null
+        },
+        {
+          "candidate_seed": 100019,
+          "eligible": true,
+          "eligible_seed_index": 19,
+          "rejection_reason": null
+        }
+      ]
+    }
+  },
+  "temporal_policy_rollouts_executed": false,
+  "temporal_method_outcomes_inspected": false
+}
