@@ -2,6 +2,8 @@
   "classification": "NO_SIGNAL",
   "component_wise_temporal_aggregation_justified": false,
   "next_action": "PREREGISTERED_DIAGNOSTIC_REPORTING",
-  "status": "READY_FOR_NO_SIGNAL_DIAGNOSTICS",
-  "analysis_completed_at": "2026-08-26T04:14:40+08:00"
+  "status": "NO_SIGNAL_DIAGNOSTICS_COMPLETE",
+  "analysis_completed_at": "2026-08-26T04:14:40+08:00",
+  "diagnostic_memo": "research/robotwin_no_signal_diagnosis.md",
+  "diagnostic_figure": "research/audit_outputs/robotwin_fo_control_deltas.png"
 }
