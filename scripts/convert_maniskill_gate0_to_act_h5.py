@@ -27,6 +27,7 @@ def main() -> int:
     parser.add_argument("--task", required=True, choices=["PickCube-v1", "StackCube-v1"])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--control-mode", default="pd_ee_pose")
+    parser.add_argument("--successful-only", action="store_true")
     args = parser.parse_args()
 
     prefix = args.task.replace("-v1", "").lower()
@@ -48,6 +49,8 @@ def main() -> int:
         with h5py.File(args.output, "w") as handle:
             for traj_idx, path in enumerate(paths):
                 record = torch.load(path, map_location="cpu", weights_only=False)
+                if args.successful_only and not bool(record["success"]):
+                    continue
                 states = record["states"]
                 actions = np.asarray(record["actions"], dtype=np.float32)
                 if len(states) != len(actions) + 1:
@@ -62,7 +65,7 @@ def main() -> int:
                     observations.append(np.asarray(obs[0], dtype=np.float32))
                 observations = np.stack(observations, axis=0)
 
-                group = handle.create_group(f"traj_{traj_idx}")
+                group = handle.create_group(f"traj_{len(episode_records)}")
                 group.create_dataset("obs", data=observations, compression="lzf")
                 group.create_dataset("actions", data=actions, compression="lzf")
                 group.create_dataset("success", data=np.asarray([int(record["success"])], dtype=np.int8))

@@ -1,0 +1,186 @@
+{
+  "env_info": {
+    "env_id": "StackCube-v1",
+    "env_kwargs": {
+      "control_mode": "pd_ee_pose",
+      "obs_mode": "state",
+      "sim_backend": "physx_cpu"
+    }
+  },
+  "base_demonstrations": 10,
+  "augmentation_method": "motion",
+  "successful_added_branches": 24,
+  "common_pool_attempts": 2160,
+  "selector_states_considered": 24,
+  "bridge_generator": "bounded direct EEF correction to action[t+k], then suffix from t+k",
+  "selected": [
+    {
+      "episode": 7,
+      "timestep": 30,
+      "k": "5",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0030_object_pos_x+_k5_0044.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 35,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0035_object_pos_x+_k1_0053.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 30,
+      "k": "5",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0030_object_pos_x+_k5_0049.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 0,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0000_eef_joint_1+_k1_0003.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 5,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0005_eef_joint_1+_k1_0017.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 40,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0040_object_pos_x+_k1_0065.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 45,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0045_object_pos_x+_k1_0077.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 30,
+      "k": "5",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0030_eef_joint_1+_k5_0046.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 10,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0010_eef_joint_1+_k1_0035.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 15,
+      "k": "1",
+      "perturbation_type": "eef_joint_1-",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0015_eef_joint_1-_k1_0041.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 20,
+      "k": "1",
+      "perturbation_type": "object_pos_x-",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0020_object_pos_x-_k1_0042.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 35,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0035_eef_joint_1+_k1_0051.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 5,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0005_eef_joint_1+_k1_0013.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 10,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0010_eef_joint_1+_k1_0031.pt"
+    },
+    {
+      "episode": 2,
+      "timestep": 20,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_002_t0020_object_pos_x+_k1_0037.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 5,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0005_eef_joint_1+_k1_0005.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 55,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0055_eef_joint_1+_k1_0056.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 10,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0010_eef_joint_1+_k1_0018.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 15,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0015_eef_joint_1+_k1_0035.pt"
+    },
+    {
+      "episode": 4,
+      "timestep": 20,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_004_t0020_object_pos_x+_k1_0039.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 35,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0035_object_pos_x+_k1_0048.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 40,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0040_object_pos_x+_k1_0060.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 45,
+      "k": "1",
+      "perturbation_type": "object_pos_x+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0045_object_pos_x+_k1_0064.pt"
+    },
+    {
+      "episode": 7,
+      "timestep": 55,
+      "k": "1",
+      "perturbation_type": "eef_joint_1+",
+      "branch_file": "experiments/counterfactual_tournament/maniskill_recovery_branches/stackcube_episode_007_t0055_eef_joint_1+_k1_0073.pt"
+    }
+  ]
+}

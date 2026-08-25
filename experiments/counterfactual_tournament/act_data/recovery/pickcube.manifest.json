@@ -1,0 +1,42 @@
+{
+  "task": "PickCube-v1",
+  "base_h5": "experiments/counterfactual_tournament/act_data/pickcube.trajectory.state.pd_ee_pose.cpu.h5",
+  "branch_dir": "experiments/counterfactual_tournament/maniskill_recovery_branches",
+  "methods": [
+    "random",
+    "goal",
+    "motion",
+    "fragility"
+  ],
+  "requested_successful_branch_budget": 24,
+  "eligible_successful_branches": 177,
+  "eligible_source_states": 28,
+  "common_pool_attempts": 1296,
+  "seed": 2027,
+  "datasets": [
+    {
+      "method": "random",
+      "output": "experiments/counterfactual_tournament/act_data/recovery/pickcube.randomrecover.state.pd_ee_pose.cpu.h5",
+      "added": 24,
+      "states_considered": 24
+    },
+    {
+      "method": "goal",
+      "output": "experiments/counterfactual_tournament/act_data/recovery/pickcube.goalrecover.state.pd_ee_pose.cpu.h5",
+      "added": 24,
+      "states_considered": 24
+    },
+    {
+      "method": "motion",
+      "output": "experiments/counterfactual_tournament/act_data/recovery/pickcube.motionrecover.state.pd_ee_pose.cpu.h5",
+      "added": 24,
+      "states_considered": 24
+    },
+    {
+      "method": "fragility",
+      "output": "experiments/counterfactual_tournament/act_data/recovery/pickcube.fragilityrecover.state.pd_ee_pose.cpu.h5",
+      "added": 24,
+      "states_considered": 24
+    }
+  ]
+}
