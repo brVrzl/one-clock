@@ -14,13 +14,18 @@ import numpy as np
 
 
 METHODS = ("NATIVE_ACT", "SHARED_DYNAMIC_AGG", "DCTA")
-COMPARATORS = ("NATIVE_ACT", "SHARED_DYNAMIC_AGG")
+PRIMARY_CONTRASTS = (
+    ("DCTA", "NATIVE_ACT"),
+    ("DCTA", "SHARED_DYNAMIC_AGG"),
+    ("SHARED_DYNAMIC_AGG", "NATIVE_ACT"),
+)
 GROUPS = ("left_arm", "left_gripper", "right_arm", "right_gripper")
 
 
 def paired_contrast(
     outcomes: dict[tuple[str, int, str], int],
     tasks: list[str],
+    treatment: str,
     comparator: str,
     generator: np.random.Generator,
 ) -> dict[str, Any]:
@@ -30,7 +35,7 @@ def paired_contrast(
         differences = []
         seeds = sorted({seed for candidate_task, seed, _ in outcomes if candidate_task == task})
         for seed in seeds:
-            difference = outcomes[(task, seed, "DCTA")] - outcomes[(task, seed, comparator)]
+            difference = outcomes[(task, seed, treatment)] - outcomes[(task, seed, comparator)]
             differences.append(difference)
             wins += difference > 0
             losses += difference < 0
@@ -40,7 +45,7 @@ def paired_contrast(
         [np.mean([task_deltas[tasks[index]] for index in generator.integers(0, len(tasks), len(tasks))]) for _ in range(10000)]
     )
     return {
-        "contrast": f"DCTA - {comparator}",
+        "contrast": f"{treatment} - {comparator}",
         "pooled_paired_difference": float(np.mean(list(task_deltas.values()))),
         "wins": int(wins),
         "losses": int(losses),
@@ -93,8 +98,10 @@ def main() -> None:
         value["rate"] = value["success"] / value["n"]
     generator = np.random.default_rng(20270828)
     contrasts = {
-        comparator: paired_contrast(outcomes, tasks, comparator, generator)
-        for comparator in COMPARATORS
+        f"{treatment}_vs_{comparator}": paired_contrast(
+            outcomes, tasks, treatment, comparator, generator
+        )
+        for treatment, comparator in PRIMARY_CONTRASTS
     }
     age_values = {method: {group: [] for group in GROUPS} for method in METHODS[1:]}
     for item in technical:
