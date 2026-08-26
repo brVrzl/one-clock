@@ -5,8 +5,7 @@ import unittest
 import numpy as np
 
 from one_clock import ActionGroup, FixedChunkExecutor
-from scripts.run_libero_gate0 import make_episode_record
-from scripts.run_gate0 import summarize_run
+from scripts.run_libero_gate0 import make_episode_record, summarize_run
 
 
 def tagged_chunk(generation: int, chunk_size: int = 4, action_dim: int = 4) -> np.ndarray:
@@ -31,7 +30,11 @@ class FixedChunkExecutorTest(unittest.TestCase):
             ],
         ]
 
-        summary = summarize_run(episode_records, successes=1)
+        summary = summarize_run(
+            episode_records,
+            successes=1,
+            configured_horizons={"arm": 2, "gripper": 2},
+        )
 
         self.assertEqual(summary["environment_steps"], 3)
         self.assertEqual(summary["policy_queries"], 2)

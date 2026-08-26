@@ -1,8 +1,8 @@
 """Small fixed-commitment executors for full action chunks.
 
 The policy-facing contract is deliberately numeric: a query callback returns a
-full ``[chunk_step, action_dim]`` array.  Policy observation encoding and
-action-schema conversion stay in the RoboTwin integration layer.
+full ``[chunk_step, action_dim]`` array. Policy observation encoding and
+environment-specific action conversion stay in the policy integration layer.
 """
 
 from __future__ import annotations

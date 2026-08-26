@@ -1,4 +1,4 @@
-"""Gate-0 execution-only experiment components."""
+"""Reusable fixed-chunk execution components for LIBERO evaluation."""
 
 from .executor import ActionGroup, ExecutionDecision, FixedChunkExecutor
 
