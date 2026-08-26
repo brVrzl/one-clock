@@ -1,0 +1,3012 @@
+{
+  "seed": 2027,
+  "unit": "official LIBERO reset state",
+  "block": "suite x benchmark_task_id x trial_id",
+  "methods": [
+    "standard_act",
+    "shared_dynamic",
+    "dcta"
+  ],
+  "blocks": [
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 0,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 1,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 2,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 3,
+      "trial_id": 9,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 4,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 5,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 6,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 7,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 8,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "spatial",
+      "benchmark_task_id": 9,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 0,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 1,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 2,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 3,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 4,
+      "trial_id": 9,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 5,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 6,
+      "trial_id": 9,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 7,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 8,
+      "trial_id": 9,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "object",
+      "benchmark_task_id": 9,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 0,
+      "trial_id": 9,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 0,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 1,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 2,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 3,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 4,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 4,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 5,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 0,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 2,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 3,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 5,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 6,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 6,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 1,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 3,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 4,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 7,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 8,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 7,
+      "trial_id": 9,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 1,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 2,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 5,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 6,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 7,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 8,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 8,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 0,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 1,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 2,
+      "method_order": [
+        "standard_act",
+        "dcta",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 3,
+      "method_order": [
+        "dcta",
+        "shared_dynamic",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 4,
+      "method_order": [
+        "shared_dynamic",
+        "dcta",
+        "standard_act"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 5,
+      "method_order": [
+        "standard_act",
+        "shared_dynamic",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 6,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 7,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 8,
+      "method_order": [
+        "shared_dynamic",
+        "standard_act",
+        "dcta"
+      ]
+    },
+    {
+      "suite": "goal",
+      "benchmark_task_id": 9,
+      "trial_id": 9,
+      "method_order": [
+        "dcta",
+        "standard_act",
+        "shared_dynamic"
+      ]
+    }
+  ]
+}
