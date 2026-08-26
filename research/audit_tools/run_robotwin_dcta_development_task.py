@@ -39,6 +39,14 @@ def load_gate(path: Path, device: torch.device) -> DynamicTemporalGate:
     return gate
 
 
+def resolve_schedule_path(schedule_path: Path, value: str) -> Path:
+    path = Path(value)
+    if path.is_absolute():
+        return path
+    # The frozen schedule records repository-relative gate paths.
+    return schedule_path.resolve().parents[2] / path
+
+
 def write_json(path: Path, value: Any, *, sealed: bool = False) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, indent=2) + "\n")
@@ -173,8 +181,16 @@ def main() -> None:
     checkpoint = Path(schedule["checkpoints"][args.task]["path"])
     model = load_model(args.robotwin_root, checkpoint.parent, args.task)
     gates = {
-        "SHARED_DYNAMIC_AGG": load_gate(Path(schedule["gates"]["SHARED_DYNAMIC_AGG"]["path"]), model.model.device),
-        "DCTA": load_gate(Path(schedule["gates"]["DCTA"]["path"]), model.model.device),
+        "SHARED_DYNAMIC_AGG": load_gate(
+            resolve_schedule_path(
+                args.schedule, schedule["gates"]["SHARED_DYNAMIC_AGG"]["path"]
+            ),
+            model.model.device,
+        ),
+        "DCTA": load_gate(
+            resolve_schedule_path(args.schedule, schedule["gates"]["DCTA"]["path"]),
+            model.model.device,
+        ),
     }
     task_args, _ = evaluator.load_task_args(
         {"task_name": args.task, "task_config": "demo_clean", "ckpt_setting": checkpoint.parent.name, "policy_name": "ACT"}
