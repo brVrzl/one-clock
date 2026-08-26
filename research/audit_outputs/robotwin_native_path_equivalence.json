@@ -1,0 +1,28 @@
+{
+  "scope": "outcome-free pinned official-versus-pilot NATIVE_ACT trace",
+  "task": "handover_block",
+  "checkpoint": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-handover_block-aloha_agilex-joint-0/policy_last.ckpt",
+  "comparisons": [
+    {
+      "seed": 100000,
+      "decisions": 5,
+      "exact_equal": true,
+      "earliest_divergence": null
+    },
+    {
+      "seed": 100002,
+      "decisions": 5,
+      "exact_equal": true,
+      "earliest_divergence": null
+    },
+    {
+      "seed": 100003,
+      "decisions": 5,
+      "exact_equal": true,
+      "earliest_divergence": null
+    }
+  ],
+  "all_exact_equal": true,
+  "success_criterion": "both paths use task_env.eval_success",
+  "task_success_recorded": false
+}

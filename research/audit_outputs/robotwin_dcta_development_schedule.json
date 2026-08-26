@@ -1,0 +1,2452 @@
+{
+  "study": "RoboTwin DCTA method-development exploratory rollout",
+  "tasks": [
+    "beat_block_hammer",
+    "click_alarmclock",
+    "dump_bin_bigbin",
+    "handover_block",
+    "open_laptop"
+  ],
+  "methods": [
+    "NATIVE_ACT",
+    "SHARED_DYNAMIC_AGG",
+    "DCTA"
+  ],
+  "episodes_per_task_method": 20,
+  "seed_source": "research/audit_outputs/robotwin_exploratory_eligible_seeds.json",
+  "checkpoints": {
+    "beat_block_hammer": {
+      "path": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-beat_block_hammer-aloha_agilex-joint-0/policy_last.ckpt",
+      "sha256": "7f3a058419b82464aeeb48d414a8b948eba55220ff5b4b82f16385a0383862fd"
+    },
+    "click_alarmclock": {
+      "path": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-click_alarmclock-aloha_agilex-joint-0/policy_last.ckpt",
+      "sha256": "73a475b8a2f97d3998ce1e90d26439cd8a701feb9a2ab1659466bad0da869c1c"
+    },
+    "dump_bin_bigbin": {
+      "path": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-dump_bin_bigbin-aloha_agilex-joint-0/policy_last.ckpt",
+      "sha256": "5d26180719fded89edf5587674281fa4c3d90470ced743ab504bb40074370781"
+    },
+    "handover_block": {
+      "path": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-handover_block-aloha_agilex-joint-0/policy_last.ckpt",
+      "sha256": "dfb2801ab20b820a844cbdb896989ff443abb5499d3c10f9749bfc84619dc78c"
+    },
+    "open_laptop": {
+      "path": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-open_laptop-aloha_agilex-joint-0/policy_last.ckpt",
+      "sha256": "9e8366772f163c78e18f91cbb1685423c34fca859bad2e03308ee60700444b4e"
+    }
+  },
+  "gates": {
+    "SHARED_DYNAMIC_AGG": {
+      "path": "research/audit_outputs/robotwin_dcta_offline/shared_dynamic_gate.pt",
+      "sha256": "9ce7e1984cc08ca430dcbe55c4f7c8816cc6943404a412196aa458f18d2af513"
+    },
+    "DCTA": {
+      "path": "research/audit_outputs/robotwin_dcta_offline/dcta_gate.pt",
+      "sha256": "c0257a966b40b43e7b7a3b736815f7f7ace78d1ba9480a5d0e42b6d03e6e879b"
+    }
+  },
+  "cells": [
+    {
+      "cell_id": "beat_block_hammer__eligible-00__seed-100000__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "NATIVE_ACT",
+      "run_order": 0
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-00__seed-100000__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 1
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-00__seed-100000__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "DCTA",
+      "run_order": 2
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-01__seed-100003__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 3
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-01__seed-100003__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "DCTA",
+      "run_order": 4
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-01__seed-100003__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "NATIVE_ACT",
+      "run_order": 5
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-02__seed-100007__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100007,
+      "method": "DCTA",
+      "run_order": 6
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-02__seed-100007__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100007,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 7
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-02__seed-100007__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100007,
+      "method": "NATIVE_ACT",
+      "run_order": 8
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-03__seed-100008__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100008,
+      "method": "NATIVE_ACT",
+      "run_order": 9
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-03__seed-100008__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100008,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 10
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-03__seed-100008__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100008,
+      "method": "DCTA",
+      "run_order": 11
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-04__seed-100009__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100009,
+      "method": "DCTA",
+      "run_order": 12
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-04__seed-100009__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100009,
+      "method": "NATIVE_ACT",
+      "run_order": 13
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-04__seed-100009__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100009,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 14
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-05__seed-100010__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "NATIVE_ACT",
+      "run_order": 15
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-05__seed-100010__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 16
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-05__seed-100010__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "DCTA",
+      "run_order": 17
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-06__seed-100011__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 18
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-06__seed-100011__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "NATIVE_ACT",
+      "run_order": 19
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-06__seed-100011__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "DCTA",
+      "run_order": 20
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-07__seed-100012__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "NATIVE_ACT",
+      "run_order": 21
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-07__seed-100012__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 22
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-07__seed-100012__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "DCTA",
+      "run_order": 23
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-08__seed-100013__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100013,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 24
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-08__seed-100013__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100013,
+      "method": "NATIVE_ACT",
+      "run_order": 25
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-08__seed-100013__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100013,
+      "method": "DCTA",
+      "run_order": 26
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-09__seed-100014__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100014,
+      "method": "NATIVE_ACT",
+      "run_order": 27
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-09__seed-100014__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100014,
+      "method": "DCTA",
+      "run_order": 28
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-09__seed-100014__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100014,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 29
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-10__seed-100015__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100015,
+      "method": "NATIVE_ACT",
+      "run_order": 30
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-10__seed-100015__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100015,
+      "method": "DCTA",
+      "run_order": 31
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-10__seed-100015__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100015,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 32
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-11__seed-100017__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100017,
+      "method": "DCTA",
+      "run_order": 33
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-11__seed-100017__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100017,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 34
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-11__seed-100017__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100017,
+      "method": "NATIVE_ACT",
+      "run_order": 35
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-12__seed-100020__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100020,
+      "method": "NATIVE_ACT",
+      "run_order": 36
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-12__seed-100020__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100020,
+      "method": "DCTA",
+      "run_order": 37
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-12__seed-100020__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100020,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 38
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-13__seed-100021__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100021,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 39
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-13__seed-100021__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100021,
+      "method": "NATIVE_ACT",
+      "run_order": 40
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-13__seed-100021__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100021,
+      "method": "DCTA",
+      "run_order": 41
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-14__seed-100022__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100022,
+      "method": "DCTA",
+      "run_order": 42
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-14__seed-100022__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100022,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 43
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-14__seed-100022__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100022,
+      "method": "NATIVE_ACT",
+      "run_order": 44
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-15__seed-100023__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100023,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 45
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-15__seed-100023__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100023,
+      "method": "NATIVE_ACT",
+      "run_order": 46
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-15__seed-100023__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100023,
+      "method": "DCTA",
+      "run_order": 47
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-16__seed-100026__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100026,
+      "method": "NATIVE_ACT",
+      "run_order": 48
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-16__seed-100026__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100026,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 49
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-16__seed-100026__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100026,
+      "method": "DCTA",
+      "run_order": 50
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-17__seed-100027__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100027,
+      "method": "DCTA",
+      "run_order": 51
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-17__seed-100027__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100027,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 52
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-17__seed-100027__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100027,
+      "method": "NATIVE_ACT",
+      "run_order": 53
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-18__seed-100028__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100028,
+      "method": "DCTA",
+      "run_order": 54
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-18__seed-100028__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100028,
+      "method": "NATIVE_ACT",
+      "run_order": 55
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-18__seed-100028__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100028,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 56
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-19__seed-100029__method-DCTA",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100029,
+      "method": "DCTA",
+      "run_order": 57
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-19__seed-100029__method-SHARED_DYNAMIC_AGG",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100029,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 58
+    },
+    {
+      "cell_id": "beat_block_hammer__eligible-19__seed-100029__method-NATIVE_ACT",
+      "task": "beat_block_hammer",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100029,
+      "method": "NATIVE_ACT",
+      "run_order": 59
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-00__seed-100000__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "DCTA",
+      "run_order": 60
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-00__seed-100000__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "NATIVE_ACT",
+      "run_order": 61
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-00__seed-100000__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 62
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-01__seed-100002__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 63
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-01__seed-100002__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "DCTA",
+      "run_order": 64
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-01__seed-100002__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "NATIVE_ACT",
+      "run_order": 65
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-02__seed-100003__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 66
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-02__seed-100003__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "NATIVE_ACT",
+      "run_order": 67
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-02__seed-100003__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "DCTA",
+      "run_order": 68
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-03__seed-100004__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "DCTA",
+      "run_order": 69
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-03__seed-100004__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 70
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-03__seed-100004__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "NATIVE_ACT",
+      "run_order": 71
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-04__seed-100007__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 72
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-04__seed-100007__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "NATIVE_ACT",
+      "run_order": 73
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-04__seed-100007__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "DCTA",
+      "run_order": 74
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-05__seed-100008__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100008,
+      "method": "NATIVE_ACT",
+      "run_order": 75
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-05__seed-100008__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100008,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 76
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-05__seed-100008__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100008,
+      "method": "DCTA",
+      "run_order": 77
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-06__seed-100009__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100009,
+      "method": "NATIVE_ACT",
+      "run_order": 78
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-06__seed-100009__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100009,
+      "method": "DCTA",
+      "run_order": 79
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-06__seed-100009__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100009,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 80
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-07__seed-100010__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100010,
+      "method": "NATIVE_ACT",
+      "run_order": 81
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-07__seed-100010__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100010,
+      "method": "DCTA",
+      "run_order": 82
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-07__seed-100010__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100010,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 83
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-08__seed-100011__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100011,
+      "method": "DCTA",
+      "run_order": 84
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-08__seed-100011__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100011,
+      "method": "NATIVE_ACT",
+      "run_order": 85
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-08__seed-100011__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100011,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 86
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-09__seed-100012__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100012,
+      "method": "DCTA",
+      "run_order": 87
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-09__seed-100012__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100012,
+      "method": "NATIVE_ACT",
+      "run_order": 88
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-09__seed-100012__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100012,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 89
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-10__seed-100013__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100013,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 90
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-10__seed-100013__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100013,
+      "method": "DCTA",
+      "run_order": 91
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-10__seed-100013__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100013,
+      "method": "NATIVE_ACT",
+      "run_order": 92
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-11__seed-100014__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100014,
+      "method": "NATIVE_ACT",
+      "run_order": 93
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-11__seed-100014__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100014,
+      "method": "DCTA",
+      "run_order": 94
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-11__seed-100014__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100014,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 95
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-12__seed-100015__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100015,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 96
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-12__seed-100015__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100015,
+      "method": "NATIVE_ACT",
+      "run_order": 97
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-12__seed-100015__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100015,
+      "method": "DCTA",
+      "run_order": 98
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-13__seed-100016__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100016,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 99
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-13__seed-100016__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100016,
+      "method": "NATIVE_ACT",
+      "run_order": 100
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-13__seed-100016__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100016,
+      "method": "DCTA",
+      "run_order": 101
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-14__seed-100018__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100018,
+      "method": "NATIVE_ACT",
+      "run_order": 102
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-14__seed-100018__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100018,
+      "method": "DCTA",
+      "run_order": 103
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-14__seed-100018__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100018,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 104
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-15__seed-100019__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100019,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 105
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-15__seed-100019__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100019,
+      "method": "DCTA",
+      "run_order": 106
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-15__seed-100019__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100019,
+      "method": "NATIVE_ACT",
+      "run_order": 107
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-16__seed-100020__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100020,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 108
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-16__seed-100020__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100020,
+      "method": "NATIVE_ACT",
+      "run_order": 109
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-16__seed-100020__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100020,
+      "method": "DCTA",
+      "run_order": 110
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-17__seed-100021__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100021,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 111
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-17__seed-100021__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100021,
+      "method": "NATIVE_ACT",
+      "run_order": 112
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-17__seed-100021__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100021,
+      "method": "DCTA",
+      "run_order": 113
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-18__seed-100022__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 114
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-18__seed-100022__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "DCTA",
+      "run_order": 115
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-18__seed-100022__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "NATIVE_ACT",
+      "run_order": 116
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-19__seed-100023__method-SHARED_DYNAMIC_AGG",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 117
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-19__seed-100023__method-DCTA",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "DCTA",
+      "run_order": 118
+    },
+    {
+      "cell_id": "click_alarmclock__eligible-19__seed-100023__method-NATIVE_ACT",
+      "task": "click_alarmclock",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "NATIVE_ACT",
+      "run_order": 119
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-00__seed-100002__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100002,
+      "method": "DCTA",
+      "run_order": 120
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-00__seed-100002__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100002,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 121
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-00__seed-100002__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100002,
+      "method": "NATIVE_ACT",
+      "run_order": 122
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-01__seed-100003__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "DCTA",
+      "run_order": 123
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-01__seed-100003__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 124
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-01__seed-100003__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100003,
+      "method": "NATIVE_ACT",
+      "run_order": 125
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-02__seed-100004__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100004,
+      "method": "NATIVE_ACT",
+      "run_order": 126
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-02__seed-100004__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100004,
+      "method": "DCTA",
+      "run_order": 127
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-02__seed-100004__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100004,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 128
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-03__seed-100005__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100005,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 129
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-03__seed-100005__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100005,
+      "method": "DCTA",
+      "run_order": 130
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-03__seed-100005__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100005,
+      "method": "NATIVE_ACT",
+      "run_order": 131
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-04__seed-100007__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 132
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-04__seed-100007__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "DCTA",
+      "run_order": 133
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-04__seed-100007__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100007,
+      "method": "NATIVE_ACT",
+      "run_order": 134
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-05__seed-100010__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 135
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-05__seed-100010__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "DCTA",
+      "run_order": 136
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-05__seed-100010__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100010,
+      "method": "NATIVE_ACT",
+      "run_order": 137
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-06__seed-100011__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "DCTA",
+      "run_order": 138
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-06__seed-100011__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "NATIVE_ACT",
+      "run_order": 139
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-06__seed-100011__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100011,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 140
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-07__seed-100012__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "NATIVE_ACT",
+      "run_order": 141
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-07__seed-100012__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "DCTA",
+      "run_order": 142
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-07__seed-100012__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100012,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 143
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-08__seed-100015__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100015,
+      "method": "DCTA",
+      "run_order": 144
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-08__seed-100015__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100015,
+      "method": "NATIVE_ACT",
+      "run_order": 145
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-08__seed-100015__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100015,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 146
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-09__seed-100016__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100016,
+      "method": "NATIVE_ACT",
+      "run_order": 147
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-09__seed-100016__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100016,
+      "method": "DCTA",
+      "run_order": 148
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-09__seed-100016__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100016,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 149
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-10__seed-100019__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100019,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 150
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-10__seed-100019__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100019,
+      "method": "DCTA",
+      "run_order": 151
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-10__seed-100019__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100019,
+      "method": "NATIVE_ACT",
+      "run_order": 152
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-11__seed-100022__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100022,
+      "method": "NATIVE_ACT",
+      "run_order": 153
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-11__seed-100022__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100022,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 154
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-11__seed-100022__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100022,
+      "method": "DCTA",
+      "run_order": 155
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-12__seed-100027__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100027,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 156
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-12__seed-100027__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100027,
+      "method": "DCTA",
+      "run_order": 157
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-12__seed-100027__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100027,
+      "method": "NATIVE_ACT",
+      "run_order": 158
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-13__seed-100029__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100029,
+      "method": "DCTA",
+      "run_order": 159
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-13__seed-100029__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100029,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 160
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-13__seed-100029__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100029,
+      "method": "NATIVE_ACT",
+      "run_order": 161
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-14__seed-100031__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100031,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 162
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-14__seed-100031__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100031,
+      "method": "DCTA",
+      "run_order": 163
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-14__seed-100031__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100031,
+      "method": "NATIVE_ACT",
+      "run_order": 164
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-15__seed-100033__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100033,
+      "method": "DCTA",
+      "run_order": 165
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-15__seed-100033__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100033,
+      "method": "NATIVE_ACT",
+      "run_order": 166
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-15__seed-100033__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100033,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 167
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-16__seed-100034__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100034,
+      "method": "DCTA",
+      "run_order": 168
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-16__seed-100034__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100034,
+      "method": "NATIVE_ACT",
+      "run_order": 169
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-16__seed-100034__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100034,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 170
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-17__seed-100035__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100035,
+      "method": "DCTA",
+      "run_order": 171
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-17__seed-100035__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100035,
+      "method": "NATIVE_ACT",
+      "run_order": 172
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-17__seed-100035__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100035,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 173
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-18__seed-100037__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100037,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 174
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-18__seed-100037__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100037,
+      "method": "NATIVE_ACT",
+      "run_order": 175
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-18__seed-100037__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100037,
+      "method": "DCTA",
+      "run_order": 176
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-19__seed-100038__method-DCTA",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100038,
+      "method": "DCTA",
+      "run_order": 177
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-19__seed-100038__method-SHARED_DYNAMIC_AGG",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100038,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 178
+    },
+    {
+      "cell_id": "dump_bin_bigbin__eligible-19__seed-100038__method-NATIVE_ACT",
+      "task": "dump_bin_bigbin",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100038,
+      "method": "NATIVE_ACT",
+      "run_order": 179
+    },
+    {
+      "cell_id": "handover_block__eligible-00__seed-100000__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "DCTA",
+      "run_order": 180
+    },
+    {
+      "cell_id": "handover_block__eligible-00__seed-100000__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 181
+    },
+    {
+      "cell_id": "handover_block__eligible-00__seed-100000__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "NATIVE_ACT",
+      "run_order": 182
+    },
+    {
+      "cell_id": "handover_block__eligible-01__seed-100002__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 183
+    },
+    {
+      "cell_id": "handover_block__eligible-01__seed-100002__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "NATIVE_ACT",
+      "run_order": 184
+    },
+    {
+      "cell_id": "handover_block__eligible-01__seed-100002__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100002,
+      "method": "DCTA",
+      "run_order": 185
+    },
+    {
+      "cell_id": "handover_block__eligible-02__seed-100003__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 186
+    },
+    {
+      "cell_id": "handover_block__eligible-02__seed-100003__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "NATIVE_ACT",
+      "run_order": 187
+    },
+    {
+      "cell_id": "handover_block__eligible-02__seed-100003__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100003,
+      "method": "DCTA",
+      "run_order": 188
+    },
+    {
+      "cell_id": "handover_block__eligible-03__seed-100004__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "NATIVE_ACT",
+      "run_order": 189
+    },
+    {
+      "cell_id": "handover_block__eligible-03__seed-100004__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "DCTA",
+      "run_order": 190
+    },
+    {
+      "cell_id": "handover_block__eligible-03__seed-100004__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100004,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 191
+    },
+    {
+      "cell_id": "handover_block__eligible-04__seed-100006__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100006,
+      "method": "NATIVE_ACT",
+      "run_order": 192
+    },
+    {
+      "cell_id": "handover_block__eligible-04__seed-100006__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100006,
+      "method": "DCTA",
+      "run_order": 193
+    },
+    {
+      "cell_id": "handover_block__eligible-04__seed-100006__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100006,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 194
+    },
+    {
+      "cell_id": "handover_block__eligible-05__seed-100007__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100007,
+      "method": "DCTA",
+      "run_order": 195
+    },
+    {
+      "cell_id": "handover_block__eligible-05__seed-100007__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100007,
+      "method": "NATIVE_ACT",
+      "run_order": 196
+    },
+    {
+      "cell_id": "handover_block__eligible-05__seed-100007__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100007,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 197
+    },
+    {
+      "cell_id": "handover_block__eligible-06__seed-100008__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100008,
+      "method": "DCTA",
+      "run_order": 198
+    },
+    {
+      "cell_id": "handover_block__eligible-06__seed-100008__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100008,
+      "method": "NATIVE_ACT",
+      "run_order": 199
+    },
+    {
+      "cell_id": "handover_block__eligible-06__seed-100008__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100008,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 200
+    },
+    {
+      "cell_id": "handover_block__eligible-07__seed-100009__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100009,
+      "method": "DCTA",
+      "run_order": 201
+    },
+    {
+      "cell_id": "handover_block__eligible-07__seed-100009__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100009,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 202
+    },
+    {
+      "cell_id": "handover_block__eligible-07__seed-100009__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100009,
+      "method": "NATIVE_ACT",
+      "run_order": 203
+    },
+    {
+      "cell_id": "handover_block__eligible-08__seed-100010__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100010,
+      "method": "DCTA",
+      "run_order": 204
+    },
+    {
+      "cell_id": "handover_block__eligible-08__seed-100010__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100010,
+      "method": "NATIVE_ACT",
+      "run_order": 205
+    },
+    {
+      "cell_id": "handover_block__eligible-08__seed-100010__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100010,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 206
+    },
+    {
+      "cell_id": "handover_block__eligible-09__seed-100011__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100011,
+      "method": "DCTA",
+      "run_order": 207
+    },
+    {
+      "cell_id": "handover_block__eligible-09__seed-100011__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100011,
+      "method": "NATIVE_ACT",
+      "run_order": 208
+    },
+    {
+      "cell_id": "handover_block__eligible-09__seed-100011__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100011,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 209
+    },
+    {
+      "cell_id": "handover_block__eligible-10__seed-100012__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100012,
+      "method": "NATIVE_ACT",
+      "run_order": 210
+    },
+    {
+      "cell_id": "handover_block__eligible-10__seed-100012__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100012,
+      "method": "DCTA",
+      "run_order": 211
+    },
+    {
+      "cell_id": "handover_block__eligible-10__seed-100012__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100012,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 212
+    },
+    {
+      "cell_id": "handover_block__eligible-11__seed-100013__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100013,
+      "method": "DCTA",
+      "run_order": 213
+    },
+    {
+      "cell_id": "handover_block__eligible-11__seed-100013__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100013,
+      "method": "NATIVE_ACT",
+      "run_order": 214
+    },
+    {
+      "cell_id": "handover_block__eligible-11__seed-100013__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100013,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 215
+    },
+    {
+      "cell_id": "handover_block__eligible-12__seed-100014__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100014,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 216
+    },
+    {
+      "cell_id": "handover_block__eligible-12__seed-100014__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100014,
+      "method": "NATIVE_ACT",
+      "run_order": 217
+    },
+    {
+      "cell_id": "handover_block__eligible-12__seed-100014__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100014,
+      "method": "DCTA",
+      "run_order": 218
+    },
+    {
+      "cell_id": "handover_block__eligible-13__seed-100015__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100015,
+      "method": "DCTA",
+      "run_order": 219
+    },
+    {
+      "cell_id": "handover_block__eligible-13__seed-100015__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100015,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 220
+    },
+    {
+      "cell_id": "handover_block__eligible-13__seed-100015__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100015,
+      "method": "NATIVE_ACT",
+      "run_order": 221
+    },
+    {
+      "cell_id": "handover_block__eligible-14__seed-100016__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100016,
+      "method": "DCTA",
+      "run_order": 222
+    },
+    {
+      "cell_id": "handover_block__eligible-14__seed-100016__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100016,
+      "method": "NATIVE_ACT",
+      "run_order": 223
+    },
+    {
+      "cell_id": "handover_block__eligible-14__seed-100016__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100016,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 224
+    },
+    {
+      "cell_id": "handover_block__eligible-15__seed-100017__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100017,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 225
+    },
+    {
+      "cell_id": "handover_block__eligible-15__seed-100017__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100017,
+      "method": "DCTA",
+      "run_order": 226
+    },
+    {
+      "cell_id": "handover_block__eligible-15__seed-100017__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100017,
+      "method": "NATIVE_ACT",
+      "run_order": 227
+    },
+    {
+      "cell_id": "handover_block__eligible-16__seed-100019__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100019,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 228
+    },
+    {
+      "cell_id": "handover_block__eligible-16__seed-100019__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100019,
+      "method": "NATIVE_ACT",
+      "run_order": 229
+    },
+    {
+      "cell_id": "handover_block__eligible-16__seed-100019__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100019,
+      "method": "DCTA",
+      "run_order": 230
+    },
+    {
+      "cell_id": "handover_block__eligible-17__seed-100020__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100020,
+      "method": "DCTA",
+      "run_order": 231
+    },
+    {
+      "cell_id": "handover_block__eligible-17__seed-100020__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100020,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 232
+    },
+    {
+      "cell_id": "handover_block__eligible-17__seed-100020__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100020,
+      "method": "NATIVE_ACT",
+      "run_order": 233
+    },
+    {
+      "cell_id": "handover_block__eligible-18__seed-100022__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 234
+    },
+    {
+      "cell_id": "handover_block__eligible-18__seed-100022__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "NATIVE_ACT",
+      "run_order": 235
+    },
+    {
+      "cell_id": "handover_block__eligible-18__seed-100022__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100022,
+      "method": "DCTA",
+      "run_order": 236
+    },
+    {
+      "cell_id": "handover_block__eligible-19__seed-100023__method-SHARED_DYNAMIC_AGG",
+      "task": "handover_block",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 237
+    },
+    {
+      "cell_id": "handover_block__eligible-19__seed-100023__method-DCTA",
+      "task": "handover_block",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "DCTA",
+      "run_order": 238
+    },
+    {
+      "cell_id": "handover_block__eligible-19__seed-100023__method-NATIVE_ACT",
+      "task": "handover_block",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100023,
+      "method": "NATIVE_ACT",
+      "run_order": 239
+    },
+    {
+      "cell_id": "open_laptop__eligible-00__seed-100000__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 240
+    },
+    {
+      "cell_id": "open_laptop__eligible-00__seed-100000__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "DCTA",
+      "run_order": 241
+    },
+    {
+      "cell_id": "open_laptop__eligible-00__seed-100000__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 0,
+      "robotwin_seed": 100000,
+      "method": "NATIVE_ACT",
+      "run_order": 242
+    },
+    {
+      "cell_id": "open_laptop__eligible-01__seed-100001__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100001,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 243
+    },
+    {
+      "cell_id": "open_laptop__eligible-01__seed-100001__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100001,
+      "method": "NATIVE_ACT",
+      "run_order": 244
+    },
+    {
+      "cell_id": "open_laptop__eligible-01__seed-100001__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 1,
+      "robotwin_seed": 100001,
+      "method": "DCTA",
+      "run_order": 245
+    },
+    {
+      "cell_id": "open_laptop__eligible-02__seed-100002__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100002,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 246
+    },
+    {
+      "cell_id": "open_laptop__eligible-02__seed-100002__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100002,
+      "method": "DCTA",
+      "run_order": 247
+    },
+    {
+      "cell_id": "open_laptop__eligible-02__seed-100002__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 2,
+      "robotwin_seed": 100002,
+      "method": "NATIVE_ACT",
+      "run_order": 248
+    },
+    {
+      "cell_id": "open_laptop__eligible-03__seed-100003__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100003,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 249
+    },
+    {
+      "cell_id": "open_laptop__eligible-03__seed-100003__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100003,
+      "method": "DCTA",
+      "run_order": 250
+    },
+    {
+      "cell_id": "open_laptop__eligible-03__seed-100003__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 3,
+      "robotwin_seed": 100003,
+      "method": "NATIVE_ACT",
+      "run_order": 251
+    },
+    {
+      "cell_id": "open_laptop__eligible-04__seed-100004__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100004,
+      "method": "NATIVE_ACT",
+      "run_order": 252
+    },
+    {
+      "cell_id": "open_laptop__eligible-04__seed-100004__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100004,
+      "method": "DCTA",
+      "run_order": 253
+    },
+    {
+      "cell_id": "open_laptop__eligible-04__seed-100004__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 4,
+      "robotwin_seed": 100004,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 254
+    },
+    {
+      "cell_id": "open_laptop__eligible-05__seed-100005__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100005,
+      "method": "NATIVE_ACT",
+      "run_order": 255
+    },
+    {
+      "cell_id": "open_laptop__eligible-05__seed-100005__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100005,
+      "method": "DCTA",
+      "run_order": 256
+    },
+    {
+      "cell_id": "open_laptop__eligible-05__seed-100005__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 5,
+      "robotwin_seed": 100005,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 257
+    },
+    {
+      "cell_id": "open_laptop__eligible-06__seed-100006__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100006,
+      "method": "NATIVE_ACT",
+      "run_order": 258
+    },
+    {
+      "cell_id": "open_laptop__eligible-06__seed-100006__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100006,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 259
+    },
+    {
+      "cell_id": "open_laptop__eligible-06__seed-100006__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 6,
+      "robotwin_seed": 100006,
+      "method": "DCTA",
+      "run_order": 260
+    },
+    {
+      "cell_id": "open_laptop__eligible-07__seed-100007__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100007,
+      "method": "DCTA",
+      "run_order": 261
+    },
+    {
+      "cell_id": "open_laptop__eligible-07__seed-100007__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100007,
+      "method": "NATIVE_ACT",
+      "run_order": 262
+    },
+    {
+      "cell_id": "open_laptop__eligible-07__seed-100007__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 7,
+      "robotwin_seed": 100007,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 263
+    },
+    {
+      "cell_id": "open_laptop__eligible-08__seed-100008__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100008,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 264
+    },
+    {
+      "cell_id": "open_laptop__eligible-08__seed-100008__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100008,
+      "method": "DCTA",
+      "run_order": 265
+    },
+    {
+      "cell_id": "open_laptop__eligible-08__seed-100008__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 8,
+      "robotwin_seed": 100008,
+      "method": "NATIVE_ACT",
+      "run_order": 266
+    },
+    {
+      "cell_id": "open_laptop__eligible-09__seed-100009__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100009,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 267
+    },
+    {
+      "cell_id": "open_laptop__eligible-09__seed-100009__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100009,
+      "method": "DCTA",
+      "run_order": 268
+    },
+    {
+      "cell_id": "open_laptop__eligible-09__seed-100009__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 9,
+      "robotwin_seed": 100009,
+      "method": "NATIVE_ACT",
+      "run_order": 269
+    },
+    {
+      "cell_id": "open_laptop__eligible-10__seed-100010__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100010,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 270
+    },
+    {
+      "cell_id": "open_laptop__eligible-10__seed-100010__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100010,
+      "method": "DCTA",
+      "run_order": 271
+    },
+    {
+      "cell_id": "open_laptop__eligible-10__seed-100010__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 10,
+      "robotwin_seed": 100010,
+      "method": "NATIVE_ACT",
+      "run_order": 272
+    },
+    {
+      "cell_id": "open_laptop__eligible-11__seed-100011__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100011,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 273
+    },
+    {
+      "cell_id": "open_laptop__eligible-11__seed-100011__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100011,
+      "method": "DCTA",
+      "run_order": 274
+    },
+    {
+      "cell_id": "open_laptop__eligible-11__seed-100011__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 11,
+      "robotwin_seed": 100011,
+      "method": "NATIVE_ACT",
+      "run_order": 275
+    },
+    {
+      "cell_id": "open_laptop__eligible-12__seed-100012__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100012,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 276
+    },
+    {
+      "cell_id": "open_laptop__eligible-12__seed-100012__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100012,
+      "method": "DCTA",
+      "run_order": 277
+    },
+    {
+      "cell_id": "open_laptop__eligible-12__seed-100012__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 12,
+      "robotwin_seed": 100012,
+      "method": "NATIVE_ACT",
+      "run_order": 278
+    },
+    {
+      "cell_id": "open_laptop__eligible-13__seed-100013__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100013,
+      "method": "NATIVE_ACT",
+      "run_order": 279
+    },
+    {
+      "cell_id": "open_laptop__eligible-13__seed-100013__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100013,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 280
+    },
+    {
+      "cell_id": "open_laptop__eligible-13__seed-100013__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 13,
+      "robotwin_seed": 100013,
+      "method": "DCTA",
+      "run_order": 281
+    },
+    {
+      "cell_id": "open_laptop__eligible-14__seed-100014__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100014,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 282
+    },
+    {
+      "cell_id": "open_laptop__eligible-14__seed-100014__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100014,
+      "method": "NATIVE_ACT",
+      "run_order": 283
+    },
+    {
+      "cell_id": "open_laptop__eligible-14__seed-100014__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 14,
+      "robotwin_seed": 100014,
+      "method": "DCTA",
+      "run_order": 284
+    },
+    {
+      "cell_id": "open_laptop__eligible-15__seed-100015__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100015,
+      "method": "NATIVE_ACT",
+      "run_order": 285
+    },
+    {
+      "cell_id": "open_laptop__eligible-15__seed-100015__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100015,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 286
+    },
+    {
+      "cell_id": "open_laptop__eligible-15__seed-100015__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 15,
+      "robotwin_seed": 100015,
+      "method": "DCTA",
+      "run_order": 287
+    },
+    {
+      "cell_id": "open_laptop__eligible-16__seed-100016__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100016,
+      "method": "NATIVE_ACT",
+      "run_order": 288
+    },
+    {
+      "cell_id": "open_laptop__eligible-16__seed-100016__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100016,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 289
+    },
+    {
+      "cell_id": "open_laptop__eligible-16__seed-100016__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 16,
+      "robotwin_seed": 100016,
+      "method": "DCTA",
+      "run_order": 290
+    },
+    {
+      "cell_id": "open_laptop__eligible-17__seed-100017__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100017,
+      "method": "NATIVE_ACT",
+      "run_order": 291
+    },
+    {
+      "cell_id": "open_laptop__eligible-17__seed-100017__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100017,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 292
+    },
+    {
+      "cell_id": "open_laptop__eligible-17__seed-100017__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 17,
+      "robotwin_seed": 100017,
+      "method": "DCTA",
+      "run_order": 293
+    },
+    {
+      "cell_id": "open_laptop__eligible-18__seed-100018__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100018,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 294
+    },
+    {
+      "cell_id": "open_laptop__eligible-18__seed-100018__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100018,
+      "method": "NATIVE_ACT",
+      "run_order": 295
+    },
+    {
+      "cell_id": "open_laptop__eligible-18__seed-100018__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 18,
+      "robotwin_seed": 100018,
+      "method": "DCTA",
+      "run_order": 296
+    },
+    {
+      "cell_id": "open_laptop__eligible-19__seed-100019__method-DCTA",
+      "task": "open_laptop",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100019,
+      "method": "DCTA",
+      "run_order": 297
+    },
+    {
+      "cell_id": "open_laptop__eligible-19__seed-100019__method-NATIVE_ACT",
+      "task": "open_laptop",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100019,
+      "method": "NATIVE_ACT",
+      "run_order": 298
+    },
+    {
+      "cell_id": "open_laptop__eligible-19__seed-100019__method-SHARED_DYNAMIC_AGG",
+      "task": "open_laptop",
+      "eligible_seed_index": 19,
+      "robotwin_seed": 100019,
+      "method": "SHARED_DYNAMIC_AGG",
+      "run_order": 299
+    }
+  ],
+  "cells_sha256": "c9ce4651be45a1c21d95e75f966d0464c40cf50c4a2c4f1c5036c221f3af4178"
+}
