@@ -1,0 +1,356 @@
+{
+  "scope": "Outcome-free recorded-sequence semantic audit",
+  "checkpoint": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/checkpoints/demo_clean-beat_block_hammer-aloha_agilex-joint-0/policy_last.ckpt",
+  "episode": "/home/wjq/research-assets/robotwin/RoboTwin/XPolicyLab/policy/ACT/processed_data/demo_clean/beat_block_hammer/aloha_agilex-joint/episode_0.hdf5",
+  "device": "cuda:0",
+  "camera_inputs": [
+    "cam_head",
+    "cam_right_wrist",
+    "cam_left_wrist"
+  ],
+  "action_groups": {
+    "left_arm": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "left_gripper": [
+      6
+    ],
+    "right_arm": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "right_gripper": [
+      13
+    ]
+  },
+  "action_dimension": 14,
+  "chunk_length": 50,
+  "source_age_ticks": 17,
+  "source_age_nominal_demo_seconds": 1.02,
+  "source_age_physical_seconds": null,
+  "frozen_input_determinism": {
+    "processed_input_sha256": "fdbbeb0f37da4bc0605ee55b7c57c07b5a3ac6ad392bb7481dadc4d6a83eba98",
+    "first_full_chunk_sha256": "3f99d5c0f9e9587b75960195e84b2bfa66395005377e0aba04ab29858012cb4f",
+    "repeated_full_chunk_sha256": "3f99d5c0f9e9587b75960195e84b2bfa66395005377e0aba04ab29858012cb4f",
+    "full_chunk_exact_equal": true,
+    "full_chunk_max_abs_difference": 0.0,
+    "postprocessing_exact_equal": true
+  },
+  "chunk_sha256_by_source": {
+    "0": "3f99d5c0f9e9587b75960195e84b2bfa66395005377e0aba04ab29858012cb4f",
+    "1": "c09a83911309e9a454f8c0e273cb9b9aa626e5dc00bfd057ac1f4012eafa1c67",
+    "2": "b2f4524f4c0f98e44a293e67a3715de4a0afaeba3f97c34bdf219c5f61632007",
+    "3": "6c8c25c88e0d5c0e8e606aecad94599bbe0ee0ffe59e32e63a9de665bec8e189",
+    "4": "204e551011b584e915453690a820e7f8a7b34ea24789a509536bbaa679a21323",
+    "5": "36d4ebad3ab4ae53fe53a9b69b6d659ff1b107c4fe3d25a9e26a64225b0e2462",
+    "6": "d9edbb498c234df6f1c150de9d95e04463cbb79804595dc242b2b7e54c59fe44",
+    "7": "c845a2c665e59e0ef8399490a7789065f60fd880e7bbe799aa5be30e1c30e63e",
+    "8": "8e8562e6d351d5acb05e14e0a97ed0e402f833ec543470d7cb6b53bedd5a48f2",
+    "9": "4f93142c5b9fc0d4df9133714aa741fc3465deab6c1966ee73a55dcd813de021",
+    "10": "3cd454638a7823125f5e3c99bedd6a4f4ca0bef4a34277be27cd8418ecd9f65a",
+    "11": "a51dca1a32acdb6db94d91d5877490145d2a24c666cd0cb4071325dae1f8bbfe",
+    "12": "dfaa3017a6438a437f796c0145edf3ee6b4b262a3fa3f973cd73f2f2126a3b1b",
+    "13": "1cf979c877dfb5984a46d3f79063d90a46d03f3cf0eb4f0dc81e3ce64c55eba7",
+    "14": "d0ce47d4e8d8b978eeec06fa9b4f5fcf8b059cc765b260ae869c179a80c451ed",
+    "15": "f9b7fd3491e5c6e2b3acbbdc2adb98474954c600c6adf4cde51072f7fd1e3ff1",
+    "16": "839ab80efa82c2cd2e0555698a3ac983ef70237f97550e0de4572203a68f1484",
+    "17": "771e6556e9b8cced79d5a69bc1789f64a0bda7b16338f1a08f5771b82fec5918"
+  },
+  "NATIVE_ACT": {
+    "target_decision": 17,
+    "candidate_source_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "candidate_chunk_offsets": [
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "weight_decay": 0.01,
+    "executed_aggregated_action": [
+      -0.41169983399659743,
+      1.085414410677689,
+      0.9961267231507608,
+      -0.6662184100633108,
+      -0.08055830314530607,
+      -0.40401813214778604,
+      1.0285904022467405,
+      -0.003576714147908,
+      -0.01398597981328864,
+      -0.006586688356763126,
+      0.00941004402641521,
+      -0.0002117342617322382,
+      -0.004553002556240304,
+      1.0012720346959239
+    ]
+  },
+  "experimental_methods": {
+    "NEWEST": {
+      "method": "NEWEST",
+      "fresh_source_step": 17,
+      "fresh_chunk_offset": 0,
+      "old_source_step": 0,
+      "old_chunk_offset": 17,
+      "effective_source_step_per_group": {
+        "left_arm": 17,
+        "left_gripper": 17,
+        "right_arm": 17,
+        "right_gripper": 17
+      },
+      "chunk_offset_per_group": {
+        "left_arm": 0,
+        "left_gripper": 0,
+        "right_arm": 0,
+        "right_gripper": 0
+      },
+      "effective_source_age_ticks_per_group": {
+        "left_arm": 0,
+        "left_gripper": 0,
+        "right_arm": 0,
+        "right_gripper": 0
+      },
+      "fresh_action": [
+        -0.45993776035730427,
+        1.224983484398038,
+        1.113109173960778,
+        -0.7458058917994919,
+        -0.08954169609353935,
+        -0.44787980334595723,
+        1.0337613960041079,
+        9.40079451083875e-06,
+        -0.009624358931802135,
+        0.0028906996358344372,
+        0.0015315511248132907,
+        -0.000215931449550677,
+        -0.0006045616593866043,
+        0.9962399037341978
+      ],
+      "old_action": [
+        -0.45106676513575295,
+        1.2067964514028269,
+        1.089321982872292,
+        -0.7224386121158801,
+        -0.08833366329311865,
+        -0.44031965427190656,
+        1.022779358075871,
+        -0.0033549361361338015,
+        -0.012863802886329267,
+        -0.004673232269144734,
+        0.011111045648647178,
+        0.00017055485892614186,
+        -0.0032063299696218905,
+        1.0040336232137612
+      ],
+      "executed_composed_action": [
+        -0.4599377512931824,
+        1.2249834537506104,
+        1.1131091117858887,
+        -0.7458058595657349,
+        -0.08954169601202011,
+        -0.4478797912597656,
+        1.0337613821029663,
+        9.387731552124023e-06,
+        -0.009624361991882324,
+        0.0028907060623168945,
+        0.0015315413475036621,
+        -0.0002159327268600464,
+        -0.0006045699119567871,
+        0.9962399005889893
+      ],
+      "target_decision": 17,
+      "source_age_simulator_time": null
+    },
+    "FULL_OLD_17": {
+      "method": "FULL_OLD_17",
+      "fresh_source_step": 17,
+      "fresh_chunk_offset": 0,
+      "old_source_step": 0,
+      "old_chunk_offset": 17,
+      "effective_source_step_per_group": {
+        "left_arm": 0,
+        "left_gripper": 0,
+        "right_arm": 0,
+        "right_gripper": 0
+      },
+      "chunk_offset_per_group": {
+        "left_arm": 17,
+        "left_gripper": 17,
+        "right_arm": 17,
+        "right_gripper": 17
+      },
+      "effective_source_age_ticks_per_group": {
+        "left_arm": 17,
+        "left_gripper": 17,
+        "right_arm": 17,
+        "right_gripper": 17
+      },
+      "fresh_action": [
+        -0.45993776035730427,
+        1.224983484398038,
+        1.113109173960778,
+        -0.7458058917994919,
+        -0.08954169609353935,
+        -0.44787980334595723,
+        1.0337613960041079,
+        9.40079451083875e-06,
+        -0.009624358931802135,
+        0.0028906996358344372,
+        0.0015315511248132907,
+        -0.000215931449550677,
+        -0.0006045616593866043,
+        0.9962399037341978
+      ],
+      "old_action": [
+        -0.45106676513575295,
+        1.2067964514028269,
+        1.089321982872292,
+        -0.7224386121158801,
+        -0.08833366329311865,
+        -0.44031965427190656,
+        1.022779358075871,
+        -0.0033549361361338015,
+        -0.012863802886329267,
+        -0.004673232269144734,
+        0.011111045648647178,
+        0.00017055485892614186,
+        -0.0032063299696218905,
+        1.0040336232137612
+      ],
+      "executed_composed_action": [
+        -0.4510667622089386,
+        1.206796407699585,
+        1.0893219709396362,
+        -0.7224385738372803,
+        -0.08833366632461548,
+        -0.44031965732574463,
+        1.0227793455123901,
+        -0.0033549368381500244,
+        -0.012863755226135254,
+        -0.0046732425689697266,
+        0.011111021041870117,
+        0.0001705549657344818,
+        -0.0032063424587249756,
+        1.0040335655212402
+      ],
+      "target_decision": 17,
+      "source_age_simulator_time": null
+    },
+    "FO_17": {
+      "method": "FO_17",
+      "fresh_source_step": 17,
+      "fresh_chunk_offset": 0,
+      "old_source_step": 0,
+      "old_chunk_offset": 17,
+      "effective_source_step_per_group": {
+        "left_arm": 17,
+        "left_gripper": 0,
+        "right_arm": 17,
+        "right_gripper": 0
+      },
+      "chunk_offset_per_group": {
+        "left_arm": 0,
+        "left_gripper": 17,
+        "right_arm": 0,
+        "right_gripper": 17
+      },
+      "effective_source_age_ticks_per_group": {
+        "left_arm": 0,
+        "left_gripper": 17,
+        "right_arm": 0,
+        "right_gripper": 17
+      },
+      "fresh_action": [
+        -0.45993776035730427,
+        1.224983484398038,
+        1.113109173960778,
+        -0.7458058917994919,
+        -0.08954169609353935,
+        -0.44787980334595723,
+        1.0337613960041079,
+        9.40079451083875e-06,
+        -0.009624358931802135,
+        0.0028906996358344372,
+        0.0015315511248132907,
+        -0.000215931449550677,
+        -0.0006045616593866043,
+        0.9962399037341978
+      ],
+      "old_action": [
+        -0.45106676513575295,
+        1.2067964514028269,
+        1.089321982872292,
+        -0.7224386121158801,
+        -0.08833366329311865,
+        -0.44031965427190656,
+        1.022779358075871,
+        -0.0033549361361338015,
+        -0.012863802886329267,
+        -0.004673232269144734,
+        0.011111045648647178,
+        0.00017055485892614186,
+        -0.0032063299696218905,
+        1.0040336232137612
+      ],
+      "executed_composed_action": [
+        -0.4599377512931824,
+        1.2249834537506104,
+        1.1131091117858887,
+        -0.7458058595657349,
+        -0.08954169601202011,
+        -0.4478797912597656,
+        1.0227793455123901,
+        9.387731552124023e-06,
+        -0.009624361991882324,
+        0.0028907060623168945,
+        0.0015315413475036621,
+        -0.0002159327268600464,
+        -0.0006045699119567871,
+        1.0040335655212402
+      ],
+      "target_decision": 17,
+      "source_age_simulator_time": null
+    }
+  },
+  "scientific_outcomes_inspected": false
+}
