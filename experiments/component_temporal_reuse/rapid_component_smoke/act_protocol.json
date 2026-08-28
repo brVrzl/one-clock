@@ -1,0 +1,87 @@
+{
+  "protocol_version": 1,
+  "purpose": "Rapid paired ACT smoke for minimal component-wise temporal aggregation.",
+  "frozen_before_outcomes": true,
+  "policy": {
+    "implementation": "official LeRobot ACT",
+    "checkpoint_training_step": 100000,
+    "one_policy_query_per_environment_step": true,
+    "postprocessing": "Compose candidates after the native policy postprocessor and environment postprocessor.",
+    "policy_rng_seed": 424242,
+    "policy_rng_reset": "Reset the PyTorch CPU and visible-CUDA RNG streams to policy_rng_seed before every method episode; use the same stream for every method on a paired initial state.",
+    "no_favorable_seed_search": true,
+    "native_act_n_action_steps_unchanged": true,
+    "official_temporal_ensemble_coefficient": 0.01,
+    "groupwise_alpha": 0.3,
+    "groupwise_age_beta": 0.03,
+    "action_groups": {
+      "arm": [0, 1, 2, 3, 4, 5],
+      "gripper": [6]
+    }
+  },
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "dataset": "HuggingFaceVLA/libero",
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "initial_state_ids": [25, 26, 27, 28, 29],
+    "seeds": [3000, 3001, 3002, 3003, 3004],
+    "episodes_per_task": 5,
+    "use_async_envs": false,
+    "observation_width": 256,
+    "observation_height": 256
+  },
+  "tasks": [
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "task_name": "pick up the butter and place it in the basket",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task6/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "task_name": "pick up the black bowl from table center and place it on the plate",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task2/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "task_name": "put the bowl on the stove",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task1/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    }
+  ],
+  "methods": [
+    "fresh",
+    "official_act_temporal_ensemble",
+    "cogact_shared_full_action",
+    "component_arm_fresh_gripper_act",
+    "groupwise_similarity",
+    "groupwise_similarity_age",
+    "groupwise_similarity_age_gripper_vote"
+  ],
+  "method_semantics": {
+    "fresh": "Use the newest candidate for all seven dimensions.",
+    "official_act_temporal_ensemble": "Use one full-action weight vector w(q) proportional to exp(-0.01 q), with q ordered oldest source to newest source.",
+    "cogact_shared_full_action": "Use one full-action weight vector proportional to exp(0.3 cosine(a(q), a(newest))).",
+    "component_arm_fresh_gripper_act": "Reuse the existing fixed component-aware control: fresh arm and ACT temporal-ensemble gripper.",
+    "groupwise_similarity": "For each group g, use independently normalized weights proportional to exp(0.3 cosine(a_g(q), a_g(newest))).",
+    "groupwise_similarity_age": "For each group g, use independently normalized weights proportional to exp(0.3 cosine(a_g(q), a_g(newest)) - 0.03 source_age(q)).",
+    "groupwise_similarity_age_gripper_vote": "Use groupwise_similarity_age arm aggregation. For the gripper, classify nonnegative commands as open and negative commands as close, sum normalized gripper weights by sign, use the larger-support sign (newest sign on an exact tie), and return the highest-weight candidate with that sign (newest on an exact candidate-weight tie)."
+  },
+  "analysis": {
+    "primary_comparison": "Each new variant versus cogact_shared_full_action on the same task and initial state.",
+    "paired_outcome_unit": "One initial state / seed pair; task-macro summaries are primary and pooled counts are descriptive.",
+    "meaningful_margin": "Predeclare a smoke signal as at least +0.20 task-macro success rate over CogACT, while checking Goal 1 for catastrophic failure.",
+    "goal_counterexample_floor": "A candidate is not leading if it loses all five Goal 1 paired episodes to CogACT or has a 0/5 Goal 1 result when CogACT succeeds on at least one episode."
+  }
+}

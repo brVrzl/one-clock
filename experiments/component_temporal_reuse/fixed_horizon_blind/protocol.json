@@ -1,0 +1,102 @@
+{
+  "protocol_version": 1,
+  "purpose": "Frozen blind confirmatory panel for fixed sparse source-age caps; no intervention tuning was performed on these tasks.",
+  "source_visibility": "The eight task identities were recorded before method results and were not exposed to intervention tuning.",
+  "frozen_before_outcomes": true,
+  "policy": {
+    "implementation": "official LeRobot ACT",
+    "checkpoint_training_step": 100000,
+    "query": "policy.predict_action_chunk followed by native policy and environment postprocessors",
+    "policy_rng_seed": 424242,
+    "policy_rng_reset_before_each_method_state_episode": true,
+    "n_action_steps_unchanged": true
+  },
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "dataset": "HuggingFaceVLA/libero",
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "initial_state_ids": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+    "seeds": [4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009],
+    "episodes_per_task": 10,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "observation_width": 256,
+    "observation_height": 256
+  },
+  "tasks": [
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "task_name": "pick up the cream cheese and place it in the basket",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task1/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "task_name": "pick up the ketchup and place it in the basket",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task4/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "task_name": "pick up the black bowl on the cookie box and place it on the plate",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task3/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "task_name": "pick up the black bowl on the stove and place it on the plate",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task7/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "task_name": "open the middle drawer of the cabinet",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task0/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "task_name": "open the top drawer and put the bowl inside",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task3/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "task_name": "put both the cream cheese box and the butter in the basket",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task1/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "task_name": "put the yellow and white mug in the microwave and close it",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task9/checkpoints/100000/pretrained_model"
+    }
+  ],
+  "methods": ["fresh_h1", "fixed_h8", "fixed_h16", "native_h100"],
+  "method_semantics": {
+    "fresh_h1": "Query at physical steps 0,1,2,... and execute the newest same-target candidate, equivalent to fresh action execution.",
+    "fixed_h8": "Query at physical steps 0,8,16,... and execute the newest same-target candidate from the latest sparse query record on intervening steps.",
+    "fixed_h16": "Query at physical steps 0,16,32,... and execute the newest same-target candidate from the latest sparse query record on intervening steps.",
+    "native_h100": "Query at physical steps 0,100,200,... and execute the newest same-target candidate from the latest sparse query record on intervening steps; no temporal aggregation."
+  },
+  "analysis": {
+    "paired_unit": "same task, init_state_id, and environment seed across methods",
+    "pooled_reducer": "sum episode successes over all 8 tasks; pooled query rate = sum queries / sum environment steps",
+    "total_episodes": 320
+  },
+  "gates": {
+    "fixed_h16_vs_native_h100_paired_net_wins_at_least": "+8/80",
+    "fixed_h16_pooled_successes_at_least_fresh_minus": 4,
+    "fixed_h16_pooled_successes_at_least_fixed_h8_minus": 2,
+    "taskwise_fresh_only_minus_h16_only_loss_below": "2/10",
+    "tasks_h16_not_worse_than_h8_at_least": "6/8",
+    "fixed_h16_pooled_query_rate_at_most": 0.075,
+    "evaluate_only_after_all_320_episodes": true,
+    "advance_to_smolvla_only_if_all_pass": true
+  }
+}

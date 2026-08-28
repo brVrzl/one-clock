@@ -1,0 +1,628 @@
+{
+  "analysis_status": "complete_rapid_act_smoke",
+  "protocol": {
+    "path": "1",
+    "task_count": 4,
+    "episodes_per_task": 5,
+    "methods": [
+      "fresh",
+      "official_act_temporal_ensemble",
+      "cogact_shared_full_action",
+      "component_arm_fresh_gripper_act",
+      "groupwise_similarity",
+      "groupwise_similarity_age",
+      "groupwise_similarity_age_gripper_vote"
+    ],
+    "policy_rng_seed": 424242,
+    "initial_state_ids": [
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "environment_seeds": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004
+    ]
+  },
+  "per_task": [
+    {
+      "task_key": "libero_10:task3",
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "methods": {
+        "fresh": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "official_act_temporal_ensemble": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        "cogact_shared_full_action": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        "component_arm_fresh_gripper_act": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        "groupwise_similarity": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        "groupwise_similarity_age": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "paired_vs_cogact": {
+        "groupwise_similarity": {
+          "candidate_successes": 2,
+          "reference_successes": 2,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 2,
+          "both_fail": 3,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age": {
+          "candidate_successes": 2,
+          "reference_successes": 2,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 1,
+          "reference_only_success": 1,
+          "both_success": 1,
+          "both_fail": 2,
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "candidate_successes": 2,
+          "reference_successes": 2,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 1,
+          "reference_only_success": 1,
+          "both_success": 1,
+          "both_fail": 2,
+          "exact_mcnemar_two_sided_p": 1.0
+        }
+      }
+    },
+    {
+      "task_key": "libero_goal:task1",
+      "task_name": "put the bowl on the stove",
+      "methods": {
+        "fresh": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "official_act_temporal_ensemble": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "cogact_shared_full_action": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "component_arm_fresh_gripper_act": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity_age": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "paired_vs_cogact": {
+        "groupwise_similarity": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        }
+      }
+    },
+    {
+      "task_key": "libero_object:task6",
+      "task_name": "pick up the butter and place it in the basket",
+      "methods": {
+        "fresh": {
+          "success_count": 4,
+          "episodes": 5,
+          "success_rate": 0.8,
+          "successes": [
+            true,
+            false,
+            true,
+            true,
+            true
+          ]
+        },
+        "official_act_temporal_ensemble": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        "cogact_shared_full_action": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        "component_arm_fresh_gripper_act": {
+          "success_count": 4,
+          "episodes": 5,
+          "success_rate": 0.8,
+          "successes": [
+            true,
+            false,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity": {
+          "success_count": 2,
+          "episodes": 5,
+          "success_rate": 0.4,
+          "successes": [
+            false,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        "groupwise_similarity_age": {
+          "success_count": 3,
+          "episodes": 5,
+          "success_rate": 0.6,
+          "successes": [
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "success_count": 3,
+          "episodes": 5,
+          "success_rate": 0.6,
+          "successes": [
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        }
+      },
+      "paired_vs_cogact": {
+        "groupwise_similarity": {
+          "candidate_successes": 2,
+          "reference_successes": 2,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 2,
+          "both_fail": 3,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age": {
+          "candidate_successes": 3,
+          "reference_successes": 2,
+          "absolute_success_difference": 0.2,
+          "candidate_only_success": 1,
+          "reference_only_success": 0,
+          "both_success": 2,
+          "both_fail": 2,
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "candidate_successes": 3,
+          "reference_successes": 2,
+          "absolute_success_difference": 0.2,
+          "candidate_only_success": 1,
+          "reference_only_success": 0,
+          "both_success": 2,
+          "both_fail": 2,
+          "exact_mcnemar_two_sided_p": 1.0
+        }
+      }
+    },
+    {
+      "task_key": "libero_spatial:task2",
+      "task_name": "pick up the black bowl from table center and place it on the plate",
+      "methods": {
+        "fresh": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "official_act_temporal_ensemble": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "cogact_shared_full_action": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "component_arm_fresh_gripper_act": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity_age": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "success_count": 5,
+          "episodes": 5,
+          "success_rate": 1.0,
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "paired_vs_cogact": {
+        "groupwise_similarity": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        },
+        "groupwise_similarity_age_gripper_vote": {
+          "candidate_successes": 5,
+          "reference_successes": 5,
+          "absolute_success_difference": 0,
+          "candidate_only_success": 0,
+          "reference_only_success": 0,
+          "both_success": 5,
+          "both_fail": 0,
+          "exact_mcnemar_two_sided_p": null
+        }
+      }
+    }
+  ],
+  "task_macro_success_rate": {
+    "fresh": 0.95,
+    "official_act_temporal_ensemble": 0.7,
+    "cogact_shared_full_action": 0.7,
+    "component_arm_fresh_gripper_act": 0.8,
+    "groupwise_similarity": 0.7,
+    "groupwise_similarity_age": 0.75,
+    "groupwise_similarity_age_gripper_vote": 0.75
+  },
+  "pooled_success": {
+    "fresh": {
+      "successes": 19,
+      "episodes": 20,
+      "success_rate": 0.95
+    },
+    "official_act_temporal_ensemble": {
+      "successes": 14,
+      "episodes": 20,
+      "success_rate": 0.7
+    },
+    "cogact_shared_full_action": {
+      "successes": 14,
+      "episodes": 20,
+      "success_rate": 0.7
+    },
+    "component_arm_fresh_gripper_act": {
+      "successes": 16,
+      "episodes": 20,
+      "success_rate": 0.8
+    },
+    "groupwise_similarity": {
+      "successes": 14,
+      "episodes": 20,
+      "success_rate": 0.7
+    },
+    "groupwise_similarity_age": {
+      "successes": 15,
+      "episodes": 20,
+      "success_rate": 0.75
+    },
+    "groupwise_similarity_age_gripper_vote": {
+      "successes": 15,
+      "episodes": 20,
+      "success_rate": 0.75
+    }
+  },
+  "paired_vs_cogact": {
+    "groupwise_similarity": {
+      "candidate_successes": 14,
+      "reference_successes": 14,
+      "absolute_success_difference": 0,
+      "candidate_only_success": 0,
+      "reference_only_success": 0,
+      "both_success": 14,
+      "both_fail": 6,
+      "exact_mcnemar_two_sided_p": null
+    },
+    "groupwise_similarity_age": {
+      "candidate_successes": 15,
+      "reference_successes": 14,
+      "absolute_success_difference": 0.05,
+      "candidate_only_success": 2,
+      "reference_only_success": 1,
+      "both_success": 13,
+      "both_fail": 4,
+      "exact_mcnemar_two_sided_p": 1.0
+    },
+    "groupwise_similarity_age_gripper_vote": {
+      "candidate_successes": 15,
+      "reference_successes": 14,
+      "absolute_success_difference": 0.05,
+      "candidate_only_success": 2,
+      "reference_only_success": 1,
+      "both_success": 13,
+      "both_fail": 4,
+      "exact_mcnemar_two_sided_p": 1.0
+    }
+  },
+  "variant_decisions": {
+    "groupwise_similarity": {
+      "task_macro_delta_vs_cogact": 0.0,
+      "pooled_delta_vs_cogact": 0,
+      "meaningful_margin_met": false,
+      "goal_candidate_successes": 5,
+      "goal_cogact_successes": 5,
+      "goal_catastrophic_failure": false
+    },
+    "groupwise_similarity_age": {
+      "task_macro_delta_vs_cogact": 0.050000000000000044,
+      "pooled_delta_vs_cogact": 0.05,
+      "meaningful_margin_met": false,
+      "goal_candidate_successes": 5,
+      "goal_cogact_successes": 5,
+      "goal_catastrophic_failure": false
+    },
+    "groupwise_similarity_age_gripper_vote": {
+      "task_macro_delta_vs_cogact": 0.050000000000000044,
+      "pooled_delta_vs_cogact": 0.05,
+      "meaningful_margin_met": false,
+      "goal_candidate_successes": 5,
+      "goal_cogact_successes": 5,
+      "goal_catastrophic_failure": false
+    }
+  },
+  "leading_variant": null,
+  "recommendation": "No ACT variant met the predeclared smoke criterion; run the same smoke on the existing SmolVLA development tasks."
+}

@@ -1,0 +1,84 @@
+{
+  "protocol_version": 1,
+  "purpose": "Frozen ACT development panel for component-decoupled temporal aggregation.",
+  "frozen_before_outcomes": true,
+  "policy": {
+    "implementation": "official LeRobot ACT",
+    "one_policy_query_per_environment_step": true,
+    "postprocessing": "Extract same-target candidates after the native policy and environment postprocessors.",
+    "checkpoint_training_step": 100000,
+    "policy_rng_seed": 424242,
+    "policy_rng_reset_before_each_method": true,
+    "official_temporal_ensemble_coefficient": 0.01,
+    "cogact_full_alpha": 0.1,
+    "cdta_alpha": 0.3,
+    "cdta_beta": 0.03,
+    "cdta_max_age": 16,
+    "action_groups": {
+      "arm": [0, 1, 2, 3, 4, 5],
+      "gripper": [6]
+    }
+  },
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "dataset": "HuggingFaceVLA/libero",
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "initial_state_ids": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
+    "episodes_per_task": 10,
+    "n_envs": 10,
+    "use_async_envs": false,
+    "observation_width": 256,
+    "observation_height": 256
+  },
+  "tasks": [
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "task_name": "pick up the butter and place it in the basket",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task6/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "task_name": "pick up the black bowl from table center and place it on the plate",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task2/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "task_name": "put the bowl on the stove",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task1/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    }
+  ],
+  "methods": [
+    "fresh",
+    "official_act_m001",
+    "cogact_full_alpha01",
+    "matched_shared_a16_alpha03_beta003",
+    "cdta_a16_alpha03_beta003"
+  ],
+  "method_semantics": {
+    "fresh": "Use the newest same-target candidate for all seven action dimensions.",
+    "official_act_m001": "Full available history; one shared weight vector proportional to exp(-0.01 source_index), with candidates ordered oldest to newest.",
+    "cogact_full_alpha01": "Full available history; one shared weight vector proportional to exp(0.1 full_action_cosine(candidate, newest)).",
+    "matched_shared_a16_alpha03_beta003": "Keep candidates with source age <=16; one shared weight vector proportional to exp(0.3 full_action_cosine(candidate, newest) - 0.03 age).",
+    "cdta_a16_alpha03_beta003": "Keep candidates with source age <=16; independently weight arm by exp(0.3 arm_cosine - 0.03 age) and gripper by exp(0.3 sign(gripper)sign(newest_gripper) - 0.03 age), then ordinary weighted aggregation. No gripper sign vote."
+  },
+  "analysis": {
+    "primary_comparison": "CDTA versus matched shared on identical task, state, and environment-seed pairs.",
+    "primary_gate": "After all 200 episodes: CDTA candidate-only successes minus matched-shared reference-only successes >=3/40, and CDTA success count >= matched shared on at least 3/4 tasks.",
+    "fresh_safeguard": "Pooled CDTA success count may be at most 2 below Fresh; on no task may Fresh-only minus CDTA-only paired loss reach 2/10.",
+    "no_interim_tuning": true
+  }
+}

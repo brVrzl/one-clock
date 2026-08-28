@@ -126,6 +126,93 @@ def cogact_cosine_weights(candidates: np.ndarray, alpha: float = 0.3) -> np.ndar
     return normalize_weights(np.exp(logits), len(candidates))
 
 
+def _cosine_similarity_to_newest(candidates: np.ndarray, indices: slice) -> np.ndarray:
+    """Return one cosine similarity per candidate for one action group."""
+
+    values = np.asarray(candidates, dtype=np.float64)[:, indices]
+    newest = values[-1]
+    denominator = np.linalg.norm(values, axis=1) * np.linalg.norm(newest) + 1e-7
+    return (values @ newest) / denominator
+
+
+def groupwise_similarity_weights(
+    candidates: np.ndarray,
+    ages: np.ndarray,
+    *,
+    alpha: float = 0.3,
+    beta: float = 0.0,
+    groups: Mapping[str, slice] = DEFAULT_GROUPS,
+) -> dict[str, np.ndarray]:
+    """Compute independently normalized group-wise similarity weights.
+
+    For group ``g`` and same-target candidate ``q`` this uses
+
+    ``score_g(q) = alpha * cosine(a_g(q), a_g(newest)) - beta * age(q)``.
+
+    The returned weights are ``softmax(score_g)`` separately for every group.
+    Thus ``beta=0`` is ``groupwise_similarity`` and ``beta=0.03`` is the
+    fixed ``groupwise_similarity_age`` rule.  Similarity is computed from the
+    postprocessed action values and the newest candidate is the reference.
+    """
+
+    candidates = np.asarray(candidates, dtype=np.float64)
+    ages = np.asarray(ages, dtype=np.float64)
+    if candidates.ndim != 2 or len(candidates) == 0:
+        raise ValueError("candidates must have shape (sources, action_dim)")
+    if ages.shape != (len(candidates),):
+        raise ValueError("candidates and ages are misaligned")
+    if not np.isfinite(ages).all() or np.any(ages < 0):
+        raise ValueError("source ages must be finite and nonnegative")
+    if not np.isfinite(alpha) or alpha < 0 or not np.isfinite(beta) or beta < 0:
+        raise ValueError("alpha and beta must be finite and nonnegative")
+
+    weights_by_group: dict[str, np.ndarray] = {}
+    for name, indices in groups.items():
+        scores = float(alpha) * _cosine_similarity_to_newest(candidates, indices)
+        scores -= float(beta) * ages
+        scores -= scores.max()
+        weights_by_group[name] = normalize_weights(np.exp(scores), len(candidates))
+    return weights_by_group
+
+
+def weighted_gripper_vote(
+    candidates: np.ndarray,
+    weights: np.ndarray,
+) -> tuple[np.ndarray, int, int, dict[str, float]]:
+    """Choose a deterministic gripper representative from weighted sign support.
+
+    A nonnegative command is treated as open and a negative command as close.
+    The winning sign has the larger total normalized weight.  Exact support
+    ties use the newest candidate's sign.  Within the winning sign, the
+    highest-weight candidate is returned; an exact weight tie uses the newest
+    such candidate.  Returning the original candidate value preserves the
+    action's native gripper-command semantics instead of averaging signs.
+    """
+
+    candidates = np.asarray(candidates, dtype=np.float64)
+    if candidates.ndim != 2 or candidates.shape[1] < 7 or len(candidates) == 0:
+        raise ValueError("candidates must have shape (sources, action_dim>=7)")
+    normalized = normalize_weights(weights, len(candidates))
+    values = candidates[:, GRIPPER].reshape(-1)
+    signs = np.where(values >= 0.0, 1, -1)
+    open_support = float(normalized[signs == 1].sum())
+    close_support = float(normalized[signs == -1].sum())
+    if open_support > close_support:
+        winning_sign = 1
+    elif close_support > open_support:
+        winning_sign = -1
+    else:
+        winning_sign = int(signs[-1])
+    eligible = np.flatnonzero(signs == winning_sign)
+    representative = max(eligible.tolist(), key=lambda index: (float(normalized[index]), int(index)))
+    return (
+        candidates[representative, GRIPPER].copy(),
+        int(representative),
+        int(winning_sign),
+        {"open": open_support, "close": close_support},
+    )
+
+
 def aggregate_full_action(candidates: np.ndarray, weights: np.ndarray) -> np.ndarray:
     """Ordinary temporal aggregation with one weight vector for every dimension."""
 

@@ -1,0 +1,50 @@
+{
+  "protocol": "protocol.json",
+  "launch_policy": "one ten-worker task shard per available GPU; never duplicate a task; preserve existing jobs",
+  "tasks": {
+    "libero_object:task6": {
+      "gpu": "2",
+      "output": "results/libero_object_task6.json",
+      "progress": "progress/libero_object_task6.json",
+      "log": "logs/libero_object_task6.log",
+      "status": "running",
+      "pid": 1013262,
+      "session": 42438,
+      "recovery_watcher_pid": 1022835,
+      "recovery_policy": "After pid 1013262 exits, rerun only if results/libero_object_task6.json has no finished_at."
+    },
+    "libero_spatial:task2": {
+      "gpu": "0",
+      "output": "results/libero_spatial_task2.json",
+      "progress": "progress/libero_spatial_task2.json",
+      "log": "logs/libero_spatial_task2.log",
+      "status": "running",
+      "pid": 1018319
+    },
+    "libero_goal:task1": {
+      "gpu": "0",
+      "output": "results/libero_goal_task1.json",
+      "progress": "progress/libero_goal_task1.json",
+      "log": "logs/libero_goal_task1.log",
+      "status": "queued_after_spatial2",
+      "queue_pid": 1018871,
+      "waits_for_pid": 1018319
+    },
+    "libero_10:task3": {
+      "gpu": "1",
+      "output": "results/libero_10_task3.json",
+      "progress": "progress/libero_10_task3.json",
+      "log": "logs/libero_10_task3.log",
+      "status": "queued_after_existing_gpu1_job",
+      "queue_pid": 1019251,
+      "waits_for_pids": [1006226, 1006229]
+    }
+  },
+  "status_command": "ps -eo pid,ppid,stat,etime,cmd | rg 'run_cdta_dev|cdta_dev'; jq . progress/*.json",
+  "recovery_commands": {
+    "libero_object:task6": "/home/wjq/workspace/venvs/libero_act/bin/python experiments/component_temporal_reuse/cdta_dev/run_cdta_dev.py --task libero_object:task6 --gpu 2 --output experiments/component_temporal_reuse/cdta_dev/results/libero_object_task6.json --progress experiments/component_temporal_reuse/cdta_dev/progress/libero_object_task6.json",
+    "libero_spatial:task2": "/home/wjq/workspace/venvs/libero_act/bin/python experiments/component_temporal_reuse/cdta_dev/run_cdta_dev.py --task libero_spatial:task2 --gpu 0 --output experiments/component_temporal_reuse/cdta_dev/results/libero_spatial_task2.json --progress experiments/component_temporal_reuse/cdta_dev/progress/libero_spatial_task2.json",
+    "libero_goal:task1": "/home/wjq/workspace/venvs/libero_act/bin/python experiments/component_temporal_reuse/cdta_dev/run_cdta_dev.py --task libero_goal:task1 --gpu 0 --output experiments/component_temporal_reuse/cdta_dev/results/libero_goal_task1.json --progress experiments/component_temporal_reuse/cdta_dev/progress/libero_goal_task1.json",
+    "libero_10:task3": "/home/wjq/workspace/venvs/libero_act/bin/python experiments/component_temporal_reuse/cdta_dev/run_cdta_dev.py --task libero_10:task3 --gpu 1 --output experiments/component_temporal_reuse/cdta_dev/results/libero_10_task3.json --progress experiments/component_temporal_reuse/cdta_dev/progress/libero_10_task3.json"
+  }
+}

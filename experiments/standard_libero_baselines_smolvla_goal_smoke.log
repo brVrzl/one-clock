@@ -1,0 +1,254 @@
+INFO 2026-08-26 16:02:50 bot_eval.py:507 {'env': {'camera_name': 'agentview_image,robot0_eye_in_hand_image',
+         'camera_name_mapping': None,
+         'control_mode': 'relative',
+         'disable_env_checker': True,
+         'episode_length': None,
+         'features': {'action': {'shape': (7,),
+                                 'type': <FeatureType.ACTION: 'ACTION'>},
+                      'pixels/agentview_image': {'shape': (360, 360, 3),
+                                                 'type': <FeatureType.VISUAL: 'VISUAL'>},
+                      'pixels/robot0_eye_in_hand_image': {'shape': (360,
+                                                                    360,
+                                                                    3),
+                                                          'type': <FeatureType.VISUAL: 'VISUAL'>},
+                      'robot_state/eef/mat': {'shape': (3, 3),
+                                              'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/eef/pos': {'shape': (3,),
+                                              'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/eef/quat': {'shape': (4,),
+                                               'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/gripper/qpos': {'shape': (2,),
+                                                   'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/gripper/qvel': {'shape': (2,),
+                                                   'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/joints/pos': {'shape': (7,),
+                                                 'type': <FeatureType.STATE: 'STATE'>},
+                      'robot_state/joints/vel': {'shape': (7,),
+                                                 'type': <FeatureType.STATE: 'STATE'>}},
+         'features_map': {'action': 'action',
+                          'pixels/agentview_image': 'observation.images.image',
+                          'pixels/robot0_eye_in_hand_image': 'observation.images.image2',
+                          'robot_state/eef/mat': 'observation.state.eef_mat',
+                          'robot_state/eef/pos': 'observation.state.eef_pos',
+                          'robot_state/eef/quat': 'observation.state.eef_quat',
+                          'robot_state/gripper/qpos': 'observation.state.gripper_qpos',
+                          'robot_state/gripper/qvel': 'observation.state.gripper_qvel',
+                          'robot_state/joints/pos': 'observation.state.joint_pos',
+                          'robot_state/joints/vel': 'observation.state.joint_vel'},
+         'fps': 30,
+         'init_states': True,
+         'max_parallel_tasks': 1,
+         'obs_type': 'pixels_agent_pos',
+         'observation_height': 360,
+         'observation_width': 360,
+         'render_mode': 'rgb_array',
+         'task': 'libero_goal',
+         'task_ids': [0]},
+ 'eval': {'batch_size': 1, 'n_episodes': 2, 'use_async_envs': False},
+ 'job_name': 'smolvla_goal_smoke',
+ 'output_dir': PosixPath('/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/smolvla_goal_smoke'),
+ 'policy': {'adapt_to_pi_aloha': False,
+            'add_image_special_tokens': False,
+            'attention_mode': 'cross_attn',
+            'chunk_size': 50,
+            'compile_mode': 'max-autotune',
+            'compile_model': False,
+            'device': 'cuda',
+            'empty_cameras': 0,
+            'expert_width_multiplier': 0.5,
+            'freeze_vision_encoder': True,
+            'input_features': {'observation.images.image': {'shape': (3,
+                                                                      256,
+                                                                      256),
+                                                            'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.images.image2': {'shape': (3,
+                                                                       256,
+                                                                       256),
+                                                             'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.state': {'shape': (8,),
+                                                     'type': <FeatureType.STATE: 'STATE'>}},
+            'license': None,
+            'load_vlm_weights': True,
+            'max_action_dim': 32,
+            'max_period': 4.0,
+            'max_state_dim': 32,
+            'min_period': 0.004,
+            'n_action_steps': 1,
+            'n_obs_steps': 1,
+            'normalization_mapping': {'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'VISUAL': <NormalizationMode.IDENTITY: 'IDENTITY'>},
+            'num_expert_layers': -1,
+            'num_steps': 10,
+            'num_vlm_layers': 0,
+            'optimizer_betas': (0.9, 0.95),
+            'optimizer_eps': 1e-08,
+            'optimizer_grad_clip_norm': 10.0,
+            'optimizer_lr': 0.0001,
+            'optimizer_weight_decay': 1e-10,
+            'output_features': {'action': {'shape': (7,),
+                                           'type': <FeatureType.ACTION: 'ACTION'>}},
+            'pad_language_to': 'longest',
+            'prefix_length': 0,
+            'pretrained_path': PosixPath('/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero'),
+            'private': None,
+            'push_to_hub': True,
+            'repo_id': 'None',
+            'resize_imgs_with_padding': (512, 512),
+            'rtc_config': None,
+            'scheduler_decay_lr': 2.5e-06,
+            'scheduler_decay_steps': 30000,
+            'scheduler_warmup_steps': 1000,
+            'self_attn_every_n_layers': 2,
+            'tags': None,
+            'tokenizer_max_length': 48,
+            'train_expert_only': True,
+            'train_state_proj': True,
+            'use_amp': False,
+            'use_cache': True,
+            'use_delta_joint_actions_aloha': False,
+            'use_peft': False,
+            'vlm_model_name': 'HuggingFaceTB/SmolVLM2-500M-Instruct'},
+ 'rename_map': {},
+ 'seed': 1000,
+ 'trust_remote_code': False}
+INFO 2026-08-26 16:02:50 bot_eval.py:516 Output dir: /home/wjq/workspace/one-clock/experiments/standard_libero_baselines/smolvla_goal_smoke
+INFO 2026-08-26 16:02:50 bot_eval.py:518 Making environment.
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING 2026-08-26 16:02:50 e/__init__.py:7 No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING 2026-08-26 16:02:50 e/__init__.py:8 It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING 2026-08-26 16:02:50 e/__init__.py:9 To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+INFO 2026-08-26 16:02:50 tesupport.py:24 No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO 2026-08-26 16:02:54 bot_eval.py:526 Making policy.
+/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/huggingface_hub/file_download.py:1723: DeprecationWarning: hf_xet.download_files() is deprecated. Use XetSession().new_file_download_group().start_download_file() instead.
+  xet_get(
+'(ReadTimeoutError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 806c3a2e-60e8-4264-bfab-5c3e6f18f50b)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:16:06 ls/_http.py:321 '(ReadTimeoutError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 806c3a2e-60e8-4264-bfab-5c3e6f18f50b)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+Retrying in 1s [Retry 1/5].
+WARNING 2026-08-26 16:16:06 ls/_http.py:330 Retrying in 1s [Retry 1/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e150>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: b4c7b9dd-c2b2-4a72-9078-9695342a6f87)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:16:17 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e150>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: b4c7b9dd-c2b2-4a72-9078-9695342a6f87)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+Retrying in 2s [Retry 2/5].
+WARNING 2026-08-26 16:16:17 ls/_http.py:330 Retrying in 2s [Retry 2/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60d100>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 168be0a3-4ddf-416c-9545-36f4c89681f3)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:16:29 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60d100>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 168be0a3-4ddf-416c-9545-36f4c89681f3)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+Retrying in 4s [Retry 3/5].
+WARNING 2026-08-26 16:16:29 ls/_http.py:330 Retrying in 4s [Retry 3/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fd40>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 26c4e45e-d11e-4244-b407-2e652fc7ead3)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:16:43 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fd40>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 26c4e45e-d11e-4244-b407-2e652fc7ead3)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+Retrying in 8s [Retry 4/5].
+WARNING 2026-08-26 16:16:43 ls/_http.py:330 Retrying in 8s [Retry 4/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f020>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: f8ee4fe9-6be1-4daa-bd90-3fe30270d8a1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:17:01 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f020>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: f8ee4fe9-6be1-4daa-bd90-3fe30270d8a1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+Retrying in 8s [Retry 5/5].
+WARNING 2026-08-26 16:17:01 ls/_http.py:330 Retrying in 8s [Retry 5/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f920>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 92a4bdab-d8dd-4479-9607-61d8821ad30c)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+WARNING 2026-08-26 16:17:20 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f920>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 92a4bdab-d8dd-4479-9607-61d8821ad30c)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/model.safetensors.index.json
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fbc0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: f9625e95-bce9-46ae-93a8-2021004bdcda)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:17:30 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fbc0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: f9625e95-bce9-46ae-93a8-2021004bdcda)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+Retrying in 1s [Retry 1/5].
+WARNING 2026-08-26 16:17:30 ls/_http.py:330 Retrying in 1s [Retry 1/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60cec0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 02ab1cd0-006d-42ac-be3b-818f5d09b747)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:17:41 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60cec0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 02ab1cd0-006d-42ac-be3b-818f5d09b747)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+Retrying in 2s [Retry 2/5].
+WARNING 2026-08-26 16:17:41 ls/_http.py:330 Retrying in 2s [Retry 2/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e1e0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d0134e3-13dd-4e14-aad7-85fb6503adc1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:17:53 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e1e0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d0134e3-13dd-4e14-aad7-85fb6503adc1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+Retrying in 4s [Retry 3/5].
+WARNING 2026-08-26 16:17:53 ls/_http.py:330 Retrying in 4s [Retry 3/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f2c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 7f13fadf-ae20-49c3-9c84-97a8dade41b1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:18:07 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60f2c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 7f13fadf-ae20-49c3-9c84-97a8dade41b1)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+Retrying in 8s [Retry 4/5].
+WARNING 2026-08-26 16:18:07 ls/_http.py:330 Retrying in 8s [Retry 4/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e3c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d88d242-af85-4e69-acd8-1ed310193049)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:18:25 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e3c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 9d88d242-af85-4e69-acd8-1ed310193049)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+Retrying in 8s [Retry 5/5].
+WARNING 2026-08-26 16:18:25 ls/_http.py:330 Retrying in 8s [Retry 5/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa7f5970>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 66f31357-008c-484e-9a2c-3bf92bd44c14)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+WARNING 2026-08-26 16:18:43 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa7f5970>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 66f31357-008c-484e-9a2c-3bf92bd44c14)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa7f6810>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: c3c97199-e8d3-4d12-ac1d-db04d1ee6bc2)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:18:53 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa7f6810>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: c3c97199-e8d3-4d12-ac1d-db04d1ee6bc2)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Retrying in 1s [Retry 1/5].
+WARNING 2026-08-26 16:18:53 ls/_http.py:330 Retrying in 1s [Retry 1/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e9c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 176878cb-57c5-4597-80e8-ef98733393a6)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:19:04 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e9c0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 176878cb-57c5-4597-80e8-ef98733393a6)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Retrying in 2s [Retry 2/5].
+WARNING 2026-08-26 16:19:04 ls/_http.py:330 Retrying in 2s [Retry 2/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60c380>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: c81ac425-7678-4f74-aa68-056c89c775be)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:19:16 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60c380>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: c81ac425-7678-4f74-aa68-056c89c775be)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Retrying in 4s [Retry 3/5].
+WARNING 2026-08-26 16:19:16 ls/_http.py:330 Retrying in 4s [Retry 3/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e240>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5d743352-bbf4-4ff5-8d77-f7b7025797a2)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:19:30 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60e240>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5d743352-bbf4-4ff5-8d77-f7b7025797a2)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Retrying in 8s [Retry 4/5].
+WARNING 2026-08-26 16:19:30 ls/_http.py:330 Retrying in 8s [Retry 4/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60d5b0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 15f5b5e8-a754-4079-8620-db7acd89378b)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:19:48 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60d5b0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 15f5b5e8-a754-4079-8620-db7acd89378b)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Retrying in 8s [Retry 5/5].
+WARNING 2026-08-26 16:19:48 ls/_http.py:330 Retrying in 8s [Retry 5/5].
+'(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fe00>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 2edcac86-c1a3-477c-8281-ee2f1f4151e0)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+WARNING 2026-08-26 16:20:06 ls/_http.py:321 '(MaxRetryError("SOCKSHTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json (Caused by ConnectTimeoutError(<SOCKSHTTPSConnection(host='huggingface.co', port=443) at 0x7c91fa60fe00>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 2edcac86-c1a3-477c-8281-ee2f1f4151e0)')' thrown while requesting HEAD https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Instruct/resolve/main/pytorch_model.bin.index.json
+Creating LIBERO envs | suites=['libero_goal'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[0]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_goal | task_id=0 | n_envs=1
+Loading  HuggingFaceTB/SmolVLM2-500M-Instruct weights ...
+Traceback (most recent call last):
+  File "/home/wjq/workspace/venvs/libero_act/bin/lerobot-eval", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/scripts/lerobot_eval.py", line 809, in main
+    eval_main()
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/configs/parser.py", line 233, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/scripts/lerobot_eval.py", line 528, in eval_main
+    policy = make_policy(
+             ^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/factory.py", line 492, in make_policy
+    policy = policy_cls.from_pretrained(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/pretrained.py", line 108, in from_pretrained
+    instance = cls(config, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/smolvla/modeling_smolvla.py", line 246, in __init__
+    self.model = VLAFlowMatching(config, rtc_processor=self.rtc_processor)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/smolvla/modeling_smolvla.py", line 559, in __init__
+    self.vlm_with_expert = SmolVLMWithExpertModel(
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/smolvla/smolvlm_with_expert.py", line 78, in __init__
+    self.vlm = AutoModelForImageTextToText.from_pretrained(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 571, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/transformers/modeling_utils.py", line 279, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4260, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/transformers/modeling_utils.py", line 1100, in _get_resolved_checkpoint_files
+    raise EnvironmentError(
+OSError: HuggingFaceTB/SmolVLM2-500M-Instruct does not appear to have a file named pytorch_model.bin, model.safetensors, tf_model.h5, model.ckpt or flax_model.msgpack.
+Exception ignored in: <function MjRenderContext.__del__ at 0x7c920ddaff60>
+Traceback (most recent call last):
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>
+Exception ignored in: <function EGLGLContext.__del__ at 0x7c920ddafe20>
+Traceback (most recent call last):
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: <exception str() failed>

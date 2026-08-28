@@ -1,0 +1,24 @@
+{
+  "protocol": "protocol.json",
+  "total_shards": 8,
+  "methods": ["fresh_h1", "fixed_h8", "fixed_h16", "native_h100"],
+  "queue_policy": "Three detached GPU queues; each queue runs its assigned task shards sequentially and preserves paired protocol.",
+  "gpu_queues": {
+    "gpu0": {"controller_pid": 1189138, "tasks": ["libero_object:task1", "libero_spatial:task7", "libero_10:task1"]},
+    "gpu1": {"controller_pid": 1189144, "tasks": ["libero_object:task4", "libero_goal:task0", "libero_10:task9"]},
+    "gpu2": {"controller_pid": 1189141, "tasks": ["libero_spatial:task3", "libero_goal:task3"]}
+  },
+  "task_paths": {
+    "libero_object:task1": {"output": "results/libero_object_task1.json", "progress": "progress/libero_object_task1.json", "log": "logs/libero_object_task1.log"},
+    "libero_object:task4": {"output": "results/libero_object_task4.json", "progress": "progress/libero_object_task4.json", "log": "logs/libero_object_task4.log"},
+    "libero_spatial:task3": {"output": "results/libero_spatial_task3.json", "progress": "progress/libero_spatial_task3.json", "log": "logs/libero_spatial_task3.log"},
+    "libero_spatial:task7": {"output": "results/libero_spatial_task7.json", "progress": "progress/libero_spatial_task7.json", "log": "logs/libero_spatial_task7.log"},
+    "libero_goal:task0": {"output": "results/libero_goal_task0.json", "progress": "progress/libero_goal_task0.json", "log": "logs/libero_goal_task0.log"},
+    "libero_goal:task3": {"output": "results/libero_goal_task3.json", "progress": "progress/libero_goal_task3.json", "log": "logs/libero_goal_task3.log"},
+    "libero_10:task1": {"output": "results/libero_10_task1.json", "progress": "progress/libero_10_task1.json", "log": "logs/libero_10_task1.log"},
+    "libero_10:task9": {"output": "results/libero_10_task9.json", "progress": "progress/libero_10_task9.json", "log": "logs/libero_10_task9.log"}
+  },
+  "status_command": "ps -eo pid,ppid,stat,etime,cmd | rg 'run_fixed_horizon_blind|fixed_horizon_blind'; jq . progress/*.json",
+  "hardware_note": "This host exposes GPUs 0,1,2 only.",
+  "recovery_command_template": "/home/wjq/workspace/venvs/libero_act/bin/python experiments/component_temporal_reuse/fixed_horizon_blind/run_fixed_horizon_blind.py --task TASK --gpu GPU --output experiments/component_temporal_reuse/fixed_horizon_blind/results/NAME.json --progress experiments/component_temporal_reuse/fixed_horizon_blind/progress/NAME.json"
+}
