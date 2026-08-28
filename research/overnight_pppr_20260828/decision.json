@@ -1,0 +1,62 @@
+{
+  "project": "Prospective Persistent Plan Revision",
+  "date": "2026-08-28",
+  "phase": "stopped_after_phase0",
+  "scientific_state": "STOP_PPPR",
+  "phase0": {
+    "definition_frozen": true,
+    "development_tasks": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "heldout_tasks": [
+      "libero_object:task5",
+      "libero_spatial:task4",
+      "libero_goal:task5",
+      "libero_10:task5"
+    ],
+    "valid_label_rows": 235936,
+    "decisive_pairs": {
+      "development": {"total": 98, "harmful": 63, "beneficial": 35},
+      "held_out": {"total": 83, "harmful": 41, "beneficial": 42}
+    },
+    "heldout_metrics": {
+      "age": {"auroc": 0.648664343786295, "auprc": 0.743251907256368},
+      "event": {"auroc": 0.49419279907084784, "auprc": 0.4646240473934769},
+      "raw_ppr": {"auroc": 0.5055168408826946, "auprc": 0.47876359440998456},
+      "pppr": {"auroc": 0.4909988385598142, "auprc": 0.46231844298375324},
+      "pppr_minus_raw_auroc": -0.014518002322880363
+    },
+    "control_relevance_pass": false,
+    "decision": "FAIL"
+  },
+  "phase1": {
+    "reached": false,
+    "forecastability_pass": null,
+    "reason": "mandatory Phase-0 control-relevance gate failed"
+  },
+  "phase2": {
+    "reached": false,
+    "act_confirmation_pass": null,
+    "reason": "mandatory earlier gates failed"
+  },
+  "phase3": {
+    "reached": false,
+    "development_executor_pass": null,
+    "reason": "mandatory earlier gates failed"
+  },
+  "invalid_results": {
+    "act_temporal_ensemble_lerobot_0_6_2": "3/80; invalid runtime/protocol"
+  },
+  "external_act_temporal_ensemble": {
+    "status": "corrected_complete_and_verified",
+    "successes": 48,
+    "episodes": 80,
+    "query_rate": 1.0,
+    "runtime": "LeRobot 0.4.4; PyTorch 2.7.1+cu128; MuJoCo 3.3.1",
+    "max_parity_error": 3.761950195801944e-08
+  },
+  "next_action": "Review the negative Phase-0 report and keep PPPR stopped."
+}

@@ -1,0 +1,69 @@
+{
+  "protocol_version": 1,
+  "frozen_before_feature_scores_were_inspected": true,
+  "source_data": {
+    "fresh_query_cache": "experiments/component_temporal_reuse/query_cache/*_fresh.npz",
+    "paired_outcomes_and_schedules": "experiments/component_temporal_reuse/pilot_results.json",
+    "action_domain": "postprocessed simulator action",
+    "known_limitation": "SmolVLA flow-matching samples were not paired by physical-step-keyed noise; scores combine observation-conditioned revision and sampling variation"
+  },
+  "split": {
+    "development": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "heldout_offline": [
+      "libero_object:task5",
+      "libero_spatial:task4",
+      "libero_goal:task5",
+      "libero_10:task5"
+    ]
+  },
+  "distance": {
+    "normalization": "per-dimension IQR fit once on development Fresh predicted arm actions only",
+    "translation_indices": [0, 1, 2],
+    "rotation_indices": [3, 4, 5],
+    "gripper_index": 6,
+    "arm": "0.5 * (L2(delta_translation / scale_translation) / sqrt(3) + L2(delta_rotation / scale_rotation) / sqrt(3))",
+    "bounded_arm": "arm / (1 + arm)",
+    "gripper": "indicator(sign(g1) != sign(g2))",
+    "joint": "0.5 * bounded_arm + 0.5 * gripper"
+  },
+  "label": {
+    "forecast_offsets": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "persistence_depth": 2,
+    "local_prefix_width": 4,
+    "physical_targets": "u+2 through u+5 inclusive, where u=t+k",
+    "future_queries": "u,u+1,u+2 only; no source before u",
+    "consensus_arm": "componentwise median",
+    "consensus_gripper": "majority sign",
+    "dispersion": "median semantic distance from the three future predictions to consensus",
+    "persistent_margin": "max(old-to-consensus distance - future dispersion, 0)",
+    "aggregation_over_targets": "median over the four local physical targets",
+    "invalidity": "mask unless every target is inside the old chunk and every required future same-target prediction exists"
+  },
+  "control_relevance": {
+    "outcome": "DeltaY = Fresh success - intervention success; decisive target Z=indicator(DeltaY=+1)",
+    "conditions": {
+      "full_old_4_8_16": "joint",
+      "reverse_4_8_16": "arm",
+      "fo_4_8_16": "gripper"
+    },
+    "alignment": "For each active intervention step u with actual historical source age d, look up the Fresh-reference feature at source t=u-d and offset k=d. Never use treatment-trajectory predictions.",
+    "valid_step_rule": "Use only logged source-event steps where the relevant component actual_source_age_steps equals d and the Fresh-reference feature is valid.",
+    "episode_condition_summary": "arithmetic mean over valid active steps; age is d",
+    "primary_population": "decisive Fresh-versus-intervention pairs only",
+    "signals": ["age", "event", "raw_ppr", "pppr"],
+    "metrics": ["decisive count", "AUROC", "AUPRC", "task-wise direction"],
+    "uncertainty": {
+      "draws": 10000,
+      "seed": 20260828,
+      "episode_cluster": "resample task-state clusters and retain their intervention rows",
+      "task_cluster": "resample tasks and retain all decisive rows in each sampled task",
+      "paired_method_difference": "compute PPPR minus RawPPR within each identical bootstrap resample"
+    },
+    "gate_guide": "Held-out PPPR AUROC roughly at least 0.65; improve over RawPPR by roughly 0.05 or show similarly strong consistent rank separation; no catastrophic suite reversal"
+  }
+}

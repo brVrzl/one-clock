@@ -1,0 +1,1107 @@
+{
+  "schema_version": 1,
+  "generator": "research/overnight_pppr_20260828/build_phase0.py",
+  "generator_command": "/home/wjq/workspace/venvs/libero_act/bin/python research/overnight_pppr_20260828/build_phase0.py",
+  "generated_at_utc": "2026-08-28T10:38:54.561982+00:00",
+  "runtime_seconds": 169.92774210998323,
+  "protocol_path": "/home/wjq/workspace/one-clock/research/overnight_pppr_20260828/phase0_protocol.json",
+  "rollout_protocol_path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/protocol.json",
+  "pilot_results_path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/pilot_results.json",
+  "cache_root": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache",
+  "output_path": "/home/wjq/workspace/one-clock/research/overnight_pppr_20260828/phase0_features.npz",
+  "metadata_path": "/home/wjq/workspace/one-clock/research/overnight_pppr_20260828/phase0_feature_metadata.json",
+  "completion_marker": "/home/wjq/workspace/one-clock/research/overnight_pppr_20260828/phase0_features.complete",
+  "frozen_split": {
+    "development": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "held_out": [
+      "libero_object:task5",
+      "libero_spatial:task4",
+      "libero_goal:task5",
+      "libero_10:task5"
+    ]
+  },
+  "task_order": [
+    "libero_object:task3",
+    "libero_object:task5",
+    "libero_spatial:task0",
+    "libero_spatial:task4",
+    "libero_goal:task2",
+    "libero_goal:task5",
+    "libero_10:task3",
+    "libero_10:task5"
+  ],
+  "source_age_steps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "source_age_seconds_at_30hz": [
+    0.03333333333333333,
+    0.06666666666666667,
+    0.1,
+    0.13333333333333333,
+    0.16666666666666666,
+    0.2,
+    0.23333333333333334,
+    0.26666666666666666,
+    0.3,
+    0.3333333333333333,
+    0.36666666666666664,
+    0.4,
+    0.43333333333333335,
+    0.4666666666666667,
+    0.5,
+    0.5333333333333333
+  ],
+  "future_family": {
+    "radius_r": 2,
+    "queries": "u,u+1,u+2",
+    "earlier_queries_forbidden": true
+  },
+  "window": {
+    "M": 4,
+    "targets": "{u+2,u+3,u+4,u+5}"
+  },
+  "alignment": {
+    "action_at": "a[v|q] = cache[q, v-q, :]",
+    "old_action": "a[v|t]",
+    "raw_reference": "a[v|u]",
+    "episode_target_boundary": "not applied; predicted v may extend beyond final executed step",
+    "future_query_boundary": "u+r < episode_query_count",
+    "chunk_boundary": "0 <= v-q < chunk_horizon for every required q"
+  },
+  "action_layout": {
+    "postprocessed_7d": true,
+    "position_indices": [
+      0,
+      1,
+      2
+    ],
+    "rotation_indices": [
+      3,
+      4,
+      5
+    ],
+    "gripper_index": 6,
+    "zero_gripper_sign": "0 (np.sign; no open/nonnegative remapping)"
+  },
+  "scale_fit": {
+    "method": "IQR (Q75-Q25)",
+    "source_action_definition": "all development Fresh postprocessed chunk[q,0,:6] actions",
+    "arm_scales": [
+      0.41356011480093,
+      0.2657897025346756,
+      0.6071508228778839,
+      0.024757614126428962,
+      0.07145446166396141,
+      0.0521656833589077
+    ],
+    "q25": [
+      -0.11601849645376205,
+      -0.08931207656860352,
+      -0.37534359097480774,
+      -0.0028890890534967184,
+      -0.023138608783483505,
+      -0.04346735030412674
+    ],
+    "q50": [
+      0.05097838491201401,
+      0.019035018980503082,
+      -0.09299371391534805,
+      0.001853111432865262,
+      0.006048015784472227,
+      -0.012391987256705761
+    ],
+    "q75": [
+      0.29754161834716797,
+      0.17647762596607208,
+      0.23180723190307617,
+      0.021868525072932243,
+      0.048315852880477905,
+      0.00869833305478096
+    ],
+    "zero_scale_guard_value": 1.0,
+    "zero_scale_guard_applied": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "zero_scale_guard_count": 0
+  },
+  "metric_formulas": {
+    "dp": "||((a_p-b_p)/scale_p)||_2 / sqrt(3)",
+    "dr": "||((a_r-b_r)/scale_r)||_2 / sqrt(3)",
+    "d_arm_unbounded": "0.5*(dp+dr)",
+    "arm": "d_arm_unbounded/(1+d_arm_unbounded)",
+    "grip": "1 if sign(a_grip)!=sign(b_grip), else 0",
+    "joint": "0.5*arm+0.5*grip",
+    "future_consensus": "per-dimension arm median; majority gripper sign",
+    "raw_ppr": "median over W of d(a[v|t], a[v|u])",
+    "old_to_consensus": "R(v)=d(a[v|t], C_v), C_v=future consensus",
+    "future_dispersion": "C(v)=median_{q=u..u+2} d(a[v|q], C_v)",
+    "pppr": "median over W of max(R(v)-C(v), 0)",
+    "metric_column_order": [
+      "arm",
+      "grip",
+      "joint"
+    ]
+  },
+  "event_score": {
+    "source": "Fresh current chunk only, cache[t,:,:]",
+    "formula": "0.5*gripper_transition_proximity + 0.25*arm_change + 0.25*arm_curvature",
+    "transition": "first sign change in current Fresh chunk after offset 0; no transition=0 proximity",
+    "arm_change": "clip(median normalized chunk-local first difference, 0, 1)",
+    "arm_curvature": "clip(median normalized chunk-local second difference, 0, 1)",
+    "tuning": "none; weights and clipping are fixed before outcome inspection"
+  },
+  "cache_inventory": {
+    "libero_object:task3": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_object_task3_fresh.npz",
+      "file": "libero_object_task3_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          133,
+          50,
+          7
+        ],
+        [
+          151,
+          50,
+          7
+        ],
+        [
+          139,
+          50,
+          7
+        ],
+        [
+          130,
+          50,
+          7
+        ],
+        [
+          132,
+          50,
+          7
+        ],
+        [
+          142,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          132,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_object:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_object_task5_fresh.npz",
+      "file": "libero_object_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          195,
+          50,
+          7
+        ],
+        [
+          135,
+          50,
+          7
+        ],
+        [
+          127,
+          50,
+          7
+        ],
+        [
+          200,
+          50,
+          7
+        ],
+        [
+          179,
+          50,
+          7
+        ],
+        [
+          136,
+          50,
+          7
+        ],
+        [
+          154,
+          50,
+          7
+        ],
+        [
+          196,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_spatial:task0": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_spatial_task0_fresh.npz",
+      "file": "libero_spatial_task0_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          71,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          69,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          77,
+          50,
+          7
+        ],
+        [
+          89,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          73,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          69,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_spatial:task4": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_spatial_task4_fresh.npz",
+      "file": "libero_spatial_task4_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          140,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          129,
+          50,
+          7
+        ],
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          135,
+          50,
+          7
+        ],
+        [
+          125,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_goal:task2": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_goal_task2_fresh.npz",
+      "file": "libero_goal_task2_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          86,
+          50,
+          7
+        ],
+        [
+          99,
+          50,
+          7
+        ],
+        [
+          102,
+          50,
+          7
+        ],
+        [
+          117,
+          50,
+          7
+        ],
+        [
+          114,
+          50,
+          7
+        ],
+        [
+          97,
+          50,
+          7
+        ],
+        [
+          105,
+          50,
+          7
+        ],
+        [
+          98,
+          50,
+          7
+        ],
+        [
+          94,
+          50,
+          7
+        ],
+        [
+          300,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_goal:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_goal_task5_fresh.npz",
+      "file": "libero_goal_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          300,
+          50,
+          7
+        ],
+        [
+          150,
+          50,
+          7
+        ],
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          118,
+          50,
+          7
+        ],
+        [
+          201,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          124,
+          50,
+          7
+        ],
+        [
+          147,
+          50,
+          7
+        ],
+        [
+          160,
+          50,
+          7
+        ],
+        [
+          124,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_10:task3": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_10_task3_fresh.npz",
+      "file": "libero_10_task3_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          224,
+          50,
+          7
+        ],
+        [
+          242,
+          50,
+          7
+        ],
+        [
+          243,
+          50,
+          7
+        ],
+        [
+          242,
+          50,
+          7
+        ],
+        [
+          231,
+          50,
+          7
+        ],
+        [
+          231,
+          50,
+          7
+        ],
+        [
+          464,
+          50,
+          7
+        ],
+        [
+          228,
+          50,
+          7
+        ],
+        [
+          227,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    },
+    "libero_10:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_10_task5_fresh.npz",
+      "file": "libero_10_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          246,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ],
+        [
+          317,
+          50,
+          7
+        ],
+        [
+          190,
+          50,
+          7
+        ],
+        [
+          427,
+          50,
+          7
+        ],
+        [
+          187,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ],
+        [
+          445,
+          50,
+          7
+        ],
+        [
+          315,
+          50,
+          7
+        ],
+        [
+          187,
+          50,
+          7
+        ]
+      ],
+      "action_dim": 7,
+      "postprocessed_actions_only": true,
+      "proprio_available": false
+    }
+  },
+  "cache_limitation": {
+    "available": [
+      "postprocessed action chunks"
+    ],
+    "not_available": [
+      "proprioceptive state",
+      "images",
+      "rewards",
+      "termination state"
+    ],
+    "retained_for_later": "current_chunks array is included in phase0_features.npz; source caches are untouched",
+    "training": "none"
+  },
+  "counts": {
+    "tasks": 8,
+    "episodes": 80,
+    "candidate_rows": 249376,
+    "valid_rows": 235936,
+    "masked_rows": 13440,
+    "current_chunk_rows": 15586,
+    "valid_rows_by_age": {
+      "1": 15346,
+      "2": 15266,
+      "3": 15186,
+      "4": 15106,
+      "5": 15026,
+      "6": 14946,
+      "7": 14866,
+      "8": 14786,
+      "9": 14706,
+      "10": 14626,
+      "11": 14546,
+      "12": 14466,
+      "13": 14386,
+      "14": 14306,
+      "15": 14226,
+      "16": 14146
+    },
+    "masked_rows_by_age": {
+      "1": 240,
+      "2": 320,
+      "3": 400,
+      "4": 480,
+      "5": 560,
+      "6": 640,
+      "7": 720,
+      "8": 800,
+      "9": 880,
+      "10": 960,
+      "11": 1040,
+      "12": 1120,
+      "13": 1200,
+      "14": 1280,
+      "15": 1360,
+      "16": 1440
+    },
+    "per_task": {
+      "libero_object:task3": {
+        "split": "development",
+        "episodes": 10,
+        "candidate_rows": 24016,
+        "valid_rows_by_age": {
+          "1": 1471,
+          "2": 1461,
+          "3": 1451,
+          "4": 1441,
+          "5": 1431,
+          "6": 1421,
+          "7": 1411,
+          "8": 1401,
+          "9": 1391,
+          "10": 1381,
+          "11": 1371,
+          "12": 1361,
+          "13": 1351,
+          "14": 1341,
+          "15": 1331,
+          "16": 1321
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1501
+      },
+      "libero_object:task5": {
+        "split": "held_out",
+        "episodes": 10,
+        "candidate_rows": 30112,
+        "valid_rows_by_age": {
+          "1": 1852,
+          "2": 1842,
+          "3": 1832,
+          "4": 1822,
+          "5": 1812,
+          "6": 1802,
+          "7": 1792,
+          "8": 1782,
+          "9": 1772,
+          "10": 1762,
+          "11": 1752,
+          "12": 1742,
+          "13": 1732,
+          "14": 1722,
+          "15": 1712,
+          "16": 1702
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1882
+      },
+      "libero_spatial:task0": {
+        "split": "development",
+        "episodes": 10,
+        "candidate_rows": 25088,
+        "valid_rows_by_age": {
+          "1": 1538,
+          "2": 1528,
+          "3": 1518,
+          "4": 1508,
+          "5": 1498,
+          "6": 1488,
+          "7": 1478,
+          "8": 1468,
+          "9": 1458,
+          "10": 1448,
+          "11": 1438,
+          "12": 1428,
+          "13": 1418,
+          "14": 1408,
+          "15": 1398,
+          "16": 1388
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1568
+      },
+      "libero_spatial:task4": {
+        "split": "held_out",
+        "episodes": 10,
+        "candidate_rows": 26000,
+        "valid_rows_by_age": {
+          "1": 1595,
+          "2": 1585,
+          "3": 1575,
+          "4": 1565,
+          "5": 1555,
+          "6": 1545,
+          "7": 1535,
+          "8": 1525,
+          "9": 1515,
+          "10": 1505,
+          "11": 1495,
+          "12": 1485,
+          "13": 1475,
+          "14": 1465,
+          "15": 1455,
+          "16": 1445
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1625
+      },
+      "libero_goal:task2": {
+        "split": "development",
+        "episodes": 10,
+        "candidate_rows": 19392,
+        "valid_rows_by_age": {
+          "1": 1182,
+          "2": 1172,
+          "3": 1162,
+          "4": 1152,
+          "5": 1142,
+          "6": 1132,
+          "7": 1122,
+          "8": 1112,
+          "9": 1102,
+          "10": 1092,
+          "11": 1082,
+          "12": 1072,
+          "13": 1062,
+          "14": 1052,
+          "15": 1042,
+          "16": 1032
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1212
+      },
+      "libero_goal:task5": {
+        "split": "held_out",
+        "episodes": 10,
+        "candidate_rows": 25472,
+        "valid_rows_by_age": {
+          "1": 1562,
+          "2": 1552,
+          "3": 1542,
+          "4": 1532,
+          "5": 1522,
+          "6": 1512,
+          "7": 1502,
+          "8": 1492,
+          "9": 1482,
+          "10": 1472,
+          "11": 1462,
+          "12": 1452,
+          "13": 1442,
+          "14": 1432,
+          "15": 1422,
+          "16": 1412
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 1592
+      },
+      "libero_10:task3": {
+        "split": "development",
+        "episodes": 10,
+        "candidate_rows": 45632,
+        "valid_rows_by_age": {
+          "1": 2822,
+          "2": 2812,
+          "3": 2802,
+          "4": 2792,
+          "5": 2782,
+          "6": 2772,
+          "7": 2762,
+          "8": 2752,
+          "9": 2742,
+          "10": 2732,
+          "11": 2722,
+          "12": 2712,
+          "13": 2702,
+          "14": 2692,
+          "15": 2682,
+          "16": 2672
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 2852
+      },
+      "libero_10:task5": {
+        "split": "held_out",
+        "episodes": 10,
+        "candidate_rows": 53664,
+        "valid_rows_by_age": {
+          "1": 3324,
+          "2": 3314,
+          "3": 3304,
+          "4": 3294,
+          "5": 3284,
+          "6": 3274,
+          "7": 3264,
+          "8": 3254,
+          "9": 3244,
+          "10": 3234,
+          "11": 3224,
+          "12": 3214,
+          "13": 3204,
+          "14": 3194,
+          "15": 3184,
+          "16": 3174
+        },
+        "masked_rows_by_age": {
+          "1": 30,
+          "2": 40,
+          "3": 50,
+          "4": 60,
+          "5": 70,
+          "6": 80,
+          "7": 90,
+          "8": 100,
+          "9": 110,
+          "10": 120,
+          "11": 130,
+          "12": 140,
+          "13": 150,
+          "14": 160,
+          "15": 170,
+          "16": 180
+        },
+        "current_chunk_rows": 3354
+      }
+    }
+  },
+  "condition_schedule_from_protocol": [
+    {
+      "name": "fresh",
+      "arm_source_age": 0,
+      "gripper_source_age": 0
+    },
+    {
+      "name": "fo4",
+      "arm_source_age": 0,
+      "gripper_source_age": 4
+    },
+    {
+      "name": "fo8",
+      "arm_source_age": 0,
+      "gripper_source_age": 8
+    },
+    {
+      "name": "fo16",
+      "arm_source_age": 0,
+      "gripper_source_age": 16
+    },
+    {
+      "name": "full_old4",
+      "arm_source_age": 4,
+      "gripper_source_age": 4
+    },
+    {
+      "name": "full_old8",
+      "arm_source_age": 8,
+      "gripper_source_age": 8
+    },
+    {
+      "name": "full_old16",
+      "arm_source_age": 16,
+      "gripper_source_age": 16
+    },
+    {
+      "name": "reverse4",
+      "arm_source_age": 4,
+      "gripper_source_age": 0
+    },
+    {
+      "name": "reverse8",
+      "arm_source_age": 8,
+      "gripper_source_age": 0
+    },
+    {
+      "name": "reverse16",
+      "arm_source_age": 16,
+      "gripper_source_age": 0
+    }
+  ]
+}
