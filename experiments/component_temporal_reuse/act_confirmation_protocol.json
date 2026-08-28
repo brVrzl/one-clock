@@ -1,0 +1,48 @@
+{
+  "protocol_version": 1,
+  "purpose": "Independent frozen-policy ACT confirmation of same-target temporal-source effects.",
+  "policy": {
+    "implementation": "official LeRobot ACT",
+    "weights_frozen": true,
+    "native_baseline_separate": true,
+    "confirmation_conditions": ["fresh", "fo16", "full_old16", "reverse16"],
+    "source_ages_steps": [16],
+    "target_time_semantics": "At environment step t, source query tau supplies target t from chunk index t-tau.",
+    "query_semantics": "One fresh ACT policy chunk query per environment step; interventions compose same-target candidates after native postprocessing.",
+    "action_groups": {"arm": [0, 1, 2, 3, 4, 5], "gripper": [6]},
+    "fo_is_not_gripper_hold": true,
+    "full_old_uses_one_source": true,
+    "reverse_is_old_arm_fresh_gripper": true
+  },
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "dataset": "HuggingFaceVLA/libero",
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "initial_state_ids": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
+    "episodes_per_task": 10,
+    "use_async_envs": false,
+    "observation_width": 256,
+    "observation_height": 256
+  },
+  "task_selection": {
+    "frozen_before_intervention_outcomes": true,
+    "basis": "completed native ACT tasks with non-floor/non-ceiling standard success, while retaining one predeclared LIBERO-10 task for later addition",
+    "tasks": [
+      {"suite": "libero_object", "task_id": 6, "task_name": "pick up the butter and place it in the basket", "native_act_successes": 8, "native_act_episodes": 10},
+      {"suite": "libero_spatial", "task_id": 2, "task_name": "pick up the black bowl from table center and place it on the plate", "native_act_successes": 9, "native_act_episodes": 10},
+      {"suite": "libero_goal", "task_id": 1, "task_name": "put the bowl on the stove", "native_act_successes": 10, "native_act_episodes": 10},
+      {"suite": "libero_10", "task_id": 3, "task_name": "put the black bowl in the bottom drawer of the cabinet and close it", "native_act_successes": 9, "native_act_episodes": 10, "status": "pending_checkpoint"}
+    ]
+  },
+  "analysis": {
+    "primary_contrasts": ["fo16_vs_reverse16", "full_old16_vs_fresh", "fo16_vs_fresh", "reverse16_vs_fresh"],
+    "paired_outcomes": true,
+    "outcome_selection_or_tuning": false,
+    "native_act_n_action_steps_not_changed": true
+  }
+}

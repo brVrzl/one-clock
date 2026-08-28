@@ -1,0 +1,118 @@
+{
+  "protocol_version": 1,
+  "purpose": "Feasibility test of asymmetric component-wise temporal source reuse with frozen SmolVLA.",
+  "checkpoint": "HuggingFaceVLA/smolvla_libero",
+  "checkpoint_local": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+  "checkpoint_revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "software_versions": {
+      "python": "3.12.3",
+      "lerobot": "0.4.4",
+      "libero": "0.1.1",
+      "pytorch": "2.7.1+cu128",
+      "mujoco": "3.3.1",
+      "gymnasium": "1.2.2",
+      "mujoco_gl": "egl"
+    },
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "initial_state_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "seeds": [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009],
+    "episodes_per_task": 10,
+    "use_async_envs": false,
+    "observation_width": 360,
+    "observation_height": 360
+  },
+  "task_selection_basis": "Frozen from native SmolVLA baseline success before intervention results were inspected; selected for non-floor/non-ceiling native success.",
+  "tasks": [
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "task_name": "pick up the bbq sauce and place it in the basket",
+      "native_baseline_successes": 9,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "task_name": "pick up the tomato sauce and place it in the basket",
+      "native_baseline_successes": 7,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "task_name": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "native_baseline_successes": 8,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "task_name": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+      "native_baseline_successes": 9,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "task_name": "put the wine bottle on top of the cabinet",
+      "native_baseline_successes": 7,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "task_name": "push the plate to the front of the stove",
+      "native_baseline_successes": 8,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "native_baseline_successes": 9,
+      "native_baseline_episodes": 10
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "task_name": "pick up the book and place it in the back compartment of the caddy",
+      "native_baseline_successes": 8,
+      "native_baseline_episodes": 10
+    }
+  ],
+  "source_ages_steps": [4, 8, 16],
+  "source_age_seconds": {
+    "4": 0.1333333333,
+    "8": 0.2666666667,
+    "16": 0.5333333333
+  },
+  "conditions": [
+    {"name": "fresh", "arm_source_age": 0, "gripper_source_age": 0},
+    {"name": "fo4", "arm_source_age": 0, "gripper_source_age": 4},
+    {"name": "fo8", "arm_source_age": 0, "gripper_source_age": 8},
+    {"name": "fo16", "arm_source_age": 0, "gripper_source_age": 16},
+    {"name": "full_old4", "arm_source_age": 4, "gripper_source_age": 4},
+    {"name": "full_old8", "arm_source_age": 8, "gripper_source_age": 8},
+    {"name": "full_old16", "arm_source_age": 16, "gripper_source_age": 16},
+    {"name": "reverse4", "arm_source_age": 4, "gripper_source_age": 0},
+    {"name": "reverse8", "arm_source_age": 8, "gripper_source_age": 0},
+    {"name": "reverse16", "arm_source_age": 16, "gripper_source_age": 0}
+  ],
+  "semantics": {
+    "target_time": "At environment step t, source query tau supplies target t from chunk index d=t-tau.",
+    "action_groups": {"arm": [0, 1, 2, 3, 4, 5], "gripper": [6]},
+    "old_gripper_is_not_hold": "The retained gripper value is chunk[d,6] from query t-d, not the previous applied command or a constant hold.",
+    "query_policy": "Query frozen SmolVLA once at every environment step; compose selected components after native postprocessing.",
+    "warmup": "For t<requested_age, use the fresh component because no source query at t-d exists; log actual source age 0 explicitly."
+  },
+  "analysis_sampling": {
+    "offline_states_per_task": 10,
+    "offline_state_rule": "first ten target steps t>=16 from episode 0 of the fresh query cache"
+  }
+}

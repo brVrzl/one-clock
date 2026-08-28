@@ -1,0 +1,2032 @@
+{
+  "analysis_status": "complete_aggregation_followup",
+  "protocol": {
+    "tasks": 8,
+    "episodes_per_task": 10,
+    "methods": [
+      "fresh",
+      "official_act_m001",
+      "physical_exp_beta003",
+      "cogact_alpha03",
+      "component_arm_fresh_gripper_act"
+    ]
+  },
+  "per_task": [
+    {
+      "task_key": "libero_10:task3",
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "success_count": 8,
+          "episodes": 10,
+          "success_rate": 0.8,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 242.5
+        },
+        "official_act_m001": {
+          "successes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "success_count": 1,
+          "episodes": 10,
+          "success_rate": 0.1,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 25.082366923799572,
+          "mean_gripper_source_age_steps": 25.082366923799572,
+          "successful_episode_completion_steps_mean": 217,
+          "vs_fresh": {
+            "candidate_successes": 1,
+            "reference_successes": 8,
+            "absolute_success_difference": -0.7,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 7,
+              "candidate_only_success": 0,
+              "both_success": 1
+            },
+            "exact_mcnemar_two_sided_p": 0.015625
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "success_count": 4,
+          "episodes": 10,
+          "success_rate": 0.4,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 17.231258660102995,
+          "mean_gripper_source_age_steps": 17.231258660102995,
+          "successful_episode_completion_steps_mean": 218,
+          "vs_fresh": {
+            "candidate_successes": 4,
+            "reference_successes": 8,
+            "absolute_success_difference": -0.4,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 4,
+              "candidate_only_success": 0,
+              "both_success": 4
+            },
+            "exact_mcnemar_two_sided_p": 0.125
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false
+          ],
+          "success_count": 5,
+          "episodes": 10,
+          "success_rate": 0.5,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 22.594410333866488,
+          "mean_gripper_source_age_steps": 22.594410333866488,
+          "successful_episode_completion_steps_mean": 262,
+          "vs_fresh": {
+            "candidate_successes": 5,
+            "reference_successes": 8,
+            "absolute_success_difference": -0.3,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 4,
+              "candidate_only_success": 1,
+              "both_success": 4
+            },
+            "exact_mcnemar_two_sided_p": 0.375
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "success_count": 5,
+          "episodes": 10,
+          "success_rate": 0.5,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 24.409438520873703,
+          "successful_episode_completion_steps_mean": 225.8,
+          "vs_fresh": {
+            "candidate_successes": 5,
+            "reference_successes": 8,
+            "absolute_success_difference": -0.3,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 3,
+              "candidate_only_success": 0,
+              "both_success": 5
+            },
+            "exact_mcnemar_two_sided_p": 0.25
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 5,
+        "reference_successes": 1,
+        "absolute_success_difference": 0.4,
+        "paired_contingency": {
+          "both_fail": 5,
+          "reference_only_success": 0,
+          "candidate_only_success": 4,
+          "both_success": 1
+        },
+        "exact_mcnemar_two_sided_p": 0.125
+      }
+    },
+    {
+      "task_key": "libero_10:task5",
+      "suite": "libero_10",
+      "task_id": 5,
+      "task_name": "pick up the book and place it in the back compartment of the caddy",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 298.8
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 22.849200035609076,
+          "mean_gripper_source_age_steps": 22.849200035609076,
+          "successful_episode_completion_steps_mean": 182.8,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 10,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 0,
+              "both_success": 10
+            },
+            "exact_mcnemar_two_sided_p": null
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 16.231084830618038,
+          "mean_gripper_source_age_steps": 16.231084830618038,
+          "successful_episode_completion_steps_mean": 185.6,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 10,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 0,
+              "both_success": 10
+            },
+            "exact_mcnemar_two_sided_p": null
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 21.115706003688466,
+          "mean_gripper_source_age_steps": 21.115706003688466,
+          "successful_episode_completion_steps_mean": 182.2,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 10,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 0,
+              "both_success": 10
+            },
+            "exact_mcnemar_two_sided_p": null
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 23.952338993973992,
+          "successful_episode_completion_steps_mean": 280.7,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 10,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 0,
+              "both_success": 10
+            },
+            "exact_mcnemar_two_sided_p": null
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 10,
+        "reference_successes": 10,
+        "absolute_success_difference": 0,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 0,
+          "candidate_only_success": 0,
+          "both_success": 10
+        },
+        "exact_mcnemar_two_sided_p": null
+      }
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "suite": "libero_goal",
+      "task_id": 2,
+      "task_name": "put the wine bottle on top of the cabinet",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 93.8
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "success_count": 7,
+          "episodes": 10,
+          "success_rate": 0.7,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 20.229920251749775,
+          "mean_gripper_source_age_steps": 20.229920251749775,
+          "successful_episode_completion_steps_mean": 84.14285714285714,
+          "vs_fresh": {
+            "candidate_successes": 7,
+            "reference_successes": 10,
+            "absolute_success_difference": -0.3,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 3,
+              "candidate_only_success": 0,
+              "both_success": 7
+            },
+            "exact_mcnemar_two_sided_p": 0.25
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "success_count": 8,
+          "episodes": 10,
+          "success_rate": 0.8,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 14.245176857681969,
+          "mean_gripper_source_age_steps": 14.245176857681969,
+          "successful_episode_completion_steps_mean": 84.25,
+          "vs_fresh": {
+            "candidate_successes": 8,
+            "reference_successes": 10,
+            "absolute_success_difference": -0.2,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 2,
+              "candidate_only_success": 0,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 17.73706425063363,
+          "mean_gripper_source_age_steps": 17.73706425063363,
+          "successful_episode_completion_steps_mean": 84.88888888888889,
+          "vs_fresh": {
+            "candidate_successes": 9,
+            "reference_successes": 10,
+            "absolute_success_difference": -0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 0,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 19.930739284856074,
+          "successful_episode_completion_steps_mean": 95.55555555555556,
+          "vs_fresh": {
+            "candidate_successes": 9,
+            "reference_successes": 10,
+            "absolute_success_difference": -0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 0,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 9,
+        "reference_successes": 7,
+        "absolute_success_difference": 0.2,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 1,
+          "candidate_only_success": 3,
+          "both_success": 6
+        },
+        "exact_mcnemar_two_sided_p": 0.625
+      }
+    },
+    {
+      "task_key": "libero_goal:task5",
+      "suite": "libero_goal",
+      "task_id": 5,
+      "task_name": "push the plate to the front of the stove",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 135.66666666666666
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 21.839087172113985,
+          "mean_gripper_source_age_steps": 21.839087172113985,
+          "successful_episode_completion_steps_mean": 153.7,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 15.276581683277147,
+          "mean_gripper_source_age_steps": 15.276581683277147,
+          "successful_episode_completion_steps_mean": 130.1,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 20.302678222232696,
+          "mean_gripper_source_age_steps": 20.302678222232696,
+          "successful_episode_completion_steps_mean": 145.44444444444446,
+          "vs_fresh": {
+            "candidate_successes": 9,
+            "reference_successes": 9,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 1,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 21.81316511056454,
+          "successful_episode_completion_steps_mean": 147.4,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 10,
+        "reference_successes": 10,
+        "absolute_success_difference": 0,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 0,
+          "candidate_only_success": 0,
+          "both_success": 10
+        },
+        "exact_mcnemar_two_sided_p": null
+      }
+    },
+    {
+      "task_key": "libero_object:task3",
+      "suite": "libero_object",
+      "task_id": 3,
+      "task_name": "pick up the bbq sauce and place it in the basket",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 135.55555555555554
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 21.391057820507353,
+          "mean_gripper_source_age_steps": 21.391057820507353,
+          "successful_episode_completion_steps_mean": 131.6,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 15.175182257762021,
+          "mean_gripper_source_age_steps": 15.175182257762021,
+          "successful_episode_completion_steps_mean": 126.1,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 19.48252623542354,
+          "mean_gripper_source_age_steps": 19.48252623542354,
+          "successful_episode_completion_steps_mean": 126.2,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 21.671810101639416,
+          "successful_episode_completion_steps_mean": 131.55555555555554,
+          "vs_fresh": {
+            "candidate_successes": 9,
+            "reference_successes": 9,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 1,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 9,
+        "reference_successes": 10,
+        "absolute_success_difference": -0.1,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 1,
+          "candidate_only_success": 0,
+          "both_success": 9
+        },
+        "exact_mcnemar_two_sided_p": 1.0
+      }
+    },
+    {
+      "task_key": "libero_object:task5",
+      "suite": "libero_object",
+      "task_id": 5,
+      "task_name": "pick up the tomato sauce and place it in the basket",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 146.88888888888889
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 20.924734979502766,
+          "mean_gripper_source_age_steps": 20.924734979502766,
+          "successful_episode_completion_steps_mean": 120.6,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 15.181153121403213,
+          "mean_gripper_source_age_steps": 15.181153121403213,
+          "successful_episode_completion_steps_mean": 126.4,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 19.424731573418093,
+          "mean_gripper_source_age_steps": 19.424731573418093,
+          "successful_episode_completion_steps_mean": 124.3,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 21.328489352473976,
+          "successful_episode_completion_steps_mean": 129.8,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 10,
+        "reference_successes": 10,
+        "absolute_success_difference": 0,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 0,
+          "candidate_only_success": 0,
+          "both_success": 10
+        },
+        "exact_mcnemar_two_sided_p": null
+      }
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "task_name": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 86.88888888888889
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 17.425233556399043,
+          "mean_gripper_source_age_steps": 17.425233556399043,
+          "successful_episode_completion_steps_mean": 74.4,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 12.923629662934848,
+          "mean_gripper_source_age_steps": 12.923629662934848,
+          "successful_episode_completion_steps_mean": 75,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 16.222233351032752,
+          "mean_gripper_source_age_steps": 16.222233351032752,
+          "successful_episode_completion_steps_mean": 74.5,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 17.479909285547162,
+          "successful_episode_completion_steps_mean": 75.5,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 9,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 9
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 10,
+        "reference_successes": 10,
+        "absolute_success_difference": 0,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 0,
+          "candidate_only_success": 0,
+          "both_success": 10
+        },
+        "exact_mcnemar_two_sided_p": null
+      }
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "task_name": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+      "methods": {
+        "fresh": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true
+          ],
+          "success_count": 8,
+          "episodes": 10,
+          "success_rate": 0.8,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 0.0,
+          "successful_episode_completion_steps_mean": 124.75
+        },
+        "official_act_m001": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "success_count": 8,
+          "episodes": 10,
+          "success_rate": 0.8,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 21.948686231151704,
+          "mean_gripper_source_age_steps": 21.948686231151704,
+          "successful_episode_completion_steps_mean": 131.625,
+          "vs_fresh": {
+            "candidate_successes": 8,
+            "reference_successes": 8,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 1,
+              "candidate_only_success": 1,
+              "both_success": 7
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "success_count": 9,
+          "episodes": 10,
+          "success_rate": 0.9,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 15.490999926697075,
+          "mean_gripper_source_age_steps": 15.490999926697075,
+          "successful_episode_completion_steps_mean": 132.11111111111111,
+          "vs_fresh": {
+            "candidate_successes": 9,
+            "reference_successes": 8,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 0,
+              "candidate_only_success": 1,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 19.797166615447985,
+          "mean_gripper_source_age_steps": 19.797166615447985,
+          "successful_episode_completion_steps_mean": 131.9,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 8,
+            "absolute_success_difference": 0.2,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "successes": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "success_count": 10,
+          "episodes": 10,
+          "success_rate": 1.0,
+          "policy_queries_per_environment_step": 1.0,
+          "mean_arm_source_age_steps": 0.0,
+          "mean_gripper_source_age_steps": 21.284226034710308,
+          "successful_episode_completion_steps_mean": 128.8,
+          "vs_fresh": {
+            "candidate_successes": 10,
+            "reference_successes": 8,
+            "absolute_success_difference": 0.2,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 8
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "candidate_successes": 10,
+        "reference_successes": 8,
+        "absolute_success_difference": 0.2,
+        "paired_contingency": {
+          "both_fail": 0,
+          "reference_only_success": 0,
+          "candidate_only_success": 2,
+          "both_success": 8
+        },
+        "exact_mcnemar_two_sided_p": 0.5
+      }
+    }
+  ],
+  "aggregates": {
+    "libero_object": {
+      "condition_metrics": {
+        "fresh": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 18,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 0.0
+        },
+        "official_act_m001": {
+          "task_macro_success_rate": 1.0,
+          "pooled_successes": 20,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 1.0,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 21.157896400005058,
+          "task_macro_mean_gripper_source_age_steps": 21.157896400005058
+        },
+        "physical_exp_beta003": {
+          "task_macro_success_rate": 1.0,
+          "pooled_successes": 20,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 1.0,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 15.178167689582617,
+          "task_macro_mean_gripper_source_age_steps": 15.178167689582617
+        },
+        "cogact_alpha03": {
+          "task_macro_success_rate": 1.0,
+          "pooled_successes": 20,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 1.0,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 19.453628904420817,
+          "task_macro_mean_gripper_source_age_steps": 19.453628904420817
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_success_rate": 0.95,
+          "pooled_successes": 19,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.95,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 21.500149727056694
+        }
+      },
+      "vs_fresh": {
+        "official_act_m001": {
+          "task_macro_absolute_success_difference": 0.1,
+          "pooled": {
+            "candidate_successes": 20,
+            "reference_successes": 18,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 18
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "physical_exp_beta003": {
+          "task_macro_absolute_success_difference": 0.1,
+          "pooled": {
+            "candidate_successes": 20,
+            "reference_successes": 18,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 18
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "cogact_alpha03": {
+          "task_macro_absolute_success_difference": 0.1,
+          "pooled": {
+            "candidate_successes": 20,
+            "reference_successes": 18,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 18
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_absolute_success_difference": 0.05,
+          "pooled": {
+            "candidate_successes": 19,
+            "reference_successes": 18,
+            "absolute_success_difference": 0.05,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 2,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "task_macro_absolute_success_difference": -0.05,
+        "pooled": {
+          "candidate_successes": 19,
+          "reference_successes": 20,
+          "absolute_success_difference": -0.05,
+          "paired_contingency": {
+            "both_fail": 0,
+            "reference_only_success": 1,
+            "candidate_only_success": 0,
+            "both_success": 19
+          },
+          "exact_mcnemar_two_sided_p": 1.0
+        }
+      }
+    },
+    "libero_spatial": {
+      "condition_metrics": {
+        "fresh": {
+          "task_macro_success_rate": 0.8500000000000001,
+          "pooled_successes": 17,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.85,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 0.0
+        },
+        "official_act_m001": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 18,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 19.686959893775374,
+          "task_macro_mean_gripper_source_age_steps": 19.686959893775374
+        },
+        "physical_exp_beta003": {
+          "task_macro_success_rate": 0.95,
+          "pooled_successes": 19,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.95,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 14.20731479481596,
+          "task_macro_mean_gripper_source_age_steps": 14.20731479481596
+        },
+        "cogact_alpha03": {
+          "task_macro_success_rate": 1.0,
+          "pooled_successes": 20,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 1.0,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 18.009699983240367,
+          "task_macro_mean_gripper_source_age_steps": 18.009699983240367
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_success_rate": 1.0,
+          "pooled_successes": 20,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 1.0,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 19.382067660128733
+        }
+      },
+      "vs_fresh": {
+        "official_act_m001": {
+          "task_macro_absolute_success_difference": 0.05,
+          "pooled": {
+            "candidate_successes": 18,
+            "reference_successes": 17,
+            "absolute_success_difference": 0.05,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 1,
+              "candidate_only_success": 2,
+              "both_success": 16
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "physical_exp_beta003": {
+          "task_macro_absolute_success_difference": 0.1,
+          "pooled": {
+            "candidate_successes": 19,
+            "reference_successes": 17,
+            "absolute_success_difference": 0.1,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 0,
+              "candidate_only_success": 2,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 0.5
+          }
+        },
+        "cogact_alpha03": {
+          "task_macro_absolute_success_difference": 0.15000000000000002,
+          "pooled": {
+            "candidate_successes": 20,
+            "reference_successes": 17,
+            "absolute_success_difference": 0.15,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 3,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 0.25
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_absolute_success_difference": 0.15000000000000002,
+          "pooled": {
+            "candidate_successes": 20,
+            "reference_successes": 17,
+            "absolute_success_difference": 0.15,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 0,
+              "candidate_only_success": 3,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 0.25
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "task_macro_absolute_success_difference": 0.1,
+        "pooled": {
+          "candidate_successes": 20,
+          "reference_successes": 18,
+          "absolute_success_difference": 0.1,
+          "paired_contingency": {
+            "both_fail": 0,
+            "reference_only_success": 0,
+            "candidate_only_success": 2,
+            "both_success": 18
+          },
+          "exact_mcnemar_two_sided_p": 0.5
+        }
+      }
+    },
+    "libero_goal": {
+      "condition_metrics": {
+        "fresh": {
+          "task_macro_success_rate": 0.95,
+          "pooled_successes": 19,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.95,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 0.0
+        },
+        "official_act_m001": {
+          "task_macro_success_rate": 0.85,
+          "pooled_successes": 17,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.85,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 21.03450371193188,
+          "task_macro_mean_gripper_source_age_steps": 21.03450371193188
+        },
+        "physical_exp_beta003": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 18,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 14.760879270479558,
+          "task_macro_mean_gripper_source_age_steps": 14.760879270479558
+        },
+        "cogact_alpha03": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 18,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 19.01987123643316,
+          "task_macro_mean_gripper_source_age_steps": 19.01987123643316
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_success_rate": 0.95,
+          "pooled_successes": 19,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.95,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 20.871952197710307
+        }
+      },
+      "vs_fresh": {
+        "official_act_m001": {
+          "task_macro_absolute_success_difference": -0.09999999999999999,
+          "pooled": {
+            "candidate_successes": 17,
+            "reference_successes": 19,
+            "absolute_success_difference": -0.1,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 3,
+              "candidate_only_success": 1,
+              "both_success": 16
+            },
+            "exact_mcnemar_two_sided_p": 0.625
+          }
+        },
+        "physical_exp_beta003": {
+          "task_macro_absolute_success_difference": -0.05,
+          "pooled": {
+            "candidate_successes": 18,
+            "reference_successes": 19,
+            "absolute_success_difference": -0.05,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 2,
+              "candidate_only_success": 1,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "task_macro_absolute_success_difference": -0.05,
+          "pooled": {
+            "candidate_successes": 18,
+            "reference_successes": 19,
+            "absolute_success_difference": -0.05,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 2,
+              "candidate_only_success": 1,
+              "both_success": 17
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_absolute_success_difference": 0.0,
+          "pooled": {
+            "candidate_successes": 19,
+            "reference_successes": 19,
+            "absolute_success_difference": 0,
+            "paired_contingency": {
+              "both_fail": 0,
+              "reference_only_success": 1,
+              "candidate_only_success": 1,
+              "both_success": 18
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "task_macro_absolute_success_difference": 0.1,
+        "pooled": {
+          "candidate_successes": 19,
+          "reference_successes": 17,
+          "absolute_success_difference": 0.1,
+          "paired_contingency": {
+            "both_fail": 0,
+            "reference_only_success": 1,
+            "candidate_only_success": 3,
+            "both_success": 16
+          },
+          "exact_mcnemar_two_sided_p": 0.625
+        }
+      }
+    },
+    "libero_10": {
+      "condition_metrics": {
+        "fresh": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 18,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 0.0
+        },
+        "official_act_m001": {
+          "task_macro_success_rate": 0.55,
+          "pooled_successes": 11,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.55,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 23.965783479704324,
+          "task_macro_mean_gripper_source_age_steps": 23.965783479704324
+        },
+        "physical_exp_beta003": {
+          "task_macro_success_rate": 0.7,
+          "pooled_successes": 14,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.7,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 16.731171745360516,
+          "task_macro_mean_gripper_source_age_steps": 16.731171745360516
+        },
+        "cogact_alpha03": {
+          "task_macro_success_rate": 0.75,
+          "pooled_successes": 15,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.75,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 21.855058168777475,
+          "task_macro_mean_gripper_source_age_steps": 21.855058168777475
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_success_rate": 0.75,
+          "pooled_successes": 15,
+          "pooled_episodes": 20,
+          "pooled_success_rate": 0.75,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 24.180888757423848
+        }
+      },
+      "vs_fresh": {
+        "official_act_m001": {
+          "task_macro_absolute_success_difference": -0.35,
+          "pooled": {
+            "candidate_successes": 11,
+            "reference_successes": 18,
+            "absolute_success_difference": -0.35,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 7,
+              "candidate_only_success": 0,
+              "both_success": 11
+            },
+            "exact_mcnemar_two_sided_p": 0.015625
+          }
+        },
+        "physical_exp_beta003": {
+          "task_macro_absolute_success_difference": -0.2,
+          "pooled": {
+            "candidate_successes": 14,
+            "reference_successes": 18,
+            "absolute_success_difference": -0.2,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 4,
+              "candidate_only_success": 0,
+              "both_success": 14
+            },
+            "exact_mcnemar_two_sided_p": 0.125
+          }
+        },
+        "cogact_alpha03": {
+          "task_macro_absolute_success_difference": -0.15,
+          "pooled": {
+            "candidate_successes": 15,
+            "reference_successes": 18,
+            "absolute_success_difference": -0.15,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 4,
+              "candidate_only_success": 1,
+              "both_success": 14
+            },
+            "exact_mcnemar_two_sided_p": 0.375
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_absolute_success_difference": -0.15,
+          "pooled": {
+            "candidate_successes": 15,
+            "reference_successes": 18,
+            "absolute_success_difference": -0.15,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 3,
+              "candidate_only_success": 0,
+              "both_success": 15
+            },
+            "exact_mcnemar_two_sided_p": 0.25
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "task_macro_absolute_success_difference": 0.2,
+        "pooled": {
+          "candidate_successes": 15,
+          "reference_successes": 11,
+          "absolute_success_difference": 0.2,
+          "paired_contingency": {
+            "both_fail": 5,
+            "reference_only_success": 0,
+            "candidate_only_success": 4,
+            "both_success": 11
+          },
+          "exact_mcnemar_two_sided_p": 0.125
+        }
+      }
+    },
+    "all_tasks": {
+      "condition_metrics": {
+        "fresh": {
+          "task_macro_success_rate": 0.9,
+          "pooled_successes": 72,
+          "pooled_episodes": 80,
+          "pooled_success_rate": 0.9,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 0.0
+        },
+        "official_act_m001": {
+          "task_macro_success_rate": 0.825,
+          "pooled_successes": 66,
+          "pooled_episodes": 80,
+          "pooled_success_rate": 0.825,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 21.46128587135416,
+          "task_macro_mean_gripper_source_age_steps": 21.46128587135416
+        },
+        "physical_exp_beta003": {
+          "task_macro_success_rate": 0.8875,
+          "pooled_successes": 71,
+          "pooled_episodes": 80,
+          "pooled_success_rate": 0.8875,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 15.219383375059664,
+          "task_macro_mean_gripper_source_age_steps": 15.219383375059664
+        },
+        "cogact_alpha03": {
+          "task_macro_success_rate": 0.9125,
+          "pooled_successes": 73,
+          "pooled_episodes": 80,
+          "pooled_success_rate": 0.9125,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 19.584564573217957,
+          "task_macro_mean_gripper_source_age_steps": 19.584564573217957
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_success_rate": 0.9125,
+          "pooled_successes": 73,
+          "pooled_episodes": 80,
+          "pooled_success_rate": 0.9125,
+          "task_macro_queries_per_environment_step": 1.0,
+          "task_macro_mean_arm_source_age_steps": 0.0,
+          "task_macro_mean_gripper_source_age_steps": 21.483764585579898
+        }
+      },
+      "vs_fresh": {
+        "official_act_m001": {
+          "task_macro_absolute_success_difference": -0.07499999999999998,
+          "pooled": {
+            "candidate_successes": 66,
+            "reference_successes": 72,
+            "absolute_success_difference": -0.075,
+            "paired_contingency": {
+              "both_fail": 3,
+              "reference_only_success": 11,
+              "candidate_only_success": 5,
+              "both_success": 61
+            },
+            "exact_mcnemar_two_sided_p": 0.210113525390625
+          }
+        },
+        "physical_exp_beta003": {
+          "task_macro_absolute_success_difference": -0.0125,
+          "pooled": {
+            "candidate_successes": 71,
+            "reference_successes": 72,
+            "absolute_success_difference": -0.0125,
+            "paired_contingency": {
+              "both_fail": 3,
+              "reference_only_success": 6,
+              "candidate_only_success": 5,
+              "both_success": 66
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "cogact_alpha03": {
+          "task_macro_absolute_success_difference": 0.012500000000000004,
+          "pooled": {
+            "candidate_successes": 73,
+            "reference_successes": 72,
+            "absolute_success_difference": 0.0125,
+            "paired_contingency": {
+              "both_fail": 1,
+              "reference_only_success": 6,
+              "candidate_only_success": 7,
+              "both_success": 66
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        },
+        "component_arm_fresh_gripper_act": {
+          "task_macro_absolute_success_difference": 0.012500000000000004,
+          "pooled": {
+            "candidate_successes": 73,
+            "reference_successes": 72,
+            "absolute_success_difference": 0.0125,
+            "paired_contingency": {
+              "both_fail": 2,
+              "reference_only_success": 5,
+              "candidate_only_success": 6,
+              "both_success": 67
+            },
+            "exact_mcnemar_two_sided_p": 1.0
+          }
+        }
+      },
+      "component_vs_official_act": {
+        "task_macro_absolute_success_difference": 0.08750000000000001,
+        "pooled": {
+          "candidate_successes": 73,
+          "reference_successes": 66,
+          "absolute_success_difference": 0.0875,
+          "paired_contingency": {
+            "both_fail": 5,
+            "reference_only_success": 2,
+            "candidate_only_success": 9,
+            "both_success": 64
+          },
+          "exact_mcnemar_two_sided_p": 0.0654296875
+        }
+      }
+    }
+  }
+}

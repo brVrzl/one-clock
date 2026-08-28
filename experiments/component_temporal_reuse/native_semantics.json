@@ -1,0 +1,17 @@
+{
+  "checkpoint": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+  "task": "libero_object:3",
+  "seed": 1000,
+  "chunk_size": 50,
+  "n_action_steps": 1,
+  "predict_action_chunk_first_shape": [
+    1,
+    7
+  ],
+  "select_action_shape": [
+    1,
+    7
+  ],
+  "max_abs_error": 0.0,
+  "fresh_semantics_match": true
+}

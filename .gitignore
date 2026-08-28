@@ -1,3 +1,27 @@
 __pycache__/
 .pytest_cache/
 experiments/runs/
+
+# Generated LIBERO runtime artifacts; canonical analyses and runners are added explicitly.
+experiments/component_temporal_reuse/pilot_results*.json
+experiments/component_temporal_reuse/query_cache/
+experiments/component_temporal_reuse/logs/
+experiments/component_temporal_reuse/aggregation/logs/
+experiments/component_temporal_reuse/aggregation/aggregation_gpu*.json
+experiments/component_temporal_reuse/aggregation/*.progress.json
+experiments/component_temporal_reuse/act_confirmation/logs/
+experiments/component_temporal_reuse/act_confirmation/progress/
+experiments/component_temporal_reuse/act_confirmation/goal1.json
+experiments/component_temporal_reuse/act_confirmation/libero10_task3.json
+experiments/component_temporal_reuse/act_confirmation/object6.json
+experiments/component_temporal_reuse/act_confirmation/spatial2.json
+experiments/component_temporal_reuse/*.progress.json
+experiments/component_temporal_reuse/pilot.log
+experiments/standard_libero_baselines/act_final/
+experiments/standard_libero_baselines/logs/
+experiments/standard_libero_baselines/diagnostic_frames/
+experiments/standard_libero_baselines/act_pilot_*/
+experiments/standard_libero_baselines/act_corrected_object_task0/
+experiments/standard_libero_baselines/act_diagnostic_*/
+experiments/standard_libero_baselines/smolvla_*_smoke*/
+experiments/standard_libero_baselines/smolvla_*_full/
