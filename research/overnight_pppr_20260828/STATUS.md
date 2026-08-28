@@ -3,10 +3,11 @@
 ## Repository
 
 - Branch: `exp/libero-component-temporal-reuse`
-- Starting and pre-milestone HEAD: `38046a961cd796b30b554c9de407d64aa82518cf`
-- Starting tracked status: clean.
+- Starting HEAD: `38046a961cd796b30b554c9de407d64aa82518cf`.
+- Validated PPPR result commit: `6890755` (`research: validate PPPR control relevance`), pushed to `origin/exp/libero-component-temporal-reuse`.
+- Tracked status after the PPPR result commit: clean; this final status-only handoff update follows that commit.
 - Preserved local/untracked experiment directories: `act_temporal_ensemble_blind/`, `act_temporal_ensemble_blind_corrected_0404/`, and `two_clock_dev/`.
-- Coherent PPPR milestone prepared for commit/push after this report. The resulting hash is recorded in the final operator handoff and branch log rather than self-referenced here.
+- Commits pushed tonight: the validated PPPR result commit `6890755` and the status-only handoff commit containing this update. Use `git log -2` for the latter's non-self-referential hash.
 
 ## External ACT ensemble audit
 
