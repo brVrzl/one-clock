@@ -8,18 +8,9 @@
     "libero_10:task3"
   ],
   "episodes": 40,
-  "new_method_results_dir": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_dev/act/results",
-  "authoritative_baseline_results_dir": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/act_h16/results",
-  "authoritative_baseline_sources": {
-    "libero_object:task3": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/act_h16/results/libero_object_task3.json",
-    "libero_spatial:task0": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/act_h16/results/libero_spatial_task0.json",
-    "libero_goal:task2": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/act_h16/results/libero_goal_task2.json",
-    "libero_10:task3": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/act_h16/results/libero_10_task3.json"
-  },
   "shared_kernel": "dense_equivalent_te",
   "sol_audit_commit": "33463ab4eb0ff1c64f794df7c76330bb7b56c143",
   "sol_repaired_rollout_commit": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
-  "latest_coordination_commit": "606b52c95abb67cee5c58d8635a214f3d71ecd7c",
   "methods": {
     "M0_h16": {
       "episodes": 40,
@@ -260,61 +251,6 @@
   },
   "contrasts": [
     {
-      "candidate": "M1_shared_te_h16",
-      "reference": "M0_h16",
-      "candidate_successes": 23,
-      "reference_successes": 32,
-      "paired_net": -0.225,
-      "candidate_only": 2,
-      "reference_only": 11,
-      "both_success": 21,
-      "both_fail": 6,
-      "exact_mcnemar_two_sided_p": 0.0224609375,
-      "paired_net_wins": -9,
-      "per_task": {
-        "libero_object:task3": {
-          "candidate_successes": 4,
-          "reference_successes": 8,
-          "paired_net": -0.4,
-          "candidate_only": 1,
-          "reference_only": 5,
-          "both_success": 3,
-          "both_fail": 1,
-          "exact_mcnemar_two_sided_p": 0.21875
-        },
-        "libero_spatial:task0": {
-          "candidate_successes": 5,
-          "reference_successes": 7,
-          "paired_net": -0.2,
-          "candidate_only": 0,
-          "reference_only": 2,
-          "both_success": 5,
-          "both_fail": 3,
-          "exact_mcnemar_two_sided_p": 0.5
-        },
-        "libero_goal:task2": {
-          "candidate_successes": 9,
-          "reference_successes": 10,
-          "paired_net": -0.1,
-          "candidate_only": 0,
-          "reference_only": 1,
-          "both_success": 9,
-          "both_fail": 0,
-          "exact_mcnemar_two_sided_p": 1.0
-        },
-        "libero_10:task3": {
-          "candidate_successes": 5,
-          "reference_successes": 7,
-          "paired_net": -0.2,
-          "candidate_only": 1,
-          "reference_only": 3,
-          "both_success": 4,
-          "both_fail": 2,
-          "exact_mcnemar_two_sided_p": 0.625
-        }
-      }
-    },
-    {
       "candidate": "M2_shared_cogact_h16",
       "reference": "M1_shared_te_h16",
       "candidate_successes": 23,
@@ -480,8 +416,8 @@
       }
     }
   ],
-  "decision_label": "GROUP_COGACT_NULL",
-  "interpretation": "M1 is harmful relative to hard execution; M2 and M3 produce identical episode outcomes to M1 on all 40 paired episodes, so neither recovers useful history and group conditioning adds no outcome benefit.",
+  "decision_label": "GROUP_COGACT_WHOLE_ONLY",
+  "interpretation": "M2 and M3 changed actions but produced no paired episode-outcome gains over the harmful shared reference; M3 did not add outcome benefit beyond whole-action compatibility.",
   "h_temp_posthoc": {
     "source": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_offline/h_temp_frozen.json",
     "task_values": [
@@ -503,49 +439,6 @@
       }
     ],
     "relations": {
-      "M1_shared_te_h16_over_M0_h16": {
-        "task_gains": [
-          {
-            "task": "libero_object:task3",
-            "gain": -0.4
-          },
-          {
-            "task": "libero_spatial:task0",
-            "gain": -0.2
-          },
-          {
-            "task": "libero_goal:task2",
-            "gain": -0.1
-          },
-          {
-            "task": "libero_10:task3",
-            "gain": -0.2
-          }
-        ],
-        "spearman_H_temp_vs_success_gain": 0.9486832980505139,
-        "counterexamples": [
-          {
-            "task": "libero_object:task3",
-            "H_temp": 0.16335311134656266,
-            "gain": -0.4
-          },
-          {
-            "task": "libero_spatial:task0",
-            "H_temp": 0.21467979550361635,
-            "gain": -0.2
-          },
-          {
-            "task": "libero_goal:task2",
-            "H_temp": 0.2464374214410782,
-            "gain": -0.1
-          },
-          {
-            "task": "libero_10:task3",
-            "H_temp": 0.23282331526279446,
-            "gain": -0.2
-          }
-        ]
-      },
       "M2_shared_cogact_h16_over_M1_shared_te_h16": {
         "task_gains": [
           {

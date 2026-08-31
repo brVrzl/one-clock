@@ -26,11 +26,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parents[1]
 SPARSE_ROOT = REPO_ROOT / "experiments" / "sparse_temporal_ensemble_dev"
+SOL_AUDIT_ROOT = REPO_ROOT / "experiments" / "sparse_temporal_ensemble_age_audit"
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(SPARSE_ROOT))
 sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(SOL_AUDIT_ROOT))
 
 from group_memory_common import RUNNABLE_METHODS, compose_method  # noqa: E402
+from dense_equivalent_executor import DenseEquivalentSparseExecutor  # noqa: E402
 from sparse_executor import SparseExecutor  # noqa: E402
 
 
@@ -86,7 +89,14 @@ def task_map(protocol: dict[str, Any]) -> dict[str, dict[str, Any]]:
     }
 
 
-def infer_chunk(observation, env, policy, processors, torch) -> np.ndarray:
+def infer_chunk(
+    observation,
+    env,
+    policy,
+    processors,
+    torch,
+    processed_capture: dict[str, np.ndarray] | None = None,
+) -> np.ndarray:
     from lerobot.envs.utils import add_envs_task, preprocess_observation
     from lerobot.utils.constants import ACTION
 
@@ -95,6 +105,8 @@ def infer_chunk(observation, env, policy, processors, torch) -> np.ndarray:
     batch = add_envs_task(env, batch)
     batch = env_preprocessor(batch)
     batch = preprocessor(batch)
+    if processed_capture is not None:
+        processed_capture.update(flatten_numeric(batch))
     with torch.inference_mode():
         chunk = postprocessor(policy.predict_action_chunk(batch))
         chunk = env_postprocessor({ACTION: chunk})[ACTION]
@@ -137,6 +149,11 @@ def flatten_numeric(value: Any, prefix: str = "") -> dict[str, np.ndarray]:
         for index, item in enumerate(value):
             result.update(flatten_numeric(item, f"{prefix}[{index}]"))
         return result
+    if hasattr(value, "detach") and hasattr(value, "cpu"):
+        try:
+            value = value.detach().cpu().numpy()
+        except Exception:
+            return {}
     try:
         array = np.asarray(value)
     except Exception:
@@ -167,6 +184,24 @@ def get_sim_state(env) -> np.ndarray:
     return np.asarray(env.envs[0]._env.get_sim_state()).copy()
 
 
+def make_candidate_executor(method: str) -> SparseExecutor:
+    if method == "M1_shared_te_h16":
+        return DenseEquivalentSparseExecutor(
+            cadence=16,
+            prediction_horizon=100,
+            mode="dense_equivalent_te",
+            coefficient=0.01,
+            action_dim=7,
+        )
+    return SparseExecutor(
+        cadence=16,
+        prediction_horizon=100,
+        mode="hard",
+        coefficient=0.01,
+        action_dim=7,
+    )
+
+
 def run_episode(
     *,
     env,
@@ -193,15 +228,10 @@ def run_episode(
     policy.reset()
     observation, _ = env.reset(seed=[int(env_seed)])
     initial_observation = flatten_numeric(copy.deepcopy(observation)) if capture_pairing_prefix else None
+    initial_processed_input: dict[str, np.ndarray] | None = {} if capture_pairing_prefix else None
     initial_sim_state = get_sim_state(env) if capture_pairing_prefix else None
     processors = tuple(processors)
-    executor = SparseExecutor(
-        cadence=16,
-        prediction_horizon=100,
-        mode="hard",
-        coefficient=0.01,
-        action_dim=7,
-    )
+    executor = make_candidate_executor(method)
     step_log: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []
     prefix_actions: list[np.ndarray] = []
@@ -218,7 +248,14 @@ def run_episode(
             started = time.perf_counter()
 
             def query() -> np.ndarray:
-                return infer_chunk(observation, env, policy, processors, torch)
+                return infer_chunk(
+                    observation,
+                    env,
+                    policy,
+                    processors,
+                    torch,
+                    processed_capture=initial_processed_input,
+                )
 
             result = executor.step(target_step, query)
             query_latency = time.perf_counter() - started
@@ -297,6 +334,7 @@ def run_episode(
     if capture_pairing_prefix:
         result_record["pairing_trace"] = {
             "initial_observation": initial_observation,
+            "initial_processed_input": initial_processed_input,
             "initial_sim_state": initial_sim_state,
             "initial_chunk": initial_chunk,
             "prefix_actions": np.stack(prefix_actions),
@@ -310,6 +348,7 @@ def trace_summary(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[
     first = reference["pairing_trace"]
     second = candidate["pairing_trace"]
     initial_obs = compare_array_maps(first["initial_observation"], second["initial_observation"])
+    processed = compare_array_maps(first["initial_processed_input"], second["initial_processed_input"])
     post_obs = [
         compare_array_maps(a, b)
         for a, b in zip(first["prefix_observations"], second["prefix_observations"], strict=True)
@@ -320,9 +359,17 @@ def trace_summary(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[
     )
     chunk = compare_array_maps({"chunk": first["initial_chunk"]}, {"chunk": second["initial_chunk"]})
     actions = compare_array_maps({"prefix": first["prefix_actions"]}, {"prefix": second["prefix_actions"]})
-    exact = initial_obs["exact"] and sim["exact"] and chunk["exact"] and actions["exact"] and all(row["exact"] for row in post_obs)
+    exact = (
+        initial_obs["exact"]
+        and processed["exact"]
+        and sim["exact"]
+        and chunk["exact"]
+        and actions["exact"]
+        and all(row["exact"] for row in post_obs)
+    )
     maximum = max(
         initial_obs["max_absolute_difference"],
+        processed["max_absolute_difference"],
         sim["max_absolute_difference"],
         chunk["max_absolute_difference"],
         actions["max_absolute_difference"],
@@ -332,6 +379,7 @@ def trace_summary(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[
         "candidate_method": candidate["method"],
         "reference_method": reference["method"],
         "initial_observation": initial_obs,
+        "initial_processed_input": processed,
         "initial_and_prefix_simulator_states": sim,
         "initial_predicted_chunk": chunk,
         "common_prefix_actions_t0_t15": actions,

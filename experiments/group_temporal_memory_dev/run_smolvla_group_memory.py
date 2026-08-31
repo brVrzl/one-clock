@@ -19,11 +19,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parents[1]
 SPARSE_ROOT = REPO_ROOT / "experiments" / "sparse_temporal_ensemble_dev"
+SOL_AUDIT_ROOT = REPO_ROOT / "experiments" / "sparse_temporal_ensemble_age_audit"
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(SPARSE_ROOT))
 sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(SOL_AUDIT_ROOT))
 
 from group_memory_common import RUNNABLE_METHODS, compose_method, smolvla_query_seed  # noqa: E402
+from dense_equivalent_executor import DenseEquivalentSparseExecutor  # noqa: E402
 from sparse_executor import SparseExecutor  # noqa: E402
 
 
@@ -151,6 +154,24 @@ def get_sim_state(env) -> np.ndarray:
     return np.asarray(env.envs[0]._env.get_sim_state()).copy()
 
 
+def make_candidate_executor(method: str):
+    if method == "M1_shared_te_h16":
+        return DenseEquivalentSparseExecutor(
+            cadence=16,
+            prediction_horizon=50,
+            mode="dense_equivalent_te",
+            coefficient=0.01,
+            action_dim=7,
+        )
+    return SparseExecutor(
+        cadence=16,
+        prediction_horizon=50,
+        mode="hard",
+        coefficient=0.01,
+        action_dim=7,
+    )
+
+
 def run_episode(
     *,
     env,
@@ -175,7 +196,7 @@ def run_episode(
     observation, _ = env.reset(seed=[int(env_seed)])
     initial_observation = flatten_numeric(copy.deepcopy(observation)) if capture_prefix else None
     initial_sim_state = get_sim_state(env) if capture_prefix else None
-    executor = SparseExecutor(cadence=16, prediction_horizon=50, mode="hard", coefficient=0.01, action_dim=7)
+    executor = make_candidate_executor(method)
     step_log: list[dict[str, Any]] = []
     query_log: list[dict[str, Any]] = []
     prefix_actions: list[np.ndarray] = []

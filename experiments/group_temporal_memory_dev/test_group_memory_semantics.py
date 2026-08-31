@@ -18,9 +18,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "experiments" / "sparse_temporal_ensemble_dev"))
 
-from group_memory_common import compose_method  # noqa: E402
+from group_memory_common import compose_method, paired_counts  # noqa: E402
 from freeze_h_temp import DEV_TASKS, freeze  # noqa: E402
 from group_memory_operators import (  # noqa: E402
     ARM_DIM,
@@ -109,6 +110,30 @@ def test_m2_shared_weight_invariant_and_m3_group_split() -> None:
     assert not np.array_equal(m2_output, m3_output)
 
 
+def test_m1_m2_m3_receive_identical_candidate_pool_on_fixed_trajectory() -> None:
+    executors = [
+        SparseExecutor(cadence=16, prediction_horizon=100, mode="hard")
+        for _ in range(3)
+    ]
+    candidate_snapshots = []
+    for target in range(33):
+        results = [
+            executor.step(target, lambda target=target: chunk(target))
+            for executor in executors
+        ]
+        candidate_snapshots.append(
+            [
+                (result.candidates.source_query_steps.copy(), result.candidates.offsets.copy(), result.candidates.actions.copy())
+                for result in results
+            ]
+        )
+    for snapshot in candidate_snapshots:
+        for candidate in snapshot[1:]:
+            np.testing.assert_array_equal(candidate[0], snapshot[0][0])
+            np.testing.assert_array_equal(candidate[1], snapshot[0][1])
+            np.testing.assert_array_equal(candidate[2], snapshot[0][2])
+
+
 def test_m3_reduces_to_m2_when_compatibility_is_identical() -> None:
     candidates = np.asarray(
         [
@@ -166,3 +191,7 @@ def test_h_temp_freeze_is_outcome_blind_and_development_only(tmp_path: Path) -> 
     assert frozen["outcomes_loaded"] is False
     assert [row["task_key"] for row in frozen["task_values"]] == list(DEV_TASKS)
     assert all("success" not in row for row in frozen["task_values"])
+
+
+def test_exact_mcnemar_zero_discordance_is_one() -> None:
+    assert paired_counts([True, False], [True, False])["exact_mcnemar_two_sided_p"] == 1.0

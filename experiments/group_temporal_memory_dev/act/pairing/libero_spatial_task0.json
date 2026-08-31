@@ -1,0 +1,100 @@
+{
+  "status": "paired_common_prefix_pass",
+  "task": "libero_spatial:task0",
+  "state_id": 10,
+  "environment_seed": 2000,
+  "methods": [
+    "M0_h16",
+    "M1_shared_te_h16",
+    "M2_shared_cogact_h16",
+    "M3_group_cogact_h16"
+  ],
+  "reference_method": "M0_h16",
+  "comparisons": [
+    {
+      "candidate_method": "M1_shared_te_h16",
+      "reference_method": "M0_h16",
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_and_prefix_simulator_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_predicted_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions_t0_t15": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "post_action_observations_exact": true,
+      "post_action_observations_max_absolute_difference": 0.0,
+      "passed": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "candidate_method": "M2_shared_cogact_h16",
+      "reference_method": "M0_h16",
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_and_prefix_simulator_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_predicted_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions_t0_t15": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "post_action_observations_exact": true,
+      "post_action_observations_max_absolute_difference": 0.0,
+      "passed": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "candidate_method": "M3_group_cogact_h16",
+      "reference_method": "M0_h16",
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_and_prefix_simulator_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_predicted_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions_t0_t15": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "post_action_observations_exact": true,
+      "post_action_observations_max_absolute_difference": 0.0,
+      "passed": true,
+      "max_absolute_difference": 0.0
+    }
+  ],
+  "passed": true
+}

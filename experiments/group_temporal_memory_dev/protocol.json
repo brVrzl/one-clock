@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "status": "prepared_with_sol_repaired_h16_trio_available",
+  "status": "act_complete_group_cogact_null_smolvla_not_reached",
   "purpose": "Development test of group-conditioned soft temporal fusion with a shared newest joint intent.",
   "offline_prior": {
     "commit": "095a1893c949fb55d844e086f43022ad4df72b52",
@@ -16,6 +16,7 @@
     "sol_pairing_artifact": "../sparse_temporal_ensemble_age_audit/pairing_audit_task10_fresh_env_trio/summary.json",
     "sol_kernel_decision": "DENSE_EQUIVALENT_TE",
     "sol_repaired_rollout_commit": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
+    "latest_coordination_commit": "606b52c95abb67cee5c58d8635a214f3d71ecd7c",
     "sol_repaired_rollout_requirement": "Sol's repaired h16 trio is complete. Any group-memory rollout remains separately gated and must construct a fresh environment for each condition/state using exactly identical task/state/environment seed settings.",
     "sol_repaired_h16_pairing": {
       "fresh_environment_per_condition_state": true,
@@ -118,7 +119,7 @@
       "description": "Newest sparse chunk only."
     },
     "M1_shared_te_h16": {
-      "status": "implemented_dense_equivalent_pending_trio",
+      "status": "authoritative_repaired_result_reused_not_rerun",
       "equation": "a_t = sum_q normalize(b_q) a_{t|q}",
       "description": "One Sol-selected shared temporal weight vector for all seven dimensions."
     },
@@ -154,29 +155,31 @@
   },
   "pairing": {
     "required_before_full_rollout": true,
-    "validator": "At least state 10/seed 2000 must show identical reset observations, initial simulator state, initial raw chunk, actions t=0..15, post-action simulator states, and post-action observations across all methods.",
+    "validator": "At least state 10/seed 2000 must show identical reset observations, processed policy inputs, initial simulator state, initial raw chunk, actions t=0..15, post-action simulator states, and post-action observations across all methods.",
     "first_requery": 16,
     "separate_environment_resets": true,
     "failure_action": "Stop and do not launch the panel."
   },
   "execution_stages": {
     "stage_1_act": {
-      "methods": ["M0_h16", "M1_shared_te_h16", "M2_shared_cogact_h16", "M3_group_cogact_h16"],
+      "status": "complete",
+      "methods": ["M2_shared_cogact_h16", "M3_group_cogact_h16"],
+      "references_reused": ["M0_h16", "M1_shared_te_h16"],
       "m4": "not scheduled unless a valid online reliability interface is added before freeze",
       "new_method_budget": "M2-M3 up to 80 episodes; M4 up to 40 if available. M0/M1 may be reused only after Sol compatibility confirmation.",
       "gate": "Interpret M2->M3 before Stage 2."
     },
     "stage_2_smolvla": {
-      "status": "conditional_on_interpretable_act",
+      "status": "not_reached_act_null",
       "methods": ["M2_shared_cogact_h16", "M3_group_cogact_h16"],
       "m4": "best valid M4 only if available",
-      "budget": "up to 120 episodes for new SmolVLA methods",
+      "budget": "up to 80 episodes for new SmolVLA methods",
       "gate": "Do not start before ACT gate."
     }
   },
   "analysis": {
     "aggregation_units": ["episode", "task"],
-    "primary_comparisons": ["M2_vs_M1", "M3_vs_M2", "M4_vs_M3", "M4_vs_M2"],
+    "primary_comparisons": ["M1_vs_M0", "M2_vs_M1", "M3_vs_M2", "M3_vs_M0"],
     "paired_statistics": ["candidate_only", "reference_only", "paired_net", "exact_two_sided_McNemar"],
     "descriptive_provenance": ["query_count", "query_rate", "mean_candidate_count", "mean_weighted_source_age"],
     "frozen_H_temp": "../group_temporal_memory_offline/h_temp_frozen.json; outcome-blind artifact, frozen_before_closed_loop_comparison=true",

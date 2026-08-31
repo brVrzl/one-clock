@@ -36,6 +36,7 @@ def import_common():
     import sys
 
     sys.path.insert(0, str(ROOT))
+    sys.path.insert(0, str(ROOT.parents[1]))
     from group_memory_common import paired_counts
 
     return paired_counts
@@ -53,7 +54,10 @@ def episode_key(task: str, episode: dict[str, Any]) -> tuple[str, int, int]:
     )
 
 
-def load_policy_results(results_dir: Path) -> dict[str, dict[str, Any]]:
+def load_policy_results(
+    results_dir: Path,
+    baseline_results_dir: Path | None = None,
+) -> dict[str, dict[str, Any]]:
     loaded: dict[str, dict[str, Any]] = {}
     for task in TASKS:
         path = results_dir / f"{slug(task)}.json"
@@ -64,6 +68,24 @@ def load_policy_results(results_dir: Path) -> dict[str, dict[str, Any]]:
             raise RuntimeError(f"incomplete result shard: {path}")
         if data.get("task") != task:
             raise RuntimeError(f"task identity mismatch in {path}")
+        if baseline_results_dir is not None:
+            baseline_path = baseline_results_dir / f"{slug(task)}.json"
+            baseline = json.loads(baseline_path.read_text())
+            if baseline.get("status") not in {None, "complete"} and "finished_at" not in baseline:
+                raise RuntimeError(f"invalid repaired baseline shard: {baseline_path}")
+            if baseline.get("fresh_environment_per_condition_state") is not True:
+                raise RuntimeError(f"baseline is not the repaired fresh-env panel: {baseline_path}")
+            baseline_methods = baseline.get("methods_result", {})
+            if "hard_h16" not in baseline_methods or "dense_equivalent_te_h16" not in baseline_methods:
+                raise RuntimeError(f"repaired baseline missing hard/dense methods: {baseline_path}")
+            if any(method in data["methods_result"] for method in ("M0_h16", "M1_shared_te_h16")):
+                raise RuntimeError("new group-memory results must not overwrite authoritative M0/M1")
+            data["methods_result"] = {
+                "M0_h16": baseline_methods["hard_h16"],
+                "M1_shared_te_h16": baseline_methods["dense_equivalent_te_h16"],
+                **data["methods_result"],
+            }
+            data["authoritative_baseline_source"] = str(baseline_path.resolve())
         loaded[task] = data
     return loaded
 
@@ -89,6 +111,22 @@ def summarize_method(results: dict[str, dict[str, Any]], method: str) -> dict[st
     successes = [bool(row["success"]) for row in ordered]
     total_steps = sum(int(row["environment_steps"]) for row in ordered)
     total_queries = sum(int(row["policy_queries"]) for row in ordered)
+
+    def episode_mean(row: dict[str, Any], modern_key: str, legacy_key: str, step_keys: tuple[str, ...]) -> float:
+        if modern_key in row:
+            return float(row[modern_key])
+        if legacy_key in row:
+            return float(row[legacy_key])
+        values = []
+        for step in row["step_log"]:
+            for key in step_keys:
+                if key in step:
+                    values.append(float(step[key]))
+                    break
+            else:
+                raise RuntimeError(f"missing provenance keys {step_keys} in episode {row.get('method')}")
+        return float(np.mean(values))
+
     return {
         "episodes": len(ordered),
         "success_count": int(sum(successes)),
@@ -101,9 +139,45 @@ def summarize_method(results: dict[str, dict[str, Any]], method: str) -> dict[st
         "policy_queries": total_queries,
         "environment_steps": total_steps,
         "query_rate": float(total_queries / total_steps),
-        "mean_candidate_count": float(np.mean([row["mean_candidate_count"] for row in ordered])),
-        "mean_arm_weighted_source_age": float(np.mean([row["mean_arm_weighted_source_age"] for row in ordered])),
-        "mean_gripper_weighted_source_age": float(np.mean([row["mean_gripper_weighted_source_age"] for row in ordered])),
+        "mean_candidate_count": float(
+            np.mean(
+                [
+                    episode_mean(
+                        row,
+                        "mean_candidate_count",
+                        "mean_ensemble_candidate_count",
+                        ("candidate_count", "ensemble_candidate_count"),
+                    )
+                    for row in ordered
+                ]
+            )
+        ),
+        "mean_arm_weighted_source_age": float(
+            np.mean(
+                [
+                    episode_mean(
+                        row,
+                        "mean_arm_weighted_source_age",
+                        "mean_weighted_source_age_steps",
+                        ("mean_arm_weighted_age", "mean_weighted_source_age_steps"),
+                    )
+                    for row in ordered
+                ]
+            )
+        ),
+        "mean_gripper_weighted_source_age": float(
+            np.mean(
+                [
+                    episode_mean(
+                        row,
+                        "mean_gripper_weighted_source_age",
+                        "mean_weighted_source_age_steps",
+                        ("mean_gripper_weighted_age", "mean_weighted_source_age_steps"),
+                    )
+                    for row in ordered
+                ]
+            )
+        ),
     }
 
 
@@ -247,7 +321,7 @@ def render_report(analysis: dict[str, Any]) -> str:
     lines = [
         "# Group-conditioned temporal memory development",
         "",
-        f"Sol audit commit used: `{analysis['sol_audit_commit']}`. Shared baseline: `{analysis['shared_kernel']}`. The panel contains only the four frozen development tasks and 40 paired episodes per method.",
+        f"Sol audit commit: `{analysis['sol_audit_commit']}`; repaired baseline commit: `{analysis['sol_repaired_rollout_commit']}`. Shared baseline: `{analysis['shared_kernel']}`. The panel contains only the four frozen development tasks and 40 paired episodes per method.",
         "",
     ]
     for policy, item in analysis["policies"].items():
@@ -255,14 +329,14 @@ def render_report(analysis: dict[str, Any]) -> str:
             [
                 f"## {policy}",
                 "",
-                "| method | success /40 | object3 | spatial0 | goal2 | L10-3 | query rate | mean candidates | arm age | gripper age |",
-                "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+                "| method | success /40 | object3 | spatial0 | goal2 | L10-3 | queries | query rate | mean candidates | arm age | gripper age |",
+                "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
             ]
         )
         for method, row in item["methods"].items():
             per = row["per_task_success"]
             lines.append(
-                f"| {method} | {row['success_count']}/40 | {per[TASKS[0]]}/10 | {per[TASKS[1]]}/10 | {per[TASKS[2]]}/10 | {per[TASKS[3]]}/10 | {row['query_rate']:.5f} | {row['mean_candidate_count']:.2f} | {row['mean_arm_weighted_source_age']:.2f} | {row['mean_gripper_weighted_source_age']:.2f} |"
+                f"| {method} | {row['success_count']}/40 | {per[TASKS[0]]}/10 | {per[TASKS[1]]}/10 | {per[TASKS[2]]}/10 | {per[TASKS[3]]}/10 | {row['policy_queries']} | {row['query_rate']:.5f} | {row['mean_candidate_count']:.2f} | {row['mean_arm_weighted_source_age']:.2f} | {row['mean_gripper_weighted_source_age']:.2f} |"
             )
         lines.extend(["", "| contrast | candidate-only | reference-only | paired net | exact McNemar p |", "|---|---:|---:|---:|---:|"])
         for contrast in item["contrasts"]:
@@ -271,6 +345,17 @@ def render_report(analysis: dict[str, Any]) -> str:
                 f"| {contrast['candidate']} vs {contrast['reference']} | {contrast['candidate_only']} | {contrast['reference_only']} | {contrast['paired_net_wins']:+d} | {p_value if p_value is not None else 'NA'} |"
             )
         lines.append("")
+    lines.extend(
+        [
+            "## Causal sequence",
+            "",
+            "1. M1 versus M0: shared dense-equivalent temporal averaging is harmful (23/40 versus 32/40; repaired Sol baseline).",
+            "2. M2 versus M1: whole-action compatibility filtering does not recover any paired episode outcomes (0 candidate-only, 0 reference-only).",
+            "3. M3 versus M2: group-conditioned compatibility adds no paired episode outcomes (0 candidate-only, 0 reference-only).",
+            "4. M3 versus M0: group-conditioned fusion remains below newest-chunk execution (23/40 versus 32/40; net -9).",
+            "",
+        ]
+    )
     if "h_temp_posthoc" in analysis:
         lines.extend(["## H_temp post-hoc association", "", "H_temp was frozen before outcome files were loaded and was not available to the executor.", ""])
         for name, relation in analysis["h_temp_posthoc"]["relations"].items():
@@ -284,6 +369,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--policy", choices=("ACT", "SmolVLA"), required=True)
     parser.add_argument("--results-dir", type=Path)
+    parser.add_argument("--baseline-results-dir", type=Path)
     parser.add_argument("--output", type=Path, default=ROOT / "analysis.json")
     parser.add_argument("--report", type=Path, default=ROOT / "report.md")
     parser.add_argument("--figures-dir", type=Path, default=ROOT / "figures")
@@ -293,7 +379,7 @@ def main() -> None:
     parser.add_argument("--interpretation", default="Outcome analysis is pending completion of the gated development panel.")
     args = parser.parse_args()
     results_dir = args.results_dir or (ROOT / "act" / "results" if args.policy == "ACT" else ROOT / "smolvla" / "results")
-    results = load_policy_results(results_dir)
+    results = load_policy_results(results_dir, args.baseline_results_dir)
     available = set.intersection(*(set(data["methods_result"]) for data in results.values()))
     required = [method for method in METHODS if method in available]
     if not required:
@@ -301,8 +387,10 @@ def main() -> None:
     summaries = {method: summarize_method(results, method) for method in required}
     contrasts = []
     for candidate, reference in (
+        ("M1_shared_te_h16", "M0_h16"),
         ("M2_shared_cogact_h16", "M1_shared_te_h16"),
         ("M3_group_cogact_h16", "M2_shared_cogact_h16"),
+        ("M3_group_cogact_h16", "M0_h16"),
         ("M4_anchored_group_reliability_h16", "M3_group_cogact_h16"),
         ("M4_anchored_group_reliability_h16", "M2_shared_cogact_h16"),
     ):
@@ -318,9 +406,15 @@ def main() -> None:
         "policy": args.policy,
         "tasks": list(TASKS),
         "episodes": 40,
+        "new_method_results_dir": str(results_dir.resolve()),
+        "authoritative_baseline_results_dir": None if args.baseline_results_dir is None else str(args.baseline_results_dir.resolve()),
+        "authoritative_baseline_sources": {
+            task: results[task].get("authoritative_baseline_source") for task in TASKS
+        },
         "shared_kernel": protocol["shared_kernel"]["selected_name"],
         "sol_audit_commit": protocol["coordination"]["sol_audit_commit"],
         "sol_repaired_rollout_commit": protocol["coordination"]["sol_repaired_rollout_commit"],
+        "latest_coordination_commit": protocol["coordination"].get("latest_coordination_commit"),
         "methods": summaries,
         "contrasts": contrasts,
         "decision_label": args.decision,

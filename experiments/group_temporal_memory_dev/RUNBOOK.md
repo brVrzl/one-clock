@@ -68,7 +68,7 @@ python3 run_smolvla_group_memory.py \
   --pairing-smoke --gpu 1 --output smolvla/pairing_smoke_object3.json
 ```
 
-The smoke compares initial observations, initial chunks, actions through t=15, simulator states, and post-action observations. Any mismatch stops the panel.
+The smoke compares initial observations, processed policy inputs, initial chunks, actions through t=15, simulator states, and post-action observations. Any mismatch stops the panel.
 
 ## Resumable task shards
 
@@ -94,4 +94,3 @@ python3 analyze_group_memory.py --policy ACT \
 ```
 
 Use separate output paths for a later SmolVLA analysis. Do not use H_temp to choose a method, weight, alpha, horizon, or reliability value.
-

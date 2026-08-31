@@ -100,7 +100,7 @@ def paired_counts(candidate: list[bool], reference: list[bool]) -> dict[str, Any
         else:
             both_fail += 1
     discordant = candidate_only + reference_only
-    p_value = None
+    p_value = 1.0
     if discordant:
         p_value = min(
             1.0,
