@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "status": "frozen_before_adaptive_outcomes",
+  "status": "act_rollout_in_progress",
   "purpose": "Rapid ACT development test of bounded group-triggered joint replanning without historical action fusion.",
   "prior_commits": {
     "repaired_h16_baseline": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
@@ -152,7 +152,10 @@
       "raw predicted A0"
     ],
     "common_prefix": "Compare actions, simulator states, and observations only until the earliest method-specific first re-query; divergence after a legitimate dynamic re-query is allowed.",
-    "pairing_failure_action": "Stop before full panel."
+    "pairing_failure_action": "Stop before full panel.",
+    "live_smoke_artifact": "act/pairing_live_smoke_object3.json",
+    "live_smoke_status": "passed",
+    "live_smoke_common_prefix_length": 12
   },
   "analysis": {
     "primary_units": ["episode", "task"],
@@ -165,7 +168,7 @@
     "act": {
       "new_workload": "M1-M3 x 40 cases = 120 episodes",
       "devices": {"M1": "GPU0", "M2": "GPU1", "M3": "GPU2"},
-      "status": "not_started"
+      "status": "in_progress; live pairing smoke passed"
     },
     "smolvla": {
       "status": "not_planned",

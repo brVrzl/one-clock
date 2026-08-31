@@ -1,0 +1,413 @@
+{
+  "status": "paired_dynamic_common_prefix_pass",
+  "task": "libero_object:task3",
+  "state_id": 10,
+  "environment_seed": 2000,
+  "methods": [
+    "M0_hard16",
+    "M1_arm_phase",
+    "M2_gripper_event",
+    "M3_group_event_joint"
+  ],
+  "fresh_environment_per_method": true,
+  "first_requery_steps": {
+    "M0_hard16": 16,
+    "M1_arm_phase": 12,
+    "M2_gripper_event": 16,
+    "M3_group_event_joint": 12
+  },
+  "common_prefix_length_before_earliest_requery": 12,
+  "method_query_logs": {
+    "M0_hard16": {
+      "query_steps": [
+        0
+      ],
+      "query_log": [
+        {
+          "query_physical_step_q": 0,
+          "h_arm": 16,
+          "h_grip": 16,
+          "h_exec": 16,
+          "trigger_reason": "initial_query",
+          "proposal_trigger_reason": "hard16",
+          "arm_triggered": false,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": null,
+          "gripper_trigger_offset": null
+        }
+      ],
+      "prefix_source_queries": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "prefix_chunk_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "M1_arm_phase": {
+      "query_steps": [
+        0,
+        12
+      ],
+      "query_log": [
+        {
+          "query_physical_step_q": 0,
+          "h_arm": 12,
+          "h_grip": 16,
+          "h_exec": 12,
+          "trigger_reason": "initial_query",
+          "proposal_trigger_reason": "arm_phase",
+          "arm_triggered": true,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [
+            12
+          ],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": 12,
+          "gripper_trigger_offset": null
+        },
+        {
+          "query_physical_step_q": 12,
+          "h_arm": 4,
+          "h_grip": 16,
+          "h_exec": 4,
+          "trigger_reason": "arm_phase",
+          "proposal_trigger_reason": "arm_phase",
+          "arm_triggered": true,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [
+            4
+          ],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": 4,
+          "gripper_trigger_offset": null
+        }
+      ],
+      "prefix_source_queries": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        12,
+        12,
+        12
+      ],
+      "prefix_chunk_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "M2_gripper_event": {
+      "query_steps": [
+        0
+      ],
+      "query_log": [
+        {
+          "query_physical_step_q": 0,
+          "h_arm": 12,
+          "h_grip": 16,
+          "h_exec": 16,
+          "trigger_reason": "initial_query",
+          "proposal_trigger_reason": "no_gripper_event_fallback",
+          "arm_triggered": true,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [
+            12
+          ],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": 12,
+          "gripper_trigger_offset": null
+        }
+      ],
+      "prefix_source_queries": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "prefix_chunk_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "M3_group_event_joint": {
+      "query_steps": [
+        0,
+        12
+      ],
+      "query_log": [
+        {
+          "query_physical_step_q": 0,
+          "h_arm": 12,
+          "h_grip": 16,
+          "h_exec": 12,
+          "trigger_reason": "initial_query",
+          "proposal_trigger_reason": "arm_phase",
+          "arm_triggered": true,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [
+            12
+          ],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": 12,
+          "gripper_trigger_offset": null
+        },
+        {
+          "query_physical_step_q": 12,
+          "h_arm": 4,
+          "h_grip": 16,
+          "h_exec": 4,
+          "trigger_reason": "arm_phase",
+          "proposal_trigger_reason": "arm_phase",
+          "arm_triggered": true,
+          "gripper_triggered": false,
+          "both_nominated": false,
+          "both_nearby": false,
+          "arm_boundary_candidates": [
+            4
+          ],
+          "gripper_event_candidates": [],
+          "arm_trigger_offset": 4,
+          "gripper_trigger_offset": null
+        }
+      ],
+      "prefix_source_queries": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        12,
+        12,
+        12
+      ],
+      "prefix_chunk_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "candidate_method": "M1_arm_phase",
+      "common_prefix_length_before_earliest_requery": 12,
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_processed_input": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_sim_state": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_raw_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_sim_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_post_observations_exact": true,
+      "passed": true
+    },
+    {
+      "candidate_method": "M2_gripper_event",
+      "common_prefix_length_before_earliest_requery": 12,
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_processed_input": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_sim_state": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_raw_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_sim_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_post_observations_exact": true,
+      "passed": true
+    },
+    {
+      "candidate_method": "M3_group_event_joint",
+      "common_prefix_length_before_earliest_requery": 12,
+      "initial_observation": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_processed_input": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_sim_state": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "initial_raw_chunk": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_actions": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_sim_states": {
+        "keys_equal": true,
+        "exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "common_prefix_post_observations_exact": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
