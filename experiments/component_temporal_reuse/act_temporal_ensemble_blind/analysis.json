@@ -1,0 +1,106 @@
+{
+  "protocol": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/act_temporal_ensemble_blind/protocol.json",
+  "implementation": "LeRobot 0.6.2 ACTPolicy.select_action -> ACTTemporalEnsembler.update",
+  "temporal_ensemble_coefficient": 0.01,
+  "query_every_environment_step": true,
+  "per_task": [
+    {
+      "task": "libero_10:task1",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_10:task9",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_goal:task0",
+      "success_count": 3,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_goal:task3",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_object:task1",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_object:task4",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_spatial:task3",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    },
+    {
+      "task": "libero_spatial:task7",
+      "success_count": 0,
+      "episodes": 10,
+      "query_rate": 1.0,
+      "query_every_environment_step": true
+    }
+  ],
+  "per_suite": {
+    "libero_10": {
+      "successes": 0,
+      "episodes": 20,
+      "queries": 10400,
+      "steps": 10400,
+      "success_rate": 0.0,
+      "query_rate": 1.0
+    },
+    "libero_goal": {
+      "successes": 3,
+      "episodes": 20,
+      "queries": 5655,
+      "steps": 5655,
+      "success_rate": 0.15,
+      "query_rate": 1.0
+    },
+    "libero_object": {
+      "successes": 0,
+      "episodes": 20,
+      "queries": 5600,
+      "steps": 5600,
+      "success_rate": 0.0,
+      "query_rate": 1.0
+    },
+    "libero_spatial": {
+      "successes": 0,
+      "episodes": 20,
+      "queries": 5600,
+      "steps": 5600,
+      "success_rate": 0.0,
+      "query_rate": 1.0
+    }
+  },
+  "pooled": {
+    "successes": 3,
+    "episodes": 80,
+    "queries": 27255,
+    "steps": 27255,
+    "success_rate": 0.0375,
+    "query_rate": 1.0
+  }
+}

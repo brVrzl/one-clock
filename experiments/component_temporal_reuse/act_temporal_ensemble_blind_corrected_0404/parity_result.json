@@ -1,0 +1,19 @@
+{
+  "runtime": {
+    "python_executable": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "lerobot": "0.4.4",
+    "torch": "2.7.1+cu128",
+    "mujoco": "3.3.1"
+  },
+  "coefficient": 0.01,
+  "chunk_size": 100,
+  "steps": 20,
+  "fresh_t0_max_abs_error": 0.0,
+  "t1_explicit_formula_max_abs_error": 1.75703094851265e-08,
+  "t2_explicit_formula_max_abs_error": 8.721722025151202e-09,
+  "official_vs_custom_max_abs_error": 3.761950195801944e-08,
+  "t0_pass": true,
+  "t1_pass": true,
+  "t2_pass": true,
+  "all_20_pass": true
+}
