@@ -230,8 +230,12 @@ def run_episode(
                 break
         if done:
             break
+        next_query = query_step + actual_interval
+        if next_query >= int(max_steps):
+            target_step = next_query
+            break
         expected_next_query = query_step + int(proposed_horizon)
-        if len(step_log) != expected_next_query:
+        if next_query != expected_next_query or len(step_log) != expected_next_query:
             raise AssertionError(
                 f"dynamic schedule mismatch: after q={query_step}, expected next q={expected_next_query}, "
                 f"executed steps={len(step_log)}"
