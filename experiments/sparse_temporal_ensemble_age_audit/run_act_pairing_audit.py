@@ -24,7 +24,9 @@ ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parents[1]
 SPARSE_ROOT = REPO_ROOT / "experiments" / "sparse_temporal_ensemble_dev"
 sys.path.insert(0, str(SPARSE_ROOT))
+sys.path.insert(0, str(ROOT))
 
+from dense_equivalent_executor import DenseEquivalentSparseExecutor  # noqa: E402
 from sparse_executor import SparseExecutor  # noqa: E402
 
 
@@ -160,14 +162,23 @@ def capture_condition(*, env, policy, processors, torch, condition: str, state_i
     processed_arrays, processed_literals = flatten_values(processed)
     chunk = predict_from_processed(processed, policy, processors, torch)
 
-    mode = "hard" if condition == "hard_h16" else "sparse_te"
-    executor = SparseExecutor(
-        cadence=16,
-        prediction_horizon=100,
-        mode=mode,
-        coefficient=0.01,
-        action_dim=7,
-    )
+    if condition == "dense_equivalent_te_h16":
+        executor = DenseEquivalentSparseExecutor(
+            cadence=16,
+            prediction_horizon=100,
+            mode="dense_equivalent_te",
+            coefficient=0.01,
+            action_dim=7,
+        )
+    else:
+        mode = "hard" if condition == "hard_h16" else "sparse_te"
+        executor = SparseExecutor(
+            cadence=16,
+            prediction_horizon=100,
+            mode=mode,
+            coefficient=0.01,
+            action_dim=7,
+        )
     actions = []
     post_step_sim_states = []
     post_step_observations = []
@@ -314,7 +325,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--protocol", type=Path, default=ROOT / "protocol.json")
     parser.add_argument("--gpu", default="0")
-    parser.add_argument("--output", type=Path, default=ROOT / "pairing_audit_task10_fresh_env" / "summary.json")
+    parser.add_argument("--output", type=Path, default=ROOT / "pairing_audit_task10_fresh_env_trio" / "summary.json")
     args = parser.parse_args()
 
     protocol = json.loads(args.protocol.read_text())
@@ -400,9 +411,18 @@ def main() -> None:
                 )
             finally:
                 env.close()
-        comparison = compare_conditions(captures["hard_h16"], captures["candidate_index_te_h16"])
-        comparison.update({"state_id": state_id, "environment_seed": env_seed})
-        output["states"].append(comparison)
+        comparisons = {
+            method: compare_conditions(captures["hard_h16"], captures[method])
+            for method in audit["conditions"][1:]
+        }
+        output["states"].append(
+            {
+                "state_id": state_id,
+                "environment_seed": env_seed,
+                "passed": all(comparison["passed"] for comparison in comparisons.values()),
+                "comparisons_to_hard": comparisons,
+            }
+        )
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(output, indent=2) + "\n")
 

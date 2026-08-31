@@ -1,5 +1,5 @@
 {
-  "protocol_version": 2,
+  "protocol_version": 3,
   "frozen_before_outcomes": true,
   "purpose": "Audit sparse temporal-ensemble age semantics and ACT paired initialization before any new outcome rollout.",
   "historical_experiment": {
@@ -27,7 +27,7 @@
     },
     "cadence": 16,
     "prediction_horizon": 100,
-    "conditions": ["hard_h16", "candidate_index_te_h16"],
+    "conditions": ["hard_h16", "candidate_index_te_h16", "dense_equivalent_te_h16"],
     "initial_state_ids": [10, 11, 16],
     "environment_seeds": [2000, 2001, 2006],
     "policy_rng_seed": 424242,
@@ -54,18 +54,59 @@
     "torch": "2.7.1+cu128",
     "mujoco": "3.3.1"
   },
-  "proposed_operator_from_request": {
-    "name": "physical_age_te",
+  "dense_equivalent_operator": {
+    "name": "dense_equivalent_te",
     "coefficient": 0.01,
     "candidate_rule": "q <= t and 0 <= t-q < H_pred",
     "same_target_action": "A_q[t-q]",
-    "unnormalized_weight": "exp(-0.01 * (q_newest - q))",
-    "status": "not_implemented_pending_h1_orientation_audit"
+    "candidate_order": "oldest_query_to_newest_query",
+    "unnormalized_weight": "exp(-0.01 * (q_j - q_0))",
+    "fixed_cadence_equivalent": "[1, exp(-0.01*h), exp(-0.02*h), ...] oldest to newest",
+    "h1_equivalence": "exactly reproduces validated canonical ACT orientation",
+    "coefficient_tuned": false,
+    "newest_relative_decay": false
   },
-  "new_outcome_workload": {
-    "primary": "ACT physical_age_te h16, 40 development episodes",
-    "h8": "conditional only",
-    "smolvla_h16": "conditional on meaningful ACT recovery",
+  "repaired_h16_panel": {
+    "methods": ["hard_h16", "candidate_index_te_h16", "dense_equivalent_te_h16"],
+    "query_cadence": 16,
+    "prediction_horizon": 100,
+    "initial_state_ids": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "environment_seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
+    "episodes_per_task_method": 10,
+    "episodes_per_method": 40,
+    "total_episodes": 120,
+    "fresh_environment_per_condition_state": true,
+    "environment_construction_seed": "environment_seed; identical and method-independent",
+    "full_common_prefix_action_equality_required": true,
+    "reuse_historical_h16_outcomes": false,
+    "h8": false,
+    "smolvla": false,
     "final_blind_tasks": false
-  }
+  },
+  "tasks": [
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "task_name": "pick up the bbq sauce and place it in the basket",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "task_name": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "task_name": "put the wine bottle on top of the cabinet",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    }
+  ]
 }

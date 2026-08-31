@@ -1,0 +1,2063 @@
+{
+  "protocol": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_age_audit/protocol.json",
+  "runtime": {
+    "python_executable": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "lerobot": "0.4.4",
+    "torch": "2.7.1+cu128",
+    "cuda_visible_devices": "0"
+  },
+  "task": "libero_10:task3",
+  "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model",
+  "states": [
+    {
+      "state_id": 10,
+      "environment_seed": 2000,
+      "passed": true,
+      "comparisons_to_hard": {
+        "candidate_index_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        },
+        "dense_equivalent_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        }
+      }
+    },
+    {
+      "state_id": 11,
+      "environment_seed": 2001,
+      "passed": true,
+      "comparisons_to_hard": {
+        "candidate_index_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        },
+        "dense_equivalent_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        }
+      }
+    },
+    {
+      "state_id": 16,
+      "environment_seed": 2006,
+      "passed": true,
+      "comparisons_to_hard": {
+        "candidate_index_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        },
+        "dense_equivalent_te_h16": {
+          "passed": true,
+          "identity": {
+            "requested_state_id_equal": true,
+            "selected_state_id_equal": true,
+            "environment_seed_equal": true,
+            "policy_rng_seed_equal": true,
+            "query_steps_hard": [
+              0
+            ],
+            "query_steps_te": [
+              0
+            ]
+          },
+          "B1_initial_simulator_state": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "sim_state": {
+                "present_in_both": true,
+                "shape": [
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B1_initial_low_dimensional_observation": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "robot_state.eef.mat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.eef.quat": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  4
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qpos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.gripper.qvel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.pos": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "robot_state.joints.vel": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  7
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B2_initial_camera_observations": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "pixels.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "pixels.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  256,
+                  256,
+                  3
+                ],
+                "dtype_hard": "uint8",
+                "dtype_te": "uint8",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_policy_input_all_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "next.done": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "next.reward": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "next.truncated": {
+                "present_in_both": true,
+                "shape": [],
+                "dtype_hard": "bool",
+                "dtype_te": "bool",
+                "exact_array_equality": true,
+                "max_absolute_difference": null
+              },
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_state_proprio": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.state": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  8
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_images": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "observation.images.image": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              },
+              "observation.images.image2": {
+                "present_in_both": true,
+                "shape": [
+                  1,
+                  3,
+                  256,
+                  256
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B3_processed_task_numeric": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {}
+          },
+          "B3_task_conditioning_literals_equal": true,
+          "B3_task_conditioning_literals_hard": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B3_task_conditioning_literals_te": {
+            "task[0]": "put the black bowl in the bottom drawer of the cabinet and close it"
+          },
+          "B4_initial_predicted_chunk": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "A0": {
+                "present_in_both": true,
+                "shape": [
+                  100,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_common_prefix_actions": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "actions_t0_t15": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  7
+                ],
+                "dtype_hard": "float32",
+                "dtype_te": "float32",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_simulator_states": {
+            "keys_equal": true,
+            "all_arrays_exact": true,
+            "max_absolute_difference": 0.0,
+            "arrays": {
+              "post_step_sim_states": {
+                "present_in_both": true,
+                "shape": [
+                  16,
+                  51
+                ],
+                "dtype_hard": "float64",
+                "dtype_te": "float64",
+                "exact_array_equality": true,
+                "max_absolute_difference": 0.0
+              }
+            }
+          },
+          "B5_post_action_observations_exact": true,
+          "B5_post_action_observations_max_absolute_difference": 0.0
+        }
+      }
+    }
+  ],
+  "passed": true
+}

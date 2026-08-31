@@ -2,7 +2,7 @@
 
 ## Scope and stop condition
 
-This audit preserves the results in `../sparse_temporal_ensemble_dev/` as evidence for the **candidate-index sparse temporal ensemble**. No physical-age outcome rollout has started. The requested h1-equivalence check currently conflicts with the requested newest-relative formula, so Part C is stopped pending an explicit orientation decision.
+This audit preserves the results in `../sparse_temporal_ensemble_dev/` as evidence for the **candidate-index sparse temporal ensemble**. The orientation ambiguity was resolved in favor of validated canonical ACT, and the repaired h16 trio was rerun with fresh environment construction for every condition/state.
 
 ## Part A: existing-result audit
 
@@ -70,9 +70,9 @@ The minimal repair is to construct a fresh environment for each condition/state 
 | executed actions t=0--15 | 0 |
 | post-action simulator states and observations | 0 |
 
-The repaired artifact is `pairing_audit_task10_fresh_env/summary.json`. Failed diagnostic artifacts are retained separately and must not be combined with repaired results.
+The original two-method repair artifact is `pairing_audit_task10_fresh_env/summary.json`; the final three-method gate is `pairing_audit_task10_fresh_env_trio/summary.json`. Failed diagnostic artifacts are retained separately and must not be combined with repaired results.
 
-## Weight-orientation stop
+## Weight-orientation resolution
 
 Validated LeRobot 0.4.4 explicitly defines index zero as the oldest action. With positive coefficient 0.01, the h1 two-candidate weights for `[old, new]` are proportional to:
 
@@ -82,12 +82,16 @@ The proposed formula `exp(-0.01*(q_newest-q))` gives, for the same `[old, new]` 
 
 `[exp(-0.01), 1]`.
 
-These are reverses. Consequently, the requested D1 h1 equivalence and the requested newest-relative formula cannot both be true.
+These are reverses. The canonical ACT orientation was therefore made authoritative.
 
-The ACT-orientation-preserving sparse subsampling would instead be:
+The ACT-orientation-preserving sparse subsampling used in the repaired experiment is:
 
 `w(q) proportional to exp(-0.01*(q-q_oldest))`,
 
-which gives `[1, exp(-0.01*h), exp(-0.02*h), ...]` in oldest-to-newest order. The requested newest-relative operator is still a valid alternate executor, but it is a newer-favoring age-decay operator rather than a dense-equivalent subsampling of the validated positive-coefficient ACT kernel.
+which gives `[1, exp(-0.01*h), exp(-0.02*h), ...]` in oldest-to-newest order. It is named `dense_equivalent_te`; no newest-relative decay was run.
 
-No 40-episode rollout will be launched until this naming/orientation choice is resolved.
+## Repaired h16 trio outcome
+
+Freshly paired hard h16 achieved 32/40, repaired candidate-index TE achieved 24/40, and dense-equivalent TE achieved 23/40. Dense-equivalent versus hard had 2 dense-only and 11 hard-only successes (net −9; exact two-sided McNemar p=0.02246). Candidate-index versus hard had 3 candidate-only and 11 hard-only successes (net −8; p=0.05737). Dense-equivalent and candidate-index differed on only one state (0 dense-only, 1 candidate-only).
+
+The dense-equivalent deficit was present on every task, so the result is classified `DENSE_EQ_TE_HARMFUL`. Repaired candidate-index TE also remains harmful.

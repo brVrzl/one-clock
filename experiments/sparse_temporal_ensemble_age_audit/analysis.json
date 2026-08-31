@@ -1,0 +1,614 @@
+{
+  "experiment": "repaired ACT h16 trio with fresh environment per condition/state",
+  "cohort": {
+    "tasks": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "state_ids": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "environment_seeds": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009
+    ],
+    "paired_episodes": 40
+  },
+  "methods": {
+    "hard_h16": {
+      "success_count": 32,
+      "episodes": 40,
+      "per_task_success_count": {
+        "libero_object:task3": 8,
+        "libero_spatial:task0": 7,
+        "libero_goal:task2": 10,
+        "libero_10:task3": 7
+      },
+      "total_policy_queries": 458,
+      "total_environment_steps": 7040,
+      "query_rate": 0.06505681818181819,
+      "mean_query_count_per_episode": 11.45,
+      "mean_ensemble_candidate_count": 4.768323863636364,
+      "mean_weighted_source_age_steps": 7.365482954545454,
+      "mean_completion_steps_successful": 127.5,
+      "mean_query_latency_seconds": 0.0772703031294544
+    },
+    "candidate_index_te_h16": {
+      "success_count": 24,
+      "episodes": 40,
+      "per_task_success_count": {
+        "libero_object:task3": 4,
+        "libero_spatial:task0": 6,
+        "libero_goal:task2": 9,
+        "libero_10:task3": 5
+      },
+      "total_policy_queries": 566,
+      "total_environment_steps": 8759,
+      "query_rate": 0.06461924877269094,
+      "mean_query_count_per_episode": 14.15,
+      "mean_ensemble_candidate_count": 5.054914944628382,
+      "mean_weighted_source_age_steps": 40.19049744821778,
+      "mean_completion_steps_successful": 127.45833333333333,
+      "mean_query_latency_seconds": 0.07510492964335075
+    },
+    "dense_equivalent_te_h16": {
+      "success_count": 23,
+      "episodes": 40,
+      "per_task_success_count": {
+        "libero_object:task3": 4,
+        "libero_spatial:task0": 5,
+        "libero_goal:task2": 9,
+        "libero_10:task3": 5
+      },
+      "total_policy_queries": 567,
+      "total_environment_steps": 8766,
+      "query_rate": 0.0646817248459959,
+      "mean_query_count_per_episode": 14.175,
+      "mean_ensemble_candidate_count": 5.056125941136208,
+      "mean_weighted_source_age_steps": 45.67169782270812,
+      "mean_completion_steps_successful": 121.1304347826087,
+      "mean_query_latency_seconds": 0.06804523612471129
+    }
+  },
+  "paired_comparisons": {
+    "candidate_index_vs_hard": {
+      "first": "candidate_index_te_h16",
+      "reference": "hard_h16",
+      "first_only_wins": 3,
+      "reference_only_wins": 11,
+      "paired_net_wins": -8,
+      "discordant_pairs": 14,
+      "exact_mcnemar_p_two_sided": 0.057373046875,
+      "first_only_cases": [
+        {
+          "task": "libero_object:task3",
+          "state_id": 13,
+          "environment_seed": 2003
+        },
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 11,
+          "environment_seed": 2001
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 15,
+          "environment_seed": 2005
+        }
+      ],
+      "reference_only_cases": [
+        {
+          "task": "libero_object:task3",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 11,
+          "environment_seed": 2001
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 14,
+          "environment_seed": 2004
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 15,
+          "environment_seed": 2005
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 16,
+          "environment_seed": 2006
+        },
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 14,
+          "environment_seed": 2004
+        },
+        {
+          "task": "libero_goal:task2",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 12,
+          "environment_seed": 2002
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 13,
+          "environment_seed": 2003
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 14,
+          "environment_seed": 2004
+        }
+      ]
+    },
+    "dense_equivalent_vs_hard": {
+      "first": "dense_equivalent_te_h16",
+      "reference": "hard_h16",
+      "first_only_wins": 2,
+      "reference_only_wins": 11,
+      "paired_net_wins": -9,
+      "discordant_pairs": 13,
+      "exact_mcnemar_p_two_sided": 0.0224609375,
+      "first_only_cases": [
+        {
+          "task": "libero_object:task3",
+          "state_id": 13,
+          "environment_seed": 2003
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 15,
+          "environment_seed": 2005
+        }
+      ],
+      "reference_only_cases": [
+        {
+          "task": "libero_object:task3",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 11,
+          "environment_seed": 2001
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 14,
+          "environment_seed": 2004
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 15,
+          "environment_seed": 2005
+        },
+        {
+          "task": "libero_object:task3",
+          "state_id": 16,
+          "environment_seed": 2006
+        },
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 14,
+          "environment_seed": 2004
+        },
+        {
+          "task": "libero_goal:task2",
+          "state_id": 10,
+          "environment_seed": 2000
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 12,
+          "environment_seed": 2002
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 13,
+          "environment_seed": 2003
+        },
+        {
+          "task": "libero_10:task3",
+          "state_id": 14,
+          "environment_seed": 2004
+        }
+      ]
+    },
+    "dense_equivalent_vs_candidate_index": {
+      "first": "dense_equivalent_te_h16",
+      "reference": "candidate_index_te_h16",
+      "first_only_wins": 0,
+      "reference_only_wins": 1,
+      "paired_net_wins": -1,
+      "discordant_pairs": 1,
+      "exact_mcnemar_p_two_sided": 1.0,
+      "first_only_cases": [],
+      "reference_only_cases": [
+        {
+          "task": "libero_spatial:task0",
+          "state_id": 11,
+          "environment_seed": 2001
+        }
+      ]
+    }
+  },
+  "paired_state_outcomes": [
+    {
+      "task": "libero_object:task3",
+      "state_id": 10,
+      "environment_seed": 2000,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 11,
+      "environment_seed": 2001,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 12,
+      "environment_seed": 2002,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 13,
+      "environment_seed": 2003,
+      "hard_h16": false,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 14,
+      "environment_seed": 2004,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 15,
+      "environment_seed": 2005,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 16,
+      "environment_seed": 2006,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 17,
+      "environment_seed": 2007,
+      "hard_h16": false,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 18,
+      "environment_seed": 2008,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_object:task3",
+      "state_id": 19,
+      "environment_seed": 2009,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 10,
+      "environment_seed": 2000,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 11,
+      "environment_seed": 2001,
+      "hard_h16": false,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 12,
+      "environment_seed": 2002,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 13,
+      "environment_seed": 2003,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 14,
+      "environment_seed": 2004,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 15,
+      "environment_seed": 2005,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 16,
+      "environment_seed": 2006,
+      "hard_h16": false,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 17,
+      "environment_seed": 2007,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 18,
+      "environment_seed": 2008,
+      "hard_h16": false,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_spatial:task0",
+      "state_id": 19,
+      "environment_seed": 2009,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 10,
+      "environment_seed": 2000,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 11,
+      "environment_seed": 2001,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 12,
+      "environment_seed": 2002,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 13,
+      "environment_seed": 2003,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 14,
+      "environment_seed": 2004,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 15,
+      "environment_seed": 2005,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 16,
+      "environment_seed": 2006,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 17,
+      "environment_seed": 2007,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 18,
+      "environment_seed": 2008,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_goal:task2",
+      "state_id": 19,
+      "environment_seed": 2009,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 10,
+      "environment_seed": 2000,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 11,
+      "environment_seed": 2001,
+      "hard_h16": false,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 12,
+      "environment_seed": 2002,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 13,
+      "environment_seed": 2003,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 14,
+      "environment_seed": 2004,
+      "hard_h16": true,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 15,
+      "environment_seed": 2005,
+      "hard_h16": false,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 16,
+      "environment_seed": 2006,
+      "hard_h16": false,
+      "candidate_index_te_h16": false,
+      "dense_equivalent_te_h16": false
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 17,
+      "environment_seed": 2007,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 18,
+      "environment_seed": 2008,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    },
+    {
+      "task": "libero_10:task3",
+      "state_id": 19,
+      "environment_seed": 2009,
+      "hard_h16": true,
+      "candidate_index_te_h16": true,
+      "dense_equivalent_te_h16": true
+    }
+  ],
+  "decision": {
+    "label": "DENSE_EQ_TE_HARMFUL",
+    "basis": {
+      "dense_equivalent_minus_hard_successes": -9,
+      "dense_equivalent_vs_hard_paired_net_wins": -9,
+      "dense_equivalent_taskwise_deltas": {
+        "libero_object:task3": -4,
+        "libero_spatial:task0": -2,
+        "libero_goal:task2": -1,
+        "libero_10:task3": -2
+      }
+    },
+    "repaired_candidate_index_te_remains_harmful": true,
+    "candidate_index_taskwise_deltas": {
+      "libero_object:task3": -4,
+      "libero_spatial:task0": -1,
+      "libero_goal:task2": -1,
+      "libero_10:task3": -2
+    }
+  }
+}
