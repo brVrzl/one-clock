@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "status": "prepared_waiting_for_sol_repaired_h16_trio",
+  "status": "prepared_with_sol_repaired_h16_trio_available",
   "purpose": "Development test of group-conditioned soft temporal fusion with a shared newest joint intent.",
   "offline_prior": {
     "commit": "095a1893c949fb55d844e086f43022ad4df72b52",
@@ -9,16 +9,31 @@
   },
   "coordination": {
     "sol_audit_directory": "../sparse_temporal_ensemble_age_audit",
-    "sol_audit_status": "pairing_valid_dense_equivalent_selected_trio_pending",
+    "sol_audit_status": "pairing_valid_dense_equivalent_selected_trio_complete",
     "sol_audit_commit": "33463ab4eb0ff1c64f794df7c76330bb7b56c143",
     "sol_decision": "PAIRING_VALID",
     "sol_decision_source": "../sparse_temporal_ensemble_age_audit/report.md",
-    "sol_pairing_artifact": "../sparse_temporal_ensemble_age_audit/pairing_audit_task10_fresh_env/summary.json",
+    "sol_pairing_artifact": "../sparse_temporal_ensemble_age_audit/pairing_audit_task10_fresh_env_trio/summary.json",
     "sol_kernel_decision": "DENSE_EQUIVALENT_TE",
-    "sol_repaired_rollout_commit": null,
-    "sol_repaired_rollout_requirement": "Do not launch until Sol pushes the repaired h16 trio: hard_h16, candidate_index_te_h16, dense_equivalent_te_h16.",
+    "sol_repaired_rollout_commit": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
+    "sol_repaired_rollout_requirement": "Sol's repaired h16 trio is complete. Any group-memory rollout remains separately gated and must construct a fresh environment for each condition/state using exactly identical task/state/environment seed settings.",
+    "sol_repaired_h16_pairing": {
+      "fresh_environment_per_condition_state": true,
+      "identical_task_state_environment_seed_settings": true,
+      "strict_common_prefix_equality_validator": "passed"
+    },
+    "sol_repaired_h16_results": {
+      "episodes": 40,
+      "methods": {
+        "hard_h16": "32/40",
+        "candidate_index_te_h16": "24/40",
+        "dense_equivalent_te_h16": "23/40"
+      },
+      "decision": "DENSE_EQ_TE_HARMFUL",
+      "repaired_candidate_index_assessment": "harmful"
+    },
     "accepted_pairing_decisions": ["PAIRING_VALID"],
-    "rollout_gate": "The runner refuses any environment rollout until Sol's repaired h16 trio commit is recorded and shared_kernel is selected as dense_equivalent_te.",
+    "rollout_gate": "The Sol trio and shared kernel are recorded, but this coordination notification does not launch or authorize a group-memory rollout. Before any later launch, preserve fresh-env pairing and pass the strict per-policy common-prefix smoke.",
     "do_not_edit_sol_directory": true
   },
   "cohort": {
@@ -79,7 +94,7 @@
     }
   },
   "shared_kernel": {
-    "status": "selected_by_sol_pending_repaired_trio",
+    "status": "selected_by_sol",
     "selected_name": "dense_equivalent_te",
     "coefficient": 0.01,
     "candidate_order": "oldest source query to newest source query",
@@ -88,7 +103,7 @@
     "dense_equivalent_te": "b_q proportional to exp(-0.01 * (q-q_oldest)) for the oldest-to-newest sparse candidate list; at h16 this is [1,e^-0.16,e^-0.32,...]",
     "physical_age_te": "b_q proportional to exp(-0.01 * (q_newest-q))",
     "candidate_index_te": "b_i proportional to exp(-0.01 * i), i=0 for oldest candidate",
-    "selection_rule": "Use exactly Sol's final semantic decision; do not independently choose a kernel. Sol selected dense_equivalent_te; implementation remains gated on the repaired h16 trio artifact."
+    "selection_rule": "Use exactly Sol's final semantic decision; do not independently choose a kernel. Sol selected dense_equivalent_te; the repaired h16 trio is recorded above."
   },
   "candidate_pool": {
     "rule": "All sparse-query chunks whose same-target offset is nonnegative and smaller than H_pred; no extra query and no candidate-specific truncation beyond native horizon validity.",

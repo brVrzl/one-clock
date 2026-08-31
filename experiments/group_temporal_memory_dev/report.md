@@ -2,11 +2,11 @@
 
 ## Status
 
-Preparation is complete, but the development rollout is gated pending Sol’s repaired h16 trio commit. No simulator rollout, success file, or GPU job has been started from this directory.
+Preparation is complete, and Sol’s repaired ACT h16 trio handoff is recorded. No group-memory simulator rollout, success file, or GPU job has been started from this directory.
 
-Sol’s audit commit is `33463ab4eb0ff1c64f794df7c76330bb7b56c143`. It establishes that the fresh identically seeded environment repair gives strict common-prefix equality. Sol selected the shared baseline `dense_equivalent_te`, with oldest-to-newest weights proportional to `exp(-0.01 * (q - q_oldest))`.
+Sol’s audit commit is `33463ab4eb0ff1c64f794df7c76330bb7b56c143`, and the repaired trio commit is `b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0`. The repaired protocol requires a fresh environment for each condition/state with exactly identical task/state/environment seed settings; its strict common-prefix equality validator passed. Sol selected the shared baseline `dense_equivalent_te`, with oldest-to-newest weights proportional to `exp(-0.01 * (q - q_oldest))`.
 
-The runners additionally require the forthcoming commit containing the repaired `hard_h16`, `candidate_index_te_h16`, and `dense_equivalent_te_h16` trio. The previous reset-reuse results are excluded.
+The corrected repaired ACT h16 trio is complete: hard `32/40`, candidate-index TE `24/40`, and dense-equivalent TE `23/40`. The decision is `DENSE_EQ_TE_HARMFUL`; repaired candidate-index TE remains harmful. The previous reset-reuse results are excluded.
 
 ## Frozen module scope
 
@@ -20,7 +20,6 @@ The CPU semantic suite passes 8 tests. It covers query scheduling, same-target `
 
 ## Decision
 
-**BLOCKED_BY_PAIRING_AUDIT**
+**SOL_REPAIRED_H16_RECORDED_GROUP_ROLLOUT_NOT_LAUNCHED**
 
-This is a coordination gate, not a scientific null result. After Sol pushes the repaired trio, update `protocol.json`, run strict pairing smokes for each policy, and only then launch the development ladder.
-
+This is a coordination handoff, not a group-memory outcome. If the development ladder resumes, preserve fresh-env pairing and run strict pairing smokes before launch.
