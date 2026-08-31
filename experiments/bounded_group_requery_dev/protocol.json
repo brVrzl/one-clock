@@ -1,0 +1,182 @@
+{
+  "protocol_version": 1,
+  "status": "frozen_before_adaptive_outcomes",
+  "purpose": "Rapid ACT development test of bounded group-triggered joint replanning without historical action fusion.",
+  "prior_commits": {
+    "repaired_h16_baseline": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
+    "coordination": "606b52c95abb67cee5c58d8635a214f3d71ecd7c",
+    "group_cogact_null": "f4011f13cba806c827d1cd7d373688a94aa2ad7d"
+  },
+  "baseline": {
+    "method": "M0_hard16",
+    "source": "../sparse_temporal_ensemble_age_audit/act_h16/results/",
+    "successes": "32/40",
+    "per_task": {
+      "libero_object:task3": "8/10",
+      "libero_spatial:task0": "7/10",
+      "libero_goal:task2": "10/10",
+      "libero_10:task3": "7/10"
+    },
+    "reuse_rule": "Authoritative repaired fresh-environment result is reused; M0 is run only in the one-state live pairing smoke."
+  },
+  "environment": {
+    "type": "LeRobot LiberoEnv",
+    "dataset": "HuggingFaceVLA/libero",
+    "fps": 30,
+    "obs_type": "pixels_agent_pos",
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "control_mode": "relative",
+    "init_states": true,
+    "observation_width": 256,
+    "observation_height": 256,
+    "n_envs": 1,
+    "use_async_envs": false
+  },
+  "cohort": {
+    "tasks": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "states": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "environment_seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
+    "episodes_per_task": 10,
+    "task_selection": "Frozen exposed development cohort; no outcome-based selection.",
+    "final_blind_tasks_touched": false
+  },
+  "cohort_task_specs": [
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "task_name": "pick up the bbq sauce and place it in the basket",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "task_name": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "task_name": "put the wine bottle on top of the cabinet",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    }
+  ],
+  "policy": {
+    "implementation": "official LeRobot ACT",
+    "checkpoint_training_step": 100000,
+    "prediction_horizon": 100,
+    "policy_rng_seed": 424242,
+    "query": "policy.predict_action_chunk followed by native policy and environment postprocessors",
+    "action_groups": {
+      "arm": [0, 1, 2, 3, 4, 5],
+      "gripper": [6]
+    }
+  },
+  "execution": {
+    "principle": "Every query replaces the executable plan with its newest ACT chunk; no historical chunk contributes after a new query.",
+    "initial_query": 0,
+    "min_h_exec": 4,
+    "max_h_exec": 16,
+    "next_query": "q_next = q + h_exec",
+    "action_source": "At physical target t, execute newest_chunk[t-q] from the current query q.",
+    "methods": ["M0_hard16", "M1_arm_phase", "M2_gripper_event", "M3_group_event_joint"],
+    "method_table": {
+      "M0_hard16": {
+        "arm_trigger": false,
+        "gripper_trigger": false,
+        "h_exec": 16
+      },
+      "M1_arm_phase": {
+        "arm_trigger": true,
+        "gripper_trigger": false,
+        "fallback_horizon": 16
+      },
+      "M2_gripper_event": {
+        "arm_trigger": false,
+        "gripper_trigger": true,
+        "fallback_horizon": 16
+      },
+      "M3_group_event_joint": {
+        "arm_trigger": true,
+        "gripper_trigger": true,
+        "combination": "min(16, h_arm, h_grip)"
+      }
+    },
+    "arm_phase": {
+      "motion_offsets": "k=1,...,15",
+      "translation": "||a_xyz[k]-a_xyz[k-1]||_2",
+      "rotation": "||a_rot[k]-a_rot[k-1]||_2",
+      "normalization": "Each motion sequence is divided by median of its first-16-action increments plus epsilon.",
+      "epsilon": 1e-8,
+      "combined_speed": "0.5 * normalized_translation + 0.5 * normalized_rotation",
+      "candidate_offsets": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "local_minimum": "v_arm[k] <= v_arm[k-1] and v_arm[k] <= v_arm[k+1]; k=15 is rejected because k+1 is unavailable.",
+      "threshold": 0.5,
+      "selection": "Earliest valid candidate; otherwise 16."
+    },
+    "gripper_event": {
+      "candidate_offsets": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      "intent_contract": "Existing ACT contract: value >= 0 is open (+1), value < 0 is close (-1).",
+      "event": "Earliest k with intent(a_gripper[k]) != intent(a_gripper[k-1]); otherwise 16."
+    },
+    "nearby_boundary": {
+      "definition": "Two nominated boundaries are nearby when abs(h_arm-h_grip) <= 1.",
+      "frozen_before_outcomes": true
+    },
+    "prohibited": [
+      "historical action averaging",
+      "temporal ensembling",
+      "CogACT aggregation",
+      "group-specific action sources",
+      "learned predictor",
+      "H_temp-controlled execution"
+    ]
+  },
+  "pairing": {
+    "fresh_environment_per_method_state": true,
+    "construction_and_reset_seed": "Environment construction and reset use the identical environment seed for every method/state pair.",
+    "policy_seed_reset_per_episode": true,
+    "initial_equality_required": [
+      "camera/raw observations",
+      "processed policy input",
+      "raw predicted A0"
+    ],
+    "common_prefix": "Compare actions, simulator states, and observations only until the earliest method-specific first re-query; divergence after a legitimate dynamic re-query is allowed.",
+    "pairing_failure_action": "Stop before full panel."
+  },
+  "analysis": {
+    "primary_units": ["episode", "task"],
+    "candidate_count_not_inferential_n": true,
+    "paired_comparisons": ["M1_vs_M0", "M2_vs_M0", "M3_vs_M0", "M3_vs_M1", "M3_vs_M2"],
+    "test": "Exact two-sided McNemar descriptive paired comparison; no threshold sweep or post-outcome trigger modification.",
+    "h_temp": "Optional post-hoc descriptive association only, using the already frozen outcome-blind artifact; never used in execution."
+  },
+  "stages": {
+    "act": {
+      "new_workload": "M1-M3 x 40 cases = 120 episodes",
+      "devices": {"M1": "GPU0", "M2": "GPU1", "M3": "GPU2"},
+      "status": "not_started"
+    },
+    "smolvla": {
+      "status": "not_planned",
+      "gate": "Only prepare a later confirmation if ACT is STRONG, SINGLE_TRIGGER_BETTER, or clearly COMPETITIVE."
+    }
+  },
+  "decision_labels": [
+    "GROUP_REQUERY_STRONG",
+    "GROUP_REQUERY_COMPETITIVE",
+    "SINGLE_TRIGGER_BETTER",
+    "GROUP_REQUERY_NULL",
+    "GROUP_REQUERY_HARMFUL"
+  ]
+}
