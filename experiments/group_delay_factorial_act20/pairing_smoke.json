@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "protocol": "/home/wjq/workspace/one-clock/experiments/group_delay_factorial_act20/protocol.json",
+  "task_id": 1,
+  "state_ids": [
+    20,
+    21,
+    22
+  ],
+  "environment_seeds": [
+    330120,
+    330121,
+    330122
+  ],
+  "methods": [
+    "FRESH",
+    "FO20",
+    "REVERSE20",
+    "FULL_OLD20",
+    "HARD_H16"
+  ],
+  "fresh_environment_per_condition_state": true,
+  "deterministic_repeated_inference_t0": true,
+  "fixed_method_checks": {
+    "FRESH": [],
+    "FO20": [
+      {
+        "state_id": 20,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 21,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 22,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      }
+    ],
+    "REVERSE20": [
+      {
+        "state_id": 20,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 21,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 22,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      }
+    ],
+    "FULL_OLD20": [
+      {
+        "state_id": 20,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 21,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      },
+      {
+        "state_id": 22,
+        "initial_camera_equal": true,
+        "processed_inputs_equal_t0_to_t19": true,
+        "raw_chunks_equal_t0_to_t19": true,
+        "executed_actions_equal_t0_to_t19": true,
+        "simulator_trajectory_equal_t0_to_t20": true
+      }
+    ],
+    "HARD_H16": [
+      {
+        "state_id": 20,
+        "initial_camera_equal": true,
+        "exact_common_prefix_through_t0": true,
+        "first_legitimate_difference_t": 1,
+        "first_difference_cause": "sparse query/source schedule",
+        "hard_query_steps": [
+          0,
+          16
+        ]
+      },
+      {
+        "state_id": 21,
+        "initial_camera_equal": true,
+        "exact_common_prefix_through_t0": true,
+        "first_legitimate_difference_t": 1,
+        "first_difference_cause": "sparse query/source schedule",
+        "hard_query_steps": [
+          0,
+          16
+        ]
+      },
+      {
+        "state_id": 22,
+        "initial_camera_equal": true,
+        "exact_common_prefix_through_t0": true,
+        "first_legitimate_difference_t": 1,
+        "first_difference_cause": "sparse query/source schedule",
+        "hard_query_steps": [
+          0,
+          16
+        ]
+      }
+    ]
+  },
+  "hard_h16_semantics": "compared with Fresh only through the last identical step t=0; t=1 is the first legitimate sparse-source difference"
+}

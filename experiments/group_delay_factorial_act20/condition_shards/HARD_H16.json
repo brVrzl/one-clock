@@ -1,0 +1,1141 @@
+{
+  "schema_version": 1,
+  "method": "HARD_H16",
+  "scope": "primary tasks 1-9 only",
+  "episodes": [
+    {
+      "task_id": 1,
+      "state_id": 20,
+      "environment_seed": 330120,
+      "success": true,
+      "environment_steps": 233,
+      "policy_queries": 15,
+      "query_rate": 0.06437768240343347
+    },
+    {
+      "task_id": 1,
+      "state_id": 21,
+      "environment_seed": 330121,
+      "success": true,
+      "environment_steps": 166,
+      "policy_queries": 11,
+      "query_rate": 0.06626506024096386
+    },
+    {
+      "task_id": 1,
+      "state_id": 22,
+      "environment_seed": 330122,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 1,
+      "state_id": 23,
+      "environment_seed": 330123,
+      "success": true,
+      "environment_steps": 119,
+      "policy_queries": 8,
+      "query_rate": 0.06722689075630252
+    },
+    {
+      "task_id": 1,
+      "state_id": 27,
+      "environment_seed": 330127,
+      "success": true,
+      "environment_steps": 123,
+      "policy_queries": 8,
+      "query_rate": 0.06504065040650407
+    },
+    {
+      "task_id": 1,
+      "state_id": 31,
+      "environment_seed": 330131,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 1,
+      "state_id": 34,
+      "environment_seed": 330134,
+      "success": true,
+      "environment_steps": 119,
+      "policy_queries": 8,
+      "query_rate": 0.06722689075630252
+    },
+    {
+      "task_id": 1,
+      "state_id": 35,
+      "environment_seed": 330135,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 1,
+      "state_id": 38,
+      "environment_seed": 330138,
+      "success": true,
+      "environment_steps": 183,
+      "policy_queries": 12,
+      "query_rate": 0.06557377049180328
+    },
+    {
+      "task_id": 1,
+      "state_id": 39,
+      "environment_seed": 330139,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 1,
+      "state_id": 44,
+      "environment_seed": 330144,
+      "success": true,
+      "environment_steps": 120,
+      "policy_queries": 8,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 1,
+      "state_id": 45,
+      "environment_seed": 330145,
+      "success": true,
+      "environment_steps": 154,
+      "policy_queries": 10,
+      "query_rate": 0.06493506493506493
+    },
+    {
+      "task_id": 1,
+      "state_id": 47,
+      "environment_seed": 330147,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 1,
+      "state_id": 48,
+      "environment_seed": 330148,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 2,
+      "state_id": 20,
+      "environment_seed": 330220,
+      "success": true,
+      "environment_steps": 111,
+      "policy_queries": 7,
+      "query_rate": 0.06306306306306306
+    },
+    {
+      "task_id": 2,
+      "state_id": 21,
+      "environment_seed": 330221,
+      "success": true,
+      "environment_steps": 150,
+      "policy_queries": 10,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 2,
+      "state_id": 22,
+      "environment_seed": 330222,
+      "success": true,
+      "environment_steps": 114,
+      "policy_queries": 8,
+      "query_rate": 0.07017543859649122
+    },
+    {
+      "task_id": 2,
+      "state_id": 23,
+      "environment_seed": 330223,
+      "success": true,
+      "environment_steps": 115,
+      "policy_queries": 8,
+      "query_rate": 0.06956521739130435
+    },
+    {
+      "task_id": 2,
+      "state_id": 27,
+      "environment_seed": 330227,
+      "success": true,
+      "environment_steps": 121,
+      "policy_queries": 8,
+      "query_rate": 0.06611570247933884
+    },
+    {
+      "task_id": 2,
+      "state_id": 31,
+      "environment_seed": 330231,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 2,
+      "state_id": 34,
+      "environment_seed": 330234,
+      "success": true,
+      "environment_steps": 118,
+      "policy_queries": 8,
+      "query_rate": 0.06779661016949153
+    },
+    {
+      "task_id": 2,
+      "state_id": 35,
+      "environment_seed": 330235,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 2,
+      "state_id": 38,
+      "environment_seed": 330238,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 2,
+      "state_id": 39,
+      "environment_seed": 330239,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 2,
+      "state_id": 44,
+      "environment_seed": 330244,
+      "success": true,
+      "environment_steps": 108,
+      "policy_queries": 7,
+      "query_rate": 0.06481481481481481
+    },
+    {
+      "task_id": 2,
+      "state_id": 45,
+      "environment_seed": 330245,
+      "success": true,
+      "environment_steps": 106,
+      "policy_queries": 7,
+      "query_rate": 0.0660377358490566
+    },
+    {
+      "task_id": 2,
+      "state_id": 47,
+      "environment_seed": 330247,
+      "success": true,
+      "environment_steps": 116,
+      "policy_queries": 8,
+      "query_rate": 0.06896551724137931
+    },
+    {
+      "task_id": 2,
+      "state_id": 48,
+      "environment_seed": 330248,
+      "success": true,
+      "environment_steps": 108,
+      "policy_queries": 7,
+      "query_rate": 0.06481481481481481
+    },
+    {
+      "task_id": 3,
+      "state_id": 20,
+      "environment_seed": 330320,
+      "success": true,
+      "environment_steps": 119,
+      "policy_queries": 8,
+      "query_rate": 0.06722689075630252
+    },
+    {
+      "task_id": 3,
+      "state_id": 21,
+      "environment_seed": 330321,
+      "success": true,
+      "environment_steps": 128,
+      "policy_queries": 8,
+      "query_rate": 0.0625
+    },
+    {
+      "task_id": 3,
+      "state_id": 22,
+      "environment_seed": 330322,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 3,
+      "state_id": 23,
+      "environment_seed": 330323,
+      "success": true,
+      "environment_steps": 132,
+      "policy_queries": 9,
+      "query_rate": 0.06818181818181818
+    },
+    {
+      "task_id": 3,
+      "state_id": 27,
+      "environment_seed": 330327,
+      "success": true,
+      "environment_steps": 130,
+      "policy_queries": 9,
+      "query_rate": 0.06923076923076923
+    },
+    {
+      "task_id": 3,
+      "state_id": 31,
+      "environment_seed": 330331,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 3,
+      "state_id": 34,
+      "environment_seed": 330334,
+      "success": true,
+      "environment_steps": 118,
+      "policy_queries": 8,
+      "query_rate": 0.06779661016949153
+    },
+    {
+      "task_id": 3,
+      "state_id": 35,
+      "environment_seed": 330335,
+      "success": true,
+      "environment_steps": 126,
+      "policy_queries": 8,
+      "query_rate": 0.06349206349206349
+    },
+    {
+      "task_id": 3,
+      "state_id": 38,
+      "environment_seed": 330338,
+      "success": true,
+      "environment_steps": 108,
+      "policy_queries": 7,
+      "query_rate": 0.06481481481481481
+    },
+    {
+      "task_id": 3,
+      "state_id": 39,
+      "environment_seed": 330339,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 3,
+      "state_id": 44,
+      "environment_seed": 330344,
+      "success": true,
+      "environment_steps": 126,
+      "policy_queries": 8,
+      "query_rate": 0.06349206349206349
+    },
+    {
+      "task_id": 3,
+      "state_id": 45,
+      "environment_seed": 330345,
+      "success": true,
+      "environment_steps": 131,
+      "policy_queries": 9,
+      "query_rate": 0.06870229007633588
+    },
+    {
+      "task_id": 3,
+      "state_id": 47,
+      "environment_seed": 330347,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 3,
+      "state_id": 48,
+      "environment_seed": 330348,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 20,
+      "environment_seed": 330420,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 21,
+      "environment_seed": 330421,
+      "success": true,
+      "environment_steps": 146,
+      "policy_queries": 10,
+      "query_rate": 0.0684931506849315
+    },
+    {
+      "task_id": 4,
+      "state_id": 22,
+      "environment_seed": 330422,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 23,
+      "environment_seed": 330423,
+      "success": true,
+      "environment_steps": 132,
+      "policy_queries": 9,
+      "query_rate": 0.06818181818181818
+    },
+    {
+      "task_id": 4,
+      "state_id": 27,
+      "environment_seed": 330427,
+      "success": true,
+      "environment_steps": 143,
+      "policy_queries": 9,
+      "query_rate": 0.06293706293706294
+    },
+    {
+      "task_id": 4,
+      "state_id": 31,
+      "environment_seed": 330431,
+      "success": true,
+      "environment_steps": 145,
+      "policy_queries": 10,
+      "query_rate": 0.06896551724137931
+    },
+    {
+      "task_id": 4,
+      "state_id": 34,
+      "environment_seed": 330434,
+      "success": true,
+      "environment_steps": 138,
+      "policy_queries": 9,
+      "query_rate": 0.06521739130434782
+    },
+    {
+      "task_id": 4,
+      "state_id": 35,
+      "environment_seed": 330435,
+      "success": true,
+      "environment_steps": 140,
+      "policy_queries": 9,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 38,
+      "environment_seed": 330438,
+      "success": true,
+      "environment_steps": 135,
+      "policy_queries": 9,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 4,
+      "state_id": 39,
+      "environment_seed": 330439,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 44,
+      "environment_seed": 330444,
+      "success": true,
+      "environment_steps": 135,
+      "policy_queries": 9,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 4,
+      "state_id": 45,
+      "environment_seed": 330445,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 4,
+      "state_id": 47,
+      "environment_seed": 330447,
+      "success": true,
+      "environment_steps": 151,
+      "policy_queries": 10,
+      "query_rate": 0.06622516556291391
+    },
+    {
+      "task_id": 4,
+      "state_id": 48,
+      "environment_seed": 330448,
+      "success": true,
+      "environment_steps": 138,
+      "policy_queries": 9,
+      "query_rate": 0.06521739130434782
+    },
+    {
+      "task_id": 5,
+      "state_id": 20,
+      "environment_seed": 330520,
+      "success": true,
+      "environment_steps": 226,
+      "policy_queries": 15,
+      "query_rate": 0.06637168141592921
+    },
+    {
+      "task_id": 5,
+      "state_id": 21,
+      "environment_seed": 330521,
+      "success": true,
+      "environment_steps": 118,
+      "policy_queries": 8,
+      "query_rate": 0.06779661016949153
+    },
+    {
+      "task_id": 5,
+      "state_id": 22,
+      "environment_seed": 330522,
+      "success": true,
+      "environment_steps": 129,
+      "policy_queries": 9,
+      "query_rate": 0.06976744186046512
+    },
+    {
+      "task_id": 5,
+      "state_id": 23,
+      "environment_seed": 330523,
+      "success": true,
+      "environment_steps": 151,
+      "policy_queries": 10,
+      "query_rate": 0.06622516556291391
+    },
+    {
+      "task_id": 5,
+      "state_id": 27,
+      "environment_seed": 330527,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 5,
+      "state_id": 31,
+      "environment_seed": 330531,
+      "success": true,
+      "environment_steps": 174,
+      "policy_queries": 11,
+      "query_rate": 0.06321839080459771
+    },
+    {
+      "task_id": 5,
+      "state_id": 34,
+      "environment_seed": 330534,
+      "success": true,
+      "environment_steps": 122,
+      "policy_queries": 8,
+      "query_rate": 0.06557377049180328
+    },
+    {
+      "task_id": 5,
+      "state_id": 35,
+      "environment_seed": 330535,
+      "success": true,
+      "environment_steps": 121,
+      "policy_queries": 8,
+      "query_rate": 0.06611570247933884
+    },
+    {
+      "task_id": 5,
+      "state_id": 38,
+      "environment_seed": 330538,
+      "success": true,
+      "environment_steps": 121,
+      "policy_queries": 8,
+      "query_rate": 0.06611570247933884
+    },
+    {
+      "task_id": 5,
+      "state_id": 39,
+      "environment_seed": 330539,
+      "success": true,
+      "environment_steps": 124,
+      "policy_queries": 8,
+      "query_rate": 0.06451612903225806
+    },
+    {
+      "task_id": 5,
+      "state_id": 44,
+      "environment_seed": 330544,
+      "success": true,
+      "environment_steps": 154,
+      "policy_queries": 10,
+      "query_rate": 0.06493506493506493
+    },
+    {
+      "task_id": 5,
+      "state_id": 45,
+      "environment_seed": 330545,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 5,
+      "state_id": 47,
+      "environment_seed": 330547,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 5,
+      "state_id": 48,
+      "environment_seed": 330548,
+      "success": true,
+      "environment_steps": 198,
+      "policy_queries": 13,
+      "query_rate": 0.06565656565656566
+    },
+    {
+      "task_id": 6,
+      "state_id": 20,
+      "environment_seed": 330620,
+      "success": true,
+      "environment_steps": 135,
+      "policy_queries": 9,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 6,
+      "state_id": 21,
+      "environment_seed": 330621,
+      "success": true,
+      "environment_steps": 189,
+      "policy_queries": 12,
+      "query_rate": 0.06349206349206349
+    },
+    {
+      "task_id": 6,
+      "state_id": 22,
+      "environment_seed": 330622,
+      "success": true,
+      "environment_steps": 141,
+      "policy_queries": 9,
+      "query_rate": 0.06382978723404255
+    },
+    {
+      "task_id": 6,
+      "state_id": 23,
+      "environment_seed": 330623,
+      "success": true,
+      "environment_steps": 135,
+      "policy_queries": 9,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 6,
+      "state_id": 27,
+      "environment_seed": 330627,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 6,
+      "state_id": 31,
+      "environment_seed": 330631,
+      "success": true,
+      "environment_steps": 139,
+      "policy_queries": 9,
+      "query_rate": 0.06474820143884892
+    },
+    {
+      "task_id": 6,
+      "state_id": 34,
+      "environment_seed": 330634,
+      "success": true,
+      "environment_steps": 144,
+      "policy_queries": 9,
+      "query_rate": 0.0625
+    },
+    {
+      "task_id": 6,
+      "state_id": 35,
+      "environment_seed": 330635,
+      "success": true,
+      "environment_steps": 185,
+      "policy_queries": 12,
+      "query_rate": 0.06486486486486487
+    },
+    {
+      "task_id": 6,
+      "state_id": 38,
+      "environment_seed": 330638,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 6,
+      "state_id": 39,
+      "environment_seed": 330639,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 6,
+      "state_id": 44,
+      "environment_seed": 330644,
+      "success": true,
+      "environment_steps": 134,
+      "policy_queries": 9,
+      "query_rate": 0.06716417910447761
+    },
+    {
+      "task_id": 6,
+      "state_id": 45,
+      "environment_seed": 330645,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 6,
+      "state_id": 47,
+      "environment_seed": 330647,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 6,
+      "state_id": 48,
+      "environment_seed": 330648,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 20,
+      "environment_seed": 330720,
+      "success": true,
+      "environment_steps": 116,
+      "policy_queries": 8,
+      "query_rate": 0.06896551724137931
+    },
+    {
+      "task_id": 7,
+      "state_id": 21,
+      "environment_seed": 330721,
+      "success": true,
+      "environment_steps": 136,
+      "policy_queries": 9,
+      "query_rate": 0.0661764705882353
+    },
+    {
+      "task_id": 7,
+      "state_id": 22,
+      "environment_seed": 330722,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 23,
+      "environment_seed": 330723,
+      "success": true,
+      "environment_steps": 176,
+      "policy_queries": 11,
+      "query_rate": 0.0625
+    },
+    {
+      "task_id": 7,
+      "state_id": 27,
+      "environment_seed": 330727,
+      "success": true,
+      "environment_steps": 205,
+      "policy_queries": 13,
+      "query_rate": 0.06341463414634146
+    },
+    {
+      "task_id": 7,
+      "state_id": 31,
+      "environment_seed": 330731,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 34,
+      "environment_seed": 330734,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 35,
+      "environment_seed": 330735,
+      "success": true,
+      "environment_steps": 187,
+      "policy_queries": 12,
+      "query_rate": 0.06417112299465241
+    },
+    {
+      "task_id": 7,
+      "state_id": 38,
+      "environment_seed": 330738,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 39,
+      "environment_seed": 330739,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 44,
+      "environment_seed": 330744,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 7,
+      "state_id": 45,
+      "environment_seed": 330745,
+      "success": true,
+      "environment_steps": 200,
+      "policy_queries": 13,
+      "query_rate": 0.065
+    },
+    {
+      "task_id": 7,
+      "state_id": 47,
+      "environment_seed": 330747,
+      "success": true,
+      "environment_steps": 227,
+      "policy_queries": 15,
+      "query_rate": 0.06607929515418502
+    },
+    {
+      "task_id": 7,
+      "state_id": 48,
+      "environment_seed": 330748,
+      "success": true,
+      "environment_steps": 137,
+      "policy_queries": 9,
+      "query_rate": 0.06569343065693431
+    },
+    {
+      "task_id": 8,
+      "state_id": 20,
+      "environment_seed": 330820,
+      "success": true,
+      "environment_steps": 143,
+      "policy_queries": 9,
+      "query_rate": 0.06293706293706294
+    },
+    {
+      "task_id": 8,
+      "state_id": 21,
+      "environment_seed": 330821,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 22,
+      "environment_seed": 330822,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 23,
+      "environment_seed": 330823,
+      "success": true,
+      "environment_steps": 140,
+      "policy_queries": 9,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 27,
+      "environment_seed": 330827,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 31,
+      "environment_seed": 330831,
+      "success": true,
+      "environment_steps": 148,
+      "policy_queries": 10,
+      "query_rate": 0.06756756756756757
+    },
+    {
+      "task_id": 8,
+      "state_id": 34,
+      "environment_seed": 330834,
+      "success": true,
+      "environment_steps": 240,
+      "policy_queries": 15,
+      "query_rate": 0.0625
+    },
+    {
+      "task_id": 8,
+      "state_id": 35,
+      "environment_seed": 330835,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 38,
+      "environment_seed": 330838,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 39,
+      "environment_seed": 330839,
+      "success": true,
+      "environment_steps": 152,
+      "policy_queries": 10,
+      "query_rate": 0.06578947368421052
+    },
+    {
+      "task_id": 8,
+      "state_id": 44,
+      "environment_seed": 330844,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 45,
+      "environment_seed": 330845,
+      "success": true,
+      "environment_steps": 150,
+      "policy_queries": 10,
+      "query_rate": 0.06666666666666667
+    },
+    {
+      "task_id": 8,
+      "state_id": 47,
+      "environment_seed": 330847,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 8,
+      "state_id": 48,
+      "environment_seed": 330848,
+      "success": true,
+      "environment_steps": 139,
+      "policy_queries": 9,
+      "query_rate": 0.06474820143884892
+    },
+    {
+      "task_id": 9,
+      "state_id": 20,
+      "environment_seed": 330920,
+      "success": true,
+      "environment_steps": 113,
+      "policy_queries": 8,
+      "query_rate": 0.07079646017699115
+    },
+    {
+      "task_id": 9,
+      "state_id": 21,
+      "environment_seed": 330921,
+      "success": true,
+      "environment_steps": 124,
+      "policy_queries": 8,
+      "query_rate": 0.06451612903225806
+    },
+    {
+      "task_id": 9,
+      "state_id": 22,
+      "environment_seed": 330922,
+      "success": true,
+      "environment_steps": 119,
+      "policy_queries": 8,
+      "query_rate": 0.06722689075630252
+    },
+    {
+      "task_id": 9,
+      "state_id": 23,
+      "environment_seed": 330923,
+      "success": true,
+      "environment_steps": 111,
+      "policy_queries": 7,
+      "query_rate": 0.06306306306306306
+    },
+    {
+      "task_id": 9,
+      "state_id": 27,
+      "environment_seed": 330927,
+      "success": true,
+      "environment_steps": 123,
+      "policy_queries": 8,
+      "query_rate": 0.06504065040650407
+    },
+    {
+      "task_id": 9,
+      "state_id": 31,
+      "environment_seed": 330931,
+      "success": true,
+      "environment_steps": 112,
+      "policy_queries": 7,
+      "query_rate": 0.0625
+    },
+    {
+      "task_id": 9,
+      "state_id": 34,
+      "environment_seed": 330934,
+      "success": true,
+      "environment_steps": 122,
+      "policy_queries": 8,
+      "query_rate": 0.06557377049180328
+    },
+    {
+      "task_id": 9,
+      "state_id": 35,
+      "environment_seed": 330935,
+      "success": true,
+      "environment_steps": 111,
+      "policy_queries": 7,
+      "query_rate": 0.06306306306306306
+    },
+    {
+      "task_id": 9,
+      "state_id": 38,
+      "environment_seed": 330938,
+      "success": true,
+      "environment_steps": 106,
+      "policy_queries": 7,
+      "query_rate": 0.0660377358490566
+    },
+    {
+      "task_id": 9,
+      "state_id": 39,
+      "environment_seed": 330939,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 9,
+      "state_id": 44,
+      "environment_seed": 330944,
+      "success": false,
+      "environment_steps": 280,
+      "policy_queries": 18,
+      "query_rate": 0.06428571428571428
+    },
+    {
+      "task_id": 9,
+      "state_id": 45,
+      "environment_seed": 330945,
+      "success": true,
+      "environment_steps": 114,
+      "policy_queries": 8,
+      "query_rate": 0.07017543859649122
+    },
+    {
+      "task_id": 9,
+      "state_id": 47,
+      "environment_seed": 330947,
+      "success": true,
+      "environment_steps": 117,
+      "policy_queries": 8,
+      "query_rate": 0.06837606837606838
+    },
+    {
+      "task_id": 9,
+      "state_id": 48,
+      "environment_seed": 330948,
+      "success": true,
+      "environment_steps": 131,
+      "policy_queries": 9,
+      "query_rate": 0.06870229007633588
+    }
+  ]
+}

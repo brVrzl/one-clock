@@ -1,0 +1,1065 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Loading weights from local directory
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=20 success=True steps=119
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=21 success=True steps=131
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=23 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FRESH state=48 success=True steps=127
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=20 success=True steps=118
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=21 success=True steps=133
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=23 success=True steps=120
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=31 success=True steps=118
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FO20 state=48 success=True steps=131
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=20 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=23 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=REVERSE20 state=48 success=True steps=127
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=20 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=23 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=FULL_OLD20 state=48 success=True steps=138
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=20 success=True steps=116
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=21 success=True steps=136
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=23 success=True steps=176
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=27 success=True steps=205
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=35 success=True steps=187
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=45 success=True steps=200
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=47 success=True steps=227
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[7]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=7 | n_envs=1
+task=7 method=HARD_H16 state=48 success=True steps=137
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Loading weights from local directory
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=20 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=22 success=True steps=236
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=23 success=True steps=162
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=31 success=True steps=198
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=34 success=True steps=129
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=45 success=True steps=187
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FRESH state=48 success=True steps=146
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=20 success=True steps=137
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=22 success=True steps=148
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=23 success=True steps=150
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=31 success=True steps=172
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=34 success=True steps=134
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=39 success=True steps=164
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=45 success=True steps=148
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FO20 state=48 success=True steps=140
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=20 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=23 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=34 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=REVERSE20 state=48 success=True steps=134
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=20 success=True steps=142
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=23 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=34 success=True steps=143
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=47 success=True steps=141
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=FULL_OLD20 state=48 success=True steps=134
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=20 success=True steps=143
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=23 success=True steps=140
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=27 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=31 success=True steps=148
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=34 success=True steps=240
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=35 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=39 success=True steps=152
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=45 success=True steps=150
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=47 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[8]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=8 | n_envs=1
+task=8 method=HARD_H16 state=48 success=True steps=139
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Loading weights from local directory
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=20 success=True steps=119
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=22 success=True steps=126
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=23 success=True steps=126
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=27 success=True steps=137
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=34 success=True steps=129
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=35 success=True steps=113
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=38 success=True steps=106
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=39 success=True steps=168
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=45 success=True steps=117
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=47 success=True steps=107
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FRESH state=48 success=True steps=143
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=20 success=True steps=123
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=21 success=True steps=211
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=22 success=True steps=122
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=23 success=True steps=123
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=27 success=True steps=137
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=34 success=True steps=131
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=35 success=True steps=117
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=38 success=True steps=105
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=39 success=True steps=109
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=44 success=True steps=160
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=45 success=True steps=114
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=47 success=True steps=121
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FO20 state=48 success=True steps=141
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=20 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=22 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=23 success=True steps=128
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=27 success=True steps=131
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=31 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=34 success=True steps=128
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=35 success=True steps=116
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=38 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=39 success=True steps=116
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=47 success=True steps=123
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=REVERSE20 state=48 success=True steps=142
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=20 success=True steps=123
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=21 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=22 success=True steps=187
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=23 success=True steps=120
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=27 success=True steps=133
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=31 success=True steps=129
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=34 success=True steps=130
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=35 success=True steps=121
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=38 success=True steps=117
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=39 success=True steps=121
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=44 success=True steps=127
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=45 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=47 success=True steps=126
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=FULL_OLD20 state=48 success=True steps=135
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=20 success=True steps=113
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=21 success=True steps=124
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=22 success=True steps=119
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=23 success=True steps=111
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=27 success=True steps=123
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=31 success=True steps=112
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=34 success=True steps=122
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=35 success=True steps=111
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=38 success=True steps=106
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=39 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=44 success=False steps=280
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=45 success=True steps=114
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=47 success=True steps=117
+Creating LIBERO envs | suites=['libero_object'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[9]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_object | task_id=9 | n_envs=1
+task=9 method=HARD_H16 state=48 success=True steps=131
+{"valid": true, "task_id": 7, "episodes": 70, "result": "/home/wjq/workspace/one-clock/experiments/group_delay_factorial_act20/results/task_07.json"}
+{"valid": true, "task_id": 8, "episodes": 70, "result": "/home/wjq/workspace/one-clock/experiments/group_delay_factorial_act20/results/task_08.json"}
+{"valid": true, "task_id": 9, "episodes": 70, "result": "/home/wjq/workspace/one-clock/experiments/group_delay_factorial_act20/results/task_09.json"}

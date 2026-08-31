@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_outcome_rollout",
+  "purpose": "Repaired paired ACT evaluation of fixed same-target action-group delays versus the fixed hard h16 executor.",
+  "historical_reference": {
+    "branch": "exp/icra27-post-gate3c-5080",
+    "authoritative_executor": "research/audit_tools/gate3c_temporal_reuse.py",
+    "historical_primary_result": {
+      "FO20": "80/126",
+      "Fresh": "53/126"
+    },
+    "historical_outcomes_are_context_only": true
+  },
+  "cohort": {
+    "dataset": "LIBERO Object",
+    "primary_task_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "secondary_task_ids": [0],
+    "primary_scope": "tasks 1-9 only",
+    "secondary_scope": "task 0 only if explicitly reproduced; never pooled into the primary aggregate",
+    "state_ids": [20, 21, 22, 23, 27, 31, 34, 35, 38, 39, 44, 45, 47, 48],
+    "blocks_per_primary_task": 14,
+    "primary_paired_blocks": 126,
+    "environment_seed_rule": "330000 + 100 * task_id + state_id",
+    "environment_seeds_by_task": {
+      "1": [330120, 330121, 330122, 330123, 330127, 330131, 330134, 330135, 330138, 330139, 330144, 330145, 330147, 330148],
+      "2": [330220, 330221, 330222, 330223, 330227, 330231, 330234, 330235, 330238, 330239, 330244, 330245, 330247, 330248],
+      "3": [330320, 330321, 330322, 330323, 330327, 330331, 330334, 330335, 330338, 330339, 330344, 330345, 330347, 330348],
+      "4": [330420, 330421, 330422, 330423, 330427, 330431, 330434, 330435, 330438, 330439, 330444, 330445, 330447, 330448],
+      "5": [330520, 330521, 330522, 330523, 330527, 330531, 330534, 330535, 330538, 330539, 330544, 330545, 330547, 330548],
+      "6": [330620, 330621, 330622, 330623, 330627, 330631, 330634, 330635, 330638, 330639, 330644, 330645, 330647, 330648],
+      "7": [330720, 330721, 330722, 330723, 330727, 330731, 330734, 330735, 330738, 330739, 330744, 330745, 330747, 330748],
+      "8": [330820, 330821, 330822, 330823, 330827, 330831, 330834, 330835, 330838, 330839, 330844, 330845, 330847, 330848],
+      "9": [330920, 330921, 330922, 330923, 330927, 330931, 330934, 330935, 330938, 330939, 330944, 330945, 330947, 330948]
+    }
+  },
+  "runtime": {
+    "checkpoint": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+    "policy": "official LeRobot ACT",
+    "policy_checkpoint_chunk_size": 100,
+    "policy_temporal_ensemble": false,
+    "action_smoothing": false,
+    "action_dim": 7,
+    "control_frequency_hz": 20,
+    "control_mode": "relative",
+    "obs_type": "pixels_agent_pos",
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "camera_name_mapping": {
+      "agentview_image": "image",
+      "robot0_eye_in_hand_image": "wrist_image"
+    },
+    "observation_width": 256,
+    "observation_height": 256,
+    "init_states": true,
+    "hard_reset": true,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "max_episode_steps": 280,
+    "success_criterion": "LIBERO info is_success, with positive terminal reward as the established fallback",
+    "policy_rng_seed": 424242,
+    "runtime_python": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "runtime_lerobot": "0.4.4",
+    "runtime_torch": "2.7.1+cu128",
+    "runtime_mujoco": "3.3.1"
+  },
+  "action_groups": {
+    "arm": [0, 1, 2, 3, 4, 5],
+    "gripper": [6]
+  },
+  "conditions": [
+    {
+      "name": "FRESH",
+      "d_arm": 0,
+      "d_grip": 0,
+      "query_schedule": "q=t every controller step",
+      "formula": "a_t = A_t[0]"
+    },
+    {
+      "name": "FO20",
+      "d_arm": 0,
+      "d_grip": 20,
+      "query_schedule": "q=t every controller step",
+      "formula": "t<20: A_t[0]; t>=20: [A_t[0,0:6], A_{t-20}[20,6]]"
+    },
+    {
+      "name": "REVERSE20",
+      "d_arm": 20,
+      "d_grip": 0,
+      "query_schedule": "q=t every controller step",
+      "formula": "t<20: A_t[0]; t>=20: [A_{t-20}[20,0:6], A_t[0,6]]"
+    },
+    {
+      "name": "FULL_OLD20",
+      "d_arm": 20,
+      "d_grip": 20,
+      "query_schedule": "q=t every controller step",
+      "formula": "t<20: A_t[0]; t>=20: A_{t-20}[20,:]"
+    },
+    {
+      "name": "HARD_H16",
+      "d_arm": "joint h16 commitment",
+      "d_grip": "joint h16 commitment",
+      "query_schedule": "q=0,16,32,...",
+      "formula": "for newest q<=t, execute A_q[t-q]",
+      "prediction_horizon": 100,
+      "temporal_ensemble": false,
+      "query_rate_reporting": "observed policy_queries / environment_steps; expected approximately 0.06 at a 280-step cap"
+    }
+  ],
+  "same_target_contract": {
+    "definition": "A_q[k] targets physical time q+k",
+    "required_identity": "q + k = t",
+    "fixed_source_old": "q=t-20 and k=20",
+    "forbidden_controls": ["A_{t-20}[0]", "A_t[20]"],
+    "fixed_source_prefix": "all four fixed-source conditions are exactly FRESH for t<20"
+  },
+  "pairing_smoke": {
+    "task_id": 1,
+    "state_ids": [20, 21, 22],
+    "seed_rule": "330000 + 100 * task_id + state_id",
+    "fixed_methods_compare_before_t": 20,
+    "fixed_exact_fields": ["initial camera observations", "processed ACT inputs", "raw ACT chunks", "executed actions", "simulator state trajectory"],
+    "hard_h16_compare_with_fresh_until": "the first legitimate difference at t=1 caused by sparse query/source selection",
+    "fresh_environment_per_condition_state": true
+  },
+  "primary_comparisons": [
+    {"label": "P1_REPLICATION", "first": "FO20", "second": "FRESH"},
+    {"label": "P2_GROUP_ASYMMETRY", "first": "FO20", "second": "REVERSE20"},
+    {"label": "P3_GROUP_STRUCTURE", "first": "FO20", "second": "FULL_OLD20"},
+    {"label": "P4_PRACTICAL_BASELINE", "first": "FO20", "second": "HARD_H16"}
+  ],
+  "statistics": {
+    "inference_unit": "paired task-state block",
+    "primary_outcome": "binary episode success",
+    "reported": ["FO-only wins", "second-only wins", "net", "exact two-sided McNemar", "success delta", "paired bootstrap interval", "task-cluster bootstrap interval", "leave-one-task-out deltas"],
+    "bootstrap_draws": 20000,
+    "bootstrap_seeds": {"paired": 20260920, "task_cluster": 20260921},
+    "interaction": "I = S(0,20) - S(0,0) - S(20,20) + S(20,0), descriptive only",
+    "decision_uncertainty_rule": "clear positive/negative requires the corresponding bootstrap interval, task-cluster interval, and every leave-one-task-out estimate to have the same strict sign; McNemar is reported but is not the sole decision criterion"
+  },
+  "decision_rule": {
+    "GROUP_DELAY_METHOD_STRONG": "FO20 is clearly positive versus FRESH, REVERSE20, and FULL_OLD20, and FO20 is not clearly negative versus HARD_H16",
+    "GROUP_DELAY_STRUCTURE_STRONG": "FO20 is clearly positive versus FRESH, REVERSE20, and FULL_OLD20, but is clearly negative versus HARD_H16",
+    "GROUP_DELAY_SCALAR_ONLY": "FO20 and REVERSE20 are not clearly different, while both clearly improve over FRESH",
+    "GROUP_DELAY_NOT_REPLICATED": "FO20 is not clearly positive versus FRESH",
+    "precedence": ["GROUP_DELAY_NOT_REPLICATED", "GROUP_DELAY_SCALAR_ONLY", "GROUP_DELAY_STRUCTURE_STRONG", "GROUP_DELAY_METHOD_STRONG"],
+    "no_tuning_after_outcomes": true
+  },
+  "rollout": {
+    "primary_episodes": 630,
+    "conditions": 5,
+    "task_shards": "three simple GPU shards, each owning three primary tasks",
+    "outcome_rollout_starts_only_after": ["protocol.json exists", "semantic tests pass", "pairing smoke passes"],
+    "historical_outcomes_spliced": false,
+    "held_out_tasks": false,
+    "follow_up_methods": false
+  }
+}
