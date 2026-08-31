@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "status": "act_rollout_in_progress",
+  "status": "act_complete_single_trigger_better",
   "purpose": "Rapid ACT development test of bounded group-triggered joint replanning without historical action fusion.",
   "prior_commits": {
     "repaired_h16_baseline": "b0b2a6d18ccc9da9ded0057d9f512ad8b535dac0",
@@ -168,11 +168,21 @@
     "act": {
       "new_workload": "M1-M3 x 40 cases = 120 episodes",
       "devices": {"M1": "GPU0", "M2": "GPU1", "M3": "GPU2"},
-      "status": "in_progress; live pairing smoke passed"
+      "status": "complete; live pairing smoke passed",
+      "result_paths": {
+        "M1_arm_phase": "act/results/M1_arm_phase/",
+        "M2_gripper_event": "act/results/M2_gripper_event/",
+        "M3_group_event_joint": "act/results/M3_group_event_joint/"
+      }
     },
     "smolvla": {
-      "status": "not_planned",
-      "gate": "Only prepare a later confirmation if ACT is STRONG, SINGLE_TRIGGER_BETTER, or clearly COMPETITIVE."
+      "status": "followup_prepared_not_run",
+      "gate": "Only run after an explicit later approval; ACT returned SINGLE_TRIGGER_BETTER.",
+      "selected_method": "M2_gripper_event",
+      "cohort": "same four development tasks, states 10--19, and seeds 2000--2009",
+      "pairing": "fresh identically seeded environment per method/state with common-prefix validation",
+      "flow_rng": "key by policy, task, state, environment seed, and physical query step q; method-independent",
+      "scope": "M2 only; no adaptive threshold changes, historical action fusion, or blind task evaluation"
     }
   },
   "decision_labels": [
@@ -181,5 +191,12 @@
     "SINGLE_TRIGGER_BETTER",
     "GROUP_REQUERY_NULL",
     "GROUP_REQUERY_HARMFUL"
-  ]
+  ],
+  "decision": {
+    "label": "SINGLE_TRIGGER_BETTER",
+    "selected_smallest_module": "M2_gripper_event",
+    "basis": "M2=35/40 exceeds M0=32/40; M1=30/40 and M3=31/40; M2 has 3 candidate-only and 0 reference-only paired outcomes versus M0.",
+    "smolvla_launched": false,
+    "blind_evaluation_launched": false
+  }
 }

@@ -68,6 +68,7 @@ def load_protocol(path: Path) -> dict[str, Any]:
         "frozen_before_adaptive_outcomes",
         "act_rollout_in_progress",
         "act_complete",
+        "act_complete_single_trigger_better",
     }:
         raise RuntimeError(f"protocol is not in a runnable development state: {protocol.get('status')!r}")
     if protocol["cohort"]["states"] != list(range(10, 20)):
@@ -90,12 +91,14 @@ def episode_seed_pairs(protocol: dict[str, Any]) -> list[tuple[int, int]]:
     return list(zip(protocol["cohort"]["states"], protocol["cohort"]["environment_seeds"], strict=True))
 
 
-def summarize_trigger_logs(query_log: list[dict[str, Any]]) -> dict[str, Any]:
+def summarize_trigger_logs(method: str, query_log: list[dict[str, Any]]) -> dict[str, Any]:
     noninitial = query_log[1:]
-    arm_nominated = sum(int(row["h_arm"] < MAX_HORIZON) for row in noninitial)
-    gripper_nominated = sum(int(row["h_grip"] < MAX_HORIZON) for row in noninitial)
-    both_nominated = sum(int(row["both_nominated"]) for row in noninitial)
-    both_nearby = sum(int(row["both_nearby"]) for row in noninitial)
+    arm_active = method in {"M1_arm_phase", "M3_group_event_joint"}
+    gripper_active = method in {"M2_gripper_event", "M3_group_event_joint"}
+    arm_nominated = sum(int(arm_active and row["h_arm"] < MAX_HORIZON) for row in noninitial)
+    gripper_nominated = sum(int(gripper_active and row["h_grip"] < MAX_HORIZON) for row in noninitial)
+    both_nominated = sum(int(arm_active and gripper_active and row["both_nominated"]) for row in noninitial)
+    both_nearby = sum(int(arm_active and gripper_active and row["both_nearby"]) for row in noninitial)
     arm_selected = sum(
         int(row["h_arm"] < MAX_HORIZON and row["h_arm"] == row["h_exec"])
         for row in noninitial
@@ -106,6 +109,7 @@ def summarize_trigger_logs(query_log: list[dict[str, Any]]) -> dict[str, Any]:
     )
     denominator = len(noninitial)
     return {
+        "method": method,
         "noninitial_query_count": denominator,
         "arm_nomination_count": arm_nominated,
         "gripper_nomination_count": gripper_nominated,
@@ -266,7 +270,7 @@ def run_episode(
         "mean_planned_horizon": float(np.mean([row["h_exec"] for row in query_log])),
         "median_planned_horizon": float(np.median([row["h_exec"] for row in query_log])),
         "mean_completion_steps": float(completion_step) if completion_step is not None else None,
-        "trigger_summary": summarize_trigger_logs(query_log),
+        "trigger_summary": summarize_trigger_logs(method, query_log),
         "query_log": query_log,
         "step_log": step_log,
     }

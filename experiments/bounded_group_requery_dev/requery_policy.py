@@ -117,15 +117,29 @@ def choose_horizon(method: str, chunk: np.ndarray) -> tuple[int, dict[str, Any]]
             "both_nominated": False,
             "both_nearby": False,
         }
-    h_arm, arm = arm_phase_horizon(values)
-    h_grip, grip = gripper_event_horizon(values)
     if method == "M1_arm_phase":
+        h_arm, arm = arm_phase_horizon(values)
+        h_grip = MAX_HORIZON
+        grip = {
+            "gripper_event_candidates": [],
+            "gripper_triggered": False,
+            "gripper_trigger_offset": None,
+        }
         h_exec = h_arm
         reason = "arm_phase" if arm["arm_triggered"] else "no_arm_phase_fallback"
     elif method == "M2_gripper_event":
+        h_arm = MAX_HORIZON
+        arm = {
+            "arm_boundary_candidates": [],
+            "arm_triggered": False,
+            "arm_trigger_offset": None,
+        }
+        h_grip, grip = gripper_event_horizon(values)
         h_exec = h_grip
         reason = "gripper_event" if grip["gripper_triggered"] else "no_gripper_event_fallback"
     elif method == "M3_group_event_joint":
+        h_arm, arm = arm_phase_horizon(values)
+        h_grip, grip = gripper_event_horizon(values)
         h_exec = min(MAX_HORIZON, h_arm, h_grip)
         both = bool(arm["arm_triggered"] and grip["gripper_triggered"])
         if both and h_arm == h_grip:
