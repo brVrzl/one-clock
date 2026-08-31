@@ -7,7 +7,7 @@ Completed the final asymmetric temporal reuse development gate.
 - Pairing smoke: PASS on task 1, states 20, 21, and 22.
 - New rollout: exactly 252 episodes, C1 and C2 only, all nine task shards validated.
 - Decision: `ASYM_REUSE_MECHANISM_ONLY`.
-- Results commit: recorded after this status update.
+- Results commit: `76991171a3c1ec89734098e30aa6da6c33b5c38a`.
 - Active rollout jobs: none.
 
 C1 did not improve the reused hard-h16 executor (64/126 versus 88/126), but
