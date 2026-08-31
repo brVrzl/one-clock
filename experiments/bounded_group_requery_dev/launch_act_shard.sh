@@ -16,6 +16,9 @@ PROGRESS="act/progress/${TASK_SLUG}.json"
 LOG="act/logs/${TASK_SLUG}_${METHOD}.log"
 
 mkdir -p act/results act/progress act/logs
+if [[ -f "$OUT" ]] && rg -q '"status": "complete"' "$OUT"; then
+  exit 0
+fi
 exec "$ACT_PY" run_bounded_group_requery.py \
   --task "$TASK_KEY" \
   --methods "$METHOD" \
