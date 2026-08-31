@@ -1,0 +1,376 @@
+{
+  "policies": {
+    "act": {
+      "methods": {
+        "hard_h8": {
+          "success_count": 34,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 7,
+            "libero_spatial:task0": 8,
+            "libero_goal:task2": 9,
+            "libero_10:task3": 10
+          },
+          "policy_queries": 801,
+          "environment_steps": 6261,
+          "query_rate": 0.12793483469094394,
+          "mean_query_count": 20.025,
+          "mean_ensemble_candidate_count": 8.871905446414312,
+          "mean_weighted_source_age_steps": 3.469413831656285,
+          "successful_completion_count": 34,
+          "mean_completion_steps_successful": 134.14705882352942,
+          "mean_query_latency_seconds": 0.07082291168728135
+        },
+        "sparse_te_h8": {
+          "success_count": 23,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 5,
+            "libero_spatial:task0": 5,
+            "libero_goal:task2": 9,
+            "libero_10:task3": 4
+          },
+          "policy_queries": 1126,
+          "environment_steps": 8910,
+          "query_rate": 0.12637485970819304,
+          "mean_query_count": 28.15,
+          "mean_ensemble_candidate_count": 9.931425364758699,
+          "mean_weighted_source_age_steps": 39.954306530117385,
+          "successful_completion_count": 23,
+          "mean_completion_steps_successful": 116.95652173913044,
+          "mean_query_latency_seconds": 0.06367445869067746
+        },
+        "hard_h16": {
+          "success_count": 33,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 8,
+            "libero_spatial:task0": 7,
+            "libero_goal:task2": 10,
+            "libero_10:task3": 8
+          },
+          "policy_queries": 441,
+          "environment_steps": 6774,
+          "query_rate": 0.06510186005314438,
+          "mean_query_count": 11.025,
+          "mean_ensemble_candidate_count": 4.709625036905816,
+          "mean_weighted_source_age_steps": 7.36241511662238,
+          "successful_completion_count": 33,
+          "mean_completion_steps_successful": 131.33333333333334,
+          "mean_query_latency_seconds": 0.05421415831980268
+        },
+        "sparse_te_h16": {
+          "success_count": 20,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 4,
+            "libero_spatial:task0": 6,
+            "libero_goal:task2": 9,
+            "libero_10:task3": 1
+          },
+          "policy_queries": 642,
+          "environment_steps": 9974,
+          "query_rate": 0.06436735512332063,
+          "mean_query_count": 16.05,
+          "mean_ensemble_candidate_count": 5.2007218768798875,
+          "mean_weighted_source_age_steps": 41.38575944195787,
+          "successful_completion_count": 20,
+          "mean_completion_steps_successful": 109.7,
+          "mean_query_latency_seconds": 0.055556927791671866
+        }
+      },
+      "contrasts": [
+        {
+          "candidate": "sparse_te_h8",
+          "reference": "hard_h8",
+          "candidate_only": 2,
+          "reference_only": 13,
+          "both_success": 21,
+          "both_fail": 4,
+          "paired_net_wins": -11,
+          "exact_mcnemar_p_two_sided": 0.00738525390625,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 1,
+              "reference_only": 3,
+              "net_wins": -2
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 0,
+              "reference_only": 3,
+              "net_wins": -3
+            },
+            "libero_goal:task2": {
+              "candidate_only": 1,
+              "reference_only": 1,
+              "net_wins": 0
+            },
+            "libero_10:task3": {
+              "candidate_only": 0,
+              "reference_only": 6,
+              "net_wins": -6
+            }
+          }
+        },
+        {
+          "candidate": "sparse_te_h16",
+          "reference": "hard_h16",
+          "candidate_only": 2,
+          "reference_only": 15,
+          "both_success": 18,
+          "both_fail": 5,
+          "paired_net_wins": -13,
+          "exact_mcnemar_p_two_sided": 0.002349853515625,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 1,
+              "reference_only": 5,
+              "net_wins": -4
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 1,
+              "reference_only": 2,
+              "net_wins": -1
+            },
+            "libero_goal:task2": {
+              "candidate_only": 0,
+              "reference_only": 1,
+              "net_wins": -1
+            },
+            "libero_10:task3": {
+              "candidate_only": 0,
+              "reference_only": 7,
+              "net_wins": -7
+            }
+          }
+        },
+        {
+          "candidate": "sparse_te_h16",
+          "reference": "sparse_te_h8",
+          "candidate_only": 3,
+          "reference_only": 6,
+          "both_success": 17,
+          "both_fail": 14,
+          "paired_net_wins": -3,
+          "exact_mcnemar_p_two_sided": 0.5078125,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 0,
+              "reference_only": 1,
+              "net_wins": -1
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 2,
+              "reference_only": 1,
+              "net_wins": 1
+            },
+            "libero_goal:task2": {
+              "candidate_only": 1,
+              "reference_only": 1,
+              "net_wins": 0
+            },
+            "libero_10:task3": {
+              "candidate_only": 0,
+              "reference_only": 3,
+              "net_wins": -3
+            }
+          }
+        }
+      ]
+    },
+    "smolvla": {
+      "methods": {
+        "hard_h8": {
+          "success_count": 30,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 10,
+            "libero_spatial:task0": 5,
+            "libero_goal:task2": 9,
+            "libero_10:task3": 6
+          },
+          "policy_queries": 983,
+          "environment_steps": 7757,
+          "query_rate": 0.1267242490653603,
+          "mean_query_count": 24.575,
+          "mean_ensemble_candidate_count": 5.572128400154699,
+          "mean_weighted_source_age_steps": 3.480469253577414,
+          "successful_completion_count": 30,
+          "mean_completion_steps_successful": 132.56666666666666,
+          "mean_query_latency_seconds": 0.42688951842886674
+        },
+        "sparse_te_h8": {
+          "success_count": 28,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 9,
+            "libero_spatial:task0": 6,
+            "libero_goal:task2": 10,
+            "libero_10:task3": 3
+          },
+          "policy_queries": 1032,
+          "environment_steps": 8152,
+          "query_rate": 0.12659470068694798,
+          "mean_query_count": 25.8,
+          "mean_ensemble_candidate_count": 5.605127576054956,
+          "mean_weighted_source_age_steps": 22.118666526940327,
+          "successful_completion_count": 28,
+          "mean_completion_steps_successful": 111.14285714285714,
+          "mean_query_latency_seconds": 0.3817764136910009
+        },
+        "hard_h16": {
+          "success_count": 30,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 9,
+            "libero_spatial:task0": 8,
+            "libero_goal:task2": 10,
+            "libero_10:task3": 3
+          },
+          "policy_queries": 510,
+          "environment_steps": 7889,
+          "query_rate": 0.06464697680314362,
+          "mean_query_count": 12.75,
+          "mean_ensemble_candidate_count": 2.855368234250222,
+          "mean_weighted_source_age_steps": 7.375713018126505,
+          "successful_completion_count": 30,
+          "mean_completion_steps_successful": 113.63333333333334,
+          "mean_query_latency_seconds": 0.4217578418530049
+        },
+        "sparse_te_h16": {
+          "success_count": 29,
+          "episodes": 40,
+          "per_task_success": {
+            "libero_object:task3": 6,
+            "libero_spatial:task0": 8,
+            "libero_goal:task2": 10,
+            "libero_10:task3": 5
+          },
+          "policy_queries": 507,
+          "environment_steps": 7838,
+          "query_rate": 0.06468486858892575,
+          "mean_query_count": 12.675,
+          "mean_ensemble_candidate_count": 2.853789231946925,
+          "mean_weighted_source_age_steps": 22.29858957876915,
+          "successful_completion_count": 29,
+          "mean_completion_steps_successful": 122.6896551724138,
+          "mean_query_latency_seconds": 0.38886925911887216
+        }
+      },
+      "contrasts": [
+        {
+          "candidate": "sparse_te_h8",
+          "reference": "hard_h8",
+          "candidate_only": 2,
+          "reference_only": 4,
+          "both_success": 26,
+          "both_fail": 8,
+          "paired_net_wins": -2,
+          "exact_mcnemar_p_two_sided": 0.6875,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 0,
+              "reference_only": 1,
+              "net_wins": -1
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 1,
+              "reference_only": 0,
+              "net_wins": 1
+            },
+            "libero_goal:task2": {
+              "candidate_only": 1,
+              "reference_only": 0,
+              "net_wins": 1
+            },
+            "libero_10:task3": {
+              "candidate_only": 0,
+              "reference_only": 3,
+              "net_wins": -3
+            }
+          }
+        },
+        {
+          "candidate": "sparse_te_h16",
+          "reference": "hard_h16",
+          "candidate_only": 3,
+          "reference_only": 4,
+          "both_success": 26,
+          "both_fail": 7,
+          "paired_net_wins": -1,
+          "exact_mcnemar_p_two_sided": 1.0,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 0,
+              "reference_only": 3,
+              "net_wins": -3
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 1,
+              "reference_only": 1,
+              "net_wins": 0
+            },
+            "libero_goal:task2": {
+              "candidate_only": 0,
+              "reference_only": 0,
+              "net_wins": 0
+            },
+            "libero_10:task3": {
+              "candidate_only": 2,
+              "reference_only": 0,
+              "net_wins": 2
+            }
+          }
+        },
+        {
+          "candidate": "sparse_te_h16",
+          "reference": "sparse_te_h8",
+          "candidate_only": 5,
+          "reference_only": 4,
+          "both_success": 24,
+          "both_fail": 7,
+          "paired_net_wins": 1,
+          "exact_mcnemar_p_two_sided": 1.0,
+          "per_task": {
+            "libero_object:task3": {
+              "candidate_only": 0,
+              "reference_only": 3,
+              "net_wins": -3
+            },
+            "libero_spatial:task0": {
+              "candidate_only": 2,
+              "reference_only": 0,
+              "net_wins": 2
+            },
+            "libero_goal:task2": {
+              "candidate_only": 0,
+              "reference_only": 0,
+              "net_wins": 0
+            },
+            "libero_10:task3": {
+              "candidate_only": 3,
+              "reference_only": 1,
+              "net_wins": 2
+            }
+          }
+        }
+      ],
+      "paired_rng_verification": {
+        "status": "smolvla_paired_flow_real_smoke_pass",
+        "task": "libero_object:task3",
+        "state_id": 10,
+        "environment_seed": 2000,
+        "query_physical_step_q": 0,
+        "query_seed_key": "smolvla|libero_object:task3|state=10|env_seed=2000|q=0",
+        "query_rng_seed": 2541939782746306117,
+        "raw_chunk_shape": [
+          50,
+          7
+        ],
+        "raw_chunk_max_abs_error": 0.0
+      }
+    }
+  },
+  "decision_label": "SPARSE_TE_HARMFUL",
+  "interpretation": "At essentially matched scheduled policy-query budgets, canonical sparse temporal ensembling clearly harmed ACT at both cadences and did not improve SmolVLA. The ACT loss was not confined to one task: task-level paired nets were nonpositive at h8 and negative for all four tasks at h16, although libero_10:task3 contributed the largest drop. SmolVLA was mixed by task but slightly negative in aggregate at both horizons, so its evidence is compatible with harm but individually inconclusive. On these four development tasks, the gain from moderate commitment does not come from lacking temporal smoothing; averaging historical modes may itself be harmful once query cadence is sparse."
+}

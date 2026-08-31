@@ -1,0 +1,40 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+Creating LIBERO envs | suites=['libero_10'] | n_envs(per task)=1 | init_states=True
+Restricting to task_ids=[3]
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Built vec env | suite=libero_10 | task_id=3 | n_envs=1
+Loading weights from local directory
+{
+  "output": "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_dev/act/results/libero_10_task3.json",
+  "task": "libero_10:task3",
+  "episodes": 40
+}
+Traceback (most recent call last):
+  File "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_dev/validate_result.py", line 129, in <module>
+    main()
+  File "/home/wjq/workspace/one-clock/experiments/sparse_temporal_ensemble_dev/validate_result.py", line 120, in main
+    np.testing.assert_allclose(hard_actions, ensemble_actions, rtol=1e-6, atol=1e-6)
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1504, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/home/wjq/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-06, atol=1e-06
+
+Mismatched elements: 56 / 56 (100%)
+Max absolute difference: 0.14896678
+Max relative difference: 23.48019146
+ x: array([[-1.341258e-02, -4.158188e-02, -1.723907e-02,  2.649206e-03,
+         3.107838e-03, -2.421929e-02, -1.031683e+00],
+       [-1.153269e-02, -3.842165e-02, -7.396698e-03,  2.201280e-03,...
+ y: array([[ 2.797014e-02,  2.922222e-03, -1.164150e-02, -4.320450e-03,
+         1.514601e-04, -2.060877e-02, -1.048731e+00],
+       [ 3.040496e-02,  1.709133e-03, -1.676245e-02, -4.855018e-03,...
