@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_outcome_rollout",
+  "purpose": "Final executor-development gate for asymmetric previous-h16-chunk gripper reuse.",
+  "development_scope": true,
+  "blind_or_held_out": false,
+  "historical_reference": {
+    "source_commit": "7ab52cbc6360ae8436cfe5a04f8d200130d3f7a4",
+    "source_experiment": "experiments/group_delay_factorial_act20",
+    "source_branch": "exp/libero-component-temporal-reuse",
+    "source_method": "HARD_H16",
+    "historical_primary_result": "88/126",
+    "historical_outcomes_are_context_only_for_the_factorial": true
+  },
+  "cohort": {
+    "dataset": "LIBERO Object",
+    "primary_task_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "state_ids": [20, 21, 22, 23, 27, 31, 34, 35, 38, 39, 44, 45, 47, 48],
+    "blocks_per_primary_task": 14,
+    "primary_paired_blocks": 126,
+    "scope_label": "exposed ACT Object development cohort; not blind/held-out",
+    "environment_seed_rule": "330000 + 100 * task_id + state_id",
+    "environment_seeds_by_task": {
+      "1": [330120, 330121, 330122, 330123, 330127, 330131, 330134, 330135, 330138, 330139, 330144, 330145, 330147, 330148],
+      "2": [330220, 330221, 330222, 330223, 330227, 330231, 330234, 330235, 330238, 330239, 330244, 330245, 330247, 330248],
+      "3": [330320, 330321, 330322, 330323, 330327, 330331, 330334, 330335, 330338, 330339, 330344, 330345, 330347, 330348],
+      "4": [330420, 330421, 330422, 330423, 330427, 330431, 330434, 330435, 330438, 330439, 330444, 330445, 330447, 330448],
+      "5": [330520, 330521, 330522, 330523, 330527, 330531, 330534, 330535, 330538, 330539, 330544, 330545, 330547, 330548],
+      "6": [330620, 330621, 330622, 330623, 330627, 330631, 330634, 330635, 330638, 330639, 330644, 330645, 330647, 330648],
+      "7": [330720, 330721, 330722, 330723, 330727, 330731, 330734, 330735, 330738, 330739, 330744, 330745, 330747, 330748],
+      "8": [330820, 330821, 330822, 330823, 330827, 330831, 330834, 330835, 330838, 330839, 330844, 330845, 330847, 330848],
+      "9": [330920, 330921, 330922, 330923, 330927, 330931, 330934, 330935, 330938, 330939, 330944, 330945, 330947, 330948]
+    }
+  },
+  "runtime": {
+    "checkpoint": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+    "policy": "official LeRobot ACT",
+    "policy_checkpoint_chunk_size": 100,
+    "policy_temporal_ensemble": false,
+    "action_smoothing": false,
+    "action_dim": 7,
+    "control_frequency_hz": 20,
+    "control_mode": "relative",
+    "obs_type": "pixels_agent_pos",
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "camera_name_mapping": {
+      "agentview_image": "image",
+      "robot0_eye_in_hand_image": "wrist_image"
+    },
+    "observation_width": 256,
+    "observation_height": 256,
+    "init_states": true,
+    "hard_reset": true,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "max_episode_steps": 280,
+    "success_criterion": "LIBERO info is_success, with positive terminal reward as the established fallback",
+    "policy_rng_seed": 424242,
+    "runtime_python": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "runtime_lerobot": "0.4.4",
+    "runtime_torch": "2.7.1+cu128",
+    "runtime_mujoco": "3.3.1"
+  },
+  "action_groups": {
+    "arm": [0, 1, 2, 3, 4, 5],
+    "gripper": [6]
+  },
+  "conditions": [
+    {
+      "name": "C1_PREVIOUS_CHUNK_GRIP",
+      "display_name": "C1 PreviousChunkGrip",
+      "arm_source": "current scheduled h16 chunk A_q[t-q,0:6]",
+      "grip_source": "previous scheduled h16 chunk A_{q-16}[t-q+16,6] after q>=16; current chunk during t<16",
+      "query_schedule": "q=0,16,32,...",
+      "query_rate": "same observed rate as hard h16",
+      "same_target_identity": "(q-16)+(t-q+16)=t",
+      "temporal_ensemble": false,
+      "extra_policy_calls": 0,
+      "lag_tuning": false
+    },
+    {
+      "name": "C2_H16_ARM_FRESH_GRIP",
+      "display_name": "C2 H16Arm+FreshGrip",
+      "arm_source": "current scheduled h16 chunk A_q[t-q,0:6]",
+      "grip_source": "fresh dense query A_t[0,6]",
+      "query_schedule": "dense q=t every controller step; scheduled arm chunk still only refreshes at q=0,16,32,...",
+      "query_rate": "1.0 observed when the episode reaches each controller step",
+      "same_target_identity": "t+0=t",
+      "temporal_ensemble": false,
+      "extra_policy_calls": "one dense fresh-gripper query at non-multiple steps",
+      "arm_source_must_not_follow_dense_query": true
+    }
+  ],
+  "baseline_reuse_verification": {
+    "method": "HARD_H16",
+    "source_experiment": "experiments/group_delay_factorial_act20",
+    "source_result_root": "experiments/group_delay_factorial_act20/results",
+    "baseline_experiment_commit_sha": "7ab52cbc6360ae8436cfe5a04f8d200130d3f7a4",
+    "new_protocol_commit_sha": "TO_BE_RECORDED_AS_THE_PRE_ROLLOUT_PROTOCOL_COMMIT",
+    "source_file_path": "experiments/group_delay_factorial_act20/temporal_reuse.py",
+    "checkpoint_path": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+    "policy_checkpoint_chunk_size": 100,
+    "policy_temporal_ensemble": false,
+    "action_smoothing": false,
+    "control_frequency_hz": 20,
+    "control_mode": "relative",
+    "max_episode_steps": 280,
+    "success_criterion": "LIBERO info is_success, with positive terminal reward as the established fallback",
+    "policy_rng_seed": 424242,
+    "full_per_task_seed_list": {
+      "1": [330120, 330121, 330122, 330123, 330127, 330131, 330134, 330135, 330138, 330139, 330144, 330145, 330147, 330148],
+      "2": [330220, 330221, 330222, 330223, 330227, 330231, 330234, 330235, 330238, 330239, 330244, 330245, 330247, 330248],
+      "3": [330320, 330321, 330322, 330323, 330327, 330331, 330334, 330335, 330338, 330339, 330344, 330345, 330347, 330348],
+      "4": [330420, 330421, 330422, 330423, 330427, 330431, 330434, 330435, 330438, 330439, 330444, 330445, 330447, 330448],
+      "5": [330520, 330521, 330522, 330523, 330527, 330531, 330534, 330535, 330538, 330539, 330544, 330545, 330547, 330548],
+      "6": [330620, 330621, 330622, 330623, 330627, 330631, 330634, 330635, 330638, 330639, 330644, 330645, 330647, 330648],
+      "7": [330720, 330721, 330722, 330723, 330727, 330731, 330734, 330735, 330738, 330739, 330744, 330745, 330747, 330748],
+      "8": [330820, 330821, 330822, 330823, 330827, 330831, 330834, 330835, 330838, 330839, 330844, 330845, 330847, 330848],
+      "9": [330920, 330921, 330922, 330923, 330927, 330931, 330934, 330935, 330938, 330939, 330944, 330945, 330947, 330948]
+    },
+    "checks_match_exactly": true,
+    "hard_h16_rerun_required": false,
+    "verification_evidence": [
+      "all 126 stored baseline episodes are fresh-environment instances with the frozen seeds",
+      "all 126 stored baseline episodes satisfy q=0,16,32,... and q+k=t for both groups",
+      "stored baseline aggregate is 88/126, 1490 policy queries, and 22869 environment steps"
+    ]
+  },
+  "pairing_smoke": {
+    "task_id": 1,
+    "state_ids": [20, 21, 22],
+    "seed_rule": "330000 + 100 * task_id + state_id",
+    "c1_vs_hard_exact_prefix": "t=0..15 for initial cameras, processed scheduled-query inputs, scheduled raw chunks, executed actions, and simulator states",
+    "c1_boundary": "t=16 may legitimately change only because the gripper source changes to the previous chunk",
+    "c2_boundary": "C2 may diverge at t=1 because its fresh gripper is queried densely; its arm remains sourced from the scheduled h16 chunk",
+    "fresh_environment_per_condition_state": true
+  },
+  "same_target_contract": {
+    "definition": "A_q[k] targets physical time q+k",
+    "required_identity": "q+k=t",
+    "forbidden_controls": ["A_q[0] when t=q+k with k!=0", "A_t[k] when k!=0"],
+    "c1_gripper_offsets_after_first_chunk": "16..31",
+    "c1_no_averaging": true,
+    "c2_no_averaging": true
+  },
+  "statistics": {
+    "inference_unit": "paired task-state block",
+    "primary_outcome": "binary episode success",
+    "reported": ["C1-only wins", "comparison-only wins", "net", "exact two-sided McNemar", "success delta", "paired bootstrap interval", "task-cluster bootstrap interval", "per-task counts", "leave-one-task-out deltas"],
+    "bootstrap_draws": 20000,
+    "bootstrap_seeds": {
+      "c1_vs_hard_paired": 20260922,
+      "c1_vs_hard_cluster": 20260923,
+      "c1_vs_c2_paired": 20260924,
+      "c1_vs_c2_cluster": 20260925,
+      "hard_vs_c2_paired": 20260926,
+      "hard_vs_c2_cluster": 20260927
+    },
+    "age_summary": "pooled over executed controller steps, with observed minimum and maximum",
+    "decision_uncertainty_rule": "clear positive/negative requires the corresponding bootstrap interval, task-cluster interval, and every leave-one-task-out estimate to have the same strict sign; McNemar is reported but is not the sole decision criterion",
+    "no_outcome_tuning": true
+  },
+  "decision_rule": {
+    "ASYM_REUSE_STRONG": "Use if ALL are true: C1 success > HARD_H16 success; C1 success > C2 success; paired C1-minus-HARD_H16 net wins > 0; at least 7 of 9 leave-one-task-out C1 - HARD_H16 deltas are positive. McNemar p-values and uncertainty intervals must still be reported, but no single p-value is the sole development gate.",
+    "ASYM_REUSE_PROMISING": "Use if: C1 > HARD_H16; C1 > C2; paired C1-minus-HARD_H16 net wins > 0; but fewer than 7/9 LOTO deltas are positive. This is still enough to justify ONE frozen cross-suite/unseen confirmation run.",
+    "ASYM_REUSE_MECHANISM_ONLY": "Use if: C1 <= HARD_H16; but: C1 exceeds C2 by at least 5/126 successes. Interpretation: previous-chunk gripper reuse has a meaningful effect under fixed h16 arm semantics, but it does not improve the strongest standard executor. Stop method development and proceed with a mechanism-focused paper.",
+    "ASYM_REUSE_NULL": "Use otherwise. In particular, use this if: C1 <= HARD_H16; and C1 does not exceed C2 by at least 5/126. Stop executor development.",
+    "precedence": ["ASYM_REUSE_STRONG", "ASYM_REUSE_PROMISING", "ASYM_REUSE_MECHANISM_ONLY", "ASYM_REUSE_NULL"],
+    "stop_after_this_gate": true
+  },
+  "decision_uncertainty_rule": "clear positive/negative requires the corresponding bootstrap interval, task-cluster interval, and every leave-one-task-out estimate to have the same strict sign; McNemar is reported but is not the sole decision criterion",
+  "primary_comparisons": [
+    {"first": "C1_PREVIOUS_CHUNK_GRIP", "second": "HARD_H16"},
+    {"first": "C1_PREVIOUS_CHUNK_GRIP", "second": "C2_H16_ARM_FRESH_GRIP"},
+    {"first": "HARD_H16", "second": "C2_H16_ARM_FRESH_GRIP"}
+  ],
+  "rollout": {
+    "new_conditions": 2,
+    "episodes_per_new_condition": 126,
+    "new_total_episodes": 252,
+    "task_shards": "three simple GPU shards, each owning three primary tasks",
+    "historical_hard_h16_rerun": false,
+    "held_out_tasks": false,
+    "additional_executor_variants": false,
+    "follow_up_methods": false
+  }
+}
