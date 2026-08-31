@@ -11,11 +11,11 @@ GPU="$2"
 METHOD="${3:-M1_arm_phase}"
 TASK_SLUG="${TASK_KEY//:/_}"
 ACT_PY="${ACT_PY:-/home/wjq/workspace/venvs/libero_act/bin/python}"
-OUT="act/results/${TASK_SLUG}.json"
-PROGRESS="act/progress/${TASK_SLUG}.json"
+OUT="act/results/${METHOD}/${TASK_SLUG}.json"
+PROGRESS="act/progress/${TASK_SLUG}_${METHOD}.json"
 LOG="act/logs/${TASK_SLUG}_${METHOD}.log"
 
-mkdir -p act/results act/progress act/logs
+mkdir -p "$(dirname "$OUT")" act/progress act/logs
 if [[ -f "$OUT" ]] && rg -q '"status": "complete"' "$OUT"; then
   exit 0
 fi
