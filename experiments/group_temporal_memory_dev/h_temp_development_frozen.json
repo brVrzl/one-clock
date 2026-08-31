@@ -1,0 +1,33 @@
+{
+  "status": "frozen_before_group_memory_outcomes",
+  "source": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_offline/h_temp_frozen.json",
+  "source_status": "frozen_before_closed_loop_comparison",
+  "definition": {
+    "name": "H_temp",
+    "formula": "mean over d in {0,4,8,16,20,32} of abs(U_arm(d)-U_grip(d))",
+    "aggregation": "task-level profiles; each task has equal weight in macro summaries",
+    "frozen_before_closed_loop": true,
+    "threshold_rule": "For each group, threshold is the development-task median U_g(16); first available delay with U_g(d) below that threshold is descriptive only."
+  },
+  "task_values": [
+    {
+      "task_key": "libero_object:task3",
+      "H_temp": 0.16335311134656266
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "H_temp": 0.21467979550361635
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "H_temp": 0.2464374214410782
+    },
+    {
+      "task_key": "libero_10:task3",
+      "H_temp": 0.23282331526279446
+    }
+  ],
+  "outcome_blind": true,
+  "outcomes_loaded": false,
+  "executor_use": false
+}

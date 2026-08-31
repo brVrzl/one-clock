@@ -1,0 +1,16 @@
+{
+  "status": "blocked_before_outcome_rollout",
+  "reason": "Sol repaired h16 trio commit is pending; no development outcome files are valid yet.",
+  "sol_audit_commit": "33463ab4eb0ff1c64f794df7c76330bb7b56c143",
+  "sol_decision": "PAIRING_VALID",
+  "shared_kernel": "dense_equivalent_te",
+  "methods": [
+    "M0_h16",
+    "M1_shared_te_h16",
+    "M2_shared_cogact_h16",
+    "M3_group_cogact_h16",
+    "M4_anchored_group_reliability_h16"
+  ],
+  "outcome_files_loaded": false,
+  "decision_label": "BLOCKED_BY_PAIRING_AUDIT"
+}

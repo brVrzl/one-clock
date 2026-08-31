@@ -1,0 +1,178 @@
+{
+  "protocol_version": 1,
+  "status": "prepared_waiting_for_sol_repaired_h16_trio",
+  "purpose": "Development test of group-conditioned soft temporal fusion with a shared newest joint intent.",
+  "offline_prior": {
+    "commit": "095a1893c949fb55d844e086f43022ad4df72b52",
+    "decision": "GROUP_TEMPORAL_HETEROGENEITY_PARTIAL",
+    "constraint": "H_temp is analysis-only and is never used by the executor."
+  },
+  "coordination": {
+    "sol_audit_directory": "../sparse_temporal_ensemble_age_audit",
+    "sol_audit_status": "pairing_valid_dense_equivalent_selected_trio_pending",
+    "sol_audit_commit": "33463ab4eb0ff1c64f794df7c76330bb7b56c143",
+    "sol_decision": "PAIRING_VALID",
+    "sol_decision_source": "../sparse_temporal_ensemble_age_audit/report.md",
+    "sol_pairing_artifact": "../sparse_temporal_ensemble_age_audit/pairing_audit_task10_fresh_env/summary.json",
+    "sol_kernel_decision": "DENSE_EQUIVALENT_TE",
+    "sol_repaired_rollout_commit": null,
+    "sol_repaired_rollout_requirement": "Do not launch until Sol pushes the repaired h16 trio: hard_h16, candidate_index_te_h16, dense_equivalent_te_h16.",
+    "accepted_pairing_decisions": ["PAIRING_VALID"],
+    "rollout_gate": "The runner refuses any environment rollout until Sol's repaired h16 trio commit is recorded and shared_kernel is selected as dense_equivalent_te.",
+    "do_not_edit_sol_directory": true
+  },
+  "cohort": {
+    "development_tasks": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "states": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "environment_seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
+    "episodes_per_task": 10,
+    "final_blind_tasks": false,
+    "selection": "Existing exposed development cohort; no performance-based task or state selection."
+  },
+  "cohort_task_specs": [
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "task_name": "pick up the bbq sauce and place it in the basket",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "task_name": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "task_name": "put the wine bottle on top of the cabinet",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model"
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "act_checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    }
+  ],
+  "policy": {
+    "act_checkpoint_training_step": 100000,
+    "smolvla_checkpoint": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+    "act_runtime": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "act_prediction_horizon": 100,
+    "smolvla_prediction_horizon": 50,
+    "query_cadence_h": 16,
+    "query_schedule": "q=0,16,32,...; exactly one policy query at each scheduled physical step",
+    "action_groups": {
+      "arm": [0, 1, 2, 3, 4, 5],
+      "gripper": [6]
+    },
+    "policy_rng": {
+      "act_seed": 424242,
+      "smolvla_rule": "key by policy, task, state, environment seed, and physical query step q; method-independent",
+      "method_independent_common_query_seed": true
+    }
+  },
+  "shared_kernel": {
+    "status": "selected_by_sol_pending_repaired_trio",
+    "selected_name": "dense_equivalent_te",
+    "coefficient": 0.01,
+    "candidate_order": "oldest source query to newest source query",
+    "physical_age_definition": "age=t-q",
+    "allowed_names": ["dense_equivalent_te", "physical_age_te", "candidate_index_te"],
+    "dense_equivalent_te": "b_q proportional to exp(-0.01 * (q-q_oldest)) for the oldest-to-newest sparse candidate list; at h16 this is [1,e^-0.16,e^-0.32,...]",
+    "physical_age_te": "b_q proportional to exp(-0.01 * (q_newest-q))",
+    "candidate_index_te": "b_i proportional to exp(-0.01 * i), i=0 for oldest candidate",
+    "selection_rule": "Use exactly Sol's final semantic decision; do not independently choose a kernel. Sol selected dense_equivalent_te; implementation remains gated on the repaired h16 trio artifact."
+  },
+  "candidate_pool": {
+    "rule": "All sparse-query chunks whose same-target offset is nonnegative and smaller than H_pred; no extra query and no candidate-specific truncation beyond native horizon validity.",
+    "same_target": "candidate from source q is chunk[t-q], so q+(t-q)=t",
+    "newest_candidate": "The newest scheduled query q0<=t is always present; its physical age is t-q0 and is zero only when t=q0.",
+    "candidate_set_must_be_identical": "For a fixed trajectory, M0-M3 receive the same candidate rows, source queries, offsets, and ages."
+  },
+  "methods": {
+    "M0_h16": {
+      "status": "implemented",
+      "equation": "a_t = a_{t|q0}",
+      "description": "Newest sparse chunk only."
+    },
+    "M1_shared_te_h16": {
+      "status": "implemented_dense_equivalent_pending_trio",
+      "equation": "a_t = sum_q normalize(b_q) a_{t|q}",
+      "description": "One Sol-selected shared temporal weight vector for all seven dimensions."
+    },
+    "M2_shared_cogact_h16": {
+      "status": "implemented",
+      "alpha": 0.3,
+      "equation": "score_q=b_q * exp(0.3*cosine(a_{t|q},a_{t|q0})); normalize over q; one vector for all dimensions",
+      "description": "Existing CogACT-style whole-action compatibility with the Sol-selected shared temporal prior."
+    },
+    "M3_group_cogact_h16": {
+      "status": "implemented",
+      "alpha": 0.3,
+      "equation": "score_g(q)=b_q * exp(0.3*c_g(q)); normalize independently by g",
+      "arm_compatibility": "Existing cosine rule on dimensions 0:6.",
+      "gripper_compatibility": "sign(candidate[6]) * sign(newest[6]); same sign +1, opposite sign -1, zero with nonzero 0, zero with zero 0.",
+      "gripper_operator": "Ordinary weighted average of the original scalar values; no sign vote.",
+      "description": "Only the weight factorization changes relative to M2."
+    },
+    "M4_anchored_group_reliability_h16": {
+      "status": "UNAVAILABLE_RELIABILITY_INTERFACE",
+      "equation_if_enabled": "score_g(q)=b_q * compatibility_g(q) * reliability_g(q); newest source receives fixed reliability 1; normalize by group",
+      "reason": "The current checkout has no frozen online-compatible group reliability predictor/artifact. Historical source-context reliability is a different ACT cohort and its training artifact is not available as a runtime interface here.",
+      "no_fabricated_fallback": true,
+      "two_clock_distinction": "M4 would fuse all candidates softly around the newest joint anchor; it would not independently hard-select arm and gripper sources."
+    }
+  },
+  "compatibility": {
+    "existing_implementation": "experiments/component_temporal_reuse/temporal_operators.py",
+    "cosine_epsilon": 1e-7,
+    "alpha_frozen": 0.3,
+    "newest_reference": true,
+    "zero_handling": "Use the established np.sign product for the scalar gripper analogue."
+  },
+  "pairing": {
+    "required_before_full_rollout": true,
+    "validator": "At least state 10/seed 2000 must show identical reset observations, initial simulator state, initial raw chunk, actions t=0..15, post-action simulator states, and post-action observations across all methods.",
+    "first_requery": 16,
+    "separate_environment_resets": true,
+    "failure_action": "Stop and do not launch the panel."
+  },
+  "execution_stages": {
+    "stage_1_act": {
+      "methods": ["M0_h16", "M1_shared_te_h16", "M2_shared_cogact_h16", "M3_group_cogact_h16"],
+      "m4": "not scheduled unless a valid online reliability interface is added before freeze",
+      "new_method_budget": "M2-M3 up to 80 episodes; M4 up to 40 if available. M0/M1 may be reused only after Sol compatibility confirmation.",
+      "gate": "Interpret M2->M3 before Stage 2."
+    },
+    "stage_2_smolvla": {
+      "status": "conditional_on_interpretable_act",
+      "methods": ["M2_shared_cogact_h16", "M3_group_cogact_h16"],
+      "m4": "best valid M4 only if available",
+      "budget": "up to 120 episodes for new SmolVLA methods",
+      "gate": "Do not start before ACT gate."
+    }
+  },
+  "analysis": {
+    "aggregation_units": ["episode", "task"],
+    "primary_comparisons": ["M2_vs_M1", "M3_vs_M2", "M4_vs_M3", "M4_vs_M2"],
+    "paired_statistics": ["candidate_only", "reference_only", "paired_net", "exact_two_sided_McNemar"],
+    "descriptive_provenance": ["query_count", "query_rate", "mean_candidate_count", "mean_weighted_source_age"],
+    "frozen_H_temp": "../group_temporal_memory_offline/h_temp_frozen.json; outcome-blind artifact, frozen_before_closed_loop_comparison=true",
+    "posthoc_H_temp": "Load frozen H_temp only after all outcomes are frozen; Spearman, scatter, and qualitative counterexamples only. Never use it in the executor or method selection.",
+    "selection_rule": "M3 if it clearly beats M2; M4 only if reliability adds meaningful benefit beyond M3; do not retain extra complexity for a one-episode difference."
+  },
+  "artifacts": {
+    "act_results": "act/results/",
+    "smolvla_results": "smolvla/results/",
+    "analysis": "analysis.json",
+    "report": "report.md",
+    "status": "STATUS.md"
+  }
+}
