@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "analysis_type": "zero_rollout_log_reanalysis",
+  "manifest": "/home/wjq/workspace/one-clock/research/audit_outputs/gate4a2_spatial_rollout_manifest.json",
+  "preregistered_completed_before_final_confirmation": true,
+  "scope": {
+    "suite": "LIBERO Spatial",
+    "task_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "state_ids": [
+      1,
+      13,
+      15,
+      19,
+      21,
+      24,
+      31,
+      37,
+      40,
+      47
+    ],
+    "blocks_per_method": 100,
+    "episodes": 500
+  },
+  "conditions": [
+    "A_NEWEST",
+    "C_ASYMMETRIC_FO20",
+    "B_FULL_OLD20",
+    "D_AGE_EXP_B003",
+    "E_COGACT_A03"
+  ],
+  "aggregate": [
+    {
+      "method": "A_NEWEST",
+      "display_name": "Fresh",
+      "successes": 40,
+      "blocks": 100,
+      "success_rate": 0.4
+    },
+    {
+      "method": "C_ASYMMETRIC_FO20",
+      "display_name": "FO20",
+      "successes": 40,
+      "blocks": 100,
+      "success_rate": 0.4
+    },
+    {
+      "method": "B_FULL_OLD20",
+      "display_name": "FullOld20",
+      "successes": 30,
+      "blocks": 100,
+      "success_rate": 0.3
+    },
+    {
+      "method": "D_AGE_EXP_B003",
+      "display_name": "AGE_EXP_B003",
+      "successes": 42,
+      "blocks": 100,
+      "success_rate": 0.42
+    },
+    {
+      "method": "E_COGACT_A03",
+      "display_name": "COGACT_A03",
+      "successes": 18,
+      "blocks": 100,
+      "success_rate": 0.18
+    }
+  ],
+  "comparisons": {
+    "FO20_VS_FRESH": {
+      "first_method": "C_ASYMMETRIC_FO20",
+      "second_method": "A_NEWEST",
+      "first_display": "FO20",
+      "second_display": "Fresh",
+      "blocks": 100,
+      "first_successes": 40,
+      "second_successes": 40,
+      "first_success_rate": 0.4,
+      "second_success_rate": 0.4,
+      "first_only_wins": 5,
+      "second_only_wins": 5,
+      "net_wins": 0,
+      "discordant_blocks": 10,
+      "success_delta": 0.0,
+      "success_delta_percentage_points": 0.0,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20260831,
+      "paired_bootstrap_ci": [
+        -0.06,
+        0.06
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20260832,
+      "task_cluster_bootstrap_ci": [
+        -0.05,
+        0.06000000000000001
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "task_differences": [
+        -0.1,
+        0.0,
+        0.0,
+        0.1,
+        -0.1,
+        0.0,
+        -0.1,
+        0.0,
+        0.2,
+        0.0
+      ],
+      "leave_one_task_out": [
+        0.011111111111111112,
+        0.0,
+        0.0,
+        -0.011111111111111112,
+        0.011111111111111112,
+        0.0,
+        0.011111111111111112,
+        0.0,
+        -0.022222222222222223,
+        0.0
+      ]
+    },
+    "FO20_VS_FULL_OLD20": {
+      "first_method": "C_ASYMMETRIC_FO20",
+      "second_method": "B_FULL_OLD20",
+      "first_display": "FO20",
+      "second_display": "FullOld20",
+      "blocks": 100,
+      "first_successes": 40,
+      "second_successes": 30,
+      "first_success_rate": 0.4,
+      "second_success_rate": 0.3,
+      "first_only_wins": 17,
+      "second_only_wins": 7,
+      "net_wins": 10,
+      "discordant_blocks": 24,
+      "success_delta": 0.1,
+      "success_delta_percentage_points": 10.0,
+      "exact_two_sided_mcnemar_p": 0.06391465663909912,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20260833,
+      "paired_bootstrap_ci": [
+        0.01,
+        0.19
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20260834,
+      "task_cluster_bootstrap_ci": [
+        0.02,
+        0.19000000000000003
+      ],
+      "task_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "task_differences": [
+        0.0,
+        0.1,
+        0.4,
+        0.1,
+        0.1,
+        -0.1,
+        0.1,
+        0.0,
+        0.3,
+        0.0
+      ],
+      "leave_one_task_out": [
+        0.1111111111111111,
+        0.10000000000000002,
+        0.06666666666666668,
+        0.09999999999999999,
+        0.09999999999999999,
+        0.12222222222222223,
+        0.09999999999999999,
+        0.1111111111111111,
+        0.07777777777777778,
+        0.1111111111111111
+      ]
+    }
+  },
+  "per_task": [
+    {
+      "task_id": 0,
+      "blocks": 10,
+      "Fresh_successes": 8,
+      "FO20_successes": 7,
+      "FullOld20_successes": 7,
+      "AGE_EXP_B003_successes": 6,
+      "COGACT_A03_successes": 1,
+      "Fresh_success_rate": 0.8,
+      "FO20_success_rate": 0.7,
+      "FullOld20_success_rate": 0.7,
+      "AGE_EXP_B003_success_rate": 0.6,
+      "COGACT_A03_success_rate": 0.1,
+      "FO20_minus_Fresh": -1,
+      "FO20_minus_FullOld20": 0
+    },
+    {
+      "task_id": 1,
+      "blocks": 10,
+      "Fresh_successes": 4,
+      "FO20_successes": 4,
+      "FullOld20_successes": 3,
+      "AGE_EXP_B003_successes": 4,
+      "COGACT_A03_successes": 0,
+      "Fresh_success_rate": 0.4,
+      "FO20_success_rate": 0.4,
+      "FullOld20_success_rate": 0.3,
+      "AGE_EXP_B003_success_rate": 0.4,
+      "COGACT_A03_success_rate": 0.0,
+      "FO20_minus_Fresh": 0,
+      "FO20_minus_FullOld20": 1
+    },
+    {
+      "task_id": 2,
+      "blocks": 10,
+      "Fresh_successes": 9,
+      "FO20_successes": 9,
+      "FullOld20_successes": 5,
+      "AGE_EXP_B003_successes": 7,
+      "COGACT_A03_successes": 4,
+      "Fresh_success_rate": 0.9,
+      "FO20_success_rate": 0.9,
+      "FullOld20_success_rate": 0.5,
+      "AGE_EXP_B003_success_rate": 0.7,
+      "COGACT_A03_success_rate": 0.4,
+      "FO20_minus_Fresh": 0,
+      "FO20_minus_FullOld20": 4
+    },
+    {
+      "task_id": 3,
+      "blocks": 10,
+      "Fresh_successes": 7,
+      "FO20_successes": 8,
+      "FullOld20_successes": 7,
+      "AGE_EXP_B003_successes": 8,
+      "COGACT_A03_successes": 6,
+      "Fresh_success_rate": 0.7,
+      "FO20_success_rate": 0.8,
+      "FullOld20_success_rate": 0.7,
+      "AGE_EXP_B003_success_rate": 0.8,
+      "COGACT_A03_success_rate": 0.6,
+      "FO20_minus_Fresh": 1,
+      "FO20_minus_FullOld20": 1
+    },
+    {
+      "task_id": 4,
+      "blocks": 10,
+      "Fresh_successes": 3,
+      "FO20_successes": 2,
+      "FullOld20_successes": 1,
+      "AGE_EXP_B003_successes": 1,
+      "COGACT_A03_successes": 1,
+      "Fresh_success_rate": 0.3,
+      "FO20_success_rate": 0.2,
+      "FullOld20_success_rate": 0.1,
+      "AGE_EXP_B003_success_rate": 0.1,
+      "COGACT_A03_success_rate": 0.1,
+      "FO20_minus_Fresh": -1,
+      "FO20_minus_FullOld20": 1
+    },
+    {
+      "task_id": 5,
+      "blocks": 10,
+      "Fresh_successes": 0,
+      "FO20_successes": 0,
+      "FullOld20_successes": 1,
+      "AGE_EXP_B003_successes": 0,
+      "COGACT_A03_successes": 0,
+      "Fresh_success_rate": 0.0,
+      "FO20_success_rate": 0.0,
+      "FullOld20_success_rate": 0.1,
+      "AGE_EXP_B003_success_rate": 0.0,
+      "COGACT_A03_success_rate": 0.0,
+      "FO20_minus_Fresh": 0,
+      "FO20_minus_FullOld20": -1
+    },
+    {
+      "task_id": 6,
+      "blocks": 10,
+      "Fresh_successes": 7,
+      "FO20_successes": 6,
+      "FullOld20_successes": 5,
+      "AGE_EXP_B003_successes": 9,
+      "COGACT_A03_successes": 3,
+      "Fresh_success_rate": 0.7,
+      "FO20_success_rate": 0.6,
+      "FullOld20_success_rate": 0.5,
+      "AGE_EXP_B003_success_rate": 0.9,
+      "COGACT_A03_success_rate": 0.3,
+      "FO20_minus_Fresh": -1,
+      "FO20_minus_FullOld20": 1
+    },
+    {
+      "task_id": 7,
+      "blocks": 10,
+      "Fresh_successes": 0,
+      "FO20_successes": 0,
+      "FullOld20_successes": 0,
+      "AGE_EXP_B003_successes": 0,
+      "COGACT_A03_successes": 0,
+      "Fresh_success_rate": 0.0,
+      "FO20_success_rate": 0.0,
+      "FullOld20_success_rate": 0.0,
+      "AGE_EXP_B003_success_rate": 0.0,
+      "COGACT_A03_success_rate": 0.0,
+      "FO20_minus_Fresh": 0,
+      "FO20_minus_FullOld20": 0
+    },
+    {
+      "task_id": 8,
+      "blocks": 10,
+      "Fresh_successes": 2,
+      "FO20_successes": 4,
+      "FullOld20_successes": 1,
+      "AGE_EXP_B003_successes": 5,
+      "COGACT_A03_successes": 2,
+      "Fresh_success_rate": 0.2,
+      "FO20_success_rate": 0.4,
+      "FullOld20_success_rate": 0.1,
+      "AGE_EXP_B003_success_rate": 0.5,
+      "COGACT_A03_success_rate": 0.2,
+      "FO20_minus_Fresh": 2,
+      "FO20_minus_FullOld20": 3
+    },
+    {
+      "task_id": 9,
+      "blocks": 10,
+      "Fresh_successes": 0,
+      "FO20_successes": 0,
+      "FullOld20_successes": 0,
+      "AGE_EXP_B003_successes": 2,
+      "COGACT_A03_successes": 1,
+      "Fresh_success_rate": 0.0,
+      "FO20_success_rate": 0.0,
+      "FullOld20_success_rate": 0.0,
+      "AGE_EXP_B003_success_rate": 0.2,
+      "COGACT_A03_success_rate": 0.1,
+      "FO20_minus_Fresh": 0,
+      "FO20_minus_FullOld20": 0
+    }
+  ],
+  "leave_one_task_out": {
+    "FO20_VS_FRESH": [
+      0.011111111111111112,
+      0.0,
+      0.0,
+      -0.011111111111111112,
+      0.011111111111111112,
+      0.0,
+      0.011111111111111112,
+      0.0,
+      -0.022222222222222223,
+      0.0
+    ],
+    "FO20_VS_FULL_OLD20": [
+      0.1111111111111111,
+      0.10000000000000002,
+      0.06666666666666668,
+      0.09999999999999999,
+      0.09999999999999999,
+      0.12222222222222223,
+      0.09999999999999999,
+      0.1111111111111111,
+      0.07777777777777778,
+      0.1111111111111111
+    ]
+  },
+  "limitations": [
+    "This dataset was preregistered and completed before the final cross-suite confirmation.",
+    "It contains no Reverse20 and therefore cannot establish the full arm-versus-gripper factorial asymmetry.",
+    "It contains no hard-h16 practical baseline.",
+    "Its suite-level checkpoint differs from the final confirmation checkpoint family, so absolute success rates are not compared across experiments."
+  ],
+  "bootstrap": {
+    "draws": 20000,
+    "seeds": {
+      "paired": [
+        20260831,
+        20260833
+      ],
+      "task_cluster": [
+        20260832,
+        20260834
+      ]
+    }
+  }
+}

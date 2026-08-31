@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "protocol": "/home/wjq/workspace/one-clock/experiments/cross_suite_confirmation/protocol.json",
+  "tasks": [
+    "libero_goal:task4",
+    "libero_10:task0"
+  ],
+  "state_ids": [
+    0,
+    1,
+    2
+  ],
+  "methods": [
+    "FRESH",
+    "FO20",
+    "REVERSE20",
+    "FULL_OLD20",
+    "HARD_H16"
+  ],
+  "fresh_environment_per_method_state": true,
+  "fixed_source_boundary": "all fixed-source methods are required identical to Fresh through t=19; t=20 is the first eligible delayed-source step",
+  "hard_h16_boundary": "only schedule and q=0 chunk identity are compared; no post-divergence trajectory equality is required",
+  "results": [
+    {
+      "task": "libero_goal:task4",
+      "state_id": 0,
+      "seed": 342400,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    },
+    {
+      "task": "libero_goal:task4",
+      "state_id": 1,
+      "seed": 342401,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    },
+    {
+      "task": "libero_goal:task4",
+      "state_id": 2,
+      "seed": 342402,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    },
+    {
+      "task": "libero_10:task0",
+      "state_id": 0,
+      "seed": 343000,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    },
+    {
+      "task": "libero_10:task0",
+      "state_id": 1,
+      "seed": 343001,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    },
+    {
+      "task": "libero_10:task0",
+      "state_id": 2,
+      "seed": 343002,
+      "fixed_prefix_t0_t19_exact": true,
+      "initial_cameras_exact": true,
+      "hard_query_steps": [
+        0,
+        16
+      ],
+      "act_deterministic": true
+    }
+  ]
+}

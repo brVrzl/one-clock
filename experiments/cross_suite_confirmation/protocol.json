@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_outcome_rollout",
+  "purpose": "Final Branch K cross-suite confirmation of same-target ACT action-group temporal reuse.",
+  "development_status": "final executor-development gate closed; this is confirmation only",
+  "exposure_wording": "The confirmation tasks are unseen to executor development, not unseen to policy training: each per-task ACT checkpoint was trained for its corresponding task. Absolute success rates are therefore interpreted only within the confirmation experiment, and scientific inference uses paired executor contrasts.",
+  "primary_scope": {
+    "label": "unseen to executor development",
+    "suites": {
+      "libero_goal": [4, 6, 7, 8, 9],
+      "libero_10": [0, 2, 4, 6, 7]
+    },
+    "blocks": 140,
+    "description": "Goal and LIBERO-10 tasks not used in prior ACT executor-selection/development experiments according to the completed repository exposure audit."
+  },
+  "bridge_scope": {
+    "label": "exposed bridge tasks",
+    "suite": "libero_object",
+    "task_ids": [1, 5, 9],
+    "blocks": 42,
+    "description": "Known Object tasks evaluated with the same per-task ACT checkpoint family; never included in the primary unseen aggregate."
+  },
+  "cohort": {
+    "state_selection_rule": "first 14 initialization states",
+    "state_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "seed_rule": "340000 + 1000 * suite_index + 100 * task_id + state_id",
+    "suite_index": {"libero_object": 0, "libero_goal": 2, "libero_10": 3},
+    "primary_blocks_per_condition": 140,
+    "bridge_blocks_per_condition": 42,
+    "total_blocks_per_condition": 182,
+    "total_episodes": 910,
+    "tasks": [
+      {"suite": "libero_goal", "task_id": 4, "role": "primary_unseen_to_executor_development", "task_name": "put the bowl on top of the cabinet", "max_episode_steps": 300, "environment_seeds": [342400, 342401, 342402, 342403, 342404, 342405, 342406, 342407, 342408, 342409, 342410, 342411, 342412, 342413], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_goal", "task_id": 6, "role": "primary_unseen_to_executor_development", "task_name": "put the cream cheese in the bowl", "max_episode_steps": 300, "environment_seeds": [342600, 342601, 342602, 342603, 342604, 342605, 342606, 342607, 342608, 342609, 342610, 342611, 342612, 342613], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_goal", "task_id": 7, "role": "primary_unseen_to_executor_development", "task_name": "turn on the stove", "max_episode_steps": 300, "environment_seeds": [342700, 342701, 342702, 342703, 342704, 342705, 342706, 342707, 342708, 342709, 342710, 342711, 342712, 342713], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_goal", "task_id": 8, "role": "primary_unseen_to_executor_development", "task_name": "put the bowl on the plate", "max_episode_steps": 300, "environment_seeds": [342800, 342801, 342802, 342803, 342804, 342805, 342806, 342807, 342808, 342809, 342810, 342811, 342812, 342813], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_goal", "task_id": 9, "role": "primary_unseen_to_executor_development", "task_name": "put the wine bottle on the rack", "max_episode_steps": 300, "environment_seeds": [342900, 342901, 342902, 342903, 342904, 342905, 342906, 342907, 342908, 342909, 342910, 342911, 342912, 342913], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_10", "task_id": 0, "role": "primary_unseen_to_executor_development", "task_name": "put both the alphabet soup and the tomato sauce in the basket", "max_episode_steps": 520, "environment_seeds": [343000, 343001, 343002, 343003, 343004, 343005, 343006, 343007, 343008, 343009, 343010, 343011, 343012, 343013], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_10", "task_id": 2, "role": "primary_unseen_to_executor_development", "task_name": "turn on the stove and put the moka pot on it", "max_episode_steps": 520, "environment_seeds": [343200, 343201, 343202, 343203, 343204, 343205, 343206, 343207, 343208, 343209, 343210, 343211, 343212, 343213], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_10", "task_id": 4, "role": "primary_unseen_to_executor_development", "task_name": "put the white mug on the left plate and put the yellow and white mug on the right plate", "max_episode_steps": 520, "environment_seeds": [343400, 343401, 343402, 343403, 343404, 343405, 343406, 343407, 343408, 343409, 343410, 343411, 343412, 343413], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_10", "task_id": 6, "role": "primary_unseen_to_executor_development", "task_name": "put the white mug on the plate and put the chocolate pudding to the right of the plate", "max_episode_steps": 520, "environment_seeds": [343600, 343601, 343602, 343603, 343604, 343605, 343606, 343607, 343608, 343609, 343610, 343611, 343612, 343613], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_10", "task_id": 7, "role": "primary_unseen_to_executor_development", "task_name": "put both the alphabet soup and the cream cheese box in the basket", "max_episode_steps": 520, "environment_seeds": [343700, 343701, 343702, 343703, 343704, 343705, 343706, 343707, 343708, 343709, 343710, 343711, 343712, 343713], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_object", "task_id": 1, "role": "bridge_exposed", "task_name": "pick up the cream cheese and place it in the basket", "max_episode_steps": 280, "environment_seeds": [340100, 340101, 340102, 340103, 340104, 340105, 340106, 340107, 340108, 340109, 340110, 340111, 340112, 340113], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task1/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_object", "task_id": 5, "role": "bridge_exposed", "task_name": "pick up the tomato sauce and place it in the basket", "max_episode_steps": 280, "environment_seeds": [340500, 340501, 340502, 340503, 340504, 340505, 340506, 340507, 340508, 340509, 340510, 340511, 340512, 340513], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task5/checkpoints/100000/pretrained_model"},
+      {"suite": "libero_object", "task_id": 9, "role": "bridge_exposed", "task_name": "pick up the orange juice and place it in the basket", "max_episode_steps": 280, "environment_seeds": [340900, 340901, 340902, 340903, 340904, 340905, 340906, 340907, 340908, 340909, 340910, 340911, 340912, 340913], "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task9/checkpoints/100000/pretrained_model"}
+    ]
+  },
+  "checkpoint_preflight": {
+    "status": "passed",
+    "checkpoint_family": "experiments/standard_libero_baselines/act_final/libero_<suite>_task<k>/checkpoints/100000/pretrained_model",
+    "all_selected_checkpoints_loadable_as_act": true,
+    "all_selected_checkpoints_have_chunk_size_100": true,
+    "all_selected_checkpoints_have_action_dim_7": true,
+    "all_selected_checkpoints_have_temporal_ensemble_disabled": true,
+    "missing_selected_goal_checkpoints": [],
+    "missing_selected_libero_10_checkpoints": [],
+    "missing_selected_object_bridge_checkpoints": [],
+    "contingency_invoked": "none",
+    "reserve_libero_10_task": 8,
+    "more_than_two_missing_stop_rule_triggered": false
+  },
+  "runtime": {
+    "policy": "official LeRobot ACT",
+    "per_task_checkpoint_family": "100000 pretrained_model",
+    "policy_checkpoint_chunk_size": 100,
+    "policy_temporal_ensemble": false,
+    "action_smoothing": false,
+    "control_frequency_hz": 20,
+    "control_mode": "relative",
+    "obs_type": "pixels_agent_pos",
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "camera_name_mapping": {"agentview_image": "image", "robot0_eye_in_hand_image": "wrist_image"},
+    "observation_width": 256,
+    "observation_height": 256,
+    "hard_reset": true,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "policy_rng_seed": 424242,
+    "success_criterion": "LIBERO info is_success, with positive terminal reward as the established fallback",
+    "fresh_environment_per_method_task_state": true
+  },
+  "per_suite_caps": {"libero_object": 280, "libero_goal": 300, "libero_10": 520},
+  "conditions": [
+    {"name": "FRESH", "d_arm": 0, "d_grip": 0, "formula": "a_t = A_t[0, :]", "query_schedule": "q=t every controller step"},
+    {"name": "FO20", "d_arm": 0, "d_grip": 20, "formula": "t<20: A_t[0, :]; t>=20: [A_t[0,0:6], A_{t-20}[20,6]]", "query_schedule": "q=t every controller step"},
+    {"name": "REVERSE20", "d_arm": 20, "d_grip": 0, "formula": "t<20: A_t[0, :]; t>=20: [A_{t-20}[20,0:6], A_t[0,6]]", "query_schedule": "q=t every controller step"},
+    {"name": "FULL_OLD20", "d_arm": 20, "d_grip": 20, "formula": "t<20: A_t[0, :]; t>=20: A_{t-20}[20,:]", "query_schedule": "q=t every controller step"},
+    {"name": "HARD_H16", "d_arm": "joint h16 commitment", "d_grip": "joint h16 commitment", "formula": "for newest scheduled q<=t, execute A_q[t-q]", "query_schedule": "q=0,16,32,...", "prediction_horizon": 100}
+  ],
+  "same_target_contract": {
+    "definition": "A_q[k] targets physical time q+k",
+    "required_identity": "source_q + offset = target_t",
+    "fixed_old_source": "q=t-20 and offset=20",
+    "forbidden_controls": ["A_{t-20}[0]", "A_t[20]"],
+    "fixed_source_prefix": "all fixed-source methods are exactly Fresh for t<20"
+  },
+  "primary_comparisons": [
+    {"label": "FO20_VS_REVERSE20", "first": "FO20", "second": "REVERSE20"},
+    {"label": "FO20_VS_FRESH", "first": "FO20", "second": "FRESH"},
+    {"label": "FO20_VS_FULL_OLD20", "first": "FO20", "second": "FULL_OLD20"}
+  ],
+  "statistics": {
+    "inference_unit": "paired task-state block",
+    "primary_outcome": "binary episode success",
+    "primary_scope": "Goal + LIBERO-10 only, 140 paired blocks per condition",
+    "bridge_scope": "Object tasks 1,5,9 only, 42 paired blocks per condition",
+    "bootstrap_draws": 20000,
+    "bootstrap_seeds": {
+      "FO20_VS_REVERSE20": {"paired": 20261001, "task_cluster": 20261002},
+      "FO20_VS_FRESH": {"paired": 20261003, "task_cluster": 20261004},
+      "FO20_VS_FULL_OLD20": {"paired": 20261005, "task_cluster": 20261006}
+    },
+    "mcnemar": "exact two-sided binomial test on discordant paired blocks",
+    "uncertainty_rule": "Report paired bootstrap interval, task-cluster bootstrap interval, and every leave-one-task-out estimate for each contrast; interpret direction and heterogeneity jointly. McNemar is reported but is not the sole criterion.",
+    "object_bridge_never_pooled_into_primary": true
+  },
+  "validation": {
+    "semantic_tests": ["source_q + offset == target_t", "fixed group sources match FRESH/FO20/REVERSE20/FULL_OLD20", "all fixed methods equal FRESH for t<20", "hard h16 queries only at 0,16,32,...", "ACT deterministic repeated inference"],
+    "pairing_smoke": {"tasks": ["libero_goal:task4", "libero_10:task0"], "state_ids": [0, 1, 2], "fresh_environment_per_method_state": true, "initial_cameras_identical": true, "fixed_prefix_comparison": "all fixed-source methods versus FRESH through t=19", "hard_comparison": "q=0 chunk identity and schedule only; no post-divergence trajectory equality required"}
+  },
+  "sharding": {"gpu0": ["libero_goal:task4", "libero_goal:task6", "libero_10:task0", "libero_10:task2", "libero_object:task1"], "gpu1": ["libero_goal:task7", "libero_goal:task8", "libero_10:task4", "libero_object:task5"], "gpu2": ["libero_goal:task9", "libero_10:task6", "libero_10:task7", "libero_object:task9"], "rule": "all five conditions for a task stay on one GPU; resumable task shards"},
+  "checkpoint_contingency": {
+    "libero_10_selected": [0, 2, 4, 6, 7],
+    "if_exactly_one_missing": "replace it with task 8",
+    "if_two_or_more_missing": "stop before confirmation rollout",
+    "goal_missing": "drop task with recorded reason and no replacement",
+    "object_bridge_missing": "drop task with recorded reason and no replacement",
+    "if_more_than_two_of_all_selected_missing": "stop before confirmation rollout",
+    "actual_included_cohort_frozen": true
+  },
+  "stop_rule": "After the 910-episode confirmation completes, stop all rollout-based method research for this paper. Negative or heterogeneous confirmation results are paper results; no rescue variants or additional cohorts.",
+  "executor_source": {"path": "experiments/group_delay_factorial_act20/temporal_reuse.py", "reference_commit": "7ab52cbc6360ae8436cfe5a04f8d200130d3f7a4", "reuse_without_refactor": true},
+  "historical_absolute_rate_comparison_forbidden": true
+}
