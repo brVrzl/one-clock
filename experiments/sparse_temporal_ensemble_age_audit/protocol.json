@@ -1,0 +1,71 @@
+{
+  "protocol_version": 2,
+  "frozen_before_outcomes": true,
+  "purpose": "Audit sparse temporal-ensemble age semantics and ACT paired initialization before any new outcome rollout.",
+  "historical_experiment": {
+    "commit": "e784ea285db8e87f9ae75941c0266e4bb35e9aeb",
+    "directory": "../sparse_temporal_ensemble_dev",
+    "operator_name": "candidate_index_sparse_temporal_ensemble",
+    "candidate_order": "oldest_query_to_newest_query",
+    "unnormalized_weight": "exp(-0.01 * candidate_index)"
+  },
+  "preliminary_pairing_smoke": {
+    "reason": "Frozen before the final Part A shard-history evidence was available; retained as a passing implementation smoke but not used to clear the implicated libero_10 shard.",
+    "task": "libero_object:task3",
+    "initial_state_ids": [10, 11, 12],
+    "environment_seeds": [2000, 2001, 2002],
+    "artifact": "pairing_audit/summary.json",
+    "passed": true
+  },
+  "pairing_audit": {
+    "policy": "ACT",
+    "task": {
+      "suite": "libero_10",
+      "task_id": 3,
+      "task_name": "put the black bowl in the bottom drawer of the cabinet and close it",
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model"
+    },
+    "cadence": 16,
+    "prediction_horizon": 100,
+    "conditions": ["hard_h16", "candidate_index_te_h16"],
+    "initial_state_ids": [10, 11, 16],
+    "environment_seeds": [2000, 2001, 2006],
+    "policy_rng_seed": 424242,
+    "reset_rng_rule_under_audit": "Construct a fresh environment instance for every condition/state after seeding Python random and NumPy with environment_seed. Then assign the frozen state ID, reseed Python/NumPy with environment_seed and torch CPU/all CUDA with policy_rng_seed, call policy.reset, and call env.reset(seed=[environment_seed]). The construction/reset seed rule is method-independent.",
+    "common_prefix_targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "separate_environment_resets": true,
+    "selected_before_new_outcomes": true,
+    "selection_reason": "Part A identified this as the only current ACT shard with unequal hard/TE common prefixes; states 11 and 16 are also the two prior-vs-current hard_h16 discordances, with state 10 as a successful control."
+  },
+  "environment": {
+    "fps": 30,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "obs_type": "pixels_agent_pos",
+    "control_mode": "relative",
+    "init_states": true,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "observation_width": 256,
+    "observation_height": 256
+  },
+  "runtime": {
+    "python": "/home/wjq/workspace/venvs/libero_act/bin/python",
+    "lerobot": "0.4.4",
+    "torch": "2.7.1+cu128",
+    "mujoco": "3.3.1"
+  },
+  "proposed_operator_from_request": {
+    "name": "physical_age_te",
+    "coefficient": 0.01,
+    "candidate_rule": "q <= t and 0 <= t-q < H_pred",
+    "same_target_action": "A_q[t-q]",
+    "unnormalized_weight": "exp(-0.01 * (q_newest - q))",
+    "status": "not_implemented_pending_h1_orientation_audit"
+  },
+  "new_outcome_workload": {
+    "primary": "ACT physical_age_te h16, 40 development episodes",
+    "h8": "conditional only",
+    "smolvla_h16": "conditional on meaningful ACT recovery",
+    "final_blind_tasks": false
+  }
+}
