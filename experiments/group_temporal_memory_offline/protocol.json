@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_closed_loop_comparison",
+  "purpose": "Offline audit of whether arm and gripper same-target utility have different dependence on observation delay.",
+  "offline_only": true,
+  "policy_or_executor_changes": false,
+  "rollouts": false,
+  "primary_question": "Does the utility or reliability of historical same-target predictions vary systematically between the six-dimensional arm and scalar gripper groups?",
+  "source": {
+    "cache_root": "../component_temporal_reuse/query_cache",
+    "cache_kind": "Fresh dense-query SmolVLA postprocessed action chunks",
+    "cache_schema": "episode_i has shape [T, 50, 7]; cache[q, d] targets physical step q+d",
+    "action_domain": "postprocessed relative-action domain; gripper range is fixed to [-1, 1]",
+    "separate_inspected_cache": {
+      "path": "../gate3a1_dense_temporal_cache",
+      "used_as_primary": false,
+      "reason": "different ACT checkpoint/cohort, 82 episodes, and 100-step chunks"
+    }
+  },
+  "task_split": {
+    "development": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "held_out_descriptive": [
+      "libero_object:task5",
+      "libero_spatial:task4",
+      "libero_goal:task5",
+      "libero_10:task5"
+    ],
+    "task_order": [
+      "libero_object:task3",
+      "libero_object:task5",
+      "libero_spatial:task0",
+      "libero_spatial:task4",
+      "libero_goal:task2",
+      "libero_goal:task5",
+      "libero_10:task3",
+      "libero_10:task5"
+    ],
+    "episodes_per_task": 10
+  },
+  "delays": {
+    "steps": [0, 4, 8, 16, 20, 32],
+    "seconds_at_30hz": {
+      "0": 0.0,
+      "4": 0.13333333333333333,
+      "8": 0.26666666666666666,
+      "16": 0.5333333333333333,
+      "20": 0.6666666666666666,
+      "32": 1.0666666666666667
+    },
+    "availability": "For target t and delay d, q=t-d must be nonnegative and d must be smaller than the source chunk horizon. Target t remains within the executed episode.",
+    "candidate_count_is_inferential_n": false
+  },
+  "alignment": {
+    "fresh": "a_{t|t}=cache[t,0,:]",
+    "historical": "a_{t|t-d}=cache[t-d,d,:]",
+    "identity_at_delay_zero": true,
+    "same_target_test": "source query q plus chunk offset d equals target t"
+  },
+  "groups": {
+    "arm": {
+      "indices": [0, 1, 2, 3, 4, 5],
+      "translation_indices": [0, 1, 2],
+      "rotation_indices": [3, 4, 5]
+    },
+    "gripper": {
+      "indices": [6],
+      "sign_rule": "np.sign in {-1, 0, +1}; zero is not remapped"
+    }
+  },
+  "metrics": {
+    "revision": {
+      "arm_translation": "sqrt(mean(((old[:3]-fresh[:3])/IQR[:3])^2))",
+      "arm_rotation": "sqrt(mean(((old[3:6]-fresh[3:6])/IQR[3:6])^2))",
+      "arm_revision_unbounded": "0.5*(translation+rotation)",
+      "arm_revision": "arm_revision_unbounded/(1+arm_revision_unbounded)",
+      "gripper_continuous": "abs(old[6]-fresh[6])",
+      "gripper_sign": "1[sign(old[6]) != sign(fresh[6])]",
+      "normalization": "arm IQR scales are fitted from all development Fresh cache[q,0,:6] rows only; no held-out values enter scales"
+    },
+    "primary_utility": {
+      "name": "normalized_same_target_revision_utility",
+      "arm": "U_arm(d)=1-mean_episode_then_task(R_arm(d))",
+      "gripper": "U_grip(d)=1-clip(mean_episode_then_task(abs_diff)/2,0,1)",
+      "direction": "higher is more stable same-target agreement; this is offline consistency, not guaranteed control utility",
+      "gripper_range": 2.0
+    },
+    "heterogeneity": {
+      "name": "H_temp",
+      "formula": "mean over d in {0,4,8,16,20,32} of abs(U_arm(d)-U_grip(d))",
+      "aggregation": "task-level profiles; each task has equal weight in macro summaries",
+      "frozen_before_closed_loop": true,
+      "threshold_rule": "For each group, threshold is the development-task median U_g(16); first available delay with U_g(d) below that threshold is descriptive only."
+    }
+  },
+  "demonstration_agreement": {
+    "status": "skipped",
+    "reason": "The existing eight-task Fresh cache stores policy chunks only. No correctly aligned expert action table is present in the existing protocol/artifacts, and expert labels will not be reconstructed from questionable paths."
+  },
+  "existing_source_reliability": {
+    "status": "context_only",
+    "source": "historical git artifact at 6ed5d06: experiments/dynamic_reliability_horizon/oracle_group_horizon_metrics.json and source_context_ablation/*",
+    "target_definition": "Y_refresh(k) is prefix survival of old cached A_t[k] against fresh cached A_{t+k}[0]. Arm is valid when max(translation normalized RMS, rotation normalized RMS) <= 1.0; gripper is valid when normalized absolute error <= 1.0 and command signs agree.",
+    "comparability": "Semantically compatible with source-age persistence, but it is a frozen ACT artifact on a different cohort and is not numerically pooled into this SmolVLA H_temp score.",
+    "reuse": "Report validated group-wise reliability curves and hard-horizon failure as supporting interpretation only."
+  },
+  "closed_loop_stage": {
+    "status": "secondary_after_h_temp_freeze",
+    "outcome_source": "../component_temporal_reuse/final_analysis/analysis.json",
+    "conditions": ["fo4", "fo8", "fo16", "reverse4", "reverse8", "reverse16", "full_old4", "full_old8", "full_old16"],
+    "asymmetry": "A_task(d)=success_rate(FO_d)-success_rate(Reverse_d)",
+    "use": "descriptive Spearman correlation and scatter only; no outcome is used to define H_temp"
+  },
+  "future_module_ladder_if_supported": [
+    "M0 hard sparse h16",
+    "M1 shared sparse temporal ensemble",
+    "M2 whole-action sparse CogACT-style similarity weighting",
+    "M3 group-wise CogACT similarity weighting",
+    "M4 group-specific delay prior plus group-wise CogACT",
+    "M5 anchored group-wise temporal memory: newest joint anchor plus group-specific historical residual/fusion",
+    "M6 optional reliability-weighted anchored group memory"
+  ]
+}

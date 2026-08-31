@@ -1,0 +1,458 @@
+{
+  "status": "complete_secondary_after_frozen_H_temp",
+  "frozen_H_temp_path": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_offline/h_temp_frozen.json",
+  "outcome_path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/final_analysis/analysis.json",
+  "outcomes_used_only_after_freeze": true,
+  "task_rows_by_delay": [
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 1.0,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": 0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 0.7,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": 0.10000000000000009,
+      "abs_FO_minus_Reverse": 0.10000000000000009,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.6,
+      "fo_success_rate": 0.7,
+      "reverse_success_rate": 0.7,
+      "full_old_success_rate": 0.7,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 0.8,
+      "full_old_success_rate": 0.8,
+      "FO_minus_Reverse": 0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.7,
+      "reverse_success_rate": 0.8,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": -0.10000000000000009,
+      "abs_FO_minus_Reverse": 0.10000000000000009,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 1.0,
+      "reverse_success_rate": 0.7,
+      "full_old_success_rate": 0.6,
+      "FO_minus_Reverse": 0.30000000000000004,
+      "abs_FO_minus_Reverse": 0.30000000000000004,
+      "FullOld_minus_Fresh": -0.30000000000000004
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989,
+      "delay_steps": 4,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 1.0,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": -0.19999999999999996,
+      "abs_FO_minus_Reverse": 0.19999999999999996,
+      "FullOld_minus_Fresh": 0.19999999999999996
+    },
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.7,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": -0.20000000000000007,
+      "abs_FO_minus_Reverse": 0.20000000000000007,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 0.7,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": 0.10000000000000009,
+      "abs_FO_minus_Reverse": 0.10000000000000009,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.6,
+      "fo_success_rate": 0.7,
+      "reverse_success_rate": 0.7,
+      "full_old_success_rate": 0.7,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 0.8,
+      "full_old_success_rate": 0.8,
+      "FO_minus_Reverse": 0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 1.0,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": 0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": 0.09999999999999998
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.5,
+      "reverse_success_rate": 0.5,
+      "full_old_success_rate": 0.5,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": -0.4
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989,
+      "delay_steps": 8,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 1.0,
+      "reverse_success_rate": 1.0,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": 0.0,
+      "abs_FO_minus_Reverse": 0.0,
+      "FullOld_minus_Fresh": 0.19999999999999996
+    },
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 0.5,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": 0.4,
+      "abs_FO_minus_Reverse": 0.4,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 0.1,
+      "full_old_success_rate": 0.4,
+      "FO_minus_Reverse": 0.7000000000000001,
+      "abs_FO_minus_Reverse": 0.7000000000000001,
+      "FullOld_minus_Fresh": -0.4
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.6,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 0.5,
+      "full_old_success_rate": 0.8,
+      "FO_minus_Reverse": 0.30000000000000004,
+      "abs_FO_minus_Reverse": 0.30000000000000004,
+      "FullOld_minus_Fresh": 0.20000000000000007
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.8,
+      "reverse_success_rate": 0.9,
+      "full_old_success_rate": 0.6,
+      "FO_minus_Reverse": -0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": -0.20000000000000007
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.9,
+      "reverse_success_rate": 1.0,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": -0.09999999999999998,
+      "abs_FO_minus_Reverse": 0.09999999999999998,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.7,
+      "reverse_success_rate": 1.0,
+      "full_old_success_rate": 0.9,
+      "FO_minus_Reverse": -0.30000000000000004,
+      "abs_FO_minus_Reverse": 0.30000000000000004,
+      "FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.9,
+      "fo_success_rate": 0.6,
+      "reverse_success_rate": 0.2,
+      "full_old_success_rate": 0.3,
+      "FO_minus_Reverse": 0.39999999999999997,
+      "abs_FO_minus_Reverse": 0.39999999999999997,
+      "FullOld_minus_Fresh": -0.6000000000000001
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989,
+      "delay_steps": 16,
+      "fresh_success_rate": 0.8,
+      "fo_success_rate": 0.6,
+      "reverse_success_rate": 0.8,
+      "full_old_success_rate": 1.0,
+      "FO_minus_Reverse": -0.20000000000000007,
+      "abs_FO_minus_Reverse": 0.20000000000000007,
+      "FullOld_minus_Fresh": 0.19999999999999996
+    }
+  ],
+  "task_mean_summary": [
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266,
+      "mean_FO_minus_Reverse": 0.09999999999999998,
+      "mean_abs_FO_minus_Reverse": 0.23333333333333336,
+      "mean_FullOld_minus_Fresh": 0.0
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457,
+      "mean_FO_minus_Reverse": 0.3000000000000001,
+      "mean_abs_FO_minus_Reverse": 0.3000000000000001,
+      "mean_FullOld_minus_Fresh": -0.0666666666666667
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635,
+      "mean_FO_minus_Reverse": 0.10000000000000002,
+      "mean_abs_FO_minus_Reverse": 0.10000000000000002,
+      "mean_FullOld_minus_Fresh": 0.13333333333333333
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437,
+      "mean_FO_minus_Reverse": 0.033333333333333326,
+      "mean_abs_FO_minus_Reverse": 0.09999999999999998,
+      "mean_FullOld_minus_Fresh": -0.0666666666666667
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782,
+      "mean_FO_minus_Reverse": -0.0666666666666667,
+      "mean_abs_FO_minus_Reverse": 0.0666666666666667,
+      "mean_FullOld_minus_Fresh": 0.06666666666666665
+    },
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547,
+      "mean_FO_minus_Reverse": -0.0666666666666667,
+      "mean_abs_FO_minus_Reverse": 0.13333333333333333,
+      "mean_FullOld_minus_Fresh": 0.033333333333333326
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446,
+      "mean_FO_minus_Reverse": 0.2333333333333333,
+      "mean_abs_FO_minus_Reverse": 0.2333333333333333,
+      "mean_FullOld_minus_Fresh": -0.4333333333333334
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989,
+      "mean_FO_minus_Reverse": -0.13333333333333333,
+      "mean_abs_FO_minus_Reverse": 0.13333333333333333,
+      "mean_FullOld_minus_Fresh": 0.19999999999999996
+    }
+  ],
+  "delay_summaries": {
+    "4": {
+      "task_count": 8,
+      "mean_FO_success_rate": 0.8500000000000001,
+      "mean_Reverse_success_rate": 0.8125,
+      "mean_FullOld_success_rate": 0.85,
+      "mean_FO_minus_Reverse": 0.037500000000000006,
+      "mean_abs_FO_minus_Reverse": 0.11250000000000002,
+      "positive_tasks": 4,
+      "negative_tasks": 2,
+      "zero_tasks": 2,
+      "spearman_H_temp_vs_FO_minus_Reverse": -0.5663061639364588,
+      "spearman_H_temp_vs_abs_FO_minus_Reverse": -0.0848625128695526,
+      "spearman_H_temp_vs_FullOld_minus_Fresh": 0.0
+    },
+    "8": {
+      "task_count": 8,
+      "mean_FO_success_rate": 0.8125,
+      "mean_Reverse_success_rate": 0.8,
+      "mean_FullOld_success_rate": 0.85,
+      "mean_FO_minus_Reverse": 0.012499999999999997,
+      "mean_abs_FO_minus_Reverse": 0.06250000000000001,
+      "positive_tasks": 3,
+      "negative_tasks": 1,
+      "zero_tasks": 4,
+      "spearman_H_temp_vs_FO_minus_Reverse": 0.14047259716566915,
+      "spearman_H_temp_vs_abs_FO_minus_Reverse": -0.37033684707312775,
+      "spearman_H_temp_vs_FullOld_minus_Fresh": 0.29371543043730824
+    },
+    "16": {
+      "task_count": 8,
+      "mean_FO_success_rate": 0.7625,
+      "mean_Reverse_success_rate": 0.625,
+      "mean_FullOld_success_rate": 0.7250000000000001,
+      "mean_FO_minus_Reverse": 0.1375,
+      "mean_abs_FO_minus_Reverse": 0.3125,
+      "positive_tasks": 4,
+      "negative_tasks": 4,
+      "zero_tasks": 0,
+      "spearman_H_temp_vs_FO_minus_Reverse": -0.9700772721497397,
+      "spearman_H_temp_vs_abs_FO_minus_Reverse": -0.6988459044322258,
+      "spearman_H_temp_vs_FullOld_minus_Fresh": 0.2439750182371333
+    }
+  },
+  "across_delays_task_mean": {
+    "spearman_H_temp_vs_mean_FO_minus_Reverse": -0.8263621207201486,
+    "spearman_H_temp_vs_mean_abs_FO_minus_Reverse": -0.5389318178609664,
+    "qualitative_note": "With eight tasks, correlations are descriptive; signed A can change direction across tasks, so magnitude is also reported."
+  },
+  "obvious_counterexamples": [
+    {
+      "task_key": "libero_goal:task5",
+      "H_temp": 0.2943127209941547,
+      "mean_FO_minus_Reverse": -0.0666666666666667
+    },
+    {
+      "task_key": "libero_10:task5",
+      "H_temp": 0.2749433696269989,
+      "mean_FO_minus_Reverse": -0.13333333333333333
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "H_temp": 0.2464374214410782,
+      "mean_FO_minus_Reverse": -0.0666666666666667
+    }
+  ],
+  "full_old_reported_separately": true,
+  "interpretation_limits": [
+    "Success outcomes are not part of H_temp and cannot retroactively change its definition.",
+    "The existing intervention results are paired by task/initial state in the source analysis, but stochastic policy sampling was not keyed by physical step.",
+    "Eight task-level points are too few for inferential claims; no p-value is used for the decision."
+  ]
+}

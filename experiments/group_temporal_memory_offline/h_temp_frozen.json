@@ -1,0 +1,77 @@
+{
+  "status": "frozen_before_closed_loop_comparison",
+  "definition": {
+    "name": "H_temp",
+    "formula": "mean over d in {0,4,8,16,20,32} of abs(U_arm(d)-U_grip(d))",
+    "aggregation": "task-level profiles; each task has equal weight in macro summaries",
+    "frozen_before_closed_loop": true,
+    "threshold_rule": "For each group, threshold is the development-task median U_g(16); first available delay with U_g(d) below that threshold is descriptive only."
+  },
+  "task_values": [
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635
+    },
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457
+    }
+  ],
+  "split_summary": {
+    "development": {
+      "tasks": 4,
+      "task_macro_mean_H_temp": 0.2143234108885129,
+      "task_macro_sd_H_temp": 0.03638522860089358,
+      "task_values": [
+        0.16335311134656266,
+        0.21467979550361635,
+        0.2464374214410782,
+        0.23282331526279446
+      ]
+    },
+    "held_out": {
+      "tasks": 4,
+      "task_macro_mean_H_temp": 0.22800744324922562,
+      "task_macro_sd_H_temp": 0.09045138036871893,
+      "task_values": [
+        0.09544870704412457,
+        0.24732497533162437,
+        0.2943127209941547,
+        0.2749433696269989
+      ]
+    }
+  },
+  "source_outcome_blind_artifact": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_offline/outcome_blind.json"
+}

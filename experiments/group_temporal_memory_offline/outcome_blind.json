@@ -1,0 +1,3473 @@
+{
+  "analysis_status": "complete_outcome_blind_frozen",
+  "protocol_path": "/home/wjq/workspace/one-clock/experiments/group_temporal_memory_offline/protocol.json",
+  "source_cache_root": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache",
+  "task_split": {
+    "development": [
+      "libero_object:task3",
+      "libero_spatial:task0",
+      "libero_goal:task2",
+      "libero_10:task3"
+    ],
+    "held_out_descriptive": [
+      "libero_object:task5",
+      "libero_spatial:task4",
+      "libero_goal:task5",
+      "libero_10:task5"
+    ],
+    "task_order": [
+      "libero_object:task3",
+      "libero_object:task5",
+      "libero_spatial:task0",
+      "libero_spatial:task4",
+      "libero_goal:task2",
+      "libero_goal:task5",
+      "libero_10:task3",
+      "libero_10:task5"
+    ],
+    "episodes_per_task": 10
+  },
+  "delays": [
+    0,
+    4,
+    8,
+    16,
+    20,
+    32
+  ],
+  "arm_scale_fit": {
+    "method": "IQR (Q75-Q25)",
+    "source_action_definition": "all development Fresh postprocessed chunk[q,0,:6] actions",
+    "arm_scales": [
+      0.41356011480093,
+      0.2657897025346756,
+      0.6071508228778839,
+      0.024757614126428962,
+      0.07145446166396141,
+      0.0521656833589077
+    ],
+    "q25": [
+      -0.11601849645376205,
+      -0.08931207656860352,
+      -0.37534359097480774,
+      -0.0028890890534967184,
+      -0.023138608783483505,
+      -0.04346735030412674
+    ],
+    "q50": [
+      0.05097838491201401,
+      0.019035018980503082,
+      -0.09299371391534805,
+      0.001853111432865262,
+      0.006048015784472227,
+      -0.012391987256705761
+    ],
+    "q75": [
+      0.29754161834716797,
+      0.17647762596607208,
+      0.23180723190307617,
+      0.021868525072932243,
+      0.048315852880477905,
+      0.00869833305478096
+    ],
+    "zero_scale_guard_value": 1.0,
+    "zero_scale_guard_applied": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "zero_scale_guard_count": 0
+  },
+  "gripper_diff_range": 2.0,
+  "cache_inventory": {
+    "libero_object:task3": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_object_task3_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          133,
+          50,
+          7
+        ],
+        [
+          151,
+          50,
+          7
+        ],
+        [
+          139,
+          50,
+          7
+        ],
+        [
+          130,
+          50,
+          7
+        ],
+        [
+          132,
+          50,
+          7
+        ],
+        [
+          142,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          132,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1501,
+      "valid_targets_by_delay": {
+        "0": 1501,
+        "4": 1461,
+        "8": 1421,
+        "16": 1341,
+        "20": 1301,
+        "32": 1181
+      }
+    },
+    "libero_object:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_object_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          195,
+          50,
+          7
+        ],
+        [
+          135,
+          50,
+          7
+        ],
+        [
+          127,
+          50,
+          7
+        ],
+        [
+          200,
+          50,
+          7
+        ],
+        [
+          179,
+          50,
+          7
+        ],
+        [
+          136,
+          50,
+          7
+        ],
+        [
+          154,
+          50,
+          7
+        ],
+        [
+          196,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1882,
+      "valid_targets_by_delay": {
+        "0": 1882,
+        "4": 1842,
+        "8": 1802,
+        "16": 1722,
+        "20": 1682,
+        "32": 1562
+      }
+    },
+    "libero_spatial:task0": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_spatial_task0_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          71,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          69,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          77,
+          50,
+          7
+        ],
+        [
+          89,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          73,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          69,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1568,
+      "valid_targets_by_delay": {
+        "0": 1568,
+        "4": 1528,
+        "8": 1488,
+        "16": 1408,
+        "20": 1368,
+        "32": 1248
+      }
+    },
+    "libero_spatial:task4": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_spatial_task4_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          140,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          129,
+          50,
+          7
+        ],
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          280,
+          50,
+          7
+        ],
+        [
+          135,
+          50,
+          7
+        ],
+        [
+          125,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1625,
+      "valid_targets_by_delay": {
+        "0": 1625,
+        "4": 1585,
+        "8": 1545,
+        "16": 1465,
+        "20": 1425,
+        "32": 1305
+      }
+    },
+    "libero_goal:task2": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_goal_task2_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          86,
+          50,
+          7
+        ],
+        [
+          99,
+          50,
+          7
+        ],
+        [
+          102,
+          50,
+          7
+        ],
+        [
+          117,
+          50,
+          7
+        ],
+        [
+          114,
+          50,
+          7
+        ],
+        [
+          97,
+          50,
+          7
+        ],
+        [
+          105,
+          50,
+          7
+        ],
+        [
+          98,
+          50,
+          7
+        ],
+        [
+          94,
+          50,
+          7
+        ],
+        [
+          300,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1212,
+      "valid_targets_by_delay": {
+        "0": 1212,
+        "4": 1172,
+        "8": 1132,
+        "16": 1052,
+        "20": 1012,
+        "32": 892
+      }
+    },
+    "libero_goal:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_goal_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          300,
+          50,
+          7
+        ],
+        [
+          150,
+          50,
+          7
+        ],
+        [
+          137,
+          50,
+          7
+        ],
+        [
+          118,
+          50,
+          7
+        ],
+        [
+          201,
+          50,
+          7
+        ],
+        [
+          131,
+          50,
+          7
+        ],
+        [
+          124,
+          50,
+          7
+        ],
+        [
+          147,
+          50,
+          7
+        ],
+        [
+          160,
+          50,
+          7
+        ],
+        [
+          124,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 1592,
+      "valid_targets_by_delay": {
+        "0": 1592,
+        "4": 1552,
+        "8": 1512,
+        "16": 1432,
+        "20": 1392,
+        "32": 1272
+      }
+    },
+    "libero_10:task3": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_10_task3_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          224,
+          50,
+          7
+        ],
+        [
+          242,
+          50,
+          7
+        ],
+        [
+          243,
+          50,
+          7
+        ],
+        [
+          242,
+          50,
+          7
+        ],
+        [
+          231,
+          50,
+          7
+        ],
+        [
+          231,
+          50,
+          7
+        ],
+        [
+          464,
+          50,
+          7
+        ],
+        [
+          228,
+          50,
+          7
+        ],
+        [
+          227,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 2852,
+      "valid_targets_by_delay": {
+        "0": 2852,
+        "4": 2812,
+        "8": 2772,
+        "16": 2692,
+        "20": 2652,
+        "32": 2532
+      }
+    },
+    "libero_10:task5": {
+      "path": "/home/wjq/workspace/one-clock/experiments/component_temporal_reuse/query_cache/libero_10_task5_fresh.npz",
+      "episodes": 10,
+      "episode_shapes": [
+        [
+          246,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ],
+        [
+          317,
+          50,
+          7
+        ],
+        [
+          190,
+          50,
+          7
+        ],
+        [
+          427,
+          50,
+          7
+        ],
+        [
+          187,
+          50,
+          7
+        ],
+        [
+          520,
+          50,
+          7
+        ],
+        [
+          445,
+          50,
+          7
+        ],
+        [
+          315,
+          50,
+          7
+        ],
+        [
+          187,
+          50,
+          7
+        ]
+      ],
+      "chunk_horizon": 50,
+      "target_steps": 3354,
+      "valid_targets_by_delay": {
+        "0": 3354,
+        "4": 3314,
+        "8": 3274,
+        "16": 3194,
+        "20": 3154,
+        "32": 3034
+      }
+    }
+  },
+  "counts": {
+    "tasks": 8,
+    "episodes": 80,
+    "current_target_steps": 15586,
+    "feature_rows_including_masked": 93516,
+    "valid_feature_rows": 87116,
+    "valid_candidate_rows_by_delay": {
+      "0": 15586,
+      "4": 15266,
+      "8": 14946,
+      "16": 14306,
+      "20": 13986,
+      "32": 13026
+    }
+  },
+  "profiles": {
+    "libero_object:task3": {
+      "split": "development",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1501,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1461,
+              "valid_episodes": 10,
+              "utility": 0.700374859571457,
+              "utility_sd_across_episodes": 0.013188744186367141,
+              "revision_or_abs_diff": 0.29962511658668517,
+              "revision_or_abs_diff_sd_across_episodes": 0.013188750554772017,
+              "translation_revision": 0.3209427922964096,
+              "rotation_revision": 0.602439695596695,
+              "gripper_sign_disagreement": 0.08873274251818657,
+              "episode_utility_values": [
+                0.6824395060539246,
+                0.7058303952217102,
+                0.7004550695419312,
+                0.7064476013183594,
+                0.6973125338554382,
+                0.6993398666381836,
+                0.7211204171180725,
+                0.6753233671188354,
+                0.7073727250099182,
+                0.7081071138381958
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1421,
+              "valid_episodes": 10,
+              "utility": 0.7041606545448303,
+              "utility_sd_across_episodes": 0.014477371797368114,
+              "revision_or_abs_diff": 0.2958393573760986,
+              "revision_or_abs_diff_sd_across_episodes": 0.014477381318430207,
+              "translation_revision": 0.32261510789394376,
+              "rotation_revision": 0.5863242268562316,
+              "gripper_sign_disagreement": 0.09543562531471253,
+              "episode_utility_values": [
+                0.6984010934829712,
+                0.7172654867172241,
+                0.7025655508041382,
+                0.7039614319801331,
+                0.7053335905075073,
+                0.7007337212562561,
+                0.7263108491897583,
+                0.6717942357063293,
+                0.7148168683052063,
+                0.7004237174987793
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1341,
+              "valid_episodes": 10,
+              "utility": 0.6946608424186707,
+              "utility_sd_across_episodes": 0.020385796803891947,
+              "revision_or_abs_diff": 0.3053391486406326,
+              "revision_or_abs_diff_sd_across_episodes": 0.02038580284433833,
+              "translation_revision": 0.3510580748319626,
+              "rotation_revision": 0.6002907872200012,
+              "gripper_sign_disagreement": 0.10911664590239525,
+              "episode_utility_values": [
+                0.6725464463233948,
+                0.6960581541061401,
+                0.7047560811042786,
+                0.6958632469177246,
+                0.7134560942649841,
+                0.6952787637710571,
+                0.7211394906044006,
+                0.6550705432891846,
+                0.7123265266418457,
+                0.6801130771636963
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1301,
+              "valid_episodes": 10,
+              "utility": 0.6879204392433167,
+              "utility_sd_across_episodes": 0.01963117874664527,
+              "revision_or_abs_diff": 0.31207955777645113,
+              "revision_or_abs_diff_sd_across_episodes": 0.019631164285361748,
+              "translation_revision": 0.36274691224098204,
+              "rotation_revision": 0.6190810084342957,
+              "gripper_sign_disagreement": 0.10756722204387188,
+              "episode_utility_values": [
+                0.6687164902687073,
+                0.6966061592102051,
+                0.6906726360321045,
+                0.6990755796432495,
+                0.6843072772026062,
+                0.6960611343383789,
+                0.7094339728355408,
+                0.6449184417724609,
+                0.7090027928352356,
+                0.6804099082946777
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1181,
+              "valid_episodes": 10,
+              "utility": 0.6708980977535248,
+              "utility_sd_across_episodes": 0.026717144616873904,
+              "revision_or_abs_diff": 0.3291019380092621,
+              "revision_or_abs_diff_sd_across_episodes": 0.02671713490913194,
+              "translation_revision": 0.4181713342666626,
+              "rotation_revision": 0.6579420626163482,
+              "gripper_sign_disagreement": 0.13831576481461524,
+              "episode_utility_values": [
+                0.6396639943122864,
+                0.6716963052749634,
+                0.6960709691047668,
+                0.6808714270591736,
+                0.6734358072280884,
+                0.686663031578064,
+                0.6957544088363647,
+                0.6153966188430786,
+                0.6938526034355164,
+                0.6555758118629456
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 8,
+            "best_positive_delay_utility": 0.7041606545448303,
+            "delay_sensitivity_slope_per_step": -0.006726479587646648,
+            "utility_auc_normalized_0_to_32": 0.7100993912667036,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": null,
+            "profile_shape": "non_monotonic"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1501,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1461,
+              "valid_episodes": 10,
+              "utility": 0.9069262444972992,
+              "utility_sd_across_episodes": 0.03989911683634012,
+              "revision_or_abs_diff": 0.18660669811069966,
+              "revision_or_abs_diff_sd_across_episodes": 0.08013796852135446,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.08873274251818657,
+              "episode_utility_values": [
+                0.971524178981781,
+                0.890497088432312,
+                0.8772598505020142,
+                0.8861807584762573,
+                0.9401933550834656,
+                0.9004136323928833,
+                0.9086030721664429,
+                0.8289454579353333,
+                0.9328965544700623,
+                0.9327484965324402
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1421,
+              "valid_episodes": 10,
+              "utility": 0.9002696633338928,
+              "utility_sd_across_episodes": 0.04404241795303927,
+              "revision_or_abs_diff": 0.20012889355421065,
+              "revision_or_abs_diff_sd_across_episodes": 0.08849539001830393,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.09543562531471253,
+              "episode_utility_values": [
+                0.9467839002609253,
+                0.9025033116340637,
+                0.8674677014350891,
+                0.8575434684753418,
+                0.9139724373817444,
+                0.9078284502029419,
+                0.9208452701568604,
+                0.8093047142028809,
+                0.9550114274024963,
+                0.9214359521865845
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1341,
+              "valid_episodes": 10,
+              "utility": 0.8862588167190552,
+              "utility_sd_across_episodes": 0.04162654003337877,
+              "revision_or_abs_diff": 0.22832051888108254,
+              "revision_or_abs_diff_sd_across_episodes": 0.08354452243496893,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.10911664590239525,
+              "episode_utility_values": [
+                0.9342520236968994,
+                0.8870213627815247,
+                0.8524294495582581,
+                0.8802865147590637,
+                0.9165958762168884,
+                0.8834152817726135,
+                0.8925359845161438,
+                0.798980176448822,
+                0.9441235661506653,
+                0.8729479312896729
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1301,
+              "valid_episodes": 10,
+              "utility": 0.8877481937408447,
+              "utility_sd_across_episodes": 0.04790268898546206,
+              "revision_or_abs_diff": 0.2253319226205349,
+              "revision_or_abs_diff_sd_across_episodes": 0.09617840687091671,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.10756722204387188,
+              "episode_utility_values": [
+                0.9412749409675598,
+                0.8932981491088867,
+                0.8377565741539001,
+                0.8855772018432617,
+                0.9323705434799194,
+                0.8892239332199097,
+                0.8805621266365051,
+                0.7825069427490234,
+                0.9309917688369751,
+                0.9039197564125061
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1181,
+              "valid_episodes": 10,
+              "utility": 0.8569306433200836,
+              "utility_sd_across_episodes": 0.056291029535988364,
+              "revision_or_abs_diff": 0.28712401539087296,
+              "revision_or_abs_diff_sd_across_episodes": 0.11298823295930217,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.13831576481461524,
+              "episode_utility_values": [
+                0.9449623227119446,
+                0.847649097442627,
+                0.8416765332221985,
+                0.82651287317276,
+                0.842586100101471,
+                0.8750645518302917,
+                0.8771701455116272,
+                0.734197199344635,
+                0.915852427482605,
+                0.8636351823806763
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.9069262444972992,
+            "delay_sensitivity_slope_per_step": -0.0033486053003714896,
+            "utility_auc_normalized_0_to_32": 0.893451414629817,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": 16,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.16335311134656266,
+      "H_temp_episode_bootstrap_ci95": [
+        0.1451464622219404,
+        0.18399199627339838
+      ]
+    },
+    "libero_object:task5": {
+      "split": "held_out",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1882,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1842,
+              "valid_episodes": 10,
+              "utility": 0.6733990848064423,
+              "utility_sd_across_episodes": 0.01996228820606854,
+              "revision_or_abs_diff": 0.3266009002923965,
+              "revision_or_abs_diff_sd_across_episodes": 0.0199622868179433,
+              "translation_revision": 0.387349796295166,
+              "rotation_revision": 0.6690953612327576,
+              "gripper_sign_disagreement": 0.16514155119657517,
+              "episode_utility_values": [
+                0.6757208704948425,
+                0.6998310089111328,
+                0.6935986280441284,
+                0.6655217409133911,
+                0.6768990755081177,
+                0.6811115741729736,
+                0.6917354464530945,
+                0.6648655533790588,
+                0.6437480449676514,
+                0.6409589052200317
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1802,
+              "valid_episodes": 10,
+              "utility": 0.6689438223838806,
+              "utility_sd_across_episodes": 0.023561792061714815,
+              "revision_or_abs_diff": 0.33105615973472596,
+              "revision_or_abs_diff_sd_across_episodes": 0.023561780967983625,
+              "translation_revision": 0.4112223297357559,
+              "rotation_revision": 0.6686821937561035,
+              "gripper_sign_disagreement": 0.19808882474899292,
+              "episode_utility_values": [
+                0.6785838007926941,
+                0.6871485114097595,
+                0.6864098906517029,
+                0.6657628417015076,
+                0.6699991226196289,
+                0.6781226396560669,
+                0.6988333463668823,
+                0.6652103066444397,
+                0.6392108798027039,
+                0.6201568841934204
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1722,
+              "valid_episodes": 10,
+              "utility": 0.6483706712722779,
+              "utility_sd_across_episodes": 0.03463091149479946,
+              "revision_or_abs_diff": 0.3516293317079544,
+              "revision_or_abs_diff_sd_across_episodes": 0.034630935687915664,
+              "translation_revision": 0.48496990501880644,
+              "rotation_revision": 0.7169926941394806,
+              "gripper_sign_disagreement": 0.23659010604023933,
+              "episode_utility_values": [
+                0.6317492723464966,
+                0.6834120154380798,
+                0.6760997772216797,
+                0.6646062135696411,
+                0.6297942399978638,
+                0.6783612966537476,
+                0.6823498606681824,
+                0.647074818611145,
+                0.6047999262809753,
+                0.585459291934967
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1682,
+              "valid_episodes": 10,
+              "utility": 0.640197092294693,
+              "utility_sd_across_episodes": 0.03639314021817929,
+              "revision_or_abs_diff": 0.35980287194252014,
+              "revision_or_abs_diff_sd_across_episodes": 0.0363931398383442,
+              "translation_revision": 0.5229901760816574,
+              "rotation_revision": 0.7232701718807221,
+              "gripper_sign_disagreement": 0.26548202708363533,
+              "episode_utility_values": [
+                0.6296427249908447,
+                0.6748577356338501,
+                0.6803893446922302,
+                0.6438548564910889,
+                0.6236851811408997,
+                0.675351619720459,
+                0.6682193279266357,
+                0.6410200595855713,
+                0.5856778621673584,
+                0.5792722105979919
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1562,
+              "valid_episodes": 10,
+              "utility": 0.6162207305431366,
+              "utility_sd_across_episodes": 0.057456010727479766,
+              "revision_or_abs_diff": 0.3837792694568634,
+              "revision_or_abs_diff_sd_across_episodes": 0.057456007549694876,
+              "translation_revision": 0.6791259616613388,
+              "rotation_revision": 0.730741161108017,
+              "gripper_sign_disagreement": 0.2990014895796776,
+              "episode_utility_values": [
+                0.6042073369026184,
+                0.6860719919204712,
+                0.6775327920913696,
+                0.6033808588981628,
+                0.6030049324035645,
+                0.6523746848106384,
+                0.6728676557540894,
+                0.6093514561653137,
+                0.5270469784736633,
+                0.5263686180114746
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.6733990848064423,
+            "delay_sensitivity_slope_per_step": -0.008201445868382106,
+            "utility_auc_normalized_0_to_32": 0.6692620132118464,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 32,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1882,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1842,
+              "valid_episodes": 10,
+              "utility": 0.8313549518585205,
+              "utility_sd_across_episodes": 0.0862395974829789,
+              "revision_or_abs_diff": 0.3379831790924072,
+              "revision_or_abs_diff_sd_across_episodes": 0.17284931370065862,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.16514155119657517,
+              "episode_utility_values": [
+                0.8708068132400513,
+                0.9117075800895691,
+                0.922086238861084,
+                0.8303859233856201,
+                0.744914174079895,
+                0.9280472993850708,
+                0.8770521283149719,
+                0.7843148112297058,
+                0.7755080461502075,
+                0.6687265038490295
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1802,
+              "valid_episodes": 10,
+              "utility": 0.7987873435020447,
+              "utility_sd_across_episodes": 0.0969471230313281,
+              "revision_or_abs_diff": 0.4034716099500656,
+              "revision_or_abs_diff_sd_across_episodes": 0.1943606099032636,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.19808882474899292,
+              "episode_utility_values": [
+                0.7134483456611633,
+                0.9166812300682068,
+                0.9113817811012268,
+                0.8215273022651672,
+                0.7104302048683167,
+                0.9016841650009155,
+                0.8391640186309814,
+                0.79383385181427,
+                0.746575653553009,
+                0.6331468820571899
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1722,
+              "valid_episodes": 10,
+              "utility": 0.7593921303749085,
+              "utility_sd_across_episodes": 0.13679557500554493,
+              "revision_or_abs_diff": 0.4822817012667656,
+              "revision_or_abs_diff_sd_across_episodes": 0.27406785343971857,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.23659010604023933,
+              "episode_utility_values": [
+                0.6778236031532288,
+                0.8944333791732788,
+                0.9054053425788879,
+                0.8031951189041138,
+                0.6762382388114929,
+                0.9284728765487671,
+                0.8373183012008667,
+                0.7479888796806335,
+                0.5497077107429504,
+                0.5733378529548645
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1682,
+              "valid_episodes": 10,
+              "utility": 0.7323602110147476,
+              "utility_sd_across_episodes": 0.14823675689585097,
+              "revision_or_abs_diff": 0.5362173601984978,
+              "revision_or_abs_diff_sd_across_episodes": 0.2968096959322586,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.26548202708363533,
+              "episode_utility_values": [
+                0.6653704047203064,
+                0.8747296333312988,
+                0.8837164044380188,
+                0.7776286005973816,
+                0.6607770919799805,
+                0.9007657170295715,
+                0.8257061243057251,
+                0.7247081995010376,
+                0.46973326802253723,
+                0.5404666662216187
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1562,
+              "valid_episodes": 10,
+              "utility": 0.6979290068149566,
+              "utility_sd_across_episodes": 0.1483363236971786,
+              "revision_or_abs_diff": 0.6053159415721894,
+              "revision_or_abs_diff_sd_across_episodes": 0.29682874005978466,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.2990014895796776,
+              "episode_utility_values": [
+                0.6828734874725342,
+                0.8403313159942627,
+                0.8281272649765015,
+                0.7027102112770081,
+                0.6933367848396301,
+                0.86114501953125,
+                0.7576231956481934,
+                0.7220621109008789,
+                0.41128385066986084,
+                0.479796826839447
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.8313549518585205,
+            "delay_sensitivity_slope_per_step": -0.007813543511124782,
+            "utility_auc_normalized_0_to_32": 0.772529761865735,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": 4,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        }
+      },
+      "H_temp": 0.09544870704412457,
+      "H_temp_episode_bootstrap_ci95": [
+        0.052453769197066624,
+        0.13428374355038006
+      ]
+    },
+    "libero_spatial:task0": {
+      "split": "development",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1568,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1528,
+              "valid_episodes": 10,
+              "utility": 0.5623076766729355,
+              "utility_sd_across_episodes": 0.05408360555011349,
+              "revision_or_abs_diff": 0.4376923322677612,
+              "revision_or_abs_diff_sd_across_episodes": 0.054083613605935735,
+              "translation_revision": 0.6043516665697097,
+              "rotation_revision": 1.1749160289764404,
+              "gripper_sign_disagreement": 0.15661147143691778,
+              "episode_utility_values": [
+                0.6230617761611938,
+                0.49339139461517334,
+                0.5811189413070679,
+                0.5043182373046875,
+                0.6087298393249512,
+                0.6034569144248962,
+                0.5104780197143555,
+                0.5922290086746216,
+                0.4958294928073883,
+                0.6104631423950195
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1488,
+              "valid_episodes": 10,
+              "utility": 0.5497677952051163,
+              "utility_sd_across_episodes": 0.057896053814540875,
+              "revision_or_abs_diff": 0.4502322107553482,
+              "revision_or_abs_diff_sd_across_episodes": 0.0578960543509939,
+              "translation_revision": 0.6480486989021301,
+              "rotation_revision": 1.2251214325428008,
+              "gripper_sign_disagreement": 0.15048340763896703,
+              "episode_utility_values": [
+                0.5971089005470276,
+                0.48550719022750854,
+                0.5913131833076477,
+                0.47802913188934326,
+                0.6037517786026001,
+                0.5857664942741394,
+                0.4858386218547821,
+                0.5990201830863953,
+                0.4818001985549927,
+                0.5895422697067261
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1408,
+              "valid_episodes": 10,
+              "utility": 0.5247688800096512,
+              "utility_sd_across_episodes": 0.052601761164220315,
+              "revision_or_abs_diff": 0.47523113489151003,
+              "revision_or_abs_diff_sd_across_episodes": 0.052601767032978065,
+              "translation_revision": 0.7276526093482971,
+              "rotation_revision": 1.32663232088089,
+              "gripper_sign_disagreement": 0.2023034669458866,
+              "episode_utility_values": [
+                0.5611645579338074,
+                0.45459529757499695,
+                0.5570666193962097,
+                0.4705051779747009,
+                0.5689699053764343,
+                0.5591450929641724,
+                0.46121320128440857,
+                0.583249568939209,
+                0.4716551601886749,
+                0.5601242184638977
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1368,
+              "valid_episodes": 10,
+              "utility": 0.5205814063549041,
+              "utility_sd_across_episodes": 0.05683905765261361,
+              "revision_or_abs_diff": 0.4794185996055603,
+              "revision_or_abs_diff_sd_across_episodes": 0.056839066708385115,
+              "translation_revision": 0.7447336196899415,
+              "rotation_revision": 1.3673161029815675,
+              "gripper_sign_disagreement": 0.21883034314960242,
+              "episode_utility_values": [
+                0.5501440763473511,
+                0.45921590924263,
+                0.5658249855041504,
+                0.4536634087562561,
+                0.5485574007034302,
+                0.5482959747314453,
+                0.4462246000766754,
+                0.5879727602005005,
+                0.4669268727302551,
+                0.5789880752563477
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1248,
+              "valid_episodes": 10,
+              "utility": 0.5170838713645936,
+              "utility_sd_across_episodes": 0.04730559726978183,
+              "revision_or_abs_diff": 0.48291611671447754,
+              "revision_or_abs_diff_sd_across_episodes": 0.04730560614173118,
+              "translation_revision": 0.7281750291585922,
+              "rotation_revision": 1.3870010375976562,
+              "gripper_sign_disagreement": 0.28018415719270706,
+              "episode_utility_values": [
+                0.5551775693893433,
+                0.46847859025001526,
+                0.5504234433174133,
+                0.4581320285797119,
+                0.5593045353889465,
+                0.5362017154693604,
+                0.45339787006378174,
+                0.5647920370101929,
+                0.47235801815986633,
+                0.5525729060173035
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.5623076766729355,
+            "delay_sensitivity_slope_per_step": -0.010083857551217082,
+            "utility_auc_normalized_0_to_32": 0.5613626636564731,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 4,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1568,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1528,
+              "valid_episodes": 10,
+              "utility": 0.8377533257007599,
+              "utility_sd_across_episodes": 0.12200461342617361,
+              "revision_or_abs_diff": 0.3250889204442501,
+              "revision_or_abs_diff_sd_across_episodes": 0.24445004560340697,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.15661147143691778,
+              "episode_utility_values": [
+                0.9488441944122314,
+                0.6745874285697937,
+                0.9058632850646973,
+                0.708178699016571,
+                0.9103060960769653,
+                0.9348368048667908,
+                0.7035443186759949,
+                0.9304316639900208,
+                0.7036303877830505,
+                0.9573103785514832
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1488,
+              "valid_episodes": 10,
+              "utility": 0.843394649028778,
+              "utility_sd_across_episodes": 0.14281418094964404,
+              "revision_or_abs_diff": 0.3137506540864706,
+              "revision_or_abs_diff_sd_across_episodes": 0.28620426108189956,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.15048340763896703,
+              "episode_utility_values": [
+                0.9473533630371094,
+                0.643168032169342,
+                0.9764446020126343,
+                0.6966171860694885,
+                0.9508658051490784,
+                0.932125449180603,
+                0.689475953578949,
+                0.9579216837882996,
+                0.6856507658958435,
+                0.9543236494064331
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1408,
+              "valid_episodes": 10,
+              "utility": 0.7915972352027894,
+              "utility_sd_across_episodes": 0.1762004165561639,
+              "revision_or_abs_diff": 0.41823833584785464,
+              "revision_or_abs_diff_sd_across_episodes": 0.3536029962320807,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.2023034669458866,
+              "episode_utility_values": [
+                0.9384223222732544,
+                0.5917047262191772,
+                0.9562183618545532,
+                0.6417377591133118,
+                0.8819549679756165,
+                0.8712635040283203,
+                0.5862675309181213,
+                0.935530424118042,
+                0.5460963845252991,
+                0.9667763710021973
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1368,
+              "valid_episodes": 10,
+              "utility": 0.7759235799312592,
+              "utility_sd_across_episodes": 0.18420630936016705,
+              "revision_or_abs_diff": 0.4493766363710165,
+              "revision_or_abs_diff_sd_across_episodes": 0.36958248210463956,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.21883034314960242,
+              "episode_utility_values": [
+                0.9751530289649963,
+                0.5493266582489014,
+                0.872402012348175,
+                0.6185286045074463,
+                0.9245846271514893,
+                0.8352558016777039,
+                0.6052044034004211,
+                0.9310125708580017,
+                0.5047566890716553,
+                0.9430114030838013
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1248,
+              "valid_episodes": 10,
+              "utility": 0.7139196127653122,
+              "utility_sd_across_episodes": 0.21542677431544704,
+              "revision_or_abs_diff": 0.5735903292894363,
+              "revision_or_abs_diff_sd_across_episodes": 0.43147472818592936,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.28018415719270706,
+              "episode_utility_values": [
+                0.815811276435852,
+                0.46325621008872986,
+                0.8332602381706238,
+                0.4938538074493408,
+                0.9489132165908813,
+                0.872149646282196,
+                0.48874804377555847,
+                0.8645870089530945,
+                0.428573876619339,
+                0.9300428032875061
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 8,
+            "best_positive_delay_utility": 0.843394649028778,
+            "delay_sensitivity_slope_per_step": -0.0072695479370080635,
+            "utility_auc_normalized_0_to_32": 0.8016209663823247,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": 4,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.21467979550361635,
+      "H_temp_episode_bootstrap_ci95": [
+        0.1591472071160873,
+        0.2691090590506791
+      ]
+    },
+    "libero_spatial:task4": {
+      "split": "held_out",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1625,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1585,
+              "valid_episodes": 10,
+              "utility": 0.6333555400371551,
+              "utility_sd_across_episodes": 0.015173186585298875,
+              "revision_or_abs_diff": 0.36664447784423826,
+              "revision_or_abs_diff_sd_across_episodes": 0.01517315483042462,
+              "translation_revision": 0.4058909982442856,
+              "rotation_revision": 0.8538705766201019,
+              "gripper_sign_disagreement": 0.05646742796525359,
+              "episode_utility_values": [
+                0.642367422580719,
+                0.6482899785041809,
+                0.6332458853721619,
+                0.6167274713516235,
+                0.648400604724884,
+                0.6115947961807251,
+                0.6099143624305725,
+                0.6413611173629761,
+                0.646578848361969,
+                0.6350749135017395
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1545,
+              "valid_episodes": 10,
+              "utility": 0.6344369053840637,
+              "utility_sd_across_episodes": 0.014859891962055708,
+              "revision_or_abs_diff": 0.36556308567523954,
+              "revision_or_abs_diff_sd_across_episodes": 0.014859908335204603,
+              "translation_revision": 0.4124533385038376,
+              "rotation_revision": 0.8417246401309967,
+              "gripper_sign_disagreement": 0.06244555311277509,
+              "episode_utility_values": [
+                0.641056478023529,
+                0.644760012626648,
+                0.639301598072052,
+                0.6315946578979492,
+                0.643202543258667,
+                0.6056509613990784,
+                0.6092751622200012,
+                0.6402022838592529,
+                0.6411794424057007,
+                0.6481459140777588
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1465,
+              "valid_episodes": 10,
+              "utility": 0.6288417637348175,
+              "utility_sd_across_episodes": 0.018667299443015917,
+              "revision_or_abs_diff": 0.371158242225647,
+              "revision_or_abs_diff_sd_across_episodes": 0.018667301650403742,
+              "translation_revision": 0.4276043802499771,
+              "rotation_revision": 0.8562788724899292,
+              "gripper_sign_disagreement": 0.0745998227968812,
+              "episode_utility_values": [
+                0.6298994421958923,
+                0.6431612372398376,
+                0.6384003758430481,
+                0.6405172944068909,
+                0.640594482421875,
+                0.5941376686096191,
+                0.6010148525238037,
+                0.6168204545974731,
+                0.6489394307136536,
+                0.6349323987960815
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1425,
+              "valid_episodes": 10,
+              "utility": 0.6209461152553558,
+              "utility_sd_across_episodes": 0.020741087054786896,
+              "revision_or_abs_diff": 0.3790538787841797,
+              "revision_or_abs_diff_sd_across_episodes": 0.020741104975413233,
+              "translation_revision": 0.43962763249874115,
+              "rotation_revision": 0.8880764245986938,
+              "gripper_sign_disagreement": 0.07420910019427537,
+              "episode_utility_values": [
+                0.6352638006210327,
+                0.6338478326797485,
+                0.6380881071090698,
+                0.6146516799926758,
+                0.6308428049087524,
+                0.5834529995918274,
+                0.5846598744392395,
+                0.6211038827896118,
+                0.6367124915122986,
+                0.6308376789093018
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1305,
+              "valid_episodes": 10,
+              "utility": 0.6108424544334412,
+              "utility_sd_across_episodes": 0.014644285242048255,
+              "revision_or_abs_diff": 0.38915755450725553,
+              "revision_or_abs_diff_sd_across_episodes": 0.014644259857583096,
+              "translation_revision": 0.4568019449710846,
+              "rotation_revision": 0.93212029337883,
+              "gripper_sign_disagreement": 0.0955214612185955,
+              "episode_utility_values": [
+                0.6304222345352173,
+                0.6234164834022522,
+                0.6112808585166931,
+                0.6003149747848511,
+                0.6198393106460571,
+                0.5901264548301697,
+                0.5879634618759155,
+                0.6131656169891357,
+                0.6256051063537598,
+                0.6062900424003601
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 8,
+            "best_positive_delay_utility": 0.6344369053840637,
+            "delay_sensitivity_slope_per_step": -0.007801976799964923,
+            "utility_auc_normalized_0_to_32": 0.6483036819845438,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 32,
+            "profile_shape": "non_monotonic"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1625,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1585,
+              "valid_episodes": 10,
+              "utility": 0.9385229885578156,
+              "utility_sd_across_episodes": 0.04271331527904642,
+              "revision_or_abs_diff": 0.12333735451102257,
+              "revision_or_abs_diff_sd_across_episodes": 0.08555055721871617,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.05646742796525359,
+              "episode_utility_values": [
+                0.9352534413337708,
+                0.9520210027694702,
+                0.9632959961891174,
+                0.9637920260429382,
+                0.9493188261985779,
+                0.8441643714904785,
+                0.8818295001983643,
+                0.9800445437431335,
+                0.9695172309875488,
+                0.9459929466247559
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1545,
+              "valid_episodes": 10,
+              "utility": 0.9321514725685119,
+              "utility_sd_across_episodes": 0.0600776570666916,
+              "revision_or_abs_diff": 0.13595999255776406,
+              "revision_or_abs_diff_sd_across_episodes": 0.12030790644895693,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.06244555311277509,
+              "episode_utility_values": [
+                0.9710114002227783,
+                0.9401882886886597,
+                0.9467962980270386,
+                0.953714907169342,
+                0.9603124856948853,
+                0.7899012565612793,
+                0.8615451455116272,
+                0.9651996493339539,
+                0.9861096739768982,
+                0.9467356204986572
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1465,
+              "valid_episodes": 10,
+              "utility": 0.9200574338436127,
+              "utility_sd_across_episodes": 0.06891483792517059,
+              "revision_or_abs_diff": 0.16019781231880187,
+              "revision_or_abs_diff_sd_across_episodes": 0.13802306740909875,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0745998227968812,
+              "episode_utility_values": [
+                0.9751301407814026,
+                0.9081786274909973,
+                0.9506214261054993,
+                0.9589046239852905,
+                0.9517117738723755,
+                0.7548354268074036,
+                0.8471519947052002,
+                0.9524790048599243,
+                0.9676836133003235,
+                0.93387770652771
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1425,
+              "valid_episodes": 10,
+              "utility": 0.9210401177406311,
+              "utility_sd_across_episodes": 0.0776885391270648,
+              "revision_or_abs_diff": 0.15818697772920132,
+              "revision_or_abs_diff_sd_across_episodes": 0.1554793471304463,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.07420910019427537,
+              "episode_utility_values": [
+                0.952389657497406,
+                0.9367793798446655,
+                0.9685349464416504,
+                0.9574909806251526,
+                0.9774092435836792,
+                0.747416079044342,
+                0.8107344508171082,
+                0.9518017172813416,
+                0.975203275680542,
+                0.9326414465904236
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1305,
+              "valid_episodes": 10,
+              "utility": 0.9006006181240082,
+              "utility_sd_across_episodes": 0.08719277500524095,
+              "revision_or_abs_diff": 0.19917232394218445,
+              "revision_or_abs_diff_sd_across_episodes": 0.17439387849374935,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0955214612185955,
+              "episode_utility_values": [
+                0.9309275150299072,
+                0.9317641258239746,
+                0.9342065453529358,
+                0.953376054763794,
+                0.9190258383750916,
+                0.6882327198982239,
+                0.8009641766548157,
+                0.9384612441062927,
+                0.9554757475852966,
+                0.9535722136497498
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.9385229885578156,
+            "delay_sensitivity_slope_per_step": -0.002393351346254359,
+            "utility_auc_normalized_0_to_32": 0.9262271888554097,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": null,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.24732497533162437,
+      "H_temp_episode_bootstrap_ci95": [
+        0.21999463066458702,
+        0.2688163109620412
+      ]
+    },
+    "libero_goal:task2": {
+      "split": "development",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1212,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1172,
+              "valid_episodes": 10,
+              "utility": 0.6348571360111237,
+              "utility_sd_across_episodes": 0.01284062709940906,
+              "revision_or_abs_diff": 0.36514285802841184,
+              "revision_or_abs_diff_sd_across_episodes": 0.012840621688582736,
+              "translation_revision": 0.3816768884658813,
+              "rotation_revision": 0.8710992455482482,
+              "gripper_sign_disagreement": 0.04936249097809196,
+              "episode_utility_values": [
+                0.620820164680481,
+                0.6346840858459473,
+                0.6298848986625671,
+                0.610909640789032,
+                0.649167537689209,
+                0.6338037252426147,
+                0.6507712602615356,
+                0.6315118670463562,
+                0.6493658423423767,
+                0.6376523375511169
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1132,
+              "valid_episodes": 10,
+              "utility": 0.6240323126316071,
+              "utility_sd_across_episodes": 0.01605680286572428,
+              "revision_or_abs_diff": 0.3759676873683929,
+              "revision_or_abs_diff_sd_across_episodes": 0.01605680132170448,
+              "translation_revision": 0.4060520112514496,
+              "rotation_revision": 0.9183846890926362,
+              "gripper_sign_disagreement": 0.048293980117887256,
+              "episode_utility_values": [
+                0.6074190139770508,
+                0.6316129565238953,
+                0.6219866871833801,
+                0.5920111536979675,
+                0.6439659595489502,
+                0.6130642890930176,
+                0.6274503469467163,
+                0.6262776851654053,
+                0.641244649887085,
+                0.6352903842926025
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1052,
+              "valid_episodes": 10,
+              "utility": 0.6138168334960937,
+              "utility_sd_across_episodes": 0.021029319898286606,
+              "revision_or_abs_diff": 0.38618316054344176,
+              "revision_or_abs_diff_sd_across_episodes": 0.021029335433732897,
+              "translation_revision": 0.4314849227666855,
+              "rotation_revision": 0.958641529083252,
+              "gripper_sign_disagreement": 0.07238084618002176,
+              "episode_utility_values": [
+                0.5948043465614319,
+                0.6227652430534363,
+                0.6439924240112305,
+                0.5713899731636047,
+                0.6221323609352112,
+                0.5943224430084229,
+                0.6192293167114258,
+                0.6162695288658142,
+                0.6238905787467957,
+                0.6293721199035645
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1012,
+              "valid_episodes": 10,
+              "utility": 0.6152204275131226,
+              "utility_sd_across_episodes": 0.024681227887719016,
+              "revision_or_abs_diff": 0.384779566526413,
+              "revision_or_abs_diff_sd_across_episodes": 0.024681226688764962,
+              "translation_revision": 0.4546929568052292,
+              "rotation_revision": 0.9389295458793641,
+              "gripper_sign_disagreement": 0.09603805579245091,
+              "episode_utility_values": [
+                0.6119562387466431,
+                0.6407537460327148,
+                0.6208999752998352,
+                0.5530295372009277,
+                0.6190224885940552,
+                0.6049990653991699,
+                0.6314539909362793,
+                0.6102819442749023,
+                0.6363011002540588,
+                0.6235061883926392
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 892,
+              "valid_episodes": 10,
+              "utility": 0.582684463262558,
+              "utility_sd_across_episodes": 0.03654317598235567,
+              "revision_or_abs_diff": 0.4173155099153519,
+              "revision_or_abs_diff_sd_across_episodes": 0.0365431584301178,
+              "translation_revision": 0.5317760109901428,
+              "rotation_revision": 1.0773074686527253,
+              "gripper_sign_disagreement": 0.15313581563532352,
+              "episode_utility_values": [
+                0.5929239988327026,
+                0.5848336815834045,
+                0.6273907423019409,
+                0.4967091679573059,
+                0.5628069639205933,
+                0.5773525238037109,
+                0.6038607358932495,
+                0.5645651817321777,
+                0.6053453683853149,
+                0.6110562682151794
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.6348571360111237,
+            "delay_sensitivity_slope_per_step": -0.008613097908405172,
+            "utility_auc_normalized_0_to_32": 0.6370123006403446,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 16,
+            "profile_shape": "non_monotonic"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1212,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1172,
+              "valid_episodes": 10,
+              "utility": 0.9443050920963287,
+              "utility_sd_across_episodes": 0.02539383607551903,
+              "revision_or_abs_diff": 0.1124257393181324,
+              "revision_or_abs_diff_sd_across_episodes": 0.051320420695909454,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.04936249097809196,
+              "episode_utility_values": [
+                0.9218428134918213,
+                0.9106951951980591,
+                0.9025261402130127,
+                0.9493741989135742,
+                0.9465187191963196,
+                0.9613529443740845,
+                0.9842472672462463,
+                0.9592816829681396,
+                0.9610238075256348,
+                0.9461881518363953
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1132,
+              "valid_episodes": 10,
+              "utility": 0.9447483539581298,
+              "utility_sd_across_episodes": 0.030886352511275382,
+              "revision_or_abs_diff": 0.11121768113225698,
+              "revision_or_abs_diff_sd_across_episodes": 0.062178492591400514,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.048293980117887256,
+              "episode_utility_values": [
+                0.8897979855537415,
+                0.9357743859291077,
+                0.9518539905548096,
+                0.9292864799499512,
+                0.9095008969306946,
+                0.9811229109764099,
+                0.9522396922111511,
+                0.9582103490829468,
+                0.993651807308197,
+                0.9460450410842896
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1052,
+              "valid_episodes": 10,
+              "utility": 0.9210070848464966,
+              "utility_sd_across_episodes": 0.026665832111923003,
+              "revision_or_abs_diff": 0.15891976580023764,
+              "revision_or_abs_diff_sd_across_episodes": 0.053637105876074294,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.07238084618002176,
+              "episode_utility_values": [
+                0.9365319609642029,
+                0.8966425061225891,
+                0.9352114200592041,
+                0.9320936799049377,
+                0.8833763003349304,
+                0.8951194882392883,
+                0.971343994140625,
+                0.9187999963760376,
+                0.9029431343078613,
+                0.9380083680152893
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1012,
+              "valid_episodes": 10,
+              "utility": 0.8972667694091797,
+              "utility_sd_across_episodes": 0.03697623447674663,
+              "revision_or_abs_diff": 0.20666989237070083,
+              "revision_or_abs_diff_sd_across_episodes": 0.07413368446965055,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.09603805579245091,
+              "episode_utility_values": [
+                0.8873911499977112,
+                0.8433958888053894,
+                0.8715451955795288,
+                0.9192286729812622,
+                0.8325809836387634,
+                0.9167954325675964,
+                0.9230585694313049,
+                0.9411174058914185,
+                0.912352979183197,
+                0.925201416015625
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 892,
+              "valid_episodes": 10,
+              "utility": 0.8419084012508392,
+              "utility_sd_across_episodes": 0.057705327534172186,
+              "revision_or_abs_diff": 0.31780924201011657,
+              "revision_or_abs_diff_sd_across_episodes": 0.11616225253535162,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.15313581563532352,
+              "episode_utility_values": [
+                0.9372970461845398,
+                0.7884557247161865,
+                0.7825007438659668,
+                0.8631496429443359,
+                0.7618486881256104,
+                0.8744103908538818,
+                0.8030237555503845,
+                0.8276342153549194,
+                0.8816803097724915,
+                0.8990834951400757
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 8,
+            "best_positive_delay_utility": 0.9447483539581298,
+            "delay_sensitivity_slope_per_step": -0.004373198896646506,
+            "utility_auc_normalized_0_to_32": 0.9125417988747359,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": 32,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.2464374214410782,
+      "H_temp_episode_bootstrap_ci95": [
+        0.23070941897730038,
+        0.2627777271221082
+      ]
+    },
+    "libero_goal:task5": {
+      "split": "held_out",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1592,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1552,
+              "valid_episodes": 10,
+              "utility": 0.6624879896640777,
+              "utility_sd_across_episodes": 0.04324851099641967,
+              "revision_or_abs_diff": 0.33751203417778014,
+              "revision_or_abs_diff_sd_across_episodes": 0.043248505783093236,
+              "translation_revision": 0.48366609811782835,
+              "rotation_revision": 0.6738036274909973,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.5505629777908325,
+                0.6670194864273071,
+                0.659246027469635,
+                0.6776226162910461,
+                0.6573700904846191,
+                0.6817638874053955,
+                0.6699284911155701,
+                0.6869249939918518,
+                0.657447338104248,
+                0.7169939875602722
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1512,
+              "valid_episodes": 10,
+              "utility": 0.6528291285037995,
+              "utility_sd_across_episodes": 0.0441412898414238,
+              "revision_or_abs_diff": 0.34717086553573606,
+              "revision_or_abs_diff_sd_across_episodes": 0.04414128473784581,
+              "translation_revision": 0.5235951185226441,
+              "rotation_revision": 0.6831429898738861,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.5379939079284668,
+                0.6485474109649658,
+                0.6576346755027771,
+                0.6714534163475037,
+                0.644469678401947,
+                0.6787149906158447,
+                0.66487717628479,
+                0.6827683448791504,
+                0.6433030366897583,
+                0.6985286474227905
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1432,
+              "valid_episodes": 10,
+              "utility": 0.6375255942344665,
+              "utility_sd_across_episodes": 0.04976554032614634,
+              "revision_or_abs_diff": 0.36247440576553347,
+              "revision_or_abs_diff_sd_across_episodes": 0.04976555390370354,
+              "translation_revision": 0.5872264623641967,
+              "rotation_revision": 0.7124004304409027,
+              "gripper_sign_disagreement": 0.0009259259328246117,
+              "episode_utility_values": [
+                0.5170392990112305,
+                0.6282894015312195,
+                0.6503187417984009,
+                0.6384934782981873,
+                0.6287556290626526,
+                0.6738526821136475,
+                0.6521954536437988,
+                0.6718249917030334,
+                0.6127637028694153,
+                0.7017225623130798
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1392,
+              "valid_episodes": 10,
+              "utility": 0.6312013655900955,
+              "utility_sd_across_episodes": 0.05116278034957116,
+              "revision_or_abs_diff": 0.36879863142967223,
+              "revision_or_abs_diff_sd_across_episodes": 0.05116276650980561,
+              "translation_revision": 0.6047861516475678,
+              "rotation_revision": 0.7376450717449188,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.498033732175827,
+                0.6293060183525085,
+                0.6377524137496948,
+                0.6449940204620361,
+                0.6273261904716492,
+                0.65854811668396,
+                0.6398746967315674,
+                0.6652129888534546,
+                0.6207389831542969,
+                0.6902264952659607
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1272,
+              "valid_episodes": 10,
+              "utility": 0.6140344500541687,
+              "utility_sd_across_episodes": 0.05365301220019157,
+              "revision_or_abs_diff": 0.3859655499458313,
+              "revision_or_abs_diff_sd_across_episodes": 0.05365301626939284,
+              "translation_revision": 0.6773220151662827,
+              "rotation_revision": 0.7885550558567047,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.47642242908477783,
+                0.5989504456520081,
+                0.6328873634338379,
+                0.6453050374984741,
+                0.6114594340324402,
+                0.6283433437347412,
+                0.6328239440917969,
+                0.6550653576850891,
+                0.59293133020401,
+                0.6661558151245117
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.6624879896640777,
+            "delay_sensitivity_slope_per_step": -0.008117677162473035,
+            "utility_auc_normalized_0_to_32": 0.6601843100041151,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 32,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 1592,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 1552,
+              "valid_episodes": 10,
+              "utility": 0.9936247050762177,
+              "utility_sd_across_episodes": 0.0005853284595649761,
+              "revision_or_abs_diff": 0.012750556413084268,
+              "revision_or_abs_diff_sd_across_episodes": 0.0011706744284655517,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.9935036897659302,
+                0.9936625957489014,
+                0.9940682053565979,
+                0.9945025444030762,
+                0.9936786890029907,
+                0.9928486347198486,
+                0.9942867159843445,
+                0.9938565492630005,
+                0.9928531050682068,
+                0.9929863214492798
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 1512,
+              "valid_episodes": 10,
+              "utility": 0.9929841935634613,
+              "utility_sd_across_episodes": 0.000584290517948485,
+              "revision_or_abs_diff": 0.01403159499168396,
+              "revision_or_abs_diff_sd_across_episodes": 0.0011686184042197594,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.9938734769821167,
+                0.992689847946167,
+                0.9931342601776123,
+                0.9935863018035889,
+                0.9926072955131531,
+                0.9926419854164124,
+                0.9927783608436584,
+                0.9937500357627869,
+                0.9920613169670105,
+                0.9927190542221069
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 1432,
+              "valid_episodes": 10,
+              "utility": 0.9921830892562866,
+              "utility_sd_across_episodes": 0.0031195606236595255,
+              "revision_or_abs_diff": 0.015637764893472194,
+              "revision_or_abs_diff_sd_across_episodes": 0.006251081461487122,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0009259259328246117,
+              "episode_utility_values": [
+                0.9928808212280273,
+                0.9926371574401855,
+                0.9936175346374512,
+                0.9943609833717346,
+                0.993636429309845,
+                0.9927458763122559,
+                0.9837167263031006,
+                0.9939596056938171,
+                0.9909498691558838,
+                0.9933258891105652
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 1392,
+              "valid_episodes": 10,
+              "utility": 0.9929499864578247,
+              "utility_sd_across_episodes": 0.0008833676408096054,
+              "revision_or_abs_diff": 0.014100036025047303,
+              "revision_or_abs_diff_sd_across_episodes": 0.001766736849803022,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.9928687810897827,
+                0.9932441115379333,
+                0.9931515455245972,
+                0.9935745596885681,
+                0.9936331510543823,
+                0.9924635291099548,
+                0.9934888482093811,
+                0.9936878681182861,
+                0.9907438158988953,
+                0.9926436543464661
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 1272,
+              "valid_episodes": 10,
+              "utility": 0.9922128796577454,
+              "utility_sd_across_episodes": 0.0009128009800460514,
+              "revision_or_abs_diff": 0.015574289113283157,
+              "revision_or_abs_diff_sd_across_episodes": 0.0018255972572159373,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                0.9915302395820618,
+                0.9926870465278625,
+                0.9924985766410828,
+                0.9932059645652771,
+                0.9917255640029907,
+                0.9910417199134827,
+                0.9928132891654968,
+                0.9933033585548401,
+                0.9906681776046753,
+                0.9926548600196838
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.9936247050762177,
+            "delay_sensitivity_slope_per_step": -0.00016771785341778754,
+            "utility_auc_normalized_0_to_32": 0.9931993652135134,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": null,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.2943127209941547,
+      "H_temp_episode_bootstrap_ci95": [
+        0.27450085505843164,
+        0.3217411085466543
+      ]
+    },
+    "libero_10:task3": {
+      "split": "development",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 2852,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 2812,
+              "valid_episodes": 10,
+              "utility": 0.6412744402885437,
+              "utility_sd_across_episodes": 0.017378389482649675,
+              "revision_or_abs_diff": 0.35872557759284973,
+              "revision_or_abs_diff_sd_across_episodes": 0.017378402073623418,
+              "translation_revision": 0.3606659024953842,
+              "rotation_revision": 0.8660511493682861,
+              "gripper_sign_disagreement": 0.07062267810106278,
+              "episode_utility_values": [
+                0.6393066644668579,
+                0.6366769671440125,
+                0.6541630625724792,
+                0.6395754814147949,
+                0.6369937062263489,
+                0.6553015112876892,
+                0.615170955657959,
+                0.6614879965782166,
+                0.661355197429657,
+                0.6127128601074219
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 2772,
+              "valid_episodes": 10,
+              "utility": 0.6389830887317658,
+              "utility_sd_across_episodes": 0.01912976366446832,
+              "revision_or_abs_diff": 0.3610168993473053,
+              "revision_or_abs_diff_sd_across_episodes": 0.01912977186603331,
+              "translation_revision": 0.3830201119184494,
+              "rotation_revision": 0.8646775305271148,
+              "gripper_sign_disagreement": 0.09008768508210778,
+              "episode_utility_values": [
+                0.6403157711029053,
+                0.6467313766479492,
+                0.6592314839363098,
+                0.6362223625183105,
+                0.6250208020210266,
+                0.6597092747688293,
+                0.611154317855835,
+                0.6525489091873169,
+                0.6523533463478088,
+                0.606543242931366
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 2692,
+              "valid_episodes": 10,
+              "utility": 0.6214963793754578,
+              "utility_sd_across_episodes": 0.027075680741650843,
+              "revision_or_abs_diff": 0.378503629565239,
+              "revision_or_abs_diff_sd_across_episodes": 0.02707566190869691,
+              "translation_revision": 0.4424272358417511,
+              "rotation_revision": 0.9432104766368866,
+              "gripper_sign_disagreement": 0.10249797441065311,
+              "episode_utility_values": [
+                0.6255137324333191,
+                0.6325381398200989,
+                0.6389068961143494,
+                0.6163994669914246,
+                0.614341139793396,
+                0.6434560418128967,
+                0.5691319108009338,
+                0.6478639841079712,
+                0.6452578902244568,
+                0.5815545916557312
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 2652,
+              "valid_episodes": 10,
+              "utility": 0.6060904324054718,
+              "utility_sd_across_episodes": 0.03421931578616892,
+              "revision_or_abs_diff": 0.39390957057476045,
+              "revision_or_abs_diff_sd_across_episodes": 0.03421931714905212,
+              "translation_revision": 0.4788322925567627,
+              "rotation_revision": 1.0204188585281373,
+              "gripper_sign_disagreement": 0.10589696541428566,
+              "episode_utility_values": [
+                0.6070073843002319,
+                0.603137731552124,
+                0.6197223663330078,
+                0.6141505837440491,
+                0.5999665260314941,
+                0.6430644989013672,
+                0.5328087210655212,
+                0.6418654918670654,
+                0.6322948932647705,
+                0.5668861269950867
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 2532,
+              "valid_episodes": 10,
+              "utility": 0.5835402488708497,
+              "utility_sd_across_episodes": 0.04360905313873531,
+              "revision_or_abs_diff": 0.41645972728729247,
+              "revision_or_abs_diff_sd_across_episodes": 0.043609043182107836,
+              "translation_revision": 0.5484514355659484,
+              "rotation_revision": 1.164188814163208,
+              "gripper_sign_disagreement": 0.1124596755951643,
+              "episode_utility_values": [
+                0.5879774689674377,
+                0.5795317888259888,
+                0.5980011820793152,
+                0.5913057327270508,
+                0.5865629315376282,
+                0.6278708577156067,
+                0.484565794467926,
+                0.6197568774223328,
+                0.6229402422904968,
+                0.5368896126747131
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.6412744402885437,
+            "delay_sensitivity_slope_per_step": -0.008849701984570588,
+            "utility_auc_normalized_0_to_32": 0.6399356100708246,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": 20,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 2852,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 2812,
+              "valid_episodes": 10,
+              "utility": 0.9236382961273193,
+              "utility_sd_across_episodes": 0.033212511580869394,
+              "revision_or_abs_diff": 0.1530519552528858,
+              "revision_or_abs_diff_sd_across_episodes": 0.06652235734050203,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.07062267810106278,
+              "episode_utility_values": [
+                0.9351148009300232,
+                0.9215877056121826,
+                0.9339689016342163,
+                0.9268534779548645,
+                0.9467272162437439,
+                0.9595252871513367,
+                0.8468567132949829,
+                0.925502359867096,
+                0.9511884450912476,
+                0.8890580534934998
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 2772,
+              "valid_episodes": 10,
+              "utility": 0.9047696590423584,
+              "utility_sd_across_episodes": 0.06705850413593999,
+              "revision_or_abs_diff": 0.19090862162411212,
+              "revision_or_abs_diff_sd_across_episodes": 0.1344609154630548,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.09008768508210778,
+              "episode_utility_values": [
+                0.9298220276832581,
+                0.8713899254798889,
+                0.9331616759300232,
+                0.9160919189453125,
+                0.9360576272010803,
+                0.9804479479789734,
+                0.7381547093391418,
+                0.9360767006874084,
+                0.9374815821647644,
+                0.8690124750137329
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 2692,
+              "valid_episodes": 10,
+              "utility": 0.8913557708263398,
+              "utility_sd_across_episodes": 0.09904323483922509,
+              "revision_or_abs_diff": 0.21785999983549117,
+              "revision_or_abs_diff_sd_across_episodes": 0.19856885878951036,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.10249797441065311,
+              "episode_utility_values": [
+                0.9322894215583801,
+                0.896953821182251,
+                0.9221177101135254,
+                0.9156304001808167,
+                0.9300105571746826,
+                0.9519947171211243,
+                0.6183604001998901,
+                0.9413133859634399,
+                0.9385283589363098,
+                0.8663589358329773
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 2652,
+              "valid_episodes": 10,
+              "utility": 0.8876341581344604,
+              "utility_sd_across_episodes": 0.11422400350803903,
+              "revision_or_abs_diff": 0.22531556859612464,
+              "revision_or_abs_diff_sd_across_episodes": 0.22895274487360473,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.10589696541428566,
+              "episode_utility_values": [
+                0.912305474281311,
+                0.881939172744751,
+                0.918482780456543,
+                0.9235084056854248,
+                0.9559924006462097,
+                0.9601986408233643,
+                0.5737871527671814,
+                0.9406992197036743,
+                0.9415017366409302,
+                0.8679265975952148
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 2532,
+              "valid_episodes": 10,
+              "utility": 0.8809265971183777,
+              "utility_sd_across_episodes": 0.1308177727369525,
+              "revision_or_abs_diff": 0.2388309121131897,
+              "revision_or_abs_diff_sd_across_episodes": 0.2624185445356554,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.1124596755951643,
+              "episode_utility_values": [
+                0.9115412831306458,
+                0.8518842458724976,
+                0.9260284304618835,
+                0.9264113903045654,
+                0.9484813213348389,
+                0.9533237218856812,
+                0.52147376537323,
+                0.9512927532196045,
+                0.945121705532074,
+                0.8737073540687561
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.9236382961273193,
+            "delay_sensitivity_slope_per_step": -0.0029436384943815506,
+            "utility_auc_normalized_0_to_32": 0.9018105816096068,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": 20,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        }
+      },
+      "H_temp": 0.23282331526279446,
+      "H_temp_episode_bootstrap_ci95": [
+        0.19617040085295834,
+        0.2565805207441251
+      ]
+    },
+    "libero_10:task5": {
+      "split": "held_out",
+      "groups": {
+        "arm": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 3354,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": 0.0,
+              "rotation_revision": 0.0,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 3314,
+              "valid_episodes": 10,
+              "utility": 0.6684211194515228,
+              "utility_sd_across_episodes": 0.026876992854735732,
+              "revision_or_abs_diff": 0.3315788745880127,
+              "revision_or_abs_diff_sd_across_episodes": 0.026876985752627775,
+              "translation_revision": 0.41115002930164335,
+              "rotation_revision": 0.6751862287521362,
+              "gripper_sign_disagreement": 0.009511013119481503,
+              "episode_utility_values": [
+                0.6850538849830627,
+                0.634164571762085,
+                0.6559703946113586,
+                0.7040991187095642,
+                0.6482188701629639,
+                0.6989021301269531,
+                0.6480861306190491,
+                0.6482897996902466,
+                0.656577467918396,
+                0.7048488259315491
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 3274,
+              "valid_episodes": 10,
+              "utility": 0.6626637637615204,
+              "utility_sd_across_episodes": 0.025983932255802183,
+              "revision_or_abs_diff": 0.3373362302780151,
+              "revision_or_abs_diff_sd_across_episodes": 0.02598394249526585,
+              "translation_revision": 0.42992431819438937,
+              "rotation_revision": 0.6811635792255402,
+              "gripper_sign_disagreement": 0.011084994114935399,
+              "episode_utility_values": [
+                0.6838352680206299,
+                0.6264437437057495,
+                0.6502701044082642,
+                0.6979852318763733,
+                0.6521945595741272,
+                0.6902455687522888,
+                0.6362015604972839,
+                0.6403682827949524,
+                0.657738208770752,
+                0.6913551092147827
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 3194,
+              "valid_episodes": 10,
+              "utility": 0.6508190155029296,
+              "utility_sd_across_episodes": 0.03283526128283322,
+              "revision_or_abs_diff": 0.34918099343776704,
+              "revision_or_abs_diff_sd_across_episodes": 0.032835272505418,
+              "translation_revision": 0.4591370701789856,
+              "rotation_revision": 0.7195051670074463,
+              "gripper_sign_disagreement": 0.012657139939256013,
+              "episode_utility_values": [
+                0.6738046407699585,
+                0.6110103130340576,
+                0.636674702167511,
+                0.6935548186302185,
+                0.6330515146255493,
+                0.6958305239677429,
+                0.6114839315414429,
+                0.6284445524215698,
+                0.6407579779624939,
+                0.6835771799087524
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 3154,
+              "valid_episodes": 10,
+              "utility": 0.6462657809257507,
+              "utility_sd_across_episodes": 0.035590702246317156,
+              "revision_or_abs_diff": 0.3537342190742493,
+              "revision_or_abs_diff_sd_across_episodes": 0.03559071056158566,
+              "translation_revision": 0.4776054620742798,
+              "rotation_revision": 0.7282812297344208,
+              "gripper_sign_disagreement": 0.011428958922624587,
+              "episode_utility_values": [
+                0.6756502389907837,
+                0.6061878800392151,
+                0.6330998539924622,
+                0.6834861040115356,
+                0.6242291927337646,
+                0.6873722076416016,
+                0.6035962104797363,
+                0.6131690144538879,
+                0.6420348882675171,
+                0.6938322186470032
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 3034,
+              "valid_episodes": 10,
+              "utility": 0.6327858686447143,
+              "utility_sd_across_episodes": 0.04252726330997389,
+              "revision_or_abs_diff": 0.3672141253948212,
+              "revision_or_abs_diff_sd_across_episodes": 0.04252727453459727,
+              "translation_revision": 0.533921304345131,
+              "rotation_revision": 0.7497500777244568,
+              "gripper_sign_disagreement": 0.014524463471025229,
+              "episode_utility_values": [
+                0.662155270576477,
+                0.5919715166091919,
+                0.61827552318573,
+                0.6816732883453369,
+                0.6052619814872742,
+                0.6846215128898621,
+                0.5769444704055786,
+                0.593635082244873,
+                0.6257349848747253,
+                0.6875850558280945
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.6684211194515228,
+            "delay_sensitivity_slope_per_step": -0.007572372681819497,
+            "utility_auc_normalized_0_to_32": 0.6725444566458463,
+            "development_threshold": 0.6176566064357758,
+            "first_delay_below_development_threshold": null,
+            "profile_shape": "monotone_nonincreasing"
+          }
+        },
+        "gripper": {
+          "delays": [
+            {
+              "delay_steps": 0,
+              "valid_target_count": 3354,
+              "valid_episodes": 10,
+              "utility": 1.0,
+              "utility_sd_across_episodes": 0.0,
+              "revision_or_abs_diff": 0.0,
+              "revision_or_abs_diff_sd_across_episodes": 0.0,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.0,
+              "episode_utility_values": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "delay_steps": 4,
+              "valid_target_count": 3314,
+              "valid_episodes": 10,
+              "utility": 0.9848193168640137,
+              "utility_sd_across_episodes": 0.005729953108355622,
+              "revision_or_abs_diff": 0.030396361649036408,
+              "revision_or_abs_diff_sd_across_episodes": 0.011493669788828584,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.009511013119481503,
+              "episode_utility_values": [
+                0.9823169112205505,
+                0.9881544709205627,
+                0.9789997935295105,
+                0.9878668189048767,
+                0.988767683506012,
+                0.983539342880249,
+                0.9922577738761902,
+                0.9916477203369141,
+                0.9760316610336304,
+                0.9786109924316406
+              ]
+            },
+            {
+              "delay_steps": 8,
+              "valid_target_count": 3274,
+              "valid_episodes": 10,
+              "utility": 0.9832098603248596,
+              "utility_sd_across_episodes": 0.005748239500779155,
+              "revision_or_abs_diff": 0.03362800646573305,
+              "revision_or_abs_diff_sd_across_episodes": 0.011528943224684628,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.011084994114935399,
+              "episode_utility_values": [
+                0.9745136499404907,
+                0.9879828691482544,
+                0.9815517663955688,
+                0.9772759675979614,
+                0.988839864730835,
+                0.9777795672416687,
+                0.9921475648880005,
+                0.9873061776161194,
+                0.9814313054084778,
+                0.9832698702812195
+              ]
+            },
+            {
+              "delay_steps": 16,
+              "valid_target_count": 3194,
+              "valid_episodes": 10,
+              "utility": 0.9813700318336487,
+              "utility_sd_across_episodes": 0.008616578908808176,
+              "revision_or_abs_diff": 0.037303163670003414,
+              "revision_or_abs_diff_sd_across_episodes": 0.017276730601726152,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.012657139939256013,
+              "episode_utility_values": [
+                0.9852253198623657,
+                0.9853982925415039,
+                0.9680981636047363,
+                0.9823285937309265,
+                0.9787615537643433,
+                0.9829367399215698,
+                0.9900010228157043,
+                0.9916095733642578,
+                0.9842017889022827,
+                0.9651392698287964
+              ]
+            },
+            {
+              "delay_steps": 20,
+              "valid_target_count": 3154,
+              "valid_episodes": 10,
+              "utility": 0.9823498785495758,
+              "utility_sd_across_episodes": 0.0077820705749860955,
+              "revision_or_abs_diff": 0.03532529417425394,
+              "revision_or_abs_diff_sd_across_episodes": 0.01556801179929767,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.011428958922624587,
+              "episode_utility_values": [
+                0.9856745600700378,
+                0.9858044385910034,
+                0.9840279221534729,
+                0.9703264832496643,
+                0.9855639934539795,
+                0.9751372933387756,
+                0.9916905760765076,
+                0.9909607172012329,
+                0.9841201901435852,
+                0.9701926112174988
+              ]
+            },
+            {
+              "delay_steps": 32,
+              "valid_target_count": 3034,
+              "valid_episodes": 10,
+              "utility": 0.9788666784763336,
+              "utility_sd_across_episodes": 0.010297923540728334,
+              "revision_or_abs_diff": 0.04229330588132143,
+              "revision_or_abs_diff_sd_across_episodes": 0.02061073133628143,
+              "translation_revision": null,
+              "rotation_revision": null,
+              "gripper_sign_disagreement": 0.014524463471025229,
+              "episode_utility_values": [
+                0.9797905087471008,
+                0.9855844378471375,
+                0.9763070940971375,
+                0.9810999631881714,
+                0.9698277711868286,
+                0.9544991850852966,
+                0.9895427227020264,
+                0.9856382608413696,
+                0.9866698384284973,
+                0.9797070026397705
+              ]
+            }
+          ],
+          "summary": {
+            "preferred_delay_steps": 0,
+            "preferred_delay_utility": 1.0,
+            "best_positive_delay_steps": 4,
+            "best_positive_delay_utility": 0.9848193168640137,
+            "delay_sensitivity_slope_per_step": -0.00047683020050711604,
+            "utility_auc_normalized_0_to_32": 0.9830861162394284,
+            "development_threshold": 0.8888072937726974,
+            "first_delay_below_development_threshold": null,
+            "profile_shape": "non_monotonic"
+          }
+        }
+      },
+      "H_temp": 0.2749433696269989,
+      "H_temp_episode_bootstrap_ci95": [
+        0.25658288098871707,
+        0.29279071293771264
+      ]
+    }
+  },
+  "task_macro_H_temp_ranking": [
+    {
+      "task_key": "libero_goal:task5",
+      "split": "held_out",
+      "H_temp": 0.2943127209941547
+    },
+    {
+      "task_key": "libero_10:task5",
+      "split": "held_out",
+      "H_temp": 0.2749433696269989
+    },
+    {
+      "task_key": "libero_spatial:task4",
+      "split": "held_out",
+      "H_temp": 0.24732497533162437
+    },
+    {
+      "task_key": "libero_goal:task2",
+      "split": "development",
+      "H_temp": 0.2464374214410782
+    },
+    {
+      "task_key": "libero_10:task3",
+      "split": "development",
+      "H_temp": 0.23282331526279446
+    },
+    {
+      "task_key": "libero_spatial:task0",
+      "split": "development",
+      "H_temp": 0.21467979550361635
+    },
+    {
+      "task_key": "libero_object:task3",
+      "split": "development",
+      "H_temp": 0.16335311134656266
+    },
+    {
+      "task_key": "libero_object:task5",
+      "split": "held_out",
+      "H_temp": 0.09544870704412457
+    }
+  ],
+  "split_summary": {
+    "development": {
+      "tasks": 4,
+      "task_macro_mean_H_temp": 0.2143234108885129,
+      "task_macro_sd_H_temp": 0.03638522860089358,
+      "task_values": [
+        0.16335311134656266,
+        0.21467979550361635,
+        0.2464374214410782,
+        0.23282331526279446
+      ]
+    },
+    "held_out": {
+      "tasks": 4,
+      "task_macro_mean_H_temp": 0.22800744324922562,
+      "task_macro_sd_H_temp": 0.09045138036871893,
+      "task_values": [
+        0.09544870704412457,
+        0.24732497533162437,
+        0.2943127209941547,
+        0.2749433696269989
+      ]
+    }
+  },
+  "non_markovian_evidence": {
+    "primary_revision_utility": {
+      "arm": {
+        "delays": {
+          "4": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 15266,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "8": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 14946,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "16": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 14306,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "20": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 13986,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "32": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 13026,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          }
+        },
+        "task_count": 8
+      },
+      "gripper": {
+        "delays": {
+          "4": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 15266,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "8": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 14946,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 1,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 6.690753378830456e-05,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "16": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 14306,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "20": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 13986,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          },
+          "32": {
+            "task_level_better_count": 0,
+            "task_level_better_tasks": [],
+            "task_level_match_count": 0,
+            "task_level_match_tasks": [],
+            "candidate_rows": 13026,
+            "candidate_rows_better_than_fresh": 0,
+            "candidate_rows_exactly_matching_fresh": 0,
+            "candidate_rows_better_fraction": 0.0,
+            "candidate_rows_match_fraction": 0.0,
+            "comparison_metric": "revision distance; lower is better, Fresh d=0 is identity"
+          }
+        },
+        "task_count": 8
+      }
+    }
+  },
+  "demonstration_agreement": {
+    "status": "skipped",
+    "reason": "The existing eight-task Fresh cache stores policy chunks only. No correctly aligned expert action table is present in the existing protocol/artifacts, and expert labels will not be reconstructed from questionable paths."
+  },
+  "reliability_context": {
+    "status": "context_only",
+    "source": "historical git artifact at 6ed5d06: experiments/dynamic_reliability_horizon/oracle_group_horizon_metrics.json and source_context_ablation/*",
+    "target_definition": "Y_refresh(k) is prefix survival of old cached A_t[k] against fresh cached A_{t+k}[0]. Arm is valid when max(translation normalized RMS, rotation normalized RMS) <= 1.0; gripper is valid when normalized absolute error <= 1.0 and command signs agree.",
+    "comparability": "Semantically compatible with source-age persistence, but it is a frozen ACT artifact on a different cohort and is not numerically pooled into this SmolVLA H_temp score.",
+    "reuse": "Report validated group-wise reliability curves and hard-horizon failure as supporting interpretation only."
+  },
+  "closed_loop_files_loaded": false,
+  "interpretation_limits": [
+    "Same-target differences mix observation-delay effects with SmolVLA stochastic flow variation because sampling was not keyed by physical step.",
+    "Revision utility is an offline consistency proxy, not a causal estimate of control quality or closed-loop success.",
+    "Candidate rows are support counts only; task and episode summaries are the aggregation units."
+  ]
+}
