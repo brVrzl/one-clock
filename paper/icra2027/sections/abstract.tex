@@ -1,20 +1,19 @@
-Action-chunked policies are commonly summarized by one temporal execution
-parameter for the whole action, which can hide distinct temporal sensitivity
-across action groups; we instead measure same-target execution with
-component-resolved source assignments. In a frozen $140$-block cross-suite ACT
-confirmation, assigning the old same-target relationship to the gripper rather
-than the arm changed success by $\ConfirmFOReverseDelta$ percentage points
-(paired 95\% CI $\ConfirmFOReversePairedCI$~pp; task-cluster 95\% CI
-$\ConfirmFOReverseClusterCI$~pp), with positive leave-one-task-out effects for
-all ten tasks; a post-hoc factorial interaction was
-$\PosthocInteractionDelta$~pp, and both its paired
-$\PosthocInteractionPairedCI$~pp and task-cluster
-$\PosthocInteractionClusterCI$~pp intervals excluded zero. Across Object
-development and frozen cross-suite confirmation, arm-only h16 commitment
-produced no aggregate gain over fully reactive execution, whereas coherent h16
-execution was reliably above the arm-only decomposition in both cohorts; the
-significant development-set C2 penalty itself did not replicate. Although
-\textsc{hard-h16} had the highest aggregate ACT success where evaluated, its
-advantage over \textsc{FO20} was not statistically reliable in either relevant
-ACT cohort; the result therefore supports component-resolved temporal
-measurement rather than a universal executor recommendation.
+Action-chunked robot policies are usually summarized using one temporal
+execution setting for the whole action, potentially hiding different temporal
+sensitivities across action groups. With frozen policies, we study same-target,
+component-resolved temporal assignments through frozen cross-suite ACT
+confirmation on $\ConfirmFreshBlocks$ paired task-state blocks. In the primary
+comparison, assigning the old same-target relationship to the gripper rather
+than the arm improved success by $\ConfirmFOReverseDelta$ percentage points
+(paired 95\% CI $\ConfirmFOReversePairedCI$~pp), with positive
+leave-one-task-out aggregate effects for all ten tasks. A positive post-hoc
+factorial interaction of $\PosthocInteractionDelta$~pp had paired and
+task-cluster bootstrap intervals excluding zero, indicating conditional
+non-additivity in this frozen factorial. Across Object development and frozen
+cross-suite confirmation, arm-only use of a fixed 16-step schedule yielded no
+aggregate gain over fully reactive execution, whereas both-group commitment
+was reliably above the arm-only decomposition; the development-set arm-only
+penalty itself did not replicate. The fixed-horizon reference had the highest
+aggregate ACT success where evaluated, but its advantage over the selective
+old-gripper condition was not statistically reliable in either relevant ACT
+cohort; accordingly, we make no universal executor recommendation.
