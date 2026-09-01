@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "scope": "LIBERO Object tasks 1-9 on the frozen exposed 14-state development cohort",
+  "tasks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "states": [
+    20,
+    21,
+    22,
+    23,
+    27,
+    31,
+    34,
+    35,
+    38,
+    39,
+    44,
+    45,
+    47,
+    48
+  ],
+  "blocks": 126,
+  "new_conditions": [
+    "H32_COHERENT",
+    "TWO_CLOCK_ARM16_GRIP32"
+  ],
+  "new_episodes_executed": 252,
+  "historical_H16_COHERENT_reused": true,
+  "historical_C1_PREVIOUS_CHUNK_GRIP_reused": true,
+  "main_result_table": [
+    {
+      "method": "H16_COHERENT",
+      "historical_reuse": true,
+      "successes": 88,
+      "episodes": 126,
+      "success_rate": 0.6984126984126984,
+      "success_percentage": 69.84126984126983,
+      "policy_queries": 1490,
+      "environment_steps": 22869,
+      "observed_query_rate": 0.06515370151733788,
+      "mean_arm_source_age": 7.357514539332721,
+      "mean_gripper_source_age": 7.357514539332721,
+      "arm_source_age_range": [
+        0,
+        15
+      ],
+      "gripper_source_age_range": [
+        0,
+        15
+      ]
+    },
+    {
+      "method": "H32_COHERENT",
+      "historical_reuse": false,
+      "successes": 76,
+      "episodes": 126,
+      "success_rate": 0.6031746031746031,
+      "success_percentage": 60.317460317460316,
+      "policy_queries": 843,
+      "environment_steps": 25581,
+      "observed_query_rate": 0.032954145654978305,
+      "mean_arm_source_age": 15.042414291857238,
+      "mean_gripper_source_age": 15.042414291857238,
+      "arm_source_age_range": [
+        0,
+        31
+      ],
+      "gripper_source_age_range": [
+        0,
+        31
+      ]
+    },
+    {
+      "method": "TWO_CLOCK_ARM16_GRIP32",
+      "historical_reuse": false,
+      "successes": 78,
+      "episodes": 126,
+      "success_rate": 0.6190476190476191,
+      "success_percentage": 61.904761904761905,
+      "policy_queries": 1566,
+      "environment_steps": 24110,
+      "observed_query_rate": 0.06495230194939859,
+      "mean_arm_source_age": 7.364454583160514,
+      "mean_gripper_source_age": 14.998797179593529,
+      "arm_source_age_range": [
+        0,
+        15
+      ],
+      "gripper_source_age_range": [
+        0,
+        31
+      ]
+    },
+    {
+      "method": "C1_PREVIOUS_CHUNK_GRIP",
+      "historical_reuse": true,
+      "successes": 64,
+      "episodes": 126,
+      "success_rate": 0.5079365079365079,
+      "success_percentage": 50.79365079365079,
+      "policy_queries": 1652,
+      "environment_steps": 25555,
+      "observed_query_rate": 0.06464488358442574,
+      "mean_arm_source_age": 7.369790647622774,
+      "mean_gripper_source_age": 22.10757190373704,
+      "arm_source_age_range": [
+        0,
+        15
+      ],
+      "gripper_source_age_range": [
+        0,
+        31
+      ]
+    }
+  ],
+  "comparisons": {
+    "TWO_CLOCK_VS_H16": {
+      "first_method": "TWO_CLOCK_ARM16_GRIP32",
+      "second_method": "H16_COHERENT",
+      "blocks": 126,
+      "first_successes": 78,
+      "second_successes": 88,
+      "first_success_rate": 0.6190476190476191,
+      "second_success_rate": 0.6984126984126984,
+      "first_only_wins": 4,
+      "second_only_wins": 14,
+      "net_wins": -10,
+      "discordant_blocks": 18,
+      "success_delta": -0.07936507936507936,
+      "success_delta_percentage_points": -7.936507936507936,
+      "exact_two_sided_mcnemar_p": 0.0308837890625,
+      "mcnemar_role": "descriptive development statistic",
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261201,
+      "paired_bootstrap_ci": [
+        -0.14285714285714285,
+        -0.015873015873015872
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261202,
+      "task_cluster_bootstrap_ci": [
+        -0.1507936507936508,
+        -0.015873015873015872
+      ],
+      "task_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "task_differences": [
+        -0.07142857142857142,
+        0.0,
+        0.0,
+        0.0,
+        -0.21428571428571427,
+        -0.14285714285714285,
+        -0.2857142857142857,
+        -0.07142857142857142,
+        0.07142857142857142
+      ],
+      "leave_one_task_out": [
+        -0.08035714285714285,
+        -0.08928571428571427,
+        -0.08928571428571427,
+        -0.08928571428571427,
+        -0.0625,
+        -0.07142857142857142,
+        -0.05357142857142856,
+        -0.08035714285714285,
+        -0.0982142857142857
+      ]
+    },
+    "TWO_CLOCK_VS_H32": {
+      "first_method": "TWO_CLOCK_ARM16_GRIP32",
+      "second_method": "H32_COHERENT",
+      "blocks": 126,
+      "first_successes": 78,
+      "second_successes": 76,
+      "first_success_rate": 0.6190476190476191,
+      "second_success_rate": 0.6031746031746031,
+      "first_only_wins": 18,
+      "second_only_wins": 16,
+      "net_wins": 2,
+      "discordant_blocks": 34,
+      "success_delta": 0.015873015873015872,
+      "success_delta_percentage_points": 1.5873015873015872,
+      "exact_two_sided_mcnemar_p": 0.8641662404406816,
+      "mcnemar_role": "descriptive development statistic",
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261203,
+      "paired_bootstrap_ci": [
+        -0.07936507936507936,
+        0.10317460317460317
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261204,
+      "task_cluster_bootstrap_ci": [
+        -0.10317460317460317,
+        0.12698412698412698
+      ],
+      "task_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "task_differences": [
+        -0.21428571428571427,
+        0.21428571428571427,
+        0.07142857142857142,
+        0.2857142857142857,
+        -0.2857142857142857,
+        -0.07142857142857142,
+        0.0,
+        0.07142857142857142,
+        0.07142857142857142
+      ],
+      "leave_one_task_out": [
+        0.04464285714285714,
+        -0.008928571428571428,
+        0.008928571428571428,
+        -0.017857142857142856,
+        0.05357142857142856,
+        0.02678571428571428,
+        0.017857142857142856,
+        0.008928571428571425,
+        0.008928571428571425
+      ]
+    },
+    "H32_VS_H16": {
+      "first_method": "H32_COHERENT",
+      "second_method": "H16_COHERENT",
+      "blocks": 126,
+      "first_successes": 76,
+      "second_successes": 88,
+      "first_success_rate": 0.6031746031746031,
+      "second_success_rate": 0.6984126984126984,
+      "first_only_wins": 13,
+      "second_only_wins": 25,
+      "net_wins": -12,
+      "discordant_blocks": 38,
+      "success_delta": -0.09523809523809523,
+      "success_delta_percentage_points": -9.523809523809524,
+      "exact_two_sided_mcnemar_p": 0.07295138851623051,
+      "mcnemar_role": "descriptive development statistic",
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261205,
+      "paired_bootstrap_ci": [
+        -0.19047619047619047,
+        0.0
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261206,
+      "task_cluster_bootstrap_ci": [
+        -0.19047619047619044,
+        0.0
+      ],
+      "task_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "task_differences": [
+        0.14285714285714285,
+        -0.21428571428571427,
+        -0.07142857142857142,
+        -0.2857142857142857,
+        0.07142857142857142,
+        -0.07142857142857142,
+        -0.2857142857142857,
+        -0.14285714285714285,
+        0.0
+      ],
+      "leave_one_task_out": [
+        -0.125,
+        -0.08035714285714285,
+        -0.0982142857142857,
+        -0.07142857142857142,
+        -0.11607142857142855,
+        -0.0982142857142857,
+        -0.07142857142857142,
+        -0.08928571428571427,
+        -0.10714285714285712
+      ]
+    }
+  },
+  "rescue_regression": {
+    "vs_H16_COHERENT": {
+      "rescues": 4,
+      "regressions": 14
+    },
+    "vs_H32_COHERENT": {
+      "rescues": 18,
+      "regressions": 16
+    }
+  },
+  "per_task": [
+    {
+      "task_id": 1,
+      "blocks": 14,
+      "H16_COHERENT_successes": 8,
+      "H32_COHERENT_successes": 10,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 7,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 4
+    },
+    {
+      "task_id": 2,
+      "blocks": 14,
+      "H16_COHERENT_successes": 13,
+      "H32_COHERENT_successes": 10,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 13,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 10
+    },
+    {
+      "task_id": 3,
+      "blocks": 14,
+      "H16_COHERENT_successes": 11,
+      "H32_COHERENT_successes": 10,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 11,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 9
+    },
+    {
+      "task_id": 4,
+      "blocks": 14,
+      "H16_COHERENT_successes": 10,
+      "H32_COHERENT_successes": 6,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 10,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 10
+    },
+    {
+      "task_id": 5,
+      "blocks": 14,
+      "H16_COHERENT_successes": 11,
+      "H32_COHERENT_successes": 12,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 8,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 6
+    },
+    {
+      "task_id": 6,
+      "blocks": 14,
+      "H16_COHERENT_successes": 8,
+      "H32_COHERENT_successes": 7,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 6,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 6
+    },
+    {
+      "task_id": 7,
+      "blocks": 14,
+      "H16_COHERENT_successes": 8,
+      "H32_COHERENT_successes": 4,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 4,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 3
+    },
+    {
+      "task_id": 8,
+      "blocks": 14,
+      "H16_COHERENT_successes": 7,
+      "H32_COHERENT_successes": 5,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 6,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 4
+    },
+    {
+      "task_id": 9,
+      "blocks": 14,
+      "H16_COHERENT_successes": 12,
+      "H32_COHERENT_successes": 12,
+      "TWO_CLOCK_ARM16_GRIP32_successes": 13,
+      "C1_PREVIOUS_CHUNK_GRIP_successes": 12
+    }
+  ],
+  "interpretation_label": "H16_REMAINS_BEST",
+  "interpretation_reason": "Coherent H16 matched or exceeded both new conditions.",
+  "stop_after_development_label": true
+}

@@ -9,6 +9,7 @@ This is a human-readable audit of repository protocols, results, analyses, repor
 | `libero_object` | 0 | 0–49 | history commits `20d14e4` and `4d20b6c`: `experiments/libero_static_grid_20.json`, `experiments/libero_static_grid_50.json` | `OUTCOME_EXPOSED` |
 | `libero_object` | 1–9 | 0–19 | history commit `2a1f1fa`: `experiments/libero_object_cross_task/task_*/result.json` | `OUTCOME_EXPOSED` |
 | `libero_object` | 1–9 | 20,21,22,23,27,31,34,35,38,39,44,45,47,48 | `experiments/group_delay_factorial_act20/results/`, `experiments/asymmetric_chunk_reuse_dev/results/` | `OUTCOME_EXPOSED` |
+| `libero_object` | 1–9 | 20,21,22,23,27,31,34,35,38,39,44,45,47,48 | `experiments/icra27_two_clock_discriminator_dev/results/` | `OUTCOME_EXPOSED` |
 | `libero_object` | 1,4 | 20–29 | `experiments/component_temporal_reuse/fixed_horizon_blind/results/`, `act_temporal_ensemble_blind*` | `OUTCOME_EXPOSED` |
 | `libero_object` | 3 | 0–9 | `experiments/component_temporal_reuse/` dense-query SmolVLA cache/results | `OUTCOME_EXPOSED` |
 | `libero_object` | 3 | 10–19 | `experiments/sparse_temporal_ensemble_dev/act/results/`, `sparse_temporal_ensemble_age_audit/act_h16/results/`, `group_temporal_memory_dev/act/results/`, `bounded_group_requery_dev/act/results/` | `OUTCOME_EXPOSED` |
@@ -44,7 +45,6 @@ The standard-baseline row is conservatively treated as outcome exposure at task 
 | Suite | Task ID(s) | State IDs/range | Experiment path | Exposure class |
 |---|---:|---|---|---|
 | `libero_object` | 0 | 20,21,22,23,27,31,34,35,38,39,44,45,47,48 | `experiments/group_delay_factorial_act20/protocol.json` secondary task; no task-0 result shard exists in that experiment | `PROTOCOL_ONLY` |
-| `libero_object` | 1–9 | 20,21,22,23,27,31,34,35,38,39,44,45,47,48 | `experiments/icra27_two_clock_discriminator_dev/protocol.json`; two new result conditions pending at protocol-freeze time | `PROTOCOL_ONLY` |
 
 The first protocol-only row is not scientifically untouched: Object task 0 states 0–49 already have static-grid outcomes in history. Protocol-only class describes that particular experiment artifact, not the union of all exposure evidence.
 
