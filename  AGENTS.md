@@ -9,6 +9,41 @@ The primary goal is to test research hypotheses with simple, auditable
 experiments. Favor research clarity and iteration speed over production-grade
 infrastructure.
 
+## Research Scope / Anti-Overengineering
+
+The current research question and its deciding evidence take priority over
+hypothetical future requirements. This supplements the engineering and scope
+rules below.
+
+- Prefer the smallest implementation or experiment that distinguishes the
+  current hypotheses. Start with focused smoke tests and small discriminative
+  experiments; scale only when their result justifies it.
+- Before running a test, audit, or benchmark, identify the concrete failure it
+  can detect and the decision that would change if it fails. Do not repeat
+  audits, reviews, or tests once sufficient evidence exists.
+- Do not add speculative infrastructure, repeated scoring/review loops, or
+  subagents unless they materially help the current task. Necessary callers,
+  fixtures, interfaces, and data-path changes are in scope when the requested
+  work genuinely requires them.
+- Interpret task intent strictly: review, inspect, analyze, investigate, and
+  explain are read-only unless changes are explicitly authorized; implement,
+  change, fix, try, and prototype authorize only the requested work and its
+  necessary consequences.
+
+## Robot Safety Exception
+
+Anti-overengineering rules never authorize weakening justified physical robot
+safety. Preserve existing actuator and joint limits, workspace limits,
+action-domain validation, watchdogs, emergency stops, collision/contact and
+force/torque checks, command validation, and safety interlocks. Do not invent
+additional defensive layers without reachable evidence or an explicit request.
+
+## Completion
+
+When the requested result has enough evidence to answer the current question,
+stop and summarize the result and important evidence. Do not begin another
+audit, review, or refactor cycle unless requested.
+
 ## Architecture
 
 - Keep base policy training/inference separate from execution scheduling.
