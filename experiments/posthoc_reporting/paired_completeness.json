@@ -1,0 +1,686 @@
+{
+  "schema_version": 1,
+  "analysis_role": "post_hoc_reporting_completeness",
+  "post_hoc": true,
+  "changes_frozen_candidate1_classification": false,
+  "input_validation": {
+    "confirmation_input_joins": {
+      "FRESH": {
+        "unique_blocks": 140,
+        "expected_blocks": 140,
+        "missing_blocks": 0,
+        "duplicate_blocks": 0,
+        "extra_blocks": 0
+      },
+      "FO20": {
+        "unique_blocks": 140,
+        "expected_blocks": 140,
+        "missing_blocks": 0,
+        "duplicate_blocks": 0,
+        "extra_blocks": 0
+      },
+      "REVERSE20": {
+        "unique_blocks": 140,
+        "expected_blocks": 140,
+        "missing_blocks": 0,
+        "duplicate_blocks": 0,
+        "extra_blocks": 0
+      },
+      "FULL_OLD20": {
+        "unique_blocks": 140,
+        "expected_blocks": 140,
+        "missing_blocks": 0,
+        "duplicate_blocks": 0,
+        "extra_blocks": 0
+      },
+      "HARD_H16": {
+        "unique_blocks": 140,
+        "expected_blocks": 140,
+        "missing_blocks": 0,
+        "duplicate_blocks": 0,
+        "extra_blocks": 0
+      }
+    },
+    "object_development_input_gate": {
+      "canonical_source_identified": true,
+      "canonical_metadata": "experiments/object_executor_decomposition/analysis.json",
+      "hard_h16_source": "experiments/group_delay_factorial_act20/results/task_01.json through task_09.json",
+      "c2_source": "experiments/asymmetric_chunk_reuse_dev/results/task_01.json through task_09.json",
+      "condition_joins": {
+        "HARD_H16": {
+          "unique_blocks": 126,
+          "expected_blocks": 126,
+          "missing_blocks": 0,
+          "duplicate_blocks": 0,
+          "extra_blocks": 0
+        },
+        "C2_H16_ARM_FRESH_GRIP": {
+          "unique_blocks": 126,
+          "expected_blocks": 126,
+          "missing_blocks": 0,
+          "duplicate_blocks": 0,
+          "extra_blocks": 0
+        }
+      },
+      "joined_unique_blocks": 126,
+      "expected_joined_blocks": 126,
+      "HARD_H16_successes": 88,
+      "C2_H16_ARM_FRESH_GRIP_successes": 42
+    }
+  },
+  "sanity_anchors": {
+    "status": "PASS",
+    "primary_confirmation_successes": {
+      "FRESH": {
+        "successes": 77,
+        "blocks": 140
+      },
+      "FO20": {
+        "successes": 83,
+        "blocks": 140
+      },
+      "REVERSE20": {
+        "successes": 38,
+        "blocks": 140
+      },
+      "FULL_OLD20": {
+        "successes": 66,
+        "blocks": 140
+      },
+      "HARD_H16": {
+        "successes": 93,
+        "blocks": 140
+      }
+    },
+    "existing_primary_effects_percentage_points": {
+      "FO20_MINUS_REVERSE20": 32.142857142857146,
+      "FO20_MINUS_FRESH": 4.285714285714286,
+      "FULL_OLD20_MINUS_FRESH": -7.857142857142857
+    },
+    "candidate1": {
+      "classification": "OUTCOME_B",
+      "successes": {
+        "C2": 76,
+        "FRESH": 77,
+        "HARD_H16": 93
+      },
+      "effects_percentage_points": {
+        "C2_MINUS_FRESH": -0.7142857142857143,
+        "HARD_H16_MINUS_C2": 12.142857142857142
+      }
+    },
+    "object_development": {
+      "C2_successes": 42,
+      "HARD_H16_successes": 88,
+      "HARD_H16_MINUS_C2_percentage_points": 36.507936507936506
+    }
+  },
+  "confirmation_posthoc_pairwise": {
+    "HARD_H16_MINUS_FRESH": {
+      "post_hoc": true,
+      "first_method": "HARD_H16",
+      "second_method": "FRESH",
+      "method_direction": "HARD_H16 - FRESH",
+      "inference_unit": "paired task-state block",
+      "blocks": 140,
+      "first_successes": 93,
+      "second_successes": 77,
+      "first_only_wins": 28,
+      "second_only_wins": 12,
+      "discordant_count": 40,
+      "effect": 0.11428571428571428,
+      "effect_percentage_points": 11.428571428571429,
+      "exact_two_sided_mcnemar_p": 0.01658900337497471,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261201,
+      "paired_bootstrap_ci": [
+        0.02857142857142857,
+        0.2
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261202,
+      "task_cluster_bootstrap_ci": [
+        -0.00714285714285714,
+        0.23571428571428568
+      ],
+      "task_level_differences": [
+        {
+          "task": "libero_goal:task4",
+          "effect": -0.14285714285714285
+        },
+        {
+          "task": "libero_goal:task6",
+          "effect": -0.14285714285714285
+        },
+        {
+          "task": "libero_goal:task7",
+          "effect": 0.0
+        },
+        {
+          "task": "libero_goal:task8",
+          "effect": 0.07142857142857142
+        },
+        {
+          "task": "libero_goal:task9",
+          "effect": 0.21428571428571427
+        },
+        {
+          "task": "libero_10:task0",
+          "effect": 0.14285714285714285
+        },
+        {
+          "task": "libero_10:task2",
+          "effect": 0.35714285714285715
+        },
+        {
+          "task": "libero_10:task4",
+          "effect": 0.42857142857142855
+        },
+        {
+          "task": "libero_10:task6",
+          "effect": -0.07142857142857142
+        },
+        {
+          "task": "libero_10:task7",
+          "effect": 0.2857142857142857
+        }
+      ]
+    },
+    "HARD_H16_MINUS_FO20": {
+      "post_hoc": true,
+      "first_method": "HARD_H16",
+      "second_method": "FO20",
+      "method_direction": "HARD_H16 - FO20",
+      "inference_unit": "paired task-state block",
+      "blocks": 140,
+      "first_successes": 93,
+      "second_successes": 83,
+      "first_only_wins": 22,
+      "second_only_wins": 12,
+      "discordant_count": 34,
+      "effect": 0.07142857142857142,
+      "effect_percentage_points": 7.142857142857142,
+      "exact_two_sided_mcnemar_p": 0.12144948495551944,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261203,
+      "paired_bootstrap_ci": [
+        -0.007142857142857143,
+        0.15
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261204,
+      "task_cluster_bootstrap_ci": [
+        -0.02142857142857143,
+        0.19285714285714284
+      ],
+      "task_level_differences": [
+        {
+          "task": "libero_goal:task4",
+          "effect": -0.07142857142857142
+        },
+        {
+          "task": "libero_goal:task6",
+          "effect": -0.14285714285714285
+        },
+        {
+          "task": "libero_goal:task7",
+          "effect": 0.0
+        },
+        {
+          "task": "libero_goal:task8",
+          "effect": 0.0
+        },
+        {
+          "task": "libero_goal:task9",
+          "effect": 0.14285714285714285
+        },
+        {
+          "task": "libero_10:task0",
+          "effect": 0.07142857142857142
+        },
+        {
+          "task": "libero_10:task2",
+          "effect": 0.07142857142857142
+        },
+        {
+          "task": "libero_10:task4",
+          "effect": 0.5
+        },
+        {
+          "task": "libero_10:task6",
+          "effect": -0.07142857142857142
+        },
+        {
+          "task": "libero_10:task7",
+          "effect": 0.21428571428571427
+        }
+      ]
+    }
+  },
+  "confirmation_factorial_simple_effects": {
+    "interpretation_scope": "Descriptive post-hoc decompositions of the frozen factorial; they do not independently identify observation-age effects.",
+    "comparisons": {
+      "ARM_WITH_FRESH_GRIPPER_REVERSE20_MINUS_FRESH": {
+        "post_hoc": true,
+        "first_method": "REVERSE20",
+        "second_method": "FRESH",
+        "method_direction": "REVERSE20 - FRESH",
+        "inference_unit": "paired task-state block",
+        "blocks": 140,
+        "first_successes": 38,
+        "second_successes": 77,
+        "first_only_wins": 3,
+        "second_only_wins": 42,
+        "discordant_count": 45,
+        "effect": -0.2785714285714286,
+        "effect_percentage_points": -27.857142857142858,
+        "exact_two_sided_mcnemar_p": 8.654978955746628e-10,
+        "paired_bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 20261205,
+        "paired_bootstrap_ci": [
+          -0.35714285714285715,
+          -0.2
+        ],
+        "task_cluster_bootstrap_draws": 20000,
+        "task_cluster_bootstrap_seed": 20261206,
+        "task_cluster_bootstrap_ci": [
+          -0.36428571428571427,
+          -0.19285714285714284
+        ],
+        "task_level_differences": [
+          {
+            "task": "libero_goal:task4",
+            "effect": -0.35714285714285715
+          },
+          {
+            "task": "libero_goal:task6",
+            "effect": -0.5
+          },
+          {
+            "task": "libero_goal:task7",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_goal:task8",
+            "effect": -0.2857142857142857
+          },
+          {
+            "task": "libero_goal:task9",
+            "effect": -0.35714285714285715
+          },
+          {
+            "task": "libero_10:task0",
+            "effect": -0.14285714285714285
+          },
+          {
+            "task": "libero_10:task2",
+            "effect": -0.42857142857142855
+          },
+          {
+            "task": "libero_10:task4",
+            "effect": -0.21428571428571427
+          },
+          {
+            "task": "libero_10:task6",
+            "effect": -0.35714285714285715
+          },
+          {
+            "task": "libero_10:task7",
+            "effect": -0.07142857142857142
+          }
+        ]
+      },
+      "ARM_WITH_OLD_GRIPPER_FULL_OLD20_MINUS_FO20": {
+        "post_hoc": true,
+        "first_method": "FULL_OLD20",
+        "second_method": "FO20",
+        "method_direction": "FULL_OLD20 - FO20",
+        "inference_unit": "paired task-state block",
+        "blocks": 140,
+        "first_successes": 66,
+        "second_successes": 83,
+        "first_only_wins": 11,
+        "second_only_wins": 28,
+        "discordant_count": 39,
+        "effect": -0.12142857142857143,
+        "effect_percentage_points": -12.142857142857142,
+        "exact_two_sided_mcnemar_p": 0.009475304279476404,
+        "paired_bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 20261207,
+        "paired_bootstrap_ci": [
+          -0.20714285714285716,
+          -0.03571428571428571
+        ],
+        "task_cluster_bootstrap_draws": 20000,
+        "task_cluster_bootstrap_seed": 20261208,
+        "task_cluster_bootstrap_ci": [
+          -0.2857142857142857,
+          0.02142857142857143
+        ],
+        "task_level_differences": [
+          {
+            "task": "libero_goal:task4",
+            "effect": 0.0
+          },
+          {
+            "task": "libero_goal:task6",
+            "effect": -0.5714285714285714
+          },
+          {
+            "task": "libero_goal:task7",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_goal:task8",
+            "effect": -0.5714285714285714
+          },
+          {
+            "task": "libero_goal:task9",
+            "effect": 0.21428571428571427
+          },
+          {
+            "task": "libero_10:task0",
+            "effect": -0.14285714285714285
+          },
+          {
+            "task": "libero_10:task2",
+            "effect": -0.14285714285714285
+          },
+          {
+            "task": "libero_10:task4",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_10:task6",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_10:task7",
+            "effect": 0.07142857142857142
+          }
+        ]
+      },
+      "GRIPPER_WITH_FRESH_ARM_FO20_MINUS_FRESH": {
+        "post_hoc": true,
+        "first_method": "FO20",
+        "second_method": "FRESH",
+        "method_direction": "FO20 - FRESH",
+        "inference_unit": "paired task-state block",
+        "blocks": 140,
+        "first_successes": 83,
+        "second_successes": 77,
+        "first_only_wins": 12,
+        "second_only_wins": 6,
+        "discordant_count": 18,
+        "effect": 0.04285714285714286,
+        "effect_percentage_points": 4.285714285714286,
+        "exact_two_sided_mcnemar_p": 0.237884521484375,
+        "paired_bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 20261209,
+        "paired_bootstrap_ci": [
+          -0.014285714285714285,
+          0.1
+        ],
+        "task_cluster_bootstrap_draws": 20000,
+        "task_cluster_bootstrap_seed": 20261210,
+        "task_cluster_bootstrap_ci": [
+          -0.014285714285714285,
+          0.10714285714285714
+        ],
+        "task_level_differences": [
+          {
+            "task": "libero_goal:task4",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_goal:task6",
+            "effect": 0.0
+          },
+          {
+            "task": "libero_goal:task7",
+            "effect": 0.0
+          },
+          {
+            "task": "libero_goal:task8",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_goal:task9",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_10:task0",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_10:task2",
+            "effect": 0.2857142857142857
+          },
+          {
+            "task": "libero_10:task4",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_10:task6",
+            "effect": 0.0
+          },
+          {
+            "task": "libero_10:task7",
+            "effect": 0.07142857142857142
+          }
+        ]
+      },
+      "GRIPPER_WITH_OLD_ARM_FULL_OLD20_MINUS_REVERSE20": {
+        "post_hoc": true,
+        "first_method": "FULL_OLD20",
+        "second_method": "REVERSE20",
+        "method_direction": "FULL_OLD20 - REVERSE20",
+        "inference_unit": "paired task-state block",
+        "blocks": 140,
+        "first_successes": 66,
+        "second_successes": 38,
+        "first_only_wins": 33,
+        "second_only_wins": 5,
+        "discordant_count": 38,
+        "effect": 0.2,
+        "effect_percentage_points": 20.0,
+        "exact_two_sided_mcnemar_p": 4.255962267052382e-06,
+        "paired_bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 20261211,
+        "paired_bootstrap_ci": [
+          0.12142857142857143,
+          0.2785714285714286
+        ],
+        "task_cluster_bootstrap_draws": 20000,
+        "task_cluster_bootstrap_seed": 20261212,
+        "task_cluster_bootstrap_ci": [
+          0.03571428571428572,
+          0.36428571428571427
+        ],
+        "task_level_differences": [
+          {
+            "task": "libero_goal:task4",
+            "effect": 0.2857142857142857
+          },
+          {
+            "task": "libero_goal:task6",
+            "effect": -0.07142857142857142
+          },
+          {
+            "task": "libero_goal:task7",
+            "effect": 0.0
+          },
+          {
+            "task": "libero_goal:task8",
+            "effect": -0.21428571428571427
+          },
+          {
+            "task": "libero_goal:task9",
+            "effect": 0.6428571428571429
+          },
+          {
+            "task": "libero_10:task0",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_10:task2",
+            "effect": 0.5714285714285714
+          },
+          {
+            "task": "libero_10:task4",
+            "effect": 0.07142857142857142
+          },
+          {
+            "task": "libero_10:task6",
+            "effect": 0.42857142857142855
+          },
+          {
+            "task": "libero_10:task7",
+            "effect": 0.21428571428571427
+          }
+        ]
+      }
+    }
+  },
+  "confirmation_factorial_interaction": {
+    "post_hoc": true,
+    "formula": "(FULL_OLD20 - REVERSE20) - (FO20 - FRESH)",
+    "block_level_formula": "FULL_OLD20_i - REVERSE20_i - FO20_i + FRESH_i",
+    "blocks": 140,
+    "mean_interaction": 0.15714285714285714,
+    "interaction_percentage_points": 15.714285714285714,
+    "paired_bootstrap_draws": 20000,
+    "paired_bootstrap_seed": 20261213,
+    "paired_bootstrap_ci": [
+      0.06428571428571428,
+      0.25
+    ],
+    "task_cluster_bootstrap_draws": 20000,
+    "task_cluster_bootstrap_seed": 20261214,
+    "task_cluster_bootstrap_ci": [
+      0.007142857142857143,
+      0.3071428571428571
+    ],
+    "task_level_mean_interactions": [
+      {
+        "task": "libero_goal:task4",
+        "mean_interaction": 0.35714285714285715
+      },
+      {
+        "task": "libero_goal:task6",
+        "mean_interaction": -0.07142857142857142
+      },
+      {
+        "task": "libero_goal:task7",
+        "mean_interaction": 0.0
+      },
+      {
+        "task": "libero_goal:task8",
+        "mean_interaction": -0.2857142857142857
+      },
+      {
+        "task": "libero_goal:task9",
+        "mean_interaction": 0.5714285714285714
+      },
+      {
+        "task": "libero_10:task0",
+        "mean_interaction": 0.0
+      },
+      {
+        "task": "libero_10:task2",
+        "mean_interaction": 0.2857142857142857
+      },
+      {
+        "task": "libero_10:task4",
+        "mean_interaction": 0.14285714285714285
+      },
+      {
+        "task": "libero_10:task6",
+        "mean_interaction": 0.42857142857142855
+      },
+      {
+        "task": "libero_10:task7",
+        "mean_interaction": 0.14285714285714285
+      }
+    ],
+    "mcnemar_applied": false
+  },
+  "object_development_posthoc": {
+    "interpretation_scope": "Cross-cohort decomposition reporting completeness only; this does not modify any frozen development or Candidate-1 claim.",
+    "comparison": {
+      "post_hoc": true,
+      "first_method": "HARD_H16",
+      "second_method": "C2_H16_ARM_FRESH_GRIP",
+      "method_direction": "HARD_H16 - C2_H16_ARM_FRESH_GRIP",
+      "inference_unit": "paired task-state block",
+      "blocks": 126,
+      "first_successes": 88,
+      "second_successes": 42,
+      "first_only_wins": 48,
+      "second_only_wins": 2,
+      "discordant_count": 50,
+      "effect": 0.36507936507936506,
+      "effect_percentage_points": 36.507936507936506,
+      "exact_two_sided_mcnemar_p": 2.2666313270747196e-12,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261215,
+      "paired_bootstrap_ci": [
+        0.2777777777777778,
+        0.4523809523809524
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261216,
+      "task_cluster_bootstrap_ci": [
+        0.2857142857142857,
+        0.4444444444444444
+      ],
+      "task_level_differences": [
+        {
+          "task": "libero_object:task1",
+          "effect": 0.42857142857142855
+        },
+        {
+          "task": "libero_object:task2",
+          "effect": 0.42857142857142855
+        },
+        {
+          "task": "libero_object:task3",
+          "effect": 0.35714285714285715
+        },
+        {
+          "task": "libero_object:task4",
+          "effect": 0.42857142857142855
+        },
+        {
+          "task": "libero_object:task5",
+          "effect": 0.5714285714285714
+        },
+        {
+          "task": "libero_object:task6",
+          "effect": 0.21428571428571427
+        },
+        {
+          "task": "libero_object:task7",
+          "effect": 0.35714285714285715
+        },
+        {
+          "task": "libero_object:task8",
+          "effect": 0.35714285714285715
+        },
+        {
+          "task": "libero_object:task9",
+          "effect": 0.14285714285714285
+        }
+      ]
+    }
+  },
+  "descriptive_robustness": {
+    "HARD_H16_MINUS_C2_CONFIRMATION_LOTO": {
+      "post_hoc": true,
+      "source": "frozen Candidate-1 task-level differences",
+      "leave_one_task_out_effects_positive": 10,
+      "minimum_leave_one_task_out_effect": 0.09523809523809522,
+      "maximum_leave_one_task_out_effect": 0.14285714285714285
+    }
+  }
+}
