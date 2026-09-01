@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "protocol": "/home/wjq/workspace/one-clock-icra27-two-clock/experiments/icra27_two_clock_discriminator_dev/protocol.json",
+  "task_id": 1,
+  "state_id": 20,
+  "environment_seed": 330120,
+  "checkpoint_chunk_size": 100,
+  "offset_31_legal": true,
+  "fresh_environment_per_method_state": true,
+  "policy_rng_reset_per_method": true,
+  "temporal_ensemble_disabled": true,
+  "action_smoothing_disabled": true,
+  "same_target_asserted_every_group_step": true,
+  "exact_prefixes": {
+    "H16_COHERENT_vs_H32_COHERENT": "t=0..15",
+    "TWO_CLOCK_ARM16_GRIP32_vs_H16_COHERENT": "t=0..15",
+    "C1_PREVIOUS_CHUNK_GRIP_vs_TWO_CLOCK_ARM16_GRIP32": "t=0..31"
+  },
+  "query_steps": {
+    "H16_COHERENT": [
+      0,
+      16,
+      32
+    ],
+    "H32_COHERENT": [
+      0,
+      32
+    ],
+    "TWO_CLOCK_ARM16_GRIP32": [
+      0,
+      16,
+      32
+    ],
+    "C1_PREVIOUS_CHUNK_GRIP": [
+      0,
+      16,
+      32
+    ]
+  },
+  "boundary_t32": {
+    "C1_PREVIOUS_CHUNK_GRIP": {
+      "arm_q": 32,
+      "arm_offset": 0,
+      "grip_q": 16,
+      "grip_offset": 16
+    },
+    "TWO_CLOCK_ARM16_GRIP32": {
+      "arm_q": 32,
+      "arm_offset": 0,
+      "grip_q": 32,
+      "grip_offset": 0
+    }
+  },
+  "note": "The rollout path passes executor actions directly to env.step; no averaging, interpolation, selector, temporal ensemble, or smoothing is present."
+}
