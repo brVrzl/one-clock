@@ -151,6 +151,8 @@ class Runtime:
             raise RuntimeError("action_dim must be 7")
         if int(cfg.chunk_size) < max(int(cell["arm_horizon"]), int(cell["gripper_horizon"])):
             raise RuntimeError("checkpoint chunk is shorter than configured horizon")
+        if expected == "act":
+            cfg.pretrained_backbone_weights = None
         self.policy = self.make_policy(cfg=cfg, env_cfg=env_cfg)
         self.policy.eval()
         self.preprocessor, self.postprocessor = self.make_pre_post_processors(
@@ -168,12 +170,25 @@ class Runtime:
             self.torch.cuda.empty_cache()
 
     def run(self, cell: dict) -> dict:
+        historical_object_checkpoint = str(cell["checkpoint"]).endswith(
+            "/zeromidnight_act_libero_object"
+        )
+        camera_mapping = (
+            {"agentview_image": "image", "robot0_eye_in_hand_image": "wrist_image"}
+            if historical_object_checkpoint
+            else {"agentview_image": "image", "robot0_eye_in_hand_image": "image2"}
+        )
         env_cfg = self.LiberoEnv(
             task=cell["suite"], task_ids=[int(cell["task_id"])],
             fps=int(cell["control_frequency_hz"]), obs_type="pixels_agent_pos",
-            camera_name="agentview_image,robot0_eye_in_hand_image", init_states=True,
+            camera_name="agentview_image,robot0_eye_in_hand_image",
+            camera_name_mapping=camera_mapping, init_states=True,
             observation_width=256, observation_height=256, control_mode="relative",
         )
+        if historical_object_checkpoint:
+            env_cfg.features_map["pixels/robot0_eye_in_hand_image"] = (
+                "observation.images.wrist_image"
+            )
         self.policy_for(cell, env_cfg)
         assert self.policy is not None and self.cfg is not None
         env_pre, env_post = self.make_env_pre_post_processors(env_cfg=env_cfg, policy_cfg=self.cfg)
@@ -204,6 +219,12 @@ class Runtime:
                     if cell["policy"] == "SmolVLA":
                         batch = add_envs_task(env, batch)
                     batch = env_pre(batch)
+                    if (historical_object_checkpoint
+                            and "observation.images.image2" in batch
+                            and "observation.images.wrist_image" not in batch):
+                        batch["observation.images.wrist_image"] = batch.pop(
+                            "observation.images.image2"
+                        )
                     batch = self.preprocessor(batch)
                     q0 = time.perf_counter()
                     with self.torch.inference_mode():
