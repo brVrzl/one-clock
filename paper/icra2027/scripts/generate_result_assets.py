@@ -70,6 +70,12 @@ def figure_coordinate(value):
     return f"{value + 25.0:.3f}"
 
 
+def figure2_task_label(label):
+    suite, task = label.split(":")
+    prefix = {"libero_goal": "Goal", "libero_10": "L10"}[suite]
+    return f"{prefix}-{task.removeprefix('task')}"
+
+
 def main():
     data = {name: load(path) for name, path in SOURCES.items()}
     confirmation = data["confirmation"]
@@ -248,6 +254,38 @@ def main():
             ]
         )
     (GENERATED_DIR / "figure1_data.tex").write_text("\n".join(figure_lines) + "\n", encoding="utf-8")
+
+    figure2_lines = list(source_comment)
+    task_labels = primary_fo_reverse["task_labels"]
+    task_differences = primary_fo_reverse["task_differences"]
+    assert len(task_labels) == len(task_differences) == 10
+    suffixes = [
+        "One", "Two", "Three", "Four", "Five",
+        "Six", "Seven", "Eight", "Nine", "Ten",
+    ]
+    for suffix, (label, difference) in zip(suffixes, zip(task_labels, task_differences)):
+        figure2_lines.extend(
+            [
+                macro(f"FigTwoTaskLabel{suffix}", figure2_task_label(label)),
+                macro(f"FigTwoTaskEffect{suffix}", f"{100.0 * difference:.1f}"),
+            ]
+        )
+
+    aggregate_low, aggregate_high = (
+        100.0 * value for value in primary_fo_reverse["paired_bootstrap_ci"]
+    )
+    figure2_lines.extend(
+        [
+            macro(
+                "FigTwoAggregateEffect",
+                f"{primary_fo_reverse['success_delta_percentage_points']:.1f}",
+            ),
+            macro("FigTwoAggregateLow", f"{aggregate_low:.1f}"),
+            macro("FigTwoAggregateHigh", f"{aggregate_high:.1f}"),
+            macro("FigTwoAggregateWidth", f"{aggregate_high - aggregate_low:.1f}"),
+        ]
+    )
+    (GENERATED_DIR / "figure2_data.tex").write_text("\n".join(figure2_lines) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

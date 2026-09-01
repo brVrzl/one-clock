@@ -22,10 +22,9 @@ The eventual anonymous artifact must exclude:
 - `.git/`;
 - `paper/icra2027/cdta_draft.md`;
 - `paper/icra2027/dynamic_horizon_draft.md`;
-- `paper/icra2027/README.md` (this note, because it names the repository and
-  owner);
+- `paper/icra2027/README.md` (this internal note);
 - author names and email addresses;
 - absolute local paths;
-- the GitHub owner and repository identity `brVrzl/one-clock`;
-- `one-clock` project branding; and
+- repository owner/name identifiers;
+- project branding; and
 - identity-revealing URLs.
