@@ -77,18 +77,17 @@ observed.
 \subsection{Fixed-horizon chunk execution and its variants}
 
 As our fixed-horizon chunk-execution reference, we include
-\textsc{hard-h16}: the policy is queried once every $16$ steps and both groups
+\textsc{hard-h16}: the policy is queried once every $\HardHorizon$ steps and both groups
 read the current committed chunk at offset $t-q$. Its source ages span
-0--15 steps, with an observed mean of approximately $7.4$ steps in our
+0--15 steps, with an observed mean of approximately $\HardMeanSourceAge$ steps in our
 rollouts; \textsc{hard-h16} is thus not a fully reactive baseline.
 
-Two executor variants isolate which group carries the commitment.
-\textsc{C2} issues a dense whole-policy query at every control step and takes
-only its offset-$0$ gripper component, while the arm remains sourced from the
-current scheduled h16 chunk. \textsc{C1} gives the arm the same schedule while
-the gripper reads the previous committed chunk; for the initial $16$-step
-prefix, where no previous chunk exists, \textsc{C1} falls back to the current
-chunk, after which its gripper source age lies in $16$--$31$ steps.
+The C2 H16Arm+FreshGrip decomposition also queries the whole policy at every
+controller step. Its gripper uses the current offset-$0$ prediction. The arm
+uses the scheduled source
+$q_{\mathrm{arm}}=\HardHorizon\lfloor t/\HardHorizon\rfloor$ and offset
+$k_{\mathrm{arm}}=t-q_{\mathrm{arm}}$. Both groups therefore satisfy the
+same-target contract, while only the arm carries the h16 schedule.
 
 \subsection{Blocks, cohorts, and inference}
 
@@ -97,7 +96,8 @@ condition with matched seeds, caps, and preprocessing, so that conditions
 differ only in temporal relationship. Success is binary per block.
 
 The confirmation cohort comprises LIBERO-Goal tasks $4,6,7,8,9$ and
-LIBERO-10 tasks $0,2,4,6,7$ over initial states $0$--$13$, giving $140$
+LIBERO-10 tasks $0,2,4,6,7$ over initial states $0$--$13$, giving
+$\ConfirmFreshBlocks$
 paired blocks per condition. These tasks were \emph{unseen to executor
 development}; they were \emph{not} held out from policy training, and we
 make no generalization claim that depends on the stronger reading.

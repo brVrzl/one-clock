@@ -1,18 +1,227 @@
 \section{Results}
 \label{sec:results}
 
-% Frozen drafting rule: assume conservative OUTCOME-C scope wherever
-% Candidate 1 would matter. Do not add Candidate-1-dependent result claims
-% without senior-PI authorization.
+\input{figures/figure1}
 
 \subsection{Frozen Cross-Suite Component Factorial}
 
-\emph{Results subsection stub pending senior-PI review.}
+The frozen confirmation cohort provides the primary test of whether temporal
+assignment depends on action-group identity. Across its $\ConfirmFreshBlocks$
+paired task-state blocks, success was $\ConfirmFreshSuccesses/\ConfirmFreshBlocks$
+($\ConfirmFreshRate\%$) for \textsc{Fresh},
+$\ConfirmFOSuccesses/\ConfirmFOBlocks$ ($\ConfirmFORate\%$) for \textsc{FO20},
+$\ConfirmReverseSuccesses/\ConfirmReverseBlocks$ ($\ConfirmReverseRate\%$) for
+\textsc{Reverse20}, and $\ConfirmFullOldSuccesses/\ConfirmFullOldBlocks$
+($\ConfirmFullOldRate\%$) for \textsc{FullOld20}. The detached
+\textsc{hard-h16} reference reached $\ConfirmHardSuccesses/\ConfirmHardBlocks$
+($\ConfirmHardRate\%$). Figure~\ref{fig:main}b preserves the four factorial
+cells and keeps this reference outside the matrix.
+
+The primary \textsc{FO20}$-$\textsc{Reverse20} contrast was
+$\ConfirmFOReverseDelta$ percentage points. Its paired discordance was
+$\ConfirmFOReverseDiscordance$, giving an exact two-sided McNemar
+$p=\ConfirmFOReverseP$. The paired 95\% interval was
+$\ConfirmFOReversePairedCI$~pp, and the task-cluster 95\% interval was
+$\ConfirmFOReverseClusterCI$~pp. Aggregate effects remained positive in
+$\ConfirmFOReverseLoto$ leave-one-task-out analyses. Because the two conditions
+assign the same eligible old relationship to different action groups, this
+contrast confirms a component-assignment effect under the frozen protocol.
+
+The uncertainty checks address complementary levels of variation. The paired
+interval preserves the task-state block as the inference unit, while the
+task-cluster interval resamples tasks. Both excluded zero for the primary
+contrast. The leave-one-task-out sign check further shows that no single task
+was required to make the aggregate direction positive. Agreement across these
+summaries is important because the experiment spans two LIBERO suites and ten
+tasks rather than repeated states from one task alone.
+
+This finding is not an \textsc{FO20} deployment recommendation. Relative to
+\textsc{Fresh}, \textsc{FO20} changed success by only
+$\ConfirmFOFreshDelta$~pp with $\ConfirmFOFreshDiscordance$ discordance and
+$p=\ConfirmFOFreshP$. Both the paired interval
+$\ConfirmFOFreshPairedCI$~pp and task-cluster interval
+$\ConfirmFOFreshClusterCI$~pp included zero. The primary result is therefore
+the difference between component assignments, not evidence that \textsc{FO20}
+is generally preferable to reactive execution.
+
+The detached \textsc{hard-h16} reference had the highest aggregate rate, but
+its post-hoc pairwise comparisons do not establish an executor ranking.
+Relative to \textsc{Fresh}, its effect was $\PosthocHardFreshDelta$~pp with
+exact $p=\PosthocHardFreshP$. The paired interval
+$\PosthocHardFreshPairedCI$~pp excluded zero, whereas the task-cluster interval
+$\PosthocHardFreshClusterCI$~pp included zero. Relative to \textsc{FO20}, its
+effect was $\PosthocHardFODelta$~pp with exact $p=\PosthocHardFOP$; both the
+paired interval $\PosthocHardFOPairedCI$~pp and task-cluster interval
+$\PosthocHardFOClusterCI$~pp included zero. We therefore make no reliable
+advantage claim for \textsc{hard-h16} over either condition.
+
+All factorial simple effects and the interaction described next are post-hoc
+decompositions of this frozen experiment. For the arm temporal relationship,
+\textsc{Reverse20}$-$\textsc{Fresh} was
+$\PosthocArmFreshGripDelta$~pp with paired and task-cluster intervals
+$\PosthocArmFreshGripPairedCI$ and $\PosthocArmFreshGripClusterCI$~pp.
+With the old gripper relationship, \textsc{FullOld20}$-$\textsc{FO20} was
+$\PosthocArmOldGripDelta$~pp. Its paired interval
+$\PosthocArmOldGripPairedCI$~pp excluded zero, but its task-cluster interval
+$\PosthocArmOldGripClusterCI$~pp did not. Thus the negative association for the
+arm relationship was much larger with a fresh gripper relationship, without a
+cross-task exclusion-of-zero claim for the old-gripper simple effect.
+
+These are conditional contrasts within the observed factorial. Each arm
+simple effect changes the arm relationship while fixing the gripper cell, and
+each gripper simple effect changes the gripper relationship while fixing the
+arm cell. The comparison does not separate source age from prediction offset,
+because same-target execution couples them. It also does not convert either
+action group into an independently randomized causal factor.
+
+The corresponding gripper pattern also depended on the arm relationship.
+With a fresh arm relationship, \textsc{FO20}$-$\textsc{Fresh} was
+$\PosthocGripFreshArmDelta$~pp, and both intervals included zero. With an old
+arm relationship, \textsc{FullOld20}$-$\textsc{Reverse20} was
+$\PosthocGripOldArmDelta$~pp, with paired and task-cluster intervals
+$\PosthocGripOldArmPairedCI$ and $\PosthocGripOldArmClusterCI$~pp. The post-hoc
+interaction was $\PosthocInteractionDelta$~pp. Its paired interval was
+$\PosthocInteractionPairedCI$~pp and its task-cluster interval was
+$\PosthocInteractionClusterCI$~pp, both excluding zero. This positive
+statistical interaction supports conditional component dependence and a
+non-additive pattern in the frozen factorial. It does not establish a causal or
+mechanistic interaction. For scale, the whole-action
+\textsc{FullOld20}$-$\textsc{Fresh} difference was only
+$\ConfirmFullOldFreshDelta$~pp, although the component-conditional simple
+effects were substantially larger in magnitude. Thus a modest whole-action
+contrast can obscure stronger conditional structure that becomes visible only
+after resolving the action groups.
+
+\begin{table*}[t]
+\centering
+\caption{Frozen cross-suite confirmation factorial. Aggregate success is shown
+as successes/blocks (rate). Contrasts use $\ConfirmFreshBlocks$ paired task-state blocks;
+differences and intervals are in percentage points. Discordance is
+first-only:second-only success, and $p$ is the exact two-sided McNemar value.
+$^{*}$Post-hoc comparisons were not primary confirmation tests.
+\textsc{hard-h16} is a detached reference, not a factorial cell.}
+\label{tab:confirmation}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc}
+\toprule
+Condition or contrast & Success & $\Delta$ (pp) & Discordance & Exact $p$ & Paired 95\% CI & Task-cluster 95\% CI \\
+\midrule
+\textsc{Fresh} & $\ConfirmFreshSuccesses/\ConfirmFreshBlocks$ ($\ConfirmFreshRate\%$) & -- & -- & -- & -- & -- \\
+\textsc{FO20} & $\ConfirmFOSuccesses/\ConfirmFOBlocks$ ($\ConfirmFORate\%$) & -- & -- & -- & -- & -- \\
+\textsc{Reverse20} & $\ConfirmReverseSuccesses/\ConfirmReverseBlocks$ ($\ConfirmReverseRate\%$) & -- & -- & -- & -- & -- \\
+\textsc{FullOld20} & $\ConfirmFullOldSuccesses/\ConfirmFullOldBlocks$ ($\ConfirmFullOldRate\%$) & -- & -- & -- & -- & -- \\
+\textsc{hard-h16} reference & $\ConfirmHardSuccesses/\ConfirmHardBlocks$ ($\ConfirmHardRate\%$) & -- & -- & -- & -- & -- \\
+\midrule
+\textsc{FO20}$-$\textsc{Reverse20} & -- & $\ConfirmFOReverseDelta$ & $\ConfirmFOReverseDiscordance$ & $\ConfirmFOReverseP$ & $\ConfirmFOReversePairedCI$ & $\ConfirmFOReverseClusterCI$ \\
+\textsc{FO20}$-$\textsc{Fresh} & -- & $\ConfirmFOFreshDelta$ & $\ConfirmFOFreshDiscordance$ & $\ConfirmFOFreshP$ & $\ConfirmFOFreshPairedCI$ & $\ConfirmFOFreshClusterCI$ \\
+\textsc{hard-h16}$-$\textsc{Fresh}$^{*}$ & -- & $\PosthocHardFreshDelta$ & $\PosthocHardFreshDiscordance$ & $\PosthocHardFreshP$ & $\PosthocHardFreshPairedCI$ & $\PosthocHardFreshClusterCI$ \\
+\textsc{hard-h16}$-$\textsc{FO20}$^{*}$ & -- & $\PosthocHardFODelta$ & $\PosthocHardFODiscordance$ & $\PosthocHardFOP$ & $\PosthocHardFOPairedCI$ & $\PosthocHardFOClusterCI$ \\
+\bottomrule
+\end{tabular*}
+\end{table*}
 
 \subsection{Fixed-h16 Executor Decomposition}
 
-\emph{Results subsection stub pending senior-PI review.}
+Object development first motivated the arm-only decomposition. C2$-$\textsc{Fresh}
+was $\ObjectCtwoFreshDelta$~pp, with a paired interval of
+$\ObjectCtwoFreshPairedCI$~pp and a task-cluster interval of
+$\ObjectCtwoFreshClusterCI$~pp. Both intervals were below zero. This was a
+development-cohort observation rather than a cross-suite confirmation result.
+Both executors queried the whole policy at every controller step. C2 kept the
+gripper at the current offset-$0$ prediction while scheduling only the arm at
+h16, so this development result did not depend on reducing the policy-query
+rate.
+
+The frozen confirmation cohort did not reproduce that penalty. C2$-$\textsc{Fresh}
+was $\ConfirmCtwoFreshDelta$~pp, with $\ConfirmCtwoFreshDiscordance$
+discordance and exact $p=\ConfirmCtwoFreshP$. The paired interval
+$\ConfirmCtwoFreshPairedCI$~pp and task-cluster interval
+$\ConfirmCtwoFreshClusterCI$~pp both included zero. The development-set
+C2-under-\textsc{Fresh} penalty therefore did not reproduce. The near-zero
+aggregate effect does not mean that C2 reproduced \textsc{Fresh} block by
+block: $\ConfirmCtwoFreshDiscordantBlocks/\ConfirmCtwoFreshBlocks$ paired
+confirmation blocks were discordant, split almost
+symmetrically as $\ConfirmCtwoFreshDiscordance$. This count is a binary paired
+outcome summary, not a continuous distance between trajectories.
+
+The confirmation result changes the cross-cohort interpretation of C2. The
+Object result showed a development penalty, whereas confirmation showed no
+aggregate gain and no interval-based evidence of a penalty. The nearly balanced
+discordance indicates that this null aggregate difference arose from opposing
+binary changes across blocks. It does not show that C2 and \textsc{Fresh}
+generated equivalent closed-loop behavior.
+
+Coherent fixed-h16 execution remained above the arm-only decomposition in both
+cohorts. In Object development, the \textsc{hard-h16}$-$C2 comparison was a
+post-hoc reporting-completeness analysis of the development data, not a new
+confirmation test. Its effect was $\ObjectHardCtwoDelta$~pp with
+$\ObjectHardCtwoDiscordance$ discordance and exact
+$p=\ObjectHardCtwoP$. The paired interval was
+$\ObjectHardCtwoPairedCI$~pp, and the approved task-cluster interval was
+$\ObjectHardCtwoClusterCI$~pp. Both excluded zero. On frozen confirmation,
+\textsc{hard-h16}$-$C2 was $\ConfirmHardCtwoDelta$~pp with
+$\ConfirmHardCtwoDiscordance$ discordance and exact
+$p=\ConfirmHardCtwoP$. Its paired and task-cluster intervals were
+$\ConfirmHardCtwoPairedCI$ and $\ConfirmHardCtwoClusterCI$~pp. Aggregate
+effects stayed positive in $\ConfirmHardCtwoLoto$ leave-one-task-out analyses,
+with a minimum of $\ConfirmHardCtwoLotoMinimum$~pp.
+
+On the frozen cross-suite confirmation cohort, arm commitment alone does not reproduce
+the benefit of coherent fixed-h16 execution, although it does not reliably underperform
+fully reactive execution as it did on the Object development cohort.
+Arm-only h16 commitment produced no aggregate gain over Fresh in either cohort,
+while coherent fixed-h16 execution was reliably above the arm-only decomposition
+in both. This is a bounded executor decomposition. It does not identify a pure
+gripper contribution because \textsc{hard-h16} and C2 differ in their complete
+execution relationship and policy-query schedule, not only in one independently
+randomized action group.
+
+\begin{table*}[t]
+\centering
+\caption{Cross-cohort fixed-h16 executor decomposition. Cohorts are reported as
+separate paired contrasts, not as an absolute-rate comparison. Differences and
+intervals are in percentage points; discordance is first-only:second-only
+success. $^{*}$The Object \textsc{hard-h16}$-$C2 completeness comparison is
+post-hoc.}
+\label{tab:decomposition}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc}
+\toprule
+Cohort & Contrast & $\Delta$ (pp) & Discordance & Exact $p$ & Paired 95\% CI & Task-cluster 95\% CI \\
+\midrule
+Object development & C2$-$\textsc{Fresh} & $\ObjectCtwoFreshDelta$ & $\ObjectCtwoFreshDiscordance$ & $\ObjectCtwoFreshP$ & $\ObjectCtwoFreshPairedCI$ & $\ObjectCtwoFreshClusterCI$ \\
+Object development & \textsc{hard-h16}$-$C2$^{*}$ & $\ObjectHardCtwoDelta$ & $\ObjectHardCtwoDiscordance$ & $\ObjectHardCtwoP$ & $\ObjectHardCtwoPairedCI$ & $\ObjectHardCtwoClusterCI$ \\
+Frozen confirmation & C2$-$\textsc{Fresh} & $\ConfirmCtwoFreshDelta$ & $\ConfirmCtwoFreshDiscordance$ & $\ConfirmCtwoFreshP$ & $\ConfirmCtwoFreshPairedCI$ & $\ConfirmCtwoFreshClusterCI$ \\
+Frozen confirmation & \textsc{hard-h16}$-$C2 & $\ConfirmHardCtwoDelta$ & $\ConfirmHardCtwoDiscordance$ & $\ConfirmHardCtwoP$ & $\ConfirmHardCtwoPairedCI$ & $\ConfirmHardCtwoClusterCI$ \\
+\bottomrule
+\end{tabular*}
+
+\begin{minipage}{\textwidth}
+\emph{Execution semantics.} \textsc{Fresh} queries the whole policy each step,
+and its gripper source age is zero. C2 also queries the whole policy each step;
+its gripper source age is zero while its arm follows the h16 schedule.
+\textsc{hard-h16} queries the whole policy every $\HardHorizon$ steps, and both
+groups use the current committed h16 chunk. Its observed mean group source age
+was approximately $\HardMeanSourceAge$ steps on confirmation.
+\end{minipage}
+\end{table*}
 
 \subsection{Scope and Negative Results}
 
-\emph{Results subsection stub pending senior-PI review.}
+The LIBERO-Spatial scope panel did not favor \textsc{FO20} over reactive
+execution. \textsc{Fresh} and \textsc{FO20} each succeeded on $40/100$ blocks;
+their discordance was $5{:}5$ with exact $p=1$. \textsc{Reverse20} was not run,
+so Spatial is not a full factorial replication.
+
+This Spatial result is a negative scope check for the available
+\textsc{FO20}$-$\textsc{Fresh} comparison. Without \textsc{Reverse20}, it
+cannot test whether assigning the old relationship to the gripper differs from
+assigning it to the arm. Its null pairwise result therefore bounds deployment
+claims without contradicting the complete confirmation factorial.
+
+The frozen SmolVLA pilot supplies directional cross-policy scope rather than a
+replication across policy classes. At $d=16$, the pooled paired
+FO$-$Reverse direction was positive but did not reach conventional
+significance, and suite-level behavior was heterogeneous. These negative and
+mixed scope results bound the ACT factorial claim rather than extending it to a
+universal component rule. The pilot used a different policy class, so its
+direction is relevant to scope but does not reproduce the ACT finding under a
+matched policy or checkpoint.

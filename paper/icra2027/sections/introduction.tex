@@ -30,41 +30,52 @@ Conversely, similar task success under two whole-action settings does
 not establish that their components are temporally insensitive. Without
 component-resolved assignments, these possibilities remain aliased.
 
-We study this issue as a measurement and causal-intervention question, not as a
-new adaptive executor. All interventions use frozen trained policies and alter
-only which same-target predictions supply the arm and gripper at execution
-time. Policy checkpoint, observation pipeline, task configuration, and paired
-initial states remain matched across conditions. Same-target validity is
-central: source age and prediction offset change together because both identify
-a prediction for the current physical time. Our estimand is consequently the
-combined closed-loop effect of that temporal relationship for each action
-group, not a pure effect of observation age. This design asks whether the same
-relationship has different behavioral consequences when assigned to different
-components in these controlled paired comparisons. Our primary scope is
-simulation in LIBERO, using the official
-LeRobot ACT implementation~\cite{cadene2024lerobot} with frozen checkpoints,
-relative end-effector control, and no temporal ensemble or action smoothing.
+We study this issue as a measurement question using controlled execution
+interventions, not as a new adaptive executor. All interventions use frozen
+trained policies and alter only which same-target predictions supply the arm
+and gripper at execution time. Policy checkpoint, observation pipeline, task
+configuration, and paired initial states remain matched across conditions.
+Same-target validity is central because source age and prediction offset change
+together when both identify a prediction for the current physical time. Our
+estimand is therefore the combined closed-loop effect of that temporal
+relationship for each action group, not a pure effect of observation age. The
+design asks whether one relationship has different behavioral consequences
+when assigned to different components. Our primary scope is simulation in
+LIBERO, using the official LeRobot ACT implementation~\cite{cadene2024lerobot}
+with frozen checkpoints, relative end-effector control, and no temporal
+ensemble or action smoothing.
 
-The primary cross-suite factorial provides the clearest evidence for such
-component dependence. FO20 exceeds Reverse20 by $32.1$ percentage points, with
-$48{:}3$ discordant paired blocks and a two-sided exact McNemar
-$p \approx 2\times10^{-11}$. All ten leave-one-task-out effects are positive.
-Yet FO20 exceeds Fresh by only $4.3$ percentage points, and that contrast is not
-statistically significant. The result therefore supports a component-resolved
-measurement claim, not a general recommendation to deploy FO20. A fixed-h16
-executor decomposition provides additional evidence only in the Object
-development setting. We treat that analysis as bounded diagnostic scope rather
-than as a cross-suite executor comparison, and we do not infer a universal
-preference for reactive or committed execution.
+The frozen cross-suite factorial provides the clearest evidence for component
+dependence. FO20 exceeded Reverse20 by $\ConfirmFOReverseDelta$ percentage
+points, with $\ConfirmFOReverseDiscordance$ discordance and positive aggregate
+effects in $\ConfirmFOReverseLoto$ leave-one-task-out analyses. Yet FO20
+exceeded Fresh by only $\ConfirmFOFreshDelta$ percentage points, and both
+intervals for that contrast included zero. Post-hoc factorial decomposition
+also yielded a positive statistical interaction, indicating that the temporal
+effect associated with one action group depended on the relationship assigned
+to the other. These results support a component-resolved measurement claim,
+not a general recommendation to deploy FO20.
 
-This work makes three contributions. First, it defines same-target,
-component-resolved interventions that change execution-time temporal
-relationships without modifying policy weights. Second, it establishes the
-confirmed primary factorial evidence that temporal assignment by action group
-changes behavior across the frozen ACT evaluation. Third, it provides bounded
-executor-decomposition and cross-policy/suite scope evidence, including one
-heterogeneous SmolVLA pilot~\cite{shukor2025smolvla}, without treating that
-pilot as replication across policy classes. Together, these measurements
-support a deliberately narrow thesis: whole-action temporal parameters can
-conceal behaviorally important component structure in action-chunked robot
-policies.
+The fixed-h16 decomposition narrows the executor interpretation across two
+cohorts. In Object development, the arm-only C2 executor was below Fresh, but
+this penalty did not reproduce on frozen cross-suite confirmation. In contrast,
+coherent \textsc{hard-h16} execution remained above C2 in both cohorts. Arm-only
+commitment therefore does not reproduce coherent fixed-h16 performance. This
+bounded comparison does not identify a gripper causal contribution because C2
+and \textsc{hard-h16} differ in their complete execution relationship and
+query schedule.
+
+This work makes three contributions. First, it defines a same-target,
+component-resolved measurement and intervention design that makes source-age
+and chunk-offset coupling explicit. Second, it establishes frozen cross-suite
+factorial evidence that temporal assignment depends strongly on action-group
+identity. This evidence combines the primary FO20--Reverse20 contrast with a
+clearly labeled post-hoc statistical interaction. Third, it gives a
+cross-cohort fixed-h16 decomposition and bounded scope evidence. Arm-only
+commitment does not reproduce coherent h16 execution in either cohort, while
+the Object C2-under-Fresh penalty itself does not replicate. Spatial and one
+heterogeneous SmolVLA pilot~\cite{shukor2025smolvla} provide negative and mixed
+scope evidence rather than replication across policy classes. Together, these
+measurements support a narrow thesis: whole-action temporal parameters can
+conceal behaviorally important component-dependent structure in
+action-chunked robot policies.

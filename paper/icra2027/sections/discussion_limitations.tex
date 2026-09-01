@@ -1,9 +1,61 @@
 \section{Discussion and Limitations}
 \label{sec:limitations}
 
-\emph{Frozen limitation placeholders: simulation-only LIBERO evaluation and
-no physical-robot claim; scope bounded to frozen ACT policies from the official
-LeRobot implementation and one heterogeneous SmolVLA pilot; one $6$-dimensional
-arm plus $1$-dimensional gripper partition, with no claim about dexterous hands;
-the combined source-age and prediction-offset estimand; and confirmation tasks
-unseen to executor development but not unseen to policy training.}
+The primary confirmation result supports component-dependent temporal
+structure in an action-chunked policy. \textsc{FO20} and \textsc{Reverse20}
+used the same eligible temporal relationships but assigned them to different
+action groups, producing a large paired difference with task-level sign
+stability. The post-hoc simple effects and positive interaction sharpen this
+measurement. The temporal association for one group depended on the
+relationship assigned to the other, yielding statistical non-additivity in the
+frozen factorial. These results do not identify a causal mechanism or prove
+that temporal effects are non-decomposable in principle.
+
+The methodological implication is about measurement resolution. Reporting one
+temporal parameter for a whole action can miss structure that appears after the
+same eligible relationships are assigned by component. The same-target
+contract keeps every executed component aligned to its physical target, but it
+also couples source age to chunk offset. Component-resolved contrasts therefore
+clarify which assignment matters in the closed loop without isolating either
+temporal quantity on its own. This use is diagnostic and does not constitute a
+new executor algorithm.
+
+The cross-cohort executor result is narrower. Arm-only h16 commitment did not
+improve aggregate success over \textsc{Fresh} in Object development or frozen
+confirmation, while \textsc{hard-h16} remained above C2 in both. However, the
+Object C2-under-\textsc{Fresh} penalty did not reproduce on confirmation.
+Moreover, \textsc{hard-h16}$-$C2 does not isolate a pure gripper contribution:
+the conditions differ in whole-policy query timing and in the complete
+execution relationship. Fixed-h16 execution is therefore not established as a
+universally preferable executor. It had the highest aggregate success in the
+ACT evaluations where it was included, but its post-hoc advantage over
+\textsc{FO20} was not statistically reliable. The paired interval
+$\PosthocHardFOPairedCI$~pp and task-cluster interval
+$\PosthocHardFOClusterCI$~pp both included zero.
+
+These findings complement rather than contradict Zeng et
+al.~\cite{zeng2026openloop}. Their study examines policy context,
+non-Markovianity, and whole-policy open-loop execution. Our study instead asks
+whether a whole-policy temporal setting hides action-group-dependent structure
+under same-target execution. The two questions operate at different levels:
+one concerns the value of whole-policy commitment under policy context, while
+the other resolves how temporal relationships are assigned within the action.
+
+Independently generated, pre-existing repeated C2 executions were available for
+a reproducibility diagnostic across 109 task-state keys. Binary success agreed
+in all cases, although 28 trajectories were not identical across runs and four
+also differed in episode length. Thus the primary binary endpoint was
+stable in the observed repeats, while closed-loop trajectories were not fully
+deterministic; our inferential intervals do not explicitly model run-to-run
+execution variability.
+
+Several limits define the frozen scope. All evaluations are LIBERO simulation,
+so the paper makes no physical-robot claim. The primary evidence uses frozen
+ACT policies, with one SmolVLA pilot providing heterogeneous cross-policy scope
+rather than replication. We study only a six-dimensional arm and
+one-dimensional gripper split and make no claim about dexterous hands. Under
+the same-target contract, source age and chunk offset remain coupled; the
+design does not identify a pure observation-age causal effect. Confirmation
+tasks were unseen to executor development but were not held out from policy
+training. Finally, the Spatial panel lacks \textsc{Reverse20} and therefore
+does not provide a complete factorial test.
