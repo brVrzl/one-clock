@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "expected": {
+    "act_object_h8_126": 126,
+    "act_posthoc_h8_140": 140,
+    "act_arm4_grip32_180": 180,
+    "smolvla_primary": 320,
+    "smolvla_capacity_h16": 160
+  },
+  "completed": {
+    "act_object_h8_126": 126,
+    "act_posthoc_h8_140": 35,
+    "act_arm4_grip32_180": 0,
+    "smolvla_primary": 0,
+    "smolvla_capacity_h16": 0
+  },
+  "technical_failures": {
+    "act_object_h8_126": 0,
+    "act_posthoc_h8_140": 0,
+    "act_arm4_grip32_180": 0,
+    "smolvla_primary": 0,
+    "smolvla_capacity_h16": 0
+  },
+  "act_object_h8_126": {
+    "H8": {
+      "successes": 82,
+      "episodes": 126,
+      "success_rate": 0.6507936507936508,
+      "environment_steps": 23538,
+      "policy_queries": 2973,
+      "model_forward_count": 2973,
+      "query_rate": 0.1263063981646699,
+      "wall_clock_seconds": 874.4704234600067,
+      "mean_wall_clock_seconds": 6.940241456031799,
+      "mean_arm_source_age": 3.4860226017503613,
+      "mean_gripper_source_age": 3.4860226017503613
+    },
+    "H16_historical": {
+      "successes": 88,
+      "episodes": 126,
+      "success_rate": 0.6984126984126984,
+      "environment_steps": 22869,
+      "policy_queries": 1490,
+      "model_forward_count": 1490,
+      "query_rate": 0.06515370151733788,
+      "wall_clock_seconds": 0.0,
+      "mean_wall_clock_seconds": 0.0,
+      "mean_arm_source_age": 7.357514539332721,
+      "mean_gripper_source_age": 7.357514539332721
+    },
+    "H8_vs_H16": {
+      "blocks": 126,
+      "first_successes": 82,
+      "second_successes": 88,
+      "first_only_wins": 10,
+      "second_only_wins": 16,
+      "ties": 100,
+      "delta": -0.047619047619047616,
+      "delta_percentage_points": -4.761904761904762,
+      "exact_two_sided_mcnemar_p": 0.32693958282470703,
+      "paired_bootstrap_ci": [
+        -0.12698412698412698,
+        0.031746031746031744
+      ],
+      "task_cluster_bootstrap_ci": [
+        -0.14285714285714285,
+        0.047619047619047616
+      ],
+      "bootstrap_draws": 20000,
+      "per_task": {
+        "libero_object:task1": {
+          "first_successes": 11,
+          "second_successes": 8,
+          "blocks": 14,
+          "delta": 0.21428571428571427
+        },
+        "libero_object:task2": {
+          "first_successes": 11,
+          "second_successes": 13,
+          "blocks": 14,
+          "delta": -0.14285714285714285
+        },
+        "libero_object:task3": {
+          "first_successes": 10,
+          "second_successes": 11,
+          "blocks": 14,
+          "delta": -0.07142857142857142
+        },
+        "libero_object:task4": {
+          "first_successes": 11,
+          "second_successes": 10,
+          "blocks": 14,
+          "delta": 0.07142857142857142
+        },
+        "libero_object:task5": {
+          "first_successes": 8,
+          "second_successes": 11,
+          "blocks": 14,
+          "delta": -0.21428571428571427
+        },
+        "libero_object:task6": {
+          "first_successes": 8,
+          "second_successes": 8,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_object:task7": {
+          "first_successes": 4,
+          "second_successes": 8,
+          "blocks": 14,
+          "delta": -0.2857142857142857
+        },
+        "libero_object:task8": {
+          "first_successes": 6,
+          "second_successes": 7,
+          "blocks": 14,
+          "delta": -0.07142857142857142
+        },
+        "libero_object:task9": {
+          "first_successes": 13,
+          "second_successes": 12,
+          "blocks": 14,
+          "delta": 0.07142857142857142
+        }
+      },
+      "leave_one_task_out": {
+        "libero_object:task1": -0.08035714285714286,
+        "libero_object:task2": -0.03571428571428571,
+        "libero_object:task3": -0.044642857142857144,
+        "libero_object:task4": -0.0625,
+        "libero_object:task5": -0.026785714285714284,
+        "libero_object:task6": -0.05357142857142857,
+        "libero_object:task7": -0.017857142857142856,
+        "libero_object:task8": -0.044642857142857144,
+        "libero_object:task9": -0.0625
+      }
+    },
+    "interpretation_label": "H16_NOT_CHALLENGED_BY_H8"
+  }
+}
