@@ -7,7 +7,7 @@
 - Frozen queue commit: `aa23175`
 - Worktree: `/home/wjq/workspace/one-clock-icra27-overnight`
 - Manifest: `experiments/icra27_overnight_smolvla_crosspolicy/queue_manifest.json`
-- Current implementation/audit HEAD at handoff creation: `29ba07c`
+- Current committed scientific HEAD at final interactive handoff: `1d91af1ef798d938a7e65705d3d3e9adf8eb1a6e`
 
 The fallback manuscript and fallback branch were not modified.
 
@@ -22,6 +22,16 @@ Three static shards were launched with `setsid nohup`, one per independent RTX 5
 PID files: `experiments/icra27_overnight_smolvla_crosspolicy/pids/worker_{0,1,2}.pid`.
 
 The runner uses fresh environments per method/state, durable per-cell JSON, marker validation, and at most two retries after the initial episode attempt. Valid scientific failures are complete and are never retried. Capacity h16 waits on a marker-only barrier requiring all 320 primary cells to be complete or `TECHNICAL_FAILED`; it does not read outcomes.
+
+Final interactive snapshot (2026-09-01, Asia/Shanghai):
+
+- `act_object_h8_126`: 126 complete, 0 technical failures, 0 pending; committed and pushed.
+- `act_posthoc_h8_140`: 58 complete, 0 technical failures, 82 pending; actively running.
+- `act_arm4_grip32_180`: 0 complete, 0 technical failures, 180 pending.
+- `smolvla_primary`: 0 complete, 0 technical failures, 320 pending.
+- `smolvla_capacity_h16`: 0 complete, 0 technical failures, 160 pending.
+
+The authoritative 126-block result is H8 82/126 versus historical H16 88/126 (H8-only 10, H16-only 16, delta -4.76 pp, exact McNemar p=0.32694). The descriptive label is `H16_NOT_CHALLENGED_BY_H8`; `COHERENT_OPTIMUM_IS_NOT_H16` was not recorded for this cohort.
 
 ## Durable paths
 
