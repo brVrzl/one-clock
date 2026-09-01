@@ -1,0 +1,935 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_outcome_rollout",
+  "created_utc": "2026-09-01T03:23:42Z",
+  "working_title": "Component-Dependent Temporal Effects in Action-Chunked Robot Policies",
+  "purpose": "Candidate 1 frozen cross-suite evaluation of C2_H16_ARM_FRESH_GRIP.",
+  "method_development_closed": true,
+  "authorized_condition": "C2_H16_ARM_FRESH_GRIP",
+  "candidate_2_authorized": false,
+  "source_commits": {
+    "canonical_completed_results": "2cae988fe70e406a795b5aa4bf24af02809496e8",
+    "canonical_pre_outcome_cross_suite_protocol": "78ebc4daf3f9893c51bdf9f864283d6c4c11642e"
+  },
+  "condition": {
+    "name": "C2_H16_ARM_FRESH_GRIP",
+    "display_name": "C2 H16Arm+FreshGrip",
+    "executor_source": "experiments/asymmetric_chunk_reuse_dev/asymmetric_executor.py:H16ArmFreshGripExecutor",
+    "reuse_without_semantic_change": true,
+    "whole_policy_queries": true,
+    "arm": {
+      "scheduled_source_period_steps": 16,
+      "source_at_physical_target_t": "q_arm = 16 * floor(t / 16)",
+      "index_at_physical_target_t": "k_arm = t - q_arm",
+      "source_index_semantics": "identical to HARD_H16"
+    },
+    "policy_query": {
+      "total_policy_query_period_steps": 1,
+      "expected_total_policy_query_rate": 1.0,
+      "description": "One whole-policy query is issued at every controller step to obtain the fresh gripper component; at multiples of 16 the same query also refreshes the scheduled arm chunk."
+    },
+    "gripper": {
+      "source": "dense current whole-policy query",
+      "prediction_offset": 0,
+      "source_age_steps": 0
+    },
+    "same_target_assertion": {
+      "arm": "q_arm + k_arm = t",
+      "gripper": "q_grip + k_grip = t",
+      "holds_independently_for_each_group": true
+    }
+  },
+  "cohort": {
+    "scope": "frozen Goal + LIBERO-10 primary cross-suite confirmation cohort",
+    "primary_tasks": {
+      "libero_goal": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "libero_10": [
+        0,
+        2,
+        4,
+        6,
+        7
+      ]
+    },
+    "state_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "paired_blocks": 140,
+    "new_c2_experimental_episodes": 140,
+    "seed_rule": "340000 + 1000 * suite_index + 100 * task_id + state_id",
+    "suite_index": {
+      "libero_goal": 2,
+      "libero_10": 3
+    },
+    "tasks": [
+      {
+        "suite": "libero_goal",
+        "task_id": 4,
+        "task_name": "put the bowl on top of the cabinet",
+        "max_episode_steps": 300,
+        "environment_seeds": [
+          342400,
+          342401,
+          342402,
+          342403,
+          342404,
+          342405,
+          342406,
+          342407,
+          342408,
+          342409,
+          342410,
+          342411,
+          342412,
+          342413
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "task_name": "put the cream cheese in the bowl",
+        "max_episode_steps": 300,
+        "environment_seeds": [
+          342600,
+          342601,
+          342602,
+          342603,
+          342604,
+          342605,
+          342606,
+          342607,
+          342608,
+          342609,
+          342610,
+          342611,
+          342612,
+          342613
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 7,
+        "task_name": "turn on the stove",
+        "max_episode_steps": 300,
+        "environment_seeds": [
+          342700,
+          342701,
+          342702,
+          342703,
+          342704,
+          342705,
+          342706,
+          342707,
+          342708,
+          342709,
+          342710,
+          342711,
+          342712,
+          342713
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 8,
+        "task_name": "put the bowl on the plate",
+        "max_episode_steps": 300,
+        "environment_seeds": [
+          342800,
+          342801,
+          342802,
+          342803,
+          342804,
+          342805,
+          342806,
+          342807,
+          342808,
+          342809,
+          342810,
+          342811,
+          342812,
+          342813
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 9,
+        "task_name": "put the wine bottle on the rack",
+        "max_episode_steps": 300,
+        "environment_seeds": [
+          342900,
+          342901,
+          342902,
+          342903,
+          342904,
+          342905,
+          342906,
+          342907,
+          342908,
+          342909,
+          342910,
+          342911,
+          342912,
+          342913
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 0,
+        "task_name": "put both the alphabet soup and the tomato sauce in the basket",
+        "max_episode_steps": 520,
+        "environment_seeds": [
+          343000,
+          343001,
+          343002,
+          343003,
+          343004,
+          343005,
+          343006,
+          343007,
+          343008,
+          343009,
+          343010,
+          343011,
+          343012,
+          343013
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 2,
+        "task_name": "turn on the stove and put the moka pot on it",
+        "max_episode_steps": 520,
+        "environment_seeds": [
+          343200,
+          343201,
+          343202,
+          343203,
+          343204,
+          343205,
+          343206,
+          343207,
+          343208,
+          343209,
+          343210,
+          343211,
+          343212,
+          343213
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 4,
+        "task_name": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+        "max_episode_steps": 520,
+        "environment_seeds": [
+          343400,
+          343401,
+          343402,
+          343403,
+          343404,
+          343405,
+          343406,
+          343407,
+          343408,
+          343409,
+          343410,
+          343411,
+          343412,
+          343413
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "task_name": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+        "max_episode_steps": 520,
+        "environment_seeds": [
+          343600,
+          343601,
+          343602,
+          343603,
+          343604,
+          343605,
+          343606,
+          343607,
+          343608,
+          343609,
+          343610,
+          343611,
+          343612,
+          343613
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model"
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 7,
+        "task_name": "put both the alphabet soup and the cream cheese box in the basket",
+        "max_episode_steps": 520,
+        "environment_seeds": [
+          343700,
+          343701,
+          343702,
+          343703,
+          343704,
+          343705,
+          343706,
+          343707,
+          343708,
+          343709,
+          343710,
+          343711,
+          343712,
+          343713
+        ],
+        "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model"
+      }
+    ],
+    "seed_sentinels": {
+      "libero_goal_task4_state0": 342400,
+      "libero_goal_task9_state13": 342913,
+      "libero_10_task0_state0": 343000,
+      "libero_10_task7_state13": 343713
+    }
+  },
+  "runtime": {
+    "policy": "official LeRobot ACT",
+    "policy_checkpoint_chunk_size": 100,
+    "action_dim": 7,
+    "policy_temporal_ensemble": false,
+    "action_smoothing": false,
+    "policy_rng_seed": 424242,
+    "control_frequency_hz": 20,
+    "control_mode": "relative",
+    "obs_type": "pixels_agent_pos",
+    "observation_width": 256,
+    "observation_height": 256,
+    "camera_name": "agentview_image,robot0_eye_in_hand_image",
+    "camera_name_mapping": {
+      "agentview_image": "image",
+      "robot0_eye_in_hand_image": "wrist_image"
+    },
+    "fresh_environment_per_task_state_condition": true,
+    "n_envs": 1,
+    "use_async_envs": false,
+    "per_suite_step_caps": {
+      "libero_goal": 300,
+      "libero_10": 520
+    },
+    "success_criterion": "LIBERO info is_success, with positive terminal reward as the established fallback"
+  },
+  "reference_outcomes": {
+    "source_protocol": "experiments/cross_suite_confirmation/protocol.json",
+    "source_results": "experiments/cross_suite_confirmation/results",
+    "methods": [
+      "FRESH",
+      "HARD_H16"
+    ],
+    "rerun_for_candidate_inference": false,
+    "required_unique_blocks_per_method": 140
+  },
+  "statistics": {
+    "inference_unit": "paired task-state block",
+    "primary_outcome": "binary episode success",
+    "exact_mcnemar": "exact two-sided binomial test on discordant paired blocks",
+    "paired_bootstrap_draws": 20000,
+    "task_cluster_bootstrap_draws": 20000,
+    "candidate_1_bootstrap_seeds": {
+      "C2_MINUS_FRESH": {
+        "paired": 20261101,
+        "task_cluster": 20261102
+      },
+      "HARD_H16_MINUS_C2": {
+        "paired": 20261103,
+        "task_cluster": 20261104
+      }
+    },
+    "frozen_regression_test": {
+      "comparison": "FO20_MINUS_REVERSE20",
+      "seed_source": "experiments/cross_suite_confirmation/protocol.json",
+      "expected_delta_percentage_points": 32.142857142857146,
+      "expected_first_only": 48,
+      "expected_second_only": 3,
+      "expected_exact_two_sided_mcnemar_p": 1.9674928353197174e-11,
+      "expected_paired_bootstrap_ci": [
+        0.2357142857,
+        0.4071428571
+      ],
+      "expected_task_cluster_bootstrap_ci": [
+        0.2142857143,
+        0.4428571429
+      ]
+    }
+  },
+  "claim_mapping": {
+    "ordered_precedence": [
+      "OUTCOME_A",
+      "OUTCOME_B",
+      "OUTCOME_C"
+    ],
+    "OUTCOME_A": {
+      "condition": "C2-Fresh paired 95% CI upper bound < 0 AND hard_h16-C2 paired 95% CI lower bound > 0",
+      "manuscript_sentence": "Across the Object development cohort and the frozen cross-suite confirmation cohort, committing only the arm to the fixed h16 schedule while keeping the gripper fully reactive underperforms fully reactive execution, whereas coherent fixed-h16 execution performs substantially better."
+    },
+    "OUTCOME_B": {
+      "condition": "OUTCOME_A is false AND C2-Fresh paired 95% CI includes 0 AND hard_h16-C2 paired 95% CI lower bound > 0",
+      "manuscript_sentence": "On the frozen cross-suite confirmation cohort, arm commitment alone does not reproduce the benefit of coherent fixed-h16 execution, although it does not reliably underperform fully reactive execution as it did on the Object development cohort."
+    },
+    "OUTCOME_C": {
+      "condition": "all remaining cases not classified as OUTCOME_A or OUTCOME_B",
+      "manuscript_sentence": "The Object executor decomposition does not transfer to the frozen cross-suite confirmation cohort; it remains a bounded development-setting observation, and we do not claim that arm commitment alone fails to explain the fixed-h16 gain in general."
+    },
+    "analysis_deadline": "2026-09-09T23:59:00-07:00",
+    "deadline_rule": "If analysis is not complete by the deadline, manuscript handling is OUTCOME_C and results-pending wording is forbidden."
+  },
+  "pre_outcome_validation": {
+    "reference_join": {
+      "required_methods": [
+        "FRESH",
+        "HARD_H16"
+      ],
+      "required_unique_blocks_each": 140,
+      "missing_allowed": 0,
+      "duplicates_allowed": 0
+    },
+    "fresh_reproducibility_control": {
+      "role": "reproducibility validation only; excluded from Candidate-1 inference and experimental N",
+      "blocks": [
+        {
+          "suite": "libero_goal",
+          "task_id": 4,
+          "state_id": 0,
+          "seed": 342400
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 4,
+          "state_id": 1,
+          "seed": 342401
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 4,
+          "state_id": 2,
+          "seed": 342402
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "state_id": 0,
+          "seed": 343000
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "state_id": 1,
+          "seed": 343001
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "state_id": 2,
+          "seed": 343002
+        }
+      ],
+      "frozen_reference_replacement": false,
+      "additional_block_selection": false,
+      "stop_on_any_binary_success_mismatch": true
+    },
+    "semantic_index_test_range": [
+      0,
+      31
+    ],
+    "semantic_boundary_steps": [
+      0,
+      15,
+      16,
+      31
+    ],
+    "checkpoint_count": 10,
+    "non_outcome_integration_smoke": {
+      "environment_steps_per_task": 2,
+      "tasks": [
+        "libero_goal:task4",
+        "libero_10:task0"
+      ],
+      "full_episode_success_persisted": false
+    },
+    "results": {
+      "analysis_and_reference_validation": {
+        "status": "PASS",
+        "reference_join": {
+          "FRESH": {
+            "unique_blocks": 140,
+            "expected_blocks": 140,
+            "missing_blocks": 0,
+            "duplicate_blocks": 0,
+            "extra_blocks": 0
+          },
+          "HARD_H16": {
+            "unique_blocks": 140,
+            "expected_blocks": 140,
+            "missing_blocks": 0,
+            "duplicate_blocks": 0,
+            "extra_blocks": 0
+          }
+        },
+        "frozen_fo20_vs_reverse20_regression": {
+          "status": "PASS",
+          "checks": {
+            "delta_percentage_points": true,
+            "first_only": true,
+            "second_only": true,
+            "mcnemar": true,
+            "paired_ci": true,
+            "cluster_ci": true
+          },
+          "first_method": "FO20",
+          "second_method": "REVERSE20",
+          "blocks": 140,
+          "first_successes": 83,
+          "second_successes": 38,
+          "first_only_wins": 48,
+          "second_only_wins": 3,
+          "discordant_blocks": 51,
+          "success_delta": 0.32142857142857145,
+          "success_delta_percentage_points": 32.142857142857146,
+          "exact_two_sided_mcnemar_p": 1.9674928353197174e-11,
+          "paired_bootstrap_draws": 20000,
+          "paired_bootstrap_seed": 20261001,
+          "paired_bootstrap_ci": [
+            0.2357142857142857,
+            0.40714285714285714
+          ],
+          "task_cluster_bootstrap_draws": 20000,
+          "task_cluster_bootstrap_seed": 20261002,
+          "task_cluster_bootstrap_ci": [
+            0.21428571428571427,
+            0.4428571428571428
+          ],
+          "task_labels": [
+            "libero_goal:task4",
+            "libero_goal:task6",
+            "libero_goal:task7",
+            "libero_goal:task8",
+            "libero_goal:task9",
+            "libero_10:task0",
+            "libero_10:task2",
+            "libero_10:task4",
+            "libero_10:task6",
+            "libero_10:task7"
+          ],
+          "task_differences": [
+            0.2857142857142857,
+            0.5,
+            0.07142857142857142,
+            0.35714285714285715,
+            0.42857142857142855,
+            0.21428571428571427,
+            0.7142857142857143,
+            0.14285714285714285,
+            0.35714285714285715,
+            0.14285714285714285
+          ]
+        }
+      },
+      "checkpoint_preflight": {
+        "status": "PASS",
+        "checkpoints_checked": 10,
+        "action_smoothing_disabled_by_runner": true,
+        "rows": [
+          {
+            "task": "libero_goal:task4",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_goal:task6",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_goal:task7",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_goal:task8",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_goal:task9",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_10:task0",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_10:task2",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_10:task4",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_10:task6",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          },
+          {
+            "task": "libero_10:task7",
+            "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model",
+            "path_exists": true,
+            "loaded_as_act": true,
+            "chunk_size": 100,
+            "action_dim": 7,
+            "temporal_ensemble_disabled": true,
+            "expected_preprocessing_constructed": true
+          }
+        ],
+        "environment_metadata": {
+          "python": "3.12.3",
+          "pytorch": "2.7.1+cu128",
+          "lerobot": "0.4.4",
+          "libero": "0.1.1",
+          "robosuite": "1.4.0",
+          "mujoco": "3.3.1",
+          "cuda_runtime": "12.8",
+          "cuda_available": true,
+          "gpu_names_visible": [
+            "NVIDIA GeForce RTX 5080"
+          ]
+        }
+      },
+      "fresh_reproducibility_control": {
+        "status": "PASS",
+        "records": [
+          {
+            "task": "libero_goal:task4",
+            "state_id": 0,
+            "seed": 342400,
+            "frozen_success": true,
+            "rerun_success": true,
+            "binary_success_exact": true,
+            "frozen_completion_step": 79,
+            "rerun_completion_step": 79,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 79,
+            "rerun_environment_steps": 79,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 117.28046162923177,
+              "image2": 115.2650655110677
+            },
+            "rerun_initial_camera_means": {
+              "image": 117.28046162923177,
+              "image2": 115.2650655110677
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          },
+          {
+            "task": "libero_goal:task4",
+            "state_id": 1,
+            "seed": 342401,
+            "frozen_success": true,
+            "rerun_success": true,
+            "binary_success_exact": true,
+            "frozen_completion_step": 87,
+            "rerun_completion_step": 87,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 87,
+            "rerun_environment_steps": 87,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 116.94008382161458,
+              "image2": 117.72439066569011
+            },
+            "rerun_initial_camera_means": {
+              "image": 116.94008382161458,
+              "image2": 117.72439066569011
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          },
+          {
+            "task": "libero_goal:task4",
+            "state_id": 2,
+            "seed": 342402,
+            "frozen_success": false,
+            "rerun_success": false,
+            "binary_success_exact": true,
+            "frozen_completion_step": null,
+            "rerun_completion_step": null,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 300,
+            "rerun_environment_steps": 300,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 117.24732971191406,
+              "image2": 117.09534708658855
+            },
+            "rerun_initial_camera_means": {
+              "image": 117.24732971191406,
+              "image2": 117.09534708658855
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          },
+          {
+            "task": "libero_10:task0",
+            "state_id": 0,
+            "seed": 343000,
+            "frozen_success": false,
+            "rerun_success": false,
+            "binary_success_exact": true,
+            "frozen_completion_step": null,
+            "rerun_completion_step": null,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 520,
+            "rerun_environment_steps": 520,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 68.99369812011719,
+              "image2": 63.17780558268229
+            },
+            "rerun_initial_camera_means": {
+              "image": 68.99369812011719,
+              "image2": 63.17780558268229
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          },
+          {
+            "task": "libero_10:task0",
+            "state_id": 1,
+            "seed": 343001,
+            "frozen_success": false,
+            "rerun_success": false,
+            "binary_success_exact": true,
+            "frozen_completion_step": null,
+            "rerun_completion_step": null,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 520,
+            "rerun_environment_steps": 520,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 70.01317850748698,
+              "image2": 63.0285390218099
+            },
+            "rerun_initial_camera_means": {
+              "image": 70.01317850748698,
+              "image2": 63.0285390218099
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          },
+          {
+            "task": "libero_10:task0",
+            "state_id": 2,
+            "seed": 343002,
+            "frozen_success": false,
+            "rerun_success": false,
+            "binary_success_exact": true,
+            "frozen_completion_step": null,
+            "rerun_completion_step": null,
+            "completion_step_exact": true,
+            "frozen_environment_steps": 520,
+            "rerun_environment_steps": 520,
+            "environment_steps_exact": true,
+            "frozen_initial_camera_means": {
+              "image": 69.7384541829427,
+              "image2": 63.192179361979164
+            },
+            "rerun_initial_camera_means": {
+              "image": 69.7384541829427,
+              "image2": 63.192179361979164
+            },
+            "initial_camera_mean_differences": {
+              "image": 0.0,
+              "image2": 0.0
+            },
+            "initial_camera_statistics_consistent": true,
+            "excluded_from_candidate_inference": true
+          }
+        ],
+        "all_binary_success_exact": true,
+        "all_completion_steps_exact": true,
+        "all_environment_steps_exact": true,
+        "all_initial_camera_statistics_consistent": true,
+        "reference_outcomes_replaced": false,
+        "entered_candidate_inference": false,
+        "increased_experimental_n": false
+      },
+      "two_step_non_outcome_smoke": {
+        "status": "PASS",
+        "records": [
+          {
+            "task": "libero_goal:task4",
+            "state_id": 0,
+            "seed": 342400,
+            "environment_steps": 2,
+            "steps": [
+              {
+                "t": 0,
+                "arm_source_q": 0,
+                "arm_offset": 0,
+                "gripper_source_q": 0,
+                "gripper_offset": 0,
+                "policy_queried": true
+              },
+              {
+                "t": 1,
+                "arm_source_q": 0,
+                "arm_offset": 1,
+                "gripper_source_q": 1,
+                "gripper_offset": 0,
+                "policy_queried": true
+              }
+            ],
+            "full_episode_success_inspected_or_persisted": false
+          },
+          {
+            "task": "libero_10:task0",
+            "state_id": 0,
+            "seed": 343000,
+            "environment_steps": 2,
+            "steps": [
+              {
+                "t": 0,
+                "arm_source_q": 0,
+                "arm_offset": 0,
+                "gripper_source_q": 0,
+                "gripper_offset": 0,
+                "policy_queried": true
+              },
+              {
+                "t": 1,
+                "arm_source_q": 0,
+                "arm_offset": 1,
+                "gripper_source_q": 1,
+                "gripper_offset": 0,
+                "policy_queried": true
+              }
+            ],
+            "full_episode_success_inspected_or_persisted": false
+          }
+        ],
+        "total_environment_steps": 4,
+        "full_episode_success_inspected_or_persisted": false
+      }
+    }
+  },
+  "persistence": {
+    "output_root": "experiments/candidate1_c2_cross_suite",
+    "atomic_writes": true,
+    "resume_safe": true,
+    "overwrite_existing_task_state_c2_episode": false,
+    "per_episode_checksums": false
+  },
+  "rollout": {
+    "new_condition_count": 1,
+    "new_c2_experimental_episodes": 140,
+    "round_1_c2_outcomes_authorized": false,
+    "new_methods_or_rescue_experiments": false
+  }
+}
