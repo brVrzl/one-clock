@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "analysis_type": "candidate1_c2_cross_suite",
+  "deadline_forced": false,
+  "blocks": 140,
+  "reference_join": {
+    "FRESH": {
+      "unique_blocks": 140,
+      "expected_blocks": 140,
+      "missing_blocks": 0,
+      "duplicate_blocks": 0,
+      "extra_blocks": 0
+    },
+    "HARD_H16": {
+      "unique_blocks": 140,
+      "expected_blocks": 140,
+      "missing_blocks": 0,
+      "duplicate_blocks": 0,
+      "extra_blocks": 0
+    }
+  },
+  "comparisons": {
+    "C2_MINUS_FRESH": {
+      "first_method": "C2_H16_ARM_FRESH_GRIP",
+      "second_method": "FRESH",
+      "blocks": 140,
+      "first_successes": 76,
+      "second_successes": 77,
+      "first_only_wins": 18,
+      "second_only_wins": 19,
+      "discordant_blocks": 37,
+      "success_delta": -0.007142857142857143,
+      "success_delta_percentage_points": -0.7142857142857143,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261101,
+      "paired_bootstrap_ci": [
+        -0.09285714285714286,
+        0.07857142857142857
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261102,
+      "task_cluster_bootstrap_ci": [
+        -0.12142857142857141,
+        0.10714285714285714
+      ],
+      "task_labels": [
+        "libero_goal:task4",
+        "libero_goal:task6",
+        "libero_goal:task7",
+        "libero_goal:task8",
+        "libero_goal:task9",
+        "libero_10:task0",
+        "libero_10:task2",
+        "libero_10:task4",
+        "libero_10:task6",
+        "libero_10:task7"
+      ],
+      "task_differences": [
+        -0.07142857142857142,
+        -0.35714285714285715,
+        0.0,
+        0.07142857142857142,
+        0.14285714285714285,
+        0.0,
+        0.35714285714285715,
+        0.07142857142857142,
+        -0.21428571428571427,
+        -0.07142857142857142
+      ]
+    },
+    "HARD_H16_MINUS_C2": {
+      "first_method": "HARD_H16",
+      "second_method": "C2_H16_ARM_FRESH_GRIP",
+      "blocks": 140,
+      "first_successes": 93,
+      "second_successes": 76,
+      "first_only_wins": 20,
+      "second_only_wins": 3,
+      "discordant_blocks": 23,
+      "success_delta": 0.12142857142857143,
+      "success_delta_percentage_points": 12.142857142857142,
+      "exact_two_sided_mcnemar_p": 0.00048828125,
+      "paired_bootstrap_draws": 20000,
+      "paired_bootstrap_seed": 20261103,
+      "paired_bootstrap_ci": [
+        0.05714285714285714,
+        0.18571428571428572
+      ],
+      "task_cluster_bootstrap_draws": 20000,
+      "task_cluster_bootstrap_seed": 20261104,
+      "task_cluster_bootstrap_ci": [
+        0.03571428571428571,
+        0.21428571428571427
+      ],
+      "task_labels": [
+        "libero_goal:task4",
+        "libero_goal:task6",
+        "libero_goal:task7",
+        "libero_goal:task8",
+        "libero_goal:task9",
+        "libero_10:task0",
+        "libero_10:task2",
+        "libero_10:task4",
+        "libero_10:task6",
+        "libero_10:task7"
+      ],
+      "task_differences": [
+        -0.07142857142857142,
+        0.21428571428571427,
+        0.0,
+        0.0,
+        0.07142857142857142,
+        0.14285714285714285,
+        0.0,
+        0.35714285714285715,
+        0.14285714285714285,
+        0.35714285714285715
+      ]
+    }
+  },
+  "claim_outcome": "OUTCOME_B",
+  "manuscript_sentence": "On the frozen cross-suite confirmation cohort, arm commitment alone does not reproduce the benefit of coherent fixed-h16 execution, although it does not reliably underperform fully reactive execution as it did on the Object development cohort.",
+  "claim_mapping_order": [
+    "OUTCOME_A",
+    "OUTCOME_B",
+    "OUTCOME_C"
+  ],
+  "exact_mcnemar_note": "the exact McNemar test depends only on discordant blocks; we therefore report their counts explicitly"
+}
