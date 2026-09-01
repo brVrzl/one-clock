@@ -1,10 +1,70 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\emph{Introduction stub pending senior-PI review.}
+Action-chunked robot policies predict a sequence of future controls from each
+observation rather than a single immediate action~\cite{zhao2023act}. This
+interface creates a temporal execution choice even when policy weights remain
+fixed. At physical time $t$, multiple stored predictions can refer to that same
+target time: a recent query contributes an early chunk offset, whereas an older
+query contributes a later offset. An executor must decide which eligible
+prediction to apply and when to request another chunk. Execution is therefore
+not only a question of how much computation to amortize. It also determines
+which temporal relationship between observation, prediction, and target time
+enters the closed loop.
 
-% TODO: Motivate measurement of component-dependent temporal structure without
-% presenting a new executor method.
-% TODO: State only the frozen thesis that whole-action temporal parameters can
-% conceal behaviorally important component structure in action-chunked policies.
-% TODO: Add a concise contribution summary without Candidate-1-dependent claims.
+Most analyses and execution mechanisms summarize this choice for the action as
+a whole. They study one execution horizon, one source-age relationship, or one
+acceptance, aggregation, or replanning decision for the complete predicted
+chunk~\cite{lazzati2026actionchunking,wang2026autohorizon,chen2026a3}. Such
+summaries are useful, but they can hide structure when the action vector joins
+controls with different physical roles. In our LIBERO action
+contract~\cite{liu2023libero}, six dimensions command relative end-effector arm
+motion and one dimension commands the gripper. The two groups act through
+different mechanisms and need not have the same behavioral sensitivity to a
+shared temporal relationship. Assigning one scalar temporal descriptor to all
+seven dimensions can therefore erase a factor that matters during execution.
+This matters for interpretation as well as aggregate performance. A
+whole-action contrast cannot show whether its effect is shared across
+components, concentrated in one group, or varies materially by action group.
+Conversely, similar task success under two whole-action settings does
+not establish that their components are temporally insensitive. Without
+component-resolved assignments, these possibilities remain aliased.
+
+We study this issue as a measurement and causal-intervention question, not as a
+new adaptive executor. All interventions use frozen trained policies and alter
+only which same-target predictions supply the arm and gripper at execution
+time. Policy checkpoint, observation pipeline, task configuration, and paired
+initial states remain matched across conditions. Same-target validity is
+central: source age and prediction offset change together because both identify
+a prediction for the current physical time. Our estimand is consequently the
+combined closed-loop effect of that temporal relationship for each action
+group, not a pure effect of observation age. This design asks whether the same
+relationship has different behavioral consequences when assigned to different
+components in these controlled paired comparisons. Our primary scope is
+simulation in LIBERO, using the official
+LeRobot ACT implementation~\cite{cadene2024lerobot} with frozen checkpoints,
+relative end-effector control, and no temporal ensemble or action smoothing.
+
+The primary cross-suite factorial provides the clearest evidence for such
+component dependence. FO20 exceeds Reverse20 by $32.1$ percentage points, with
+$48{:}3$ discordant paired blocks and a two-sided exact McNemar
+$p \approx 2\times10^{-11}$. All ten leave-one-task-out effects are positive.
+Yet FO20 exceeds Fresh by only $4.3$ percentage points, and that contrast is not
+statistically significant. The result therefore supports a component-resolved
+measurement claim, not a general recommendation to deploy FO20. A fixed-h16
+executor decomposition provides additional evidence only in the Object
+development setting. We treat that analysis as bounded diagnostic scope rather
+than as a cross-suite executor comparison, and we do not infer a universal
+preference for reactive or committed execution.
+
+This work makes three contributions. First, it defines same-target,
+component-resolved interventions that change execution-time temporal
+relationships without modifying policy weights. Second, it establishes the
+confirmed primary factorial evidence that temporal assignment by action group
+changes behavior across the frozen ACT evaluation. Third, it provides bounded
+executor-decomposition and cross-policy/suite scope evidence, including one
+heterogeneous SmolVLA pilot~\cite{shukor2025smolvla}, without treating that
+pilot as replication across policy classes. Together, these measurements
+support a deliberately narrow thesis: whole-action temporal parameters can
+conceal behaviorally important component structure in action-chunked robot
+policies.
