@@ -116,3 +116,12 @@ At the end of a task, report concisely:
 5. Any unresolved blocker or research-relevant finding.
 
 Do not add ceremony beyond what is useful for the research workflow.
+
+## Current ICRA 2027 paper phase
+
+- ICRA 2027 method development is closed.
+- Working title: `Component-Dependent Temporal Effects in Action-Chunked Robot Policies`.
+- Candidate 1 is the only immediate new experimental condition.
+- Candidate 2 is conditional and is not authorized in this round.
+- Do not add new methods, horizons, delays, task subsets, sweeps, adaptive executors, benchmarks, or rescue experiments.
+- Every experimental round must stop and return an audit packet before the next round is authorized.
