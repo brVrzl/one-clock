@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "fresh_process_pid": 3090745,
+  "smolvla_was_first_and_only_constructed_model": true,
+  "no_failed_construction_attempt_in_process": true,
+  "started_at": 1788314733.6792023,
+  "finished_at": 1788314758.5864632,
+  "row": {
+    "pid": 3090745,
+    "policy": "SmolVLA",
+    "checkpoint": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+    "suite": "libero_object",
+    "task_id": 0,
+    "state_id": 0,
+    "environment_seed": 361000,
+    "chunk_shape": [
+      50,
+      7
+    ],
+    "chunk_size": 50,
+    "n_action_steps": 1,
+    "action_dim": 7,
+    "temporal_ensemble_coeff": null,
+    "first_forward_seconds": 0.7608269830234349,
+    "environment_steps": 0,
+    "outcome_observed": false
+  }
+}
