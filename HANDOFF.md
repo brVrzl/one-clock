@@ -8,13 +8,14 @@ snapshot only; no partial Track-A success outcome was inspected.
 - Worktree: `/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation`
 - Branch: `exp/icra27-crosssuite-query-allocation`
 - Parent HEAD immediately before this handoff commit:
-  `e82e5ccc7979e45b005aab9355e2a3839be85133`; use `git rev-parse HEAD` for the
+  `56ca877afd952ef08fead75afb5125c42fbdbfe7`; use `git rev-parse HEAD` for the
   handoff-inclusive branch tip.
 - Frozen Track-A preregistration: `40549d876c0e09fad4e8033b3206f6018f53ece5`
 - Track-B analysis-addendum commit: `6344960b0cb1164a389eebf2a14927f8fc92cc5f`
 - Frozen B3 forecast implementation/manifest commit: `94657b54591fd1305e8ac888a0c05beb4de2c2cb`
-- Reviewer-supplement preregistration: not created; supplement work is forbidden
-  until Track A completes and its frozen analysis passes integrity checks.
+- Reviewer-supplement final preregistration: not created. A non-launchable
+  documentation draft now exists; it may be sealed only after Track A completes
+  and its frozen analysis passes integrity checks.
 
 ## Track B
 
@@ -33,8 +34,8 @@ snapshot only; no partial Track-A success outcome was inspected.
 
 - Frozen workload: 30 tasks x 15 states x six conditions = 2,700 episodes.
 - Conditions: H16, H4, ARM4_GRIP32, H2, ARM2_GRIP16, TE_DENSE.
-- Snapshot counts: 1,293 complete, 3 running, 1,404 not currently running;
-  equivalently the status tool reports 1,407 not yet complete because running
+- Snapshot counts: 1,478 complete, 3 running, 1,219 not currently running;
+  equivalently the status tool reports 1,222 not yet complete because running
   cells are included in its `pending` counter.
 - Technical failures: 0.
 - Attempt/retry artifacts: 0. Every current cell is on initial attempt 1.
@@ -61,7 +62,8 @@ under `track_a/results/`. The watcher completed successfully and left
 - RoboTwin/Track C is no longer on the ICRA critical path. No SAPIEN/Vulkan
   process is running. Do not start Track C.
 - R1 and R2 are not started and have no preregistration. Do not create or launch
-  them until Track A finishes and the frozen Track-A analysis is complete.
+  a final manifest until Track A finishes and the frozen Track-A analysis is
+  complete. The documentation-only draft does not authorize execution.
 - No adaptive executor, consensus, debounce, RTC/PACE reproduction, horizon
   search, or new condition is authorized.
 
@@ -71,11 +73,14 @@ under `track_a/results/`. The watcher completed successfully and left
 - `ONE_CLOCK_STYLE_GUIDE.md`
 - `RELATED_WORK_FACT_CHECK.md`
 - `PAPER_REVISION_INPUTS.md`
+- `FIGURE_SPEC.md` (specification only; Figure 4 remains outcome-gated)
+- `experiments/icra27_reviewer_supplement/DRAFT_PREREGISTRATION.md`
 - interaction robustness data/report under `interaction_robustness/`
 
-`FIGURE_SPEC.md` remains pending because Figure 4 must be chosen only after the
-complete Track-A and cross-policy results exist. No paper-facing figure artwork
-has been generated. The manuscript and `CLAIMS.md` have not been edited.
+Figure 4's final scientific job remains pending because it must be chosen only
+after the complete Track-A and cross-policy results exist. No paper-facing
+figure artwork has been generated. The manuscript and `CLAIMS.md` have not been
+edited.
 
 ## Exact next commands
 

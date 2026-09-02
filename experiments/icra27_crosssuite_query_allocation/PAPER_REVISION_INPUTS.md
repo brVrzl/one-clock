@@ -132,6 +132,19 @@ post-hoc interaction.
 Sources: `experiments/cross_suite_confirmation/{protocol.json,report.md}` and
 `experiments/icra27_crosssuite_query_allocation/interaction_robustness/`.
 
+### Separate Spatial context
+
+The completed Gate-4A2 Spatial artifact is a separate 100-block/condition panel:
+Spatial tasks 0--9 with states `1,13,15,19,21,24,31,37,40,47`. It used the
+suite-level, multi-suite-trained ACT checkpoint
+`ishandotsh/act_libero_spatial_test` at immutable revision
+`8f04de1472975d62db214238b2fc07e78bde2474`, not the later task-specific bank.
+Fresh and A0G20 each achieved 40/100; A20G20 achieved 30/100. The panel contains
+no A20G0/Reverse20 or coherent-H16 cell and therefore cannot establish a full
+factorial asymmetry or a practical-executor comparison. Its exact missing
+Reverse20 completion is drafted as a post-hoc reviewer supplement and will not
+be pooled into N=140.
+
 ## 4. C2 and moderate-horizon context
 
 On the frozen 140-block cohort, C2 (`H16Arm+FreshGrip`) succeeded on 76/140,
@@ -326,4 +339,3 @@ episodes) under preregistration `40549d8`. The conditions, in frozen within-bloc
 order, are H16, H4, ARM4_GRIP32, H2, ARM2_GRIP16, and canonical TE_DENSE. This
 file contains no partial Track-A success values. It must be updated only after
 all markers exist, the integrity validator passes, and the frozen analysis runs.
-
