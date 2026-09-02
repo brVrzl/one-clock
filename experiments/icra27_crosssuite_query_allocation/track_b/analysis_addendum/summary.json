@@ -1,0 +1,3466 @@
+{
+  "status": "COMPLETE",
+  "analysis_addendum_status": "FROZEN_BEFORE_TRACK_B_PREDICTION_INTERPRETATION",
+  "success_outcomes_loaded": false,
+  "episodes": 80,
+  "normalization": "checkpoint-frozen own-policy normalized action space; no refit",
+  "primary_window": {
+    "source_ages": [
+      0,
+      15
+    ],
+    "physical_target_time_minimum": 15,
+    "candidate_count": 16
+  },
+  "age_curve_reference": "same-target age-0 prediction",
+  "bootstrap": {
+    "unit": "episode",
+    "draws": 20000,
+    "ci_percentiles": [
+      2.5,
+      97.5
+    ]
+  },
+  "dimension_dispersion": {
+    "ACT": {
+      "dim_0": {
+        "episode_count": 40,
+        "mean": 0.12954077976765815,
+        "episode_sd": 0.11865971255561446,
+        "episode_cluster_bootstrap_ci": [
+          0.09766936126424651,
+          0.1697488883565778
+        ]
+      },
+      "dim_1": {
+        "episode_count": 40,
+        "mean": 0.07882383835569748,
+        "episode_sd": 0.08010196646662635,
+        "episode_cluster_bootstrap_ci": [
+          0.05776944367820063,
+          0.10608057319010097
+        ]
+      },
+      "dim_2": {
+        "episode_count": 40,
+        "mean": 0.1400877426749024,
+        "episode_sd": 0.16263026292646973,
+        "episode_cluster_bootstrap_ci": [
+          0.0963138025346514,
+          0.19498540000262787
+        ]
+      },
+      "dim_3": {
+        "episode_count": 40,
+        "mean": 0.12880299845242968,
+        "episode_sd": 0.08968349959156338,
+        "episode_cluster_bootstrap_ci": [
+          0.1039807419924568,
+          0.15873153696107026
+        ]
+      },
+      "dim_4": {
+        "episode_count": 40,
+        "mean": 0.17943488704663654,
+        "episode_sd": 0.19080088355552785,
+        "episode_cluster_bootstrap_ci": [
+          0.12738233189414208,
+          0.2439033203691472
+        ]
+      },
+      "dim_5": {
+        "episode_count": 40,
+        "mean": 0.08356364358083011,
+        "episode_sd": 0.08424394798347887,
+        "episode_cluster_bootstrap_ci": [
+          0.06033252515636706,
+          0.11173492151732278
+        ]
+      },
+      "dim_6": {
+        "episode_count": 40,
+        "mean": 0.07900910534691157,
+        "episode_sd": 0.10404078126995116,
+        "episode_cluster_bootstrap_ci": [
+          0.05040243317833124,
+          0.11309101378808468
+        ]
+      },
+      "translation": {
+        "episode_count": 40,
+        "mean": 0.13640847443821386,
+        "episode_sd": 0.11991870326414002,
+        "episode_cluster_bootstrap_ci": [
+          0.10356399426249166,
+          0.1764546996789749
+        ]
+      },
+      "rotation": {
+        "episode_count": 40,
+        "mean": 0.1484190796822671,
+        "episode_sd": 0.13009007167402997,
+        "episode_cluster_bootstrap_ci": [
+          0.11296294239424733,
+          0.19277497616086572
+        ]
+      },
+      "gripper": {
+        "episode_count": 40,
+        "mean": 0.07900910534691157,
+        "episode_sd": 0.10404078126995116,
+        "episode_cluster_bootstrap_ci": [
+          0.050081963229411657,
+          0.11294340131084363
+        ]
+      },
+      "arm_original": {
+        "episode_count": 40,
+        "mean": 0.1464245777107589,
+        "episode_sd": 0.12478536523306234,
+        "episode_cluster_bootstrap_ci": [
+          0.11216131413586339,
+          0.18872013966437598
+        ]
+      }
+    },
+    "SmolVLA": {
+      "dim_0": {
+        "episode_count": 40,
+        "mean": 0.3500854915035557,
+        "episode_sd": 0.15923744030747755,
+        "episode_cluster_bootstrap_ci": [
+          0.30520788535179866,
+          0.40336937471298995
+        ]
+      },
+      "dim_1": {
+        "episode_count": 40,
+        "mean": 0.22744830176718364,
+        "episode_sd": 0.06329170676120648,
+        "episode_cluster_bootstrap_ci": [
+          0.2094018447703745,
+          0.2480113415960828
+        ]
+      },
+      "dim_2": {
+        "episode_count": 40,
+        "mean": 0.3137161870377311,
+        "episode_sd": 0.13380206400560024,
+        "episode_cluster_bootstrap_ci": [
+          0.2776208778660743,
+          0.3590467896338237
+        ]
+      },
+      "dim_3": {
+        "episode_count": 40,
+        "mean": 0.48331202869668566,
+        "episode_sd": 0.13579780496304175,
+        "episode_cluster_bootstrap_ci": [
+          0.44314640675318917,
+          0.5246436556052076
+        ]
+      },
+      "dim_4": {
+        "episode_count": 40,
+        "mean": 0.5381196634223825,
+        "episode_sd": 0.1178876568586164,
+        "episode_cluster_bootstrap_ci": [
+          0.5028841963456194,
+          0.5761991830806493
+        ]
+      },
+      "dim_5": {
+        "episode_count": 40,
+        "mean": 0.2967506305546778,
+        "episode_sd": 0.09690016682298647,
+        "episode_cluster_bootstrap_ci": [
+          0.26945113591925846,
+          0.32846241160378786
+        ]
+      },
+      "dim_6": {
+        "episode_count": 40,
+        "mean": 0.17328657585605475,
+        "episode_sd": 0.13912257263432404,
+        "episode_cluster_bootstrap_ci": [
+          0.13565211000556476,
+          0.22036467926108066
+        ]
+      },
+      "translation": {
+        "episode_count": 40,
+        "mean": 0.3157149448797415,
+        "episode_sd": 0.11507392755426538,
+        "episode_cluster_bootstrap_ci": [
+          0.28429941761177574,
+          0.3548976696723887
+        ]
+      },
+      "rotation": {
+        "episode_count": 40,
+        "mean": 0.46443415805278987,
+        "episode_sd": 0.11084823235448546,
+        "episode_cluster_bootstrap_ci": [
+          0.43155337590398624,
+          0.49927495289031665
+        ]
+      },
+      "gripper": {
+        "episode_count": 40,
+        "mean": 0.17328657585605475,
+        "episode_sd": 0.13912257263432404,
+        "episode_cluster_bootstrap_ci": [
+          0.13603127128667752,
+          0.220403862882322
+        ]
+      },
+      "arm_original": {
+        "episode_count": 40,
+        "mean": 0.4019640286836175,
+        "episode_sd": 0.10932085403514465,
+        "episode_cluster_bootstrap_ci": [
+          0.3709209942957934,
+          0.4383381450030434
+        ]
+      }
+    }
+  },
+  "age_disagreement": {
+    "ACT": {
+      "0": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.08486657967474834,
+          "episode_sd": 0.06402692487974838,
+          "episode_cluster_bootstrap_ci": [
+            0.06775220069813626,
+            0.10637611736331597
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.04135654055876788,
+          "episode_sd": 0.018004194801761627,
+          "episode_cluster_bootstrap_ci": [
+            0.0362084626378415,
+            0.04721213024307554
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.09862795014027408,
+          "episode_sd": 0.06880360382964876,
+          "episode_cluster_bootstrap_ci": [
+            0.08037150353845068,
+            0.12142697583458094
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.09593931263619188,
+          "episode_sd": 0.057851738333579504,
+          "episode_cluster_bootstrap_ci": [
+            0.08069635044055609,
+            0.11530623701711949
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.10684150441220394,
+          "episode_sd": 0.06897756250270004,
+          "episode_cluster_bootstrap_ci": [
+            0.08878564004298684,
+            0.13001498045329068
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.0514264771658451,
+          "episode_sd": 0.03823570299741101,
+          "episode_cluster_bootstrap_ci": [
+            0.04092449790522589,
+            0.0640098758260227
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.13730293527790657,
+          "episode_sd": 0.10893690217722422,
+          "episode_cluster_bootstrap_ci": [
+            0.10588558539081432,
+            0.17235892852232554
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.08071345249069253,
+          "episode_sd": 0.052378581750493335,
+          "episode_cluster_bootstrap_ci": [
+            0.06704394389344169,
+            0.0981779462601022
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.08952715496942643,
+          "episode_sd": 0.05405390225029403,
+          "episode_cluster_bootstrap_ci": [
+            0.07545324878964614,
+            0.10792456625220069
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.13730293527790657,
+          "episode_sd": 0.10893690217722422,
+          "episode_cluster_bootstrap_ci": [
+            0.10595075252888417,
+            0.17255465805835085
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.08585824895096646,
+          "episode_sd": 0.05218410080270904,
+          "episode_cluster_bootstrap_ci": [
+            0.0724779083890252,
+            0.1038011023636089
+          ]
+        }
+      },
+      "2": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.14171468220020297,
+          "episode_sd": 0.1330382664471725,
+          "episode_cluster_bootstrap_ci": [
+            0.10664953542036947,
+            0.18681411958484906
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.06252839327196565,
+          "episode_sd": 0.03063732400482105,
+          "episode_cluster_bootstrap_ci": [
+            0.053788086474363804,
+            0.07245324978017299
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.16127564686987622,
+          "episode_sd": 0.13418181896574694,
+          "episode_cluster_bootstrap_ci": [
+            0.125805013188194,
+            0.2064002933016889
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.15075703658897727,
+          "episode_sd": 0.10848734971958417,
+          "episode_cluster_bootstrap_ci": [
+            0.12215799330228871,
+            0.1879209929029555
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.17505902967941872,
+          "episode_sd": 0.14232320116390476,
+          "episode_cluster_bootstrap_ci": [
+            0.13822984097138333,
+            0.22398733626605688
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.08414200302734265,
+          "episode_sd": 0.07578541951600803,
+          "episode_cluster_bootstrap_ci": [
+            0.06387186715764415,
+            0.10960630021203671
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.1925603272684051,
+          "episode_sd": 0.1465815103628281,
+          "episode_cluster_bootstrap_ci": [
+            0.15002273747215292,
+            0.23928486532563348
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.1324773575029321,
+          "episode_sd": 0.10634318976348578,
+          "episode_cluster_bootstrap_ci": [
+            0.10507828134952661,
+            0.16853626746129172
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.14446591608067316,
+          "episode_sd": 0.10886615264916796,
+          "episode_cluster_bootstrap_ci": [
+            0.11647109409855273,
+            0.18186731516877302
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.1925603272684051,
+          "episode_sd": 0.1465815103628281,
+          "episode_cluster_bootstrap_ci": [
+            0.14980712568604687,
+            0.2391785285687402
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.13968778932357856,
+          "episode_sd": 0.10616143864944293,
+          "episode_cluster_bootstrap_ci": [
+            0.11234745983221855,
+            0.17615260640578131
+          ]
+        }
+      },
+      "3": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.18808449299386387,
+          "episode_sd": 0.18411125168190692,
+          "episode_cluster_bootstrap_ci": [
+            0.1404208386213218,
+            0.2515176861238433
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.0813682534648678,
+          "episode_sd": 0.040308872814659724,
+          "episode_cluster_bootstrap_ci": [
+            0.06975523463188908,
+            0.0942982257723638
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.21472385091730356,
+          "episode_sd": 0.18463991599261656,
+          "episode_cluster_bootstrap_ci": [
+            0.16641425664472034,
+            0.2786772496160997
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.1929446568386168,
+          "episode_sd": 0.13627799380349478,
+          "episode_cluster_bootstrap_ci": [
+            0.1568311018529458,
+            0.23960790319836722
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.23557162604495363,
+          "episode_sd": 0.20399521255138975,
+          "episode_cluster_bootstrap_ci": [
+            0.1827548554273574,
+            0.3054856265608041
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.10963026786810878,
+          "episode_sd": 0.104915309378068,
+          "episode_cluster_bootstrap_ci": [
+            0.08123158111014935,
+            0.1455333824979545
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.23690130337764756,
+          "episode_sd": 0.16534635742202755,
+          "episode_cluster_bootstrap_ci": [
+            0.18854616646910827,
+            0.2888229761011533
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.17598002242069039,
+          "episode_sd": 0.14684058666804975,
+          "episode_cluster_bootstrap_ci": [
+            0.13765364841893885,
+            0.22633120866608278
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.1901014730640105,
+          "episode_sd": 0.14991490864939067,
+          "episode_cluster_bootstrap_ci": [
+            0.15102253110272057,
+            0.2421351880053247
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.23690130337764756,
+          "episode_sd": 0.16534635742202755,
+          "episode_cluster_bootstrap_ci": [
+            0.18859987180378782,
+            0.290058525122825
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.18459222826131189,
+          "episode_sd": 0.14657575037922432,
+          "episode_cluster_bootstrap_ci": [
+            0.14671714183684598,
+            0.23456607591821318
+          ]
+        }
+      },
+      "4": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.2252104896936864,
+          "episode_sd": 0.22887502011028388,
+          "episode_cluster_bootstrap_ci": [
+            0.16517031579061806,
+            0.30204833304081236
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.09966339891090326,
+          "episode_sd": 0.04952063785064245,
+          "episode_cluster_bootstrap_ci": [
+            0.08548447210475676,
+            0.11572689794151318
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.2549678430697869,
+          "episode_sd": 0.23448313416213076,
+          "episode_cluster_bootstrap_ci": [
+            0.19384363348650668,
+            0.3348784970375225
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.22284765786832644,
+          "episode_sd": 0.15374741956535698,
+          "episode_cluster_bootstrap_ci": [
+            0.1815602268770902,
+            0.27490968147537087
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.2884795392578121,
+          "episode_sd": 0.27513931633180017,
+          "episode_cluster_bootstrap_ci": [
+            0.21610417561618428,
+            0.3839401042641338
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.13227956624203224,
+          "episode_sd": 0.13345500298189472,
+          "episode_cluster_bootstrap_ci": [
+            0.09662284337596533,
+            0.17793389686185812
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.2675202368310515,
+          "episode_sd": 0.19128967894785678,
+          "episode_cluster_bootstrap_ci": [
+            0.211637425908087,
+            0.32765814928638703
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.21050022118017225,
+          "episode_sd": 0.18471792105003218,
+          "episode_cluster_bootstrap_ci": [
+            0.16266208729817308,
+            0.27479888654350704
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.2279618993902563,
+          "episode_sd": 0.1927763156992934,
+          "episode_cluster_bootstrap_ci": [
+            0.1775119316748495,
+            0.2941559600670689
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.2675202368310515,
+          "episode_sd": 0.19128967894785678,
+          "episode_cluster_bootstrap_ci": [
+            0.21128375813511857,
+            0.32789268259477944
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.22135942134025166,
+          "episode_sd": 0.18643527323028738,
+          "episode_cluster_bootstrap_ci": [
+            0.17312682031351848,
+            0.284993849383028
+          ]
+        }
+      },
+      "5": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.25084180521312105,
+          "episode_sd": 0.25874043837783806,
+          "episode_cluster_bootstrap_ci": [
+            0.18298887877595077,
+            0.33814345788004385
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.11462855189885994,
+          "episode_sd": 0.057999447418198166,
+          "episode_cluster_bootstrap_ci": [
+            0.09807967429903462,
+            0.1328469116867311
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.28618037394769996,
+          "episode_sd": 0.2794347573246717,
+          "episode_cluster_bootstrap_ci": [
+            0.2124794986049582,
+            0.38190829547120786
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.24587546383059813,
+          "episode_sd": 0.16048924944815363,
+          "episode_cluster_bootstrap_ci": [
+            0.20208045947199219,
+            0.29948871286605183
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.3364897898936504,
+          "episode_sd": 0.3399024364032034,
+          "episode_cluster_bootstrap_ci": [
+            0.2468532287885633,
+            0.45210594728821074
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.15063995458622131,
+          "episode_sd": 0.15274928446752703,
+          "episode_cluster_bootstrap_ci": [
+            0.11044042048289716,
+            0.20252032477476828
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.28813131348403004,
+          "episode_sd": 0.2005448928975469,
+          "episode_cluster_bootstrap_ci": [
+            0.23039256550307063,
+            0.3515963555747533
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2365582821757152,
+          "episode_sd": 0.21464782175055128,
+          "episode_cluster_bootstrap_ci": [
+            0.17997856021716455,
+            0.30921544088854863
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.2608118877579832,
+          "episode_sd": 0.22856762083026055,
+          "episode_cluster_bootstrap_ci": [
+            0.20179407811162317,
+            0.3392212002931035
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.28813131348403004,
+          "episode_sd": 0.2005448928975469,
+          "episode_cluster_bootstrap_ci": [
+            0.22973170710143187,
+            0.3511038778471121
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.2514221426319935,
+          "episode_sd": 0.21887286745188325,
+          "episode_cluster_bootstrap_ci": [
+            0.19441018059045084,
+            0.326376839583019
+          ]
+        }
+      },
+      "6": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.2747025663721324,
+          "episode_sd": 0.28051333544535634,
+          "episode_cluster_bootstrap_ci": [
+            0.20089548927065412,
+            0.3696358276654908
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.12824727893164084,
+          "episode_sd": 0.069056725863774,
+          "episode_cluster_bootstrap_ci": [
+            0.10853331936700275,
+            0.1504434945678429
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.31022060746694147,
+          "episode_sd": 0.3139229562069098,
+          "episode_cluster_bootstrap_ci": [
+            0.22810044500465448,
+            0.4167177931115935
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.2658799995357855,
+          "episode_sd": 0.16894818589940364,
+          "episode_cluster_bootstrap_ci": [
+            0.2184766604979141,
+            0.32183433414734036
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.3742676709449054,
+          "episode_sd": 0.39231924039053556,
+          "episode_cluster_bootstrap_ci": [
+            0.2715996707021205,
+            0.5055208428243081
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.16679913156801385,
+          "episode_sd": 0.1688050086202632,
+          "episode_cluster_bootstrap_ci": [
+            0.12158733136070492,
+            0.22414022244652096
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.30367363994554736,
+          "episode_sd": 0.22289441716216268,
+          "episode_cluster_bootstrap_ci": [
+            0.23840104494955947,
+            0.37474015769999597
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2589644366257383,
+          "episode_sd": 0.23708488296739122,
+          "episode_cluster_bootstrap_ci": [
+            0.19610763903562242,
+            0.3406336221113298
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.288210199383747,
+          "episode_sd": 0.2582480345772343,
+          "episode_cluster_bootstrap_ci": [
+            0.2204309494017003,
+            0.375422394319954
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.30367363994554736,
+          "episode_sd": 0.22289441716216268,
+          "episode_cluster_bootstrap_ci": [
+            0.23863618354263125,
+            0.3750707102265215
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.2769197469672699,
+          "episode_sd": 0.24451664807478585,
+          "episode_cluster_bootstrap_ci": [
+            0.21198721620584188,
+            0.35888613792326435
+          ]
+        }
+      },
+      "7": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.2900118810679155,
+          "episode_sd": 0.28920082098095096,
+          "episode_cluster_bootstrap_ci": [
+            0.2132537458940269,
+            0.38855549915570087
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.1423008165055542,
+          "episode_sd": 0.08201287471449893,
+          "episode_cluster_bootstrap_ci": [
+            0.11909922853385745,
+            0.16891914477824627
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.32961020976342165,
+          "episode_sd": 0.34088529411468144,
+          "episode_cluster_bootstrap_ci": [
+            0.23983287605729126,
+            0.44456787832367733
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.28534162887211534,
+          "episode_sd": 0.17707018552469742,
+          "episode_cluster_bootstrap_ci": [
+            0.23630732910988925,
+            0.34362001128614544
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4039365639172896,
+          "episode_sd": 0.43572697191462945,
+          "episode_cluster_bootstrap_ci": [
+            0.28992270218403204,
+            0.5540042107843278
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.18174944409280833,
+          "episode_sd": 0.17786374820081205,
+          "episode_cluster_bootstrap_ci": [
+            0.13359902679108285,
+            0.24218728300658976
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.31086447694679353,
+          "episode_sd": 0.2254818456061166,
+          "episode_cluster_bootstrap_ci": [
+            0.24616805119178709,
+            0.38271109529974207
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2762099213428211,
+          "episode_sd": 0.2518481444082814,
+          "episode_cluster_bootstrap_ci": [
+            0.209864640827866,
+            0.3624253486098515
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.3120394520912747,
+          "episode_sd": 0.2816543119248652,
+          "episode_cluster_bootstrap_ci": [
+            0.23786293883080267,
+            0.4072400348877726
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.31086447694679353,
+          "episode_sd": 0.2254818456061166,
+          "episode_cluster_bootstrap_ci": [
+            0.2451282669612637,
+            0.3832830537276739
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.29790192034416335,
+          "episode_sd": 0.2634652269238985,
+          "episode_cluster_bootstrap_ci": [
+            0.22815211878821468,
+            0.3884224046850163
+          ]
+        }
+      },
+      "8": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.3034665807427979,
+          "episode_sd": 0.29415937682735727,
+          "episode_cluster_bootstrap_ci": [
+            0.22472518920696055,
+            0.40343981468829726
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.1528549223980274,
+          "episode_sd": 0.09117804915194642,
+          "episode_cluster_bootstrap_ci": [
+            0.12633194185113442,
+            0.18232835015961552
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.3431201368533348,
+          "episode_sd": 0.36463268568894885,
+          "episode_cluster_bootstrap_ci": [
+            0.24564160734106488,
+            0.4697657407939952
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.2981808345125227,
+          "episode_sd": 0.1835670420837354,
+          "episode_cluster_bootstrap_ci": [
+            0.24660888172915713,
+            0.3592634489620979
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4261290010492802,
+          "episode_sd": 0.4686892343354381,
+          "episode_cluster_bootstrap_ci": [
+            0.3046344622096356,
+            0.5862708696635544
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.19163824003703603,
+          "episode_sd": 0.18474870036667593,
+          "episode_cluster_bootstrap_ci": [
+            0.14060877781798947,
+            0.2526470178784074
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.315688767304463,
+          "episode_sd": 0.2305938530978264,
+          "episode_cluster_bootstrap_ci": [
+            0.2485753897785074,
+            0.38835731631543224
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.29043677010791136,
+          "episode_sd": 0.2629436492028344,
+          "episode_cluster_bootstrap_ci": [
+            0.21979111907776888,
+            0.38036952471103935
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.32913297243607204,
+          "episode_sd": 0.2996000103470134,
+          "episode_cluster_bootstrap_ci": [
+            0.24974794104978032,
+            0.43010136261666887
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.315688767304463,
+          "episode_sd": 0.2305938530978264,
+          "episode_cluster_bootstrap_ci": [
+            0.24973119660432316,
+            0.38906686925074224
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.3139963584950761,
+          "episode_sd": 0.27773963579048977,
+          "episode_cluster_bootstrap_ci": [
+            0.24016984253272414,
+            0.4093655706291068
+          ]
+        }
+      },
+      "9": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.3182846600955437,
+          "episode_sd": 0.30096828078425714,
+          "episode_cluster_bootstrap_ci": [
+            0.2373416577269009,
+            0.41947423769349
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.16597998281470955,
+          "episode_sd": 0.1082008119300555,
+          "episode_cluster_bootstrap_ci": [
+            0.13537911051744514,
+            0.2009381449070189
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.3590627277306825,
+          "episode_sd": 0.38520497560311207,
+          "episode_cluster_bootstrap_ci": [
+            0.2574691018458679,
+            0.4919034874160181
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.31319941374082416,
+          "episode_sd": 0.19109524184578505,
+          "episode_cluster_bootstrap_ci": [
+            0.25872934644988277,
+            0.3762398624654392
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4467894631319648,
+          "episode_sd": 0.49887192529048036,
+          "episode_cluster_bootstrap_ci": [
+            0.31562239966914174,
+            0.6180554356821741
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.2038974133270158,
+          "episode_sd": 0.19318806988377735,
+          "episode_cluster_bootstrap_ci": [
+            0.14998590572196852,
+            0.26763869689542336
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.3297034621844427,
+          "episode_sd": 0.2328047143842752,
+          "episode_cluster_bootstrap_ci": [
+            0.26223303042520096,
+            0.4042043815918283
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.30664089882318185,
+          "episode_sd": 0.27431343330330316,
+          "episode_cluster_bootstrap_ci": [
+            0.23337456651724925,
+            0.3986818376291019
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.34711904925218956,
+          "episode_sd": 0.31620525811648303,
+          "episode_cluster_bootstrap_ci": [
+            0.26340202821700137,
+            0.45411288013030315
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.3297034621844427,
+          "episode_sd": 0.2328047143842752,
+          "episode_cluster_bootstrap_ci": [
+            0.2610663944017983,
+            0.4039607897299834
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.3313167830710908,
+          "episode_sd": 0.2916192090530871,
+          "episode_cluster_bootstrap_ci": [
+            0.2529401476374041,
+            0.4307266646422354
+          ]
+        }
+      },
+      "10": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.3287808481357776,
+          "episode_sd": 0.301455402821518,
+          "episode_cluster_bootstrap_ci": [
+            0.2467762443237687,
+            0.4316356185621638
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.17502153919775315,
+          "episode_sd": 0.11429819869887162,
+          "episode_cluster_bootstrap_ci": [
+            0.1423229876086411,
+            0.2127482340511998
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.37245469175904145,
+          "episode_sd": 0.40118282235739156,
+          "episode_cluster_bootstrap_ci": [
+            0.2648623960761897,
+            0.505637489158869
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.32479581389813816,
+          "episode_sd": 0.19837153749003092,
+          "episode_cluster_bootstrap_ci": [
+            0.2673753102861682,
+            0.391733513285013
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4637261807819881,
+          "episode_sd": 0.5156655398529576,
+          "episode_cluster_bootstrap_ci": [
+            0.3271405590278496,
+            0.6425905384810011
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.20997871440082,
+          "episode_sd": 0.19451448617148048,
+          "episode_cluster_bootstrap_ci": [
+            0.155914232662416,
+            0.272794506845447
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.33998201555953605,
+          "episode_sd": 0.23786486149231573,
+          "episode_cluster_bootstrap_ci": [
+            0.2696732898703442,
+            0.4155827399858532
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.318414564793352,
+          "episode_sd": 0.2813601246045789,
+          "episode_cluster_bootstrap_ci": [
+            0.2431982151910544,
+            0.41282752845926773
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.36082668803977713,
+          "episode_sd": 0.32479226983501625,
+          "episode_cluster_bootstrap_ci": [
+            0.2740600975168075,
+            0.47236213602894633
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.33998201555953605,
+          "episode_sd": 0.23786486149231573,
+          "episode_cluster_bootstrap_ci": [
+            0.2698021360321643,
+            0.41542710803843574
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.34415653815044356,
+          "episode_sd": 0.299344144779141,
+          "episode_cluster_bootstrap_ci": [
+            0.26319417885987295,
+            0.4450494521028728
+          ]
+        }
+      },
+      "11": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.33569033725193476,
+          "episode_sd": 0.2979749957011436,
+          "episode_cluster_bootstrap_ci": [
+            0.2551497128715501,
+            0.43503072567844997
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.19117410299889176,
+          "episode_sd": 0.1399638018428516,
+          "episode_cluster_bootstrap_ci": [
+            0.15080205708035707,
+            0.2369691096907292
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.3810659904929018,
+          "episode_sd": 0.4079364444952193,
+          "episode_cluster_bootstrap_ci": [
+            0.2706054747723268,
+            0.5203367464188702
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.3353380489246909,
+          "episode_sd": 0.20509247072572112,
+          "episode_cluster_bootstrap_ci": [
+            0.2777169487929286,
+            0.40218011093137507
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.46674710979123174,
+          "episode_sd": 0.5201816501090417,
+          "episode_cluster_bootstrap_ci": [
+            0.32886660880847884,
+            0.6453507084976654
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.21057030960361037,
+          "episode_sd": 0.1971899426346672,
+          "episode_cluster_bootstrap_ci": [
+            0.15640751678799902,
+            0.27490179358575983
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.35885777432567434,
+          "episode_sd": 0.24433427038149508,
+          "episode_cluster_bootstrap_ci": [
+            0.28695784413581404,
+            0.4365035735489461
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.33088165989127527,
+          "episode_sd": 0.2827944436075424,
+          "episode_cluster_bootstrap_ci": [
+            0.2544911998022694,
+            0.426579987303824
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.36720552338245327,
+          "episode_sd": 0.32705470838798417,
+          "episode_cluster_bootstrap_ci": [
+            0.27876888661277555,
+            0.4774185064651387
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.35885777432567434,
+          "episode_sd": 0.24433427038149508,
+          "episode_cluster_bootstrap_ci": [
+            0.28645100184905375,
+            0.4363810480959991
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.35277300616594953,
+          "episode_sd": 0.3018651627329255,
+          "episode_cluster_bootstrap_ci": [
+            0.26980123640411063,
+            0.4532353860518368
+          ]
+        }
+      },
+      "12": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.3434430803802014,
+          "episode_sd": 0.29589670251772726,
+          "episode_cluster_bootstrap_ci": [
+            0.26281775795755086,
+            0.4436506835729965
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.2124166505813856,
+          "episode_sd": 0.19001203883057013,
+          "episode_cluster_bootstrap_ci": [
+            0.1603551402914376,
+            0.27710604967079355
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.3951804533560357,
+          "episode_sd": 0.4179285897648341,
+          "episode_cluster_bootstrap_ci": [
+            0.2829604816692348,
+            0.5384488774936853
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.34696574411234177,
+          "episode_sd": 0.21162103887398004,
+          "episode_cluster_bootstrap_ci": [
+            0.2865627264768352,
+            0.4146577973088915
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4768511459132264,
+          "episode_sd": 0.5281472909826103,
+          "episode_cluster_bootstrap_ci": [
+            0.33667846371517895,
+            0.6575958777478508
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.21225254248803455,
+          "episode_sd": 0.20141234940213792,
+          "episode_cluster_bootstrap_ci": [
+            0.15738551272640816,
+            0.2798491058792759
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.36725379701700384,
+          "episode_sd": 0.2526611542971575,
+          "episode_cluster_bootstrap_ci": [
+            0.29303188351692283,
+            0.4475846692077576
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.3486362649102896,
+          "episode_sd": 0.28968918451455844,
+          "episode_cluster_bootstrap_ci": [
+            0.2695438673734707,
+            0.44503717357157063
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.3773374644629517,
+          "episode_sd": 0.33120108233335316,
+          "episode_cluster_bootstrap_ci": [
+            0.2883504964461842,
+            0.48690932988074526
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.36725379701700384,
+          "episode_sd": 0.2526611542971575,
+          "episode_cluster_bootstrap_ci": [
+            0.2938810885871369,
+            0.44857773226371966
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.3665532446138477,
+          "episode_sd": 0.3071639302354192,
+          "episode_cluster_bootstrap_ci": [
+            0.28176529137226686,
+            0.4698405181184707
+          ]
+        }
+      },
+      "13": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.35218769710611175,
+          "episode_sd": 0.2889591900187457,
+          "episode_cluster_bootstrap_ci": [
+            0.2721358201389369,
+            0.4470575482832848
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.22664955975949974,
+          "episode_sd": 0.224629286939362,
+          "episode_cluster_bootstrap_ci": [
+            0.1663852507021551,
+            0.3032751399018065
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.4044767655687436,
+          "episode_sd": 0.4170659706263344,
+          "episode_cluster_bootstrap_ci": [
+            0.29117004539382413,
+            0.5468130011674075
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.35738353780673526,
+          "episode_sd": 0.21875797379413145,
+          "episode_cluster_bootstrap_ci": [
+            0.29522226813655983,
+            0.4285299583028167
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4841795012944569,
+          "episode_sd": 0.5228922125966018,
+          "episode_cluster_bootstrap_ci": [
+            0.3450191869418301,
+            0.6615973289121251
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.2155708843834861,
+          "episode_sd": 0.20123250441173046,
+          "episode_cluster_bootstrap_ci": [
+            0.1611589217471961,
+            0.28201501528521933
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.37243675985651153,
+          "episode_sd": 0.26461516266744595,
+          "episode_cluster_bootstrap_ci": [
+            0.29450310487495696,
+            0.45853992500190954
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.36080063018972697,
+          "episode_sd": 0.29157903541302566,
+          "episode_cluster_bootstrap_ci": [
+            0.2793218086499828,
+            0.45835541202317087
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.3852808063303369,
+          "episode_sd": 0.32869666558865107,
+          "episode_cluster_bootstrap_ci": [
+            0.2965332100751455,
+            0.4935645184589137
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.37243675985651153,
+          "episode_sd": 0.26461516266744595,
+          "episode_cluster_bootstrap_ci": [
+            0.2941331529141714,
+            0.45646026805184176
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.37689487481935685,
+          "episode_sd": 0.30613574767313734,
+          "episode_cluster_bootstrap_ci": [
+            0.2917137187181145,
+            0.4769938888552745
+          ]
+        }
+      },
+      "14": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.36631206262015253,
+          "episode_sd": 0.28730952408067684,
+          "episode_cluster_bootstrap_ci": [
+            0.2866623295129309,
+            0.4626045072563237
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.23941209958619938,
+          "episode_sd": 0.2563560462481274,
+          "episode_cluster_bootstrap_ci": [
+            0.17141549613737395,
+            0.3260686683324413
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.41716740565785637,
+          "episode_sd": 0.41631847015692325,
+          "episode_cluster_bootstrap_ci": [
+            0.30506982628571055,
+            0.5565715497774121
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.3702433281715051,
+          "episode_sd": 0.22195341510946873,
+          "episode_cluster_bootstrap_ci": [
+            0.30646973655729626,
+            0.44289709535557775
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.49051143439212164,
+          "episode_sd": 0.514666152171789,
+          "episode_cluster_bootstrap_ci": [
+            0.3531930741881137,
+            0.6657507138389361
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.22260523666186155,
+          "episode_sd": 0.19913341930780712,
+          "episode_cluster_bootstrap_ci": [
+            0.1677707399658518,
+            0.28928798775508463
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.37654111785415206,
+          "episode_sd": 0.2707363790569767,
+          "episode_cluster_bootstrap_ci": [
+            0.29718966378891015,
+            0.4622366093252812
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.3754626603032364,
+          "episode_sd": 0.29593328797439933,
+          "episode_cluster_bootstrap_ci": [
+            0.29192693259225905,
+            0.4731242829188909
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.39446300560776515,
+          "episode_sd": 0.32311793542015443,
+          "episode_cluster_bootstrap_ci": [
+            0.3061641490714102,
+            0.5039332450445556
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.37654111785415206,
+          "episode_sd": 0.2707363790569767,
+          "episode_cluster_bootstrap_ci": [
+            0.2976395510193722,
+            0.4619044443464377
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.3891822712032663,
+          "episode_sd": 0.3045212804493633,
+          "episode_cluster_bootstrap_ci": [
+            0.30521487921040513,
+            0.4897170522204486
+          ]
+        }
+      },
+      "15": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.37683515162426007,
+          "episode_sd": 0.28804546215106974,
+          "episode_cluster_bootstrap_ci": [
+            0.2977258947409757,
+            0.47160626734642347
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.24985199164323646,
+          "episode_sd": 0.28036852626387276,
+          "episode_cluster_bootstrap_ci": [
+            0.1756137518539194,
+            0.3458105001100873
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.4278202402524351,
+          "episode_sd": 0.41078734953561985,
+          "episode_cluster_bootstrap_ci": [
+            0.3157481433862575,
+            0.5668685944613806
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.37670129574237166,
+          "episode_sd": 0.21535182012969525,
+          "episode_cluster_bootstrap_ci": [
+            0.3139786566345001,
+            0.4471599661805699
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.4927225827588181,
+          "episode_sd": 0.4977175820511479,
+          "episode_cluster_bootstrap_ci": [
+            0.36020305986539,
+            0.6612196641169694
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.22694036046506047,
+          "episode_sd": 0.19472270710936662,
+          "episode_cluster_bootstrap_ci": [
+            0.1728212778958237,
+            0.29257279907708694
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.3780901603112608,
+          "episode_sd": 0.2658602181022437,
+          "episode_cluster_bootstrap_ci": [
+            0.3004359774383313,
+            0.46202623853988567
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.38674348274638987,
+          "episode_sd": 0.2986088626226435,
+          "episode_cluster_bootstrap_ci": [
+            0.3020305543857658,
+            0.484551808165632
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.39847673325620514,
+          "episode_sd": 0.311349938314347,
+          "episode_cluster_bootstrap_ci": [
+            0.31287317488015015,
+            0.5012013036694324
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.3780901603112608,
+          "episode_sd": 0.2658602181022437,
+          "episode_cluster_bootstrap_ci": [
+            0.30032068733912953,
+            0.4640651851507128
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.3971748098493115,
+          "episode_sd": 0.29898285281221815,
+          "episode_cluster_bootstrap_ci": [
+            0.31382906543520445,
+            0.4964828866400597
+          ]
+        }
+      }
+    },
+    "SmolVLA": {
+      "0": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5946977082426319,
+          "episode_sd": 0.25360057630997385,
+          "episode_cluster_bootstrap_ci": [
+            0.5240353627176263,
+            0.678263032674503
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.39382877465754246,
+          "episode_sd": 0.10755224841530463,
+          "episode_cluster_bootstrap_ci": [
+            0.36284043799703125,
+            0.4284065489978696
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5468995345328261,
+          "episode_sd": 0.20578357661120666,
+          "episode_cluster_bootstrap_ci": [
+            0.489925792142267,
+            0.6163761219224853
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9229400654873888,
+          "episode_sd": 0.23942569860510965,
+          "episode_cluster_bootstrap_ci": [
+            0.8509774528713252,
+            0.9970978815034384
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9708149147874281,
+          "episode_sd": 0.219219270757676,
+          "episode_cluster_bootstrap_ci": [
+            0.9067029640200064,
+            1.0396739313229277
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5398973010409388,
+          "episode_sd": 0.16085678941732642,
+          "episode_cluster_bootstrap_ci": [
+            0.49388026497149656,
+            0.5913461932763397
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.4683520093490433,
+          "episode_sd": 0.20294509734815522,
+          "episode_cluster_bootstrap_ci": [
+            0.40924881171255356,
+            0.534546414784551
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5266941856329153,
+          "episode_sd": 0.17630315930735285,
+          "episode_cluster_bootstrap_ci": [
+            0.477703446127833,
+            0.5852769255480663
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8391957937264598,
+          "episode_sd": 0.18583658138121092,
+          "episode_cluster_bootstrap_ci": [
+            0.7825236047626329,
+            0.8961937505770978
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4683520093490433,
+          "episode_sd": 0.20294509734815522,
+          "episode_cluster_bootstrap_ci": [
+            0.40983102102509644,
+            0.5333095977685963
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7024763787956549,
+          "episode_sd": 0.17348288594107944,
+          "episode_cluster_bootstrap_ci": [
+            0.6518542362339367,
+            0.7579358672985217
+          ]
+        }
+      },
+      "2": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5849820214490222,
+          "episode_sd": 0.24881813859761434,
+          "episode_cluster_bootstrap_ci": [
+            0.5145795922230085,
+            0.6681842455694426
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.382811129521451,
+          "episode_sd": 0.10469622307996988,
+          "episode_cluster_bootstrap_ci": [
+            0.35271237364588753,
+            0.41573688977441237
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5386996570101859,
+          "episode_sd": 0.20534869713664228,
+          "episode_cluster_bootstrap_ci": [
+            0.48275982009215396,
+            0.6081955102410831
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8756389745106464,
+          "episode_sd": 0.21391905786052248,
+          "episode_cluster_bootstrap_ci": [
+            0.8097187401939522,
+            0.9392460579077092
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9490471906376985,
+          "episode_sd": 0.223745678418078,
+          "episode_cluster_bootstrap_ci": [
+            0.8838764525920992,
+            1.0203014098912095
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5180955056321168,
+          "episode_sd": 0.1490499093978819,
+          "episode_cluster_bootstrap_ci": [
+            0.474501979068938,
+            0.5661191347949079
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.46686157929140676,
+          "episode_sd": 0.20996460753033652,
+          "episode_cluster_bootstrap_ci": [
+            0.40581189521118444,
+            0.5350569987405108
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5174093784369888,
+          "episode_sd": 0.1734241462357423,
+          "episode_cluster_bootstrap_ci": [
+            0.46971096270277185,
+            0.5745849370428541
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.80742620188996,
+          "episode_sd": 0.18034563722468622,
+          "episode_cluster_bootstrap_ci": [
+            0.7534027621354867,
+            0.8633377743398769
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.46686157929140676,
+          "episode_sd": 0.20996460753033652,
+          "episode_cluster_bootstrap_ci": [
+            0.40553676661448745,
+            0.5338352764138066
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.6800086481264842,
+          "episode_sd": 0.16925399608033315,
+          "episode_cluster_bootstrap_ci": [
+            0.6306394952427165,
+            0.7345084332740887
+          ]
+        }
+      },
+      "3": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5798196671906359,
+          "episode_sd": 0.24300162392775818,
+          "episode_cluster_bootstrap_ci": [
+            0.5100663563648858,
+            0.6586794301128974
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.38545846608201595,
+          "episode_sd": 0.10278663342779037,
+          "episode_cluster_bootstrap_ci": [
+            0.35529916870255585,
+            0.41900385561160347
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5479131351924363,
+          "episode_sd": 0.2092284012690686,
+          "episode_cluster_bootstrap_ci": [
+            0.48988877138585013,
+            0.6181168311925256
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8779708234976553,
+          "episode_sd": 0.22008867282187036,
+          "episode_cluster_bootstrap_ci": [
+            0.8102696963868438,
+            0.9453423492985082
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9396260992748295,
+          "episode_sd": 0.2081635934885261,
+          "episode_cluster_bootstrap_ci": [
+            0.8781671834392193,
+            1.0070302552223154
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5180280958218276,
+          "episode_sd": 0.16284813256321115,
+          "episode_cluster_bootstrap_ci": [
+            0.47162818289498587,
+            0.5696537706911741
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.4729390416347098,
+          "episode_sd": 0.1917985136692363,
+          "episode_cluster_bootstrap_ci": [
+            0.41857047470883557,
+            0.5360476155680443
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5191685645235752,
+          "episode_sd": 0.17239043749175353,
+          "episode_cluster_bootstrap_ci": [
+            0.4712838091591198,
+            0.5751180463501444
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8050080099162498,
+          "episode_sd": 0.17860116256772268,
+          "episode_cluster_bootstrap_ci": [
+            0.7523518031561047,
+            0.860472184447266
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4729390416347098,
+          "episode_sd": 0.1917985136692363,
+          "episode_cluster_bootstrap_ci": [
+            0.41928671129729483,
+            0.5343252287317056
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.6789412502080712,
+          "episode_sd": 0.16905145507758496,
+          "episode_cluster_bootstrap_ci": [
+            0.6302068743431988,
+            0.732365684652128
+          ]
+        }
+      },
+      "4": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5973133512965489,
+          "episode_sd": 0.2515823641627816,
+          "episode_cluster_bootstrap_ci": [
+            0.5265491620017788,
+            0.6791772196095143
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.38729927710474976,
+          "episode_sd": 0.10443169013507604,
+          "episode_cluster_bootstrap_ci": [
+            0.3571534306025824,
+            0.4207973493332599
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5551094821897358,
+          "episode_sd": 0.21372305345052325,
+          "episode_cluster_bootstrap_ci": [
+            0.49704704107334446,
+            0.6274188207415095
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8891737970148832,
+          "episode_sd": 0.2146600317148399,
+          "episode_cluster_bootstrap_ci": [
+            0.8232695471353288,
+            0.955327784582333
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9395219345765178,
+          "episode_sd": 0.20765990565294498,
+          "episode_cluster_bootstrap_ci": [
+            0.8785393233758739,
+            1.00545571711908
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5127795074207935,
+          "episode_sd": 0.16681638422956058,
+          "episode_cluster_bootstrap_ci": [
+            0.46386935407640295,
+            0.5669496674836614
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.4676055879911897,
+          "episode_sd": 0.20761647316639226,
+          "episode_cluster_bootstrap_ci": [
+            0.4076198211135331,
+            0.5346697013819561
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5292711740994094,
+          "episode_sd": 0.17679662076158054,
+          "episode_cluster_bootstrap_ci": [
+            0.4797568379469667,
+            0.5885941745580139
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8079519711352343,
+          "episode_sd": 0.17736794243162463,
+          "episode_cluster_bootstrap_ci": [
+            0.7553124821601398,
+            0.8632528437334362
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4676055879911897,
+          "episode_sd": 0.20761647316639226,
+          "episode_cluster_bootstrap_ci": [
+            0.408271424151139,
+            0.5356254959599452
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.684693376184183,
+          "episode_sd": 0.1701475165775668,
+          "episode_cluster_bootstrap_ci": [
+            0.6354379844346414,
+            0.7395049091853028
+          ]
+        }
+      },
+      "5": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5959810124745228,
+          "episode_sd": 0.2574667241282304,
+          "episode_cluster_bootstrap_ci": [
+            0.5235437844981894,
+            0.6796556843740303
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.38289272982048983,
+          "episode_sd": 0.10444515046817995,
+          "episode_cluster_bootstrap_ci": [
+            0.3527414372812621,
+            0.41662323956914976
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5721816866440718,
+          "episode_sd": 0.22889100216512698,
+          "episode_cluster_bootstrap_ci": [
+            0.5097612867276505,
+            0.6491824397961513
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8800122085644168,
+          "episode_sd": 0.2280584382917252,
+          "episode_cluster_bootstrap_ci": [
+            0.810604122166911,
+            0.9501469270844399
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9481808897084119,
+          "episode_sd": 0.22422216435270564,
+          "episode_cluster_bootstrap_ci": [
+            0.8822481939780857,
+            1.020047469169165
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5250195698470306,
+          "episode_sd": 0.17090983745950677,
+          "episode_cluster_bootstrap_ci": [
+            0.4748345909458362,
+            0.5792450329109576
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.4851605994733738,
+          "episode_sd": 0.19425618484598822,
+          "episode_cluster_bootstrap_ci": [
+            0.4300923785145278,
+            0.5491720578261182
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5341918115988399,
+          "episode_sd": 0.18439894235138168,
+          "episode_cluster_bootstrap_ci": [
+            0.48351053727909576,
+            0.5952654239950429
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8116003748319105,
+          "episode_sd": 0.1860406379690013,
+          "episode_cluster_bootstrap_ci": [
+            0.7556662930117621,
+            0.8705454800838579
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4851605994733738,
+          "episode_sd": 0.19425618484598822,
+          "episode_cluster_bootstrap_ci": [
+            0.4310040391342183,
+            0.5485817210591409
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.6890755430835289,
+          "episode_sd": 0.1773083487529826,
+          "episode_cluster_bootstrap_ci": [
+            0.6378361620935175,
+            0.7460381532032699
+          ]
+        }
+      },
+      "6": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.5972037145076895,
+          "episode_sd": 0.2742807814973072,
+          "episode_cluster_bootstrap_ci": [
+            0.5207070303050344,
+            0.6898960956699876
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.39032532547435095,
+          "episode_sd": 0.11046691447994883,
+          "episode_cluster_bootstrap_ci": [
+            0.35846137808118095,
+            0.42578036900114485
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5782006386087805,
+          "episode_sd": 0.24848049757177043,
+          "episode_cluster_bootstrap_ci": [
+            0.5114222645910957,
+            0.6617507508955182
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.895011424503077,
+          "episode_sd": 0.23274578245703975,
+          "episode_cluster_bootstrap_ci": [
+            0.8247302994134134,
+            0.967257855051694
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9411679663281232,
+          "episode_sd": 0.20660303584717724,
+          "episode_cluster_bootstrap_ci": [
+            0.8796817871932697,
+            1.0065783885533568
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5146340897170004,
+          "episode_sd": 0.1706770012948813,
+          "episode_cluster_bootstrap_ci": [
+            0.4648229128989589,
+            0.5693366749839689
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.4909309674233723,
+          "episode_sd": 0.20925219141703905,
+          "episode_cluster_bootstrap_ci": [
+            0.43050342719716894,
+            0.5582142437839755
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5391897277081711,
+          "episode_sd": 0.19965053681335232,
+          "episode_cluster_bootstrap_ci": [
+            0.4848799744832084,
+            0.6050517452018624
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.810883236868359,
+          "episode_sd": 0.1866779911972315,
+          "episode_cluster_bootstrap_ci": [
+            0.7551806842648185,
+            0.8697535865590293
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4909309674233723,
+          "episode_sd": 0.20925219141703905,
+          "episode_cluster_bootstrap_ci": [
+            0.4300580662028564,
+            0.5588557128986879
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.6906375268571996,
+          "episode_sd": 0.18555265105219737,
+          "episode_cluster_bootstrap_ci": [
+            0.6379129385421433,
+            0.7523517801598916
+          ]
+        }
+      },
+      "7": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6102511852017631,
+          "episode_sd": 0.27714904075495717,
+          "episode_cluster_bootstrap_ci": [
+            0.5325199359273755,
+            0.7012027786228793
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4032400203365329,
+          "episode_sd": 0.11093540517960804,
+          "episode_cluster_bootstrap_ci": [
+            0.37141998095631834,
+            0.4387416819243325
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.5940910323748841,
+          "episode_sd": 0.25814643750399474,
+          "episode_cluster_bootstrap_ci": [
+            0.5242120307143984,
+            0.6796709554215528
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8861115997037015,
+          "episode_sd": 0.2238292390326688,
+          "episode_cluster_bootstrap_ci": [
+            0.8179637636759961,
+            0.9539880534811218
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9477601431978855,
+          "episode_sd": 0.21427232290249182,
+          "episode_cluster_bootstrap_ci": [
+            0.8850855651960912,
+            1.015985508833743
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5163029195563353,
+          "episode_sd": 0.1704376504606349,
+          "episode_cluster_bootstrap_ci": [
+            0.4676117615132385,
+            0.5721324732701244
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5152555108464291,
+          "episode_sd": 0.20086165739239445,
+          "episode_cluster_bootstrap_ci": [
+            0.4583215272346571,
+            0.5799312874422422
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5538233801581427,
+          "episode_sd": 0.20225739775346865,
+          "episode_cluster_bootstrap_ci": [
+            0.49835320783082326,
+            0.6199701653035384
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8107775969759878,
+          "episode_sd": 0.1847756285052383,
+          "episode_cluster_bootstrap_ci": [
+            0.7556253122415775,
+            0.8689092578140817
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5152555108464291,
+          "episode_sd": 0.20086165739239445,
+          "episode_cluster_bootstrap_ci": [
+            0.4568108614083963,
+            0.5798870038931022
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.6965644842905714,
+          "episode_sd": 0.18515457472705013,
+          "episode_cluster_bootstrap_ci": [
+            0.6439124637582283,
+            0.7560425663756791
+          ]
+        }
+      },
+      "8": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6107435713662626,
+          "episode_sd": 0.28066280718645736,
+          "episode_cluster_bootstrap_ci": [
+            0.5325417056306908,
+            0.7052760655496304
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4041823798230325,
+          "episode_sd": 0.11148441437472052,
+          "episode_cluster_bootstrap_ci": [
+            0.3714776768025629,
+            0.44024380974887967
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6012126889691597,
+          "episode_sd": 0.2658441006069481,
+          "episode_cluster_bootstrap_ci": [
+            0.5290615061930509,
+            0.6883342240856846
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8895715864754903,
+          "episode_sd": 0.2473243262527859,
+          "episode_cluster_bootstrap_ci": [
+            0.8145947639830314,
+            0.9670727272544031
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9627997973355157,
+          "episode_sd": 0.23386459499777115,
+          "episode_cluster_bootstrap_ci": [
+            0.8931932247861734,
+            1.035506408575669
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5076259394552353,
+          "episode_sd": 0.15524538676611643,
+          "episode_cluster_bootstrap_ci": [
+            0.4629180526313383,
+            0.5581996669619722
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5168348159596072,
+          "episode_sd": 0.2166064042577394,
+          "episode_cluster_bootstrap_ci": [
+            0.4535606811189042,
+            0.5858561504179868
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5565567235269049,
+          "episode_sd": 0.20786935329226564,
+          "episode_cluster_bootstrap_ci": [
+            0.5004175401126203,
+            0.6264074959199476
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8168598979944068,
+          "episode_sd": 0.19453112290076383,
+          "episode_cluster_bootstrap_ci": [
+            0.757708375220618,
+            0.8786185471231898
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5168348159596072,
+          "episode_sd": 0.2166064042577394,
+          "episode_cluster_bootstrap_ci": [
+            0.45417713306260665,
+            0.5856047255339009
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7011827462010211,
+          "episode_sd": 0.19312108262955605,
+          "episode_cluster_bootstrap_ci": [
+            0.6455076009149793,
+            0.7634184505342998
+          ]
+        }
+      },
+      "9": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6254216364518124,
+          "episode_sd": 0.2964640080297561,
+          "episode_cluster_bootstrap_ci": [
+            0.5423426932033713,
+            0.7227759640868863
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.410856114875239,
+          "episode_sd": 0.11624979316500869,
+          "episode_cluster_bootstrap_ci": [
+            0.37773688984278514,
+            0.4476540963400525
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6080593319904135,
+          "episode_sd": 0.268836577191694,
+          "episode_cluster_bootstrap_ci": [
+            0.535349371204236,
+            0.6975013365816247
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.8991779626377685,
+          "episode_sd": 0.24737716559089992,
+          "episode_cluster_bootstrap_ci": [
+            0.8243340889816891,
+            0.9756204557494368
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9423342015425795,
+          "episode_sd": 0.2288125619116031,
+          "episode_cluster_bootstrap_ci": [
+            0.8728217383139136,
+            1.0134812464503886
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5204450568491575,
+          "episode_sd": 0.17343346480106586,
+          "episode_cluster_bootstrap_ci": [
+            0.4707375998162445,
+            0.5761078857916649
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5308289362669522,
+          "episode_sd": 0.19398168123985182,
+          "episode_cluster_bootstrap_ci": [
+            0.47633674811202564,
+            0.5942826682808556
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5666988891381417,
+          "episode_sd": 0.21529888257666344,
+          "episode_cluster_bootstrap_ci": [
+            0.5079995543244847,
+            0.6395120590842339
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8151805607720753,
+          "episode_sd": 0.19729698637264792,
+          "episode_cluster_bootstrap_ci": [
+            0.755627188026239,
+            0.8766812490626869
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5308289362669522,
+          "episode_sd": 0.19398168123985182,
+          "episode_cluster_bootstrap_ci": [
+            0.4756725364122642,
+            0.5937071077561421
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7043307784117528,
+          "episode_sd": 0.1982629744240813,
+          "episode_cluster_bootstrap_ci": [
+            0.6482002746912358,
+            0.7698539913765056
+          ]
+        }
+      },
+      "10": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6281468763252465,
+          "episode_sd": 0.30512503154396486,
+          "episode_cluster_bootstrap_ci": [
+            0.542910195418563,
+            0.7287463303556192
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.41121760070308644,
+          "episode_sd": 0.11892670464815344,
+          "episode_cluster_bootstrap_ci": [
+            0.37693513755459007,
+            0.44886550433531014
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6137968217029719,
+          "episode_sd": 0.2768476147039691,
+          "episode_cluster_bootstrap_ci": [
+            0.5401588450543718,
+            0.7052034786471636
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9037678015057196,
+          "episode_sd": 0.24174383871024474,
+          "episode_cluster_bootstrap_ci": [
+            0.8313312208840646,
+            0.9796029615799072
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9509938483716333,
+          "episode_sd": 0.24389316291723517,
+          "episode_cluster_bootstrap_ci": [
+            0.8797572999297038,
+            1.027973564975678
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5262857025143222,
+          "episode_sd": 0.1798038916124565,
+          "episode_cluster_bootstrap_ci": [
+            0.4747842391171997,
+            0.5849853743170972
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5092761389055122,
+          "episode_sd": 0.22666771722295137,
+          "episode_cluster_bootstrap_ci": [
+            0.4439410064760722,
+            0.5834083082768924
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5710743706189089,
+          "episode_sd": 0.21981293748189706,
+          "episode_cluster_bootstrap_ci": [
+            0.5111381341230178,
+            0.6443725803354526
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8213542817406655,
+          "episode_sd": 0.20321406667134528,
+          "episode_cluster_bootstrap_ci": [
+            0.7614216630520814,
+            0.885605579598903
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5092761389055122,
+          "episode_sd": 0.22666771722295137,
+          "episode_cluster_bootstrap_ci": [
+            0.44348236949581094,
+            0.5823169867328528
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7097794781400781,
+          "episode_sd": 0.20324081964569135,
+          "episode_cluster_bootstrap_ci": [
+            0.6512672200548509,
+            0.7770893400469007
+          ]
+        }
+      },
+      "11": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6315725746468999,
+          "episode_sd": 0.30324525694705645,
+          "episode_cluster_bootstrap_ci": [
+            0.5478150385006373,
+            0.7309974148993242
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4151624344590056,
+          "episode_sd": 0.11753200774433123,
+          "episode_cluster_bootstrap_ci": [
+            0.3810748985200887,
+            0.4527855810181899
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6232380324735678,
+          "episode_sd": 0.27785567979297693,
+          "episode_cluster_bootstrap_ci": [
+            0.5484359173876444,
+            0.714729574930611
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9043515192699674,
+          "episode_sd": 0.2537112356754066,
+          "episode_cluster_bootstrap_ci": [
+            0.8268964125596955,
+            0.9823714212127512
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9535591813432258,
+          "episode_sd": 0.24291052247866615,
+          "episode_cluster_bootstrap_ci": [
+            0.8813653927486778,
+            1.03172329723766
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5243893868212176,
+          "episode_sd": 0.1788524015670779,
+          "episode_cluster_bootstrap_ci": [
+            0.47288087211755697,
+            0.5826144926968098
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5413362079462217,
+          "episode_sd": 0.1981999417968335,
+          "episode_cluster_bootstrap_ci": [
+            0.48425610631582566,
+            0.606152611112032
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5767147472583242,
+          "episode_sd": 0.21898801169148194,
+          "episode_cluster_bootstrap_ci": [
+            0.5166163320835158,
+            0.6503439144872393
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.822192662020061,
+          "episode_sd": 0.20720996290123112,
+          "episode_cluster_bootstrap_ci": [
+            0.7602155636521736,
+            0.8878773082147748
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5413362079462217,
+          "episode_sd": 0.1981999417968335,
+          "episode_cluster_bootstrap_ci": [
+            0.48498312006104566,
+            0.6052319336087911
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7126067736497769,
+          "episode_sd": 0.20456742418331628,
+          "episode_cluster_bootstrap_ci": [
+            0.6541001240427209,
+            0.7791717745757022
+          ]
+        }
+      },
+      "12": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6257604310849673,
+          "episode_sd": 0.2942141966236984,
+          "episode_cluster_bootstrap_ci": [
+            0.5432109562669224,
+            0.7224667314512385
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4264283164658556,
+          "episode_sd": 0.1282242480728385,
+          "episode_cluster_bootstrap_ci": [
+            0.389952666584961,
+            0.46748806080463395
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6181569819225616,
+          "episode_sd": 0.275108164427773,
+          "episode_cluster_bootstrap_ci": [
+            0.5439719851089102,
+            0.710076406411744
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9008870401582495,
+          "episode_sd": 0.2609129935118261,
+          "episode_cluster_bootstrap_ci": [
+            0.823758369020487,
+            0.9814143452897051
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9487116844890547,
+          "episode_sd": 0.24878834151084206,
+          "episode_cluster_bootstrap_ci": [
+            0.8760813762491632,
+            1.0264246213646104
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5253025199449064,
+          "episode_sd": 0.17631814321883363,
+          "episode_cluster_bootstrap_ci": [
+            0.47402841263538636,
+            0.5816887652357984
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5281246182255177,
+          "episode_sd": 0.19390066761916186,
+          "episode_cluster_bootstrap_ci": [
+            0.4734013686062032,
+            0.5910837718387268
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5752886164063329,
+          "episode_sd": 0.21632917192712187,
+          "episode_cluster_bootstrap_ci": [
+            0.5153581972396508,
+            0.6478092524087572
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8200624076762628,
+          "episode_sd": 0.20847007466184225,
+          "episode_cluster_bootstrap_ci": [
+            0.757038234392925,
+            0.8858212594929192
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5281246182255177,
+          "episode_sd": 0.19390066761916186,
+          "episode_cluster_bootstrap_ci": [
+            0.472944721412608,
+            0.5922514005730504
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7108017798526086,
+          "episode_sd": 0.20378801801295268,
+          "episode_cluster_bootstrap_ci": [
+            0.6525982099957255,
+            0.77733288819642
+          ]
+        }
+      },
+      "13": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6283295698039116,
+          "episode_sd": 0.2860900183667946,
+          "episode_cluster_bootstrap_ci": [
+            0.5496009232513327,
+            0.7228219822250955
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4268244059269352,
+          "episode_sd": 0.13057197134353624,
+          "episode_cluster_bootstrap_ci": [
+            0.3895614758852762,
+            0.46797979439234877
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6242550504749106,
+          "episode_sd": 0.26853205913201206,
+          "episode_cluster_bootstrap_ci": [
+            0.5510115028768077,
+            0.7159167870892619
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.905569153586789,
+          "episode_sd": 0.25308380486645704,
+          "episode_cluster_bootstrap_ci": [
+            0.829965998001142,
+            0.9846721250462358
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9640987477456532,
+          "episode_sd": 0.248896754809581,
+          "episode_cluster_bootstrap_ci": [
+            0.8897816323501909,
+            1.0431108892414094
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5272542653985978,
+          "episode_sd": 0.17130982707069278,
+          "episode_cluster_bootstrap_ci": [
+            0.47792510700352925,
+            0.5822826184889618
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5521065987431732,
+          "episode_sd": 0.21165269866559133,
+          "episode_cluster_bootstrap_ci": [
+            0.4896848698631561,
+            0.61981728092356
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5793543998634794,
+          "episode_sd": 0.20791828019007969,
+          "episode_cluster_bootstrap_ci": [
+            0.5227115737656566,
+            0.649443601249573
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8270595662346732,
+          "episode_sd": 0.20830675236534446,
+          "episode_cluster_bootstrap_ci": [
+            0.7654109365702102,
+            0.8918941723584034
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5521065987431732,
+          "episode_sd": 0.21165269866559133,
+          "episode_cluster_bootstrap_ci": [
+            0.49085136699477283,
+            0.6194018947159659
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.716319032924533,
+          "episode_sd": 0.199883689694942,
+          "episode_cluster_bootstrap_ci": [
+            0.6588622733118804,
+            0.779586340390608
+          ]
+        }
+      },
+      "14": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6467611372967103,
+          "episode_sd": 0.3173496048277057,
+          "episode_cluster_bootstrap_ci": [
+            0.5575848027325073,
+            0.753273218341747
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.4337792228939124,
+          "episode_sd": 0.1330553628397884,
+          "episode_cluster_bootstrap_ci": [
+            0.39581950180086856,
+            0.4780218131311707
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6330539202098533,
+          "episode_sd": 0.2710352979250069,
+          "episode_cluster_bootstrap_ci": [
+            0.558766294439687,
+            0.7243623301275122
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9014798416507557,
+          "episode_sd": 0.2654470216433497,
+          "episode_cluster_bootstrap_ci": [
+            0.8206770361343058,
+            0.984067874717051
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9632799921002236,
+          "episode_sd": 0.2321875759163633,
+          "episode_cluster_bootstrap_ci": [
+            0.8951808561164928,
+            1.036373080266964
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5249168047500206,
+          "episode_sd": 0.17785923306970314,
+          "episode_cluster_bootstrap_ci": [
+            0.47327001711648536,
+            0.5822577114936095
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5483244879787248,
+          "episode_sd": 0.2175870858220927,
+          "episode_cluster_bootstrap_ci": [
+            0.48516100098357307,
+            0.6184612036922791
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5922835910501074,
+          "episode_sd": 0.22025615257049627,
+          "episode_cluster_bootstrap_ci": [
+            0.5316253442719477,
+            0.6661766543662969
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8254964771004867,
+          "episode_sd": 0.20580093270265923,
+          "episode_cluster_bootstrap_ci": [
+            0.7646480343771586,
+            0.8911770827118078
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5483244879787248,
+          "episode_sd": 0.2175870858220927,
+          "episode_cluster_bootstrap_ci": [
+            0.4849023837756185,
+            0.616121529844246
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7209306559597985,
+          "episode_sd": 0.20425900006227085,
+          "episode_cluster_bootstrap_ci": [
+            0.6630037408512278,
+            0.7884846712462922
+          ]
+        }
+      },
+      "15": {
+        "dim_0": {
+          "episode_count": 40,
+          "mean": 0.6443238439836824,
+          "episode_sd": 0.3028900102013857,
+          "episode_cluster_bootstrap_ci": [
+            0.5597042361212959,
+            0.7434920508449788
+          ]
+        },
+        "dim_1": {
+          "episode_count": 40,
+          "mean": 0.43587481451268884,
+          "episode_sd": 0.13940221255695048,
+          "episode_cluster_bootstrap_ci": [
+            0.3963458136796174,
+            0.48116938597045045
+          ]
+        },
+        "dim_2": {
+          "episode_count": 40,
+          "mean": 0.6336523047772118,
+          "episode_sd": 0.26310663942496526,
+          "episode_cluster_bootstrap_ci": [
+            0.5607795303785769,
+            0.7226962860561548
+          ]
+        },
+        "dim_3": {
+          "episode_count": 40,
+          "mean": 0.9095340690653778,
+          "episode_sd": 0.2556288725308922,
+          "episode_cluster_bootstrap_ci": [
+            0.8312523419265982,
+            0.9882559913392768
+          ]
+        },
+        "dim_4": {
+          "episode_count": 40,
+          "mean": 0.9794750900393219,
+          "episode_sd": 0.23188118115373718,
+          "episode_cluster_bootstrap_ci": [
+            0.9109242162084452,
+            1.051638820739064
+          ]
+        },
+        "dim_5": {
+          "episode_count": 40,
+          "mean": 0.5270502585392685,
+          "episode_sd": 0.16559213186180835,
+          "episode_cluster_bootstrap_ci": [
+            0.4797717853472879,
+            0.5801617546981455
+          ]
+        },
+        "dim_6": {
+          "episode_count": 40,
+          "mean": 0.5493981868611454,
+          "episode_sd": 0.20611301845278904,
+          "episode_cluster_bootstrap_ci": [
+            0.4899252612124227,
+            0.6151243520851657
+          ]
+        },
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.5916112573637047,
+          "episode_sd": 0.21286334572814988,
+          "episode_cluster_bootstrap_ci": [
+            0.5332309184626163,
+            0.6629261092715061
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.8346112971221391,
+          "episode_sd": 0.20046950091581353,
+          "episode_cluster_bootstrap_ci": [
+            0.7746094458961115,
+            0.8975679936439503
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5493981868611454,
+          "episode_sd": 0.20611301845278904,
+          "episode_cluster_bootstrap_ci": [
+            0.4896532339885767,
+            0.6165324079418684
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.7260027099477057,
+          "episode_sd": 0.1971350982211018,
+          "episode_cluster_bootstrap_ci": [
+            0.6689430114344032,
+            0.7902768471793884
+          ]
+        }
+      }
+    }
+  }
+}
