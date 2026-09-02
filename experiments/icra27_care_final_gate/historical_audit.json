@@ -1,0 +1,54 @@
+{
+  "implementation_path": "experiments/bounded_group_requery_dev/requery_policy.py",
+  "implementation_blobs": {
+    "7ea83e1c0bea4367cc722a3d7b72ac0ca827e009": "a00528eb41c53c1dcd844f356681196f7bf4066e",
+    "eb4e29a62b28010c714d961f42449ae33bbe2312": "a00528eb41c53c1dcd844f356681196f7bf4066e",
+    "c4f9cb9ba0816a7cf0fb7f81abbfdcd126322490": "a00528eb41c53c1dcd844f356681196f7bf4066e"
+  },
+  "all_three_tips_byte_identical": true,
+  "definition": {
+    "MIN_HORIZON": 4,
+    "MAX_HORIZON": 16,
+    "gripper_intent": "+1 if g >= 0 else -1",
+    "event": "first k in [4,16) with intent[k] != intent[k-1]",
+    "fallback": 16,
+    "added_threshold_delta_ema_hysteresis_or_learned_signal": false
+  },
+  "development_conditions": [
+    "M0_hard16",
+    "M1_arm_phase",
+    "M2_gripper_event",
+    "M3_group_event_joint"
+  ],
+  "development_successes_over_40": {
+    "M0_hard16": 32,
+    "M1_arm_phase": 30,
+    "M2_gripper_event": 35,
+    "M3_group_event_joint": 31
+  },
+  "M2_vs_M0": {
+    "M2_only": 3,
+    "M0_only": 0
+  },
+  "M2_execution": {
+    "policy_queries": 532,
+    "environment_steps": 6844,
+    "query_rate": 0.0777323202805377,
+    "mean_horizon": 13.30451127819549,
+    "horizon_histogram": {
+      "4": 29,
+      "5": 25,
+      "6": 12,
+      "7": 18,
+      "8": 22,
+      "9": 16,
+      "10": 16,
+      "11": 10,
+      "12": 10,
+      "13": 9,
+      "14": 10,
+      "15": 8,
+      "16": 347
+    }
+  }
+}

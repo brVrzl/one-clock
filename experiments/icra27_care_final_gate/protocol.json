@@ -1,0 +1,137 @@
+{
+  "protocol_version": 1,
+  "status": "FROZEN_BEFORE_OUTCOMES",
+  "scope": "FINAL_BOUNDED_METHOD_GATE",
+  "base_commit": "eb4e29a62b28010c714d961f42449ae33bbe2312",
+  "fallback_paper_commit": "7ea83e1c0bea4367cc722a3d7b72ac0ca827e009",
+  "historical_discriminator_commit": "c4f9cb9ba0816a7cf0fb7f81abbfdcd126322490",
+  "method_hypothesis": "A coherent chunk normally remains committed within a manipulation phase, while predicted gripper-intent transitions can identify informative boundaries for truncation and policy re-query.",
+  "method_development_closes_regardless_of_outcome": true,
+  "historical_m2": {
+    "implementation_path": "experiments/bounded_group_requery_dev/requery_policy.py",
+    "implementation_blob": "a00528eb41c53c1dcd844f356681196f7bf4066e",
+    "identical_at_commits": [
+      "7ea83e1c0bea4367cc722a3d7b72ac0ca827e009",
+      "eb4e29a62b28010c714d961f42449ae33bbe2312",
+      "c4f9cb9ba0816a7cf0fb7f81abbfdcd126322490"
+    ],
+    "min_horizon": 4,
+    "max_horizon": 16,
+    "intent": "+1 iff g >= 0, else -1",
+    "selection": "first k in [4,16) with intent[k] != intent[k-1], otherwise 16",
+    "development_methods": ["M0_hard16", "M1_arm_phase", "M2_gripper_event", "M3_group_event_joint"],
+    "development_successes_over_40": {"M0": 32, "M1": 30, "M2": 35, "M3": 31},
+    "m2_vs_m0_discordance": {"M2_only": 3, "M0_only": 0},
+    "m2_policy_queries": 532,
+    "m2_environment_steps": 6844,
+    "m2_query_rate": 0.0777323202805377,
+    "m2_mean_execution_horizon": 13.30451127819549,
+    "m2_horizon_histogram": {"4": 29, "5": 25, "6": 12, "7": 18, "8": 22, "9": 16, "10": 16, "11": 10, "12": 10, "13": 9, "14": 10, "15": 8, "16": 347}
+  },
+  "held_out_cohort": {
+    "suite": "libero_object",
+    "task_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "states_by_task": {
+      "1": [30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "2": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "3": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "4": [30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "5": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "6": [24, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "7": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "8": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49],
+      "9": [24, 25, 26, 28, 29, 30, 32, 33, 36, 37, 40, 41, 42, 43, 46, 49]
+    },
+    "paired_blocks": 130,
+    "proposed_blocks_before_remote_audit": 134,
+    "removed_for_additional_outcome_exposure": [
+      {"task_id": 6, "state_id": 25},
+      {"task_id": 6, "state_id": 26},
+      {"task_id": 6, "state_id": 28},
+      {"task_id": 6, "state_id": 29}
+    ],
+    "removal_evidence": {
+      "commit": "38046a961cd796b30b554c9de407d64aa82518cf",
+      "blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+      "path": "experiments/component_temporal_reuse/rapid_component_smoke/results_libero_object_task6.json"
+    },
+    "minimum_clean_blocks": 120
+  },
+  "gate_m": {
+    "checkpoint": "/home/wjq/checkpoints/zeromidnight_act_libero_object",
+    "conditions": ["M0_HARD16", "M2_GRIPPER_EVENT", "FIXED_H13", "SHUFFLED_TRIGGER"],
+    "episodes": 520,
+    "max_episode_steps": 280,
+    "environment_seed_rule": "330000 + 100 * task_id + state_id",
+    "policy_seed": 424242,
+    "fresh_environment_per_condition_block": true,
+    "control_mode": "relative",
+    "control_frequency_hz": 20,
+    "action_dim": 7,
+    "temporal_ensemble": false,
+    "smoothing": false,
+    "fixed_h13": 13,
+    "shuffled_trigger": {
+      "distribution_source": "historical exposed M2 development horizon histogram",
+      "histogram": {"4": 29, "5": 25, "6": 12, "7": 18, "8": 22, "9": 16, "10": 16, "11": 10, "12": 10, "13": 9, "14": 10, "15": 8, "16": 347},
+      "total_weight": 532,
+      "rng": "SHA256('icra27-care-final-gate|SHUFFLED_TRIGGER|task=<task>|state=<state>|environment_seed=<seed>|query_index=<index>'); interpret first 8 digest bytes as big-endian integer; reduce modulo 532; select by cumulative histogram weights in ascending horizon order",
+      "independent_of_predicted_gripper_event": true,
+      "no_resampling": true
+    },
+    "budget_sanity": {
+      "m2_vs_shuffled_absolute_query_rate_difference_maximum": 0.005,
+      "no_retune_or_rerun_if_missed": true,
+      "report_m2_vs_fixed_h13_query_rate_difference": true
+    }
+  },
+  "decision_rule": {
+    "strict_stable_positive": "paired bootstrap lower > 0 AND task-cluster bootstrap lower > 0 AND at least 8/9 leave-one-task-out deltas > 0",
+    "primary_contrasts": ["M2 vs M0", "M2 vs FIXED_H13", "M2 vs SHUFFLED_TRIGGER"],
+    "METHOD_CONFIRMED": "all three primary contrasts strict-stable-positive AND shuffled budget sanity passes",
+    "PROOF_OF_CONCEPT_ONLY": "M2 vs M0 strict-stable-positive, while one or both control center estimates are positive but strict uncertainty fails",
+    "QUERY_BUDGET_OR_HORIZON_EXPLAINS": "M2 improves over M0 but M2 center <= FIXED_H13 or SHUFFLED, or shuffled budget mismatch prevents event-specific attribution",
+    "METHOD_NULL": "M2 vs M0 is not strict-stable-positive"
+  },
+  "smolvla_robustness": {
+    "scope": "CROSS_POLICY_ROBUSTNESS",
+    "launch_regardless_of_gate_m_outcome": true,
+    "launch_barrier": "after all Gate M cells are COMPLETE or TECHNICAL_FAILED without reading successes",
+    "checkpoint": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+    "suites": ["libero_spatial", "libero_object", "libero_goal", "libero_10"],
+    "task_ids_per_suite": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "state_ids": [0, 1, 2, 3],
+    "paired_blocks": 160,
+    "conditions": ["ARM4_GRIP4", "ARM4_GRIP32"],
+    "episodes": 320,
+    "chunk_size": 50,
+    "n_action_steps": 1,
+    "action_dim": 7,
+    "arm_indices": [0, 1, 2, 3, 4, 5],
+    "gripper_index": 6,
+    "temporal_aggregation": false,
+    "smoothing": false,
+    "environment_seed_rule": "360000 + 1000 * suite_index + 100 * task_id + state_id",
+    "policy_seed_rule": "existing stable SHA256 helper keyed by policy/suite/task/state/environment_seed/physical query step",
+    "already_outcome_exposed": true,
+    "not_independent_confirmation": true
+  },
+  "statistics": {
+    "bootstrap_draws": 20000,
+    "paired_bootstrap_seed_base": 2027090201,
+    "task_cluster_bootstrap_seed_base": 2027090301,
+    "exact_two_sided_mcnemar": true
+  },
+  "retry_policy": {
+    "maximum_attempts": 3,
+    "maximum_retries": 2,
+    "technical_failures_only": true
+  },
+  "forbidden_followups": [
+    "another M2 variant", "M1", "M3", "thresholded gripper detector", "EMA", "hysteresis",
+    "learned trigger", "force trigger", "grip64", "arm2 grid extension", "coherent horizon sweep",
+    "pi0", "pi0.5", "RoboTwin", "real robot", "training", "adaptive threshold search",
+    "outcome-selected experiment", "automatic SmolVLA M2 transfer"
+  ],
+  "manuscript_edits_authorized": false
+}

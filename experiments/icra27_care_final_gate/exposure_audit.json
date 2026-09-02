@@ -1,0 +1,323 @@
+{
+  "audit_scope": "all Git objects reachable from every fetched refs/remotes/origin/* tip",
+  "remote_refs": [
+    {
+      "ref": "origin/HEAD",
+      "sha": "6ed5d06516aaddb382095e3343430c7e31cd22d7"
+    },
+    {
+      "ref": "origin/baseline/libero-standard",
+      "sha": "db033721869d77ce6293ba5097ddca38d4009638"
+    },
+    {
+      "ref": "origin/exp/fast5080-adaptive-recency",
+      "sha": "31acebd5ea11ecf0fcfb0131b18150dceb96e347"
+    },
+    {
+      "ref": "origin/exp/fast5080-cross-generation-offline",
+      "sha": "279bcab9415e46f72c8bd2b89c3adbee773c3db6"
+    },
+    {
+      "ref": "origin/exp/gate3b-cross-generation-composition",
+      "sha": "2817411a4210b8611dc8dae5d32ec99fc6b94cf3"
+    },
+    {
+      "ref": "origin/exp/gate3c-asymmetric-temporal-reuse",
+      "sha": "3b9f1209df7266160c47453e8ee66a142ea8688c"
+    },
+    {
+      "ref": "origin/exp/gate4a-spatial-generalization",
+      "sha": "36bebdace1ffbd8d36bacc061feb146cd55f894a"
+    },
+    {
+      "ref": "origin/exp/gate4a2-prefix-rootcause",
+      "sha": "4ffcc8c6897026eec46125b2995578bfe3f09e55"
+    },
+    {
+      "ref": "origin/exp/gate4a2-spatial-act-generalization",
+      "sha": "e246d3d6baa2adac9b715c9065ff11a6860ad99c"
+    },
+    {
+      "ref": "origin/exp/groupwise-selective-commit-act",
+      "sha": "eb4f6bfeb40a9d1444d3fb1d17c841601ca29a76"
+    },
+    {
+      "ref": "origin/exp/icra27-chunkfix-fast",
+      "sha": "6c33e71cf159841dc32c7bec0b36d8db4f0eedb9"
+    },
+    {
+      "ref": "origin/exp/icra27-overnight-smolvla-crosspolicy",
+      "sha": "eb4e29a62b28010c714d961f42449ae33bbe2312"
+    },
+    {
+      "ref": "origin/exp/icra27-post-gate3c-5080",
+      "sha": "f7cb0559594a15a7ab4ab92758fad766d841af04"
+    },
+    {
+      "ref": "origin/exp/icra27-two-clock-discriminator",
+      "sha": "c4f9cb9ba0816a7cf0fb7f81abbfdcd126322490"
+    },
+    {
+      "ref": "origin/exp/libero-component-temporal-reuse",
+      "sha": "7ea83e1c0bea4367cc722a3d7b72ac0ca827e009"
+    },
+    {
+      "ref": "origin/exp/robotwin-dcta-development",
+      "sha": "d672da737349d60af53fd419802202f6f6c8a327"
+    },
+    {
+      "ref": "origin/exp/robotwin-exploratory-sealed",
+      "sha": "f36be2d75d6dc345c7e4afe7dcecad14f773f253"
+    },
+    {
+      "ref": "origin/exp/robotwin-static-validation",
+      "sha": "d04cdf5fa11049a26d18f38138c4f912a4534c0f"
+    },
+    {
+      "ref": "origin/integration/icra27-baseline-foundation",
+      "sha": "db033721869d77ce6293ba5097ddca38d4009638"
+    },
+    {
+      "ref": "origin/main",
+      "sha": "6ed5d06516aaddb382095e3343430c7e31cd22d7"
+    },
+    {
+      "ref": "origin/ops/overnight-5080-prep-20260824",
+      "sha": "b44c4c73378313ede8ed415f98f7ef85d6ed690f"
+    },
+    {
+      "ref": "origin/ops/thor-to-5080-handoff",
+      "sha": "96d04a2a068806558795d3eeb43a5ca6082f1ee1"
+    },
+    {
+      "ref": "origin/preserve/integrate-5080-into-main-20260826",
+      "sha": "50df73931843eb564a669c74321e8c1cf88f38fd"
+    },
+    {
+      "ref": "origin/research/icra27-direction-reset",
+      "sha": "660054f40691f4e4b9a5c2e4983c7c9f88c3670d"
+    },
+    {
+      "ref": "origin/research/libero-baseline-handoff-20260826",
+      "sha": "9948ecfa13aa5ca4d63503d672b31bc321729734"
+    },
+    {
+      "ref": "origin/research/robotwin-paused-20260826",
+      "sha": "1ade8d685bc37debee8da92193cbff22f8863163"
+    }
+  ],
+  "remote_ref_count": 26,
+  "reachable_commit_count": 149,
+  "reachable_object_count": 5311,
+  "unique_outcome_json_or_jsonl_blobs_parsed": 1122,
+  "latest_authoritative_inventory": {
+    "commit": "eb4e29a62b28010c714d961f42449ae33bbe2312",
+    "path": "experiments/icra27_overnight_smolvla_crosspolicy/exposure_inventory.md"
+  },
+  "proposed_blocks": 134,
+  "additional_raw_outcome_exposure": [
+    {
+      "task_id": 6,
+      "state_id": 25,
+      "path": "experiments/component_temporal_reuse/rapid_component_smoke/results_libero_object_task6.json",
+      "blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+      "matched_field": "initial_state_id"
+    },
+    {
+      "task_id": 6,
+      "state_id": 26,
+      "path": "experiments/component_temporal_reuse/rapid_component_smoke/results_libero_object_task6.json",
+      "blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+      "matched_field": "initial_state_id"
+    },
+    {
+      "task_id": 6,
+      "state_id": 28,
+      "path": "experiments/component_temporal_reuse/rapid_component_smoke/results_libero_object_task6.json",
+      "blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+      "matched_field": "initial_state_id"
+    },
+    {
+      "task_id": 6,
+      "state_id": 29,
+      "path": "experiments/component_temporal_reuse/rapid_component_smoke/results_libero_object_task6.json",
+      "blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+      "matched_field": "paired_initial_state_ids"
+    }
+  ],
+  "exposed_cells_removed": [
+    {
+      "task_id": 6,
+      "state_id": 25
+    },
+    {
+      "task_id": 6,
+      "state_id": 26
+    },
+    {
+      "task_id": 6,
+      "state_id": 28
+    },
+    {
+      "task_id": 6,
+      "state_id": 29
+    }
+  ],
+  "exposure_source_commit": "38046a961cd796b30b554c9de407d64aa82518cf",
+  "exposure_source_blob": "018c26fbb8ada57dc459bfaa3b91403f87a99ca5",
+  "final_states_by_task": {
+    "1": [
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "2": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "3": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "4": [
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "5": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "6": [
+      24,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "7": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "8": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ],
+    "9": [
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      32,
+      33,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46,
+      49
+    ]
+  },
+  "final_clean_block_count": 130,
+  "minimum_required": 120,
+  "proceed": true,
+  "protocol_only_exposure_note": "No structured protocol-only candidate cell was used as an exclusion; the four removals each have recorded rollout success outcomes.",
+  "conclusion": "No outcome record was found for any of the remaining 130 cells before preregistration."
+}
