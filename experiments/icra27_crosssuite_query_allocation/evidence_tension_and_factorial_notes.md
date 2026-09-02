@@ -25,6 +25,12 @@ Track A tests the distinct prospective hypothesis that, under periodic executabl
 
 These values use opposite algebraic signs. Their provenance and sign conventions must remain explicit and must not be conflated.
 
+For all new analysis artifacts, the canonical signed risk-difference interaction is frozen as
+
+`I_RD = p(A20G20) - p(A20G0) - p(A0G20) + p(A0G0)`
+
+or equivalently `(FullOld20 - Reverse20) - (FO20 - Fresh)`. The corresponding log-odds sensitivity uses the identical cell orientation. If only an unsigned value is discussed, it is called the interaction magnitude. The 140-block estimate remains a `POST_HOC_SUPPORTING_INTERACTION`; the Object preregistration does not transfer to it.
+
 ## Read-only fallback context
 
 The fallback context is `paper/icra27-final-claim-freeze` at `ec8dc325b1ed6d54053b35d411ea92b13108374a`. Its completed audit established that FO20 and Reverse20 both query once per executed environment step and have query rate exactly 1.0; realized total query counts differ only through outcome-dependent termination. That audit is not rerun here. `CLAIMS.md` and the manuscript remain untouched.

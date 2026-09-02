@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_TRACK_B_PREDICTION_INTERPRETATION",
+  "parent_track_b_manifest": "track_b_manifest.json",
+  "track_a_preregistration_commit": "40549d876c0e09fad4e8033b3206f6018f53ece5",
+  "changes_original_decision_criteria": false,
+  "success_outcomes_used": false,
+  "prediction_arrays_inspected_before_freeze": false,
+  "b1": {
+    "primary_window_unchanged": {"target_time_minimum": 15, "source_ages": [0, 15], "candidate_count": 16},
+    "dimensions": {"translation": [0, 1, 2], "rotation": [3, 4, 5], "gripper": [6], "arm_original": [0, 1, 2, 3, 4, 5]},
+    "age_curve": "RMS difference between the age-a same-target prediction and the age-0 same-target prediction",
+    "age_values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "bootstrap_unit": "episode",
+    "bootstrap_draws": 20000,
+    "dimension_seed": 27211,
+    "age_curve_seed": 27212,
+    "decision_threshold": null
+  },
+  "b2": {
+    "provenance_label": "training-demonstration temporal characterization; not held-out",
+    "dataset_repo": "HuggingFaceVLA/libero",
+    "dataset_revision": "86958911c0f959db2bbbdb107eb3e17c5f9c798e",
+    "dataset_split": "train:0:1693 only",
+    "dataset_fps": 10,
+    "panel_episode_counts": {"libero_object:task3": 46, "libero_spatial:task0": 45, "libero_goal:task2": 47, "libero_10:task3": 35},
+    "use_all_panel_episodes": true,
+    "lags": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+    "bootstrap_unit": "demonstration_episode",
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 27301
+  },
+  "b3": {
+    "provenance_label": "training-demonstration reference analysis; not held-out",
+    "episode_selection_rule": "lowest ten numeric training episode IDs per panel task",
+    "episodes": {
+      "libero_object:task3": [811, 812, 824, 843, 846, 849, 853, 858, 867, 871],
+      "libero_spatial:task0": [1272, 1273, 1275, 1282, 1300, 1327, 1330, 1344, 1347, 1352],
+      "libero_goal:task2": [385, 389, 396, 397, 404, 417, 419, 423, 427, 430],
+      "libero_10:task3": [14, 15, 16, 31, 32, 36, 75, 89, 90, 97]
+    },
+    "anchor_stride_frames": 10,
+    "offsets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+    "bootstrap_unit": "demonstration_episode",
+    "bootstrap_draws": 20000,
+    "ACT_seed": 27401,
+    "SmolVLA_seed": 27402
+  },
+  "b4": {
+    "classification": "FAILURE_MODE_CLASSIFICATION_NOT_IDENTIFIABLE_FROM_EXISTING_ARTIFACTS",
+    "standalone_rerun_authorized": false
+  },
+  "smolvla_checkpoint_revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "smolvla_training_dataset_provenance": "unknown in model card"
+}

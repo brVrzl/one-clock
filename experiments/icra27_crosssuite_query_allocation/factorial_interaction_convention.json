@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_NEW_PAPER_FACING_INTERACTION_ANALYSIS",
+  "cell_mapping": {
+    "p00": "A0G0 = Fresh",
+    "p01": "A0G20 = FO20",
+    "p10": "A20G0 = Reverse20",
+    "p11": "A20G20 = FullOld20"
+  },
+  "risk_difference_formula": "p11 - p10 - p01 + p00",
+  "equivalent_alias_formula": "(FullOld20 - Reverse20) - (FO20 - Fresh)",
+  "log_odds_formula": "logit(p11) - logit(p10) - logit(p01) + logit(p00)",
+  "unsigned_term": "interaction magnitude",
+  "object_126_provenance": "predeclared descriptive interaction; historical report used the opposite sign orientation",
+  "crosssuite_140_provenance": "POST_HOC_SUPPORTING_INTERACTION",
+  "confirmatory_transfer_from_object_to_crosssuite": false
+}
