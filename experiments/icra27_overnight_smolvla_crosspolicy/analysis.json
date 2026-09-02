@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "expected": {
     "act_object_h8_126": 126,
     "act_posthoc_h8_140": 140,
@@ -9,10 +9,10 @@
   },
   "completed": {
     "act_object_h8_126": 126,
-    "act_posthoc_h8_140": 35,
-    "act_arm4_grip32_180": 0,
-    "smolvla_primary": 0,
-    "smolvla_capacity_h16": 0
+    "act_posthoc_h8_140": 140,
+    "act_arm4_grip32_180": 180,
+    "smolvla_primary": 320,
+    "smolvla_capacity_h16": 160
   },
   "technical_failures": {
     "act_object_h8_126": 0,
@@ -33,7 +33,25 @@
       "wall_clock_seconds": 874.4704234600067,
       "mean_wall_clock_seconds": 6.940241456031799,
       "mean_arm_source_age": 3.4860226017503613,
-      "mean_gripper_source_age": 3.4860226017503613
+      "mean_gripper_source_age": 3.4860226017503613,
+      "source_age_stats": {
+        "arm": {
+          "count": 23538,
+          "mean": 3.4860226017503613,
+          "standard_deviation": 2.291412087167005,
+          "median": 3.0,
+          "p95": 7.0,
+          "maximum": 7
+        },
+        "gripper": {
+          "count": 23538,
+          "mean": 3.4860226017503613,
+          "standard_deviation": 2.291412087167005,
+          "median": 3.0,
+          "p95": 7.0,
+          "maximum": 7
+        }
+      }
     },
     "H16_historical": {
       "successes": 88,
@@ -46,7 +64,8 @@
       "wall_clock_seconds": 0.0,
       "mean_wall_clock_seconds": 0.0,
       "mean_arm_source_age": 7.357514539332721,
-      "mean_gripper_source_age": 7.357514539332721
+      "mean_gripper_source_age": 7.357514539332721,
+      "source_age_stats": {}
     },
     "H8_vs_H16": {
       "blocks": 126,
@@ -136,5 +155,2979 @@
       }
     },
     "interpretation_label": "H16_NOT_CHALLENGED_BY_H8"
+  },
+  "act_posthoc_h8_140": {
+    "scope": "POST-HOC COHERENT-BASELINE AUDIT",
+    "H8": {
+      "successes": 100,
+      "episodes": 140,
+      "success_rate": 0.7142857142857143,
+      "environment_steps": 34731,
+      "policy_queries": 4389,
+      "model_forward_count": 4389,
+      "query_rate": 0.12637125334715385,
+      "wall_clock_seconds": 1307.5580937862396,
+      "mean_wall_clock_seconds": 9.339700669901712,
+      "mean_arm_source_age": 3.4841208142581555,
+      "mean_gripper_source_age": 3.4841208142581555,
+      "source_age_stats": {
+        "arm": {
+          "count": 34731,
+          "mean": 3.4841208142581555,
+          "standard_deviation": 2.2915658108995647,
+          "median": 3.0,
+          "p95": 7.0,
+          "maximum": 7
+        },
+        "gripper": {
+          "count": 34731,
+          "mean": 3.4841208142581555,
+          "standard_deviation": 2.2915658108995647,
+          "median": 3.0,
+          "p95": 7.0,
+          "maximum": 7
+        }
+      }
+    },
+    "H16_historical": {
+      "successes": 93,
+      "episodes": 140,
+      "success_rate": 0.6642857142857143,
+      "environment_steps": 35615,
+      "policy_queries": 2290,
+      "model_forward_count": 2290,
+      "query_rate": 0.06429875052646357,
+      "wall_clock_seconds": 1018.4870246138889,
+      "mean_wall_clock_seconds": 7.2749073186706354,
+      "mean_arm_source_age": 7.398596097150077,
+      "mean_gripper_source_age": 7.398596097150077,
+      "source_age_stats": {}
+    },
+    "H8_vs_H16": {
+      "blocks": 140,
+      "first_successes": 100,
+      "second_successes": 93,
+      "first_only_wins": 15,
+      "second_only_wins": 8,
+      "ties": 117,
+      "delta": 0.05,
+      "delta_percentage_points": 5.0,
+      "exact_two_sided_mcnemar_p": 0.21003961563110352,
+      "paired_bootstrap_ci": [
+        -0.014285714285714285,
+        0.12142857142857143
+      ],
+      "task_cluster_bootstrap_ci": [
+        -0.03571428571428571,
+        0.12857142857142856
+      ],
+      "bootstrap_draws": 20000,
+      "per_task": {
+        "libero_10:task0": {
+          "first_successes": 8,
+          "second_successes": 4,
+          "blocks": 14,
+          "delta": 0.2857142857142857
+        },
+        "libero_10:task2": {
+          "first_successes": 13,
+          "second_successes": 13,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_10:task4": {
+          "first_successes": 6,
+          "second_successes": 9,
+          "blocks": 14,
+          "delta": -0.21428571428571427
+        },
+        "libero_10:task6": {
+          "first_successes": 6,
+          "second_successes": 4,
+          "blocks": 14,
+          "delta": 0.14285714285714285
+        },
+        "libero_10:task7": {
+          "first_successes": 5,
+          "second_successes": 5,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_goal:task4": {
+          "first_successes": 14,
+          "second_successes": 11,
+          "blocks": 14,
+          "delta": 0.21428571428571427
+        },
+        "libero_goal:task6": {
+          "first_successes": 8,
+          "second_successes": 8,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_goal:task7": {
+          "first_successes": 14,
+          "second_successes": 14,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_goal:task8": {
+          "first_successes": 14,
+          "second_successes": 14,
+          "blocks": 14,
+          "delta": 0.0
+        },
+        "libero_goal:task9": {
+          "first_successes": 12,
+          "second_successes": 11,
+          "blocks": 14,
+          "delta": 0.07142857142857142
+        }
+      },
+      "leave_one_task_out": {
+        "libero_10:task0": 0.023809523809523808,
+        "libero_10:task2": 0.05555555555555555,
+        "libero_10:task4": 0.07936507936507936,
+        "libero_10:task6": 0.03968253968253968,
+        "libero_10:task7": 0.05555555555555555,
+        "libero_goal:task4": 0.031746031746031744,
+        "libero_goal:task6": 0.05555555555555555,
+        "libero_goal:task7": 0.05555555555555555,
+        "libero_goal:task8": 0.05555555555555555,
+        "libero_goal:task9": 0.047619047619047616
+      }
+    },
+    "interpretation_label": "COHERENT_OPTIMUM_IS_NOT_H16"
+  },
+  "act_arm4_grip32_180": {
+    "ARM4_GRIP32": {
+      "successes": 131,
+      "episodes": 180,
+      "success_rate": 0.7277777777777777,
+      "environment_steps": 31695,
+      "policy_queries": 7972,
+      "model_forward_count": 7972,
+      "query_rate": 0.25152232213282855,
+      "wall_clock_seconds": 1564.5129458904266,
+      "mean_wall_clock_seconds": 8.691738588280147,
+      "mean_arm_source_age": 1.4948730083609403,
+      "mean_gripper_source_age": 14.979018772677078,
+      "source_age_stats": {
+        "arm": {
+          "count": 31695,
+          "mean": 1.4948730083609403,
+          "standard_deviation": 1.1179799022359018,
+          "median": 1.0,
+          "p95": 3.0,
+          "maximum": 3
+        },
+        "gripper": {
+          "count": 31695,
+          "mean": 14.979018772677078,
+          "standard_deviation": 9.15567118221141,
+          "median": 15.0,
+          "p95": 30.0,
+          "maximum": 31
+        }
+      }
+    },
+    "ARM4_GRIP16_historical_successes": 128,
+    "ARM4_GRIP4_historical_successes": 112,
+    "ARM4_GRIP32_vs_ARM4_GRIP16": {
+      "blocks": 180,
+      "first_successes": 131,
+      "second_successes": 128,
+      "first_only_wins": 20,
+      "second_only_wins": 17,
+      "ties": 143,
+      "delta": 0.016666666666666666,
+      "delta_percentage_points": 1.6666666666666667,
+      "exact_two_sided_mcnemar_p": 0.7428293587290682,
+      "paired_bootstrap_ci": [
+        -0.05,
+        0.08333333333333333
+      ],
+      "task_cluster_bootstrap_ci": [
+        -0.07777777777777778,
+        0.1111111111111111
+      ],
+      "bootstrap_draws": 20000,
+      "per_task": {
+        "libero_object:task1": {
+          "first_successes": 17,
+          "second_successes": 12,
+          "blocks": 20,
+          "delta": 0.25
+        },
+        "libero_object:task2": {
+          "first_successes": 18,
+          "second_successes": 16,
+          "blocks": 20,
+          "delta": 0.1
+        },
+        "libero_object:task3": {
+          "first_successes": 17,
+          "second_successes": 16,
+          "blocks": 20,
+          "delta": 0.05
+        },
+        "libero_object:task4": {
+          "first_successes": 16,
+          "second_successes": 16,
+          "blocks": 20,
+          "delta": 0.0
+        },
+        "libero_object:task5": {
+          "first_successes": 15,
+          "second_successes": 17,
+          "blocks": 20,
+          "delta": -0.1
+        },
+        "libero_object:task6": {
+          "first_successes": 10,
+          "second_successes": 11,
+          "blocks": 20,
+          "delta": -0.05
+        },
+        "libero_object:task7": {
+          "first_successes": 8,
+          "second_successes": 13,
+          "blocks": 20,
+          "delta": -0.25
+        },
+        "libero_object:task8": {
+          "first_successes": 11,
+          "second_successes": 7,
+          "blocks": 20,
+          "delta": 0.2
+        },
+        "libero_object:task9": {
+          "first_successes": 19,
+          "second_successes": 20,
+          "blocks": 20,
+          "delta": -0.05
+        }
+      },
+      "leave_one_task_out": {
+        "libero_object:task1": -0.0125,
+        "libero_object:task2": 0.00625,
+        "libero_object:task3": 0.0125,
+        "libero_object:task4": 0.01875,
+        "libero_object:task5": 0.03125,
+        "libero_object:task6": 0.025,
+        "libero_object:task7": 0.05,
+        "libero_object:task8": -0.00625,
+        "libero_object:task9": 0.025
+      }
+    },
+    "ARM4_GRIP32_vs_ARM4_GRIP4": {
+      "blocks": 180,
+      "first_successes": 131,
+      "second_successes": 112,
+      "first_only_wins": 32,
+      "second_only_wins": 13,
+      "ties": 135,
+      "delta": 0.10555555555555556,
+      "delta_percentage_points": 10.555555555555555,
+      "exact_two_sided_mcnemar_p": 0.00660882284228137,
+      "paired_bootstrap_ci": [
+        0.03333333333333333,
+        0.17777777777777778
+      ],
+      "task_cluster_bootstrap_ci": [
+        0.022222222222222223,
+        0.19444444444444445
+      ],
+      "bootstrap_draws": 20000,
+      "per_task": {
+        "libero_object:task1": {
+          "first_successes": 17,
+          "second_successes": 10,
+          "blocks": 20,
+          "delta": 0.35
+        },
+        "libero_object:task2": {
+          "first_successes": 18,
+          "second_successes": 15,
+          "blocks": 20,
+          "delta": 0.15
+        },
+        "libero_object:task3": {
+          "first_successes": 17,
+          "second_successes": 15,
+          "blocks": 20,
+          "delta": 0.1
+        },
+        "libero_object:task4": {
+          "first_successes": 16,
+          "second_successes": 16,
+          "blocks": 20,
+          "delta": 0.0
+        },
+        "libero_object:task5": {
+          "first_successes": 15,
+          "second_successes": 10,
+          "blocks": 20,
+          "delta": 0.25
+        },
+        "libero_object:task6": {
+          "first_successes": 10,
+          "second_successes": 10,
+          "blocks": 20,
+          "delta": 0.0
+        },
+        "libero_object:task7": {
+          "first_successes": 8,
+          "second_successes": 10,
+          "blocks": 20,
+          "delta": -0.1
+        },
+        "libero_object:task8": {
+          "first_successes": 11,
+          "second_successes": 8,
+          "blocks": 20,
+          "delta": 0.15
+        },
+        "libero_object:task9": {
+          "first_successes": 19,
+          "second_successes": 18,
+          "blocks": 20,
+          "delta": 0.05
+        }
+      },
+      "leave_one_task_out": {
+        "libero_object:task1": 0.075,
+        "libero_object:task2": 0.1,
+        "libero_object:task3": 0.10625,
+        "libero_object:task4": 0.11875,
+        "libero_object:task5": 0.0875,
+        "libero_object:task6": 0.11875,
+        "libero_object:task7": 0.13125,
+        "libero_object:task8": 0.1,
+        "libero_object:task9": 0.1125
+      }
+    },
+    "query_schedule_audit": {
+      "episodes": 180,
+      "query_periods": [
+        4
+      ],
+      "all_exact_periodic_schedules": true,
+      "invalid_cell_ids": [],
+      "all_arm_driven": true
+    },
+    "interpretation_label": "GRIPPER_PLATEAU_AT_16",
+    "mandatory_stop": "No arm8_grip32, arm16_grip32, coherent h32, or grip64 regardless of result"
+  },
+  "smolvla_primary": {
+    "pooled": {
+      "SMOLVLA_COHERENT_H8": {
+        "successes": 106,
+        "episodes": 160,
+        "success_rate": 0.6625,
+        "environment_steps": 36013,
+        "policy_queries": 4553,
+        "model_forward_count": 4553,
+        "query_rate": 0.12642656818371142,
+        "wall_clock_seconds": 2472.4015007019043,
+        "mean_wall_clock_seconds": 15.452509379386902,
+        "mean_arm_source_age": 3.4824091300363755,
+        "mean_gripper_source_age": 3.4824091300363755,
+        "source_age_stats": {
+          "arm": {
+            "count": 36013,
+            "mean": 3.4824091300363755,
+            "standard_deviation": 2.2914081612756148,
+            "median": 3.0,
+            "p95": 7.0,
+            "maximum": 7
+          },
+          "gripper": {
+            "count": 36013,
+            "mean": 3.4824091300363755,
+            "standard_deviation": 2.2914081612756148,
+            "median": 3.0,
+            "p95": 7.0,
+            "maximum": 7
+          }
+        }
+      },
+      "SMOLVLA_ARM8_GRIP16": {
+        "successes": 106,
+        "episodes": 160,
+        "success_rate": 0.6625,
+        "environment_steps": 36326,
+        "policy_queries": 4594,
+        "model_forward_count": 4594,
+        "query_rate": 0.12646589219842538,
+        "wall_clock_seconds": 2483.209326505661,
+        "mean_wall_clock_seconds": 15.520058290660382,
+        "mean_arm_source_age": 3.4833177338545394,
+        "mean_gripper_source_age": 7.39038154489897,
+        "source_age_stats": {
+          "arm": {
+            "count": 36326,
+            "mean": 3.4833177338545394,
+            "standard_deviation": 2.291383303331848,
+            "median": 3.0,
+            "p95": 7.0,
+            "maximum": 7
+          },
+          "gripper": {
+            "count": 36326,
+            "mean": 7.39038154489897,
+            "standard_deviation": 4.604602254882307,
+            "median": 7.0,
+            "p95": 15.0,
+            "maximum": 15
+          }
+        }
+      }
+    },
+    "suites": {
+      "libero_spatial": {
+        "SMOLVLA_COHERENT_H8": {
+          "successes": 23,
+          "episodes": 40,
+          "success_rate": 0.575,
+          "environment_steps": 7104,
+          "policy_queries": 900,
+          "model_forward_count": 900,
+          "query_rate": 0.1266891891891892,
+          "wall_clock_seconds": 551.6819183826447,
+          "mean_wall_clock_seconds": 13.792047959566116,
+          "mean_arm_source_age": 3.4818412162162162,
+          "mean_gripper_source_age": 3.4818412162162162,
+          "source_age_stats": {
+            "arm": {
+              "count": 7104,
+              "mean": 3.4818412162162162,
+              "standard_deviation": 2.292812700242066,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 7104,
+              "mean": 3.4818412162162162,
+              "standard_deviation": 2.292812700242066,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            }
+          }
+        },
+        "SMOLVLA_ARM8_GRIP16": {
+          "successes": 24,
+          "episodes": 40,
+          "success_rate": 0.6,
+          "environment_steps": 6997,
+          "policy_queries": 886,
+          "model_forward_count": 886,
+          "query_rate": 0.12662569672716878,
+          "wall_clock_seconds": 546.7401299476624,
+          "mean_wall_clock_seconds": 13.66850324869156,
+          "mean_arm_source_age": 3.482349578390739,
+          "mean_gripper_source_age": 7.3674431899385455,
+          "source_age_stats": {
+            "arm": {
+              "count": 6997,
+              "mean": 3.482349578390739,
+              "standard_deviation": 2.291812364068089,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 6997,
+              "mean": 7.3674431899385455,
+              "standard_deviation": 4.606113211117356,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 24,
+          "second_successes": 23,
+          "first_only_wins": 1,
+          "second_only_wins": 0,
+          "ties": 39,
+          "delta": 0.025,
+          "delta_percentage_points": 2.5,
+          "exact_two_sided_mcnemar_p": 1.0,
+          "paired_bootstrap_ci": [
+            0.0,
+            0.075
+          ],
+          "task_cluster_bootstrap_ci": [
+            0.0,
+            0.075
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_spatial:task0": {
+              "first_successes": 1,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task2": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task3": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task4": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task5": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task6": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task7": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task8": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task9": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_spatial:task0": 0.027777777777777776,
+            "libero_spatial:task1": 0.027777777777777776,
+            "libero_spatial:task2": 0.027777777777777776,
+            "libero_spatial:task3": 0.027777777777777776,
+            "libero_spatial:task4": 0.027777777777777776,
+            "libero_spatial:task5": 0.027777777777777776,
+            "libero_spatial:task6": 0.0,
+            "libero_spatial:task7": 0.027777777777777776,
+            "libero_spatial:task8": 0.027777777777777776,
+            "libero_spatial:task9": 0.027777777777777776
+          }
+        }
+      },
+      "libero_goal": {
+        "SMOLVLA_COHERENT_H8": {
+          "successes": 26,
+          "episodes": 40,
+          "success_rate": 0.65,
+          "environment_steps": 6877,
+          "policy_queries": 877,
+          "model_forward_count": 877,
+          "query_rate": 0.12752653773447725,
+          "wall_clock_seconds": 492.6944799423218,
+          "mean_wall_clock_seconds": 12.317361998558045,
+          "mean_arm_source_age": 3.464155881925258,
+          "mean_gripper_source_age": 3.464155881925258,
+          "source_age_stats": {
+            "arm": {
+              "count": 6877,
+              "mean": 3.464155881925258,
+              "standard_deviation": 2.290467897844534,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 6877,
+              "mean": 3.464155881925258,
+              "standard_deviation": 2.290467897844534,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            }
+          }
+        },
+        "SMOLVLA_ARM8_GRIP16": {
+          "successes": 29,
+          "episodes": 40,
+          "success_rate": 0.725,
+          "environment_steps": 6613,
+          "policy_queries": 847,
+          "model_forward_count": 847,
+          "query_rate": 0.12808105247240284,
+          "wall_clock_seconds": 477.3893632888794,
+          "mean_wall_clock_seconds": 11.934734082221985,
+          "mean_arm_source_age": 3.4618176319370937,
+          "mean_gripper_source_age": 7.354755784061696,
+          "source_age_stats": {
+            "arm": {
+              "count": 6613,
+              "mean": 3.4618176319370937,
+              "standard_deviation": 2.2910026896685145,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 6613,
+              "mean": 7.354755784061696,
+              "standard_deviation": 4.599419139826276,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 29,
+          "second_successes": 26,
+          "first_only_wins": 5,
+          "second_only_wins": 2,
+          "ties": 33,
+          "delta": 0.075,
+          "delta_percentage_points": 7.5,
+          "exact_two_sided_mcnemar_p": 0.453125,
+          "paired_bootstrap_ci": [
+            -0.05,
+            0.2
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.025,
+            0.175
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_goal:task0": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task2": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_goal:task3": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task4": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task5": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task6": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task7": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task8": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task9": {
+              "first_successes": 1,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_goal:task0": 0.08333333333333333,
+            "libero_goal:task1": 0.08333333333333333,
+            "libero_goal:task2": 0.1111111111111111,
+            "libero_goal:task3": 0.05555555555555555,
+            "libero_goal:task4": 0.05555555555555555,
+            "libero_goal:task5": 0.08333333333333333,
+            "libero_goal:task6": 0.05555555555555555,
+            "libero_goal:task7": 0.08333333333333333,
+            "libero_goal:task8": 0.05555555555555555,
+            "libero_goal:task9": 0.08333333333333333
+          }
+        }
+      },
+      "libero_object": {
+        "SMOLVLA_COHERENT_H8": {
+          "successes": 36,
+          "episodes": 40,
+          "success_rate": 0.9,
+          "environment_steps": 6121,
+          "policy_queries": 780,
+          "model_forward_count": 780,
+          "query_rate": 0.1274301584708381,
+          "wall_clock_seconds": 410.36881923675537,
+          "mean_wall_clock_seconds": 10.259220480918884,
+          "mean_arm_source_age": 3.4723084463322986,
+          "mean_gripper_source_age": 3.4723084463322986,
+          "source_age_stats": {
+            "arm": {
+              "count": 6121,
+              "mean": 3.4723084463322986,
+              "standard_deviation": 2.291370066541358,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 6121,
+              "mean": 3.4723084463322986,
+              "standard_deviation": 2.291370066541358,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            }
+          }
+        },
+        "SMOLVLA_ARM8_GRIP16": {
+          "successes": 35,
+          "episodes": 40,
+          "success_rate": 0.875,
+          "environment_steps": 6419,
+          "policy_queries": 818,
+          "model_forward_count": 818,
+          "query_rate": 0.12743417977878174,
+          "wall_clock_seconds": 430.0498962402344,
+          "mean_wall_clock_seconds": 10.75124740600586,
+          "mean_arm_source_age": 3.4748403178065117,
+          "mean_gripper_source_age": 7.3558186633432,
+          "source_age_stats": {
+            "arm": {
+              "count": 6419,
+              "mean": 3.4748403178065117,
+              "standard_deviation": 2.291455667898574,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 6419,
+              "mean": 7.3558186633432,
+              "standard_deviation": 4.5956845274209455,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 35,
+          "second_successes": 36,
+          "first_only_wins": 3,
+          "second_only_wins": 4,
+          "ties": 33,
+          "delta": -0.025,
+          "delta_percentage_points": -2.5,
+          "exact_two_sided_mcnemar_p": 1.0,
+          "paired_bootstrap_ci": [
+            -0.15,
+            0.1
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.1,
+            0.05
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_object:task0": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task1": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task2": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task3": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task4": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task5": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_object:task6": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_object:task7": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_object:task8": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task9": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_object:task0": -0.027777777777777776,
+            "libero_object:task1": -0.027777777777777776,
+            "libero_object:task2": -0.027777777777777776,
+            "libero_object:task3": -0.027777777777777776,
+            "libero_object:task4": -0.027777777777777776,
+            "libero_object:task5": -0.05555555555555555,
+            "libero_object:task6": 0.0,
+            "libero_object:task7": 0.0,
+            "libero_object:task8": -0.027777777777777776,
+            "libero_object:task9": -0.027777777777777776
+          }
+        }
+      },
+      "libero_10": {
+        "SMOLVLA_COHERENT_H8": {
+          "successes": 21,
+          "episodes": 40,
+          "success_rate": 0.525,
+          "environment_steps": 15911,
+          "policy_queries": 1996,
+          "model_forward_count": 1996,
+          "query_rate": 0.12544780340644837,
+          "wall_clock_seconds": 1017.6562831401825,
+          "mean_wall_clock_seconds": 25.44140707850456,
+          "mean_arm_source_age": 3.4944378103199045,
+          "mean_gripper_source_age": 3.4944378103199045,
+          "source_age_stats": {
+            "arm": {
+              "count": 15911,
+              "mean": 3.4944378103199045,
+              "standard_deviation": 2.2911302268609717,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 15911,
+              "mean": 3.4944378103199045,
+              "standard_deviation": 2.2911302268609717,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            }
+          }
+        },
+        "SMOLVLA_ARM8_GRIP16": {
+          "successes": 18,
+          "episodes": 40,
+          "success_rate": 0.45,
+          "environment_steps": 16297,
+          "policy_queries": 2043,
+          "model_forward_count": 2043,
+          "query_rate": 0.12536049579677241,
+          "wall_clock_seconds": 1029.029937028885,
+          "mean_wall_clock_seconds": 25.725748425722124,
+          "mean_arm_source_age": 3.4957967724121004,
+          "mean_gripper_source_age": 7.428299687058968,
+          "source_age_stats": {
+            "arm": {
+              "count": 16297,
+              "mean": 3.4957967724121004,
+              "standard_deviation": 2.291243821577658,
+              "median": 3.0,
+              "p95": 7.0,
+              "maximum": 7
+            },
+            "gripper": {
+              "count": 16297,
+              "mean": 7.428299687058968,
+              "standard_deviation": 4.609274488897826,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 18,
+          "second_successes": 21,
+          "first_only_wins": 3,
+          "second_only_wins": 6,
+          "ties": 31,
+          "delta": -0.075,
+          "delta_percentage_points": -7.5,
+          "exact_two_sided_mcnemar_p": 0.5078125,
+          "paired_bootstrap_ci": [
+            -0.225,
+            0.075
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.225,
+            0.05
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_10:task0": {
+              "first_successes": 0,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_10:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task2": {
+              "first_successes": 1,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_10:task3": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_10:task4": {
+              "first_successes": 1,
+              "second_successes": 0,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task5": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task6": {
+              "first_successes": 2,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.5
+            },
+            "libero_10:task7": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task8": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task9": {
+              "first_successes": 1,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_10:task0": -0.05555555555555555,
+            "libero_10:task1": -0.08333333333333333,
+            "libero_10:task2": -0.05555555555555555,
+            "libero_10:task3": -0.05555555555555555,
+            "libero_10:task4": -0.1111111111111111,
+            "libero_10:task5": -0.08333333333333333,
+            "libero_10:task6": -0.027777777777777776,
+            "libero_10:task7": -0.08333333333333333,
+            "libero_10:task8": -0.1111111111111111,
+            "libero_10:task9": -0.08333333333333333
+          }
+        }
+      }
+    },
+    "ARM8_GRIP16_vs_COHERENT_H8": {
+      "blocks": 160,
+      "first_successes": 106,
+      "second_successes": 106,
+      "first_only_wins": 12,
+      "second_only_wins": 12,
+      "ties": 136,
+      "delta": 0.0,
+      "delta_percentage_points": 0.0,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "paired_bootstrap_ci": [
+        -0.0625,
+        0.0625
+      ],
+      "task_cluster_bootstrap_ci": [
+        -0.05625,
+        0.05
+      ],
+      "bootstrap_draws": 20000,
+      "per_task": {
+        "libero_10:task0": {
+          "first_successes": 0,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_10:task1": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_10:task2": {
+          "first_successes": 1,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_10:task3": {
+          "first_successes": 2,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_10:task4": {
+          "first_successes": 1,
+          "second_successes": 0,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_10:task5": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_10:task6": {
+          "first_successes": 2,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": -0.5
+        },
+        "libero_10:task7": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_10:task8": {
+          "first_successes": 2,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_10:task9": {
+          "first_successes": 1,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_goal:task0": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_goal:task1": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_goal:task2": {
+          "first_successes": 3,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_goal:task3": {
+          "first_successes": 3,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_goal:task4": {
+          "first_successes": 4,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_goal:task5": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_goal:task6": {
+          "first_successes": 3,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_goal:task7": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_goal:task8": {
+          "first_successes": 4,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_goal:task9": {
+          "first_successes": 1,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task0": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task1": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task2": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task3": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task4": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task5": {
+          "first_successes": 2,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_object:task6": {
+          "first_successes": 3,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_object:task7": {
+          "first_successes": 3,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": -0.25
+        },
+        "libero_object:task8": {
+          "first_successes": 4,
+          "second_successes": 4,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_object:task9": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task0": {
+          "first_successes": 1,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task1": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task2": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task3": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task4": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task5": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task6": {
+          "first_successes": 2,
+          "second_successes": 1,
+          "blocks": 4,
+          "delta": 0.25
+        },
+        "libero_spatial:task7": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task8": {
+          "first_successes": 3,
+          "second_successes": 3,
+          "blocks": 4,
+          "delta": 0.0
+        },
+        "libero_spatial:task9": {
+          "first_successes": 2,
+          "second_successes": 2,
+          "blocks": 4,
+          "delta": 0.0
+        }
+      },
+      "leave_one_task_out": {
+        "libero_10:task0": 0.00641025641025641,
+        "libero_10:task1": 0.0,
+        "libero_10:task2": 0.00641025641025641,
+        "libero_10:task3": 0.00641025641025641,
+        "libero_10:task4": -0.00641025641025641,
+        "libero_10:task5": 0.0,
+        "libero_10:task6": 0.01282051282051282,
+        "libero_10:task7": 0.0,
+        "libero_10:task8": -0.00641025641025641,
+        "libero_10:task9": 0.0,
+        "libero_goal:task0": 0.0,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 0.00641025641025641,
+        "libero_goal:task3": -0.00641025641025641,
+        "libero_goal:task4": -0.00641025641025641,
+        "libero_goal:task5": 0.0,
+        "libero_goal:task6": -0.00641025641025641,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": -0.00641025641025641,
+        "libero_goal:task9": 0.0,
+        "libero_object:task0": 0.0,
+        "libero_object:task1": 0.0,
+        "libero_object:task2": 0.0,
+        "libero_object:task3": 0.0,
+        "libero_object:task4": 0.0,
+        "libero_object:task5": -0.00641025641025641,
+        "libero_object:task6": 0.00641025641025641,
+        "libero_object:task7": 0.00641025641025641,
+        "libero_object:task8": 0.0,
+        "libero_object:task9": 0.0,
+        "libero_spatial:task0": 0.0,
+        "libero_spatial:task1": 0.0,
+        "libero_spatial:task2": 0.0,
+        "libero_spatial:task3": 0.0,
+        "libero_spatial:task4": 0.0,
+        "libero_spatial:task5": 0.0,
+        "libero_spatial:task6": -0.00641025641025641,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": 0.0,
+        "libero_spatial:task9": 0.0
+      }
+    },
+    "query_rate_match_absolute_difference": 3.932401471395952e-05,
+    "query_schedule_audit": {
+      "methods": {
+        "SMOLVLA_COHERENT_H8": {
+          "episodes": 160,
+          "query_periods": [
+            8
+          ],
+          "all_exact_periodic_schedules": true,
+          "invalid_cell_ids": [],
+          "all_arm_driven": true
+        },
+        "SMOLVLA_ARM8_GRIP16": {
+          "episodes": 160,
+          "query_periods": [
+            8
+          ],
+          "all_exact_periodic_schedules": true,
+          "invalid_cell_ids": [],
+          "all_arm_driven": true
+        }
+      },
+      "matched_query_periods": true,
+      "intended_matched_arm_driven_schedule": true
+    }
+  },
+  "smolvla_capacity_h16": {
+    "ran": true,
+    "barrier_audit": {
+      "latest_primary_finished_at": 1788278134.3636134,
+      "earliest_capacity_started_at": 1788278136.736722,
+      "capacity_started_after_all_primary_finished": true
+    },
+    "pooled": {
+      "SMOLVLA_COHERENT_H16": {
+        "successes": 112,
+        "episodes": 160,
+        "success_rate": 0.7,
+        "environment_steps": 35249,
+        "policy_queries": 2276,
+        "model_forward_count": 2276,
+        "query_rate": 0.06456920763709609,
+        "wall_clock_seconds": 1700.3632781505585,
+        "mean_wall_clock_seconds": 10.62727048844099,
+        "mean_arm_source_age": 7.3892592697665185,
+        "mean_gripper_source_age": 7.3892592697665185,
+        "source_age_stats": {
+          "arm": {
+            "count": 35249,
+            "mean": 7.3892592697665185,
+            "standard_deviation": 4.606209779340562,
+            "median": 7.0,
+            "p95": 15.0,
+            "maximum": 15
+          },
+          "gripper": {
+            "count": 35249,
+            "mean": 7.3892592697665185,
+            "standard_deviation": 4.606209779340562,
+            "median": 7.0,
+            "p95": 15.0,
+            "maximum": 15
+          }
+        }
+      },
+      "COHERENT_H16_vs_COHERENT_H8": {
+        "blocks": 160,
+        "first_successes": 112,
+        "second_successes": 106,
+        "first_only_wins": 26,
+        "second_only_wins": 20,
+        "ties": 114,
+        "delta": 0.0375,
+        "delta_percentage_points": 3.75,
+        "exact_two_sided_mcnemar_p": 0.4613911821367651,
+        "paired_bootstrap_ci": [
+          -0.04375,
+          0.11875
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.05,
+          0.125
+        ],
+        "bootstrap_draws": 20000,
+        "per_task": {
+          "libero_10:task0": {
+            "first_successes": 0,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_10:task1": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task2": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_10:task3": {
+            "first_successes": 1,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.5
+          },
+          "libero_10:task4": {
+            "first_successes": 1,
+            "second_successes": 0,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_10:task5": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task6": {
+            "first_successes": 1,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.75
+          },
+          "libero_10:task7": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task8": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_10:task9": {
+            "first_successes": 3,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.5
+          },
+          "libero_goal:task0": {
+            "first_successes": 1,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_goal:task1": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task2": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_goal:task3": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task4": {
+            "first_successes": 4,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_goal:task5": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_goal:task6": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_goal:task7": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task8": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_goal:task9": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_object:task0": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task1": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task2": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task3": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task4": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task5": {
+            "first_successes": 3,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.5
+          },
+          "libero_object:task6": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task7": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_object:task8": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task9": {
+            "first_successes": 4,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task0": {
+            "first_successes": 3,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.5
+          },
+          "libero_spatial:task1": {
+            "first_successes": 4,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task2": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_spatial:task3": {
+            "first_successes": 1,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task4": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task5": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task6": {
+            "first_successes": 3,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.5
+          },
+          "libero_spatial:task7": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task8": {
+            "first_successes": 4,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task9": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_10:task0": 0.04487179487179487,
+          "libero_10:task1": 0.038461538461538464,
+          "libero_10:task2": 0.03205128205128205,
+          "libero_10:task3": 0.05128205128205128,
+          "libero_10:task4": 0.03205128205128205,
+          "libero_10:task5": 0.038461538461538464,
+          "libero_10:task6": 0.057692307692307696,
+          "libero_10:task7": 0.038461538461538464,
+          "libero_10:task8": 0.03205128205128205,
+          "libero_10:task9": 0.02564102564102564,
+          "libero_goal:task0": 0.04487179487179487,
+          "libero_goal:task1": 0.038461538461538464,
+          "libero_goal:task2": 0.04487179487179487,
+          "libero_goal:task3": 0.038461538461538464,
+          "libero_goal:task4": 0.03205128205128205,
+          "libero_goal:task5": 0.03205128205128205,
+          "libero_goal:task6": 0.03205128205128205,
+          "libero_goal:task7": 0.038461538461538464,
+          "libero_goal:task8": 0.04487179487179487,
+          "libero_goal:task9": 0.03205128205128205,
+          "libero_object:task0": 0.038461538461538464,
+          "libero_object:task1": 0.038461538461538464,
+          "libero_object:task2": 0.038461538461538464,
+          "libero_object:task3": 0.038461538461538464,
+          "libero_object:task4": 0.038461538461538464,
+          "libero_object:task5": 0.02564102564102564,
+          "libero_object:task6": 0.038461538461538464,
+          "libero_object:task7": 0.04487179487179487,
+          "libero_object:task8": 0.038461538461538464,
+          "libero_object:task9": 0.03205128205128205,
+          "libero_spatial:task0": 0.02564102564102564,
+          "libero_spatial:task1": 0.03205128205128205,
+          "libero_spatial:task2": 0.038461538461538464,
+          "libero_spatial:task3": 0.04487179487179487,
+          "libero_spatial:task4": 0.03205128205128205,
+          "libero_spatial:task5": 0.04487179487179487,
+          "libero_spatial:task6": 0.02564102564102564,
+          "libero_spatial:task7": 0.04487179487179487,
+          "libero_spatial:task8": 0.03205128205128205,
+          "libero_spatial:task9": 0.038461538461538464
+        }
+      },
+      "ARM8_GRIP16_vs_COHERENT_H16": {
+        "blocks": 160,
+        "first_successes": 106,
+        "second_successes": 112,
+        "first_only_wins": 23,
+        "second_only_wins": 29,
+        "ties": 108,
+        "delta": -0.0375,
+        "delta_percentage_points": -3.75,
+        "exact_two_sided_mcnemar_p": 0.48845566937989204,
+        "paired_bootstrap_ci": [
+          -0.125,
+          0.05
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.10625,
+          0.03125
+        ],
+        "bootstrap_draws": 20000,
+        "per_task": {
+          "libero_10:task0": {
+            "first_successes": 0,
+            "second_successes": 0,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task1": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task2": {
+            "first_successes": 1,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.5
+          },
+          "libero_10:task3": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_10:task4": {
+            "first_successes": 1,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task5": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task6": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_10:task7": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task8": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_10:task9": {
+            "first_successes": 1,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.5
+          },
+          "libero_goal:task0": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_goal:task1": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task2": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task3": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_goal:task4": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task5": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_goal:task6": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task7": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_goal:task8": {
+            "first_successes": 4,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.5
+          },
+          "libero_goal:task9": {
+            "first_successes": 1,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_object:task0": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task1": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task2": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task3": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task4": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task5": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_object:task6": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_object:task7": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task8": {
+            "first_successes": 4,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_object:task9": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task0": {
+            "first_successes": 1,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.5
+          },
+          "libero_spatial:task1": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task2": {
+            "first_successes": 3,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": 0.0
+          },
+          "libero_spatial:task3": {
+            "first_successes": 2,
+            "second_successes": 1,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task4": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task5": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task6": {
+            "first_successes": 2,
+            "second_successes": 3,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task7": {
+            "first_successes": 3,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.25
+          },
+          "libero_spatial:task8": {
+            "first_successes": 3,
+            "second_successes": 4,
+            "blocks": 4,
+            "delta": -0.25
+          },
+          "libero_spatial:task9": {
+            "first_successes": 2,
+            "second_successes": 2,
+            "blocks": 4,
+            "delta": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_10:task0": -0.038461538461538464,
+          "libero_10:task1": -0.038461538461538464,
+          "libero_10:task2": -0.02564102564102564,
+          "libero_10:task3": -0.04487179487179487,
+          "libero_10:task4": -0.038461538461538464,
+          "libero_10:task5": -0.038461538461538464,
+          "libero_10:task6": -0.04487179487179487,
+          "libero_10:task7": -0.038461538461538464,
+          "libero_10:task8": -0.038461538461538464,
+          "libero_10:task9": -0.02564102564102564,
+          "libero_goal:task0": -0.04487179487179487,
+          "libero_goal:task1": -0.038461538461538464,
+          "libero_goal:task2": -0.038461538461538464,
+          "libero_goal:task3": -0.04487179487179487,
+          "libero_goal:task4": -0.038461538461538464,
+          "libero_goal:task5": -0.03205128205128205,
+          "libero_goal:task6": -0.038461538461538464,
+          "libero_goal:task7": -0.038461538461538464,
+          "libero_goal:task8": -0.05128205128205128,
+          "libero_goal:task9": -0.03205128205128205,
+          "libero_object:task0": -0.038461538461538464,
+          "libero_object:task1": -0.038461538461538464,
+          "libero_object:task2": -0.038461538461538464,
+          "libero_object:task3": -0.038461538461538464,
+          "libero_object:task4": -0.038461538461538464,
+          "libero_object:task5": -0.03205128205128205,
+          "libero_object:task6": -0.03205128205128205,
+          "libero_object:task7": -0.038461538461538464,
+          "libero_object:task8": -0.038461538461538464,
+          "libero_object:task9": -0.03205128205128205,
+          "libero_spatial:task0": -0.02564102564102564,
+          "libero_spatial:task1": -0.03205128205128205,
+          "libero_spatial:task2": -0.038461538461538464,
+          "libero_spatial:task3": -0.04487179487179487,
+          "libero_spatial:task4": -0.03205128205128205,
+          "libero_spatial:task5": -0.04487179487179487,
+          "libero_spatial:task6": -0.03205128205128205,
+          "libero_spatial:task7": -0.04487179487179487,
+          "libero_spatial:task8": -0.03205128205128205,
+          "libero_spatial:task9": -0.038461538461538464
+        }
+      }
+    },
+    "suites": {
+      "libero_spatial": {
+        "SMOLVLA_COHERENT_H16": {
+          "successes": 27,
+          "episodes": 40,
+          "success_rate": 0.675,
+          "environment_steps": 6551,
+          "policy_queries": 429,
+          "model_forward_count": 429,
+          "query_rate": 0.06548618531521905,
+          "wall_clock_seconds": 399.7600317001343,
+          "mean_wall_clock_seconds": 9.994000792503357,
+          "mean_arm_source_age": 7.348191115860174,
+          "mean_gripper_source_age": 7.348191115860174,
+          "source_age_stats": {
+            "arm": {
+              "count": 6551,
+              "mean": 7.348191115860174,
+              "standard_deviation": 4.607520351496616,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            },
+            "gripper": {
+              "count": 6551,
+              "mean": 7.348191115860174,
+              "standard_deviation": 4.607520351496616,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "COHERENT_H16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 27,
+          "second_successes": 23,
+          "first_only_wins": 11,
+          "second_only_wins": 7,
+          "ties": 22,
+          "delta": 0.1,
+          "delta_percentage_points": 10.0,
+          "exact_two_sided_mcnemar_p": 0.480682373046875,
+          "paired_bootstrap_ci": [
+            -0.1,
+            0.3
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.075,
+            0.275
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_spatial:task0": {
+              "first_successes": 3,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.5
+            },
+            "libero_spatial:task1": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task2": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task3": {
+              "first_successes": 1,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task4": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task5": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task6": {
+              "first_successes": 3,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.5
+            },
+            "libero_spatial:task7": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task8": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task9": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_spatial:task0": 0.05555555555555555,
+            "libero_spatial:task1": 0.08333333333333333,
+            "libero_spatial:task2": 0.1111111111111111,
+            "libero_spatial:task3": 0.1388888888888889,
+            "libero_spatial:task4": 0.08333333333333333,
+            "libero_spatial:task5": 0.1388888888888889,
+            "libero_spatial:task6": 0.05555555555555555,
+            "libero_spatial:task7": 0.1388888888888889,
+            "libero_spatial:task8": 0.08333333333333333,
+            "libero_spatial:task9": 0.1111111111111111
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H16": {
+          "blocks": 40,
+          "first_successes": 24,
+          "second_successes": 27,
+          "first_only_wins": 7,
+          "second_only_wins": 10,
+          "ties": 23,
+          "delta": -0.075,
+          "delta_percentage_points": -7.5,
+          "exact_two_sided_mcnemar_p": 0.629058837890625,
+          "paired_bootstrap_ci": [
+            -0.275,
+            0.125
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.225,
+            0.075
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_spatial:task0": {
+              "first_successes": 1,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.5
+            },
+            "libero_spatial:task1": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task2": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_spatial:task3": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task4": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task5": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task6": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task7": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_spatial:task8": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_spatial:task9": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_spatial:task0": -0.027777777777777776,
+            "libero_spatial:task1": -0.05555555555555555,
+            "libero_spatial:task2": -0.08333333333333333,
+            "libero_spatial:task3": -0.1111111111111111,
+            "libero_spatial:task4": -0.05555555555555555,
+            "libero_spatial:task5": -0.1111111111111111,
+            "libero_spatial:task6": -0.05555555555555555,
+            "libero_spatial:task7": -0.1111111111111111,
+            "libero_spatial:task8": -0.05555555555555555,
+            "libero_spatial:task9": -0.08333333333333333
+          }
+        }
+      },
+      "libero_goal": {
+        "SMOLVLA_COHERENT_H16": {
+          "successes": 27,
+          "episodes": 40,
+          "success_rate": 0.675,
+          "environment_steps": 6882,
+          "policy_queries": 448,
+          "model_forward_count": 448,
+          "query_rate": 0.06509735541993607,
+          "wall_clock_seconds": 357.30975580215454,
+          "mean_wall_clock_seconds": 8.932743895053864,
+          "mean_arm_source_age": 7.3692240627724495,
+          "mean_gripper_source_age": 7.3692240627724495,
+          "source_age_stats": {
+            "arm": {
+              "count": 6882,
+              "mean": 7.3692240627724495,
+              "standard_deviation": 4.601416231586904,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            },
+            "gripper": {
+              "count": 6882,
+              "mean": 7.3692240627724495,
+              "standard_deviation": 4.601416231586904,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "COHERENT_H16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 27,
+          "second_successes": 26,
+          "first_only_wins": 6,
+          "second_only_wins": 5,
+          "ties": 29,
+          "delta": 0.025,
+          "delta_percentage_points": 2.5,
+          "exact_two_sided_mcnemar_p": 1.0,
+          "paired_bootstrap_ci": [
+            -0.125,
+            0.175
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.1,
+            0.15
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_goal:task0": {
+              "first_successes": 1,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_goal:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task2": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_goal:task3": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task4": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task5": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task6": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task7": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task8": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_goal:task9": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            }
+          },
+          "leave_one_task_out": {
+            "libero_goal:task0": 0.05555555555555555,
+            "libero_goal:task1": 0.027777777777777776,
+            "libero_goal:task2": 0.05555555555555555,
+            "libero_goal:task3": 0.027777777777777776,
+            "libero_goal:task4": 0.0,
+            "libero_goal:task5": 0.0,
+            "libero_goal:task6": 0.0,
+            "libero_goal:task7": 0.027777777777777776,
+            "libero_goal:task8": 0.05555555555555555,
+            "libero_goal:task9": 0.0
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H16": {
+          "blocks": 40,
+          "first_successes": 29,
+          "second_successes": 27,
+          "first_only_wins": 7,
+          "second_only_wins": 5,
+          "ties": 28,
+          "delta": 0.05,
+          "delta_percentage_points": 5.0,
+          "exact_two_sided_mcnemar_p": 0.7744140625,
+          "paired_bootstrap_ci": [
+            -0.125,
+            0.225
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.075,
+            0.2
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_goal:task0": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task2": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task3": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_goal:task4": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task5": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_goal:task6": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task7": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_goal:task8": {
+              "first_successes": 4,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.5
+            },
+            "libero_goal:task9": {
+              "first_successes": 1,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": -0.25
+            }
+          },
+          "leave_one_task_out": {
+            "libero_goal:task0": 0.027777777777777776,
+            "libero_goal:task1": 0.05555555555555555,
+            "libero_goal:task2": 0.05555555555555555,
+            "libero_goal:task3": 0.027777777777777776,
+            "libero_goal:task4": 0.05555555555555555,
+            "libero_goal:task5": 0.08333333333333333,
+            "libero_goal:task6": 0.05555555555555555,
+            "libero_goal:task7": 0.05555555555555555,
+            "libero_goal:task8": 0.0,
+            "libero_goal:task9": 0.08333333333333333
+          }
+        }
+      },
+      "libero_object": {
+        "SMOLVLA_COHERENT_H16": {
+          "successes": 38,
+          "episodes": 40,
+          "success_rate": 0.95,
+          "environment_steps": 5884,
+          "policy_queries": 384,
+          "model_forward_count": 384,
+          "query_rate": 0.06526172671651938,
+          "wall_clock_seconds": 279.1396412849426,
+          "mean_wall_clock_seconds": 6.978491032123566,
+          "mean_arm_source_age": 7.351971447994561,
+          "mean_gripper_source_age": 7.351971447994561,
+          "source_age_stats": {
+            "arm": {
+              "count": 5884,
+              "mean": 7.351971447994561,
+              "standard_deviation": 4.601193707823462,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            },
+            "gripper": {
+              "count": 5884,
+              "mean": 7.351971447994561,
+              "standard_deviation": 4.601193707823462,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "COHERENT_H16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 38,
+          "second_successes": 36,
+          "first_only_wins": 3,
+          "second_only_wins": 1,
+          "ties": 36,
+          "delta": 0.05,
+          "delta_percentage_points": 5.0,
+          "exact_two_sided_mcnemar_p": 0.625,
+          "paired_bootstrap_ci": [
+            -0.05,
+            0.15
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.05,
+            0.175
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_object:task0": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task1": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task2": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task3": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task4": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task5": {
+              "first_successes": 3,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.5
+            },
+            "libero_object:task6": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task7": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_object:task8": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task9": {
+              "first_successes": 4,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.25
+            }
+          },
+          "leave_one_task_out": {
+            "libero_object:task0": 0.05555555555555555,
+            "libero_object:task1": 0.05555555555555555,
+            "libero_object:task2": 0.05555555555555555,
+            "libero_object:task3": 0.05555555555555555,
+            "libero_object:task4": 0.05555555555555555,
+            "libero_object:task5": 0.0,
+            "libero_object:task6": 0.05555555555555555,
+            "libero_object:task7": 0.08333333333333333,
+            "libero_object:task8": 0.05555555555555555,
+            "libero_object:task9": 0.027777777777777776
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H16": {
+          "blocks": 40,
+          "first_successes": 35,
+          "second_successes": 38,
+          "first_only_wins": 2,
+          "second_only_wins": 5,
+          "ties": 33,
+          "delta": -0.075,
+          "delta_percentage_points": -7.5,
+          "exact_two_sided_mcnemar_p": 0.453125,
+          "paired_bootstrap_ci": [
+            -0.2,
+            0.05
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.15,
+            0.0
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_object:task0": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task1": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task2": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task3": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task4": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task5": {
+              "first_successes": 2,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_object:task6": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_object:task7": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task8": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_object:task9": {
+              "first_successes": 3,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.25
+            }
+          },
+          "leave_one_task_out": {
+            "libero_object:task0": -0.08333333333333333,
+            "libero_object:task1": -0.08333333333333333,
+            "libero_object:task2": -0.08333333333333333,
+            "libero_object:task3": -0.08333333333333333,
+            "libero_object:task4": -0.08333333333333333,
+            "libero_object:task5": -0.05555555555555555,
+            "libero_object:task6": -0.05555555555555555,
+            "libero_object:task7": -0.08333333333333333,
+            "libero_object:task8": -0.08333333333333333,
+            "libero_object:task9": -0.05555555555555555
+          }
+        }
+      },
+      "libero_10": {
+        "SMOLVLA_COHERENT_H16": {
+          "successes": 20,
+          "episodes": 40,
+          "success_rate": 0.5,
+          "environment_steps": 15932,
+          "policy_queries": 1015,
+          "model_forward_count": 1015,
+          "query_rate": 0.06370826010544815,
+          "wall_clock_seconds": 664.153849363327,
+          "mean_wall_clock_seconds": 16.603846234083175,
+          "mean_arm_source_age": 7.428571428571429,
+          "mean_gripper_source_age": 7.428571428571429,
+          "source_age_stats": {
+            "arm": {
+              "count": 15932,
+              "mean": 7.428571428571429,
+              "standard_deviation": 4.60927327170493,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            },
+            "gripper": {
+              "count": 15932,
+              "mean": 7.428571428571429,
+              "standard_deviation": 4.60927327170493,
+              "median": 7.0,
+              "p95": 15.0,
+              "maximum": 15
+            }
+          }
+        },
+        "COHERENT_H16_vs_COHERENT_H8": {
+          "blocks": 40,
+          "first_successes": 20,
+          "second_successes": 21,
+          "first_only_wins": 6,
+          "second_only_wins": 7,
+          "ties": 27,
+          "delta": -0.025,
+          "delta_percentage_points": -2.5,
+          "exact_two_sided_mcnemar_p": 1.0,
+          "paired_bootstrap_ci": [
+            -0.2,
+            0.15
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.25,
+            0.175
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_10:task0": {
+              "first_successes": 0,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": -0.25
+            },
+            "libero_10:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task2": {
+              "first_successes": 3,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task3": {
+              "first_successes": 1,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.5
+            },
+            "libero_10:task4": {
+              "first_successes": 1,
+              "second_successes": 0,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task5": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task6": {
+              "first_successes": 1,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": -0.75
+            },
+            "libero_10:task7": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task8": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task9": {
+              "first_successes": 3,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.5
+            }
+          },
+          "leave_one_task_out": {
+            "libero_10:task0": 0.0,
+            "libero_10:task1": -0.027777777777777776,
+            "libero_10:task2": -0.05555555555555555,
+            "libero_10:task3": 0.027777777777777776,
+            "libero_10:task4": -0.05555555555555555,
+            "libero_10:task5": -0.027777777777777776,
+            "libero_10:task6": 0.05555555555555555,
+            "libero_10:task7": -0.027777777777777776,
+            "libero_10:task8": -0.05555555555555555,
+            "libero_10:task9": -0.08333333333333333
+          }
+        },
+        "ARM8_GRIP16_vs_COHERENT_H16": {
+          "blocks": 40,
+          "first_successes": 18,
+          "second_successes": 20,
+          "first_only_wins": 7,
+          "second_only_wins": 9,
+          "ties": 24,
+          "delta": -0.05,
+          "delta_percentage_points": -5.0,
+          "exact_two_sided_mcnemar_p": 0.803619384765625,
+          "paired_bootstrap_ci": [
+            -0.25,
+            0.15
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.2,
+            0.075
+          ],
+          "bootstrap_draws": 20000,
+          "per_task": {
+            "libero_10:task0": {
+              "first_successes": 0,
+              "second_successes": 0,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task1": {
+              "first_successes": 3,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task2": {
+              "first_successes": 1,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.5
+            },
+            "libero_10:task3": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task4": {
+              "first_successes": 1,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task5": {
+              "first_successes": 4,
+              "second_successes": 4,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task6": {
+              "first_successes": 2,
+              "second_successes": 1,
+              "blocks": 4,
+              "delta": 0.25
+            },
+            "libero_10:task7": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task8": {
+              "first_successes": 2,
+              "second_successes": 2,
+              "blocks": 4,
+              "delta": 0.0
+            },
+            "libero_10:task9": {
+              "first_successes": 1,
+              "second_successes": 3,
+              "blocks": 4,
+              "delta": -0.5
+            }
+          },
+          "leave_one_task_out": {
+            "libero_10:task0": -0.05555555555555555,
+            "libero_10:task1": -0.05555555555555555,
+            "libero_10:task2": 0.0,
+            "libero_10:task3": -0.08333333333333333,
+            "libero_10:task4": -0.05555555555555555,
+            "libero_10:task5": -0.05555555555555555,
+            "libero_10:task6": -0.08333333333333333,
+            "libero_10:task7": -0.05555555555555555,
+            "libero_10:task8": -0.05555555555555555,
+            "libero_10:task9": 0.0
+          }
+        }
+      }
+    },
+    "query_schedule_audit": {
+      "episodes": 160,
+      "query_periods": [
+        16
+      ],
+      "all_exact_periodic_schedules": true,
+      "invalid_cell_ids": [],
+      "all_arm_driven": true
+    }
+  },
+  "execution_integrity": {
+    "requested_overnight_completed": 800,
+    "full_manifest_completed": 926,
+    "pending": 0,
+    "running": 0,
+    "scientific_execution_retries": 0,
+    "technical_failed": 0,
+    "archived_preflight_failures": {
+      "act_object_h8_126": {
+        "cells_with_exception_history": 126,
+        "exception_attempts": 378,
+        "provisional_technical_failed_markers": 126,
+        "scientific_result_files": 0
+      },
+      "act_object_h8_126_second_mapping": {
+        "cells_with_exception_history": 56,
+        "exception_attempts": 163,
+        "provisional_technical_failed_markers": 53,
+        "scientific_result_files": 0
+      }
+    },
+    "valid_scientific_failure_rerun": false,
+    "prohibited_experiment_launched": false,
+    "observed_methods": [
+      "ARM4_GRIP32",
+      "COHERENT_H8",
+      "SMOLVLA_ARM8_GRIP16",
+      "SMOLVLA_COHERENT_H16",
+      "SMOLVLA_COHERENT_H8"
+    ],
+    "allowed_manifest_methods": [
+      "ARM4_GRIP32",
+      "COHERENT_H8",
+      "SMOLVLA_ARM8_GRIP16",
+      "SMOLVLA_COHERENT_H16",
+      "SMOLVLA_COHERENT_H8"
+    ]
   }
 }

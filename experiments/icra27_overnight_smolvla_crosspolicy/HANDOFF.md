@@ -7,7 +7,7 @@
 - Frozen queue commit: `aa23175`
 - Worktree: `/home/wjq/workspace/one-clock-icra27-overnight`
 - Manifest: `experiments/icra27_overnight_smolvla_crosspolicy/queue_manifest.json`
-- Current committed scientific HEAD at final interactive handoff: `1d91af1ef798d938a7e65705d3d3e9adf8eb1a6e`
+- Last pushed handoff SHA before results harvest: `10bb769cd4d20df7800994644cc1a4ed0341bc02`
 
 The fallback manuscript and fallback branch were not modified.
 
@@ -23,13 +23,19 @@ PID files: `experiments/icra27_overnight_smolvla_crosspolicy/pids/worker_{0,1,2}
 
 The runner uses fresh environments per method/state, durable per-cell JSON, marker validation, and at most two retries after the initial episode attempt. Valid scientific failures are complete and are never retried. Capacity h16 waits on a marker-only barrier requiring all 320 primary cells to be complete or `TECHNICAL_FAILED`; it does not read outcomes.
 
-Final interactive snapshot (2026-09-01, Asia/Shanghai):
+Final results-harvest snapshot (2026-09-02, Asia/Shanghai):
 
 - `act_object_h8_126`: 126 complete, 0 technical failures, 0 pending; committed and pushed.
-- `act_posthoc_h8_140`: 58 complete, 0 technical failures, 82 pending; actively running.
-- `act_arm4_grip32_180`: 0 complete, 0 technical failures, 180 pending.
-- `smolvla_primary`: 0 complete, 0 technical failures, 320 pending.
-- `smolvla_capacity_h16`: 0 complete, 0 technical failures, 160 pending.
+- `act_posthoc_h8_140`: 140 complete, 0 technical failures, 0 pending.
+- `act_arm4_grip32_180`: 180 complete, 0 technical failures, 0 pending.
+- `smolvla_primary`: 320 complete, 0 technical failures, 0 pending.
+- `smolvla_capacity_h16`: 160 complete, 0 technical failures, 0 pending.
+
+All three detached workers reached `ALL_REQUESTED_PHASES_COMPLETE` and exited. The
+capacity barrier audit confirms that the earliest H16 episode started after the
+latest primary episode finished. All 926 full-manifest result files pass the
+runner's exact identity, status, action-count, source-age-count, query-count, and
+query-schedule validator. The 800-cell requested overnight queue is complete.
 
 The authoritative 126-block result is H8 82/126 versus historical H16 88/126 (H8-only 10, H16-only 16, delta -4.76 pp, exact McNemar p=0.32694). The descriptive label is `H16_NOT_CHALLENGED_BY_H8`; `COHERENT_OPTIMUM_IS_NOT_H16` was not recorded for this cohort.
 
@@ -67,7 +73,7 @@ bash experiments/icra27_overnight_smolvla_crosspolicy/resume.sh
 
 The launcher refuses a duplicate matching worker. The runner skips only a result that passes identity, status, action-count, source-age-count, query-count, and exact query-schedule validation, or a terminal `TECHNICAL_FAILED` marker.
 
-## Next analysis command
+## Final analysis command
 
 ```bash
 cd /home/wjq/workspace/one-clock-icra27-overnight
@@ -75,7 +81,11 @@ cd /home/wjq/workspace/one-clock-icra27-overnight
   experiments/icra27_overnight_smolvla_crosspolicy/analyze.py
 ```
 
-Then inspect `analysis.json`, update the exposure-inventory SmolVLA row from `PROTOCOL_ONLY` to `OUTCOME_EXPOSED` for completed cells, commit scientific results/markers/progress/logs/analysis/handoff, and push this branch. Do not edit the manuscript and do not launch any experiment outside the frozen manifest.
+The harvest ran this command after validation. `analysis.json` and `report.md`
+contain ACT-B, ACT-C, SmolVLA primary, H16 capacity, per-task, LOTO, paired
+bootstrap, task-cluster bootstrap, query/source-age, and execution-integrity
+results. The exposure inventory is now `OUTCOME_EXPOSED`. The fallback manuscript
+was not edited.
 
 ## Frozen stop conditions
 
