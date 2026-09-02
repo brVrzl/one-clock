@@ -1,0 +1,223 @@
+{
+  "analysis_role": "POST_HOC_SUPPORTING_INTERACTION",
+  "source_protocol": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/cross_suite_confirmation/protocol.json",
+  "source_results_root": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/cross_suite_confirmation/results",
+  "validation": {
+    "episodes_checked": 910,
+    "same_target": true,
+    "fixed_semantics": true,
+    "fixed_prefix": true,
+    "hard_schedule": true
+  },
+  "task_clusters": 10,
+  "blocks": 140,
+  "canonical_cell_order": [
+    "A0G0",
+    "A0G20",
+    "A20G0",
+    "A20G20"
+  ],
+  "canonical_rd_formula": "p(A20G20) - p(A20G0) - p(A0G20) + p(A0G0)",
+  "canonical_log_odds_formula": "logit(p(A20G20)) - logit(p(A20G0)) - logit(p(A0G20)) + logit(p(A0G0))",
+  "cell_successes": {
+    "A0G0": 77,
+    "A0G20": 83,
+    "A20G0": 38,
+    "A20G20": 66
+  },
+  "cell_rates": {
+    "A0G0": 0.55,
+    "A0G20": 0.5928571428571429,
+    "A20G0": 0.2714285714285714,
+    "A20G20": 0.4714285714285714
+  },
+  "risk_difference": {
+    "estimate": 0.1571428571428572,
+    "percentage_points": 15.714285714285719,
+    "paired_block_bootstrap_ci": [
+      0.06428571428571428,
+      0.25
+    ],
+    "task_cluster_bootstrap_ci": [
+      0.0071428571428571175,
+      0.30714285714285716
+    ],
+    "task_t_interval": [
+      -0.027561501751732748,
+      0.34184721603744717
+    ],
+    "task_sign_flip_test": {
+      "null": "task-level interaction effects are sign-exchangeable around zero",
+      "enumerations": 1024,
+      "two_sided_p": 0.1015625
+    }
+  },
+  "log_odds": {
+    "estimate": 0.6978576578802448,
+    "interaction_odds_ratio": 2.0094431781178774,
+    "paired_block_bootstrap_ci": [
+      0.303430875685965,
+      1.1141804964707964
+    ],
+    "paired_block_bootstrap_invalid_draws": 0,
+    "task_cluster_bootstrap_ci": [
+      0.0007343099079165429,
+      1.5979918927394015
+    ],
+    "task_cluster_bootstrap_invalid_draws": 5,
+    "delete_one_task_jackknife_t_interval": [
+      -0.20886039589988348,
+      1.604575711660373
+    ],
+    "delete_one_task_estimates": [
+      0.6518707438596358,
+      0.7942477912309938,
+      0.8850219276140803,
+      0.9527984302644545,
+      0.5060632347156223,
+      0.7355413031013449,
+      0.6288557255138103,
+      0.66829877019477,
+      0.5466147316175756,
+      0.6706743247078863
+    ]
+  },
+  "bootstrap": {
+    "draws": 20000,
+    "block_seed": 27501,
+    "task_cluster_seed": 27502
+  },
+  "task_rows": [
+    {
+      "task": "libero_goal:task4",
+      "blocks": 14,
+      "rd_interaction": 0.3571428571428572,
+      "A0G0_successes": 13,
+      "A0G0_rate": 0.9285714285714286,
+      "A0G20_successes": 12,
+      "A0G20_rate": 0.8571428571428571,
+      "A20G0_successes": 8,
+      "A20G0_rate": 0.5714285714285714,
+      "A20G20_successes": 12,
+      "A20G20_rate": 0.8571428571428571
+    },
+    {
+      "task": "libero_goal:task6",
+      "blocks": 14,
+      "rd_interaction": -0.0714285714285714,
+      "A0G0_successes": 10,
+      "A0G0_rate": 0.7142857142857143,
+      "A0G20_successes": 10,
+      "A0G20_rate": 0.7142857142857143,
+      "A20G0_successes": 3,
+      "A20G0_rate": 0.21428571428571427,
+      "A20G20_successes": 2,
+      "A20G20_rate": 0.14285714285714285
+    },
+    {
+      "task": "libero_goal:task7",
+      "blocks": 14,
+      "rd_interaction": 0.0,
+      "A0G0_successes": 14,
+      "A0G0_rate": 1.0,
+      "A0G20_successes": 14,
+      "A0G20_rate": 1.0,
+      "A20G0_successes": 13,
+      "A20G0_rate": 0.9285714285714286,
+      "A20G20_successes": 13,
+      "A20G20_rate": 0.9285714285714286
+    },
+    {
+      "task": "libero_goal:task8",
+      "blocks": 14,
+      "rd_interaction": -0.2857142857142858,
+      "A0G0_successes": 13,
+      "A0G0_rate": 0.9285714285714286,
+      "A0G20_successes": 14,
+      "A0G20_rate": 1.0,
+      "A20G0_successes": 9,
+      "A20G0_rate": 0.6428571428571429,
+      "A20G20_successes": 6,
+      "A20G20_rate": 0.42857142857142855
+    },
+    {
+      "task": "libero_goal:task9",
+      "blocks": 14,
+      "rd_interaction": 0.5714285714285713,
+      "A0G0_successes": 8,
+      "A0G0_rate": 0.5714285714285714,
+      "A0G20_successes": 9,
+      "A0G20_rate": 0.6428571428571429,
+      "A20G0_successes": 3,
+      "A20G0_rate": 0.21428571428571427,
+      "A20G20_successes": 12,
+      "A20G20_rate": 0.8571428571428571
+    },
+    {
+      "task": "libero_10:task0",
+      "blocks": 14,
+      "rd_interaction": 0.0,
+      "A0G0_successes": 2,
+      "A0G0_rate": 0.14285714285714285,
+      "A0G20_successes": 3,
+      "A0G20_rate": 0.21428571428571427,
+      "A20G0_successes": 0,
+      "A20G0_rate": 0.0,
+      "A20G20_successes": 1,
+      "A20G20_rate": 0.07142857142857142
+    },
+    {
+      "task": "libero_10:task2",
+      "blocks": 14,
+      "rd_interaction": 0.2857142857142857,
+      "A0G0_successes": 8,
+      "A0G0_rate": 0.5714285714285714,
+      "A0G20_successes": 12,
+      "A0G20_rate": 0.8571428571428571,
+      "A20G0_successes": 2,
+      "A20G0_rate": 0.14285714285714285,
+      "A20G20_successes": 10,
+      "A20G20_rate": 0.7142857142857143
+    },
+    {
+      "task": "libero_10:task4",
+      "blocks": 14,
+      "rd_interaction": 0.14285714285714285,
+      "A0G0_successes": 3,
+      "A0G0_rate": 0.21428571428571427,
+      "A0G20_successes": 2,
+      "A0G20_rate": 0.14285714285714285,
+      "A20G0_successes": 0,
+      "A20G0_rate": 0.0,
+      "A20G20_successes": 1,
+      "A20G20_rate": 0.07142857142857142
+    },
+    {
+      "task": "libero_10:task6",
+      "blocks": 14,
+      "rd_interaction": 0.42857142857142855,
+      "A0G0_successes": 5,
+      "A0G0_rate": 0.35714285714285715,
+      "A0G20_successes": 5,
+      "A0G20_rate": 0.35714285714285715,
+      "A20G0_successes": 0,
+      "A20G0_rate": 0.0,
+      "A20G20_successes": 6,
+      "A20G20_rate": 0.42857142857142855
+    },
+    {
+      "task": "libero_10:task7",
+      "blocks": 14,
+      "rd_interaction": 0.14285714285714285,
+      "A0G0_successes": 1,
+      "A0G0_rate": 0.07142857142857142,
+      "A0G20_successes": 2,
+      "A0G20_rate": 0.14285714285714285,
+      "A20G0_successes": 0,
+      "A20G0_rate": 0.0,
+      "A20G20_successes": 3,
+      "A20G20_rate": 0.21428571428571427
+    }
+  ],
+  "interpretation_guard": "Post-hoc scale-sensitivity analysis; do not promote to confirmatory evidence or use it for additive component attribution."
+}
