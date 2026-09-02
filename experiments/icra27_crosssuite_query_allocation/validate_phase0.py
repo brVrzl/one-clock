@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 import subprocess
 import sys
 from collections import defaultdict
@@ -21,6 +22,9 @@ def read(name: str):
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--completed-track-a", action="store_true")
+    args = parser.parse_args()
     inventory, cohort = read("checkpoint_inventory.json"), read("confirmation_cohort.json")
     a, b = read("track_a_manifest.json"), read("track_b_manifest.json")
     assert inventory["summary"]["technically_valid_non_object"] == 30
@@ -73,8 +77,13 @@ def main() -> None:
     assert not manuscript_diff, manuscript_diff
     outcome_paths = [ROOT / "track_a/results", ROOT / "track_a/markers", ROOT / "track_a/attempts"]
     scientific_files = [path for directory in outcome_paths if directory.exists() for path in directory.iterdir() if path.is_file()]
-    assert not scientific_files, f"Track-A scientific artifacts exist before freeze: {scientific_files[:5]}"
-    print(json.dumps({"status": "PASS", "tasks": a["task_count"], "blocks": len(blocks), "episodes": len(a["cells"]), "track_b_episodes": len(b["cells"]), "track_a_outcomes_present": False}, indent=2))
+    if args.completed_track_a:
+        complete = list((ROOT / "track_a/markers").glob("*.complete"))
+        failed = list((ROOT / "track_a/markers").glob("*.technical_failed"))
+        assert len(complete) == len(a["cells"]) and not failed
+    else:
+        assert not scientific_files, f"Track-A scientific artifacts exist before freeze: {scientific_files[:5]}"
+    print(json.dumps({"status": "PASS", "tasks": a["task_count"], "blocks": len(blocks), "episodes": len(a["cells"]), "track_b_episodes": len(b["cells"]), "track_a_outcomes_present": bool(scientific_files), "mode": "completed" if args.completed_track_a else "pre_outcome"}, indent=2))
 
 
 if __name__ == "__main__":
