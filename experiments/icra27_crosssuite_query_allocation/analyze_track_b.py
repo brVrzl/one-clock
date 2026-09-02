@@ -129,6 +129,14 @@ def analyze_episode(cell: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str
 
 def main() -> None:
     manifest = json.loads((ROOT / "track_b_manifest.json").read_text())
+    missing = [
+        cell["cell_id"] for cell in manifest["cells"]
+        if not (ROOT / "track_b/results" / f"{cell['cell_id']}.json").is_file()
+        or not (ROOT / "track_b/predictions" / f"{cell['cell_id']}.npz").is_file()
+        or not (ROOT / "track_b/markers" / f"{cell['cell_id']}.complete").is_file()
+    ]
+    if missing:
+        raise RuntimeError(f"Track-B queue is incomplete ({len(missing)} missing); no predictions loaded")
     episodes, targets = [], []
     for cell in manifest["cells"]:
         episode, episode_targets = analyze_episode(cell)
