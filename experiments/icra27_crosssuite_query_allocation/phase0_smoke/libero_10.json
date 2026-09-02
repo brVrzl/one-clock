@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "suite": "libero_10",
+  "task_id": 3,
+  "state_id": 10,
+  "cell_role": "technical exposed state; excluded from Track A confirmation",
+  "H4_equals_group_arm4_grip4": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "H2_equals_group_arm2_grip2": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "repeated_load_unload_and_rng_isolation": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "timing": {
+    "H4": {
+      "steps": 249,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 7.2292746510356665,
+      "seconds_per_env_step": 0.02903323153026372,
+      "policy_queries": 63,
+      "query_rate": 0.25301204819277107
+    },
+    "H2": {
+      "steps": 259,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 23.47224551299587,
+      "seconds_per_env_step": 0.0906264305521076,
+      "policy_queries": 130,
+      "query_rate": 0.5019305019305019
+    },
+    "H16": {
+      "steps": 246,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 7.291589097119868,
+      "seconds_per_env_step": 0.02964060608585312,
+      "policy_queries": 16,
+      "query_rate": 0.06504065040650407
+    },
+    "ARM4_GRIP32": {
+      "steps": 314,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 20.42151293111965,
+      "seconds_per_env_step": 0.06503666538573137,
+      "policy_queries": 79,
+      "query_rate": 0.2515923566878981
+    },
+    "ARM2_GRIP16": {
+      "steps": 227,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 14.075301549164578,
+      "seconds_per_env_step": 0.062005733696760254,
+      "policy_queries": 114,
+      "query_rate": 0.5022026431718062
+    },
+    "TE_DENSE": {
+      "steps": 223,
+      "resolved_max_episode_steps": 520,
+      "wall_clock_seconds": 8.769781672162935,
+      "seconds_per_env_step": 0.03932637521149298,
+      "policy_queries": 223,
+      "query_rate": 1.0
+    }
+  },
+  "scientific_outcomes_used": false
+}

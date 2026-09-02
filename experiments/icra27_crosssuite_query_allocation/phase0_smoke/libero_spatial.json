@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "suite": "libero_spatial",
+  "task_id": 0,
+  "state_id": 10,
+  "cell_role": "technical exposed state; excluded from Track A confirmation",
+  "H4_equals_group_arm4_grip4": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "H2_equals_group_arm2_grip2": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "repeated_load_unload_and_rng_isolation": {
+    "executed_actions": true,
+    "initial_sim_state": true,
+    "episode_length": true,
+    "terminal_success": true,
+    "query_steps": true,
+    "source_ages": true
+  },
+  "timing": {
+    "H4": {
+      "steps": 77,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 5.790924323955551,
+      "seconds_per_env_step": 0.07520680940202014,
+      "policy_queries": 20,
+      "query_rate": 0.2597402597402597
+    },
+    "H2": {
+      "steps": 80,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 10.88121295813471,
+      "seconds_per_env_step": 0.1360151619766839,
+      "policy_queries": 40,
+      "query_rate": 0.5
+    },
+    "H16": {
+      "steps": 75,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 4.583252463955432,
+      "seconds_per_env_step": 0.061110032852739096,
+      "policy_queries": 5,
+      "query_rate": 0.06666666666666667
+    },
+    "ARM4_GRIP32": {
+      "steps": 77,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 6.497516608098522,
+      "seconds_per_env_step": 0.08438333257270808,
+      "policy_queries": 20,
+      "query_rate": 0.2597402597402597
+    },
+    "ARM2_GRIP16": {
+      "steps": 80,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 11.110444416059181,
+      "seconds_per_env_step": 0.13888055520073977,
+      "policy_queries": 40,
+      "query_rate": 0.5
+    },
+    "TE_DENSE": {
+      "steps": 280,
+      "resolved_max_episode_steps": 280,
+      "wall_clock_seconds": 43.869014808908105,
+      "seconds_per_env_step": 0.15667505288895753,
+      "policy_queries": 280,
+      "query_rate": 1.0
+    }
+  },
+  "scientific_outcomes_used": false
+}

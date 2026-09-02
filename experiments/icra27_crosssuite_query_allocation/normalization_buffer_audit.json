@@ -1,0 +1,1155 @@
+{
+  "status": "PASS",
+  "normalization_refit_allowed": false,
+  "prediction_logging_space": "native checkpoint-normalized model output before checkpoint postprocessor",
+  "act_checkpoints": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task0/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task1/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task1/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task1/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task2/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task2/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task2/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task3/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task3/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task3/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task4/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task4/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task4/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task5/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task5/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task5/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task6/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task6/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task6/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task7/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task7/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task7/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task8/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task8/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task8/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task9/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task9/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_spatial_task9/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task0/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task0/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task0/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task1/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task1/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task1/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task2/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task2/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task2/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task3/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task4/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task4/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task4/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task5/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task5/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task5/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task6/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task6/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task6/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task7/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task7/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task7/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task8/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task8/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task8/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task9/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task9/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_object_task9/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task0/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task0/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task0/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task1/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task1/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task1/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task2/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task3/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task3/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task3/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task4/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task5/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task5/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task5/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task6/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task7/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task8/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_goal_task9/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task0/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task1/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task1/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task1/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task2/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task3/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task4/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task5/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task5/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task5/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task6/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task7/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task8/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task8/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task8/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "checkpoint": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task9/checkpoints/100000/pretrained_model",
+      "action_dimension": 7,
+      "normalization": "MEAN_STD",
+      "preprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task9/checkpoints/100000/pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "postprocessor_buffer": "/home/wjq/workspace/one-clock/experiments/standard_libero_baselines/act_final/libero_10_task9/checkpoints/100000/pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "pre_post_action_stats_identical": true,
+      "action_mean": [
+        0.06278156489133835,
+        0.08684080839157104,
+        -0.09037306159734726,
+        0.0005407430580817163,
+        0.005643379874527454,
+        -0.0052290987223386765,
+        -0.0496407225728035
+      ],
+      "action_std": [
+        0.33552372455596924,
+        0.3784469962120056,
+        0.4447286128997803,
+        0.03924354165792465,
+        0.06339296698570251,
+        0.07797027379274368,
+        0.9987671375274658
+      ]
+    }
+  ],
+  "smolvla_checkpoint": {
+    "checkpoint": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero",
+    "policy_type": "smolvla",
+    "action_dimension": 7,
+    "chunk_size": 50,
+    "normalization": "MEAN_STD",
+    "preprocessor_buffer": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero/policy_preprocessor_step_5_normalizer_processor.safetensors",
+    "postprocessor_buffer": "/home/wjq/checkpoints/HuggingFaceVLA_smolvla_libero/policy_postprocessor_step_1_unnormalizer_processor.safetensors",
+    "pre_post_action_stats_identical": true,
+    "action_mean": [
+      0.06278156489133835,
+      0.08684080839157104,
+      -0.09037306159734726,
+      0.0005407430580817163,
+      0.005643379874527454,
+      -0.0052290987223386765,
+      -0.0496407225728035
+    ],
+    "action_std": [
+      0.33552372455596924,
+      0.3784469962120056,
+      0.4447286128997803,
+      0.03924354165792465,
+      0.06339296698570251,
+      0.07797027379274368,
+      0.9987671375274658
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "comparisons": [
+    {
+      "cell_id": "act-libero_object-task03-state10",
+      "policy": "ACT",
+      "checks": {
+        "executed_actions": true,
+        "simulator_states": true,
+        "terminal_success": true,
+        "episode_length": true,
+        "execution_query_steps": true
+      },
+      "success": true,
+      "episode_length": 142,
+      "maximum_simulator_state_absolute_difference": 1.9886451831811863e-15,
+      "simulator_state_absolute_tolerance": 1e-12,
+      "ordinary_wall_clock_seconds": 2.92259159614332,
+      "logged_wall_clock_seconds": 4.8877315109129995
+    },
+    {
+      "cell_id": "smolvla-libero_object-task03-state10",
+      "policy": "SmolVLA",
+      "checks": {
+        "executed_actions": true,
+        "simulator_states": true,
+        "terminal_success": true,
+        "episode_length": true,
+        "execution_query_steps": true
+      },
+      "success": true,
+      "episode_length": 135,
+      "maximum_simulator_state_absolute_difference": 4.41025131359969e-15,
+      "simulator_state_absolute_tolerance": 1e-12,
+      "ordinary_wall_clock_seconds": 12.940375766949728,
+      "logged_wall_clock_seconds": 119.68445412884466
+    }
+  ]
+}

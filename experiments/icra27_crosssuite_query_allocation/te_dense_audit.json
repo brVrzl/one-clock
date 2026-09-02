@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "implementation": "lerobot.policies.act.modeling_act.ACTTemporalEnsembler",
+  "coefficient": 0.01,
+  "query_frequency": 1,
+  "candidate_semantics": "for physical target t, sources q=0..t (bounded by chunk_size), oldest q receives index 0",
+  "weight_formula": "w_i = exp(-0.01*i), i=0 for oldest source",
+  "aggregation_space": "checkpoint-normalized action space, all 7 dimensions jointly",
+  "postprocessing_order": "ensemble normalized predictions, then checkpoint unnormalize, then environment postprocess",
+  "synthetic_steps": 37,
+  "maximum_absolute_error": 1.1920928955078125e-07,
+  "checks": {
+    "coefficient_0_01": true,
+    "oldest_candidate_is_weight_index_0": true,
+    "online_matches_explicit_oldest_to_newest_weighting": true,
+    "all_seven_dimensions_aggregated_together": true
+  }
+}

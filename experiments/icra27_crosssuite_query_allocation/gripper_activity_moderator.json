@@ -1,0 +1,251 @@
+{
+  "status": "FROZEN_BEFORE_TRACK_A_OUTCOMES",
+  "source_dataset": "HuggingFaceVLA/libero@v3.0",
+  "source_revision": "86958911c0f959db2bbbdb107eb3e17c5f9c798e",
+  "source": "training-demonstration episode metadata only; no evaluation outcomes",
+  "moderator_definition": "fraction of task-specific ACT training action steps with closed gripper intent (action[6] < 0); LIBERO gripper commands are +/-1, reconstructed exactly from frozen episode mean and count",
+  "hypothesis": "exploratory Spearman correlation between task-level ARM4_GRIP32-H4 success delta and frozen gripper manipulation frequency",
+  "no_posthoc_categories": true,
+  "tasks": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "dataset_task_index": 34,
+      "training_episode_count": 45,
+      "training_action_steps": 4487,
+      "gripper_manipulation_frequency": 0.5181635839310218
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "dataset_task_index": 37,
+      "training_episode_count": 45,
+      "training_action_steps": 5940,
+      "gripper_manipulation_frequency": 0.4984848485558736
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "dataset_task_index": 38,
+      "training_episode_count": 46,
+      "training_action_steps": 5343,
+      "gripper_manipulation_frequency": 0.42878532569463956
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "dataset_task_index": 35,
+      "training_episode_count": 43,
+      "training_action_steps": 4287,
+      "gripper_manipulation_frequency": 0.5456029855092657
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "dataset_task_index": 31,
+      "training_episode_count": 42,
+      "training_action_steps": 6257,
+      "gripper_manipulation_frequency": 0.4145756750043844
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "dataset_task_index": 32,
+      "training_episode_count": 39,
+      "training_action_steps": 4472,
+      "gripper_manipulation_frequency": 0.3937835415545351
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "dataset_task_index": 30,
+      "training_episode_count": 46,
+      "training_action_steps": 5775,
+      "gripper_manipulation_frequency": 0.494718614836421
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "dataset_task_index": 33,
+      "training_episode_count": 35,
+      "training_action_steps": 4747,
+      "gripper_manipulation_frequency": 0.3107225616115858
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "dataset_task_index": 36,
+      "training_episode_count": 47,
+      "training_action_steps": 5570,
+      "gripper_manipulation_frequency": 0.5366247755439394
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "dataset_task_index": 39,
+      "training_episode_count": 44,
+      "training_action_steps": 6092,
+      "gripper_manipulation_frequency": 0.4369665128704789
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "dataset_task_index": 19,
+      "training_episode_count": 43,
+      "training_action_steps": 6019,
+      "gripper_manipulation_frequency": 1.0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "dataset_task_index": 17,
+      "training_episode_count": 48,
+      "training_action_steps": 4854,
+      "gripper_manipulation_frequency": 0.49031726408645826
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "dataset_task_index": 14,
+      "training_episode_count": 47,
+      "training_action_steps": 5004,
+      "gripper_manipulation_frequency": 0.4230615508431445
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "dataset_task_index": 12,
+      "training_episode_count": 36,
+      "training_action_steps": 7157,
+      "gripper_manipulation_frequency": 0.6474779944419777
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "dataset_task_index": 18,
+      "training_episode_count": 46,
+      "training_action_steps": 4574,
+      "gripper_manipulation_frequency": 0.422387406819634
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "dataset_task_index": 15,
+      "training_episode_count": 33,
+      "training_action_steps": 4990,
+      "gripper_manipulation_frequency": 1.0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "dataset_task_index": 13,
+      "training_episode_count": 40,
+      "training_action_steps": 4203,
+      "gripper_manipulation_frequency": 0.5907684988022035
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "dataset_task_index": 16,
+      "training_episode_count": 50,
+      "training_action_steps": 4454,
+      "gripper_manipulation_frequency": 0.5168387965449949
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "dataset_task_index": 10,
+      "training_episode_count": 49,
+      "training_action_steps": 4563,
+      "gripper_manipulation_frequency": 0.5128205131986139
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "dataset_task_index": 11,
+      "training_episode_count": 36,
+      "training_action_steps": 6224,
+      "gripper_manipulation_frequency": 0.5766388172751226
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "dataset_task_index": 5,
+      "training_episode_count": 33,
+      "training_action_steps": 9571,
+      "gripper_manipulation_frequency": 0.5363075958912554
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "dataset_task_index": 7,
+      "training_episode_count": 49,
+      "training_action_steps": 12702,
+      "gripper_manipulation_frequency": 0.5044087544766305
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "dataset_task_index": 3,
+      "training_episode_count": 41,
+      "training_action_steps": 10866,
+      "gripper_manipulation_frequency": 0.586600404581665
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "dataset_task_index": 8,
+      "training_episode_count": 35,
+      "training_action_steps": 8577,
+      "gripper_manipulation_frequency": 0.6526757618300534
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "dataset_task_index": 0,
+      "training_episode_count": 38,
+      "training_action_steps": 9807,
+      "gripper_manipulation_frequency": 0.49505455291997047
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "dataset_task_index": 9,
+      "training_episode_count": 41,
+      "training_action_steps": 7634,
+      "gripper_manipulation_frequency": 0.31281110750575214
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "dataset_task_index": 1,
+      "training_episode_count": 36,
+      "training_action_steps": 9020,
+      "gripper_manipulation_frequency": 0.4553215071381877
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "dataset_task_index": 4,
+      "training_episode_count": 43,
+      "training_action_steps": 11494,
+      "gripper_manipulation_frequency": 0.5429789457931403
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "dataset_task_index": 6,
+      "training_episode_count": 29,
+      "training_action_steps": 11808,
+      "gripper_manipulation_frequency": 0.5770663953609297
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "dataset_task_index": 2,
+      "training_episode_count": 34,
+      "training_action_steps": 9990,
+      "gripper_manipulation_frequency": 0.74704704667862
+    }
+  ]
+}

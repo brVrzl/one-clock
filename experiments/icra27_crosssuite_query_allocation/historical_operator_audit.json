@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "operators": {
+    "M1_shared_te_h16": {
+      "query_rate_nominal": 0.0625,
+      "candidate_age_range": "native same-target sparse sources, up to ACT chunk validity",
+      "aggregation": "continuous weighted average",
+      "affected_dimensions": "0..6 with one shared weight vector",
+      "executes_sign_vote": false
+    },
+    "M2_shared_cogact": {
+      "query_rate_nominal": 0.0625,
+      "candidate_age_range": "same pool as M1",
+      "aggregation": "continuous weighted average",
+      "affected_dimensions": "0..6 with one compatibility-weighted vector",
+      "executes_sign_vote": false
+    },
+    "M3_group_cogact": {
+      "query_rate_nominal": 0.0625,
+      "candidate_age_range": "same pool as M1",
+      "aggregation": "continuous weighted average with separately normalized arm/gripper weights",
+      "affected_dimensions": "arm 0..5 and gripper 6",
+      "np_sign_role": "gripper compatibility weights only",
+      "executes_sign_vote": false
+    },
+    "canonical_dense_ACT_TE": {
+      "query_rate_nominal": 1.0,
+      "candidate_age_range": "dense sources ages 0..min(t,99)",
+      "aggregation": "continuous exponential weighted average",
+      "affected_dimensions": "0..6 with one shared temporal weight vector",
+      "executes_sign_vote": false
+    }
+  },
+  "historical_sign_vote_exists": true,
+  "historical_sign_vote_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/component_temporal_reuse/rapid_component_smoke/run_act_groupwise_smoke.py",
+  "historical_sign_vote_method": "SIGN_VOTE in rapid_component_smoke",
+  "historical_sign_vote_semantics": "weighted open/close support, newest tie break, then execute an original scalar representative from the winning sign",
+  "do_not_reinvent": true,
+  "np_sign_findings": [
+    "group_temporal_memory_dev uses np.sign only to form M3 gripper compatibility weights; M3 output remains a continuous weighted scalar average",
+    "cdta_dev uses np.sign only in compatibility/weight computation",
+    "dynamic_horizon_dev and dynamic_horizon_h16_dev use np.sign only as a requery trigger",
+    "group_temporal_memory_offline uses np.sign only for diagnostic disagreement metrics",
+    "the distinct rapid_component_smoke SIGN_VOTE path does execute a discrete sign-supported gripper representative"
+  ],
+  "synthetic_outputs": {
+    "M1": [
+      0.6694930147732476,
+      0.6121464598976766,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.01991549871046358
+    ],
+    "M2": [
+      0.6609074503652232,
+      0.6552540310296099,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.07942551676354875
+    ],
+    "M3": [
+      0.6778266352723084,
+      0.6219260541480445,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.1726195627543458
+    ],
+    "M3_gripper_weights": [
+      0.2580087841776487,
+      0.40061210163196864,
+      0.3413791141903827
+    ],
+    "sign_vote_scalar": [
+      0.8
+    ],
+    "sign_vote_representative": 2,
+    "sign_vote_winning_sign": 1,
+    "sign_vote_support": {
+      "open": 0.6666666666666666,
+      "close": 0.3333333333333333
+    }
+  },
+  "rapid_path_calls_weighted_gripper_vote": true
+}
