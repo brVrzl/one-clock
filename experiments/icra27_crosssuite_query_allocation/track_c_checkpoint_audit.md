@@ -1,6 +1,6 @@
 # Track-C strong-policy checkpoint audit (C-0)
 
-Status: **candidate selected; local download and isolated-runtime preparation in progress**. This audit is CPU/network/disk only. No SAPIEN, Vulkan, or RoboTwin environment has been initialized while LIBERO work is active.
+Status: **candidate selected, locally complete, and policy runtime prepared**. This audit is CPU/network/disk only. No SAPIEN, Vulkan, or RoboTwin environment has been initialized while LIBERO work is active.
 
 ## Selected feasibility candidate
 
@@ -14,6 +14,9 @@ Status: **candidate selected; local download and isolated-runtime preparation in
 - Embodiment/action: Aloha-AgileX bimanual, 14-D absolute joint-space action, two six-DoF arms plus two grippers, 50-action chunks; one 14-D state and head/left-wrist/right-wrist RGB inputs.
 - Normalization: checkpoint-frozen MEAN_STD state/action buffers are included.
 - Local compatibility: the embodiment, joint order, and three camera roles match the local RoboTwin Aloha-AgileX assets. The pinned local LeRobot source contains native π0.5 support. The 9.35 GB checkpoint may fit a 16 GB RTX 5080 in bfloat16, but that remains a technical canary question, not an assumed pass.
+- Local identity: all nine files at the pinned revision were downloaded to `/home/wjq/research-assets/robotwin/checkpoints/SidneyXie_pi05_robotwin`; the local `model.safetensors` size is exactly 9,354,050,752 bytes.
+- Isolated policy environment: `/home/wjq/research-assets/robotwin/pi05_policy_venv` (Python 3.12.3, LeRobot 0.6.2 at local source commit `f66e5128ecb2456e8c54a63d15404fa59c16aebc`, Torch 2.11.0+cu128, Transformers 5.5.4, NumPy 2.2.6). A config-only import resolved π0.5, chunk 50, 14-D absolute action, and left CUDA uninitialized.
+- Isolated environment client: the pre-existing dedicated `/home/wjq/research-assets/robotwin/robotwin2_overnight` Python 3.10 runtime remains separate because RoboTwin's native stack uses NumPy 1.26.4. Policy and simulator will communicate through the established split-process interface after Track A.
 
 Training-setting qualification: the `robotwin_unified` dataset has no dataset card. Its 27,500-episode total and description of varied layouts/lighting/backgrounds are consistent with the separately documented 50-clean + 500-randomized episodes per task corpus, but the checkpoint repository does not provide a direct per-episode clean/random manifest. Track C will therefore conservatively describe Hard as a harder/more variable evaluation condition and will never call it OOD generalization.
 

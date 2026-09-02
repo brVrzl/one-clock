@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "audit_date": "2026-09-02",
-  "status": "CANDIDATE_SELECTED_DOWNLOAD_AND_ISOLATED_RUNTIME_PENDING",
+  "status": "CANDIDATE_SELECTED_LOCAL_COMPLETE_POLICY_RUNTIME_PREPARED",
   "simulator_initialized": false,
   "selected_candidate": {
     "repo_id": "SidneyXie/pi05_robotwin",
@@ -24,7 +24,9 @@
     "camera_inputs": ["head", "left wrist", "right wrist"],
     "normalization": "checkpoint-frozen MEAN_STD",
     "local_path": "/home/wjq/research-assets/robotwin/checkpoints/SidneyXie_pi05_robotwin",
-    "local_hardware_assessment": "9.35 GB bfloat16 weights may fit RTX 5080 16 GB; load/inference canary required"
+    "local_hardware_assessment": "9.35 GB bfloat16 weights may fit RTX 5080 16 GB; load/inference canary required",
+    "local_download_complete": true,
+    "local_model_size_bytes": 9354050752
   },
   "alternatives": [
     {"repo_id": "motus-robotics/pi0.5_robotwin2", "revision": "effc6e1a99bd4d0edf9447e8ba313def67649cfe", "decision": "REFERENCE_ONLY_BESPOKE_DELTA_ACTION_PIPELINE_AND_LICENSE_UNSPECIFIED"},
@@ -33,6 +35,22 @@
     {"repo_id": "JackieMM/RoboTwin-pi05-30000-checkpoints", "decision": "KILL_BOUNDED_AUDIT_SIZE_813_GIB"}
   ],
   "c1_tasks_frozen": false,
+  "isolated_policy_runtime": {
+    "path": "/home/wjq/research-assets/robotwin/pi05_policy_venv",
+    "python": "3.12.3",
+    "lerobot": "0.6.2@f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.5.4",
+    "numpy": "2.2.6",
+    "config_import": "PASS",
+    "cuda_initialized_during_c0": false
+  },
+  "isolated_environment_client": {
+    "path": "/home/wjq/research-assets/robotwin/robotwin2_overnight",
+    "python": "3.10.12",
+    "simulator_imported_or_initialized_during_c0": false,
+    "split_process_required_due_to_native_numpy_1x_stack": true
+  },
   "c1_may_start_only_after_track_a_workers_exit": true,
   "c1_method_development_authorized": false
 }
