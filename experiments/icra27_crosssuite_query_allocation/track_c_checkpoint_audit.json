@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-02",
+  "status": "CANDIDATE_SELECTED_DOWNLOAD_AND_ISOLATED_RUNTIME_PENDING",
+  "simulator_initialized": false,
+  "selected_candidate": {
+    "repo_id": "SidneyXie/pi05_robotwin",
+    "revision": "e49e2ab6c11f07511573b67261bd129e88d0a416",
+    "weights_file": "model.safetensors",
+    "weights_size_bytes": 9354050752,
+    "license": "Apache-2.0",
+    "architecture": "LeRobot PyTorch pi05; gemma_2b PaliGemma plus gemma_300m action expert; bfloat16; 10 inference steps",
+    "training_step": 50000,
+    "training_seed": 1000,
+    "training_dataset": "lerobot/robotwin_unified",
+    "training_episodes": 27500,
+    "training_frames": 6075103,
+    "task_coverage": "50-task RoboTwin domain; public Easy results reported for 32 tasks",
+    "training_condition_contract": "Dataset card absent. Episode count/variation is consistent with clean+randomized corpus, but no direct per-episode condition manifest is supplied; Hard must be described as harder/more variable and never as OOD.",
+    "embodiment": "Aloha-AgileX bimanual",
+    "action_representation": "14-D absolute joint-space, left arm6/gripper/right arm6/gripper",
+    "chunk_size": 50,
+    "n_action_steps": 50,
+    "camera_inputs": ["head", "left wrist", "right wrist"],
+    "normalization": "checkpoint-frozen MEAN_STD",
+    "local_path": "/home/wjq/research-assets/robotwin/checkpoints/SidneyXie_pi05_robotwin",
+    "local_hardware_assessment": "9.35 GB bfloat16 weights may fit RTX 5080 16 GB; load/inference canary required"
+  },
+  "alternatives": [
+    {"repo_id": "motus-robotics/pi0.5_robotwin2", "revision": "effc6e1a99bd4d0edf9447e8ba313def67649cfe", "decision": "REFERENCE_ONLY_BESPOKE_DELTA_ACTION_PIPELINE_AND_LICENSE_UNSPECIFIED"},
+    {"repo_id": "Avakn/robotwin2-checkpoints", "revision": "338ca90836e8ae58a441b6f0b368c3d64d25866a", "decision": "KILL_SINGLE_PI05_TASK"},
+    {"repo_id": "SeonghoonYu/RACE_Robotwin", "revision": "5c672c4ae03638af0caf51219b89f4aedddb6684", "decision": "KILL_OUTCOME_SELECTED_BEST_CHECKPOINT_FAMILY"},
+    {"repo_id": "JackieMM/RoboTwin-pi05-30000-checkpoints", "decision": "KILL_BOUNDED_AUDIT_SIZE_813_GIB"}
+  ],
+  "c1_tasks_frozen": false,
+  "c1_may_start_only_after_track_a_workers_exit": true,
+  "c1_method_development_authorized": false
+}
