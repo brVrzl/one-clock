@@ -425,7 +425,7 @@ class Runtime:
                 "chunk_size": int(self.cfg.chunk_size),
                 "n_action_steps": int(self.cfg.n_action_steps),
                 "action_dim": int(self.cfg.output_features["action"].shape[0]),
-                "temporal_ensemble_coeff": self.cfg.temporal_ensemble_coeff,
+                "temporal_ensemble_coeff": getattr(self.cfg, "temporal_ensemble_coeff", None),
                 "first_forward_seconds": latency,
                 "environment_steps": 0,
                 "outcome_observed": False,
@@ -517,4 +517,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
