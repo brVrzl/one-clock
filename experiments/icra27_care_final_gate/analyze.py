@@ -16,6 +16,7 @@ from run_queue import ROOT, validate_result
 
 
 DRAWS = 20000
+PREREGISTRATION_SHA = "08128f54c84a004dd015f24849a28dec966b716c"
 GATE_METHODS = ("M0_HARD16", "M2_GRIPPER_EVENT", "FIXED_H13", "SHUFFLED_TRIGGER")
 SMOL_METHODS = ("ARM4_GRIP4", "ARM4_GRIP32")
 PRIMARY = (
@@ -46,7 +47,7 @@ def mcnemar(first_only: int, second_only: int) -> float:
     return min(1.0, 2 * tail)
 
 
-def comparison(first: list[dict], second: list[dict], seed: int) -> dict[str, Any]:
+def comparison(first: list[dict], second: list[dict], paired_seed: int, cluster_seed: int) -> dict[str, Any]:
     left, right = {key(row): row for row in first}, {key(row): row for row in second}
     if set(left) != set(right):
         raise ValueError(f"paired keys differ: {len(left)} versus {len(right)}")
@@ -57,11 +58,12 @@ def comparison(first: list[dict], second: list[dict], seed: int) -> dict[str, An
     labels = np.asarray([task_label(left[k]) for k in keys])
     unique_labels = sorted(set(labels))
     by_task = {label: differences[labels == label] for label in unique_labels}
-    rng = np.random.default_rng(seed)
-    paired = differences[rng.integers(0, len(differences), size=(DRAWS, len(differences)))].mean(axis=1)
+    paired_rng = np.random.default_rng(paired_seed)
+    paired = differences[paired_rng.integers(0, len(differences), size=(DRAWS, len(differences)))].mean(axis=1)
+    cluster_rng = np.random.default_rng(cluster_seed)
     clustered = np.empty(DRAWS)
     for index in range(DRAWS):
-        sampled = rng.integers(0, len(unique_labels), size=len(unique_labels))
+        sampled = cluster_rng.integers(0, len(unique_labels), size=len(unique_labels))
         clustered[index] = np.concatenate([by_task[unique_labels[i]] for i in sampled]).mean()
     first_only = int(np.sum((left_values == 1) & (right_values == 0)))
     second_only = int(np.sum((left_values == 0) & (right_values == 1)))
@@ -92,6 +94,8 @@ def comparison(first: list[dict], second: list[dict], seed: int) -> dict[str, An
         "paired_bootstrap_ci": paired_ci,
         "task_cluster_bootstrap_ci": cluster_ci,
         "bootstrap_draws": DRAWS,
+        "paired_bootstrap_seed": paired_seed,
+        "task_cluster_bootstrap_seed": cluster_seed,
         "per_task": per_task,
         "leave_one_task_out": loto,
         "positive_loto_count": sum(value > 0 for value in loto.values()),
@@ -186,7 +190,9 @@ def gate_analysis(rows: list[dict], protocol: dict) -> dict[str, Any]:
     summaries = {method: method_summary(values, include_horizons=True) for method, values in by_method.items()}
     comparisons = {}
     for index, (label, first, second) in enumerate(PRIMARY + SECONDARY):
-        comparisons[label] = comparison(by_method[first], by_method[second], 2027090201 + index)
+        comparisons[label] = comparison(
+            by_method[first], by_method[second], 2027090201 + index, 2027090301 + index,
+        )
     budget_difference = abs(summaries["M2_GRIPPER_EVENT"]["query_rate"] - summaries["SHUFFLED_TRIGGER"]["query_rate"])
     budget_pass = budget_difference <= float(protocol["gate_m"]["budget_sanity"]["m2_vs_shuffled_absolute_query_rate_difference_maximum"])
     primary = {label: comparisons[label] for label, _, _ in PRIMARY}
@@ -223,12 +229,14 @@ def gate_analysis(rows: list[dict], protocol: dict) -> dict[str, Any]:
     }
 
 
-def scope_analysis(rows: list[dict], seed: int) -> dict[str, Any]:
+def scope_analysis(rows: list[dict], paired_seed: int, cluster_seed: int) -> dict[str, Any]:
     by_method = {method: [row for row in rows if row["method"] == method] for method in SMOL_METHODS}
     return {
         "ARM4_GRIP4": method_summary(by_method["ARM4_GRIP4"], include_horizons=False),
         "ARM4_GRIP32": method_summary(by_method["ARM4_GRIP32"], include_horizons=False),
-        "ARM4_GRIP32_VS_ARM4_GRIP4": comparison(by_method["ARM4_GRIP32"], by_method["ARM4_GRIP4"], seed),
+        "ARM4_GRIP32_VS_ARM4_GRIP4": comparison(
+            by_method["ARM4_GRIP32"], by_method["ARM4_GRIP4"], paired_seed, cluster_seed,
+        ),
     }
 
 
@@ -237,7 +245,9 @@ def smolvla_analysis(rows: list[dict]) -> dict[str, Any]:
         raise ValueError("SmolVLA robustness does not contain exactly 320 episodes")
     suites = {}
     for index, suite in enumerate(("libero_spatial", "libero_object", "libero_goal", "libero_10")):
-        suites[suite] = scope_analysis([row for row in rows if row["suite"] == suite], 2027090401 + index)
+        suites[suite] = scope_analysis(
+            [row for row in rows if row["suite"] == suite], 2027090401 + index, 2027090501 + index,
+        )
     return {
         "scope": "CROSS_POLICY_ROBUSTNESS",
         "independent_confirmation": False,
@@ -252,7 +262,7 @@ def smolvla_analysis(rows: list[dict]) -> dict[str, Any]:
             "discordance_ARM4_GRIP4_only": 13,
         },
         "suites": suites,
-        "pooled": scope_analysis(rows, 2027090410),
+        "pooled": scope_analysis(rows, 2027090410, 2027090510),
     }
 
 
@@ -275,6 +285,16 @@ def method_line(name: str, value: dict) -> str:
     )
 
 
+def robustness_method_line(name: str, value: dict) -> str:
+    arm = value["source_ages"]["arm"]
+    grip = value["source_ages"]["gripper"]
+    return (
+        f"| {name} | {value['successes']}/{value['episodes']} | {value['environment_steps']} | "
+        f"{value['policy_queries']} | {value['query_rate']:.6f} | {value['wall_clock_seconds']:.1f} | "
+        f"{arm['mean']:.3f}/{arm['maximum']} | {grip['mean']:.3f}/{grip['maximum']} |"
+    )
+
+
 def render_report(analysis: dict) -> str:
     gate = analysis["gate_m"]
     lines = [
@@ -286,11 +306,19 @@ def render_report(analysis: dict) -> str:
         "",
         "## Gate M methods",
         "",
-        "| Method | Success | Rate (%) | Environment steps | Policy queries | Query rate | Mean successful completion length |",
-        "|---|---:|---:|---:|---:|---:|---:|",
+        "| Method | Success | Rate (%) | Environment steps | Policy queries | Query rate | Mean execution horizon | Mean successful completion length |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for method in GATE_METHODS:
-        lines.append(method_line(method, gate["methods"][method]))
+        value = gate["methods"][method]
+        line = method_line(method, value).rstrip("|")
+        fields = line.split("|")
+        fields.insert(-1, f" {value['mean_execution_horizon']:.3f} ")
+        lines.append("|".join(fields) + "|")
+    lines += ["", "Execution-horizon histograms:", ""]
+    for method in GATE_METHODS:
+        histogram = gate["methods"][method]["execution_horizon_histogram"]
+        lines.append(f"- `{method}`: " + ", ".join(f"{h}:{count}" for h, count in histogram.items()))
     lines += [
         "",
         "## Gate M primary contrasts",
@@ -300,6 +328,32 @@ def render_report(analysis: dict) -> str:
     ]
     for label, _, _ in PRIMARY:
         lines.append(contrast_line(label, gate["primary_contrasts"][label]))
+    lines += [
+        "",
+        "Per-task deltas and leave-one-task-out pooled deltas:",
+        "",
+        "| Task | Blocks | M2−M0 task / LOTO (pp) | M2−H13 task / LOTO (pp) | M2−SHUFFLED task / LOTO (pp) |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    tasks = gate["primary_contrasts"]["M2_VS_M0"]["per_task"]
+    for task, task_value in tasks.items():
+        values = []
+        for contrast in ("M2_VS_M0", "M2_VS_FIXED_H13", "M2_VS_SHUFFLED"):
+            comparison_value = gate["primary_contrasts"][contrast]
+            values.append(
+                f"{comparison_value['per_task'][task]['delta_percentage_points']:+.2f} / "
+                f"{100 * comparison_value['leave_one_task_out'][task]:+.2f}"
+            )
+        lines.append(f"| `{task}` | {task_value['blocks']} | {values[0]} | {values[1]} | {values[2]} |")
+    lines += [
+        "",
+        "## Gate M secondary descriptive contrasts",
+        "",
+        "| Contrast | First | Second | Discordance | Delta (pp) | McNemar p | Paired 95% CI (pp) | Task-cluster 95% CI (pp) | Positive LOTO |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for label, _, _ in SECONDARY:
+        lines.append(contrast_line(label, gate["secondary_descriptive_contrasts"][label]))
     budget = gate["query_budget"]
     lines += [
         "",
@@ -317,6 +371,11 @@ def render_report(analysis: dict) -> str:
         lines += [
             "",
             f"### {scope}",
+            "",
+            "| Method | Success | Environment steps | Policy queries | Query rate | Wall-clock (s) | Arm age mean/max | Gripper age mean/max |",
+            "|---|---:|---:|---:|---:|---:|---:|---:|",
+            robustness_method_line("ARM4_GRIP4", value["ARM4_GRIP4"]),
+            robustness_method_line("ARM4_GRIP32", value["ARM4_GRIP32"]),
             "",
             "| Contrast | First | Second | Discordance | Delta (pp) | McNemar p | Paired 95% CI (pp) | Task-cluster 95% CI (pp) | Positive LOTO |",
             "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
@@ -352,6 +411,24 @@ def write_per_task_csv(gate: dict) -> None:
         writer.writerows(rows)
 
 
+def write_smolvla_per_task_csv(smolvla: dict) -> None:
+    rows = []
+    for scope, value in [*smolvla["suites"].items(), ("pooled", smolvla["pooled"])]:
+        comparison_value = value["ARM4_GRIP32_VS_ARM4_GRIP4"]
+        for task, task_value in comparison_value["per_task"].items():
+            rows.append({
+                "scope": scope,
+                "task": task,
+                **task_value,
+                "leave_one_task_out_delta": comparison_value["leave_one_task_out"][task],
+            })
+    path = ROOT / "smolvla_per_task_and_loto.csv"
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def main() -> None:
     manifest = json.loads((ROOT / "queue_manifest.json").read_text(encoding="utf-8"))
     protocol = json.loads((ROOT / "protocol.json").read_text(encoding="utf-8"))
@@ -360,15 +437,23 @@ def main() -> None:
     analysis = {
         "schema_version": 1,
         "preregistered_protocol": "protocol.json",
+        "preregistration_commit": PREREGISTRATION_SHA,
         "gate_m": gate_analysis(rows["gate_m"], protocol),
         "smolvla_robustness": smolvla_analysis(rows["smolvla_robustness"]),
         "integrity": integrity,
         "method_development_closed": True,
         "forbidden_followup_launched": False,
+        "pre_scientific_technical_audit": {
+            "reporting_only_exception_count": 1,
+            "scientific_environment_steps": 0,
+            "outcomes_observed": 0,
+            "clean_process_rerun_passed": True,
+        },
     }
     atomic = ROOT / "analysis.json"
     atomic.write_text(json.dumps(analysis, indent=2) + "\n", encoding="utf-8")
     write_per_task_csv(analysis["gate_m"])
+    write_smolvla_per_task_csv(analysis["smolvla_robustness"])
     (ROOT / "report.md").write_text(render_report(analysis), encoding="utf-8")
     print(json.dumps({
         "gate_m_label": analysis["gate_m"]["final_label"],
@@ -379,4 +464,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

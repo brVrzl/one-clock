@@ -1,0 +1,2725 @@
+{
+  "schema_version": 1,
+  "preregistered_protocol": "protocol.json",
+  "preregistration_commit": "08128f54c84a004dd015f24849a28dec966b716c",
+  "gate_m": {
+    "scope": "held-out Gate M",
+    "paired_blocks": 130,
+    "episodes": 520,
+    "methods": {
+      "M0_HARD16": {
+        "successes": 92,
+        "episodes": 130,
+        "success_rate": 0.7076923076923077,
+        "environment_steps": 23082,
+        "policy_queries": 1503,
+        "query_rate": 0.06511567455159865,
+        "wall_clock_seconds": 545.4719500541687,
+        "mean_wall_clock_seconds": 4.195938077339759,
+        "successful_completion_lengths": [
+          124,
+          112,
+          124,
+          118,
+          121,
+          119,
+          172,
+          123,
+          126,
+          218,
+          138,
+          122,
+          123,
+          126,
+          115,
+          115,
+          121,
+          110,
+          117,
+          113,
+          117,
+          112,
+          123,
+          132,
+          111,
+          114,
+          124,
+          124,
+          127,
+          109,
+          121,
+          115,
+          114,
+          118,
+          117,
+          118,
+          118,
+          114,
+          150,
+          134,
+          141,
+          148,
+          153,
+          142,
+          140,
+          142,
+          140,
+          131,
+          229,
+          136,
+          125,
+          111,
+          121,
+          132,
+          156,
+          112,
+          150,
+          142,
+          125,
+          181,
+          129,
+          204,
+          138,
+          197,
+          145,
+          144,
+          145,
+          134,
+          209,
+          121,
+          120,
+          123,
+          200,
+          140,
+          178,
+          143,
+          152,
+          139,
+          230,
+          176,
+          117,
+          118,
+          127,
+          115,
+          115,
+          110,
+          143,
+          119,
+          126,
+          120,
+          117,
+          122
+        ],
+        "mean_successful_completion_length": 135.2391304347826,
+        "median_successful_completion_length": 124.5,
+        "source_ages": {
+          "arm": {
+            "mean": 7.361667099904688,
+            "median": 7.0,
+            "p95": 15.0,
+            "maximum": 15
+          },
+          "gripper": {
+            "mean": 7.361667099904688,
+            "median": 7.0,
+            "p95": 15.0,
+            "maximum": 15
+          }
+        },
+        "execution_horizon_count": 1503,
+        "mean_execution_horizon": 16.0,
+        "median_execution_horizon": 16.0,
+        "execution_horizon_histogram": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 0,
+          "14": 0,
+          "15": 0,
+          "16": 1503
+        }
+      },
+      "M2_GRIPPER_EVENT": {
+        "successes": 86,
+        "episodes": 130,
+        "success_rate": 0.6615384615384615,
+        "environment_steps": 23606,
+        "policy_queries": 2160,
+        "query_rate": 0.09150216046767772,
+        "wall_clock_seconds": 604.9268465042114,
+        "mean_wall_clock_seconds": 4.65328343464778,
+        "successful_completion_lengths": [
+          124,
+          114,
+          125,
+          118,
+          124,
+          118,
+          133,
+          158,
+          185,
+          141,
+          121,
+          134,
+          128,
+          115,
+          116,
+          101,
+          118,
+          118,
+          114,
+          117,
+          112,
+          119,
+          103,
+          111,
+          124,
+          125,
+          137,
+          108,
+          192,
+          121,
+          113,
+          113,
+          115,
+          119,
+          116,
+          118,
+          119,
+          149,
+          134,
+          146,
+          143,
+          154,
+          144,
+          140,
+          142,
+          140,
+          131,
+          138,
+          128,
+          111,
+          121,
+          138,
+          113,
+          135,
+          126,
+          128,
+          141,
+          191,
+          145,
+          144,
+          178,
+          145,
+          134,
+          123,
+          123,
+          124,
+          141,
+          155,
+          143,
+          157,
+          144,
+          176,
+          169,
+          120,
+          119,
+          128,
+          116,
+          115,
+          111,
+          149,
+          119,
+          126,
+          124,
+          119,
+          124,
+          135
+        ],
+        "mean_successful_completion_length": 131.2325581395349,
+        "median_successful_completion_length": 125.0,
+        "source_ages": {
+          "arm": {
+            "mean": 6.113233923578751,
+            "median": 5.0,
+            "p95": 14.0,
+            "maximum": 15
+          },
+          "gripper": {
+            "mean": 6.113233923578751,
+            "median": 5.0,
+            "p95": 14.0,
+            "maximum": 15
+          }
+        },
+        "execution_horizon_count": 2160,
+        "mean_execution_horizon": 11.32824074074074,
+        "median_execution_horizon": 14.0,
+        "execution_horizon_histogram": {
+          "4": 273,
+          "5": 182,
+          "6": 171,
+          "7": 103,
+          "8": 97,
+          "9": 80,
+          "10": 56,
+          "11": 35,
+          "12": 43,
+          "13": 20,
+          "14": 32,
+          "15": 33,
+          "16": 1035
+        }
+      },
+      "FIXED_H13": {
+        "successes": 95,
+        "episodes": 130,
+        "success_rate": 0.7307692307692307,
+        "environment_steps": 22345,
+        "policy_queries": 1780,
+        "query_rate": 0.07965987916759902,
+        "wall_clock_seconds": 569.2025065422058,
+        "mean_wall_clock_seconds": 4.3784808195554294,
+        "successful_completion_lengths": [
+          120,
+          112,
+          126,
+          118,
+          119,
+          123,
+          125,
+          120,
+          124,
+          150,
+          110,
+          162,
+          122,
+          122,
+          126,
+          111,
+          115,
+          111,
+          111,
+          122,
+          112,
+          121,
+          111,
+          122,
+          132,
+          110,
+          110,
+          126,
+          120,
+          126,
+          119,
+          122,
+          124,
+          115,
+          110,
+          120,
+          117,
+          117,
+          120,
+          116,
+          149,
+          131,
+          143,
+          147,
+          149,
+          144,
+          142,
+          143,
+          144,
+          136,
+          137,
+          124,
+          145,
+          124,
+          115,
+          122,
+          126,
+          162,
+          110,
+          159,
+          153,
+          127,
+          147,
+          137,
+          189,
+          146,
+          150,
+          217,
+          144,
+          138,
+          167,
+          119,
+          116,
+          121,
+          196,
+          147,
+          154,
+          144,
+          153,
+          141,
+          138,
+          238,
+          177,
+          117,
+          117,
+          127,
+          116,
+          117,
+          108,
+          117,
+          123,
+          124,
+          115,
+          123,
+          111
+        ],
+        "mean_successful_completion_length": 132.05263157894737,
+        "median_successful_completion_length": 124.0,
+        "source_ages": {
+          "arm": {
+            "mean": 5.903334079212351,
+            "median": 6.0,
+            "p95": 12.0,
+            "maximum": 12
+          },
+          "gripper": {
+            "mean": 5.903334079212351,
+            "median": 6.0,
+            "p95": 12.0,
+            "maximum": 12
+          }
+        },
+        "execution_horizon_count": 1780,
+        "mean_execution_horizon": 13.0,
+        "median_execution_horizon": 13.0,
+        "execution_horizon_histogram": {
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0,
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "13": 1780,
+          "14": 0,
+          "15": 0,
+          "16": 0
+        }
+      },
+      "SHUFFLED_TRIGGER": {
+        "successes": 90,
+        "episodes": 130,
+        "success_rate": 0.6923076923076923,
+        "environment_steps": 23389,
+        "policy_queries": 1829,
+        "query_rate": 0.07819915344820215,
+        "wall_clock_seconds": 591.5708794593811,
+        "mean_wall_clock_seconds": 4.550545226610624,
+        "successful_completion_lengths": [
+          127,
+          110,
+          129,
+          121,
+          123,
+          125,
+          119,
+          126,
+          160,
+          140,
+          155,
+          122,
+          120,
+          111,
+          109,
+          110,
+          118,
+          115,
+          115,
+          112,
+          122,
+          127,
+          103,
+          113,
+          124,
+          124,
+          133,
+          109,
+          124,
+          117,
+          113,
+          118,
+          120,
+          116,
+          125,
+          112,
+          150,
+          135,
+          140,
+          146,
+          153,
+          147,
+          144,
+          141,
+          145,
+          132,
+          158,
+          131,
+          104,
+          123,
+          133,
+          204,
+          109,
+          160,
+          156,
+          128,
+          146,
+          230,
+          124,
+          139,
+          130,
+          141,
+          137,
+          154,
+          134,
+          182,
+          120,
+          117,
+          257,
+          189,
+          181,
+          121,
+          142,
+          152,
+          148,
+          136,
+          182,
+          223,
+          116,
+          119,
+          130,
+          114,
+          116,
+          111,
+          116,
+          126,
+          188,
+          121,
+          117,
+          124
+        ],
+        "mean_successful_completion_length": 135.43333333333334,
+        "median_successful_completion_length": 126.0,
+        "source_ages": {
+          "arm": {
+            "mean": 6.660053871478045,
+            "median": 6.0,
+            "p95": 14.0,
+            "maximum": 15
+          },
+          "gripper": {
+            "mean": 6.660053871478045,
+            "median": 6.0,
+            "p95": 14.0,
+            "maximum": 15
+          }
+        },
+        "execution_horizon_count": 1829,
+        "mean_execution_horizon": 13.220338983050848,
+        "median_execution_horizon": 16.0,
+        "execution_horizon_histogram": {
+          "4": 103,
+          "5": 88,
+          "6": 36,
+          "7": 58,
+          "8": 79,
+          "9": 70,
+          "10": 60,
+          "11": 32,
+          "12": 33,
+          "13": 40,
+          "14": 36,
+          "15": 32,
+          "16": 1162
+        }
+      }
+    },
+    "primary_contrasts": {
+      "M2_VS_M0": {
+        "blocks": 130,
+        "first_successes": 86,
+        "second_successes": 92,
+        "first_only_wins": 7,
+        "second_only_wins": 13,
+        "ties": 110,
+        "delta": -0.046153846153846156,
+        "delta_percentage_points": -4.615384615384616,
+        "exact_two_sided_mcnemar_p": 0.26317596435546875,
+        "paired_bootstrap_ci": [
+          -0.11538461538461539,
+          0.023076923076923078
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.11812044327792358,
+          0.01680672268907563
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090201,
+        "task_cluster_bootstrap_seed": 2027090301,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 9,
+            "second_successes": 9,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 15,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 14,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 10,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 9,
+            "second_successes": 13,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 7,
+            "second_successes": 7,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 3,
+            "second_successes": 5,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 7,
+            "second_successes": 7,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 12,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": -0.05042016806722689,
+          "libero_object:task2": -0.03508771929824561,
+          "libero_object:task3": -0.06140350877192982,
+          "libero_object:task4": -0.05042016806722689,
+          "libero_object:task5": -0.017543859649122806,
+          "libero_object:task6": -0.05084745762711865,
+          "libero_object:task7": -0.03508771929824561,
+          "libero_object:task8": -0.05263157894736842,
+          "libero_object:task9": -0.06140350877192982
+        },
+        "positive_loto_count": 0,
+        "strict_stable_positive": false
+      },
+      "M2_VS_FIXED_H13": {
+        "blocks": 130,
+        "first_successes": 86,
+        "second_successes": 95,
+        "first_only_wins": 3,
+        "second_only_wins": 12,
+        "ties": 115,
+        "delta": -0.06923076923076923,
+        "delta_percentage_points": -6.923076923076923,
+        "exact_two_sided_mcnemar_p": 0.03515625,
+        "paired_bootstrap_ci": [
+          -0.13076923076923078,
+          -0.015384615384615385
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.11940298507462686,
+          -0.015873015873015872
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090202,
+        "task_cluster_bootstrap_seed": 2027090302,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 9,
+            "second_successes": 10,
+            "delta": -0.09090909090909091,
+            "delta_percentage_points": -9.090909090909092
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 15,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 15,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 11,
+            "delta": -0.09090909090909091,
+            "delta_percentage_points": -9.090909090909092
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 9,
+            "second_successes": 12,
+            "delta": -0.1875,
+            "delta_percentage_points": -18.75
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 7,
+            "second_successes": 7,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 3,
+            "second_successes": 5,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 7,
+            "second_successes": 8,
+            "delta": -0.0625,
+            "delta_percentage_points": -6.25
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 12,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": -0.06722689075630252,
+          "libero_object:task2": -0.06140350877192982,
+          "libero_object:task3": -0.07894736842105263,
+          "libero_object:task4": -0.06722689075630252,
+          "libero_object:task5": -0.05263157894736842,
+          "libero_object:task6": -0.07627118644067797,
+          "libero_object:task7": -0.06140350877192982,
+          "libero_object:task8": -0.07017543859649122,
+          "libero_object:task9": -0.08771929824561403
+        },
+        "positive_loto_count": 0,
+        "strict_stable_positive": false
+      },
+      "M2_VS_SHUFFLED": {
+        "blocks": 130,
+        "first_successes": 86,
+        "second_successes": 90,
+        "first_only_wins": 9,
+        "second_only_wins": 13,
+        "ties": 108,
+        "delta": -0.03076923076923077,
+        "delta_percentage_points": -3.076923076923077,
+        "exact_two_sided_mcnemar_p": 0.5234670639038086,
+        "paired_bootstrap_ci": [
+          -0.1,
+          0.038461538461538464
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.125,
+          0.048
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090203,
+        "task_cluster_bootstrap_seed": 2027090303,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 9,
+            "second_successes": 9,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 13,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 14,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 10,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 9,
+            "second_successes": 13,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 7,
+            "second_successes": 6,
+            "delta": 0.08333333333333333,
+            "delta_percentage_points": 8.333333333333332
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 3,
+            "second_successes": 7,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 7,
+            "second_successes": 6,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 12,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": -0.03361344537815126,
+          "libero_object:task2": -0.03508771929824561,
+          "libero_object:task3": -0.043859649122807015,
+          "libero_object:task4": -0.03361344537815126,
+          "libero_object:task5": 0.0,
+          "libero_object:task6": -0.0423728813559322,
+          "libero_object:task7": 0.0,
+          "libero_object:task8": -0.043859649122807015,
+          "libero_object:task9": -0.043859649122807015
+        },
+        "positive_loto_count": 0,
+        "strict_stable_positive": false
+      }
+    },
+    "secondary_descriptive_contrasts": {
+      "FIXED_H13_VS_M0": {
+        "blocks": 130,
+        "first_successes": 95,
+        "second_successes": 92,
+        "first_only_wins": 8,
+        "second_only_wins": 5,
+        "ties": 117,
+        "delta": 0.023076923076923078,
+        "delta_percentage_points": 2.307692307692308,
+        "exact_two_sided_mcnemar_p": 0.5810546875,
+        "paired_bootstrap_ci": [
+          -0.03076923076923077,
+          0.07692307692307693
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.007462686567164179,
+          0.05426356589147287
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090204,
+        "task_cluster_bootstrap_seed": 2027090304,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 9,
+            "delta": 0.09090909090909091,
+            "delta_percentage_points": 9.090909090909092
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 15,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 14,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 11,
+            "second_successes": 10,
+            "delta": 0.09090909090909091,
+            "delta_percentage_points": 9.090909090909092
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 12,
+            "second_successes": 13,
+            "delta": -0.0625,
+            "delta_percentage_points": -6.25
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 7,
+            "second_successes": 7,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 5,
+            "second_successes": 5,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 8,
+            "second_successes": 7,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 12,
+            "second_successes": 12,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": 0.01680672268907563,
+          "libero_object:task2": 0.02631578947368421,
+          "libero_object:task3": 0.017543859649122806,
+          "libero_object:task4": 0.01680672268907563,
+          "libero_object:task5": 0.03508771929824561,
+          "libero_object:task6": 0.025423728813559324,
+          "libero_object:task7": 0.02631578947368421,
+          "libero_object:task8": 0.017543859649122806,
+          "libero_object:task9": 0.02631578947368421
+        },
+        "positive_loto_count": 9,
+        "strict_stable_positive": false
+      },
+      "SHUFFLED_VS_M0": {
+        "blocks": 130,
+        "first_successes": 90,
+        "second_successes": 92,
+        "first_only_wins": 9,
+        "second_only_wins": 11,
+        "ties": 110,
+        "delta": -0.015384615384615385,
+        "delta_percentage_points": -1.5384615384615385,
+        "exact_two_sided_mcnemar_p": 0.8238029479980469,
+        "paired_bootstrap_ci": [
+          -0.08461538461538462,
+          0.05384615384615385
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.05970149253731343,
+          0.031007751937984496
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090205,
+        "task_cluster_bootstrap_seed": 2027090305,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 9,
+            "second_successes": 9,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 15,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 14,
+            "second_successes": 14,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 10,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 13,
+            "second_successes": 13,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 6,
+            "second_successes": 7,
+            "delta": -0.08333333333333333,
+            "delta_percentage_points": -8.333333333333332
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 7,
+            "second_successes": 5,
+            "delta": 0.125,
+            "delta_percentage_points": 12.5
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 6,
+            "second_successes": 7,
+            "delta": -0.0625,
+            "delta_percentage_points": -6.25
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 12,
+            "second_successes": 12,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": -0.01680672268907563,
+          "libero_object:task2": 0.0,
+          "libero_object:task3": -0.017543859649122806,
+          "libero_object:task4": -0.01680672268907563,
+          "libero_object:task5": -0.017543859649122806,
+          "libero_object:task6": -0.00847457627118644,
+          "libero_object:task7": -0.03508771929824561,
+          "libero_object:task8": -0.008771929824561403,
+          "libero_object:task9": -0.017543859649122806
+        },
+        "positive_loto_count": 0,
+        "strict_stable_positive": false
+      },
+      "FIXED_H13_VS_SHUFFLED": {
+        "blocks": 130,
+        "first_successes": 95,
+        "second_successes": 90,
+        "first_only_wins": 13,
+        "second_only_wins": 8,
+        "ties": 109,
+        "delta": 0.038461538461538464,
+        "delta_percentage_points": 3.8461538461538463,
+        "exact_two_sided_mcnemar_p": 0.38331031799316406,
+        "paired_bootstrap_ci": [
+          -0.03076923076923077,
+          0.1076923076923077
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.022222222222222223,
+          0.09230769230769231
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090206,
+        "task_cluster_bootstrap_seed": 2027090306,
+        "per_task": {
+          "libero_object:task1": {
+            "blocks": 11,
+            "first_successes": 10,
+            "second_successes": 9,
+            "delta": 0.09090909090909091,
+            "delta_percentage_points": 9.090909090909092
+          },
+          "libero_object:task2": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 13,
+            "delta": 0.125,
+            "delta_percentage_points": 12.5
+          },
+          "libero_object:task3": {
+            "blocks": 16,
+            "first_successes": 15,
+            "second_successes": 14,
+            "delta": 0.0625,
+            "delta_percentage_points": 6.25
+          },
+          "libero_object:task4": {
+            "blocks": 11,
+            "first_successes": 11,
+            "second_successes": 10,
+            "delta": 0.09090909090909091,
+            "delta_percentage_points": 9.090909090909092
+          },
+          "libero_object:task5": {
+            "blocks": 16,
+            "first_successes": 12,
+            "second_successes": 13,
+            "delta": -0.0625,
+            "delta_percentage_points": -6.25
+          },
+          "libero_object:task6": {
+            "blocks": 12,
+            "first_successes": 7,
+            "second_successes": 6,
+            "delta": 0.08333333333333333,
+            "delta_percentage_points": 8.333333333333332
+          },
+          "libero_object:task7": {
+            "blocks": 16,
+            "first_successes": 5,
+            "second_successes": 7,
+            "delta": -0.125,
+            "delta_percentage_points": -12.5
+          },
+          "libero_object:task8": {
+            "blocks": 16,
+            "first_successes": 8,
+            "second_successes": 6,
+            "delta": 0.125,
+            "delta_percentage_points": 12.5
+          },
+          "libero_object:task9": {
+            "blocks": 16,
+            "first_successes": 12,
+            "second_successes": 12,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_object:task1": 0.03361344537815126,
+          "libero_object:task2": 0.02631578947368421,
+          "libero_object:task3": 0.03508771929824561,
+          "libero_object:task4": 0.03361344537815126,
+          "libero_object:task5": 0.05263157894736842,
+          "libero_object:task6": 0.03389830508474576,
+          "libero_object:task7": 0.06140350877192982,
+          "libero_object:task8": 0.02631578947368421,
+          "libero_object:task9": 0.043859649122807015
+        },
+        "positive_loto_count": 9,
+        "strict_stable_positive": false
+      }
+    },
+    "query_budget": {
+      "M2_query_rate": 0.09150216046767772,
+      "SHUFFLED_query_rate": 0.07819915344820215,
+      "absolute_M2_minus_SHUFFLED": 0.013303007019475566,
+      "predeclared_maximum": 0.005,
+      "budget_match_pass": false,
+      "M2_minus_FIXED_H13": 0.011842281300078694,
+      "absolute_M2_minus_FIXED_H13": 0.011842281300078694
+    },
+    "final_label": "METHOD_NULL"
+  },
+  "smolvla_robustness": {
+    "scope": "CROSS_POLICY_ROBUSTNESS",
+    "independent_confirmation": false,
+    "paired_blocks": 160,
+    "episodes": 320,
+    "historical_ACT_transfer_target": {
+      "ARM4_GRIP32_successes": 131,
+      "ARM4_GRIP4_successes": 112,
+      "episodes": 180,
+      "delta_percentage_points": 10.56,
+      "discordance_ARM4_GRIP32_only": 32,
+      "discordance_ARM4_GRIP4_only": 13
+    },
+    "suites": {
+      "libero_spatial": {
+        "ARM4_GRIP4": {
+          "successes": 29,
+          "episodes": 40,
+          "success_rate": 0.725,
+          "environment_steps": 6140,
+          "policy_queries": 1548,
+          "query_rate": 0.2521172638436482,
+          "wall_clock_seconds": 708.3097097873688,
+          "mean_wall_clock_seconds": 17.707742744684218,
+          "successful_completion_lengths": [
+            69,
+            133,
+            89,
+            104,
+            112,
+            95,
+            101,
+            81,
+            83,
+            83,
+            135,
+            130,
+            129,
+            85,
+            100,
+            101,
+            85,
+            107,
+            109,
+            107,
+            107,
+            136,
+            126,
+            97,
+            90,
+            93,
+            121,
+            124,
+            128
+          ],
+          "mean_successful_completion_length": 105.51724137931035,
+          "median_successful_completion_length": 104.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4941368078175896,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 1.4941368078175896,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            }
+          }
+        },
+        "ARM4_GRIP32": {
+          "successes": 31,
+          "episodes": 40,
+          "success_rate": 0.775,
+          "environment_steps": 6049,
+          "policy_queries": 1525,
+          "query_rate": 0.25210778641097703,
+          "wall_clock_seconds": 706.5547776222229,
+          "mean_wall_clock_seconds": 17.663869440555573,
+          "successful_completion_lengths": [
+            259,
+            69,
+            99,
+            99,
+            104,
+            100,
+            92,
+            98,
+            93,
+            80,
+            81,
+            141,
+            130,
+            129,
+            96,
+            100,
+            101,
+            85,
+            106,
+            106,
+            109,
+            97,
+            135,
+            109,
+            130,
+            91,
+            89,
+            242,
+            127,
+            120,
+            112
+          ],
+          "mean_successful_completion_length": 113.83870967741936,
+          "median_successful_completion_length": 101.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4938006282030087,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 14.98297239213093,
+              "median": 15.0,
+              "p95": 30.0,
+              "maximum": 31
+            }
+          }
+        },
+        "ARM4_GRIP32_VS_ARM4_GRIP4": {
+          "blocks": 40,
+          "first_successes": 31,
+          "second_successes": 29,
+          "first_only_wins": 5,
+          "second_only_wins": 3,
+          "ties": 32,
+          "delta": 0.05,
+          "delta_percentage_points": 5.0,
+          "exact_two_sided_mcnemar_p": 0.7265625,
+          "paired_bootstrap_ci": [
+            -0.075,
+            0.2
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.05,
+            0.15
+          ],
+          "bootstrap_draws": 20000,
+          "paired_bootstrap_seed": 2027090401,
+          "task_cluster_bootstrap_seed": 2027090501,
+          "per_task": {
+            "libero_spatial:task0": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 1,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_spatial:task1": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 4,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_spatial:task2": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 2,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_spatial:task3": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_spatial:task4": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_spatial:task5": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_spatial:task6": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_spatial:task7": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 3,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_spatial:task8": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_spatial:task9": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_spatial:task0": 0.027777777777777776,
+            "libero_spatial:task1": 0.08333333333333333,
+            "libero_spatial:task2": 0.027777777777777776,
+            "libero_spatial:task3": 0.05555555555555555,
+            "libero_spatial:task4": 0.05555555555555555,
+            "libero_spatial:task5": 0.05555555555555555,
+            "libero_spatial:task6": 0.05555555555555555,
+            "libero_spatial:task7": 0.027777777777777776,
+            "libero_spatial:task8": 0.05555555555555555,
+            "libero_spatial:task9": 0.05555555555555555
+          },
+          "positive_loto_count": 10,
+          "strict_stable_positive": false
+        }
+      },
+      "libero_object": {
+        "ARM4_GRIP4": {
+          "successes": 33,
+          "episodes": 40,
+          "success_rate": 0.825,
+          "environment_steps": 6697,
+          "policy_queries": 1686,
+          "query_rate": 0.2517545169478871,
+          "wall_clock_seconds": 718.3376421928406,
+          "mean_wall_clock_seconds": 17.958441054821016,
+          "successful_completion_lengths": [
+            137,
+            151,
+            141,
+            152,
+            127,
+            135,
+            127,
+            131,
+            113,
+            132,
+            135,
+            127,
+            122,
+            131,
+            131,
+            152,
+            140,
+            152,
+            159,
+            198,
+            180,
+            157,
+            157,
+            149,
+            141,
+            148,
+            139,
+            153,
+            150,
+            149,
+            160,
+            134,
+            127
+          ],
+          "mean_successful_completion_length": 143.54545454545453,
+          "median_successful_completion_length": 141.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.494101836643273,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 1.494101836643273,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            }
+          }
+        },
+        "ARM4_GRIP32": {
+          "successes": 35,
+          "episodes": 40,
+          "success_rate": 0.875,
+          "environment_steps": 6733,
+          "policy_queries": 1699,
+          "query_rate": 0.25233922471409476,
+          "wall_clock_seconds": 721.4819302558899,
+          "mean_wall_clock_seconds": 18.03704825639725,
+          "successful_completion_lengths": [
+            136,
+            146,
+            136,
+            146,
+            126,
+            132,
+            140,
+            126,
+            126,
+            121,
+            121,
+            134,
+            139,
+            213,
+            147,
+            145,
+            149,
+            226,
+            202,
+            243,
+            153,
+            147,
+            158,
+            150,
+            194,
+            179,
+            138,
+            141,
+            143,
+            150,
+            149,
+            152,
+            166,
+            137,
+            122
+          ],
+          "mean_successful_completion_length": 152.37142857142857,
+          "median_successful_completion_length": 146.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4922025842863509,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 14.942967473637308,
+              "median": 15.0,
+              "p95": 30.0,
+              "maximum": 31
+            }
+          }
+        },
+        "ARM4_GRIP32_VS_ARM4_GRIP4": {
+          "blocks": 40,
+          "first_successes": 35,
+          "second_successes": 33,
+          "first_only_wins": 5,
+          "second_only_wins": 3,
+          "ties": 32,
+          "delta": 0.05,
+          "delta_percentage_points": 5.0,
+          "exact_two_sided_mcnemar_p": 0.7265625,
+          "paired_bootstrap_ci": [
+            -0.075,
+            0.2
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.075,
+            0.2
+          ],
+          "bootstrap_draws": 20000,
+          "paired_bootstrap_seed": 2027090402,
+          "task_cluster_bootstrap_seed": 2027090502,
+          "per_task": {
+            "libero_object:task0": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_object:task1": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 4,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_object:task2": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 4,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_object:task3": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_object:task4": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_object:task5": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 2,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_object:task6": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_object:task7": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 2,
+              "delta": 0.5,
+              "delta_percentage_points": 50.0
+            },
+            "libero_object:task8": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_object:task9": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 2,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_object:task0": 0.05555555555555555,
+            "libero_object:task1": 0.08333333333333333,
+            "libero_object:task2": 0.08333333333333333,
+            "libero_object:task3": 0.05555555555555555,
+            "libero_object:task4": 0.05555555555555555,
+            "libero_object:task5": 0.027777777777777776,
+            "libero_object:task6": 0.05555555555555555,
+            "libero_object:task7": 0.0,
+            "libero_object:task8": 0.05555555555555555,
+            "libero_object:task9": 0.027777777777777776
+          },
+          "positive_loto_count": 9,
+          "strict_stable_positive": false
+        }
+      },
+      "libero_goal": {
+        "ARM4_GRIP4": {
+          "successes": 27,
+          "episodes": 40,
+          "success_rate": 0.675,
+          "environment_steps": 6762,
+          "policy_queries": 1704,
+          "query_rate": 0.25199645075421473,
+          "wall_clock_seconds": 745.2690436840057,
+          "mean_wall_clock_seconds": 18.631726092100145,
+          "successful_completion_lengths": [
+            121,
+            120,
+            97,
+            97,
+            88,
+            106,
+            85,
+            207,
+            177,
+            85,
+            87,
+            89,
+            128,
+            129,
+            138,
+            91,
+            117,
+            81,
+            68,
+            79,
+            65,
+            82,
+            73,
+            84,
+            89,
+            129,
+            150
+          ],
+          "mean_successful_completion_length": 106.0,
+          "median_successful_completion_length": 91.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.494824016563147,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 1.494824016563147,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            }
+          }
+        },
+        "ARM4_GRIP32": {
+          "successes": 25,
+          "episodes": 40,
+          "success_rate": 0.625,
+          "environment_steps": 6957,
+          "policy_queries": 1750,
+          "query_rate": 0.25154520626706917,
+          "wall_clock_seconds": 759.9543805122375,
+          "mean_wall_clock_seconds": 18.99885951280594,
+          "successful_completion_lengths": [
+            121,
+            120,
+            92,
+            94,
+            90,
+            85,
+            89,
+            194,
+            95,
+            73,
+            84,
+            83,
+            128,
+            129,
+            138,
+            88,
+            97,
+            74,
+            65,
+            79,
+            69,
+            84,
+            73,
+            84,
+            129
+          ],
+          "mean_successful_completion_length": 98.28,
+          "median_successful_completion_length": 89.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4957596665229265,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 14.973983038666091,
+              "median": 15.0,
+              "p95": 30.0,
+              "maximum": 31
+            }
+          }
+        },
+        "ARM4_GRIP32_VS_ARM4_GRIP4": {
+          "blocks": 40,
+          "first_successes": 25,
+          "second_successes": 27,
+          "first_only_wins": 2,
+          "second_only_wins": 4,
+          "ties": 34,
+          "delta": -0.05,
+          "delta_percentage_points": -5.0,
+          "exact_two_sided_mcnemar_p": 0.6875,
+          "paired_bootstrap_ci": [
+            -0.175,
+            0.075
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.15,
+            0.05
+          ],
+          "bootstrap_draws": 20000,
+          "paired_bootstrap_seed": 2027090403,
+          "task_cluster_bootstrap_seed": 2027090503,
+          "per_task": {
+            "libero_goal:task0": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 2,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task1": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 2,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task2": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task3": {
+              "blocks": 4,
+              "first_successes": 1,
+              "second_successes": 2,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_goal:task4": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 3,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_goal:task5": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task6": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 2,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task7": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_goal:task8": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 4,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_goal:task9": {
+              "blocks": 4,
+              "first_successes": 1,
+              "second_successes": 2,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_goal:task0": -0.05555555555555555,
+            "libero_goal:task1": -0.05555555555555555,
+            "libero_goal:task2": -0.05555555555555555,
+            "libero_goal:task3": -0.027777777777777776,
+            "libero_goal:task4": -0.08333333333333333,
+            "libero_goal:task5": -0.05555555555555555,
+            "libero_goal:task6": -0.05555555555555555,
+            "libero_goal:task7": -0.05555555555555555,
+            "libero_goal:task8": -0.027777777777777776,
+            "libero_goal:task9": -0.027777777777777776
+          },
+          "positive_loto_count": 0,
+          "strict_stable_positive": false
+        }
+      },
+      "libero_10": {
+        "ARM4_GRIP4": {
+          "successes": 19,
+          "episodes": 40,
+          "success_rate": 0.475,
+          "environment_steps": 15755,
+          "policy_queries": 3944,
+          "query_rate": 0.25033322754681053,
+          "wall_clock_seconds": 1728.281672000885,
+          "mean_wall_clock_seconds": 43.207041800022125,
+          "successful_completion_lengths": [
+            328,
+            261,
+            214,
+            255,
+            216,
+            207,
+            211,
+            241,
+            183,
+            168,
+            327,
+            439,
+            220,
+            221,
+            243,
+            311,
+            264,
+            255,
+            271
+          ],
+          "mean_successful_completion_length": 254.47368421052633,
+          "median_successful_completion_length": 243.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4986353538559187,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 1.4986353538559187,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            }
+          }
+        },
+        "ARM4_GRIP32": {
+          "successes": 19,
+          "episodes": 40,
+          "success_rate": 0.475,
+          "environment_steps": 15898,
+          "policy_queries": 3982,
+          "query_rate": 0.25047175745376776,
+          "wall_clock_seconds": 1732.4522922039032,
+          "mean_wall_clock_seconds": 43.31130730509758,
+          "successful_completion_lengths": [
+            265,
+            459,
+            296,
+            232,
+            227,
+            217,
+            241,
+            183,
+            172,
+            286,
+            389,
+            219,
+            239,
+            233,
+            265,
+            263,
+            256,
+            269,
+            267
+          ],
+          "mean_successful_completion_length": 262.0,
+          "median_successful_completion_length": 256.0,
+          "source_ages": {
+            "arm": {
+              "mean": 1.4985532771417789,
+              "median": 1.0,
+              "p95": 3.0,
+              "maximum": 3
+            },
+            "gripper": {
+              "mean": 15.26506478802365,
+              "median": 15.0,
+              "p95": 30.0,
+              "maximum": 31
+            }
+          }
+        },
+        "ARM4_GRIP32_VS_ARM4_GRIP4": {
+          "blocks": 40,
+          "first_successes": 19,
+          "second_successes": 19,
+          "first_only_wins": 5,
+          "second_only_wins": 5,
+          "ties": 30,
+          "delta": 0.0,
+          "delta_percentage_points": 0.0,
+          "exact_two_sided_mcnemar_p": 1.0,
+          "paired_bootstrap_ci": [
+            -0.15,
+            0.15
+          ],
+          "task_cluster_bootstrap_ci": [
+            -0.175,
+            0.175
+          ],
+          "bootstrap_draws": 20000,
+          "paired_bootstrap_seed": 2027090404,
+          "task_cluster_bootstrap_seed": 2027090504,
+          "per_task": {
+            "libero_10:task0": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 0,
+              "delta": 0.5,
+              "delta_percentage_points": 50.0
+            },
+            "libero_10:task1": {
+              "blocks": 4,
+              "first_successes": 1,
+              "second_successes": 2,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_10:task2": {
+              "blocks": 4,
+              "first_successes": 1,
+              "second_successes": 2,
+              "delta": -0.25,
+              "delta_percentage_points": -25.0
+            },
+            "libero_10:task3": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 4,
+              "delta": -0.5,
+              "delta_percentage_points": -50.0
+            },
+            "libero_10:task4": {
+              "blocks": 4,
+              "first_successes": 1,
+              "second_successes": 0,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            },
+            "libero_10:task5": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 3,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_10:task6": {
+              "blocks": 4,
+              "first_successes": 4,
+              "second_successes": 4,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_10:task7": {
+              "blocks": 4,
+              "first_successes": 2,
+              "second_successes": 2,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_10:task8": {
+              "blocks": 4,
+              "first_successes": 0,
+              "second_successes": 0,
+              "delta": 0.0,
+              "delta_percentage_points": 0.0
+            },
+            "libero_10:task9": {
+              "blocks": 4,
+              "first_successes": 3,
+              "second_successes": 2,
+              "delta": 0.25,
+              "delta_percentage_points": 25.0
+            }
+          },
+          "leave_one_task_out": {
+            "libero_10:task0": -0.05555555555555555,
+            "libero_10:task1": 0.027777777777777776,
+            "libero_10:task2": 0.027777777777777776,
+            "libero_10:task3": 0.05555555555555555,
+            "libero_10:task4": -0.027777777777777776,
+            "libero_10:task5": 0.0,
+            "libero_10:task6": 0.0,
+            "libero_10:task7": 0.0,
+            "libero_10:task8": 0.0,
+            "libero_10:task9": -0.027777777777777776
+          },
+          "positive_loto_count": 3,
+          "strict_stable_positive": false
+        }
+      }
+    },
+    "pooled": {
+      "ARM4_GRIP4": {
+        "successes": 108,
+        "episodes": 160,
+        "success_rate": 0.675,
+        "environment_steps": 35354,
+        "policy_queries": 8882,
+        "query_rate": 0.25123041240029415,
+        "wall_clock_seconds": 3900.1980676651,
+        "mean_wall_clock_seconds": 24.376237922906874,
+        "successful_completion_lengths": [
+          69,
+          133,
+          89,
+          104,
+          112,
+          95,
+          101,
+          81,
+          83,
+          83,
+          135,
+          130,
+          129,
+          85,
+          100,
+          101,
+          85,
+          107,
+          109,
+          107,
+          107,
+          136,
+          126,
+          97,
+          90,
+          93,
+          121,
+          124,
+          128,
+          137,
+          151,
+          141,
+          152,
+          127,
+          135,
+          127,
+          131,
+          113,
+          132,
+          135,
+          127,
+          122,
+          131,
+          131,
+          152,
+          140,
+          152,
+          159,
+          198,
+          180,
+          157,
+          157,
+          149,
+          141,
+          148,
+          139,
+          153,
+          150,
+          149,
+          160,
+          134,
+          127,
+          121,
+          120,
+          97,
+          97,
+          88,
+          106,
+          85,
+          207,
+          177,
+          85,
+          87,
+          89,
+          128,
+          129,
+          138,
+          91,
+          117,
+          81,
+          68,
+          79,
+          65,
+          82,
+          73,
+          84,
+          89,
+          129,
+          150,
+          328,
+          261,
+          214,
+          255,
+          216,
+          207,
+          211,
+          241,
+          183,
+          168,
+          327,
+          439,
+          220,
+          221,
+          243,
+          311,
+          264,
+          255,
+          271
+        ],
+        "mean_successful_completion_length": 143.46296296296296,
+        "median_successful_completion_length": 129.5,
+        "source_ages": {
+          "arm": {
+            "mean": 1.4962663347853142,
+            "median": 1.0,
+            "p95": 3.0,
+            "maximum": 3
+          },
+          "gripper": {
+            "mean": 1.4962663347853142,
+            "median": 1.0,
+            "p95": 3.0,
+            "maximum": 3
+          }
+        }
+      },
+      "ARM4_GRIP32": {
+        "successes": 110,
+        "episodes": 160,
+        "success_rate": 0.6875,
+        "environment_steps": 35637,
+        "policy_queries": 8956,
+        "query_rate": 0.25131183881920477,
+        "wall_clock_seconds": 3920.4433805942535,
+        "mean_wall_clock_seconds": 24.502771128714084,
+        "successful_completion_lengths": [
+          259,
+          69,
+          99,
+          99,
+          104,
+          100,
+          92,
+          98,
+          93,
+          80,
+          81,
+          141,
+          130,
+          129,
+          96,
+          100,
+          101,
+          85,
+          106,
+          106,
+          109,
+          97,
+          135,
+          109,
+          130,
+          91,
+          89,
+          242,
+          127,
+          120,
+          112,
+          136,
+          146,
+          136,
+          146,
+          126,
+          132,
+          140,
+          126,
+          126,
+          121,
+          121,
+          134,
+          139,
+          213,
+          147,
+          145,
+          149,
+          226,
+          202,
+          243,
+          153,
+          147,
+          158,
+          150,
+          194,
+          179,
+          138,
+          141,
+          143,
+          150,
+          149,
+          152,
+          166,
+          137,
+          122,
+          121,
+          120,
+          92,
+          94,
+          90,
+          85,
+          89,
+          194,
+          95,
+          73,
+          84,
+          83,
+          128,
+          129,
+          138,
+          88,
+          97,
+          74,
+          65,
+          79,
+          69,
+          84,
+          73,
+          84,
+          129,
+          265,
+          459,
+          296,
+          232,
+          227,
+          217,
+          241,
+          183,
+          172,
+          286,
+          389,
+          219,
+          239,
+          233,
+          265,
+          263,
+          256,
+          269,
+          267
+        ],
+        "mean_successful_completion_length": 148.15454545454546,
+        "median_successful_completion_length": 130.0,
+        "source_ages": {
+          "arm": {
+            "mean": 1.4960013469147235,
+            "median": 1.0,
+            "p95": 3.0,
+            "maximum": 3
+          },
+          "gripper": {
+            "mean": 15.099503325195723,
+            "median": 15.0,
+            "p95": 30.0,
+            "maximum": 31
+          }
+        }
+      },
+      "ARM4_GRIP32_VS_ARM4_GRIP4": {
+        "blocks": 160,
+        "first_successes": 110,
+        "second_successes": 108,
+        "first_only_wins": 17,
+        "second_only_wins": 15,
+        "ties": 128,
+        "delta": 0.0125,
+        "delta_percentage_points": 1.25,
+        "exact_two_sided_mcnemar_p": 0.860050065908581,
+        "paired_bootstrap_ci": [
+          -0.05625,
+          0.08125
+        ],
+        "task_cluster_bootstrap_ci": [
+          -0.05,
+          0.08125
+        ],
+        "bootstrap_draws": 20000,
+        "paired_bootstrap_seed": 2027090410,
+        "task_cluster_bootstrap_seed": 2027090510,
+        "per_task": {
+          "libero_10:task0": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 0,
+            "delta": 0.5,
+            "delta_percentage_points": 50.0
+          },
+          "libero_10:task1": {
+            "blocks": 4,
+            "first_successes": 1,
+            "second_successes": 2,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_10:task2": {
+            "blocks": 4,
+            "first_successes": 1,
+            "second_successes": 2,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_10:task3": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 4,
+            "delta": -0.5,
+            "delta_percentage_points": -50.0
+          },
+          "libero_10:task4": {
+            "blocks": 4,
+            "first_successes": 1,
+            "second_successes": 0,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_10:task5": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_10:task6": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_10:task7": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 2,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_10:task8": {
+            "blocks": 4,
+            "first_successes": 0,
+            "second_successes": 0,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_10:task9": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 2,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_goal:task0": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 2,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task1": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 2,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task2": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task3": {
+            "blocks": 4,
+            "first_successes": 1,
+            "second_successes": 2,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_goal:task4": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 3,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_goal:task5": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task6": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 2,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task7": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_goal:task8": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 4,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_goal:task9": {
+            "blocks": 4,
+            "first_successes": 1,
+            "second_successes": 2,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task0": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task1": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 4,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task2": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 4,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_object:task3": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task4": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task5": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 2,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_object:task6": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task7": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 2,
+            "delta": 0.5,
+            "delta_percentage_points": 50.0
+          },
+          "libero_object:task8": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_object:task9": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 2,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_spatial:task0": {
+            "blocks": 4,
+            "first_successes": 2,
+            "second_successes": 1,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_spatial:task1": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 4,
+            "delta": -0.25,
+            "delta_percentage_points": -25.0
+          },
+          "libero_spatial:task2": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 2,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_spatial:task3": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_spatial:task4": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_spatial:task5": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 4,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_spatial:task6": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_spatial:task7": {
+            "blocks": 4,
+            "first_successes": 4,
+            "second_successes": 3,
+            "delta": 0.25,
+            "delta_percentage_points": 25.0
+          },
+          "libero_spatial:task8": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          },
+          "libero_spatial:task9": {
+            "blocks": 4,
+            "first_successes": 3,
+            "second_successes": 3,
+            "delta": 0.0,
+            "delta_percentage_points": 0.0
+          }
+        },
+        "leave_one_task_out": {
+          "libero_10:task0": 0.0,
+          "libero_10:task1": 0.019230769230769232,
+          "libero_10:task2": 0.019230769230769232,
+          "libero_10:task3": 0.02564102564102564,
+          "libero_10:task4": 0.00641025641025641,
+          "libero_10:task5": 0.01282051282051282,
+          "libero_10:task6": 0.01282051282051282,
+          "libero_10:task7": 0.01282051282051282,
+          "libero_10:task8": 0.01282051282051282,
+          "libero_10:task9": 0.00641025641025641,
+          "libero_goal:task0": 0.01282051282051282,
+          "libero_goal:task1": 0.01282051282051282,
+          "libero_goal:task2": 0.01282051282051282,
+          "libero_goal:task3": 0.019230769230769232,
+          "libero_goal:task4": 0.00641025641025641,
+          "libero_goal:task5": 0.01282051282051282,
+          "libero_goal:task6": 0.01282051282051282,
+          "libero_goal:task7": 0.01282051282051282,
+          "libero_goal:task8": 0.019230769230769232,
+          "libero_goal:task9": 0.019230769230769232,
+          "libero_object:task0": 0.01282051282051282,
+          "libero_object:task1": 0.019230769230769232,
+          "libero_object:task2": 0.019230769230769232,
+          "libero_object:task3": 0.01282051282051282,
+          "libero_object:task4": 0.01282051282051282,
+          "libero_object:task5": 0.00641025641025641,
+          "libero_object:task6": 0.01282051282051282,
+          "libero_object:task7": 0.0,
+          "libero_object:task8": 0.01282051282051282,
+          "libero_object:task9": 0.00641025641025641,
+          "libero_spatial:task0": 0.00641025641025641,
+          "libero_spatial:task1": 0.019230769230769232,
+          "libero_spatial:task2": 0.00641025641025641,
+          "libero_spatial:task3": 0.01282051282051282,
+          "libero_spatial:task4": 0.01282051282051282,
+          "libero_spatial:task5": 0.01282051282051282,
+          "libero_spatial:task6": 0.01282051282051282,
+          "libero_spatial:task7": 0.00641025641025641,
+          "libero_spatial:task8": 0.01282051282051282,
+          "libero_spatial:task9": 0.01282051282051282
+        },
+        "positive_loto_count": 38,
+        "strict_stable_positive": false
+      }
+    }
+  },
+  "integrity": {
+    "all_manifest_identities_exact": true,
+    "all_environment_seeds_exact": true,
+    "all_action_counts_exact": true,
+    "all_query_counts_and_schedules_exact": true,
+    "completed": {
+      "gate_m": 520,
+      "smolvla_robustness": 320
+    },
+    "technical_failure_attempts": [],
+    "technical_failure_attempt_count": 0,
+    "technical_failed_cells": [],
+    "technical_failed_cell_count": 0,
+    "observed_methods": [
+      "ARM4_GRIP32",
+      "ARM4_GRIP4",
+      "FIXED_H13",
+      "M0_HARD16",
+      "M2_GRIPPER_EVENT",
+      "SHUFFLED_TRIGGER"
+    ]
+  },
+  "method_development_closed": true,
+  "forbidden_followup_launched": false,
+  "pre_scientific_technical_audit": {
+    "reporting_only_exception_count": 1,
+    "scientific_environment_steps": 0,
+    "outcomes_observed": 0,
+    "clean_process_rerun_passed": true
+  }
+}
