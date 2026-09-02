@@ -5,7 +5,7 @@ Updated: 2026-09-02 21:12:59 +0800
 1. Branch: `exp/icra27-crosssuite-query-allocation`
 2. HEAD: `75dd338a96494cde6d247dfb87d5d4df0cc6871f`
 3. Track-A preregistration SHA: `40549d876c0e09fad4e8033b3206f6018f53ece5`
-4. Reviewer-supplement preregistration SHA: `pending`
+4. Reviewer-supplement preregistration SHA: `f44a7605246d4c9ea82f4d19ad61833e8fb13eb8`
 5. Track-A final count: 1698/2700
 6. Track-A technical failure count: 0
 7. Track-A scientific-analysis status: not complete
