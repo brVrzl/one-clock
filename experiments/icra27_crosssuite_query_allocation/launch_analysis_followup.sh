@@ -16,7 +16,11 @@ fi
 if ! mkdir "${ORCH}/ANALYSIS_FOLLOWUP_LOCK" 2>/dev/null; then
   if [[ -s "${ORCH}/analysis_followup.pid" ]]; then
     pid="$(<"${ORCH}/analysis_followup.pid")"
-    cmdline="$(tr '\0' ' ' < "/proc/${pid}/cmdline" 2>/dev/null || true)"
+    if [[ -r "/proc/${pid}/cmdline" ]]; then
+      cmdline="$(tr '\0' ' ' < "/proc/${pid}/cmdline")"
+    else
+      cmdline=""
+    fi
     if kill -0 "${pid}" 2>/dev/null && [[ "${cmdline}" == *"analysis_followup.sh"* ]]; then
       echo "analysis follower already active pid=${pid}"; exit 3
     fi
