@@ -42,6 +42,15 @@ b3_root=track/"track_b/forecast"
 b3_complete=len(list((b3_root/"markers").glob("*.complete"))) if (b3_root/"markers").exists() else 0
 b3_failed=len(list((b3_root/"markers").glob("*.technical_failed"))) if (b3_root/"markers").exists() else 0
 timebase=json.loads((track/"temporal_contract_audit.json").read_text())["status"] if (track/"temporal_contract_audit.json").is_file() else "not audited"
+def external_pid(path, expected):
+    try:
+        pid=int(path.read_text().strip())
+        cmdline=Path(f"/proc/{pid}/cmdline").read_bytes().replace(b"\0",b" ").decode(errors="replace")
+        return f"{pid} ({'active' if expected in cmdline else 'completed'})"
+    except Exception:
+        return "none"
+b3_pid=external_pid(b3_root/"pids/worker_0.pid", "run_track_b_forecast.py")
+followup_pid=external_pid(track/"orchestration/analysis_followup.pid", "analysis_followup.sh")
 text=f"""# Overnight ICRA handoff
 
 Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
@@ -76,7 +85,8 @@ Original pipeline start epoch: `{start_epoch}` (preserved on `--resume`)
 - Governing final analysis-only amendment commit: `e2fb21b`
 - Track-A conditions: {condition_text}
 - Track-A contrasts: {contrast_text}
-- B3 status: {b3_complete}/8 task-policy shards complete; {b3_failed} technical failures; canonical analysis {'complete' if (b3_root/'analysis/summary.json').is_file() else 'pending'}.
+- B3 status: {b3_complete}/8 task-policy shards complete; {b3_failed} technical failures; canonical analysis {'complete' if (b3_root/'analysis/summary.json').is_file() else 'pending'}; worker PID {b3_pid}.
+- Analysis-followup PID: {followup_pid}; final mechanism relationship analysis {'complete' if (track/'track_b/final_mechanism_relationships/summary.json').is_file() else 'pending'}.
 - Temporal contract: `{timebase}`. Standard ACT training/B2/B3 are 10 Hz; R1A/B/C/D are 20 Hz; R2A is 30 Hz. Seconds are the primary cross-family axis.
 - Reviewer prelaunch canary: {'PASS' if (ROOT/'canaries/r1_prelaunch.json').is_file() else 'pending'}.
 - Scientific configuration confirmation: no condition, manifest, cohort, state, seed, statistic, decision rule, or preregistered launch order was changed. Governed supplement files remain those of `f44a7605246d4c9ea82f4d19ad61833e8fb13eb8`.
