@@ -30,6 +30,18 @@ attempts=sum(len(json.loads(p.read_text()).get("attempts",[])) for p in (ROOT/"a
 resume=f"bash {ROOT/'launch_watcher.sh'} --resume"+""
 failure=(ROOT/"orchestration/PIPELINE_FAILED").read_text().strip() if (ROOT/"orchestration/PIPELINE_FAILED").is_file() else "none"
 start_epoch=(ROOT/"orchestration/pipeline_start_epoch").read_text().strip() if (ROOT/"orchestration/pipeline_start_epoch").is_file() else "not started"
+analysis_path=track/"track_a/analysis.json"
+analysis=json.loads(analysis_path.read_text()) if analysis_path.is_file() else None
+if analysis:
+    label_text=", ".join(f"{key}={'PASS' if value else 'FAIL'}" for key,value in analysis["labels"].items())
+    condition_text="; ".join(f"{key} {value['successes']}/{value['N']} ({100*value['success_rate']:.2f}%)" for key,value in analysis["method_summaries"].items())
+    contrast_text="; ".join(f"{key} {value['delta_percentage_points']:+.2f} pp, task-CI [{value['task_cluster_bootstrap_ci_percentage_points'][0]:+.2f},{value['task_cluster_bootstrap_ci_percentage_points'][1]:+.2f}]" for key,value in analysis["contrasts"].items())
+else:
+    label_text=condition_text=contrast_text="not analyzed"
+b3_root=track/"track_b/forecast"
+b3_complete=len(list((b3_root/"markers").glob("*.complete"))) if (b3_root/"markers").exists() else 0
+b3_failed=len(list((b3_root/"markers").glob("*.technical_failed"))) if (b3_root/"markers").exists() else 0
+timebase=json.loads((track/"temporal_contract_audit.json").read_text())["status"] if (track/"temporal_contract_audit.json").is_file() else "not audited"
 text=f"""# Overnight ICRA handoff
 
 Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
@@ -40,8 +52,8 @@ Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
 4. Reviewer-supplement preregistration SHA: `{prereg}`
 5. Track-A final count: {ta_complete}/2700
 6. Track-A technical failure count: {ta_failed}
-7. Track-A scientific-analysis status: {'complete' if (ROOT/'orchestration/TRACK_A_ANALYSIS_COMPLETE').is_file() else 'not complete'}
-8. Track-A headline preregistered labels: {'written to canonical analysis; not copied into technical handoff' if (ROOT/'orchestration/TRACK_A_ANALYSIS_COMPLETE').is_file() else 'not analyzed'}
+7. Track-A scientific-analysis status: {'complete' if (ROOT/'orchestration/TRACK_A_ANALYSIS_COMPLETE').is_file() else 'not complete'}; canonical path `{analysis_path}`
+8. Track-A headline preregistered labels: {label_text}
 9. R1A status: {status('r1a')}
 10. R1B status: {status('r1b')}
 11. R1C status: {status('r1c')}
@@ -57,5 +69,16 @@ Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
 
 Pipeline failure marker: `{failure}`
 Original pipeline start epoch: `{start_epoch}` (preserved on `--resume`)
+
+## Authorized morning continuation
+
+- Technical repair commit: `af1b54dc567973d47f0e234d98c9b83ab68e675b`
+- Governing final analysis-only amendment commit: `e2fb21b`
+- Track-A conditions: {condition_text}
+- Track-A contrasts: {contrast_text}
+- B3 status: {b3_complete}/8 task-policy shards complete; {b3_failed} technical failures; canonical analysis {'complete' if (b3_root/'analysis/summary.json').is_file() else 'pending'}.
+- Temporal contract: `{timebase}`. Standard ACT training/B2/B3 are 10 Hz; R1A/B/C/D are 20 Hz; R2A is 30 Hz. Seconds are the primary cross-family axis.
+- Reviewer prelaunch canary: {'PASS' if (ROOT/'canaries/r1_prelaunch.json').is_file() else 'pending'}.
+- Scientific configuration confirmation: no condition, manifest, cohort, state, seed, statistic, decision rule, or preregistered launch order was changed. Governed supplement files remain those of `f44a7605246d4c9ea82f4d19ad61833e8fb13eb8`.
 """
 (ROOT/"HANDOFF.md").write_text(text)
