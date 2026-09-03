@@ -1,61 +1,42 @@
 \section{Related Work}
 \label{sec:related-work}
 
-\subsection{Action chunking and its analysis}
+\subsection{Action chunking and temporal ensembling}
 
-ACT introduced action-chunk prediction and temporal ensembling for precise
-imitation learning~\cite{zhao2023act}. We use frozen ACT policies but disable
-temporal ensembling, because our question concerns which same-target chunk
-entry supplies each executed component. Lazzati et al. analyze why action
-chunking improves behavioral cloning~\cite{lazzati2026actionchunking}. Their
-experiments examine non-Markovian expressivity, compounding error, policies
-conditioned on earlier observations, and implicit ensembling across temporal
-relationships. That analysis concerns the benefits of chunking and alternative
-whole-policy constructions. Our study instead holds the trained chunk policy
-fixed and makes action-group assignment part of the execution-time
-intervention.
-
-Zeng et al. revisit whole-policy open-loop execution through the interaction of
-policy context and demonstration non-Markovianity~\cite{zeng2026openloop}. They
-show that sufficiently long policy context can remove the benefit of long
-open-loop prefixes, with highly reactive closed-loop execution performing best
-in their settings. Our findings do not contradict that result. Zeng et al.
-vary context and whole-policy execution horizon, whereas we resolve the
-same-target temporal relationship by action group. The fixed-h16 evidence in
-our study motivates this different measurement question; it does not establish
-a universal preference for open-loop execution.
+ACT predicts action chunks and can aggregate overlapping predictions through
+temporal ensembling~\cite{zhao2023act}. Recent analysis studies why chunking can
+improve behavioral cloning and how policy context changes the value of
+open-loop execution~\cite{lazzati2026actionchunking,zeng2026openloop}. We hold
+the trained chunk policy fixed and ask a different question: whether the same
+temporal source assignment has different behavioral consequences across action
+components.
 
 \subsection{Whole-policy execution adaptation}
 
-Several methods adapt how much of a predicted chunk is executed before the
-whole policy is queried again. AutoHorizon estimates a per-chunk horizon from
-attention structure, while PACE selects replanning boundaries from phase-related
-kinematics in the predicted chunk~\cite{wang2026autohorizon,nie2026pace}. DEHP
-learns a lightweight horizon predictor with reinforcement learning while
-freezing the base chunk policy~\cite{zhao2026dehp}. BCP similarly keeps its base
-VLA frozen but learns a sequence of continue-or-replan decisions over each
-chunk~\cite{xu2026bcp}. VLA-Corrector monitors visual-feature deviation and
-triggers truncation and corrective replanning~\cite{pan2026vlacorrector}.
-Related selection mechanisms include A3, which accepts the longest verified
-action prefix~\cite{chen2026a3}. RTC addresses asynchronous inference by
-freezing actions that must execute and inpainting the remainder of the next
-chunk~\cite{black2025rtc}. These methods differ in signal and training, but
-their temporal decision is applied to the whole predicted action.
-Their objectives center on whole-policy efficiency, responsiveness, or
-recovery, rather than on action-group identity as a manipulated temporal
-factor.
+Replanning methods select how much of a chunk to execute before the next policy
+query. Their signals include attention, predicted motion phase, learned
+continue-or-replan decisions, visual deviation, and verified prefixes
+~\cite{wang2026autohorizon,nie2026pace,zhao2026dehp,xu2026bcp,
+pan2026vlacorrector,chen2026a3}. RTC instead handles asynchronous inference by
+preserving actions that must execute and inpainting the remainder of a new
+chunk~\cite{black2025rtc}. These methods primarily apply a temporal decision to
+the whole action. Our executable comparisons hold the arm cadence fixed while
+changing gripper commitment.
+
+\subsection{Stale predictions and asynchronous execution}
+
+Staleness arises whenever inference and control run on different clocks or an
+executor reuses a stored prediction. RTC directly addresses asynchronous
+chunk generation~\cite{black2025rtc}; adaptive-horizon methods address when to
+replan~\cite{wang2026autohorizon,nie2026pace}. Same-target alignment instead
+changes the source age of selected components while preserving their intended
+physical target. This diagnostic isolates neither latency nor compute and
+couples observation age with prediction lookahead.
 
 \subsection{Heterogeneous action generation}
 
-Robot actions are also treated heterogeneously at the representation and
-generation levels. ARP models hybrid action sequences and permits different
-chunk sizes for different action types~\cite{zhang2025arp}. This design shows
-that a single generation granularity need not suit every action type, but it
-does not test component identity as a factor in a matched execution-time
-temporal intervention. Our split is not a new action representation: the policy
-still predicts one seven-dimensional chunk. We project the predicted action
-only when selecting same-target sources at execution time. Prior work adapts or
-analyzes temporal execution primarily at the whole-policy level, while
-heterogeneous-action work has focused on representation or generation
-granularity. We instead use action-group identity as an experimental factor in
-the execution-time temporal relationship under matched same-target semantics.
+Robot actions can also be structured at the representation and generation
+levels. ARP permits different chunk sizes for different action types
+~\cite{zhang2025arp}. Our policy still predicts one seven-dimensional chunk;
+component identity enters only when the executor selects which same-target
+source supplies translation, rotation, or gripper commands.

@@ -1,105 +1,20 @@
+% Draft content placeholder only; final paper-facing artwork is intentionally absent.
 \begin{figure*}[t]
 \centering
-\setlength{\unitlength}{0.62mm}
-\begin{picture}(270,50)
-  \put(0,44){\textbf{(a)} Same-target sources}
-  \put(5,25){\framebox(94,13){Fresh source: $q=t,\ k=\FreshOffset$}}
-  \put(5,4){\framebox(94,13){Old\OldDelay{} source: $q=t-\OldDelay,\ k=\OldDelay$}}
-  \put(119,29){\makebox(0,0){$q+k=t$}}
-  \put(119,21){\circle*{2}}
-  \put(99,31){\vector(1,-1){16}}
-  \put(99,10){\vector(1,1){16}}
-  \put(130,31){\framebox(63,12){arm selects source}}
-  \put(130,2){\framebox(63,12){gripper selects source}}
-  \put(119,21){\vector(1,1){11}}
-  \put(119,21){\vector(1,-1){11}}
-  \put(193,37){\vector(3,-1){45}}
-  \put(193,8){\vector(3,1){45}}
-  \put(238,22){\circle*{3}}
-  \put(238,29){\makebox(0,0){physical target $t$}}
-  \put(161.5,46){\makebox(0,0){each group separately selects an eligible same-target source}}
-\end{picture}
-
-\begin{minipage}[t]{0.59\textwidth}
-\centering
-\setlength{\unitlength}{0.60mm}
-\begin{picture}(170,113)
-  \put(0,106){\textbf{(b)} Frozen $2\times2$ factorial}
-  \put(68,96){\makebox(0,0){Fresh gripper}}
-  \put(108,96){\makebox(0,0){Old\OldDelay{} gripper}}
-  \put(88,84){\makebox(0,0){\shortstack{$\textsc{FO20}-\textsc{Fresh}:\ \PosthocGripFreshArmDelta$ pp\\paired CI $\PosthocGripFreshArmPairedCI$}}}
-
-  \put(50,55){\framebox(36,17){\shortstack{\textsc{Fresh}\\\ConfirmFreshRate\%}}}
-  \put(90,55){\framebox(36,17){\shortstack{\textsc{FO20}\\\ConfirmFORate\%}}}
-  \put(50,28){\framebox(36,17){\shortstack{\textsc{Reverse20}\\\ConfirmReverseRate\%}}}
-  \put(90,28){\framebox(36,17){\shortstack{\textsc{FullOld20}\\\ConfirmFullOldRate\%}}}
-  \put(46,63){\makebox(0,0)[r]{Fresh arm}}
-  \put(46,36){\makebox(0,0)[r]{Old\OldDelay{} arm}}
-
-  \put(46,51){\makebox(0,0)[r]{\shortstack{$\textsc{Reverse20}-\textsc{Fresh}$\\\PosthocArmFreshGripDelta{} pp\\paired CI $\PosthocArmFreshGripPairedCI$}}}
-  \put(129,51){\makebox(0,0)[l]{\shortstack{$\textsc{FullOld20}-\textsc{FO20}$\\\PosthocArmOldGripDelta{} pp\\paired CI $\PosthocArmOldGripPairedCI$}}}
-  \put(88,18){\makebox(0,0){\shortstack{$\textsc{FullOld20}-\textsc{Reverse20}:\ \PosthocGripOldArmDelta$ pp\\paired CI $\PosthocGripOldArmPairedCI$}}}
-  \put(88,2){\makebox(0,0){post-hoc interaction $=\PosthocInteractionDelta$ pp, CI $\PosthocInteractionPairedCI$}}
-
-  \put(137,78){\framebox(30,14){\shortstack{\textsc{hard-h\HardHorizon}\\\ConfirmHardRate\%}}}
-  \put(152,97){\makebox(0,0){detached reference}}
-\end{picture}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.39\textwidth}
-\centering
-\setlength{\unitlength}{0.58mm}
-\begin{picture}(112,113)(-36,0)
-  \put(-36,106){\textbf{(c)} Cross-cohort paired effects}
-
-  \put(-35,91){\makebox(0,0)[l]{Object development}}
-  \put(-2,77){\makebox(0,0)[r]{C2$-$Fresh}}
-  \put(-2,64){\makebox(0,0)[r]{h\HardHorizon$-$C2}}
-  \put(-35,51){\makebox(0,0)[l]{Frozen confirmation}}
-  \put(-2,37){\makebox(0,0)[r]{C2$-$Fresh}}
-  \put(-2,24){\makebox(0,0)[r]{h\HardHorizon$-$C2}}
-
-  \put(0,14){\line(1,0){75}}
-  \put(25,18){\line(0,1){70}}
-  \multiput(0,12)(25,0){4}{\line(0,1){4}}
-  \put(0,7){\makebox(0,0){$-25$}}
-  \put(25,7){\makebox(0,0){$0$}}
-  \put(50,7){\makebox(0,0){$+25$}}
-  \put(75,7){\makebox(0,0){$+50$}}
-  \put(37.5,0){\makebox(0,0){paired effect (pp)}}
-
-  \put(\FigObjCtwoLow,77){\line(1,0){\FigObjCtwoWidth}}
-  \put(\FigObjCtwoLow,75){\line(0,1){4}}
-  \put(\FigObjCtwoHigh,75){\line(0,1){4}}
-  \put(\FigObjCtwoPoint,77){\circle*{3}}
-
-  \put(\FigObjHardCtwoLow,64){\line(1,0){\FigObjHardCtwoWidth}}
-  \put(\FigObjHardCtwoLow,62){\line(0,1){4}}
-  \put(\FigObjHardCtwoHigh,62){\line(0,1){4}}
-  \put(\FigObjHardCtwoPoint,64){\framebox(3,3){}}
-
-  \put(\FigConfCtwoLow,37){\line(1,0){\FigConfCtwoWidth}}
-  \put(\FigConfCtwoLow,35){\line(0,1){4}}
-  \put(\FigConfCtwoHigh,35){\line(0,1){4}}
-  \put(\FigConfCtwoPoint,37){\circle*{3}}
-
-  \put(\FigConfHardCtwoLow,24){\line(1,0){\FigConfHardCtwoWidth}}
-  \put(\FigConfHardCtwoLow,22){\line(0,1){4}}
-  \put(\FigConfHardCtwoHigh,22){\line(0,1){4}}
-  \put(\FigConfHardCtwoPoint,24){\framebox(3,3){}}
-\end{picture}
-\end{minipage}
-\caption{Same-target temporal assignments expose component-dependent structure.
-(a) Fresh and old sources both predict the physical target $t$; source age and
-chunk offset are coupled by $q+k=t$, while arm and gripper can select different
-eligible sources. (b) Frozen confirmation success rates in the factorial and a
-detached fixed-h16 reference. The surrounding differences and interaction are
-post-hoc decompositions with paired 95\% bootstrap intervals. Task-cluster
-intervals are reported in the text, especially when interval types disagree.
-The assignments do not independently randomize observation age and chunk
-offset. (c) Paired effects and paired 95\% bootstrap intervals for the Object
-development and frozen confirmation cohorts. Cohorts are not pooled. They use
-different policy/checkpoint settings and are shown as separate paired effects;
-the Object \textsc{hard-h16}$-$C2 completeness inference is post-hoc. Circles
-denote C2$-$Fresh and squares denote \textsc{hard-h16}$-$C2.}
-\label{fig:main}
+\fbox{\parbox[c][28mm][c]{0.96\textwidth}{\small
+\textbf{Draft Fig. 1 specification.} Left: a control-step timeline showing
+$A_t[0]$ and $A_{t-20}[20]$ converging on physical target $t$, with
+$q+k=t$, $d=20=1.00$~s at 20~Hz, and the all-Fresh prefix for $t<20$.
+Center: A0G20 uses fresh arm/stale gripper; A20G0 uses stale arm/fresh
+gripper. Right: the preregistered 140-block factorial, visually emphasizing
+only A0G20$-$A20G0=$+32.14$ points, paired CI $[+23.6,+40.7]$, and
+task-cluster CI $[+21.4,+44.3]$.}}
+\caption{\textbf{Same-target diagnostic and primary preregistered result.}
+At step $t$, A0G20 combines the arm from query $t$, offset 0, with the gripper
+from query $t-20$, offset 20; A20G0 swaps those assignments. Both commands
+target step $t$. Moving the one-second-old prediction from the gripper to the
+arm changed success from 83/140 to 38/140, a 32.14-point difference. These
+probes query the policy once per executed step (policy-query rate 1.0) and are
+diagnostic interventions rather than deployment executors.}
+\label{fig:primary}
 \end{figure*}

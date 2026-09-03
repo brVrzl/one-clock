@@ -1,19 +1,19 @@
-Action-chunked robot policies are usually summarized using one temporal
-execution setting for the whole action, potentially hiding different temporal
-sensitivities across action groups. With frozen policies, we study same-target,
-component-resolved temporal assignments through frozen cross-suite ACT
-confirmation on $\ConfirmFreshBlocks$ paired task-state blocks. In the primary
-comparison, assigning the old same-target relationship to the gripper rather
-than the arm improved success by $\ConfirmFOReverseDelta$ percentage points
-(paired 95\% CI $\ConfirmFOReversePairedCI$~pp), with positive
-leave-one-task-out aggregate effects for all ten tasks. A positive post-hoc
-factorial interaction of $\PosthocInteractionDelta$~pp had paired and
-task-cluster bootstrap intervals excluding zero, indicating conditional
-non-additivity in this frozen factorial. Across Object development and frozen
-cross-suite confirmation, arm-only use of a fixed 16-step schedule yielded no
-aggregate gain over fully reactive execution, whereas both-group commitment
-was reliably above the arm-only decomposition; the development-set arm-only
-penalty itself did not replicate. The fixed-horizon reference had the highest
-aggregate ACT success where evaluated, but its advantage over the selective
-old-gripper condition was not statistically reliable in either relevant ACT
-cohort; accordingly, we make no universal executor recommendation.
+How old can a predicted action be before it should be refreshed? Action-chunk
+policies forecast a trajectory from each observation, yet execution rules
+apply one temporal setting to the action vector. We diagnose component
+dependence by taking arm and gripper commands from ACT
+chunks while aligning both to the same physical control step.
+These probes query the policy once per step and are diagnostic
+interventions, not deployment schedules. In a preregistered 140-block ACT
+evaluation, moving a one-second-old prediction from the gripper to the arm
+changed success from 83/140 to 38/140, a 32.14-point difference. On a separate
+development cohort, the fresh-arm/stale-gripper branch remained above the
+stale-arm/fresh-gripper branch from 0.10 to 1.60~s, with observed separations of
+21.43--54.76 points. Translation staleness was also substantially more damaging
+than rotation staleness. In executable schedules, extending gripper commitment
+improved success by 4.667 and 5.778 points at two arm cadences with nearly
+matched policy-query rates. Coherent H16 nevertheless remained the strongest
+operating point. Same-target disagreement ranked the arm
+components in the opposite order from behavior, and the probe couples source
+age with prediction lookahead. The mechanism and generality beyond the
+evaluated ACT policies therefore remain unresolved.

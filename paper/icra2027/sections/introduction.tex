@@ -1,81 +1,50 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Action-chunked robot policies predict a sequence of future controls from each
-observation rather than a single immediate action~\cite{zhao2023act}. This
-interface creates a temporal execution choice even when policy weights remain
-fixed. At physical time $t$, multiple stored predictions can refer to that same
-target time: a recent query contributes an early chunk offset, whereas an older
-query contributes a later offset. An executor must decide which eligible
-prediction to apply and when to request another chunk. Execution is therefore
-not only a question of how much computation to amortize. It also determines
-which temporal relationship between observation, prediction, and target time
-enters the closed loop.
+An action-chunk policy predicts commands for several future control steps from
+each observation~\cite{zhao2023act}. Its executor must then decide how long or
+how repeatedly to use those predictions before requesting a new chunk. Common
+executors expose one temporal setting for the full action vector, although the
+vector combines translation, rotation, and gripper commands. A single setting
+is behaviorally neutral only if these components respond similarly when their
+predictions become stale.
 
-Most analyses and execution mechanisms summarize this choice for the action as
-a whole. They study one execution horizon, one source-age relationship, or one
-acceptance, aggregation, or replanning decision for the complete predicted
-chunk~\cite{lazzati2026actionchunking,wang2026autohorizon,chen2026a3}. Such
-summaries are useful, but they can hide structure when the action vector joins
-controls with different physical roles. In our LIBERO action
-contract~\cite{liu2023libero}, six dimensions command relative end-effector arm
-motion and one dimension commands the gripper. The two groups act through
-different mechanisms and need not have the same behavioral sensitivity to a
-shared temporal relationship. Assigning one scalar temporal descriptor to all
-seven dimensions can therefore erase a factor that matters during execution.
-This matters for interpretation as well as aggregate performance. A
-whole-action contrast cannot show whether its effect is shared across
-components, concentrated in one group, or varies materially by action group.
-Conversely, similar task success under two whole-action settings does
-not establish that their components are temporally insensitive. Without
-component-resolved assignments, these possibilities remain aliased.
+The evaluated ACT policy shows a striking component structure on the Object
+development cohort. At a source age of 1.00~s, success was 8.73\% with stale
+translation, 9.52\% with the full arm stale, 42.06\% with stale rotation,
+44.44\% with all components fresh, and 64.29\% with a stale gripper. These
+exactly block-matched values combine audited historical anchors with later
+reviewer-directed component probes; they are a comparative characterization,
+not one preregistered five-condition factorial. Staling translation alone
+nearly reproduces the degradation seen when the full arm is stale. Rotation
+staleness incurred little detectable cost relative to Fresh on this cohort
+($-2.38$ points, $p=0.607$, with both intervals including zero). The magnitude
+of the stale-gripper simple effect varies substantially across cohorts, so the
+64.29\% value is not evidence of a general benefit.
 
-We study this issue as a measurement question using controlled execution
-interventions, not as a new adaptive executor. All interventions use frozen
-trained policies and alter only which same-target predictions supply the arm
-and gripper at execution time. Policy checkpoint, observation pipeline, task
-configuration, and paired initial states remain matched across conditions.
-Same-target validity is central because source age and prediction offset change
-together when both identify a prediction for the current physical time. Our
-estimand is therefore the combined closed-loop effect of that temporal
-relationship for each action group, not a pure effect of observation age. The
-design asks whether one relationship has different behavioral consequences
-when assigned to different components. Our primary scope is simulation in
-LIBERO, using the official LeRobot ACT implementation~\cite{cadene2026lerobot}
-with frozen checkpoints, relative end-effector control, and no temporal
-ensemble or action smoothing.
+We measure this structure with a same-target diagnostic. At control step $t$,
+one component can use offset 0 from the chunk queried at $t$, while another can
+use offset 20 from the chunk queried 20 steps earlier. Both entries were
+predicted for physical step $t$. More generally, query time $q$ and chunk
+offset $k$ obey $q+k=t$. Holding the target fixed therefore couples an older
+source observation to a farther-ahead chunk prediction. We measure their joint
+effect and do not separate source age from prediction lookahead. Every probe
+queries the policy once per executed step, making it a diagnostic intervention
+rather than a deployment executor.
 
-The frozen cross-suite factorial provides the clearest evidence for component
-dependence. FO20 exceeded Reverse20 by $\ConfirmFOReverseDelta$ percentage
-points, with $\ConfirmFOReverseDiscordance$ discordance and positive aggregate
-effects in $\ConfirmFOReverseLoto$ leave-one-task-out analyses. Yet FO20
-exceeded Fresh by only $\ConfirmFOFreshDelta$ percentage points, and both
-intervals for that contrast included zero. Post-hoc factorial decomposition
-also yielded a positive statistical interaction, indicating that the temporal
-effect associated with one action group depended on the relationship assigned
-to the other. These results support a component-resolved measurement claim,
-not a general recommendation to deploy FO20.
+This study makes three contributions. First, a preregistered same-target test
+shows a large arm--gripper asymmetry, and a separate development sweep preserves
+its ordering over source ages from 0.10 to 1.60~s. Second, component probes show
+strong translation--rotation heterogeneity within the arm and reveal that
+same-target prediction dispersion ranks these components in the wrong order.
+Third, executable component-resolved schedules improve success when gripper
+commitment is extended at two fixed arm replanning cadences, while coherent H16
+remains the strongest overall operating point.
 
-The fixed-h16 decomposition narrows the executor interpretation across two
-cohorts. In Object development, the arm-only C2 executor was below Fresh, but
-this penalty did not reproduce on frozen cross-suite confirmation. In contrast,
-coherent \textsc{hard-h16} execution remained above C2 in both cohorts. Arm-only
-commitment therefore does not reproduce coherent fixed-h16 performance. This
-bounded comparison does not identify a gripper causal contribution because C2
-and \textsc{hard-h16} differ in their complete execution relationship and
-query schedule.
-
-This work makes three contributions. First, it defines a same-target,
-component-resolved measurement and intervention design that makes source-age
-and chunk-offset coupling explicit. Second, it establishes frozen cross-suite
-factorial evidence that temporal assignment depends strongly on action-group
-identity. This evidence combines the primary FO20--Reverse20 contrast with a
-clearly labeled post-hoc statistical interaction. Third, it gives a
-cross-cohort fixed-h16 decomposition and bounded scope evidence. Arm-only
-commitment does not reproduce coherent h16 execution in either cohort, while
-the Object C2-under-Fresh penalty itself does not replicate. Spatial and one
-heterogeneous SmolVLA pilot~\cite{shukor2025smolvla} provide negative and mixed
-scope evidence rather than replication across policy classes. Together, these
-measurements support a narrow thesis: whole-action temporal parameters can
-conceal behaviorally important component-dependent structure in
-action-chunked robot policies.
+The claims are deliberately bounded. The same-target results diagnose temporal
+source assignment under a policy-query rate of 1, whereas deployment schedules
+replan less often. The central behavioral evidence concerns the evaluated ACT
+policies in LIBERO~\cite{liu2023libero}; it does not establish cross-policy
+generality. Coherent H16 remains strongest in the frozen static benchmark, and
+the diagnostics tested here do not identify the mechanism behind the component
+ordering.

@@ -1,14 +1,10 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Whole-action temporal parameters can hide component-dependent structure when
-action groups have different temporal sensitivities. The frozen factorial
-showed that component assignment matters, while the cross-cohort decomposition
-showed that arm-only h16 commitment did not reproduce coherent h16 execution.
-The development C2-under-\textsc{Fresh}
-penalty did not generalize to frozen confirmation. Together, these results
-motivate component-resolved temporal measurement for action-chunked policies,
-not a universal executor rule. Because same-target execution couples source age
-and chunk offset, they also do not isolate a pure observation-age effect. The
-evaluation was limited to LIBERO simulation and an arm--gripper split, so the
-conclusions do not extend to dexterous action spaces or physical robots.
+A single temporal execution rule is not behaviorally neutral across ACT action
+components. The ordering persists over a broad range of source ages and extends
+to translation versus rotation within the arm, while simple same-target
+disagreement ranks those components incorrectly. Component-resolved gripper
+commitment can improve execution at fixed arm replanning cadence, but coherent
+H16 remains the strongest overall operating point. The mechanism and
+generality beyond the evaluated ACT policies remain open.

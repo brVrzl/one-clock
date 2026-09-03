@@ -1,110 +1,73 @@
-% =====================================================================
-% Section III -- Setup and Same-Target Temporal Semantics
-% Paper: Component-Dependent Temporal Effects in Action-Chunked Robot Policies
-% Target: ~720 words. IEEE two-column, 8 pages including references.
-% Frozen constitution: no method claim, no additive attribution, no pure
-% observation-delay estimand. Attack B is conceded here, in III-B.
-% =====================================================================
-
-\section{Setup and Same-Target Temporal Semantics}
+\section{Method and Experimental Setup}
 \label{sec:setup}
 
-\subsection{Policies, control, and the action contract}
-
-All temporal experiments use fixed trained policies; the execution
-interventions do not modify policy weights. Our primary policies are frozen
-Action Chunking Transformers (ACT)~\cite{zhao2023act} from the official
-LeRobot implementation~\cite{cadene2026lerobot}, with chunk size $100$,
-temporal ensembling disabled, and no action smoothing. Evaluation is
-simulation-only on LIBERO~\cite{liu2023libero} under relative end-effector
-(EEF) control at 20\,Hz. A single frozen SmolVLA
-pilot~\cite{shukor2025smolvla} provides only heterogeneous cross-policy scope
-evidence under the same intervention semantics.
-
-The $7$-dimensional LIBERO action separates into two groups that we treat
-as the experimental factor: a $6$-dimensional arm group spanning dimensions
-$0$ through $5$ inclusive and a $1$-dimensional gripper group at dimension
-$6$. This split is given by the control interface rather than chosen by us,
-and it is the only action-group partition we study.
-
-\subsection{Same-target semantics and the estimand}
+\subsection{Same-target probe}
 \label{sec:same-target}
 
-A chunked policy queried at step $q$ maps its observation to a whole
-$7$-dimensional predicted chunk $A_q = \pi(o_q)$ whose entry $A_q[k]$ is the
-action the policy predicts for physical time $q+k$. We require every executed
-action to be a prediction for the time at which it is actually executed:
+At control step $t$, a Fresh component uses offset 0 from the chunk predicted
+from the current observation. A component with source age $d$ instead uses
+offset $d$ from the chunk queried $d$ steps earlier. Both entries were
+originally predicted for the same physical step $t$. For example, A0G20 takes
+the arm command from query $t$ at offset 0 and the gripper command from query
+$t-20$ at offset 20. A20G0 swaps these assignments: the arm comes from query
+$t-20$ at offset 20, and the gripper comes from query $t$ at offset 0. During
+the first 20 steps, before the older source exists, every component executes
+the Fresh offset-0 command.
+
+Formally, let $q$ be policy-query time, $k$ the chunk offset, and $A_q[k]$
+the predicted action entry. A valid same-target source satisfies
 \begin{equation}
 q + k = t .
 \label{eq:same-target}
 \end{equation}
-Writing the source age as $d = t - q$, Eq.~\eqref{eq:same-target} gives
-\begin{equation}
-k = d .
-\label{eq:coupling}
-\end{equation}
-Source age and chunk offset are therefore not independent factors. This
-coupling is a consequence of the same-target contract, not an artifact of
-our implementation: any intervention that decouples them, such as executing
-$A_{t-d}[0]$ at time $t$, replays an action the policy intended for an
-earlier instant and no longer estimates a prediction for $t$.
+The source age is $d=t-q$, so same-target alignment requires $k=d$. We
+therefore measure the joint effect of an older source observation and a
+longer-lookahead prediction; the probe does not separate those factors.
+Same-target conditions make one whole-policy query at every environment step
+and discard unselected predictions. They are diagnostics, not deployment
+executors.
 
-We state the resulting estimand explicitly. \emph{The natural same-target
-temporal relationship in an action-chunked policy jointly determines source
-age and prediction offset; we estimate the combined closed-loop effect of
-that relationship per action group, and we do not identify a pure
-observation-age causal effect.} Section~\ref{sec:limitations} returns to
-this point.
+\subsection{Policy, clock, and action components}
 
-Applying Eq.~\eqref{eq:same-target} independently to each group yields
-\begin{align}
-a_{\mathrm{arm}}(t)  &= P_{\mathrm{arm}} A_{t-d_{\mathrm{arm}}}[d_{\mathrm{arm}}], \\
-a_{\mathrm{grip}}(t) &= P_{\mathrm{grip}} A_{t-d_{\mathrm{grip}}}[d_{\mathrm{grip}}].
-\end{align}
-Here $P_{\mathrm{arm}}$ selects dimensions $0$ through $5$ inclusive from
-the whole $7$-dimensional predicted chunk, and $P_{\mathrm{grip}}$ selects
-dimension $6$. Both components remain predictions for the same physical time
-$t$; only the temporal relationship used to obtain them differs.
+We evaluate fixed ACT policies~\cite{zhao2023act} using the installed LeRobot
+v0.4.4 implementation~\cite{cadene2026lerobot} in LIBERO simulation
+~\cite{liu2023libero}. The evaluator runs at 20~Hz, so one chunk index is
+0.05~s and $d=20$ is 1.00~s. ACT predicts 100-step chunks without action
+smoothing. Unless temporal ensembling is explicitly named, it is disabled.
+The seven-dimensional relative end-effector action comprises translation
+(dimensions 0--2), rotation (3--5), and gripper (6).
 
-\subsection{The factorial conditions}
+\subsection{Cohorts, schedules, and inference}
 
-Crossing $d_{\mathrm{arm}}, d_{\mathrm{grip}} \in \{0, 20\}$ gives four
-cells: \textsc{Fresh} $(0,0)$, \textsc{FO20} $(0,20)$, \textsc{Reverse20}
-$(20,0)$, and \textsc{FullOld20} $(20,20)$. The value $d=20$ was fixed by a
-preregistered condition and was never adjusted after any outcome was
-observed.
+A paired block is one task--initial-state pair evaluated under each compared
+condition with matched seeds, preprocessing, step caps, and success criteria.
+The primary preregistered cohort contains 140 blocks across five LIBERO-Goal
+and five LIBERO-10 tasks. The Object development cohort contains 126 blocks
+across nine tasks. Track A contains 450 blocks across LIBERO-10, Goal, and
+Spatial. Periodic H$h$ execution queries every $h$ steps and commits both
+components to that chunk. ARM$h$\_GRIP$g$ uses separate arm and gripper
+commitment horizons. Dense-query controls query every step but execute the
+scheduled source and discard unused predictions.
 
-\subsection{Fixed-horizon chunk execution and its variants}
+Success is binary. Paired contrasts use two-sided exact McNemar tests. We
+report paired risk-difference intervals and task-cluster bootstrap intervals
+already fixed in the canonical analysis. No new inference is introduced here.
 
-As our fixed-horizon chunk-execution reference, we include
-\textsc{hard-h16}: the policy is queried once every $\HardHorizon$ steps and both groups
-read the current committed chunk at offset $t-q$. Its source ages span
-0--15 steps, with an observed mean of approximately $\HardMeanSourceAge$ steps in our
-rollouts; \textsc{hard-h16} is thus not a fully reactive baseline.
-
-The C2 H16Arm+FreshGrip decomposition also queries the whole policy at every
-controller step. Its gripper uses the current offset-$0$ prediction. The arm
-uses the scheduled source
-$q_{\mathrm{arm}}=\HardHorizon\lfloor t/\HardHorizon\rfloor$ and offset
-$k_{\mathrm{arm}}=t-q_{\mathrm{arm}}$. Both groups therefore satisfy the
-same-target contract, while only the arm carries the h16 schedule.
-
-\subsection{Blocks, cohorts, and inference}
-
-A paired block is a (task, initial-state) pair evaluated under every
-condition with matched seeds, caps, and preprocessing, so that conditions
-differ only in temporal relationship. Success is binary per block.
-
-The confirmation cohort comprises LIBERO-Goal tasks $4,6,7,8,9$ and
-LIBERO-10 tasks $0,2,4,6,7$ over initial states $0$--$13$, giving
-$\ConfirmFreshBlocks$
-paired blocks per condition. These tasks were \emph{unseen to executor
-development}; they were \emph{not} held out from policy training, and we
-make no generalization claim that depends on the stronger reading.
-
-Paired contrasts use the two-sided exact McNemar test. The exact McNemar test
-depends only on discordant blocks; we therefore report their counts
-explicitly. We accompany each contrast with a paired 95\% interval on the
-risk difference and a task-level cluster bootstrap interval, and we report
-the leave-one-task-out sign across all ten tasks. Where the two intervals
-disagree we report both and draw no conclusion from the narrower one.
+\begin{table}[t]
+\centering
+\caption{Reader-facing evidence provenance. Development and later controls
+characterize or bound the primary result; they are not pooled with it.}
+\label{tab:provenance}
+\small
+\begin{tabular}{p{0.29\columnwidth}p{0.61\columnwidth}}
+\toprule
+Evidence & Role \\
+\midrule
+140-block same-target test & Preregistered primary evaluation \\
+Object age/component probes & Development-cohort characterization \\
+Dense-query and mechanism controls & Reviewer-directed controls \\
+Spatial factorial completion & Later, separate scope comparison \\
+Track A & Preregistered executable schedules \\
+\bottomrule
+\end{tabular}
+\end{table}
