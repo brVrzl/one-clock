@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_TRACK_A_CANONICAL_ANALYSIS_AND_REVIEWER_SUPPLEMENT_OUTCOMES",
+  "frozen_at": "2026-09-03T09:54:08+08:00",
+  "track_a_preregistration_commit": "40549d876c0e09fad4e8033b3206f6018f53ece5",
+  "reviewer_supplement_preregistration_commit": "f44a7605246d4c9ea82f4d19ad61833e8fb13eb8",
+  "track_a_canonical_analysis_present_at_freeze": false,
+  "reviewer_supplement_completed_cells_at_freeze": 0,
+  "rollout_changes_authorized": false,
+  "confirmation_tasks": [
+    "libero_goal:task4",
+    "libero_goal:task6",
+    "libero_goal:task7",
+    "libero_goal:task8",
+    "libero_goal:task9",
+    "libero_10:task0",
+    "libero_10:task2",
+    "libero_10:task4",
+    "libero_10:task6",
+    "libero_10:task7"
+  ],
+  "m1_gripper": {
+    "demonstrations": "all episode IDs explicitly listed in each task ACT checkpoint train_config.json",
+    "state": "sign(action[6]); zero is a separate state",
+    "task_metric": "pooled within-episode adjacent sign changes / pooled adjacent-pair duration in seconds",
+    "behavioral_contrast": "A0G20-A0G0",
+    "association": "Spearman rho across all 10 tasks with average ranks for ties",
+    "direction": "rho < 0",
+    "forbidden_primary_substitute": "A0G20-A20G0",
+    "report_all_tasks": true
+  },
+  "m2_arm": {
+    "demonstrations": "same as m1_gripper",
+    "task_metric": "sqrt(mean over within-episode adjacent pairs and dims 0..5 of (((a[t+1,j]-a[t,j])/checkpoint_action_std[j])**2))",
+    "units": "checkpoint-normalized controller-action change per native dataset step",
+    "behavioral_contrast": "A20G0-A0G0",
+    "association": "Spearman rho across all 10 tasks with average ranks for ties",
+    "direction": "rho < 0",
+    "alternative_metric_search": false
+  },
+  "m3_r1b": {
+    "label": "B1_DERIVED_PROSPECTIVE_PREDICTION",
+    "premise": "B1 rotation > translation > gripper normalized same-target dispersion in ACT and SmolVLA",
+    "prediction": "success(T0_R20_G0) <= success(T20_R0_G0)",
+    "direct_contrast_expected_direction": "T20_R0_G0-T0_R20_G0 >= 0",
+    "failure_label": "MECHANISM_DISSOCIATION"
+  },
+  "m4_b3_r1a": {
+    "status": "CHARACTERIZATION_NOT_SIGNIFICANCE_GATED",
+    "r1a_ages": [2, 4, 8, 12, 16, 20, 32],
+    "b3_offsets": [2, 4, 8, 12, 16, 20, 32],
+    "b3_metrics": ["arm_rmse", "translation_rmse", "rotation_rmse", "gripper_absolute_error", "gripper_sign_disagreement"],
+    "r1a_metrics": ["Fresh-A_d_G0", "Fresh-A0_G_d"],
+    "primary_axis": "seconds if and only if timebase mapping is unambiguous",
+    "lag_selection": false,
+    "cross_cohort": true
+  },
+  "m5_b2_survival": {
+    "estimator": "Kaplan-Meier product-limit",
+    "origin_unit": "each action step within demonstration episode",
+    "event": "next gripper sign/state transition",
+    "censoring": "right-censor at episode end",
+    "survival_definition": "S(h)=P(T>h), evaluated after events at h",
+    "windows_seconds": [0.5, 1.0, 2.0],
+    "windows_steps_at_10hz": [5, 10, 20],
+    "bootstrap_unit": "demonstration_episode",
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 27302,
+    "ci_percentiles": [2.5, 97.5]
+  },
+  "m6_native_track_b": {
+    "requires_exact_inverse_action_transform": true,
+    "primary_window_source_ages": [0, 15],
+    "metrics": [
+      "gripper_pairwise_sign_state_disagreement",
+      "gripper_native_rms_source_dispersion",
+      "low_margin_minus_high_margin_sign_disagreement",
+      "translation_native_rms_source_dispersion",
+      "rotation_native_rms_source_dispersion",
+      "fresh_referenced_native_rms_difference_by_age_0_to_15"
+    ],
+    "physical_units_claimed": false,
+    "normalized_dispersion_interpretation": "descriptive_context_not_privileged_mechanism"
+  },
+  "unchanged_track_b_labels": {
+    "ACT_LOCALIZATION_PASS": false,
+    "ACT_LOCALIZATION_KILL": true,
+    "CROSS_POLICY_MECHANISM_SUPPORT": false
+  }
+}
