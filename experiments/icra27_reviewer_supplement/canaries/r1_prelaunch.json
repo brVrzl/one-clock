@@ -1,0 +1,27 @@
+{
+  "r1c": {
+    "status": "PASS",
+    "excluded_from_scientific_analysis": true,
+    "checks": {
+      "executed_actions_exact": true,
+      "episode_length_exact": true,
+      "terminal_success_exact": true,
+      "completion_step_exact": true,
+      "trajectory_identity_from_same_initial_state_and_exact_actions": true
+    }
+  },
+  "r1d": {
+    "status": "PASS",
+    "checks": {
+      "historical_manifest_complete": true,
+      "historical_episode_files": true,
+      "dense_queries_historical": true,
+      "checkpoint_revision": true,
+      "checkpoint_model": true,
+      "lerobot_commit": true,
+      "source_mapping_and_prefix": true
+    },
+    "outcomes_used": false
+  },
+  "status": "PASS"
+}

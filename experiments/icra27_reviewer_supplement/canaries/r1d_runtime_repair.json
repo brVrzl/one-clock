@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "excluded_from_scientific_analysis": true,
+  "scientific_environment_steps": 0,
+  "python": "/home/wjq/workspace/venvs/libero_act/bin/python",
+  "lerobot_version": "0.4.4",
+  "transformers_version": "4.51.3",
+  "module_paths": {
+    "lerobot.configs.policies": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/configs/policies.py",
+    "lerobot.policies.act.configuration_act": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/act/configuration_act.py",
+    "lerobot.policies.act.modeling_act": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/act/modeling_act.py",
+    "lerobot.envs.configs": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/envs/configs.py",
+    "lerobot.envs.libero": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/envs/libero.py",
+    "lerobot.envs.factory": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/envs/factory.py",
+    "lerobot.policies.factory": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/factory.py"
+  },
+  "policy_class": "/home/wjq/workspace/venvs/libero_act/lib/python3.12/site-packages/lerobot/policies/act/modeling_act.py",
+  "policy_type": "act",
+  "chunk_size": 100,
+  "action_dim": 7,
+  "checkpoint_loaded": true,
+  "checkpoint_identity": "EXACT_FROZEN_MATCH",
+  "manifest_identity": "EXACT_FROZEN_MATCH",
+  "artifact_counts_before_launch": {
+    "results": 0,
+    "completion_or_failure_markers": 0,
+    "attempt_records": 0
+  },
+  "evaluator_clock_hz": 20.0,
+  "evaluator_step_seconds": 0.05,
+  "observation_shapes": {
+    "observation.images.image": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "observation.images.image2": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "observation.state": [
+      1,
+      8
+    ]
+  },
+  "policy_preprocessor_steps": [
+    "RenameObservationsProcessorStep",
+    "AddBatchDimensionProcessorStep",
+    "DeviceProcessorStep",
+    "NormalizerProcessorStep"
+  ],
+  "policy_postprocessor_steps": [
+    "UnnormalizerProcessorStep",
+    "DeviceProcessorStep"
+  ],
+  "env_preprocessor_steps": [
+    "LiberoProcessorStep"
+  ],
+  "env_postprocessor_steps": [],
+  "action_denormalization": "FROZEN_CHECKPOINT_PROCESSOR_LOADED_AND_FINITE_7D_OUTPUT",
+  "reverse20_semantics": "PASS",
+  "physical_same_target_q_plus_k_equals_t": true,
+  "reference_sequence_comparison": "REFERENCE_SEQUENCE_UNAVAILABLE",
+  "intended_source_checkout_commit": "f66e5128ecb2456e8c54a63d15404fa59c16aebc",
+  "repair_disposition": "SCIENTIFICALLY_NEUTRAL_IMPORT_PATH_REPAIR"
+}

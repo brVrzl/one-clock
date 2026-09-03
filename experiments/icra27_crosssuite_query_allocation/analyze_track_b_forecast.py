@@ -77,17 +77,17 @@ def main() -> None:
                 boot = np.sqrt(boot_sse[:, offset, dim] / boot_anchor)
                 record = {"rmse": center, "episode_cluster_bootstrap_ci": ci(boot)}
                 offset_summary["dimensions"][f"dim_{dim}"] = record
-                tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 10, "quantity": "normalized_rmse", "metric": f"dim_{dim}", **record})
+                tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 20, "quantity": "normalized_rmse", "metric": f"dim_{dim}", **record})
             for group, dims in GROUPS.items():
                 center = float(np.sqrt(sse[:, offset][:, dims].sum() / (anchors.sum() * len(dims))))
                 boot = np.sqrt(boot_sse[:, offset][:, dims].sum(axis=1) / (boot_anchor * len(dims)))
                 record = {"rmse": center, "episode_cluster_bootstrap_ci": ci(boot)}
                 offset_summary["groups"][group] = record
-                tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 10, "quantity": "normalized_rmse", "metric": group, **record})
+                tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 20, "quantity": "normalized_rmse", "metric": group, **record})
             grip_center = float(sign[:, offset].sum() / anchors.sum())
             grip_boot = boot_sign[:, offset] / boot_anchor
             offset_summary["gripper_sign_disagreement"] = {"probability": grip_center, "episode_cluster_bootstrap_ci": ci(grip_boot)}
-            tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 10, "quantity": "gripper_sign_disagreement", "metric": "gripper", "probability": grip_center, "episode_cluster_bootstrap_ci": ci(grip_boot)})
+            tidy.append({"policy": policy, "offset": offset, "offset_seconds": offset / 20, "quantity": "gripper_sign_disagreement", "metric": "gripper", "probability": grip_center, "episode_cluster_bootstrap_ci": ci(grip_boot)})
             policy_summary[str(offset)] = offset_summary
         summary[policy] = policy_summary
 
@@ -101,7 +101,8 @@ def main() -> None:
         "status": "COMPLETE", "success_outcomes_loaded": False,
         "provenance_label": b3["provenance_label"],
         "episodes_per_policy": 40, "anchor_stride_frames": b3["anchor_stride_frames"],
-        "dataset_fps": 10, "offsets": b3["offsets"], "offset_seconds": [k / 10 for k in b3["offsets"]],
+        "dataset_declared_fps": 10, "physical_target_rate_hz": 20,
+        "offsets": b3["offsets"], "offset_seconds": [k / 20 for k in b3["offsets"]],
         "target_alignment": "exact dataset frame t+k; no interpolation, resampling, or repetition",
         "gripper_sign_contract": "controller-native action sign after exact checkpoint MEAN_STD inverse; zero is separate",
         "bootstrap": {"unit": b3["bootstrap_unit"], "draws": draws, "ACT_seed": b3["ACT_seed"], "SmolVLA_seed": b3["SmolVLA_seed"]},
@@ -111,7 +112,7 @@ def main() -> None:
     lines = [
         "# B3 open-loop future-action predictability", "",
         "This is a training-demonstration reference analysis, not held-out evaluation. ACT and SmolVLA are reported in their own frozen normalized spaces; no rollout success outcome was loaded.", "",
-        "Chunk offset k is an exact 10 Hz dataset-frame target at k/10 seconds. No interpolation, resampling, or repetition is used.", "",
+        "Chunk offset k is an exact stored-row target at k/20 physical seconds. The dataset-declared 10 Hz timestamps relabel the retained 20 Hz sequence; no interpolation, resampling, or repetition is used.", "",
         "All per-offset translation, rotation, gripper, per-dimension, sign-disagreement, and episode-cluster interval results are in `forecast_metrics.csv` and `summary.json`.", "",
     ]
     (output_dir / "report.md").write_text("\n".join(lines))

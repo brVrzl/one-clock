@@ -1,0 +1,1893 @@
+{
+  "status": "COMPLETE",
+  "source": "canonical analyze_supplement.py outputs",
+  "selection": "NONE_ALL_FROZEN_CONDITIONS_AND_CONTRASTS",
+  "condition_summaries": [
+    {
+      "family": "r1a",
+      "method": "A0_G0",
+      "successes": 56,
+      "N": 126,
+      "success_rate": 0.4444444444444444,
+      "environment_steps": 27532,
+      "policy_queries": 27532,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G12",
+      "successes": 88,
+      "N": 126,
+      "success_rate": 0.6984126984126984,
+      "environment_steps": 22940,
+      "policy_queries": 22940,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2400.276716709137
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G16",
+      "successes": 90,
+      "N": 126,
+      "success_rate": 0.7142857142857143,
+      "environment_steps": 22833,
+      "policy_queries": 22833,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2010.2342784404755
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G2",
+      "successes": 76,
+      "N": 126,
+      "success_rate": 0.6031746031746031,
+      "environment_steps": 24557,
+      "policy_queries": 24557,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2279.580120563507
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G20",
+      "successes": 81,
+      "N": 126,
+      "success_rate": 0.6428571428571429,
+      "environment_steps": 23961,
+      "policy_queries": 23961,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G32",
+      "successes": 79,
+      "N": 126,
+      "success_rate": 0.626984126984127,
+      "environment_steps": 24164,
+      "policy_queries": 24164,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 1630.9972975254059
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G4",
+      "successes": 82,
+      "N": 126,
+      "success_rate": 0.6507936507936508,
+      "environment_steps": 23580,
+      "policy_queries": 23580,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2330.757982492447
+    },
+    {
+      "family": "r1a",
+      "method": "A0_G8",
+      "successes": 88,
+      "N": 126,
+      "success_rate": 0.6984126984126984,
+      "environment_steps": 22838,
+      "policy_queries": 22838,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2321.9369740486145
+    },
+    {
+      "family": "r1a",
+      "method": "A12_G0",
+      "successes": 21,
+      "N": 126,
+      "success_rate": 0.16666666666666666,
+      "environment_steps": 32005,
+      "policy_queries": 32005,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 3148.8911645412445
+    },
+    {
+      "family": "r1a",
+      "method": "A16_G0",
+      "successes": 23,
+      "N": 126,
+      "success_rate": 0.18253968253968253,
+      "environment_steps": 31799,
+      "policy_queries": 31799,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 3034.3407170772552
+    },
+    {
+      "family": "r1a",
+      "method": "A20_G0",
+      "successes": 12,
+      "N": 126,
+      "success_rate": 0.09523809523809523,
+      "environment_steps": 33434,
+      "policy_queries": 33434,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1a",
+      "method": "A2_G0",
+      "successes": 49,
+      "N": 126,
+      "success_rate": 0.3888888888888889,
+      "environment_steps": 28080,
+      "policy_queries": 28080,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2290.6007857322693
+    },
+    {
+      "family": "r1a",
+      "method": "A32_G0",
+      "successes": 32,
+      "N": 126,
+      "success_rate": 0.25396825396825395,
+      "environment_steps": 30435,
+      "policy_queries": 30435,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2004.130125284195
+    },
+    {
+      "family": "r1a",
+      "method": "A4_G0",
+      "successes": 49,
+      "N": 126,
+      "success_rate": 0.3888888888888889,
+      "environment_steps": 28420,
+      "policy_queries": 28420,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2842.369723558426
+    },
+    {
+      "family": "r1a",
+      "method": "A8_G0",
+      "successes": 36,
+      "N": 126,
+      "success_rate": 0.2857142857142857,
+      "environment_steps": 30207,
+      "policy_queries": 30207,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2993.561820745468
+    },
+    {
+      "family": "r1b",
+      "method": "A0_G0",
+      "successes": 56,
+      "N": 126,
+      "success_rate": 0.4444444444444444,
+      "environment_steps": 27532,
+      "policy_queries": 27532,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1b",
+      "method": "A0_G20",
+      "successes": 81,
+      "N": 126,
+      "success_rate": 0.6428571428571429,
+      "environment_steps": 23961,
+      "policy_queries": 23961,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1b",
+      "method": "A20_G0",
+      "successes": 12,
+      "N": 126,
+      "success_rate": 0.09523809523809523,
+      "environment_steps": 33434,
+      "policy_queries": 33434,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 0.0
+    },
+    {
+      "family": "r1b",
+      "method": "T0_R20_G0",
+      "successes": 53,
+      "N": 126,
+      "success_rate": 0.42063492063492064,
+      "environment_steps": 28111,
+      "policy_queries": 28111,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 1866.9467358589172
+    },
+    {
+      "family": "r1b",
+      "method": "T20_R0_G0",
+      "successes": 11,
+      "N": 126,
+      "success_rate": 0.0873015873015873,
+      "environment_steps": 33660,
+      "policy_queries": 33660,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2557.0590665340424
+    },
+    {
+      "family": "r1c",
+      "method": "C00",
+      "successes": 77,
+      "N": 140,
+      "success_rate": 0.55,
+      "environment_steps": 40306,
+      "policy_queries": 40306,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 3368.158013727283
+    },
+    {
+      "family": "r1c",
+      "method": "C01",
+      "successes": 81,
+      "N": 140,
+      "success_rate": 0.5785714285714286,
+      "environment_steps": 39516,
+      "policy_queries": 39516,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 3118.4131557941437
+    },
+    {
+      "family": "r1c",
+      "method": "C10",
+      "successes": 76,
+      "N": 140,
+      "success_rate": 0.5428571428571428,
+      "environment_steps": 40834,
+      "policy_queries": 40834,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2225.4593438508455
+    },
+    {
+      "family": "r1c",
+      "method": "C11",
+      "successes": 93,
+      "N": 140,
+      "success_rate": 0.6642857142857143,
+      "environment_steps": 35613,
+      "policy_queries": 35613,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2395.1079473495483
+    },
+    {
+      "family": "r1d",
+      "method": "A0_G0",
+      "successes": 40,
+      "N": 100,
+      "success_rate": 0.4,
+      "environment_steps": 20731,
+      "policy_queries": 20731,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 1132.9603852350265
+    },
+    {
+      "family": "r1d",
+      "method": "A0_G20",
+      "successes": 40,
+      "N": 100,
+      "success_rate": 0.4,
+      "environment_steps": 20838,
+      "policy_queries": 20838,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 1158.8471231501317
+    },
+    {
+      "family": "r1d",
+      "method": "A20_G0",
+      "successes": 12,
+      "N": 100,
+      "success_rate": 0.12,
+      "environment_steps": 25786,
+      "policy_queries": 25786,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 2339.6587035655975
+    },
+    {
+      "family": "r1d",
+      "method": "A20_G20",
+      "successes": 30,
+      "N": 100,
+      "success_rate": 0.3,
+      "environment_steps": 23405,
+      "policy_queries": 23405,
+      "query_rate": 1.0,
+      "wall_clock_seconds": 1266.6368904912379
+    }
+  ],
+  "contrasts": [
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A2_G0",
+      "first_successes": 56,
+      "second_successes": 49,
+      "N": 126,
+      "first_only": 13,
+      "second_only": 6,
+      "delta_percentage_points": 5.555555555555555,
+      "exact_two_sided_mcnemar_p": 0.1670684814453125,
+      "paired_bootstrap_ci_percentage_points": [
+        -0.7936507936507936,
+        12.698412698412698
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -1.5873015873015872,
+        12.698412698412698
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": 14.285714285714285,
+        "libero_object:task3": -7.142857142857142,
+        "libero_object:task4": 0.0,
+        "libero_object:task5": 14.285714285714285,
+        "libero_object:task6": 14.285714285714285,
+        "libero_object:task7": -7.142857142857142,
+        "libero_object:task8": 21.428571428571427,
+        "libero_object:task9": -7.142857142857142
+      },
+      "loto_percentage_points": [
+        5.357142857142857,
+        4.4642857142857135,
+        7.142857142857142,
+        6.25,
+        4.4642857142857135,
+        4.4642857142857135,
+        7.142857142857142,
+        3.571428571428571,
+        7.142857142857142
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 5.555555555555555
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G2",
+      "first_successes": 56,
+      "second_successes": 76,
+      "N": 126,
+      "first_only": 1,
+      "second_only": 21,
+      "delta_percentage_points": -15.873015873015872,
+      "exact_two_sided_mcnemar_p": 1.0967254638671875e-05,
+      "paired_bootstrap_ci_percentage_points": [
+        -23.015873015873016,
+        -9.523809523809524
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -21.428571428571427,
+        -10.317460317460316
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -28.57142857142857,
+        "libero_object:task2": -28.57142857142857,
+        "libero_object:task3": -14.285714285714285,
+        "libero_object:task4": -21.428571428571427,
+        "libero_object:task5": -14.285714285714285,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -14.285714285714285,
+        -14.285714285714285,
+        -16.07142857142857,
+        -15.178571428571427,
+        -16.07142857142857,
+        -16.96428571428571,
+        -16.07142857142857,
+        -16.07142857142857,
+        -17.857142857142854
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -15.87301587301587
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G2-A2_G0",
+      "first_successes": 76,
+      "second_successes": 49,
+      "N": 126,
+      "first_only": 29,
+      "second_only": 2,
+      "delta_percentage_points": 21.428571428571427,
+      "exact_two_sided_mcnemar_p": 4.628673195838928e-07,
+      "paired_bootstrap_ci_percentage_points": [
+        13.492063492063492,
+        29.365079365079367
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        11.11111111111111,
+        30.952380952380953
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 35.714285714285715,
+        "libero_object:task2": 42.857142857142854,
+        "libero_object:task3": 7.142857142857142,
+        "libero_object:task4": 21.428571428571427,
+        "libero_object:task5": 28.57142857142857,
+        "libero_object:task6": 21.428571428571427,
+        "libero_object:task7": 7.142857142857142,
+        "libero_object:task8": 35.714285714285715,
+        "libero_object:task9": -7.142857142857142
+      },
+      "loto_percentage_points": [
+        19.642857142857142,
+        18.75,
+        23.21428571428571,
+        21.428571428571427,
+        20.535714285714285,
+        21.428571428571427,
+        23.214285714285715,
+        19.642857142857142,
+        25.0
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 21.42857142857143
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A4_G0",
+      "first_successes": 56,
+      "second_successes": 49,
+      "N": 126,
+      "first_only": 20,
+      "second_only": 13,
+      "delta_percentage_points": 5.555555555555555,
+      "exact_two_sided_mcnemar_p": 0.296206368599087,
+      "paired_bootstrap_ci_percentage_points": [
+        -3.1746031746031744,
+        14.285714285714285
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -3.968253968253968,
+        15.873015873015872
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": -7.142857142857142,
+        "libero_object:task3": 7.142857142857142,
+        "libero_object:task4": -14.285714285714285,
+        "libero_object:task5": 28.57142857142857,
+        "libero_object:task6": 14.285714285714285,
+        "libero_object:task7": -7.142857142857142,
+        "libero_object:task8": 28.57142857142857,
+        "libero_object:task9": -7.142857142857142
+      },
+      "loto_percentage_points": [
+        5.357142857142857,
+        7.142857142857142,
+        5.357142857142857,
+        8.035714285714285,
+        2.6785714285714284,
+        4.4642857142857135,
+        7.142857142857142,
+        2.6785714285714284,
+        7.142857142857142
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 5.555555555555555
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G4",
+      "first_successes": 56,
+      "second_successes": 82,
+      "N": 126,
+      "first_only": 0,
+      "second_only": 26,
+      "delta_percentage_points": -20.634920634920633,
+      "exact_two_sided_mcnemar_p": 2.9802322387695312e-08,
+      "paired_bootstrap_ci_percentage_points": [
+        -27.77777777777778,
+        -13.492063492063492
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -30.952380952380953,
+        -11.11111111111111
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -50.0,
+        "libero_object:task2": -28.57142857142857,
+        "libero_object:task3": -35.714285714285715,
+        "libero_object:task4": -28.57142857142857,
+        "libero_object:task5": -7.142857142857142,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -16.96428571428571,
+        -19.642857142857146,
+        -18.75,
+        -19.642857142857146,
+        -22.32142857142857,
+        -22.32142857142857,
+        -21.428571428571423,
+        -21.428571428571423,
+        -23.21428571428571
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -20.634920634920636
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G4-A4_G0",
+      "first_successes": 82,
+      "second_successes": 49,
+      "N": 126,
+      "first_only": 40,
+      "second_only": 7,
+      "delta_percentage_points": 26.190476190476193,
+      "exact_two_sided_mcnemar_p": 1.0709118214435875e-06,
+      "paired_bootstrap_ci_percentage_points": [
+        16.666666666666664,
+        35.714285714285715
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        13.492063492063492,
+        38.0952380952381
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 57.14285714285714,
+        "libero_object:task2": 21.428571428571427,
+        "libero_object:task3": 42.857142857142854,
+        "libero_object:task4": 14.285714285714285,
+        "libero_object:task5": 35.714285714285715,
+        "libero_object:task6": 21.428571428571427,
+        "libero_object:task7": 7.142857142857142,
+        "libero_object:task8": 42.857142857142854,
+        "libero_object:task9": -7.142857142857142
+      },
+      "loto_percentage_points": [
+        22.32142857142857,
+        26.785714285714285,
+        24.107142857142854,
+        27.67857142857143,
+        25.0,
+        26.785714285714285,
+        28.57142857142857,
+        24.107142857142858,
+        30.35714285714286
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 26.19047619047619
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A8_G0",
+      "first_successes": 56,
+      "second_successes": 36,
+      "N": 126,
+      "first_only": 27,
+      "second_only": 7,
+      "delta_percentage_points": 15.873015873015872,
+      "exact_two_sided_mcnemar_p": 0.0008213953115046024,
+      "paired_bootstrap_ci_percentage_points": [
+        7.142857142857142,
+        24.6031746031746
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        8.730158730158728,
+        23.809523809523807
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": 21.428571428571427,
+        "libero_object:task3": 7.142857142857142,
+        "libero_object:task4": 0.0,
+        "libero_object:task5": 35.714285714285715,
+        "libero_object:task6": 28.57142857142857,
+        "libero_object:task7": 7.142857142857142,
+        "libero_object:task8": 28.57142857142857,
+        "libero_object:task9": 7.142857142857142
+      },
+      "loto_percentage_points": [
+        16.96428571428571,
+        15.178571428571427,
+        16.96428571428571,
+        17.857142857142854,
+        13.392857142857139,
+        14.285714285714285,
+        16.96428571428571,
+        14.285714285714285,
+        16.96428571428571
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 15.873015873015873
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G8",
+      "first_successes": 56,
+      "second_successes": 88,
+      "N": 126,
+      "first_only": 1,
+      "second_only": 33,
+      "delta_percentage_points": -25.396825396825395,
+      "exact_two_sided_mcnemar_p": 4.0745362639427185e-09,
+      "paired_bootstrap_ci_percentage_points": [
+        -33.33333333333333,
+        -17.46031746031746
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -37.301587301587304,
+        -15.873015873015872
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -64.28571428571429,
+        "libero_object:task2": -28.57142857142857,
+        "libero_object:task3": -21.428571428571427,
+        "libero_object:task4": -42.857142857142854,
+        "libero_object:task5": -14.285714285714285,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -21.428571428571427,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": -14.285714285714285
+      },
+      "loto_percentage_points": [
+        -20.535714285714285,
+        -25.0,
+        -25.89285714285714,
+        -23.21428571428571,
+        -26.785714285714285,
+        -27.67857142857143,
+        -25.89285714285714,
+        -26.785714285714285,
+        -26.785714285714285
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -25.396825396825395
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G8-A8_G0",
+      "first_successes": 88,
+      "second_successes": 36,
+      "N": 126,
+      "first_only": 53,
+      "second_only": 1,
+      "delta_percentage_points": 41.269841269841265,
+      "exact_two_sided_mcnemar_p": 6.106226635438361e-15,
+      "paired_bootstrap_ci_percentage_points": [
+        32.53968253968254,
+        50.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        32.53968253968254,
+        50.793650793650805
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 71.42857142857143,
+        "libero_object:task2": 50.0,
+        "libero_object:task3": 28.57142857142857,
+        "libero_object:task4": 42.857142857142854,
+        "libero_object:task5": 50.0,
+        "libero_object:task6": 35.714285714285715,
+        "libero_object:task7": 28.57142857142857,
+        "libero_object:task8": 42.857142857142854,
+        "libero_object:task9": 21.428571428571427
+      },
+      "loto_percentage_points": [
+        37.5,
+        40.17857142857143,
+        42.85714285714286,
+        41.07142857142857,
+        40.17857142857143,
+        41.96428571428571,
+        42.85714285714286,
+        41.07142857142857,
+        43.75
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 41.26984126984127
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A12_G0",
+      "first_successes": 56,
+      "second_successes": 21,
+      "N": 126,
+      "first_only": 38,
+      "second_only": 3,
+      "delta_percentage_points": 27.77777777777778,
+      "exact_two_sided_mcnemar_p": 1.0479197953827679e-08,
+      "paired_bootstrap_ci_percentage_points": [
+        19.047619047619047,
+        36.507936507936506
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        19.047619047619047,
+        36.5079365079365
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": 42.857142857142854,
+        "libero_object:task3": 28.57142857142857,
+        "libero_object:task4": 21.428571428571427,
+        "libero_object:task5": 42.857142857142854,
+        "libero_object:task6": 35.714285714285715,
+        "libero_object:task7": 14.285714285714285,
+        "libero_object:task8": 42.857142857142854,
+        "libero_object:task9": 14.285714285714285
+      },
+      "loto_percentage_points": [
+        30.357142857142854,
+        25.89285714285714,
+        27.67857142857143,
+        28.57142857142857,
+        25.89285714285714,
+        26.785714285714285,
+        29.464285714285715,
+        25.89285714285714,
+        29.464285714285715
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 27.77777777777778
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G12",
+      "first_successes": 56,
+      "second_successes": 88,
+      "N": 126,
+      "first_only": 2,
+      "second_only": 34,
+      "delta_percentage_points": -25.396825396825395,
+      "exact_two_sided_mcnemar_p": 1.941225491464138e-08,
+      "paired_bootstrap_ci_percentage_points": [
+        -34.12698412698413,
+        -17.46031746031746
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -37.301587301587304,
+        -15.079365079365079
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -64.28571428571429,
+        "libero_object:task2": -28.57142857142857,
+        "libero_object:task3": -14.285714285714285,
+        "libero_object:task4": -42.857142857142854,
+        "libero_object:task5": -7.142857142857142,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -28.57142857142857,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": -21.428571428571427
+      },
+      "loto_percentage_points": [
+        -20.535714285714285,
+        -25.0,
+        -26.785714285714285,
+        -23.21428571428571,
+        -27.67857142857143,
+        -27.67857142857143,
+        -25.0,
+        -26.785714285714285,
+        -25.89285714285714
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -25.396825396825395
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G12-A12_G0",
+      "first_successes": 88,
+      "second_successes": 21,
+      "N": 126,
+      "first_only": 68,
+      "second_only": 1,
+      "delta_percentage_points": 53.17460317460318,
+      "exact_two_sided_mcnemar_p": 2.371692252312041e-19,
+      "paired_bootstrap_ci_percentage_points": [
+        44.44444444444444,
+        61.904761904761905
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        45.238095238095234,
+        61.904761904761905
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 71.42857142857143,
+        "libero_object:task2": 71.42857142857143,
+        "libero_object:task3": 42.857142857142854,
+        "libero_object:task4": 64.28571428571429,
+        "libero_object:task5": 50.0,
+        "libero_object:task6": 42.857142857142854,
+        "libero_object:task7": 42.857142857142854,
+        "libero_object:task8": 57.14285714285714,
+        "libero_object:task9": 35.714285714285715
+      },
+      "loto_percentage_points": [
+        50.89285714285714,
+        50.89285714285714,
+        54.46428571428571,
+        51.78571428571428,
+        53.57142857142857,
+        54.46428571428572,
+        54.46428571428572,
+        52.67857142857143,
+        55.35714285714286
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 53.17460317460317
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A16_G0",
+      "first_successes": 56,
+      "second_successes": 23,
+      "N": 126,
+      "first_only": 36,
+      "second_only": 3,
+      "delta_percentage_points": 26.190476190476193,
+      "exact_two_sided_mcnemar_p": 3.608874976634979e-08,
+      "paired_bootstrap_ci_percentage_points": [
+        17.46031746031746,
+        34.92063492063492
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        15.873015873015872,
+        36.507936507936506
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": 42.857142857142854,
+        "libero_object:task3": 35.714285714285715,
+        "libero_object:task4": 21.428571428571427,
+        "libero_object:task5": 50.0,
+        "libero_object:task6": 28.57142857142857,
+        "libero_object:task7": 14.285714285714285,
+        "libero_object:task8": 35.714285714285715,
+        "libero_object:task9": 0.0
+      },
+      "loto_percentage_points": [
+        28.57142857142857,
+        24.107142857142854,
+        25.0,
+        26.785714285714285,
+        23.214285714285715,
+        25.89285714285714,
+        27.67857142857143,
+        25.0,
+        29.464285714285708
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 26.19047619047619
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G16",
+      "first_successes": 56,
+      "second_successes": 90,
+      "N": 126,
+      "first_only": 1,
+      "second_only": 35,
+      "delta_percentage_points": -26.984126984126984,
+      "exact_two_sided_mcnemar_p": 1.076841726899147e-09,
+      "paired_bootstrap_ci_percentage_points": [
+        -34.92063492063492,
+        -19.047619047619047
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -38.88888888888889,
+        -16.666666666666664
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -64.28571428571429,
+        "libero_object:task2": -21.428571428571427,
+        "libero_object:task3": -28.57142857142857,
+        "libero_object:task4": -42.857142857142854,
+        "libero_object:task5": -7.142857142857142,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -28.57142857142857,
+        "libero_object:task8": -21.428571428571427,
+        "libero_object:task9": -21.428571428571427
+      },
+      "loto_percentage_points": [
+        -22.32142857142857,
+        -27.67857142857143,
+        -26.785714285714285,
+        -25.0,
+        -29.464285714285708,
+        -29.464285714285708,
+        -26.785714285714285,
+        -27.67857142857143,
+        -27.67857142857143
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -26.984126984126984
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G16-A16_G0",
+      "first_successes": 90,
+      "second_successes": 23,
+      "N": 126,
+      "first_only": 67,
+      "second_only": 0,
+      "delta_percentage_points": 53.17460317460318,
+      "exact_two_sided_mcnemar_p": 1.3552527156068805e-20,
+      "paired_bootstrap_ci_percentage_points": [
+        44.44444444444444,
+        61.904761904761905
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        42.857142857142854,
+        62.698412698412696
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 71.42857142857143,
+        "libero_object:task2": 64.28571428571429,
+        "libero_object:task3": 64.28571428571429,
+        "libero_object:task4": 64.28571428571429,
+        "libero_object:task5": 57.14285714285714,
+        "libero_object:task6": 35.714285714285715,
+        "libero_object:task7": 42.857142857142854,
+        "libero_object:task8": 57.14285714285714,
+        "libero_object:task9": 21.428571428571427
+      },
+      "loto_percentage_points": [
+        50.89285714285714,
+        51.78571428571429,
+        51.78571428571429,
+        51.78571428571429,
+        52.67857142857143,
+        55.35714285714286,
+        54.46428571428572,
+        52.67857142857143,
+        57.14285714285715
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 53.17460317460317
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A20_G0",
+      "first_successes": 56,
+      "second_successes": 12,
+      "N": 126,
+      "first_only": 45,
+      "second_only": 1,
+      "delta_percentage_points": 34.92063492063492,
+      "exact_two_sided_mcnemar_p": 1.3358203432289883e-12,
+      "paired_bootstrap_ci_percentage_points": [
+        26.190476190476193,
+        43.65079365079365
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        25.396825396825395,
+        45.238095238095234
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 14.285714285714285,
+        "libero_object:task2": 64.28571428571429,
+        "libero_object:task3": 35.714285714285715,
+        "libero_object:task4": 28.57142857142857,
+        "libero_object:task5": 50.0,
+        "libero_object:task6": 42.857142857142854,
+        "libero_object:task7": 14.285714285714285,
+        "libero_object:task8": 35.714285714285715,
+        "libero_object:task9": 28.57142857142857
+      },
+      "loto_percentage_points": [
+        37.5,
+        31.25,
+        34.82142857142857,
+        35.714285714285715,
+        33.035714285714285,
+        33.92857142857143,
+        37.5,
+        34.82142857142857,
+        35.714285714285715
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 34.92063492063492
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G20",
+      "first_successes": 56,
+      "second_successes": 81,
+      "N": 126,
+      "first_only": 1,
+      "second_only": 26,
+      "delta_percentage_points": -19.841269841269842,
+      "exact_two_sided_mcnemar_p": 4.172325134277344e-07,
+      "paired_bootstrap_ci_percentage_points": [
+        -27.77777777777778,
+        -12.698412698412698
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -30.952380952380953,
+        -9.523809523809522
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -50.0,
+        "libero_object:task2": -21.428571428571427,
+        "libero_object:task3": -21.428571428571427,
+        "libero_object:task4": -42.857142857142854,
+        "libero_object:task5": 7.142857142857142,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": -14.285714285714285
+      },
+      "loto_percentage_points": [
+        -16.07142857142857,
+        -19.642857142857142,
+        -19.642857142857142,
+        -16.964285714285715,
+        -23.214285714285715,
+        -21.42857142857143,
+        -20.535714285714285,
+        -20.535714285714285,
+        -20.535714285714285
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -19.84126984126984
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G20-A20_G0",
+      "first_successes": 81,
+      "second_successes": 12,
+      "N": 126,
+      "first_only": 70,
+      "second_only": 1,
+      "delta_percentage_points": 54.761904761904766,
+      "exact_two_sided_mcnemar_p": 6.098637220230962e-20,
+      "paired_bootstrap_ci_percentage_points": [
+        46.03174603174603,
+        63.49206349206349
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        44.44444444444444,
+        65.07936507936508
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 64.28571428571429,
+        "libero_object:task2": 85.71428571428571,
+        "libero_object:task3": 57.14285714285714,
+        "libero_object:task4": 71.42857142857143,
+        "libero_object:task5": 42.857142857142854,
+        "libero_object:task6": 50.0,
+        "libero_object:task7": 28.57142857142857,
+        "libero_object:task8": 50.0,
+        "libero_object:task9": 42.857142857142854
+      },
+      "loto_percentage_points": [
+        53.57142857142857,
+        50.89285714285714,
+        54.46428571428572,
+        52.67857142857143,
+        56.25,
+        55.35714285714286,
+        58.03571428571428,
+        55.35714285714286,
+        56.25
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 54.76190476190476
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A32_G0",
+      "first_successes": 56,
+      "second_successes": 32,
+      "N": 126,
+      "first_only": 33,
+      "second_only": 9,
+      "delta_percentage_points": 19.047619047619047,
+      "exact_two_sided_mcnemar_p": 0.00027153923429068527,
+      "paired_bootstrap_ci_percentage_points": [
+        9.523809523809524,
+        28.57142857142857
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        8.730158730158728,
+        28.57142857142857
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 7.142857142857142,
+        "libero_object:task2": 21.428571428571427,
+        "libero_object:task3": 21.428571428571427,
+        "libero_object:task4": 14.285714285714285,
+        "libero_object:task5": 42.857142857142854,
+        "libero_object:task6": 21.428571428571427,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": 21.428571428571427,
+        "libero_object:task9": 35.714285714285715
+      },
+      "loto_percentage_points": [
+        20.535714285714285,
+        18.75,
+        18.75,
+        19.64285714285714,
+        16.07142857142857,
+        18.75,
+        23.21428571428571,
+        18.75,
+        16.96428571428571
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 19.047619047619047
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G0-A0_G32",
+      "first_successes": 56,
+      "second_successes": 79,
+      "N": 126,
+      "first_only": 1,
+      "second_only": 24,
+      "delta_percentage_points": -18.253968253968253,
+      "exact_two_sided_mcnemar_p": 1.5497207641601562e-06,
+      "paired_bootstrap_ci_percentage_points": [
+        -25.396825396825395,
+        -11.11111111111111
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -28.57142857142857,
+        -8.730158730158728
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -42.857142857142854,
+        "libero_object:task2": -14.285714285714285,
+        "libero_object:task3": -28.57142857142857,
+        "libero_object:task4": -42.857142857142854,
+        "libero_object:task5": 0.0,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -15.178571428571427,
+        -18.75,
+        -16.964285714285715,
+        -15.178571428571427,
+        -20.535714285714285,
+        -19.64285714285714,
+        -18.749999999999996,
+        -18.749999999999996,
+        -20.535714285714285
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -18.253968253968253
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1a",
+      "contrast": "A0_G32-A32_G0",
+      "first_successes": 79,
+      "second_successes": 32,
+      "N": 126,
+      "first_only": 49,
+      "second_only": 2,
+      "delta_percentage_points": 37.301587301587304,
+      "exact_two_sided_mcnemar_p": 1.1786127629420662e-12,
+      "paired_bootstrap_ci_percentage_points": [
+        28.57142857142857,
+        46.03174603174603
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        26.190476190476193,
+        46.03174603174603
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": 50.0,
+        "libero_object:task2": 35.714285714285715,
+        "libero_object:task3": 50.0,
+        "libero_object:task4": 57.14285714285714,
+        "libero_object:task5": 42.857142857142854,
+        "libero_object:task6": 28.57142857142857,
+        "libero_object:task7": 0.0,
+        "libero_object:task8": 35.714285714285715,
+        "libero_object:task9": 35.714285714285715
+      },
+      "loto_percentage_points": [
+        35.714285714285715,
+        37.5,
+        35.714285714285715,
+        34.82142857142857,
+        36.60714285714286,
+        38.39285714285714,
+        41.96428571428571,
+        37.5,
+        37.5
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": 37.301587301587304
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1b",
+      "contrast": "T20_R0_G0-T0_R20_G0",
+      "first_successes": 11,
+      "second_successes": 53,
+      "N": 126,
+      "first_only": 3,
+      "second_only": 45,
+      "delta_percentage_points": -33.33333333333333,
+      "exact_two_sided_mcnemar_p": 1.312585595769633e-10,
+      "paired_bootstrap_ci_percentage_points": [
+        -42.06349206349206,
+        -24.6031746031746
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -44.44444444444444,
+        -22.22222222222222
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -7.142857142857142,
+        "libero_object:task2": -57.14285714285714,
+        "libero_object:task3": -28.57142857142857,
+        "libero_object:task4": -28.57142857142857,
+        "libero_object:task5": -50.0,
+        "libero_object:task6": -35.714285714285715,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -21.428571428571427,
+        "libero_object:task9": -57.14285714285714
+      },
+      "loto_percentage_points": [
+        -36.607142857142854,
+        -30.357142857142854,
+        -33.92857142857142,
+        -33.92857142857142,
+        -31.25,
+        -33.03571428571428,
+        -35.71428571428571,
+        -34.82142857142857,
+        -30.35714285714286
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -33.333333333333336
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1b",
+      "contrast": "T20_R0_G0-A0_G0",
+      "first_successes": 11,
+      "second_successes": 56,
+      "N": 126,
+      "first_only": 3,
+      "second_only": 48,
+      "delta_percentage_points": -35.714285714285715,
+      "exact_two_sided_mcnemar_p": 1.9674928353197174e-11,
+      "paired_bootstrap_ci_percentage_points": [
+        -45.23809523809524,
+        -26.190476190476193
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -46.03174603174603,
+        -25.396825396825395
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -14.285714285714285,
+        "libero_object:task2": -57.14285714285714,
+        "libero_object:task3": -28.57142857142857,
+        "libero_object:task4": -21.428571428571427,
+        "libero_object:task5": -50.0,
+        "libero_object:task6": -42.857142857142854,
+        "libero_object:task7": -14.285714285714285,
+        "libero_object:task8": -35.714285714285715,
+        "libero_object:task9": -57.14285714285714
+      },
+      "loto_percentage_points": [
+        -38.39285714285714,
+        -33.035714285714285,
+        -36.607142857142854,
+        -37.5,
+        -33.92857142857143,
+        -34.82142857142857,
+        -38.39285714285714,
+        -35.71428571428571,
+        -33.035714285714285
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -35.71428571428571
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1b",
+      "contrast": "T0_R20_G0-A0_G0",
+      "first_successes": 53,
+      "second_successes": 56,
+      "N": 126,
+      "first_only": 6,
+      "second_only": 9,
+      "delta_percentage_points": -2.380952380952381,
+      "exact_two_sided_mcnemar_p": 0.60723876953125,
+      "paired_bootstrap_ci_percentage_points": [
+        -8.73015873015873,
+        3.968253968253968
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -6.349206349206349,
+        1.5873015873015872
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_object:task1": -7.142857142857142,
+        "libero_object:task2": 0.0,
+        "libero_object:task3": 0.0,
+        "libero_object:task4": 7.142857142857142,
+        "libero_object:task5": 0.0,
+        "libero_object:task6": -7.142857142857142,
+        "libero_object:task7": 0.0,
+        "libero_object:task8": -14.285714285714285,
+        "libero_object:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -1.7857142857142856,
+        -2.6785714285714284,
+        -2.6785714285714284,
+        -3.571428571428571,
+        -2.6785714285714284,
+        -1.7857142857142856,
+        -2.6785714285714284,
+        -0.8928571428571428,
+        -2.6785714285714284
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_object": -2.380952380952381
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1c",
+      "contrast": "C10-C00",
+      "first_successes": 76,
+      "second_successes": 77,
+      "N": 140,
+      "first_only": 18,
+      "second_only": 19,
+      "delta_percentage_points": -0.7142857142857143,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "paired_bootstrap_ci_percentage_points": [
+        -9.285714285714286,
+        7.857142857142857
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -12.14285714285714,
+        10.714285714285714
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 0.0,
+        "libero_10:task2": 35.714285714285715,
+        "libero_10:task4": 7.142857142857142,
+        "libero_10:task6": -21.428571428571427,
+        "libero_10:task7": -7.142857142857142,
+        "libero_goal:task4": -7.142857142857142,
+        "libero_goal:task6": -35.714285714285715,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 7.142857142857142,
+        "libero_goal:task9": 14.285714285714285
+      },
+      "loto_percentage_points": [
+        -0.7936507936507939,
+        -4.761904761904763,
+        -1.5873015873015879,
+        1.5873015873015865,
+        -6.167905692361981e-16,
+        -6.167905692361981e-16,
+        3.1746031746031744,
+        -0.7936507936507933,
+        -1.5873015873015872,
+        -2.380952380952381
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": 2.8571428571428577,
+        "libero_goal": -4.2857142857142865
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": -4.2857142857142865,
+        "libero_goal": 2.8571428571428577
+      }
+    },
+    {
+      "family": "r1c",
+      "contrast": "C01-C00",
+      "first_successes": 81,
+      "second_successes": 77,
+      "N": 140,
+      "first_only": 10,
+      "second_only": 6,
+      "delta_percentage_points": 2.857142857142857,
+      "exact_two_sided_mcnemar_p": 0.454498291015625,
+      "paired_bootstrap_ci_percentage_points": [
+        -2.857142857142857,
+        8.571428571428571
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -4.285714285714286,
+        9.285714285714286
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 14.285714285714285,
+        "libero_10:task2": 21.428571428571427,
+        "libero_10:task4": -14.285714285714285,
+        "libero_10:task6": -14.285714285714285,
+        "libero_10:task7": 14.285714285714285,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task6": 0.0,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 7.142857142857142
+      },
+      "loto_percentage_points": [
+        1.5873015873015872,
+        0.7936507936507936,
+        4.761904761904761,
+        4.761904761904761,
+        1.5873015873015868,
+        3.1746031746031744,
+        3.1746031746031744,
+        3.1746031746031744,
+        3.1746031746031744,
+        2.3809523809523805
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": 4.285714285714286,
+        "libero_goal": 1.4285714285714284
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": 1.4285714285714284,
+        "libero_goal": 4.285714285714286
+      }
+    },
+    {
+      "family": "r1c",
+      "contrast": "C11-C10",
+      "first_successes": 93,
+      "second_successes": 76,
+      "N": 140,
+      "first_only": 20,
+      "second_only": 3,
+      "delta_percentage_points": 12.142857142857142,
+      "exact_two_sided_mcnemar_p": 0.00048828125,
+      "paired_bootstrap_ci_percentage_points": [
+        5.714285714285714,
+        18.571428571428573
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        3.571428571428571,
+        21.428571428571427
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 14.285714285714285,
+        "libero_10:task2": 0.0,
+        "libero_10:task4": 35.714285714285715,
+        "libero_10:task6": 14.285714285714285,
+        "libero_10:task7": 35.714285714285715,
+        "libero_goal:task4": -7.142857142857142,
+        "libero_goal:task6": 21.428571428571427,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 7.142857142857142
+      },
+      "loto_percentage_points": [
+        11.904761904761903,
+        13.492063492063492,
+        9.523809523809522,
+        11.904761904761903,
+        9.523809523809522,
+        14.285714285714285,
+        11.11111111111111,
+        13.492063492063492,
+        13.492063492063492,
+        12.698412698412698
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": 20.0,
+        "libero_goal": 4.285714285714286
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": 4.285714285714286,
+        "libero_goal": 20.0
+      }
+    },
+    {
+      "family": "r1c",
+      "contrast": "C11-C01",
+      "first_successes": 93,
+      "second_successes": 81,
+      "N": 140,
+      "first_only": 26,
+      "second_only": 14,
+      "delta_percentage_points": 8.571428571428571,
+      "exact_two_sided_mcnemar_p": 0.0806904677519924,
+      "paired_bootstrap_ci_percentage_points": [
+        0.0,
+        17.142857142857142
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -2.142857142857143,
+        21.428571428571427
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 0.0,
+        "libero_10:task2": 14.285714285714285,
+        "libero_10:task4": 57.14285714285714,
+        "libero_10:task6": 7.142857142857142,
+        "libero_10:task7": 14.285714285714285,
+        "libero_goal:task4": -14.285714285714285,
+        "libero_goal:task6": -14.285714285714285,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 7.142857142857142,
+        "libero_goal:task9": 14.285714285714285
+      },
+      "loto_percentage_points": [
+        9.523809523809522,
+        7.936507936507936,
+        3.1746031746031744,
+        8.730158730158728,
+        7.936507936507936,
+        11.111111111111109,
+        11.111111111111109,
+        9.523809523809522,
+        8.730158730158728,
+        7.936507936507936
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": 18.57142857142857,
+        "libero_goal": -1.4285714285714284
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": -1.4285714285714284,
+        "libero_goal": 18.57142857142857
+      }
+    },
+    {
+      "family": "r1c",
+      "contrast": "C11-C00",
+      "first_successes": 93,
+      "second_successes": 77,
+      "N": 140,
+      "first_only": 28,
+      "second_only": 12,
+      "delta_percentage_points": 11.428571428571429,
+      "exact_two_sided_mcnemar_p": 0.01658900337497471,
+      "paired_bootstrap_ci_percentage_points": [
+        2.857142857142857,
+        20.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -0.714285714285714,
+        23.57142857142857
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 14.285714285714285,
+        "libero_10:task2": 35.714285714285715,
+        "libero_10:task4": 42.857142857142854,
+        "libero_10:task6": -7.142857142857142,
+        "libero_10:task7": 28.57142857142857,
+        "libero_goal:task4": -14.285714285714285,
+        "libero_goal:task6": -14.285714285714285,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 7.142857142857142,
+        "libero_goal:task9": 21.428571428571427
+      },
+      "loto_percentage_points": [
+        11.11111111111111,
+        8.73015873015873,
+        7.936507936507936,
+        13.492063492063492,
+        9.523809523809524,
+        14.285714285714285,
+        14.285714285714285,
+        12.698412698412698,
+        11.904761904761903,
+        10.317460317460316
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": 22.857142857142854,
+        "libero_goal": 0.0
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": 0.0,
+        "libero_goal": 22.857142857142854
+      }
+    },
+    {
+      "family": "r1c",
+      "contrast": "C10-C01",
+      "first_successes": 76,
+      "second_successes": 81,
+      "N": 140,
+      "first_only": 12,
+      "second_only": 17,
+      "delta_percentage_points": -3.571428571428571,
+      "exact_two_sided_mcnemar_p": 0.45825831964612007,
+      "paired_bootstrap_ci_percentage_points": [
+        -11.428571428571429,
+        4.285714285714286
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -14.285714285714285,
+        6.428571428571428
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": -14.285714285714285,
+        "libero_10:task2": 14.285714285714285,
+        "libero_10:task4": 21.428571428571427,
+        "libero_10:task6": -7.142857142857142,
+        "libero_10:task7": -21.428571428571427,
+        "libero_goal:task4": -7.142857142857142,
+        "libero_goal:task6": -35.714285714285715,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 7.142857142857142,
+        "libero_goal:task9": 7.142857142857142
+      },
+      "loto_percentage_points": [
+        -2.3809523809523823,
+        -5.555555555555556,
+        -6.349206349206351,
+        -3.1746031746031758,
+        -1.5873015873015883,
+        -3.1746031746031744,
+        0.0,
+        -3.968253968253968,
+        -4.761904761904761,
+        -4.761904761904761
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_10": -1.4285714285714284,
+        "libero_goal": -5.714285714285714
+      },
+      "leave_one_suite_out_percentage_points": {
+        "libero_10": -5.714285714285714,
+        "libero_goal": -1.4285714285714284
+      }
+    },
+    {
+      "family": "r1d",
+      "contrast": "A0_G20-A20_G0",
+      "first_successes": 40,
+      "second_successes": 12,
+      "N": 100,
+      "first_only": 33,
+      "second_only": 5,
+      "delta_percentage_points": 28.000000000000004,
+      "exact_two_sided_mcnemar_p": 4.255962267052382e-06,
+      "paired_bootstrap_ci_percentage_points": [
+        17.0,
+        39.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        12.999999999999998,
+        45.0
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_spatial:task0": 30.0,
+        "libero_spatial:task1": 30.0,
+        "libero_spatial:task2": 80.0,
+        "libero_spatial:task3": 70.0,
+        "libero_spatial:task4": 10.0,
+        "libero_spatial:task5": 0.0,
+        "libero_spatial:task6": 30.0,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": 30.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto_percentage_points": [
+        27.77777777777778,
+        27.77777777777778,
+        22.22222222222222,
+        23.333333333333332,
+        30.000000000000004,
+        31.11111111111111,
+        27.77777777777778,
+        31.11111111111111,
+        27.77777777777778,
+        31.11111111111111
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_spatial": 28.0
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1d",
+      "contrast": "A20_G0-A0_G0",
+      "first_successes": 12,
+      "second_successes": 40,
+      "N": 100,
+      "first_only": 3,
+      "second_only": 31,
+      "delta_percentage_points": -28.000000000000004,
+      "exact_two_sided_mcnemar_p": 7.660128176212311e-07,
+      "paired_bootstrap_ci_percentage_points": [
+        -38.0,
+        -18.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -45.0,
+        -13.0
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_spatial:task0": -40.0,
+        "libero_spatial:task1": -30.0,
+        "libero_spatial:task2": -80.0,
+        "libero_spatial:task3": -60.0,
+        "libero_spatial:task4": -20.0,
+        "libero_spatial:task5": 0.0,
+        "libero_spatial:task6": -40.0,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": -10.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -26.66666666666667,
+        -27.77777777777778,
+        -22.22222222222222,
+        -24.444444444444446,
+        -28.888888888888886,
+        -31.11111111111111,
+        -26.66666666666666,
+        -31.11111111111111,
+        -30.0,
+        -31.11111111111111
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_spatial": -28.0
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1d",
+      "contrast": "A0_G20-A0_G0",
+      "first_successes": 40,
+      "second_successes": 40,
+      "N": 100,
+      "first_only": 5,
+      "second_only": 5,
+      "delta_percentage_points": 0.0,
+      "exact_two_sided_mcnemar_p": 1.0,
+      "paired_bootstrap_ci_percentage_points": [
+        -6.0,
+        6.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -5.0,
+        6.000000000000001
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_spatial:task0": -10.0,
+        "libero_spatial:task1": 0.0,
+        "libero_spatial:task2": 0.0,
+        "libero_spatial:task3": 10.0,
+        "libero_spatial:task4": -10.0,
+        "libero_spatial:task5": 0.0,
+        "libero_spatial:task6": -10.0,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": 20.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto_percentage_points": [
+        1.1111111111111112,
+        0.0,
+        0.0,
+        -1.1111111111111112,
+        1.1111111111111112,
+        0.0,
+        1.1111111111111112,
+        0.0,
+        -2.2222222222222223,
+        0.0
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_spatial": 0.0
+      },
+      "leave_one_suite_out_percentage_points": {}
+    },
+    {
+      "family": "r1d",
+      "contrast": "A20_G20-A0_G0",
+      "first_successes": 30,
+      "second_successes": 40,
+      "N": 100,
+      "first_only": 7,
+      "second_only": 17,
+      "delta_percentage_points": -10.0,
+      "exact_two_sided_mcnemar_p": 0.06391465663909912,
+      "paired_bootstrap_ci_percentage_points": [
+        -19.0,
+        -1.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -19.0,
+        -2.0000000000000004
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_spatial:task0": -10.0,
+        "libero_spatial:task1": -10.0,
+        "libero_spatial:task2": -40.0,
+        "libero_spatial:task3": 0.0,
+        "libero_spatial:task4": -20.0,
+        "libero_spatial:task5": 10.0,
+        "libero_spatial:task6": -20.0,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": -10.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto_percentage_points": [
+        -10.0,
+        -10.0,
+        -6.666666666666668,
+        -11.11111111111111,
+        -8.88888888888889,
+        -12.222222222222223,
+        -8.88888888888889,
+        -11.11111111111111,
+        -10.000000000000002,
+        -11.111111111111112
+      ],
+      "per_suite_delta_percentage_points": {
+        "libero_spatial": -10.0
+      },
+      "leave_one_suite_out_percentage_points": {}
+    }
+  ],
+  "r1c_risk_difference_interaction": 0.09285714285714286,
+  "scientific_retries": 0
+}
