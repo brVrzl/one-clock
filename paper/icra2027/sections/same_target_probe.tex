@@ -1,0 +1,33 @@
+\section{Same-Target Temporal Probe}
+\label{sec:same-target}
+
+At control step $t$, a Fresh component uses offset 0 from the chunk predicted
+from the current observation. A component with source age $d$ instead uses
+offset $d$ from the chunk queried $d$ steps earlier. Both entries were
+originally predicted for the same physical step $t$. For example, A0G20 takes
+the arm command from query $t$ at offset 0 and the gripper command from query
+$t-20$ at offset 20. A20G0 swaps these assignments: the arm comes from query
+$t-20$ at offset 20, and the gripper comes from query $t$ at offset 0. During
+the first 20 steps, before the older source exists, every component executes
+the Fresh offset-0 command.
+
+Formally, let $q$ be policy-query time, $k$ the chunk offset, and $A_q[k]$
+the predicted action entry. A valid same-target source satisfies
+\begin{equation}
+q + k = t .
+\label{eq:same-target}
+\end{equation}
+The source age is $d=t-q$, so same-target alignment requires $k=d$. We
+therefore measure the joint effect of an older source observation and a
+longer-lookahead prediction; the probe does not separate those factors.
+Translation comprises action dimensions 0--2, rotation dimensions 3--5, and
+the gripper dimension 6. Same-target probes query the policy once per executed
+step, giving a policy-query rate of 1.0, and discard unselected predictions.
+They are diagnostic interventions, not deployment executors.
+
+Executable schedules use separate notation. Periodic H$h$ queries every $h$
+steps and commits the full action to that chunk, giving the frozen H16, H4, and
+H2 schedules. ARM$h$\_GRIP$g$ assigns separate commitment horizons to the arm
+and gripper, yielding ARM4\_GRIP32 and ARM2\_GRIP16. TE\_DENSE queries at every
+step and applies the canonical temporal ensemble. These frozen schedules test
+an operational consequence; they are not a new adaptive executor.

@@ -3,7 +3,7 @@
 
 \input{figures/figure1}
 
-\subsection{Q1: Does the Same Staleness Affect Components Differently?}
+\subsection{Q1: Same-Target Arm--Gripper Asymmetry}
 
 Moving the same one-second-old prediction from the gripper to the arm reduced
 success from 83/140 (59.29\%) to 38/140 (27.14\%), a 32.14-point difference
@@ -25,11 +25,11 @@ pooled into the original 140-block result.
 
 \input{figures/figure2}
 
-\subsection{Q2: How Does Sensitivity Vary with Age and Component?}
+\subsection{Q2: Temporal Scale and Component Identity}
 
 The fresh-arm/stale-gripper branch remained above the stale-arm/fresh-gripper
 branch at every tested age from 0.10 to 1.60~s on the Object development
-cohort (Fig.~\ref{fig:development}, left). Observed separations ranged from
+cohort (Fig.~\ref{fig:development}, left; Table~\ref{tab:r1a-full}). Observed separations ranged from
 $+21.43$ to $+54.76$ points, with no ordering reversal and the largest values
 between 0.60 and 1.00~s. At 1.00~s, the separation was the largest observed on
 the grid, but no lag-versus-lag inference establishes a distinct peak.
@@ -41,6 +41,29 @@ minimum at 1.00~s and recovered at 1.60~s. Fresh-arm/stale-gripper success was
 60.32, 65.08, 69.84, 69.84, 71.43, 64.29, and 62.70\%. It was highest at
 0.80~s and lower at 1.00 and 1.60~s. These shapes do not define a tolerance
 threshold for either component.
+
+\begin{table}[t]
+\centering
+\caption{Complete Object-126 same-target age sweep. SA/FG denotes stale
+arm/fresh gripper; FA/SG denotes fresh arm/stale gripper. Separations are
+FA/SG minus SA/FG in percentage points.}
+\label{tab:r1a-full}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}rrccc}
+\toprule
+$d$ & Time & SA/FG & FA/SG & Separation \\
+\midrule
+2  & 0.10~s & 49/126 (38.89\%) & 76/126 (60.32\%) & $+21.43$ \\
+4  & 0.20~s & 49/126 (38.89\%) & 82/126 (65.08\%) & $+26.19$ \\
+8  & 0.40~s & 36/126 (28.57\%) & 88/126 (69.84\%) & $+41.27$ \\
+12 & 0.60~s & 21/126 (16.67\%) & 88/126 (69.84\%) & $+53.17$ \\
+16 & 0.80~s & 23/126 (18.25\%) & 90/126 (71.43\%) & $+53.17$ \\
+20 & 1.00~s & 12/126 (9.52\%)  & 81/126 (64.29\%) & $+54.76$ \\
+32 & 1.60~s & 32/126 (25.40\%) & 79/126 (62.70\%) & $+37.30$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
 
 Translation staleness was substantially more damaging than rotation staleness
 on the same development cohort (Fig.~\ref{fig:development}, right).
@@ -107,7 +130,7 @@ and do not distinguish the observed ordering. \\
 
 The tested diagnostics do not identify a positive causal mechanism.
 
-\subsection{Q4: Does Component Structure Matter for Executable Schedules?}
+\subsection{Q4: Executable Consequences and Query-Matched Controls}
 
 Under identical dense querying, extending gripper commitment produced a clear
 gain when the arm was also committed. C11$-$C10 was $+12.14$ points, and both
@@ -144,6 +167,16 @@ identity check, dense C11 and sparse H16 produced exactly the same executed
 actions, episode length, completion step, and terminal outcome from the same
 initial state. This identity statement is limited to the tested deterministic
 evaluator.
+
+Interaction estimates remain supporting evidence and are not pooled. The
+original 140-block post-study interaction was $+15.71$ points, with paired-block
+interval $[+6.43,+25.00]$, task-$t$ interval $[-2.76,+34.18]$, and exact task
+sign-flip $p=0.101562$. The R1C interaction was fixed before its outcomes and
+was $+9.29$ points, but no canonical interaction-specific interval, $p$-value,
+or leave-one-out estimate exists. Spatial has no named canonical interaction
+estimate. These point estimates do not establish replicated interaction. The
+R1C estimate used matched policy-query schedules, so the observed conditional
+pattern is not simply created by one condition querying more often.
 
 \input{figures/figure4}
 

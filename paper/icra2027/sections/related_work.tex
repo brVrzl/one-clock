@@ -29,9 +29,10 @@ reinforcement learning while freezing the base chunk policy
 over a chunk~\cite{xu2026bcp}. VLA-Corrector monitors visual-feature deviation
 and truncates a chunk when corrective replanning is indicated
 ~\cite{pan2026vlacorrector}. A3 instead accepts the longest action prefix that
-passes its verification procedure~\cite{chen2026a3}. These signals and
-objectives differ, but each method makes a temporal decision for the predicted
-action as a whole.
+passes its verification procedure~\cite{chen2026a3}. Adaptive Action Chunking
+uses action entropy from the current prediction to select its inference-time
+chunk size~\cite{liang2026aac}. These signals and objectives differ, but each
+method makes a temporal decision for the predicted action as a whole.
 
 \subsection{Stale predictions and asynchronous execution}
 
@@ -48,12 +49,16 @@ lookahead.
 
 Robot actions can also be structured at the representation and generation
 levels. ARP permits different chunk sizes for different action types
-~\cite{zhang2025arp}. Our policy still predicts one seven-dimensional chunk;
-component identity enters only when the executor selects which same-target
-source supplies translation, rotation, or gripper commands.
+~\cite{zhang2025arp}. Mixture of Horizons processes several prediction
+horizons with a shared action transformer, fuses them through a learned gate,
+and can select executable prefixes from cross-horizon consensus
+~\cite{jing2026moh}. Both alter the policy or action-generation structure. Our
+policy remains fixed and predicts one seven-dimensional chunk; component
+identity enters only when the executor selects which same-target source
+supplies translation, rotation, or gripper commands.
 
-We do not propose an alternative to these adaptive execution methods. We ask
-whether a temporal decision applied to an action chunk has the same behavioral
-consequence for every action component, and we measure that dependence rather
-than optimize a new executor. Track A tests a bounded operational consequence
-at fixed arm cadences; it is not a claim of superiority over adaptive methods.
+We do not propose an alternative adaptive-horizon executor. We ask whether a
+temporal decision applied to an action chunk is behaviorally uniform across its
+action components, and we measure that dependence rather than optimize a new
+executor. Track A tests a bounded operational consequence at fixed arm
+cadences; it is not a claim of superiority over adaptive methods.
