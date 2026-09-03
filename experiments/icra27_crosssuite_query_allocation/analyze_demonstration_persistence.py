@@ -39,6 +39,16 @@ def correlation(sx: np.ndarray, sy: np.ndarray, sxx: np.ndarray, syy: np.ndarray
     return np.divide(numerator, denominator, out=np.full_like(numerator, np.nan), where=denominator > 0)
 
 
+def km_survival(risk: np.ndarray, events: np.ndarray, windows: tuple[int, ...]) -> np.ndarray:
+    """Product-limit survival for one or many episode-weighted samples."""
+    if risk.ndim == 1:
+        risk = risk[None, :]
+        events = events[None, :]
+    factors = np.divide(events, risk, out=np.zeros_like(events), where=risk > 0)
+    survival = np.cumprod(1.0 - factors, axis=1)
+    return survival[:, [window - 1 for window in windows]]
+
+
 def main() -> None:
     addendum = json.loads((ROOT / "track_b_analysis_addendum.json").read_text())
     b2 = addendum["b2"]
@@ -164,10 +174,10 @@ def main() -> None:
             if len(future):
                 distance = int(future[0] - t)
                 observed_distance_sum[i] += distance; observed_distance_n[i] += 1
-                transition_rows.append({"episode_index": episode, "task": episode_to_task[episode], "frame_index": t, "distance_steps": distance, "right_censored": False})
+                transition_rows.append({"episode_index": episode, "task": episode_to_task[episode], "frame_index": t, "duration_steps": distance, "event_observed": True, "right_censored": False})
             else:
                 censored_n[i] += 1
-                transition_rows.append({"episode_index": episode, "task": episode_to_task[episode], "frame_index": t, "distance_steps": "", "right_censored": True})
+                transition_rows.append({"episode_index": episode, "task": episode_to_task[episode], "frame_index": t, "duration_steps": len(signs) - 1 - t, "event_observed": False, "right_censored": True})
             total_steps[i] += 1
     transition_weights = rng.multinomial(len(episode_ids), np.full(len(episode_ids), 1 / len(episode_ids)), size=draws).astype(np.float64)
     transition_rate = float(transition_count.sum() / adjacent_count.sum())
@@ -176,15 +186,39 @@ def main() -> None:
     censor_boot = (transition_weights @ censored_n) / (transition_weights @ total_steps)
     observed_mean = float(observed_distance_sum.sum() / observed_distance_n.sum())
     observed_boot = (transition_weights @ observed_distance_sum) / (transition_weights @ observed_distance_n)
+    survival_windows = (5, 10, 20)
+    risk_counts = np.zeros((len(episode_ids), max(survival_windows)), dtype=np.float64)
+    event_counts = np.zeros_like(risk_counts)
+    for row in transition_rows:
+        episode_i = episode_ids.index(int(row["episode_index"]))
+        duration = int(row["duration_steps"])
+        for event_time in range(1, max(survival_windows) + 1):
+            risk_counts[episode_i, event_time - 1] += duration >= event_time
+        if row["event_observed"] and 1 <= duration <= max(survival_windows):
+            event_counts[episode_i, duration - 1] += 1
+    center_survival = km_survival(risk_counts.sum(0), event_counts.sum(0), survival_windows)[0]
+    survival_rng = np.random.default_rng(27302)
+    survival_weights = survival_rng.multinomial(
+        len(episode_ids), np.full(len(episode_ids), 1 / len(episode_ids)), size=draws
+    ).astype(np.float64)
+    boot_survival = km_survival(survival_weights @ risk_counts, survival_weights @ event_counts, survival_windows)
+    survival_summary = {
+        f"{window / 10:.1f}": {
+            "window_steps": window,
+            "probability_no_transition_within_window": float(center_survival[index]),
+            "episode_cluster_bootstrap_ci": ci(boot_survival[:, index]),
+        }
+        for index, window in enumerate(survival_windows)
+    }
 
     output_dir = ROOT / "track_b" / "demonstration_persistence"
     output_dir.mkdir(parents=True, exist_ok=True)
     with (output_dir / "lag_metrics.csv").open("w", newline="") as handle:
         fieldnames = sorted({key for row in tidy for key in row})
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader(); writer.writerows(tidy)
     with (output_dir / "transition_distance.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(transition_rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(transition_rows[0]), lineterminator="\n")
         writer.writeheader(); writer.writerows(transition_rows)
     output = {
         "status": "COMPLETE", "success_outcomes_loaded": False,
@@ -197,21 +231,25 @@ def main() -> None:
             "episode_cluster_bootstrap_ci": ci(transition_rate_boot),
             "observed_distance_to_next_transition_mean_steps": observed_mean,
             "observed_distance_episode_cluster_bootstrap_ci": ci(observed_boot),
+            "observed_distance_interpretation": "biased complete-case descriptive value; not a population mean because right censoring is excluded",
             "right_censored_step_fraction": censor_fraction,
             "right_censored_episode_cluster_bootstrap_ci": ci(censor_boot),
+            "kaplan_meier_transition_free_survival": survival_summary,
         },
-        "bootstrap": {"unit": "demonstration_episode", "draws": draws, "seed": b2["bootstrap_seed"]},
+        "bootstrap": {"unit": "demonstration_episode", "draws": draws, "lag_seed": b2["bootstrap_seed"], "survival_seed": 27302},
     }
     (output_dir / "summary.json").write_text(json.dumps(output, indent=2) + "\n")
     lines = [
         "# B2 training-demonstration temporal persistence", "",
         "These 173 episodes are training demonstrations, not a held-out split. Dataset actions are at 10 Hz. No rollout success outcome was loaded.", "",
         f"Adjacent gripper sign-transition frequency: `{transition_rate:.6f}` (episode-cluster 95% CI `[{ci(transition_rate_boot)[0]:.6f}, {ci(transition_rate_boot)[1]:.6f}]`).",
-        f"Mean observed distance to the next transition: `{observed_mean:.3f}` dataset steps; `{censor_fraction:.3%}` of action steps are right-censored.", "",
+        f"Right-censored action-step fraction: `{censor_fraction:.3%}`. The `{observed_mean:.3f}`-step mean among observed transitions is a biased complete-case description, not a population mean.", "",
+        "| Window | P(no gripper transition within window) | Episode-cluster 95% CI |", "|---:|---:|---:|",
+        *[f"| {seconds} s | {record['probability_no_transition_within_window']:.6f} | [{record['episode_cluster_bootstrap_ci'][0]:.6f}, {record['episode_cluster_bootstrap_ci'][1]:.6f}] |" for seconds, record in survival_summary.items()], "",
         "All per-dimension autocorrelation, normalized-difference, group, and lag results are stored in `lag_metrics.csv` and `summary.json`.", "",
     ]
     (output_dir / "report.md").write_text("\n".join(lines))
-    print(json.dumps({"episodes": len(episode_ids), "transition_frequency": transition_rate, "mean_observed_transition_distance_steps": observed_mean, "right_censored_fraction": censor_fraction}, indent=2))
+    print(json.dumps({"episodes": len(episode_ids), "transition_frequency": transition_rate, "right_censored_fraction": censor_fraction, "kaplan_meier_transition_free_survival": survival_summary}, indent=2))
 
 
 if __name__ == "__main__":

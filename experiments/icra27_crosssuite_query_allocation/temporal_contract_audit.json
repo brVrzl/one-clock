@@ -1,0 +1,47 @@
+{
+  "status": "PASS_WITH_EXPLICIT_MULTI_RATE_MAPPING",
+  "track_a_outcomes_inspected": false,
+  "dataset": {
+    "repo": "HuggingFaceVLA/libero",
+    "local_revision": "86958911c0f959db2bbbdb107eb3e17c5f9c798e",
+    "native_fps": 10,
+    "timestamp_step_seconds": 0.1,
+    "resampling": "none",
+    "subsampling": "none",
+    "repetition": "none"
+  },
+  "act_training": {
+    "standard_task_checkpoints_dataset_fps": 10,
+    "chunk_offset_seconds": "k/10",
+    "target_mapping": "exact dataset frame t+k",
+    "train_config_env_fps_30_used_for_offline_chunk_indexing": false,
+    "r1_object_checkpoint_native_training_fps": "not_verified_from_local_provenance"
+  },
+  "evaluation": {
+    "track_a_hz": 10,
+    "track_b_hz": 10,
+    "historical_confirmation_hz": 20,
+    "r1a_hz": 20,
+    "r1b_hz": 20,
+    "r1c_hz": 20,
+    "r1d_hz": 20,
+    "r2a_hz": 30
+  },
+  "matched_b3_r1a": {
+    "r1a_d_steps": [2, 4, 8, 12, 16, 20, 32],
+    "r1a_seconds": [0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.6],
+    "b3_offsets": [1, 2, 4, 6, 8, 10, 16],
+    "interpolation": false,
+    "scope": "cross-cohort and cross-checkpoint/training-dataset characterization"
+  },
+  "action_contract": {
+    "dimensions": {"translation": [0, 1, 2], "rotation_axis_angle_command": [3, 4, 5], "gripper": [6]},
+    "policy_inverse_transform": "native = normalized * checkpoint_std + checkpoint_mean",
+    "environment_action_transform": "none before controller",
+    "controller_mode": "relative OSC delta goals",
+    "frequency_dependent_magnitude_rescaling": false,
+    "reported_units": "controller_native_action",
+    "millimetres_or_degrees_claimed": false
+  },
+  "b3_identifiability": "IDENTIFIABLE_EXACT_10HZ_DATASET_TARGET_ALIGNMENT"
+}

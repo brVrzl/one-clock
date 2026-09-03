@@ -160,7 +160,8 @@ def run_task(runtime: Runtime, policy_name: str, task: str, tag: str, episodes: 
                 raise RuntimeError(f"forecast shape mismatch for {slug}")
             normalized_target = (target - action_mean) / action_std
             squared_errors.append(np.square(predicted - normalized_target))
-            sign_disagreements.append(np.not_equal(np.sign(predicted[:, 6]), np.sign(normalized_target[:, 6])))
+            predicted_native = predicted * action_std + action_mean
+            sign_disagreements.append(np.not_equal(np.sign(predicted_native[:, 6]), np.sign(target[:, 6])))
             kept_episode.append(episode); kept_frame.append(frame)
     finally:
         policy = preprocessor = cfg = dataset = None
@@ -177,7 +178,10 @@ def run_task(runtime: Runtime, policy_name: str, task: str, tag: str, episodes: 
     atomic_json(metadata_path, {
         "status": "COMPLETE", "policy": policy_name, "task": task, "tag": tag,
         "checkpoint": str(checkpoint), "episodes": episodes, "anchor_stride_frames": 10,
-        "offsets": list(range(33)), "anchor_count": len(kept_episode),
+        "offsets": list(range(33)), "offset_seconds": [k / 10 for k in range(33)], "dataset_fps": 10,
+        "target_alignment": "exact dataset frame t+k; no interpolation, resampling, or repetition",
+        "gripper_sign_contract": "sign of controller-native action after exact checkpoint MEAN_STD inverse; zero is separate",
+        "anchor_count": len(kept_episode),
         "dataset": "HuggingFaceVLA/libero", "dataset_revision": "86958911c0f959db2bbbdb107eb3e17c5f9c798e",
         "provenance_label": "training-demonstration reference analysis; not held-out",
         "seed_rule": "SHA256 first 8 bytes of track-b-b3|policy|task|episode|frame, masked to 63 bits",

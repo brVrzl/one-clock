@@ -1,0 +1,150 @@
+{
+  "status": "COMPLETE",
+  "analysis_only_amendment": "e2fb21b",
+  "dataset_fps": 10.0,
+  "success_outcomes_source": "completed frozen 140-block cross-suite confirmation analysis",
+  "track_a_outcomes_loaded": false,
+  "task_count": 10,
+  "gripper_prediction": {
+    "expected_direction": "rho < 0",
+    "spearman_rho": -0.4185110693297313,
+    "two_sided_p_descriptive": 0.2287084369360759
+  },
+  "arm_prediction": {
+    "expected_direction": "rho < 0",
+    "spearman_rho": -0.0303030303030303,
+    "two_sided_p_descriptive": 0.9337729580941466
+  },
+  "task_values": [
+    {
+      "task": "libero_goal:task4",
+      "training_demonstration_episodes": 46,
+      "adjacent_pairs": 4528,
+      "gripper_transitions": 94,
+      "gripper_transition_density_per_second": 0.20759717314487633,
+      "arm_normalized_adjacent_variation": 0.18323106073793022,
+      "A0G0_success_rate": 0.9285714285714286,
+      "A0G20_success_rate": 0.8571428571428571,
+      "A20G0_success_rate": 0.5714285714285714,
+      "Delta_G": -0.07142857142857151,
+      "Delta_A": -0.3571428571428572
+    },
+    {
+      "task": "libero_goal:task6",
+      "training_demonstration_episodes": 40,
+      "adjacent_pairs": 4163,
+      "gripper_transitions": 88,
+      "gripper_transition_density_per_second": 0.21138601969733364,
+      "arm_normalized_adjacent_variation": 0.17500664511630817,
+      "A0G0_success_rate": 0.7142857142857143,
+      "A0G20_success_rate": 0.7142857142857143,
+      "A20G0_success_rate": 0.21428571428571427,
+      "Delta_G": 0.0,
+      "Delta_A": -0.5
+    },
+    {
+      "task": "libero_goal:task7",
+      "training_demonstration_episodes": 50,
+      "adjacent_pairs": 4404,
+      "gripper_transitions": 60,
+      "gripper_transition_density_per_second": 0.1362397820163488,
+      "arm_normalized_adjacent_variation": 0.17879298068818095,
+      "A0G0_success_rate": 1.0,
+      "A0G20_success_rate": 1.0,
+      "A20G0_success_rate": 0.9285714285714286,
+      "Delta_G": 0.0,
+      "Delta_A": -0.0714285714285714
+    },
+    {
+      "task": "libero_goal:task8",
+      "training_demonstration_episodes": 49,
+      "adjacent_pairs": 4514,
+      "gripper_transitions": 98,
+      "gripper_transition_density_per_second": 0.21710234824988925,
+      "arm_normalized_adjacent_variation": 0.19584813156349495,
+      "A0G0_success_rate": 0.9285714285714286,
+      "A0G20_success_rate": 1.0,
+      "A20G0_success_rate": 0.6428571428571429,
+      "Delta_G": 0.0714285714285714,
+      "Delta_A": -0.2857142857142857
+    },
+    {
+      "task": "libero_goal:task9",
+      "training_demonstration_episodes": 36,
+      "adjacent_pairs": 6188,
+      "gripper_transitions": 74,
+      "gripper_transition_density_per_second": 0.1195862960568843,
+      "arm_normalized_adjacent_variation": 0.18903256437895466,
+      "A0G0_success_rate": 0.5714285714285714,
+      "A0G20_success_rate": 0.6428571428571429,
+      "A20G0_success_rate": 0.21428571428571427,
+      "Delta_G": 0.07142857142857151,
+      "Delta_A": -0.3571428571428571
+    },
+    {
+      "task": "libero_10:task0",
+      "training_demonstration_episodes": 33,
+      "adjacent_pairs": 9538,
+      "gripper_transitions": 142,
+      "gripper_transition_density_per_second": 0.14887817152442862,
+      "arm_normalized_adjacent_variation": 0.12667650560871532,
+      "A0G0_success_rate": 0.14285714285714285,
+      "A0G20_success_rate": 0.21428571428571427,
+      "A20G0_success_rate": 0.0,
+      "Delta_G": 0.07142857142857142,
+      "Delta_A": -0.14285714285714285
+    },
+    {
+      "task": "libero_10:task2",
+      "training_demonstration_episodes": 41,
+      "adjacent_pairs": 10825,
+      "gripper_transitions": 165,
+      "gripper_transition_density_per_second": 0.15242494226327943,
+      "arm_normalized_adjacent_variation": 0.13201195696679577,
+      "A0G0_success_rate": 0.5714285714285714,
+      "A0G20_success_rate": 0.8571428571428571,
+      "A20G0_success_rate": 0.14285714285714285,
+      "Delta_G": 0.2857142857142857,
+      "Delta_A": -0.42857142857142855
+    },
+    {
+      "task": "libero_10:task4",
+      "training_demonstration_episodes": 38,
+      "adjacent_pairs": 9769,
+      "gripper_transitions": 161,
+      "gripper_transition_density_per_second": 0.1648070426860477,
+      "arm_normalized_adjacent_variation": 0.12329721786498044,
+      "A0G0_success_rate": 0.21428571428571427,
+      "A0G20_success_rate": 0.14285714285714285,
+      "A20G0_success_rate": 0.0,
+      "Delta_G": -0.07142857142857142,
+      "Delta_A": -0.21428571428571427
+    },
+    {
+      "task": "libero_10:task6",
+      "training_demonstration_episodes": 36,
+      "adjacent_pairs": 8984,
+      "gripper_transitions": 136,
+      "gripper_transition_density_per_second": 0.15138023152270705,
+      "arm_normalized_adjacent_variation": 0.09753580964188284,
+      "A0G0_success_rate": 0.35714285714285715,
+      "A0G20_success_rate": 0.35714285714285715,
+      "A20G0_success_rate": 0.0,
+      "Delta_G": 0.0,
+      "Delta_A": -0.35714285714285715
+    },
+    {
+      "task": "libero_10:task7",
+      "training_demonstration_episodes": 43,
+      "adjacent_pairs": 11451,
+      "gripper_transitions": 180,
+      "gripper_transition_density_per_second": 0.15719151165837045,
+      "arm_normalized_adjacent_variation": 0.15986650092220658,
+      "A0G0_success_rate": 0.07142857142857142,
+      "A0G20_success_rate": 0.14285714285714285,
+      "A20G0_success_rate": 0.0,
+      "Delta_G": 0.07142857142857142,
+      "Delta_A": -0.07142857142857142
+    }
+  ]
+}

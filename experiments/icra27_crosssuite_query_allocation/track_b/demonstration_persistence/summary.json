@@ -7544,15 +7544,43 @@
       29.440284842723873,
       32.10176219813207
     ],
+    "observed_distance_interpretation": "biased complete-case descriptive value; not a population mean because right censoring is excluded",
     "right_censored_step_fraction": 0.1917228026299867,
     "right_censored_episode_cluster_bootstrap_ci": [
       0.17005422995845867,
       0.2122485213163354
-    ]
+    ],
+    "kaplan_meier_transition_free_survival": {
+      "0.5": {
+        "window_steps": 5,
+        "probability_no_transition_within_window": 0.9217650207446136,
+        "episode_cluster_bootstrap_ci": [
+          0.9162754044642768,
+          0.9269147434844016
+        ]
+      },
+      "1.0": {
+        "window_steps": 10,
+        "probability_no_transition_within_window": 0.840877645669508,
+        "episode_cluster_bootstrap_ci": [
+          0.8296227533583893,
+          0.8513802473525202
+        ]
+      },
+      "2.0": {
+        "window_steps": 20,
+        "probability_no_transition_within_window": 0.6750179393362422,
+        "episode_cluster_bootstrap_ci": [
+          0.652380411035435,
+          0.6961281321705994
+        ]
+      }
+    }
   },
   "bootstrap": {
     "unit": "demonstration_episode",
     "draws": 20000,
-    "seed": 27301
+    "lag_seed": 27301,
+    "survival_seed": 27302
   }
 }

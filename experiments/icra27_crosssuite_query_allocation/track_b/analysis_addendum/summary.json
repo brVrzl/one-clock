@@ -13,6 +13,7 @@
     "candidate_count": 16
   },
   "age_curve_reference": "same-target age-0 prediction",
+  "native_action_contract": "exact inverse checkpoint MEAN_STD transform; controller-native action values, not measured millimetres/degrees",
   "bootstrap": {
     "unit": "episode",
     "draws": 20000,
@@ -3461,6 +3462,1322 @@
           ]
         }
       }
+    }
+  },
+  "native_dimension_dispersion": {
+    "ACT": {
+      "translation": {
+        "episode_count": 40,
+        "mean": 0.05377580340789745,
+        "episode_sd": 0.04878838727841085,
+        "episode_cluster_bootstrap_ci": [
+          0.04031012074686619,
+          0.07002308359239445
+        ]
+      },
+      "rotation": {
+        "episode_count": 40,
+        "mean": 0.008784988212079615,
+        "episode_sd": 0.008146389194872296,
+        "episode_cluster_bootstrap_ci": [
+          0.006576920190224815,
+          0.011552078598395483
+        ]
+      },
+      "gripper": {
+        "episode_count": 40,
+        "mean": 0.07891169798594086,
+        "episode_sd": 0.1039125132951103,
+        "episode_cluster_bootstrap_ci": [
+          0.05044267067154756,
+          0.11285323979163447
+        ]
+      },
+      "arm_original": {
+        "episode_count": 40,
+        "mean": 0.038666109873837264,
+        "episode_sd": 0.034967965352370255,
+        "episode_cluster_bootstrap_ci": [
+          0.029065901056942157,
+          0.05049849728763627
+        ]
+      }
+    },
+    "SmolVLA": {
+      "translation": {
+        "episode_count": 40,
+        "mean": 0.12193250593800191,
+        "episode_sd": 0.04432060433258743,
+        "episode_cluster_bootstrap_ci": [
+          0.10985763090988619,
+          0.1367636480422568
+        ]
+      },
+      "rotation": {
+        "episode_count": 40,
+        "mean": 0.026907930897587206,
+        "episode_sd": 0.006431513918185503,
+        "episode_cluster_bootstrap_ci": [
+          0.025037392903317707,
+          0.029005629397411147
+        ]
+      },
+      "gripper": {
+        "episode_count": 40,
+        "mean": 0.17307293733968787,
+        "episode_sd": 0.1389510536354408,
+        "episode_cluster_bootstrap_ci": [
+          0.13576390430835228,
+          0.21954165905182163
+        ]
+      },
+      "arm_original": {
+        "episode_count": 40,
+        "mean": 0.08851430472913051,
+        "episode_sd": 0.03153600928286342,
+        "episode_cluster_bootstrap_ci": [
+          0.07987824197221294,
+          0.09910337839102516
+        ]
+      }
+    }
+  },
+  "native_age_difference": {
+    "ACT": {
+      "0": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.032172097577936036,
+          "episode_sd": 0.02094102779805429,
+          "episode_cluster_bootstrap_ci": [
+            0.026678184348739073,
+            0.03935165583170859
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.00512287775126141,
+          "episode_sd": 0.0031880443509466304,
+          "episode_cluster_bootstrap_ci": [
+            0.004279947489185877,
+            0.006206599422669527
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.13713365964163365,
+          "episode_sd": 0.10880259795865581,
+          "episode_cluster_bootstrap_ci": [
+            0.10658020359629806,
+            0.17212228141472227
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.023051028941374042,
+          "episode_sd": 0.014953961549187073,
+          "episode_cluster_bootstrap_ci": [
+            0.01912559128242641,
+            0.028081058832891553
+          ]
+        }
+      },
+      "2": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.05269951347799069,
+          "episode_sd": 0.04207941262251347,
+          "episode_cluster_bootstrap_ci": [
+            0.04179224249592967,
+            0.06705787480376298
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.008336779344592146,
+          "episode_sd": 0.006505089117304239,
+          "episode_cluster_bootstrap_ci": [
+            0.006655255647968084,
+            0.010624729721984158
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.192322926867217,
+          "episode_sd": 0.14640079551953442,
+          "episode_cluster_bootstrap_ci": [
+            0.14977981639321492,
+            0.23828599073543888
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.03775360216102175,
+          "episode_sd": 0.030074607917343208,
+          "episode_cluster_bootstrap_ci": [
+            0.029949267931191185,
+            0.04800942886665068
+          ]
+        }
+      },
+      "3": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.07002662916278711,
+          "episode_sd": 0.05806075901414338,
+          "episode_cluster_bootstrap_ci": [
+            0.05491323536245919,
+            0.08992277399564505
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.011039746400494654,
+          "episode_sd": 0.009132749540262376,
+          "episode_cluster_bootstrap_ci": [
+            0.008675872166532185,
+            0.014139822796867813
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.23660923665101885,
+          "episode_sd": 0.16514250810299172,
+          "episode_cluster_bootstrap_ci": [
+            0.18833472171028257,
+            0.2891212910454064
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.05016791056344766,
+          "episode_sd": 0.041510355038432374,
+          "episode_cluster_bootstrap_ci": [
+            0.03946405275678603,
+            0.06425296140002346
+          ]
+        }
+      },
+      "4": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.0836436717095962,
+          "episode_sd": 0.07325447245506815,
+          "episode_cluster_bootstrap_ci": [
+            0.06440784919445731,
+            0.10865520236619933
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.013356614121250854,
+          "episode_sd": 0.01197962988130059,
+          "episode_cluster_bootstrap_ci": [
+            0.01022747856266652,
+            0.01752965216312208
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.2671904211704191,
+          "episode_sd": 0.19105384508129888,
+          "episode_cluster_bootstrap_ci": [
+            0.21020701088687513,
+            0.3283817276777749
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.05996079795585668,
+          "episode_sd": 0.05240891688632117,
+          "episode_cluster_bootstrap_ci": [
+            0.046363569877134914,
+            0.07806354367712778
+          ]
+        }
+      },
+      "5": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.09404681743127079,
+          "episode_sd": 0.08574418839195319,
+          "episode_cluster_bootstrap_ci": [
+            0.0716733112518186,
+            0.12319658115624403
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.01538221140761456,
+          "episode_sd": 0.014392495907600465,
+          "episode_cluster_bootstrap_ci": [
+            0.011647533344254408,
+            0.020351835059503755
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.28777608720047365,
+          "episode_sd": 0.20029764862503513,
+          "episode_cluster_bootstrap_ci": [
+            0.22970251600282468,
+            0.3502036853038547
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.06747285387590797,
+          "episode_sd": 0.06137933258332031,
+          "episode_cluster_bootstrap_ci": [
+            0.0514615254748308,
+            0.08886631278839768
+          ]
+        }
+      },
+      "6": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.10278769606149521,
+          "episode_sd": 0.09517518397309872,
+          "episode_cluster_bootstrap_ci": [
+            0.07782126553172729,
+            0.13535893822590822
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.017059815837037393,
+          "episode_sd": 0.016357611019002783,
+          "episode_cluster_bootstrap_ci": [
+            0.012748893346866734,
+            0.022677777863196375
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.30329925211096065,
+          "episode_sd": 0.2226196189999061,
+          "episode_cluster_bootstrap_ci": [
+            0.23923843494271838,
+            0.3740432133212904
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.07378323218861185,
+          "episode_sd": 0.06816705339665186,
+          "episode_cluster_bootstrap_ci": [
+            0.0558043931561465,
+            0.09720097371237724
+          ]
+        }
+      },
+      "7": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.10964772287098064,
+          "episode_sd": 0.10180649051878782,
+          "episode_cluster_bootstrap_ci": [
+            0.08278692552919406,
+            0.1442167159074887
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.018486673228048773,
+          "episode_sd": 0.017880330314464673,
+          "episode_cluster_bootstrap_ci": [
+            0.013813514671261871,
+            0.02466823808707643
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.31048122379912185,
+          "episode_sd": 0.22520385750043104,
+          "episode_cluster_bootstrap_ci": [
+            0.24461072987921725,
+            0.3823045814775228
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.07874982133368091,
+          "episode_sd": 0.07295405132233765,
+          "episode_cluster_bootstrap_ci": [
+            0.059464887748259615,
+            0.10341818081710814
+          ]
+        }
+      },
+      "8": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.11519453270507655,
+          "episode_sd": 0.10699873900008866,
+          "episode_cluster_bootstrap_ci": [
+            0.08673729168048726,
+            0.15149006880818308
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.019525521193511995,
+          "episode_sd": 0.01903493820404465,
+          "episode_cluster_bootstrap_ci": [
+            0.014480550855712652,
+            0.025987303967068748
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.31529956647025276,
+          "episode_sd": 0.23030956258994503,
+          "episode_cluster_bootstrap_ci": [
+            0.24840232005815926,
+            0.39036160250785784
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.08275577863958093,
+          "episode_sd": 0.07669376697527432,
+          "episode_cluster_bootstrap_ci": [
+            0.06235380200103008,
+            0.10888031369109927
+          ]
+        }
+      },
+      "9": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.12156934795314714,
+          "episode_sd": 0.11201895369338268,
+          "episode_cluster_bootstrap_ci": [
+            0.09168282358255757,
+            0.16005438546644277
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.020602448782633138,
+          "episode_sd": 0.02011785160672558,
+          "episode_cluster_bootstrap_ci": [
+            0.015253685691883555,
+            0.027486229173875734
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.32929698315885086,
+          "episode_sd": 0.23251769818848178,
+          "episode_cluster_bootstrap_ci": [
+            0.2615826285333844,
+            0.4044146068147879
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.08734024688691391,
+          "episode_sd": 0.08030735635874665,
+          "episode_cluster_bootstrap_ci": [
+            0.06603118197282197,
+            0.11476047140226402
+          ]
+        }
+      },
+      "10": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.12630070442860855,
+          "episode_sd": 0.11543113496285906,
+          "episode_cluster_bootstrap_ci": [
+            0.09567921187006496,
+            0.16548769044378445
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.021409017418136077,
+          "episode_sd": 0.020630259831317836,
+          "episode_cluster_bootstrap_ci": [
+            0.01587935631856816,
+            0.02845176218113593
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.33956286449121614,
+          "episode_sd": 0.2375716068310473,
+          "episode_cluster_bootstrap_ci": [
+            0.2700213700902047,
+            0.4151523139114366
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.0907322059277856,
+          "episode_sd": 0.08274692110458387,
+          "episode_cluster_bootstrap_ci": [
+            0.06860723849666811,
+            0.11931410934677757
+          ]
+        }
+      },
+      "11": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.13117565470555134,
+          "episode_sd": 0.11634254793612389,
+          "episode_cluster_bootstrap_ci": [
+            0.09911060483458209,
+            0.17029823578367692
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.021694803482080197,
+          "episode_sd": 0.02075568911737004,
+          "episode_cluster_bootstrap_ci": [
+            0.016143423978960358,
+            0.028672862534533786
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.35841535204273106,
+          "episode_sd": 0.24403303982878768,
+          "episode_cluster_bootstrap_ci": [
+            0.2869703562835601,
+            0.4346471129091472
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.09413327763748862,
+          "episode_sd": 0.0834290620880356,
+          "episode_cluster_bootstrap_ci": [
+            0.07160394832832892,
+            0.12199966500550269
+          ]
+        }
+      },
+      "12": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.13826850503393087,
+          "episode_sd": 0.1192681572956581,
+          "episode_cluster_bootstrap_ci": [
+            0.10611034053783068,
+            0.1780193240449379
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.02220861955380564,
+          "episode_sd": 0.021033540011169312,
+          "episode_cluster_bootstrap_ci": [
+            0.016498605249171214,
+            0.029332821748200098
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.3668010235927659,
+          "episode_sd": 0.2523496578417574,
+          "episode_cluster_bootstrap_ci": [
+            0.2936187992321842,
+            0.4467797086648749
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.09913410106328768,
+          "episode_sd": 0.08550568387435822,
+          "episode_cluster_bootstrap_ci": [
+            0.0756213271381809,
+            0.12734421130905677
+          ]
+        }
+      },
+      "13": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.14300353477683414,
+          "episode_sd": 0.11994666690958851,
+          "episode_cluster_bootstrap_ci": [
+            0.10964870008157501,
+            0.18255394215037832
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.022623136673224305,
+          "episode_sd": 0.02082957654735559,
+          "episode_cluster_bootstrap_ci": [
+            0.016912376938890555,
+            0.02962036492982774
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.3719775965518922,
+          "episode_sd": 0.2642889285637297,
+          "episode_cluster_bootstrap_ci": [
+            0.295468271144085,
+            0.45574402907486966
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.10249727303224421,
+          "episode_sd": 0.08593671679199918,
+          "episode_cluster_bootstrap_ci": [
+            0.07863283379661282,
+            0.13042104150220354
+          ]
+        }
+      },
+      "14": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.14869958907734052,
+          "episode_sd": 0.12133313799260163,
+          "episode_cluster_bootstrap_ci": [
+            0.11456607452450675,
+            0.18890620051875595
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.02310192644922566,
+          "episode_sd": 0.020464999503254474,
+          "episode_cluster_bootstrap_ci": [
+            0.017587793907539163,
+            0.029875236239129608
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.37607689444058356,
+          "episode_sd": 0.2704025983352875,
+          "episode_cluster_bootstrap_ci": [
+            0.29718599729032674,
+            0.46280534751188407
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.10654046754335952,
+          "episode_sd": 0.08684072441803278,
+          "episode_cluster_bootstrap_ci": [
+            0.08212865481504251,
+            0.13569560110308385
+          ]
+        }
+      },
+      "15": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.15310427987873787,
+          "episode_sd": 0.12185078057338028,
+          "episode_cluster_bootstrap_ci": [
+            0.11875485189632017,
+            0.1932038982164269
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.023321030147909434,
+          "episode_sd": 0.01974776303403378,
+          "episode_cluster_bootstrap_ci": [
+            0.017960300460802454,
+            0.029849235516963713
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.3776240271413786,
+          "episode_sd": 0.26553244901640566,
+          "episode_cluster_bootstrap_ci": [
+            0.2997247176237278,
+            0.46322908587710915
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.10964801059362908,
+          "episode_sd": 0.08710755423532178,
+          "episode_cluster_bootstrap_ci": [
+            0.0848994144952296,
+            0.13796453954714993
+          ]
+        }
+      }
+    },
+    "SmolVLA": {
+      "0": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.0,
+          "episode_sd": 0.0,
+          "episode_cluster_bootstrap_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "1": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2039216547967178,
+          "episode_sd": 0.06736435760612473,
+          "episode_cluster_bootstrap_ci": [
+            0.18519983452310826,
+            0.22641344176302589
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.048188347953617684,
+          "episode_sd": 0.010667145858714444,
+          "episode_cluster_bootstrap_ci": [
+            0.04506540587858788,
+            0.051502741943682574
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.46777459573278096,
+          "episode_sd": 0.20269489395364992,
+          "episode_cluster_bootstrap_ci": [
+            0.41019134637068955,
+            0.5332146951665669
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.14824622121862432,
+          "episode_sd": 0.04797288241407502,
+          "episode_cluster_bootstrap_ci": [
+            0.13510542396593164,
+            0.16433320745881372
+          ]
+        }
+      },
+      "2": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2003541322409763,
+          "episode_sd": 0.06651528990306457,
+          "episode_cluster_bootstrap_ci": [
+            0.1822102221285382,
+            0.2226202543386328
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04657251208128724,
+          "episode_sd": 0.010488855472893513,
+          "episode_cluster_bootstrap_ci": [
+            0.043457844927038476,
+            0.049903515320071756
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.46628600317043034,
+          "episode_sd": 0.20970575004515202,
+          "episode_cluster_bootstrap_ci": [
+            0.40465985979460745,
+            0.534019468855836
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.1455343156671182,
+          "episode_sd": 0.04734621798570852,
+          "episode_cluster_bootstrap_ci": [
+            0.13258506295489852,
+            0.16166987137601024
+          ]
+        }
+      },
+      "3": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.20162556022430084,
+          "episode_sd": 0.06652056373756765,
+          "episode_cluster_bootstrap_ci": [
+            0.18323367305760782,
+            0.22399154024050097
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04638080779618301,
+          "episode_sd": 0.010340911484609723,
+          "episode_cluster_bootstrap_ci": [
+            0.04329393460125495,
+            0.04969814024879707
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4723559728384822,
+          "episode_sd": 0.1915620524794457,
+          "episode_cluster_bootstrap_ci": [
+            0.4178068837193578,
+            0.5349264851931986
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.14636701982102784,
+          "episode_sd": 0.04737227761774209,
+          "episode_cluster_bootstrap_ci": [
+            0.13319520491550454,
+            0.16194171953049957
+          ]
+        }
+      },
+      "4": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.20519053842299045,
+          "episode_sd": 0.0680977683263411,
+          "episode_cluster_bootstrap_ci": [
+            0.18623144592392513,
+            0.22791031863066366
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04636824019271679,
+          "episode_sd": 0.010401858045354099,
+          "episode_cluster_bootstrap_ci": [
+            0.043292057432985684,
+            0.04964211145919945
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.4670290946098081,
+          "episode_sd": 0.20736051060794547,
+          "episode_cluster_bootstrap_ci": [
+            0.40804144421318805,
+            0.5329637832714298
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.14882488276886283,
+          "episode_sd": 0.04847598601281099,
+          "episode_cluster_bootstrap_ci": [
+            0.13555946252803122,
+            0.16476232701838936
+          ]
+        }
+      },
+      "5": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2078981270846012,
+          "episode_sd": 0.0715490581970771,
+          "episode_cluster_bootstrap_ci": [
+            0.1886152797415103,
+            0.23201265191417744
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.046843454070365095,
+          "episode_sd": 0.01088670717518568,
+          "episode_cluster_bootstrap_ci": [
+            0.04366256699783897,
+            0.05027675914405198
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.484562463177131,
+          "episode_sd": 0.19401669368563396,
+          "episode_cluster_bootstrap_ci": [
+            0.4302450146436413,
+            0.5485247776568268
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.15078375598380306,
+          "episode_sd": 0.050896081740870416,
+          "episode_cluster_bootstrap_ci": [
+            0.1368481924681916,
+            0.16783352209751384
+          ]
+        }
+      },
+      "6": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.21000045255853284,
+          "episode_sd": 0.07770291453408384,
+          "episode_cluster_bootstrap_ci": [
+            0.1889958516332754,
+            0.23710544621318874
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.046485442291933035,
+          "episode_sd": 0.010813970967240148,
+          "episode_cluster_bootstrap_ci": [
+            0.043261932023365667,
+            0.04988945437135131
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.490325717057031,
+          "episode_sd": 0.20899421224294543,
+          "episode_cluster_bootstrap_ci": [
+            0.42965465598945296,
+            0.5579899672267483
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.1521795294643244,
+          "episode_sd": 0.05521373768431487,
+          "episode_cluster_bootstrap_ci": [
+            0.13738890055648018,
+            0.17069709140340333
+          ]
+        }
+      },
+      "7": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.21582373344229086,
+          "episode_sd": 0.07905310121183995,
+          "episode_cluster_bootstrap_ci": [
+            0.1943879051211215,
+            0.24244246083678445
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04663203873590068,
+          "episode_sd": 0.010832704508118582,
+          "episode_cluster_bootstrap_ci": [
+            0.0434411673127763,
+            0.05014979441459953
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.51462027166334,
+          "episode_sd": 0.20061402259282432,
+          "episode_cluster_bootstrap_ci": [
+            0.45668110696967346,
+            0.5803885929761771
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.15622736621139782,
+          "episode_sd": 0.05615008659330973,
+          "episode_cluster_bootstrap_ci": [
+            0.14092391639469723,
+            0.17506719365826623
+          ]
+        }
+      },
+      "8": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.21717458085566682,
+          "episode_sd": 0.08142959901842933,
+          "episode_cluster_bootstrap_ci": [
+            0.1951500598385554,
+            0.2445509976737286
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.046905371225948685,
+          "episode_sd": 0.011081038311199309,
+          "episode_cluster_bootstrap_ci": [
+            0.04363494021993976,
+            0.050397949793586055
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5161976297105115,
+          "episode_sd": 0.2163393583506195,
+          "episode_cluster_bootstrap_ci": [
+            0.4543557884185802,
+            0.5853491914624881
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.15719467188583058,
+          "episode_sd": 0.05786506169767774,
+          "episode_cluster_bootstrap_ci": [
+            0.14135017600537636,
+            0.1766737527731543
+          ]
+        }
+      },
+      "9": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.22080354235816874,
+          "episode_sd": 0.08381311886425306,
+          "episode_cluster_bootstrap_ci": [
+            0.19791400804533357,
+            0.2492378880299635
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.046751551983134285,
+          "episode_sd": 0.011376822384669815,
+          "episode_cluster_bootstrap_ci": [
+            0.043426401770202336,
+            0.05036335803723888
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5301744971920934,
+          "episode_sd": 0.19374252850469212,
+          "episode_cluster_bootstrap_ci": [
+            0.47496242361476126,
+            0.5929325219135441
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.15968314112632923,
+          "episode_sd": 0.05956130226055418,
+          "episode_cluster_bootstrap_ci": [
+            0.14346742303799506,
+            0.17975612059266252
+          ]
+        }
+      },
+      "10": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.222624566549449,
+          "episode_sd": 0.08561708836607643,
+          "episode_cluster_bootstrap_ci": [
+            0.19942031610017527,
+            0.25165239021013214
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.047160117466998386,
+          "episode_sd": 0.01193162076011057,
+          "episode_cluster_bootstrap_ci": [
+            0.04368256223104098,
+            0.05097634818005706
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5086482714656986,
+          "episode_sd": 0.2263882671006522,
+          "episode_cluster_bootstrap_ci": [
+            0.44293452626272806,
+            0.5824237406497091
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.16100978834538007,
+          "episode_sd": 0.06086261782321375,
+          "episode_cluster_bootstrap_ci": [
+            0.14462091952162542,
+            0.18141333824361466
+          ]
+        }
+      },
+      "11": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.22506014572592142,
+          "episode_sd": 0.08547278194673076,
+          "episode_cluster_bootstrap_ci": [
+            0.2015681277160321,
+            0.2537199868119752
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.047181564768741004,
+          "episode_sd": 0.01204687066803628,
+          "episode_cluster_bootstrap_ci": [
+            0.043586468057916626,
+            0.050957897631837314
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.540668814850421,
+          "episode_sd": 0.19795558852653375,
+          "episode_cluster_bootstrap_ci": [
+            0.48489493599310224,
+            0.6049857548050716
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.16269414893027542,
+          "episode_sd": 0.06078061648613371,
+          "episode_cluster_bootstrap_ci": [
+            0.14604107999279128,
+            0.18294296300707383
+          ]
+        }
+      },
+      "12": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.22448306629473044,
+          "episode_sd": 0.08456334996722745,
+          "episode_cluster_bootstrap_ci": [
+            0.20097076331695432,
+            0.2524441155891359
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.047098175442849576,
+          "episode_sd": 0.011965399909947206,
+          "episode_cluster_bootstrap_ci": [
+            0.043523607252145505,
+            0.05085486495690009
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.527473513202886,
+          "episode_sd": 0.1936616147626549,
+          "episode_cluster_bootstrap_ci": [
+            0.47246525941835615,
+            0.5893749278697187
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.16228309880629124,
+          "episode_sd": 0.06013256528726255,
+          "episode_cluster_bootstrap_ci": [
+            0.14589337486356435,
+            0.18213398572502087
+          ]
+        }
+      },
+      "13": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.22619415279972094,
+          "episode_sd": 0.0814204419706776,
+          "episode_cluster_bootstrap_ci": [
+            0.20406545340320803,
+            0.2529933841244247
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04753546247581518,
+          "episode_sd": 0.0120152600458717,
+          "episode_cluster_bootstrap_ci": [
+            0.04396487136058096,
+            0.051381536591135125
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5514259272367443,
+          "episode_sd": 0.21139175999619597,
+          "episode_cluster_bootstrap_ci": [
+            0.4903937005046221,
+            0.6183465326305122
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.16352709835275195,
+          "episode_sd": 0.05793676763500526,
+          "episode_cluster_bootstrap_ci": [
+            0.14787266672166335,
+            0.1828773832953741
+          ]
+        }
+      },
+      "14": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.2308174945347627,
+          "episode_sd": 0.08506468733071851,
+          "episode_cluster_bootstrap_ci": [
+            0.20766373197518828,
+            0.25881899958939414
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.04747990719825414,
+          "episode_sd": 0.011651911068060464,
+          "episode_cluster_bootstrap_ci": [
+            0.0440738991052029,
+            0.051139785201108214
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5476484792947243,
+          "episode_sd": 0.21731883086947462,
+          "episode_cluster_bootstrap_ci": [
+            0.4843127313038775,
+            0.6163146620615486
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.16672649703486683,
+          "episode_sd": 0.060438914295941705,
+          "episode_cluster_bootstrap_ci": [
+            0.15003494977361623,
+            0.18666796377371528
+          ]
+        }
+      },
+      "15": {
+        "translation": {
+          "episode_count": 40,
+          "mean": 0.230646786044464,
+          "episode_sd": 0.08248018210206368,
+          "episode_cluster_bootstrap_ci": [
+            0.20789874372400638,
+            0.25832567513487115
+          ]
+        },
+        "rotation": {
+          "episode_count": 40,
+          "mean": 0.048007224428036246,
+          "episode_sd": 0.01132877890327412,
+          "episode_cluster_bootstrap_ci": [
+            0.04463611035989253,
+            0.05162633808789457
+          ]
+        },
+        "gripper": {
+          "episode_count": 40,
+          "mean": 0.5487208544540859,
+          "episode_sd": 0.20585890944723784,
+          "episode_cluster_bootstrap_ci": [
+            0.4891560760879685,
+            0.6151231655039617
+          ]
+        },
+        "arm_original": {
+          "episode_count": 40,
+          "mean": 0.1666893786121444,
+          "episode_sd": 0.058572655976921746,
+          "episode_cluster_bootstrap_ci": [
+            0.15067586707752365,
+            0.18622215020371607
+          ]
+        }
+      }
+    }
+  },
+  "native_gripper": {
+    "ACT": {
+      "pairwise_sign_state_disagreement_probability": 0.05951493503131957,
+      "low_margin_disagreement_probability": 0.17828129853991925,
+      "high_margin_disagreement_probability": 0.0,
+      "low_minus_high_margin_disagreement": 0.17828129853991925,
+      "margin_terciles": "original frozen normalized mean-gripper absolute-margin stable rank"
+    },
+    "SmolVLA": {
+      "pairwise_sign_state_disagreement_probability": 0.07245237762563458,
+      "low_margin_disagreement_probability": 0.21710342417889592,
+      "high_margin_disagreement_probability": 0.00015723270440251572,
+      "low_minus_high_margin_disagreement": 0.2169461914744934,
+      "margin_terciles": "original frozen normalized mean-gripper absolute-margin stable rank"
     }
   }
 }
