@@ -69,3 +69,4 @@ No bibliography entries were added or fabricated. Related Work uses only the ver
 - No em dash appears in the Abstract; no prose paragraph exceeds the one-em-dash limit.
 - The compiled log contains **no overfull boxes and no undefined citations or references**.
 - Remaining layout warnings are underfull boxes, concentrated in the narrow provenance table and number-dense Results paragraphs. They do not overflow margins. Final figure artwork will change pagination and should trigger a new layout pass.
+- Tectonic compiled through XeTeX and substituted Latin Modern for unavailable `TU/ptm` Times font shapes. The source is build-clean, but the 6-page count should be rechecked with the intended PaperCept/pdflatex environment because font metrics and final artwork can change pagination.
