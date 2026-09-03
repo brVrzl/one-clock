@@ -1,16 +1,16 @@
 # Overnight ICRA handoff
 
-Updated: 2026-09-03 10:07:54 +0800
+Updated: 2026-09-03 10:08:20 +0800
 
 1. Branch: `exp/icra27-crosssuite-query-allocation`
-2. HEAD: `dc19c4110ecb973d3fa076f10d3e90ebb34d778d`
+2. HEAD: `fd5ea36abb81408d04007f57f61d3e442c52cf4a`
 3. Track-A preregistration SHA: `40549d876c0e09fad4e8033b3206f6018f53ece5`
 4. Reviewer-supplement preregistration SHA: `f44a7605246d4c9ea82f4d19ad61833e8fb13eb8`
 5. Track-A final count: 2700/2700
 6. Track-A technical failure count: 0
 7. Track-A scientific-analysis status: complete; canonical path `/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/analysis.json`
 8. Track-A headline preregistered labels: PENALTY_4X_CONFIRMED=PASS, DOSE_RESPONSE_SUPPORTED=PASS, MECHANISM_PASS_A=PASS, METHOD_PASS_A=FAIL, QUERY_EFFICIENT_TE_LEVEL_PERFORMANCE=PASS
-9. R1A status: 64/1512 complete; 0 unresolved technical failures
+9. R1A status: 66/1512 complete; 0 unresolved technical failures
 10. R1B status: 0/252 complete; 0 unresolved technical failures
 11. R1C status: 0/280 complete; 0 unresolved technical failures
 12. R1D status: 0/100 complete; 0 unresolved technical failures
@@ -18,7 +18,7 @@ Updated: 2026-09-03 10:07:54 +0800
 14. R2 status: 0/160 complete; 0 unresolved technical failures
 15. Active/completed PIDs: master=373835 (active), r1a_worker_0=374922 (active), r1a_worker_1=374923 (active), r1a_worker_2=374924 (active)
 16. Log paths: `/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_reviewer_supplement/orchestration/logs`, `/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/logs`
-17. Completion-marker counts: R1A 64/1512 complete; 0 unresolved technical failures; R1B 0/252 complete; 0 unresolved technical failures; R1C 0/280 complete; 0 unresolved technical failures; R1D 0/100 complete; 0 unresolved technical failures; R2 0/160 complete; 0 unresolved technical failures
+17. Completion-marker counts: R1A 66/1512 complete; 0 unresolved technical failures; R1B 0/252 complete; 0 unresolved technical failures; R1C 0/280 complete; 0 unresolved technical failures; R1D 0/100 complete; 0 unresolved technical failures; R2 0/160 complete; 0 unresolved technical failures
 18. Technical retries: 0
 19. Remaining queue: see `/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_reviewer_supplement/orchestration` markers and master log
 20. Exact resume command: `bash /home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_reviewer_supplement/launch_watcher.sh --resume`
