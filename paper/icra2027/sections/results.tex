@@ -75,30 +75,67 @@ behavioral intervention ranked translation staleness as much more damaging
 than rotation staleness. The disagreement measurement remains valid, but it
 fails as an ordering predictor within the arm.
 
-The remaining diagnostics did not recover a positive explanation. In training
-demonstrations, the probability of no gripper transition within 1.00~s was
-0.675, so persistence alone is insufficient. The prespecified gripper-activity
-occupancy moderator was not supported ($n=30$, Spearman $\rho=0.192$,
-$p=0.309$). Command-discontinuity comparisons cannot distinguish competing
-explanations because conditions differ in their visited states and
-trajectories. Forecastability curves were reported descriptively because no
-curve pattern had been specified in advance as discriminative support, and
-they did not provide a discriminative explanation. The tested diagnostics
-therefore do not identify a positive causal mechanism.
+\begin{table*}[t]
+\centering
+\caption{Mechanism-diagnostic accounting. Each observation is retained at its
+measured scope; none identifies a positive causal explanation.}
+\label{tab:mechanisms}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.34\textwidth}p{0.39\textwidth}}
+\toprule
+Candidate signal & Observation & What it tells us \\
+\midrule
+Same-target dispersion & ACT ranks rotation $>$ translation $>$ gripper;
+behavior ranks translation staleness above rotation staleness. & The metric
+does not predict the within-arm behavioral ordering. \\
+Cross-policy localization & The ACT-minus-SmolVLA localization interval is
+$[-0.0422,+0.2815]$. & Lower gripper dispersion is not ACT-specific. \\
+Gripper persistence & $P(\text{no transition within 1.00 s})=0.675018$. &
+Persistence alone cannot explain useful stale-gripper predictions over this
+window. \\
+Occupancy moderator & $n=30$, Spearman $\rho=0.1922$, $p=0.3089$. & The
+preregistered moderator detects no task-level association. \\
+Command discontinuity & Conditions differ in visited states, trajectories,
+and prediction offsets. & The comparison cannot distinguish trajectory
+composition from execution smoothness. \\
+B3 forecastability & No discriminative curve pattern was fixed in advance;
+the curves did not match the behavioral ordering. & The curves are descriptive
+and do not distinguish the observed ordering. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The tested diagnostics do not identify a positive causal mechanism.
 
 \subsection{Q4: Does Component Structure Matter for Executable Schedules?}
 
-Under dense matched querying, extending gripper commitment produced a clear
-gain when the arm was also committed, whereas the corresponding change with a
-fresh arm was small and uncertain. The four success rates were C00 (fresh arm,
-fresh gripper) 77/140 (55.00\%), C10 (H16 arm, fresh gripper) 76/140
-(54.29\%), C01 (fresh arm, H16 gripper) 81/140 (57.86\%), and C11 (H16 arm,
-H16 gripper) 93/140 (66.43\%). With the arm committed, C11$-$C10 was
-$+12.14$ points, with discordance $20{:}3$, exact $p=0.000488281$, paired
-interval $[+5.71,+18.57]$, and task-cluster interval $[+3.57,+21.43]$.
-With a fresh arm, C01$-$C00 was $+2.86$ points, with discordance $10{:}6$,
-$p=0.454498$, paired interval $[-2.86,+8.57]$, and task-cluster interval
-$[-4.29,+9.29]$.
+Under identical dense querying, extending gripper commitment produced a clear
+gain when the arm was also committed. C11$-$C10 was $+12.14$ points, and both
+canonical intervals were above zero (Table~\ref{tab:r1c}). The corresponding
+C01$-$C00 change with a fresh arm was $+2.86$ points, with both intervals
+spanning zero. Absolute success was 77/140 (55.00\%) for C00, 76/140 (54.29\%)
+for C10, 81/140 (57.86\%) for C01, and 93/140 (66.43\%) for C11.
+
+\begin{table*}[t]
+\centering
+\caption{Dense-query R1C contrasts. Every condition queries the policy at each
+executed step. Effects use first condition minus second condition; discordance
+is first-only:second-only success. Intervals are in percentage points.}
+\label{tab:r1c}
+\scriptsize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrr}
+\toprule
+Contrast & Effect (pp) & Discordance & Exact $p$ & Paired 95\% CI & Task-cluster 95\% CI \\
+\midrule
+C10$-$C00 & $-0.71$ & $18{:}19$ & $1$ & $[-9.29,+7.86]$ & $[-12.14,+10.71]$ \\
+C11$-$C01 & $+8.57$ & $26{:}14$ & $0.0806905$ & $[+0.00,+17.14]$ & $[-2.14,+21.43]$ \\
+C01$-$C00 & $+2.86$ & $10{:}6$ & $0.454498$ & $[-2.86,+8.57]$ & $[-4.29,+9.29]$ \\
+C11$-$C10 & $+12.14$ & $20{:}3$ & $0.000488281$ & $[+5.71,+18.57]$ & $[+3.57,+21.43]$ \\
+C11$-$C00 & $+11.43$ & $28{:}12$ & $0.016589$ & $[+2.86,+20.00]$ & $[-0.71,+23.57]$ \\
+C10$-$C01 & $-3.57$ & $12{:}17$ & $0.458258$ & $[-11.43,+4.29]$ & $[-14.29,+6.43]$ \\
+\bottomrule
+\end{tabular*}
+\end{table*}
 
 Query schedule therefore cannot by itself explain this conditional effect in
 the tested deterministic ACT evaluator. All four conditions queried the policy
@@ -109,6 +146,27 @@ initial state. This identity statement is limited to the tested deterministic
 evaluator.
 
 \input{figures/figure4}
+
+\begin{table*}[t]
+\centering
+\caption{Frozen Track-A execution results. Query rate is measured policy
+queries per executed environment step. Suite entries report successes/150 and
+percentage.}
+\label{tab:tracka}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc}
+\toprule
+Condition & Pooled success & Query rate & LIBERO-10 & Goal & Spatial \\
+\midrule
+H16 & 357/450 (79.33\%) & 0.064864 & 82/150 (54.7\%) & 137/150 (91.3\%) & 138/150 (92.0\%) \\
+H4 & 314/450 (69.78\%) & 0.251156 & 61/150 (40.7\%) & 125/150 (83.3\%) & 128/150 (85.3\%) \\
+ARM4\_GRIP32 & 335/450 (74.44\%) & 0.251318 & 81/150 (54.0\%) & 125/150 (83.3\%) & 129/150 (86.0\%) \\
+H2 & 295/450 (65.56\%) & 0.500720 & 53/150 (35.3\%) & 117/150 (78.0\%) & 125/150 (83.3\%) \\
+ARM2\_GRIP16 & 321/450 (71.33\%) & 0.500907 & 74/150 (49.3\%) & 120/150 (80.0\%) & 127/150 (84.7\%) \\
+TE\_DENSE & 288/450 (64.00\%) & 1.000000 & 55/150 (36.7\%) & 120/150 (80.0\%) & 113/150 (75.3\%) \\
+\bottomrule
+\end{tabular*}
+\end{table*}
 
 Component-resolved commitment also improved executable schedules at two fixed
 arm cadences (Fig.~\ref{fig:tracka}). Extending only gripper commitment from H4
@@ -130,9 +188,22 @@ was 54.7\% on LIBERO-10, 91.3\% on Goal, and 92.0\% on Spatial. Suite identity,
 baseline difficulty, and task semantics covary, so these data do not identify
 the source of the concentration.
 
-Canonical LeRobot v0.4.4 temporal ensembling is a secondary negative result.
-With coefficient 0.01 and chunk length 100, TE\_DENSE heavily weighted old
-predictions in this setup: its realized weighted mean age was 2.249~s, and it
-produced substantially more near-boundary gripper commands than the other
-frozen executors. This configuration is not an implementation bug, and the
-near-boundary commands do not causally explain its full performance loss.
+TE\_DENSE was a secondary frozen Track-A condition, not a headline method
+comparison. It achieved 288/450 successes (64.00\%), compared with 357/450
+(79.33\%) for H16. Under the TE\_DENSE-minus-H16 convention, the difference was
+$-15.333$ points, discordance $14{:}83$, exact
+$p=4.22241\times10^{-13}$, paired interval
+$[-19.333,-11.333]$, and task-cluster interval $[-21.556,-10.000]$ points.
+
+Under this frozen canonical configuration, dense temporal aggregation placed
+substantial weight on old predictions and produced many more near-boundary
+gripper commands. TE\_DENSE used LeRobot v0.4.4 ACTTemporalEnsembler with
+coefficient 0.01 and chunk length 100. The upstream ordering gives greater
+weight to older predictions for a positive coefficient, and a runtime check
+confirmed that direction. Its empirical weighted mean prediction age was
+44.99 steps (2.249~s), with a weighted median of 2.15~s and 95th percentile of
+4.70~s; 52.27\% of normalized weight fell on predictions older than 2.0~s.
+The native gripper command satisfied $|g|<0.50$ on 24.41\% of steps, while its
+1.02\% switch rate was the lowest among the frozen executors. These
+observations characterize the configuration but do not establish that either
+age weighting or intermediate gripper commands caused its performance loss.

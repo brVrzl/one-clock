@@ -7,6 +7,17 @@
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 
+% Draft artwork safeguard. Set \submissionbuildtrue for the submission build;
+% compilation then fails until every placeholder has been replaced.
+\newif\ifsubmissionbuild
+\submissionbuildfalse
+\newcommand{\draftfigureplaceholder}[1]{%
+  \ifsubmissionbuild
+    \PackageError{icra2027}{Draft figure placeholder remains}{Replace all draft figure placeholders before submission}%
+  \else
+    #1%
+  \fi}
+
 \hypersetup{
   pdftitle={Component-Dependent Sensitivity to Stale Predictions in ACT Action-Chunk Execution},
   pdfauthor={},

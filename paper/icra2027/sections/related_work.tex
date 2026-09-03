@@ -3,35 +3,46 @@
 
 \subsection{Action chunking and temporal ensembling}
 
-ACT predicts action chunks and can aggregate overlapping predictions through
-temporal ensembling~\cite{zhao2023act}. Recent analysis studies why chunking can
-improve behavioral cloning and how policy context changes the value of
-open-loop execution~\cite{lazzati2026actionchunking,zeng2026openloop}. We hold
-the trained chunk policy fixed and ask a different question: whether the same
-temporal source assignment has different behavioral consequences across action
-components.
+ACT predicts action chunks to shorten the effective decision horizon and can
+aggregate overlapping same-target predictions at every control step
+~\cite{zhao2023act}. Diffusion Policy combines a receding-horizon controller
+with a diffusion model that generates an action sequence from recent
+observations~\cite{chi2023diffusionpolicy}. Both establish chunk execution as
+part of the policy interface rather than a neutral implementation detail.
+Recent analyses further show how action chunks encode temporal dependencies and
+how policy context changes the value of open-loop commitment
+~\cite{lazzati2026actionchunking,zeng2026openloop}. Our experiments keep the
+trained chunk policy fixed and manipulate only the temporal source used at
+execution.
 
 \subsection{Whole-policy execution adaptation}
 
-Replanning methods select how much of a chunk to execute before the next policy
-query. Their signals include attention, predicted motion phase, learned
-continue-or-replan decisions, visual deviation, and verified prefixes
-~\cite{wang2026autohorizon,nie2026pace,zhao2026dehp,xu2026bcp,
-pan2026vlacorrector,chen2026a3}. RTC instead handles asynchronous inference by
-preserving actions that must execute and inpainting the remainder of a new
-chunk~\cite{black2025rtc}. These methods primarily apply a temporal decision to
-the whole action. Our executable comparisons hold the arm cadence fixed while
-changing gripper commitment.
+Adaptive executors decide how much of a predicted chunk to commit before
+replanning. BID samples candidate chunks and selects among them using backward
+coherence with earlier decisions and forward contrast among future plans
+~\cite{liu2025bid}. AutoHorizon uses model attention to estimate a shared
+predictive limit for each chunk~\cite{wang2026autohorizon}. PACE selects a
+shared horizon from low-speed valleys in the predicted motion
+~\cite{nie2026pace}. DEHP learns a lightweight horizon predictor with
+reinforcement learning while freezing the base chunk policy
+~\cite{zhao2026dehp}. BCP learns a sequence of continue-or-replan decisions
+over a chunk~\cite{xu2026bcp}. VLA-Corrector monitors visual-feature deviation
+and truncates a chunk when corrective replanning is indicated
+~\cite{pan2026vlacorrector}. A3 instead accepts the longest action prefix that
+passes its verification procedure~\cite{chen2026a3}. These signals and
+objectives differ, but each method makes a temporal decision for the predicted
+action as a whole.
 
 \subsection{Stale predictions and asynchronous execution}
 
-Staleness arises whenever inference and control run on different clocks or an
-executor reuses a stored prediction. RTC directly addresses asynchronous
-chunk generation~\cite{black2025rtc}; adaptive-horizon methods address when to
-replan~\cite{wang2026autohorizon,nie2026pace}. Same-target alignment instead
-changes the source age of selected components while preserving their intended
-physical target. This diagnostic isolates neither latency nor compute and
-couples observation age with prediction lookahead.
+Staleness also arises when inference and control run on different clocks. RTC
+addresses asynchronous chunk generation by preserving actions that must execute
+and inpainting a consistent continuation of the next chunk
+~\cite{black2025rtc}. Same-target alignment asks a complementary measurement
+question: how does source age affect selected components when every command
+still targets its intended physical step? The diagnostic does not isolate
+latency or computational cost, and it couples observation age with prediction
+lookahead.
 
 \subsection{Heterogeneous action generation}
 
@@ -40,3 +51,9 @@ levels. ARP permits different chunk sizes for different action types
 ~\cite{zhang2025arp}. Our policy still predicts one seven-dimensional chunk;
 component identity enters only when the executor selects which same-target
 source supplies translation, rotation, or gripper commands.
+
+We do not propose an alternative to these adaptive execution methods. We ask
+whether a temporal decision applied to an action chunk has the same behavioral
+consequence for every action component, and we measure that dependence rather
+than optimize a new executor. Track A tests a bounded operational consequence
+at fixed arm cadences; it is not a claim of superiority over adaptive methods.
