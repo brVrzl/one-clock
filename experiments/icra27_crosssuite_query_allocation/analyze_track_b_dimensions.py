@@ -147,7 +147,11 @@ def main() -> None:
         ("native_gripper_sign_disagreement.csv", native_sign_rows),
     ):
         with (output_dir / name).open("w", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
+            kwargs = {} if name in {
+                "episode_dimension_dispersion.csv",
+                "episode_age_disagreement.csv",
+            } else {"lineterminator": "\n"}
+            writer = csv.DictWriter(handle, fieldnames=list(rows[0]), **kwargs)
             writer.writeheader()
             writer.writerows(rows)
 

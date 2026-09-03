@@ -6,6 +6,7 @@ SUPPLEMENT="${ROOT}/../icra27_reviewer_supplement"
 PYTHON="/home/wjq/workspace/venvs/libero_act/bin/python"
 ORCH="${ROOT}/orchestration"
 mkdir -p "${ORCH}"
+mkdir -p "${ROOT}/track_b/forecast/markers"
 
 fail() {
   printf 'FAILED stage=%s time=%s\n' "$1" "$(date --iso-8601=seconds)" > "${ORCH}/ANALYSIS_FOLLOWUP_FAILED"

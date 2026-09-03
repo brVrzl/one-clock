@@ -215,7 +215,7 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     with (output_dir / "lag_metrics.csv").open("w", newline="") as handle:
         fieldnames = sorted({key for row in tidy for key in row})
-        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader(); writer.writerows(tidy)
     with (output_dir / "transition_distance.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(transition_rows[0]), lineterminator="\n")
