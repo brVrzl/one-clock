@@ -71,13 +71,17 @@ metric.
 
 If and only if the temporal-contract audit establishes an unambiguous mapping,
 compare the complete ACT B3 future-action forecast curves with the complete
-R1A behavioral sensitivity curves on a seconds-first axis. Use every frozen
-R1A age `d={2,4,8,12,16,20,32}` and the corresponding B3 offsets, with no lag
-selection. The table must include B3 arm, translation, rotation, gripper-value,
+R1A behavioral sensitivity curves on a seconds-first axis. The provenance-only
+timebase audit resolved the 20 Hz R1A ages `d={2,4,8,12,16,20,32}` to the exact
+10 Hz B3 offsets `k={1,2,4,6,8,10,16}` at matched times
+`{0.1,0.2,0.4,0.6,0.8,1.0,1.6}` seconds, so no interpolation is used. The
+table must include B3 arm, translation, rotation, gripper-value,
 and gripper-sign forecast quantities and R1A `Fresh-A_d_G0` and
 `Fresh-A0_G_d`. This is cross-cohort descriptive characterization, not a
 significance-gated hypothesis. If time alignment is ambiguous, report the
-comparison as not identifiable and keep native step axes separate.
+comparison as not identifiable and keep native step axes separate. The full
+B3 offset grid `0..32` and every frozen R1A age remain reported in their own
+canonical analyses; this matched-time table is not a lag-selection rule.
 
 ## M5. Censoring-aware B2 persistence
 

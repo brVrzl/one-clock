@@ -48,7 +48,9 @@
   "m4_b3_r1a": {
     "status": "CHARACTERIZATION_NOT_SIGNIFICANCE_GATED",
     "r1a_ages": [2, 4, 8, 12, 16, 20, 32],
-    "b3_offsets": [2, 4, 8, 12, 16, 20, 32],
+    "b3_offsets_at_matched_physical_times": [1, 2, 4, 6, 8, 10, 16],
+    "matched_seconds": [0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.6],
+    "full_b3_offsets_still_reported": [0, 32],
     "b3_metrics": ["arm_rmse", "translation_rmse", "rotation_rmse", "gripper_absolute_error", "gripper_sign_disagreement"],
     "r1a_metrics": ["Fresh-A_d_G0", "Fresh-A0_G_d"],
     "primary_axis": "seconds if and only if timebase mapping is unambiguous",
