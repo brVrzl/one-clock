@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run the frozen Track-A analysis exactly once and freeze canonical artifacts."""
 
-import csv, hashlib, json, os, subprocess
+import csv, hashlib, json, os, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -15,7 +15,7 @@ fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
 os.write(fd, f"pid={os.getpid()}\n".encode()); os.close(fd)
 script = TRACK / "analyze_track_a.py"
 assert hashlib.sha256(script.read_bytes()).hexdigest() == "ee5a7e91a865b41fc20305f4d6a4245b64a555a81ee68a963b4a1873151b2b08"
-subprocess.run(["python", str(script)], check=True, cwd=TRACK.parents[1])
+subprocess.run([sys.executable, str(script)], check=True, cwd=TRACK.parents[1])
 data = json.loads((TRACK / "track_a/analysis.json").read_text())
 assert data["status"] == "COMPLETE" and data["validated_results"] == 2700
 with (TRACK / "track_a/condition_summaries.csv").open("w", newline="") as f:

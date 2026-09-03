@@ -22,5 +22,5 @@ spec = spec_from_file_location("track_a_runner", TRACK / "run_track_a.py")
 module = module_from_spec(spec); spec.loader.exec_module(module)
 for cell in cells:
     module.validate_result(cell, TRACK / "track_a/results" / f"{cell['cell_id']}.json")
-subprocess.run(["python", str(TRACK / "validate_phase0.py"), "--completed-track-a"], check=True)
+subprocess.run([sys.executable, str(TRACK / "validate_phase0.py"), "--completed-track-a"], check=True)
 print(json.dumps({"status": "PASS", "complete": 2700, "technical_failures": 0}))

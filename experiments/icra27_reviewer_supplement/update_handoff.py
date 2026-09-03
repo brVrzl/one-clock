@@ -12,8 +12,15 @@ def status(phase):
 def pids():
     rows=[]
     for path in sorted((ROOT/"orchestration/pids").glob("*.pid")):
-        try: pid=int(path.read_text().strip()); live=Path(f"/proc/{pid}").exists()
-        except Exception: pid=-1; live=False
+        try:
+            pid=int(path.read_text().strip())
+        except Exception:
+            pid=-1
+        try:
+            cmdline=Path(f"/proc/{pid}/cmdline").read_bytes().replace(b"\0",b" ").decode(errors="replace")
+            live=("master_pipeline.sh" in cmdline or "resume_master.sh" in cmdline) if path.stem == "master" else "run_queue.py" in cmdline
+        except Exception:
+            live=False
         rows.append(f"{path.stem}={pid} ({'active' if live else 'completed'})")
     return ", ".join(rows) or "none"
 prereg=(ROOT/"PREREGISTRATION_COMMIT").read_text().strip() if (ROOT/"PREREGISTRATION_COMMIT").is_file() else "pending"
@@ -21,6 +28,8 @@ track=ROOT.parent/"icra27_crosssuite_query_allocation"
 ta_complete=len(list((track/"track_a/markers").glob("*.complete"))); ta_failed=len(list((track/"track_a/markers").glob("*.technical_failed")))
 attempts=sum(len(json.loads(p.read_text()).get("attempts",[])) for p in (ROOT/"attempts").rglob("*.json")) if (ROOT/"attempts").exists() else 0
 resume=f"bash {ROOT/'launch_watcher.sh'} --resume"+""
+failure=(ROOT/"orchestration/PIPELINE_FAILED").read_text().strip() if (ROOT/"orchestration/PIPELINE_FAILED").is_file() else "none"
+start_epoch=(ROOT/"orchestration/pipeline_start_epoch").read_text().strip() if (ROOT/"orchestration/pipeline_start_epoch").is_file() else "not started"
 text=f"""# Overnight ICRA handoff
 
 Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
@@ -45,5 +54,8 @@ Updated: {time.strftime('%Y-%m-%d %H:%M:%S %z')}
 18. Technical retries: {attempts}
 19. Remaining queue: see `{ROOT/'orchestration'}` markers and master log
 20. Exact resume command: `{resume}`
+
+Pipeline failure marker: `{failure}`
+Original pipeline start epoch: `{start_epoch}` (preserved on `--resume`)
 """
 (ROOT/"HANDOFF.md").write_text(text)
