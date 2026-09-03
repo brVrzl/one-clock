@@ -1,0 +1,1568 @@
+{
+  "status": "COMPLETE",
+  "preregistration_commit": "40549d876c0e09fad4e8033b3206f6018f53ece5",
+  "validated_results": 2700,
+  "task_count": 30,
+  "paired_blocks": 450,
+  "method_summaries": {
+    "H16": {
+      "successes": 357,
+      "N": 450,
+      "success_rate": 0.7933333333333333,
+      "environment_steps": 92656,
+      "policy_queries": 6010,
+      "query_rate": 0.06486358141944397,
+      "wall_clock_seconds_sum": 2567.156098733889,
+      "wall_clock_seconds_mean_episode": 5.704791330519753
+    },
+    "H4": {
+      "successes": 314,
+      "N": 450,
+      "success_rate": 0.6977777777777778,
+      "environment_steps": 100794,
+      "policy_queries": 25315,
+      "query_rate": 0.2511558227672282,
+      "wall_clock_seconds_sum": 3930.8846982561518,
+      "wall_clock_seconds_mean_episode": 8.735299329458115
+    },
+    "ARM4_GRIP32": {
+      "successes": 335,
+      "N": 450,
+      "success_rate": 0.7444444444444445,
+      "environment_steps": 96201,
+      "policy_queries": 24177,
+      "query_rate": 0.2513175538715814,
+      "wall_clock_seconds_sum": 3778.226224778453,
+      "wall_clock_seconds_mean_episode": 8.396058277285452
+    },
+    "H2": {
+      "successes": 295,
+      "N": 450,
+      "success_rate": 0.6555555555555556,
+      "environment_steps": 106321,
+      "policy_queries": 53237,
+      "query_rate": 0.5007195191918812,
+      "wall_clock_seconds_sum": 5922.099316030042,
+      "wall_clock_seconds_mean_episode": 13.160220702288983
+    },
+    "ARM2_GRIP16": {
+      "successes": 321,
+      "N": 450,
+      "success_rate": 0.7133333333333334,
+      "environment_steps": 99268,
+      "policy_queries": 49724,
+      "query_rate": 0.5009066365797639,
+      "wall_clock_seconds_sum": 5563.690168300178,
+      "wall_clock_seconds_mean_episode": 12.363755929555952
+    },
+    "TE_DENSE": {
+      "successes": 288,
+      "N": 450,
+      "success_rate": 0.64,
+      "environment_steps": 105947,
+      "policy_queries": 105947,
+      "query_rate": 1.0,
+      "wall_clock_seconds_sum": 8993.31300985138,
+      "wall_clock_seconds_mean_episode": 19.985140021891954
+    }
+  },
+  "contrasts": {
+    "H16-H4": {
+      "contrast": "H16-H4",
+      "first_successes": 357,
+      "second_successes": 314,
+      "N": 450,
+      "first_only": 60,
+      "second_only": 17,
+      "delta_percentage_points": 9.555555555555555,
+      "exact_two_sided_mcnemar_p": 8.909847968334874e-07,
+      "paired_bootstrap_ci_percentage_points": [
+        5.777777777777778,
+        13.333333333333334
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        4.444444444444444,
+        15.333333333333336
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 20.0,
+        "libero_10:task1": 40.0,
+        "libero_10:task2": 13.333333333333334,
+        "libero_10:task3": 0.0,
+        "libero_10:task4": 0.0,
+        "libero_10:task5": 6.666666666666667,
+        "libero_10:task6": -20.0,
+        "libero_10:task7": 13.333333333333334,
+        "libero_10:task8": 6.666666666666667,
+        "libero_10:task9": 60.0,
+        "libero_goal:task0": 20.0,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": 26.666666666666668,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": 6.666666666666667,
+        "libero_goal:task6": 13.333333333333334,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 13.333333333333334,
+        "libero_spatial:task0": -6.666666666666667,
+        "libero_spatial:task1": 13.333333333333334,
+        "libero_spatial:task2": 0.0,
+        "libero_spatial:task3": -13.333333333333334,
+        "libero_spatial:task4": 13.333333333333334,
+        "libero_spatial:task5": 13.333333333333334,
+        "libero_spatial:task6": 0.0,
+        "libero_spatial:task7": 26.666666666666668,
+        "libero_spatial:task8": 20.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": 9.195402298850576
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": 8.505747126436782
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": 9.42528735632184
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": 9.655172413793105
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": 10.574712643678161
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": 9.655172413793105
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": 7.816091954022989
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": 9.195402298850574
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": 8.96551724137931
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": 9.655172413793103
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": 10.114942528735634
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": 10.344827586206899
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": 9.425287356321839
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": 9.885057471264368
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": 8.96551724137931
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": 9.195402298850574
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": 9.885057471264368
+        }
+      ],
+      "loto_positive": 30,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": 14.000000000000002,
+        "libero_goal": 8.0,
+        "libero_spatial": 6.666666666666667
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": 7.333333333333333,
+        "libero_goal": 10.333333333333334,
+        "libero_spatial": 11.0
+      },
+      "leave_one_suite_out_positive": 3
+    },
+    "H4-H2": {
+      "contrast": "H4-H2",
+      "first_successes": 314,
+      "second_successes": 295,
+      "N": 450,
+      "first_only": 32,
+      "second_only": 13,
+      "delta_percentage_points": 4.222222222222222,
+      "exact_two_sided_mcnemar_p": 0.00660882284228137,
+      "paired_bootstrap_ci_percentage_points": [
+        1.3333333333333335,
+        7.111111111111111
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        1.3333333333333333,
+        7.111111111111114
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": -6.666666666666667,
+        "libero_10:task1": 13.333333333333334,
+        "libero_10:task2": 6.666666666666667,
+        "libero_10:task3": 0.0,
+        "libero_10:task4": 20.0,
+        "libero_10:task5": 6.666666666666667,
+        "libero_10:task6": 20.0,
+        "libero_10:task7": 6.666666666666667,
+        "libero_10:task8": 0.0,
+        "libero_10:task9": -13.333333333333334,
+        "libero_goal:task0": 20.0,
+        "libero_goal:task1": 6.666666666666667,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": 6.666666666666667,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": 6.666666666666667,
+        "libero_goal:task6": 0.0,
+        "libero_goal:task7": 6.666666666666667,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 6.666666666666667,
+        "libero_spatial:task0": 6.666666666666667,
+        "libero_spatial:task1": -6.666666666666667,
+        "libero_spatial:task2": 13.333333333333334,
+        "libero_spatial:task3": 6.666666666666667,
+        "libero_spatial:task4": -6.666666666666667,
+        "libero_spatial:task5": 6.666666666666667,
+        "libero_spatial:task6": 13.333333333333334,
+        "libero_spatial:task7": -13.333333333333334,
+        "libero_spatial:task8": 0.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": 4.597701149425288
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": 3.908045977011495
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": 4.8275862068965525
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": 4.367816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": 3.9080459770114944
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": 3.9080459770114944
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": 4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": 4.3678160919540225
+        }
+      ],
+      "loto_positive": 30,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": 5.333333333333334,
+        "libero_goal": 5.333333333333334,
+        "libero_spatial": 2.0
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": 3.6666666666666665,
+        "libero_goal": 3.6666666666666665,
+        "libero_spatial": 5.333333333333334
+      },
+      "leave_one_suite_out_positive": 3
+    },
+    "ARM4_GRIP32-H4": {
+      "contrast": "ARM4_GRIP32-H4",
+      "first_successes": 335,
+      "second_successes": 314,
+      "N": 450,
+      "first_only": 32,
+      "second_only": 11,
+      "delta_percentage_points": 4.666666666666667,
+      "exact_two_sided_mcnemar_p": 0.001913961001264397,
+      "paired_bootstrap_ci_percentage_points": [
+        2.0,
+        7.555555555555555
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        0.6666666666666664,
+        9.111111111111114
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 33.33333333333333,
+        "libero_10:task1": 6.666666666666667,
+        "libero_10:task2": 20.0,
+        "libero_10:task3": 0.0,
+        "libero_10:task4": 6.666666666666667,
+        "libero_10:task5": 0.0,
+        "libero_10:task6": -13.333333333333334,
+        "libero_10:task7": 13.333333333333334,
+        "libero_10:task8": 33.33333333333333,
+        "libero_10:task9": 33.33333333333333,
+        "libero_goal:task0": 0.0,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": 6.666666666666667,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": 0.0,
+        "libero_goal:task6": 0.0,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": -6.666666666666667,
+        "libero_spatial:task0": 0.0,
+        "libero_spatial:task1": 6.666666666666667,
+        "libero_spatial:task2": 0.0,
+        "libero_spatial:task3": -6.666666666666667,
+        "libero_spatial:task4": 6.666666666666667,
+        "libero_spatial:task5": -13.333333333333334,
+        "libero_spatial:task6": -6.666666666666667,
+        "libero_spatial:task7": 20.0,
+        "libero_spatial:task8": 0.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": 5.287356321839081
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": 4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": 3.67816091954023
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": 5.057471264367816
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": 5.057471264367817
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": 5.287356321839081
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": 5.057471264367816
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": 4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": 4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": 4.827586206896552
+        }
+      ],
+      "loto_positive": 30,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": 13.333333333333334,
+        "libero_goal": 0.0,
+        "libero_spatial": 0.6666666666666667
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": 0.33333333333333337,
+        "libero_goal": 7.000000000000001,
+        "libero_spatial": 6.666666666666667
+      },
+      "leave_one_suite_out_positive": 3
+    },
+    "ARM2_GRIP16-H2": {
+      "contrast": "ARM2_GRIP16-H2",
+      "first_successes": 321,
+      "second_successes": 295,
+      "N": 450,
+      "first_only": 28,
+      "second_only": 2,
+      "delta_percentage_points": 5.777777777777778,
+      "exact_two_sided_mcnemar_p": 8.67992639541626e-07,
+      "paired_bootstrap_ci_percentage_points": [
+        3.5555555555555554,
+        8.222222222222223
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        2.6666666666666665,
+        9.555555555555555
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 6.666666666666667,
+        "libero_10:task1": 26.666666666666668,
+        "libero_10:task2": 13.333333333333334,
+        "libero_10:task3": 6.666666666666667,
+        "libero_10:task4": 40.0,
+        "libero_10:task5": 0.0,
+        "libero_10:task6": 6.666666666666667,
+        "libero_10:task7": 20.0,
+        "libero_10:task8": 0.0,
+        "libero_10:task9": 20.0,
+        "libero_goal:task0": 0.0,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": 6.666666666666667,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": 0.0,
+        "libero_goal:task6": 0.0,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 13.333333333333334,
+        "libero_spatial:task0": 0.0,
+        "libero_spatial:task1": 0.0,
+        "libero_spatial:task2": 6.666666666666667,
+        "libero_spatial:task3": 0.0,
+        "libero_spatial:task4": 0.0,
+        "libero_spatial:task5": 0.0,
+        "libero_spatial:task6": 6.666666666666667,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": 6.666666666666667,
+        "libero_spatial:task9": -6.666666666666667
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": 5.057471264367816
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": 5.517241379310344
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": 4.597701149425287
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": 5.287356321839081
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": 5.287356321839081
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": 5.517241379310345
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": 5.977011494252873
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": 5.747126436781609
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": 6.206896551724138
+        }
+      ],
+      "loto_positive": 30,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": 14.000000000000002,
+        "libero_goal": 2.0,
+        "libero_spatial": 1.3333333333333335
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": 1.6666666666666667,
+        "libero_goal": 7.666666666666666,
+        "libero_spatial": 8.0
+      },
+      "leave_one_suite_out_positive": 3
+    },
+    "ARM4_GRIP32-H16": {
+      "contrast": "ARM4_GRIP32-H16",
+      "first_successes": 335,
+      "second_successes": 357,
+      "N": 450,
+      "first_only": 24,
+      "second_only": 46,
+      "delta_percentage_points": -4.888888888888889,
+      "exact_two_sided_mcnemar_p": 0.011526409654363481,
+      "paired_bootstrap_ci_percentage_points": [
+        -8.666666666666668,
+        -1.3333333333333335
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -9.333333333333336,
+        -0.22222222222222252
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": 13.333333333333334,
+        "libero_10:task1": -33.33333333333333,
+        "libero_10:task2": 6.666666666666667,
+        "libero_10:task3": 0.0,
+        "libero_10:task4": 6.666666666666667,
+        "libero_10:task5": -6.666666666666667,
+        "libero_10:task6": 6.666666666666667,
+        "libero_10:task7": 0.0,
+        "libero_10:task8": 26.666666666666668,
+        "libero_10:task9": -26.666666666666668,
+        "libero_goal:task0": -20.0,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": -20.0,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": -6.666666666666667,
+        "libero_goal:task6": -13.333333333333334,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": -20.0,
+        "libero_spatial:task0": 6.666666666666667,
+        "libero_spatial:task1": -6.666666666666667,
+        "libero_spatial:task2": 0.0,
+        "libero_spatial:task3": 6.666666666666667,
+        "libero_spatial:task4": -6.666666666666667,
+        "libero_spatial:task5": -26.666666666666668,
+        "libero_spatial:task6": -6.666666666666667,
+        "libero_spatial:task7": -6.666666666666667,
+        "libero_spatial:task8": -20.0,
+        "libero_spatial:task9": 0.0
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": -5.517241379310344
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": -3.9080459770114944
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": -5.287356321839081
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": -5.287356321839081
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": -5.287356321839081
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": -5.9770114942528725
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": -4.137931034482759
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": -4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": -4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": -4.597701149425287
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": -4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": -5.287356321839081
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": -5.057471264367816
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": -5.287356321839081
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": -4.137931034482759
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": -4.827586206896552
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": -4.3678160919540225
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": -5.057471264367816
+        }
+      ],
+      "loto_positive": 0,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": -0.6666666666666667,
+        "libero_goal": -8.0,
+        "libero_spatial": -6.0
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": -7.000000000000001,
+        "libero_goal": -3.3333333333333335,
+        "libero_spatial": -4.333333333333334
+      },
+      "leave_one_suite_out_positive": 0
+    },
+    "ARM2_GRIP16-H16": {
+      "contrast": "ARM2_GRIP16-H16",
+      "first_successes": 321,
+      "second_successes": 357,
+      "N": 450,
+      "first_only": 24,
+      "second_only": 60,
+      "delta_percentage_points": -8.0,
+      "exact_two_sided_mcnemar_p": 0.00010714768358467153,
+      "paired_bootstrap_ci_percentage_points": [
+        -12.0,
+        -4.222222222222222
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -12.222222222222225,
+        -3.7777777777777777
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": -6.666666666666667,
+        "libero_10:task1": -26.666666666666668,
+        "libero_10:task2": -6.666666666666667,
+        "libero_10:task3": 6.666666666666667,
+        "libero_10:task4": 20.0,
+        "libero_10:task5": -13.333333333333334,
+        "libero_10:task6": 6.666666666666667,
+        "libero_10:task7": 0.0,
+        "libero_10:task8": -6.666666666666667,
+        "libero_10:task9": -26.666666666666668,
+        "libero_goal:task0": -40.0,
+        "libero_goal:task1": -6.666666666666667,
+        "libero_goal:task2": 0.0,
+        "libero_goal:task3": -26.666666666666668,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": -13.333333333333334,
+        "libero_goal:task6": -13.333333333333334,
+        "libero_goal:task7": -6.666666666666667,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": -6.666666666666667,
+        "libero_spatial:task0": 0.0,
+        "libero_spatial:task1": -6.666666666666667,
+        "libero_spatial:task2": -6.666666666666667,
+        "libero_spatial:task3": 6.666666666666667,
+        "libero_spatial:task4": -6.666666666666667,
+        "libero_spatial:task5": -20.0,
+        "libero_spatial:task6": -6.666666666666667,
+        "libero_spatial:task7": -13.333333333333334,
+        "libero_spatial:task8": -13.333333333333334,
+        "libero_spatial:task9": -6.666666666666667
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": -7.3563218390804614
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": -8.505747126436782
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": -8.965517241379311
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": -7.816091954022989
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": -8.505747126436782
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": -8.275862068965518
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": -7.35632183908046
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": -6.896551724137931
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": -8.275862068965518
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": -7.35632183908046
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": -8.275862068965518
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": -7.816091954022989
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": -7.816091954022989
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": -8.275862068965518
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": -8.275862068965518
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": -8.505747126436782
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": -7.586206896551725
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": -8.045977011494253
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": -7.816091954022989
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": -7.816091954022989
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": -8.045977011494251
+        }
+      ],
+      "loto_positive": 0,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": -5.333333333333334,
+        "libero_goal": -11.333333333333332,
+        "libero_spatial": -7.333333333333333
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": -9.333333333333334,
+        "libero_goal": -6.333333333333334,
+        "libero_spatial": -8.333333333333332
+      },
+      "leave_one_suite_out_positive": 0
+    },
+    "TE_DENSE-H16": {
+      "contrast": "TE_DENSE-H16",
+      "first_successes": 288,
+      "second_successes": 357,
+      "N": 450,
+      "first_only": 14,
+      "second_only": 83,
+      "delta_percentage_points": -15.333333333333332,
+      "exact_two_sided_mcnemar_p": 4.2224144708722075e-13,
+      "paired_bootstrap_ci_percentage_points": [
+        -19.333333333333332,
+        -11.333333333333332
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -21.555555555555554,
+        -10.0
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": -33.33333333333333,
+        "libero_10:task1": -6.666666666666667,
+        "libero_10:task2": -13.333333333333334,
+        "libero_10:task3": -66.66666666666666,
+        "libero_10:task4": -33.33333333333333,
+        "libero_10:task5": -13.333333333333334,
+        "libero_10:task6": 6.666666666666667,
+        "libero_10:task7": -6.666666666666667,
+        "libero_10:task8": -6.666666666666667,
+        "libero_10:task9": -6.666666666666667,
+        "libero_goal:task0": -26.666666666666668,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 6.666666666666667,
+        "libero_goal:task3": -46.666666666666664,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": -6.666666666666667,
+        "libero_goal:task6": -26.666666666666668,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": -13.333333333333334,
+        "libero_spatial:task0": -20.0,
+        "libero_spatial:task1": -40.0,
+        "libero_spatial:task2": -13.333333333333334,
+        "libero_spatial:task3": -6.666666666666667,
+        "libero_spatial:task4": -20.0,
+        "libero_spatial:task5": -20.0,
+        "libero_spatial:task6": -6.666666666666667,
+        "libero_spatial:task7": -6.666666666666667,
+        "libero_spatial:task8": -26.666666666666668,
+        "libero_spatial:task9": -6.666666666666667
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": -14.71264367816092
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": -15.402298850574711
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": -13.563218390804598
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": -14.71264367816092
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": -15.402298850574711
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": -16.091954022988503
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": -14.942528735632186
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": -15.86206896551724
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": -16.091954022988503
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": -14.252873563218394
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": -15.862068965517237
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": -14.942528735632182
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": -15.862068965517237
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": -15.862068965517237
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": -15.402298850574711
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": -15.172413793103445
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": -14.482758620689657
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": -15.402298850574711
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": -15.632183908045974
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": -15.172413793103445
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": -15.172413793103445
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": -15.632183908045977
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": -15.632183908045977
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": -14.942528735632182
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": -15.632183908045977
+        }
+      ],
+      "loto_positive": 0,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": -18.0,
+        "libero_goal": -11.333333333333332,
+        "libero_spatial": -16.666666666666664
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": -14.000000000000002,
+        "libero_goal": -17.333333333333336,
+        "libero_spatial": -14.666666666666666
+      },
+      "leave_one_suite_out_positive": 0
+    },
+    "TE_DENSE-ARM4_GRIP32": {
+      "contrast": "TE_DENSE-ARM4_GRIP32",
+      "first_successes": 288,
+      "second_successes": 335,
+      "N": 450,
+      "first_only": 31,
+      "second_only": 78,
+      "delta_percentage_points": -10.444444444444445,
+      "exact_two_sided_mcnemar_p": 7.733924871438956e-06,
+      "paired_bootstrap_ci_percentage_points": [
+        -14.888888888888888,
+        -6.0
+      ],
+      "task_cluster_bootstrap_ci_percentage_points": [
+        -17.777777777777775,
+        -3.7777777777777786
+      ],
+      "per_task_delta_percentage_points": {
+        "libero_10:task0": -46.666666666666664,
+        "libero_10:task1": 26.666666666666668,
+        "libero_10:task2": -20.0,
+        "libero_10:task3": -66.66666666666666,
+        "libero_10:task4": -40.0,
+        "libero_10:task5": -6.666666666666667,
+        "libero_10:task6": 0.0,
+        "libero_10:task7": -6.666666666666667,
+        "libero_10:task8": -33.33333333333333,
+        "libero_10:task9": 20.0,
+        "libero_goal:task0": -6.666666666666667,
+        "libero_goal:task1": 0.0,
+        "libero_goal:task2": 6.666666666666667,
+        "libero_goal:task3": -26.666666666666668,
+        "libero_goal:task4": 0.0,
+        "libero_goal:task5": 0.0,
+        "libero_goal:task6": -13.333333333333334,
+        "libero_goal:task7": 0.0,
+        "libero_goal:task8": 0.0,
+        "libero_goal:task9": 6.666666666666667,
+        "libero_spatial:task0": -26.666666666666668,
+        "libero_spatial:task1": -33.33333333333333,
+        "libero_spatial:task2": -13.333333333333334,
+        "libero_spatial:task3": -13.333333333333334,
+        "libero_spatial:task4": -13.333333333333334,
+        "libero_spatial:task5": 6.666666666666667,
+        "libero_spatial:task6": 0.0,
+        "libero_spatial:task7": 0.0,
+        "libero_spatial:task8": -6.666666666666667,
+        "libero_spatial:task9": -6.666666666666667
+      },
+      "loto": [
+        {
+          "omitted_task": "libero_10:task0",
+          "delta_percentage_points": -9.195402298850578
+        },
+        {
+          "omitted_task": "libero_10:task1",
+          "delta_percentage_points": -11.724137931034484
+        },
+        {
+          "omitted_task": "libero_10:task2",
+          "delta_percentage_points": -10.114942528735634
+        },
+        {
+          "omitted_task": "libero_10:task3",
+          "delta_percentage_points": -8.505747126436782
+        },
+        {
+          "omitted_task": "libero_10:task4",
+          "delta_percentage_points": -9.42528735632184
+        },
+        {
+          "omitted_task": "libero_10:task5",
+          "delta_percentage_points": -10.574712643678161
+        },
+        {
+          "omitted_task": "libero_10:task6",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_10:task7",
+          "delta_percentage_points": -10.574712643678161
+        },
+        {
+          "omitted_task": "libero_10:task8",
+          "delta_percentage_points": -9.655172413793105
+        },
+        {
+          "omitted_task": "libero_10:task9",
+          "delta_percentage_points": -11.494252873563218
+        },
+        {
+          "omitted_task": "libero_goal:task0",
+          "delta_percentage_points": -10.574712643678161
+        },
+        {
+          "omitted_task": "libero_goal:task1",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_goal:task2",
+          "delta_percentage_points": -11.03448275862069
+        },
+        {
+          "omitted_task": "libero_goal:task3",
+          "delta_percentage_points": -9.88505747126437
+        },
+        {
+          "omitted_task": "libero_goal:task4",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_goal:task5",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_goal:task6",
+          "delta_percentage_points": -10.344827586206899
+        },
+        {
+          "omitted_task": "libero_goal:task7",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_goal:task8",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_goal:task9",
+          "delta_percentage_points": -11.03448275862069
+        },
+        {
+          "omitted_task": "libero_spatial:task0",
+          "delta_percentage_points": -9.88505747126437
+        },
+        {
+          "omitted_task": "libero_spatial:task1",
+          "delta_percentage_points": -9.655172413793107
+        },
+        {
+          "omitted_task": "libero_spatial:task2",
+          "delta_percentage_points": -10.344827586206899
+        },
+        {
+          "omitted_task": "libero_spatial:task3",
+          "delta_percentage_points": -10.344827586206899
+        },
+        {
+          "omitted_task": "libero_spatial:task4",
+          "delta_percentage_points": -10.344827586206899
+        },
+        {
+          "omitted_task": "libero_spatial:task5",
+          "delta_percentage_points": -11.034482758620692
+        },
+        {
+          "omitted_task": "libero_spatial:task6",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_spatial:task7",
+          "delta_percentage_points": -10.804597701149426
+        },
+        {
+          "omitted_task": "libero_spatial:task8",
+          "delta_percentage_points": -10.574712643678161
+        },
+        {
+          "omitted_task": "libero_spatial:task9",
+          "delta_percentage_points": -10.574712643678161
+        }
+      ],
+      "loto_positive": 0,
+      "loto_total": 30,
+      "per_suite_descriptive_delta_percentage_points": {
+        "libero_10": -17.333333333333336,
+        "libero_goal": -3.3333333333333335,
+        "libero_spatial": -10.666666666666668
+      },
+      "leave_one_suite_out_delta_percentage_points": {
+        "libero_10": -7.000000000000001,
+        "libero_goal": -14.000000000000002,
+        "libero_spatial": -10.333333333333334
+      },
+      "leave_one_suite_out_positive": 0
+    }
+  },
+  "moderator": {
+    "definition": "fraction of task-specific ACT training action steps with closed gripper intent (action[6] < 0); LIBERO gripper commands are +/-1, reconstructed exactly from frozen episode mean and count",
+    "task_count": 30,
+    "spearman_rho": 0.19222126827715721,
+    "two_sided_p": 0.30885273529563795
+  },
+  "labels": {
+    "PENALTY_4X_CONFIRMED": true,
+    "DOSE_RESPONSE_SUPPORTED": true,
+    "MECHANISM_PASS_A": true,
+    "METHOD_PASS_A": false,
+    "QUERY_EFFICIENT_TE_LEVEL_PERFORMANCE": true
+  },
+  "query_rate_ratio_TE_DENSE_over_ARM4_GRIP32": 3.9790296562848986,
+  "wall_clock_ratio_TE_DENSE_over_ARM4_GRIP32": 2.3803002982910924,
+  "scientific_retry_count": 0,
+  "technical_failed_attempt_count": 0
+}
