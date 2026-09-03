@@ -9,10 +9,15 @@ worker was signaled or modified.
 
 Label: `POST_HOC_TE_EFFECTIVE_AGE_CHARACTERIZATION`.
 
-The exact frozen implementation is not `exp(-0.01*age)`. Runtime rank `i=0`
-is the oldest candidate and receives weight `exp(-0.01*i)`, making the
-equivalent source-age weight `exp(+0.01*age)`. The coefficient remains 0.01;
-chunk length remains 100.
+TE_DENSE used the canonical pinned LeRobot v0.4.4 `ACTTemporalEnsembler` with
+the upstream default `temporal_ensemble_coeff=0.01`. Upstream indexing assigns
+the first temporal weight to the oldest available prediction, so a positive
+coefficient intentionally gives greater weight to older predictions. Runtime
+rank `i=0` is the oldest candidate and receives weight `exp(-0.01*i)`, making
+the equivalent source-age weight `exp(+0.01*age)`. A runtime canary independently
+confirmed this weighting direction. It is not evidence of a local
+implementation deviation or an implementation bug. The coefficient remains
+0.01 and chunk length remains 100.
 
 - 105,947 executed TE steps across 450 completed cells.
 - Candidate count: mean 79.127, p50 100, p95 100, maximum 100.
@@ -51,7 +56,8 @@ For TE_DENSE, mean `g=-0.153195`, median `g=-0.279394`, median
 Candidate sign disagreement and weighted minority-sign mass are
 `NOT_IDENTIFIABLE_FROM_EXISTING_TRACK_A_ARTIFACTS`: pre-aggregation candidate
 chunks were not persisted. No rerollout is authorized. These diagnostics do
-not imply that canonical temporal ensembling is intrinsically harmful.
+not imply that temporal ensembling is intrinsically harmful. Their scope is the
+frozen upstream coefficient and chunk length in this evaluation.
 
 ## C. Per-suite absolute Track-A table
 
@@ -63,6 +69,13 @@ not imply that canonical temporal ensembling is intrinsically harmful.
 
 All eight suite-level contrasts are in
 `track_a/te_dense_characterization/track_a_per_suite_contrasts.csv`.
+
+H16 absolute success is 54.7% on LIBERO-10, 91.3% on Goal, and 92.0% on
+Spatial. The largest component-resolved gain occurs on the hardest suite, while
+Goal and Spatial operate near the H16 ceiling; because suite identity, baseline
+difficulty, and task semantics covary, the source of this concentration is not
+identifiable from the present design. No causal explanation or additional
+outcome-motivated moderator is inferred from this pattern.
 
 ## D. LOSO and suite concentration
 

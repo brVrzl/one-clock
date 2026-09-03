@@ -16,6 +16,32 @@ The tidy machine-readable tables are
 `track_a/te_dense_characterization/track_a_per_suite_absolute.csv` and
 `track_a/te_dense_characterization/track_a_per_suite_contrasts.csv`.
 
+H16 absolute success is 54.7% on LIBERO-10, 91.3% on Goal, and 92.0% on
+Spatial. The largest component-resolved gain occurs on the hardest suite, while
+Goal and Spatial operate near the H16 ceiling; because suite identity, baseline
+difficulty, and task semantics covary, the source of this concentration is not
+identifiable from the present design. Do not attribute the concentration to
+horizon, task length, manipulation phases, transition density, or baseline
+difficulty. Do not calculate additional outcome-motivated moderators.
+
+## TE_DENSE provenance and scope
+
+TE_DENSE used the canonical pinned LeRobot v0.4.4 `ACTTemporalEnsembler` and
+the upstream default `temporal_ensemble_coeff=0.01`. Upstream indexing assigns
+the first temporal weight to the oldest available prediction, so the positive
+coefficient intentionally gives greater weight to older predictions. A runtime
+canary independently confirmed the actual weighting direction. This is not a
+local implementation deviation and must not be described as an implementation
+bug.
+
+Under the frozen upstream coefficient and chunk length in this evaluation, the
+empirical weighted mean age is 44.99 steps (2.249 s), p50 is 43 steps (2.15 s),
+p95 is 94 steps (4.70 s), and 52.27% of normalized weight is older than 2.0 s.
+For the executed native gripper command, `abs(g)<0.50` on 24.41% of TE_DENSE
+steps and the sign/state-switch rate is 1.02%. These post-hoc characterizations
+do not establish that temporal ensembling is intrinsically harmful and do not
+authorize coefficient tuning or another TE mechanism search.
+
 ## Cross-suite robustness disclosure
 
 ARM4_GRIP32-H4 is +13.333 percentage points in LIBERO-10, 0.000 in Goal,
