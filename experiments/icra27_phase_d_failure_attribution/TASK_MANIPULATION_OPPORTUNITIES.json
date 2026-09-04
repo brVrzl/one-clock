@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_PHASE1_OUTCOME_UNBLINDING",
+  "frozen_at": "2026-09-04T16:31:26+08:00",
+  "suite": "libero_10",
+  "position_orientation_requirement": "position_only_for_all_opportunities",
+  "demonstration_derived_quantities": null,
+  "threshold_construction": {
+    "eef_site": "gripper0_grip_site",
+    "margin_m": 0.04,
+    "margin_source": "Panda finger_joint1 and finger_joint2 maximum absolute travel in robosuite panda_gripper.xml",
+    "geom_rule": "min(norm(eef_site_xpos - geom_xpos) - geom_rbound) <= margin_m",
+    "box_site_rule": "Euclidean point-to-oriented-box distance from site_xpos/site_xmat/site_size <= margin_m",
+    "other_site_rule": "norm(eef_site_xpos - site_xpos) - max(site_size) <= margin_m"
+  },
+  "tasks": [
+    {
+      "task_id": 0,
+      "task_name": "LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket",
+      "manipulated": ["alphabet_soup_1", "tomato_sauce_1"],
+      "targets": ["basket_1_contain_region"],
+      "stages": [
+        {"id": "acquire_alphabet_soup", "kind": "acquire", "entity": "alphabet_soup_1", "opportunity": {"kind": "object_contact_geoms", "name": "alphabet_soup_1"}},
+        {"id": "place_alphabet_soup", "kind": "place", "entity": "alphabet_soup_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "alphabet_soup_1", "basket_1_contain_region"]},
+        {"id": "acquire_tomato_sauce", "kind": "acquire", "entity": "tomato_sauce_1", "opportunity": {"kind": "object_contact_geoms", "name": "tomato_sauce_1"}},
+        {"id": "place_tomato_sauce", "kind": "place", "entity": "tomato_sauce_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "tomato_sauce_1", "basket_1_contain_region"]}
+      ]
+    },
+    {
+      "task_id": 1,
+      "task_name": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+      "manipulated": ["cream_cheese_1", "butter_1"],
+      "targets": ["basket_1_contain_region"],
+      "stages": [
+        {"id": "acquire_cream_cheese", "kind": "acquire", "entity": "cream_cheese_1", "opportunity": {"kind": "object_contact_geoms", "name": "cream_cheese_1"}},
+        {"id": "place_cream_cheese", "kind": "place", "entity": "cream_cheese_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "cream_cheese_1", "basket_1_contain_region"]},
+        {"id": "acquire_butter", "kind": "acquire", "entity": "butter_1", "opportunity": {"kind": "object_contact_geoms", "name": "butter_1"}},
+        {"id": "place_butter", "kind": "place", "entity": "butter_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "butter_1", "basket_1_contain_region"]}
+      ]
+    },
+    {
+      "task_id": 2,
+      "task_name": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+      "manipulated": ["flat_stove_1_button", "moka_pot_1"],
+      "targets": ["flat_stove_1_cook_region"],
+      "stages": [
+        {"id": "turn_on_stove", "kind": "fixture", "entity": "flat_stove_1", "joint": "flat_stove_1_button", "direction": "increase", "interaction_geoms": ["flat_stove_1_g5", "flat_stove_1_g6", "flat_stove_1_g7", "flat_stove_1_g8", "flat_stove_1_g9", "flat_stove_1_g10", "flat_stove_1_g11", "flat_stove_1_g12", "flat_stove_1_g13", "flat_stove_1_g14", "flat_stove_1_g15", "flat_stove_1_g16", "flat_stove_1_g17", "flat_stove_1_g18", "flat_stove_1_g19", "flat_stove_1_g20", "flat_stove_1_g21", "flat_stove_1_g22"], "opportunity": {"kind": "explicit_geoms", "names": ["flat_stove_1_g5", "flat_stove_1_g6", "flat_stove_1_g7", "flat_stove_1_g8", "flat_stove_1_g9", "flat_stove_1_g10", "flat_stove_1_g11", "flat_stove_1_g12", "flat_stove_1_g13", "flat_stove_1_g14", "flat_stove_1_g15", "flat_stove_1_g16", "flat_stove_1_g17", "flat_stove_1_g18", "flat_stove_1_g19", "flat_stove_1_g20", "flat_stove_1_g21", "flat_stove_1_g22"]}, "completion": ["turnon", "flat_stove_1"]},
+        {"id": "acquire_moka_pot", "kind": "acquire", "entity": "moka_pot_1", "opportunity": {"kind": "object_contact_geoms", "name": "moka_pot_1"}},
+        {"id": "place_moka_pot", "kind": "place", "entity": "moka_pot_1", "target": "flat_stove_1_cook_region", "opportunity": {"kind": "site", "name": "flat_stove_1_cook_region"}, "completion": ["on", "moka_pot_1", "flat_stove_1_cook_region"]}
+      ]
+    },
+    {
+      "task_id": 3,
+      "task_name": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+      "manipulated": ["akita_black_bowl_1", "white_cabinet_1_cabinet_bottom"],
+      "targets": ["white_cabinet_1_bottom_region"],
+      "stages": [
+        {"id": "acquire_black_bowl", "kind": "acquire", "entity": "akita_black_bowl_1", "opportunity": {"kind": "object_contact_geoms", "name": "akita_black_bowl_1"}},
+        {"id": "place_black_bowl", "kind": "place", "entity": "akita_black_bowl_1", "target": "white_cabinet_1_bottom_region", "opportunity": {"kind": "site", "name": "white_cabinet_1_bottom_region"}, "completion": ["in", "akita_black_bowl_1", "white_cabinet_1_bottom_region"]},
+        {"id": "close_bottom_drawer", "kind": "fixture", "entity": "white_cabinet_1", "joint": "white_cabinet_1_bottom_level", "direction": "increase", "interaction_geoms": ["white_cabinet_1_g40", "white_cabinet_1_g41", "white_cabinet_1_g42"], "opportunity": {"kind": "explicit_geoms", "names": ["white_cabinet_1_g40", "white_cabinet_1_g41", "white_cabinet_1_g42"]}, "completion": ["close", "white_cabinet_1_bottom_region"]}
+      ]
+    },
+    {
+      "task_id": 4,
+      "task_name": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "manipulated": ["porcelain_mug_1", "white_yellow_mug_1"],
+      "targets": ["plate_1", "plate_2"],
+      "stages": [
+        {"id": "acquire_white_mug", "kind": "acquire", "entity": "porcelain_mug_1", "opportunity": {"kind": "object_contact_geoms", "name": "porcelain_mug_1"}},
+        {"id": "place_white_mug_left", "kind": "place", "entity": "porcelain_mug_1", "target": "plate_1", "opportunity": {"kind": "object_contact_geoms", "name": "plate_1"}, "completion": ["on", "porcelain_mug_1", "plate_1"]},
+        {"id": "acquire_yellow_white_mug", "kind": "acquire", "entity": "white_yellow_mug_1", "opportunity": {"kind": "object_contact_geoms", "name": "white_yellow_mug_1"}},
+        {"id": "place_yellow_white_mug_right", "kind": "place", "entity": "white_yellow_mug_1", "target": "plate_2", "opportunity": {"kind": "object_contact_geoms", "name": "plate_2"}, "completion": ["on", "white_yellow_mug_1", "plate_2"]}
+      ]
+    },
+    {
+      "task_id": 5,
+      "task_name": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+      "manipulated": ["black_book_1"],
+      "targets": ["desk_caddy_1_back_contain_region"],
+      "stages": [
+        {"id": "acquire_book", "kind": "acquire", "entity": "black_book_1", "opportunity": {"kind": "object_contact_geoms", "name": "black_book_1"}},
+        {"id": "place_book_back_compartment", "kind": "place", "entity": "black_book_1", "target": "desk_caddy_1_back_contain_region", "opportunity": {"kind": "site", "name": "desk_caddy_1_back_contain_region"}, "completion": ["in", "black_book_1", "desk_caddy_1_back_contain_region"]}
+      ]
+    },
+    {
+      "task_id": 6,
+      "task_name": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+      "manipulated": ["porcelain_mug_1", "chocolate_pudding_1"],
+      "targets": ["plate_1", "living_room_table_plate_right_region"],
+      "stages": [
+        {"id": "acquire_white_mug", "kind": "acquire", "entity": "porcelain_mug_1", "opportunity": {"kind": "object_contact_geoms", "name": "porcelain_mug_1"}},
+        {"id": "place_white_mug_on_plate", "kind": "place", "entity": "porcelain_mug_1", "target": "plate_1", "opportunity": {"kind": "object_contact_geoms", "name": "plate_1"}, "completion": ["on", "porcelain_mug_1", "plate_1"]},
+        {"id": "acquire_chocolate_pudding", "kind": "acquire", "entity": "chocolate_pudding_1", "opportunity": {"kind": "object_contact_geoms", "name": "chocolate_pudding_1"}},
+        {"id": "place_chocolate_pudding_right", "kind": "place", "entity": "chocolate_pudding_1", "target": "living_room_table_plate_right_region", "opportunity": {"kind": "site", "name": "living_room_table_plate_right_region"}, "completion": ["on", "chocolate_pudding_1", "living_room_table_plate_right_region"]}
+      ]
+    },
+    {
+      "task_id": 7,
+      "task_name": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "manipulated": ["alphabet_soup_1", "cream_cheese_1"],
+      "targets": ["basket_1_contain_region"],
+      "stages": [
+        {"id": "acquire_alphabet_soup", "kind": "acquire", "entity": "alphabet_soup_1", "opportunity": {"kind": "object_contact_geoms", "name": "alphabet_soup_1"}},
+        {"id": "place_alphabet_soup", "kind": "place", "entity": "alphabet_soup_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "alphabet_soup_1", "basket_1_contain_region"]},
+        {"id": "acquire_cream_cheese", "kind": "acquire", "entity": "cream_cheese_1", "opportunity": {"kind": "object_contact_geoms", "name": "cream_cheese_1"}},
+        {"id": "place_cream_cheese", "kind": "place", "entity": "cream_cheese_1", "target": "basket_1_contain_region", "opportunity": {"kind": "site", "name": "basket_1_contain_region"}, "completion": ["in", "cream_cheese_1", "basket_1_contain_region"]}
+      ]
+    },
+    {
+      "task_id": 8,
+      "task_name": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
+      "manipulated": ["moka_pot_1", "moka_pot_2"],
+      "targets": ["flat_stove_1_cook_region"],
+      "stages": [
+        {"id": "acquire_right_moka_pot", "kind": "acquire", "entity": "moka_pot_1", "opportunity": {"kind": "object_contact_geoms", "name": "moka_pot_1"}},
+        {"id": "place_right_moka_pot", "kind": "place", "entity": "moka_pot_1", "target": "flat_stove_1_cook_region", "opportunity": {"kind": "site", "name": "flat_stove_1_cook_region"}, "completion": ["on", "moka_pot_1", "flat_stove_1_cook_region"]},
+        {"id": "acquire_left_moka_pot", "kind": "acquire", "entity": "moka_pot_2", "opportunity": {"kind": "object_contact_geoms", "name": "moka_pot_2"}},
+        {"id": "place_left_moka_pot", "kind": "place", "entity": "moka_pot_2", "target": "flat_stove_1_cook_region", "opportunity": {"kind": "site", "name": "flat_stove_1_cook_region"}, "completion": ["on", "moka_pot_2", "flat_stove_1_cook_region"]}
+      ]
+    },
+    {
+      "task_id": 9,
+      "task_name": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+      "manipulated": ["white_yellow_mug_1", "microwave_1_microdoorroot"],
+      "targets": ["microwave_1_heating_region"],
+      "stages": [
+        {"id": "acquire_yellow_white_mug", "kind": "acquire", "entity": "white_yellow_mug_1", "opportunity": {"kind": "object_contact_geoms", "name": "white_yellow_mug_1"}},
+        {"id": "place_mug_in_microwave", "kind": "place", "entity": "white_yellow_mug_1", "target": "microwave_1_heating_region", "opportunity": {"kind": "site", "name": "microwave_1_heating_region"}, "completion": ["in", "white_yellow_mug_1", "microwave_1_heating_region"]},
+        {"id": "close_microwave", "kind": "fixture", "entity": "microwave_1", "joint": "microwave_1_microjoint", "direction": "increase", "interaction_geoms": ["microwave_1_g14", "microwave_1_g15", "microwave_1_g16"], "opportunity": {"kind": "explicit_geoms", "names": ["microwave_1_g14", "microwave_1_g15", "microwave_1_g16"]}, "completion": ["close", "microwave_1"]}
+      ]
+    }
+  ]
+}

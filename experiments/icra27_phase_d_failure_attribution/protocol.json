@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_PHASE1_OUTCOME_UNBLINDING",
+  "frozen_at": "2026-09-04T16:31:26+08:00",
+  "suite": "libero_10",
+  "task_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "development": {
+    "source": "experiments/icra27_crosssuite_query_allocation/track_a/results",
+    "contrasts": [
+      {"baseline": "H4", "treatment": "ARM4_GRIP32"},
+      {"baseline": "H2", "treatment": "ARM2_GRIP16"}
+    ],
+    "artifact_state_ids_are_task_specific_not_0_through_14": true,
+    "canary_state_id_by_task": {
+      "0": 20,
+      "1": 30,
+      "2": 20,
+      "3": 20,
+      "4": 20,
+      "5": 20,
+      "6": 20,
+      "7": 20,
+      "8": 20,
+      "9": 30
+    }
+  },
+  "confirmation": {
+    "source": "experiments/icra27_phase1_executor_discriminator/results",
+    "contrast": {"baseline": "H4", "treatment": "ARM4_GRIP32"},
+    "state_ids": {"first": 15, "last": 49, "inclusive": true},
+    "all_tasks_and_states_required": true,
+    "outcomes_unblinded_before_freeze": false,
+    "overlaps_track_a_official_state_ids": true,
+    "report_as_state_held_out": false
+  },
+  "definitions": {
+    "task_map": "TASK_MANIPULATION_OPPORTUNITIES.json",
+    "failure_taxonomy": "FAILURE_TAXONOMY.md",
+    "logging_schema": "PREREGISTRATION.md#frozen-replay-logging-schema",
+    "component_swap_protocol": "PREREGISTRATION.md#frozen-component-swap-protocol"
+  },
+  "failure_categories": [
+    "PRE_OPPORTUNITY_FAILURE",
+    "INTERACTION_EXECUTION_FAILURE",
+    "ACQUISITION_OR_ENGAGEMENT_FAILURE",
+    "POST_ACQUISITION_LOSS",
+    "LATER_STAGE_FAILURE",
+    "SUCCESS"
+  ],
+  "manual_review_fallback": "BLIND_MANUAL_REVIEW",
+  "timeout_is_metadata": true,
+  "trace_replay": {
+    "policy_queries": 0,
+    "action_dim": 7,
+    "arm_dimensions": [0, 1, 2, 3, 4, 5],
+    "gripper_dimension": 6,
+    "restore_saved_initial_sim_state": true,
+    "command_dtype": "float32",
+    "canary_requires_all_ten_tasks": true
+  },
+  "raw_log": {
+    "format": "gzip_jsonl_one_file_per_replay",
+    "rgb_format": "mp4_10fps_one_file_per_view_for_discordant_or_swap_replays",
+    "fields": [
+      "step_index",
+      "replay_command_7d",
+      "eef_position",
+      "eef_quaternion_xyzw",
+      "gripper_qpos",
+      "gripper_qvel",
+      "relevant_body_and_site_poses",
+      "fixture_joint_qpos",
+      "stage_predicates",
+      "relevant_contact_pairs",
+      "reward",
+      "success",
+      "terminated",
+      "truncated",
+      "termination_reason",
+      "manipulation_opportunity",
+      "stage_label"
+    ]
+  },
+  "component_swap": {
+    "blocks": "all rescue and all harm blocks in each authorized contrast",
+    "hybrids": [
+      "baseline_arm_plus_treatment_gripper",
+      "treatment_arm_plus_baseline_gripper"
+    ],
+    "common_support": "minimum of the two recorded donor lengths",
+    "positive_label": "SUCCESS",
+    "nonpositive_label": "CENSORED",
+    "failure_label_forbidden": true,
+    "extensions_forbidden": ["hold_final_command", "repeat_commands", "query_policy", "invent_continuation"]
+  },
+  "forbidden": [
+    "ACT inference during replay",
+    "training",
+    "new horizon schedules",
+    "adaptive methods",
+    "Goal or Spatial replay",
+    "task or state selection by outcome",
+    "Phase-1 artifact modification",
+    "manuscript edits"
+  ]
+}
