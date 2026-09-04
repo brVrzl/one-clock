@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_PROSPECTIVE_INTERPRETATION_ADDENDUM_BEFORE_PHASE1_HELD_OUT_OUTCOMES",
+  "timestamp": "2026-09-04T10:50:29+08:00",
+  "amends": "amendment_20260904T104520+0800.json",
+  "outcome_exposure_at_addendum": false,
+  "operational_definition": "Matches or exceeds means an observed paired risk difference greater than or equal to zero. Does not means an observed paired risk difference below zero. Outperforms means an observed paired risk difference above zero. These interpretation labels do not replace the separately frozen credible-evidence criteria.",
+  "interpretation_only_contrast": "ZOH8_GRIP16-H16",
+  "paired_bootstrap_seed": 27818,
+  "task_cluster_bootstrap_seed": 27918,
+  "rules_in_priority_order": [
+    "If ZOH8_GRIP16 outperforms ARM8_GRIP16, the component-chunk executor contribution is weakened further and the simpler persistence explanation takes precedence.",
+    "Otherwise, if ARM8_GRIP16 matches or exceeds H16 while ZOH8_GRIP16 does not, report that the gain is not reproduced by matched-interval zero-order gripper holding. This supports retained chunk progression over simple persistence as the relevant distinction, but does not establish strict necessity.",
+    "Otherwise, if both ARM8_GRIP16 and ZOH8_GRIP16 match or exceed H16, do not attribute the gain to retained chunk structure; the evidence is consistent with reduced gripper update rate or persistence being sufficient.",
+    "Otherwise, report the candidate-specific paired evidence without claiming that retained chunk progression is necessary."
+  ]
+}
