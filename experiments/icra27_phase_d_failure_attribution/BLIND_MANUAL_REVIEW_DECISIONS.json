@@ -1,0 +1,17 @@
+{
+  "protocol": "Condition and paired-outcome labels were hidden until after the physical classification was recorded.",
+  "decisions": [
+    {
+      "packet_id": "packet-001",
+      "task_id_visible_during_review": 9,
+      "condition_visible_during_review": false,
+      "paired_outcome_visible_during_review": false,
+      "failure_category": "LATER_STAGE_FAILURE",
+      "later_stage_detail": "POST_ACQUISITION_LOSS",
+      "failed_stage": "place_mug_in_microwave",
+      "rationale": "The mug was acquired and inserted, and the microwave interaction was attempted, but the video later showed the mug outside the required retained goal configuration.",
+      "replay_id": "libero_10-task09-state29-ARM4_GRIP32",
+      "mapping_unsealed_after_decision": true
+    }
+  ]
+}

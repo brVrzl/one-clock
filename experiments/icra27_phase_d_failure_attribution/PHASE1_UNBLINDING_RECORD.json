@@ -1,0 +1,27 @@
+{
+  "status": "PHASE1_OUTCOMES_UNBLINDED_AFTER_PHASE_D_FREEZE",
+  "unblinded_at": "2026-09-04T18:04:16+08:00",
+  "phase_d_preregistration_commit": "b36693db6ec79c80b9cbe4fb3d25ed231f3c85fb",
+  "contrast": "ARM4_GRIP32-H4",
+  "paired_blocks": 350,
+  "baseline_successes": 149,
+  "treatment_successes": 176,
+  "baseline_success_rate": 0.4257142857142857,
+  "treatment_success_rate": 0.5028571428571429,
+  "paired_risk_difference": 0.07714285714285714,
+  "paired_bootstrap_95_ci": [
+    0.03428571428571429,
+    0.12285714285714286
+  ],
+  "task_cluster_bootstrap_95_ci": [
+    -0.014285714285714285,
+    0.15999999999999998
+  ],
+  "paired_counts": {
+    "both_succeed": 129,
+    "both_fail": 154,
+    "rescue": 47,
+    "harm": 20
+  },
+  "mcnemar_exact_two_sided_p": 0.0013071686857635996
+}

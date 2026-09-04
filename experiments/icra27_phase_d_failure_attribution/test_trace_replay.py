@@ -42,3 +42,15 @@ def test_pair_type_retains_harms() -> None:
     assert MODULE.pair_type({"success": True}, {"success": False}) == "harm"
     assert MODULE.pair_type({"success": False}, {"success": False}) == "both_fail"
     assert MODULE.pair_type({"success": True}, {"success": True}) == "both_succeed"
+
+
+def test_completed_stage_latches_without_bddl_success_use_frozen_manual_fallback() -> None:
+    tracker = MODULE.StageTracker.__new__(MODULE.StageTracker)
+    tracker.states = [
+        {"id": "first", "credited_complete": True, "opportunity_reached": True},
+        {"id": "second", "credited_complete": True, "opportunity_reached": True},
+    ]
+    result = tracker.classification(False)
+    assert result["failure_category"] == "BLIND_MANUAL_REVIEW"
+    assert result["failed_stage"] is None
+    assert result["ever_manipulation_opportunity"] is True

@@ -1,0 +1,2442 @@
+{
+  "contrasts": [
+    {
+      "contrast": "development_h4",
+      "total_paired_blocks": 150,
+      "paired_counts": {
+        "both_succeed": 55,
+        "both_fail": 63,
+        "rescue": 26,
+        "harm": 6
+      },
+      "baseline_failures": 89,
+      "baseline_failures_never_reached_opportunity": 7,
+      "baseline_failures_reached_opportunity": 82,
+      "opportunity_reaching_baseline_failure_treatment_rescue": 23,
+      "opportunity_reaching_baseline_failure_treatment_still_fail": 59,
+      "full_cohort_rescue": 26,
+      "full_cohort_harm": 6,
+      "net_rescue_minus_harm": 20,
+      "rescue_failure_stage_distribution": {
+        "LATER_STAGE_FAILURE": 21,
+        "PRE_OPPORTUNITY_FAILURE": 3,
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 2
+      },
+      "harm_failure_stage_distribution": {
+        "LATER_STAGE_FAILURE": 5,
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 1
+      },
+      "rescue_task_stage_distribution": {
+        "acquire_tomato_sauce": 3,
+        "place_alphabet_soup": 4,
+        "acquire_butter": 1,
+        "acquire_moka_pot": 3,
+        "close_bottom_drawer": 1,
+        "acquire_yellow_white_mug": 3,
+        "place_cream_cheese": 1,
+        "acquire_right_moka_pot": 5,
+        "close_microwave": 3,
+        "place_mug_in_microwave": 2
+      },
+      "harm_task_stage_distribution": {
+        "close_bottom_drawer": 1,
+        "place_white_mug_left": 1,
+        "acquire_white_mug": 1,
+        "place_chocolate_pudding_right": 1,
+        "acquire_chocolate_pudding": 1,
+        "acquire_cream_cheese": 1
+      },
+      "rescue_later_stage_detail_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 7,
+        "PRE_OPPORTUNITY_FAILURE": 12,
+        "POST_ACQUISITION_LOSS": 2
+      },
+      "harm_later_stage_detail_distribution": {
+        "POST_ACQUISITION_LOSS": 1,
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 3,
+        "PRE_OPPORTUNITY_FAILURE": 1
+      },
+      "component_swap_summary": {
+        "rescue": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 26
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 24,
+            "SUCCESS": 2
+          }
+        },
+        "harm": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 6
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 6
+          }
+        }
+      },
+      "primary_rescue_swap_success": 0,
+      "primary_rescue_swap_censored": 26,
+      "component_swap_rows": [
+        {
+          "block_id": "libero_10-task00-state23",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task00-state23-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 281,
+          "common_support_steps": 281
+        },
+        {
+          "block_id": "libero_10-task00-state23",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task00-state23-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 281,
+          "common_support_steps": 281
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task00-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 228,
+          "common_support_steps": 228
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task00-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 228,
+          "common_support_steps": 228
+        },
+        {
+          "block_id": "libero_10-task00-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task00-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task00-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task00-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task00-state27",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task00-state27-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 381,
+          "common_support_steps": 381
+        },
+        {
+          "block_id": "libero_10-task00-state27",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task00-state27-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 381,
+          "common_support_steps": 381
+        },
+        {
+          "block_id": "libero_10-task00-state34",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task00-state34-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 277,
+          "common_support_steps": 277
+        },
+        {
+          "block_id": "libero_10-task00-state34",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task00-state34-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 277,
+          "common_support_steps": 277
+        },
+        {
+          "block_id": "libero_10-task01-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task01-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 329,
+          "common_support_steps": 329
+        },
+        {
+          "block_id": "libero_10-task01-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task01-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 329,
+          "common_support_steps": 329
+        },
+        {
+          "block_id": "libero_10-task02-state20",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task02-state20-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task02-state20",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task02-state20-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task02-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task02-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 249,
+          "common_support_steps": 249
+        },
+        {
+          "block_id": "libero_10-task02-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task02-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 249,
+          "common_support_steps": 249
+        },
+        {
+          "block_id": "libero_10-task02-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task02-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 235,
+          "common_support_steps": 235
+        },
+        {
+          "block_id": "libero_10-task02-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task02-state31-treatment_arm_plus_baseline_gripper",
+          "result": "SUCCESS",
+          "steps": 229,
+          "common_support_steps": 235
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task03-state21-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task03-state21-treatment_arm_plus_baseline_gripper",
+          "result": "SUCCESS",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task03-state24",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task03-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 297,
+          "common_support_steps": 297
+        },
+        {
+          "block_id": "libero_10-task03-state24",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task03-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 297,
+          "common_support_steps": 297
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task04-state21-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task04-state21-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state24",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task04-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task04-state24",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task04-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task04-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 212,
+          "common_support_steps": 212
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task04-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 212,
+          "common_support_steps": 212
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task04-state28-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 219,
+          "common_support_steps": 219
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task04-state28-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 219,
+          "common_support_steps": 219
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task04-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task04-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task06-state29",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task06-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 295,
+          "common_support_steps": 295
+        },
+        {
+          "block_id": "libero_10-task06-state29",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task06-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 295,
+          "common_support_steps": 295
+        },
+        {
+          "block_id": "libero_10-task06-state34",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task06-state34-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 205,
+          "common_support_steps": 205
+        },
+        {
+          "block_id": "libero_10-task06-state34",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task06-state34-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 205,
+          "common_support_steps": 205
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task07-state22-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task07-state22-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task07-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task07-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task07-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task07-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task07-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task07-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task07-state30",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task07-state30-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task07-state30",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task07-state30-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task08-state26",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task08-state26-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 459,
+          "common_support_steps": 459
+        },
+        {
+          "block_id": "libero_10-task08-state26",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task08-state26-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 459,
+          "common_support_steps": 459
+        },
+        {
+          "block_id": "libero_10-task08-state27",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task08-state27-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 438,
+          "common_support_steps": 438
+        },
+        {
+          "block_id": "libero_10-task08-state27",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task08-state27-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 438,
+          "common_support_steps": 438
+        },
+        {
+          "block_id": "libero_10-task08-state29",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task08-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 501,
+          "common_support_steps": 501
+        },
+        {
+          "block_id": "libero_10-task08-state29",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task08-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 501,
+          "common_support_steps": 501
+        },
+        {
+          "block_id": "libero_10-task08-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task08-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 363,
+          "common_support_steps": 363
+        },
+        {
+          "block_id": "libero_10-task08-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task08-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 363,
+          "common_support_steps": 363
+        },
+        {
+          "block_id": "libero_10-task08-state32",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task08-state32-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 380,
+          "common_support_steps": 380
+        },
+        {
+          "block_id": "libero_10-task08-state32",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task08-state32-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 380,
+          "common_support_steps": 380
+        },
+        {
+          "block_id": "libero_10-task09-state30",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task09-state30-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state30",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task09-state30-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task09-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task09-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task09-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task09-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task09-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task09-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task09-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task09-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task09-state42",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h4-libero_10-task09-state42-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 367,
+          "common_support_steps": 367
+        },
+        {
+          "block_id": "libero_10-task09-state42",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h4-libero_10-task09-state42-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 367,
+          "common_support_steps": 367
+        }
+      ]
+    },
+    {
+      "contrast": "development_h2",
+      "total_paired_blocks": 150,
+      "paired_counts": {
+        "rescue": 22,
+        "both_succeed": 52,
+        "both_fail": 75,
+        "harm": 1
+      },
+      "baseline_failures": 97,
+      "baseline_failures_never_reached_opportunity": 12,
+      "baseline_failures_reached_opportunity": 85,
+      "opportunity_reaching_baseline_failure_treatment_rescue": 22,
+      "opportunity_reaching_baseline_failure_treatment_still_fail": 63,
+      "full_cohort_rescue": 22,
+      "full_cohort_harm": 1,
+      "net_rescue_minus_harm": 21,
+      "rescue_failure_stage_distribution": {
+        "LATER_STAGE_FAILURE": 22
+      },
+      "harm_failure_stage_distribution": {
+        "LATER_STAGE_FAILURE": 1
+      },
+      "rescue_task_stage_distribution": {
+        "acquire_tomato_sauce": 2,
+        "acquire_butter": 4,
+        "acquire_moka_pot": 2,
+        "close_bottom_drawer": 1,
+        "acquire_yellow_white_mug": 6,
+        "acquire_chocolate_pudding": 1,
+        "acquire_cream_cheese": 1,
+        "place_alphabet_soup": 2,
+        "close_microwave": 2,
+        "place_mug_in_microwave": 1
+      },
+      "harm_task_stage_distribution": {
+        "acquire_tomato_sauce": 1
+      },
+      "rescue_later_stage_detail_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 10,
+        "INTERACTION_EXECUTION_FAILURE": 2,
+        "POST_ACQUISITION_LOSS": 1,
+        "PRE_OPPORTUNITY_FAILURE": 9
+      },
+      "harm_later_stage_detail_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 1
+      },
+      "component_swap_summary": {
+        "rescue": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 22
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 22
+          }
+        },
+        "harm": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 1
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 1
+          }
+        }
+      },
+      "primary_rescue_swap_success": 0,
+      "primary_rescue_swap_censored": 22,
+      "component_swap_rows": [
+        {
+          "block_id": "libero_10-task00-state20",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task00-state20-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 478,
+          "common_support_steps": 478
+        },
+        {
+          "block_id": "libero_10-task00-state20",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task00-state20-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 478,
+          "common_support_steps": 478
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task00-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 364,
+          "common_support_steps": 364
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task00-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 364,
+          "common_support_steps": 364
+        },
+        {
+          "block_id": "libero_10-task00-state26",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task00-state26-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 314,
+          "common_support_steps": 314
+        },
+        {
+          "block_id": "libero_10-task00-state26",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task00-state26-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 314,
+          "common_support_steps": 314
+        },
+        {
+          "block_id": "libero_10-task01-state36",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task01-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 248,
+          "common_support_steps": 248
+        },
+        {
+          "block_id": "libero_10-task01-state36",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task01-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 248,
+          "common_support_steps": 248
+        },
+        {
+          "block_id": "libero_10-task01-state38",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task01-state38-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task01-state38",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task01-state38-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task01-state40",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task01-state40-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 296,
+          "common_support_steps": 296
+        },
+        {
+          "block_id": "libero_10-task01-state40",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task01-state40-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 296,
+          "common_support_steps": 296
+        },
+        {
+          "block_id": "libero_10-task01-state44",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task01-state44-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 259,
+          "common_support_steps": 259
+        },
+        {
+          "block_id": "libero_10-task01-state44",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task01-state44-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 259,
+          "common_support_steps": 259
+        },
+        {
+          "block_id": "libero_10-task02-state23",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task02-state23-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 259,
+          "common_support_steps": 259
+        },
+        {
+          "block_id": "libero_10-task02-state23",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task02-state23-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 259,
+          "common_support_steps": 259
+        },
+        {
+          "block_id": "libero_10-task02-state26",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task02-state26-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 254,
+          "common_support_steps": 254
+        },
+        {
+          "block_id": "libero_10-task02-state26",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task02-state26-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 254,
+          "common_support_steps": 254
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task03-state21-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 258,
+          "common_support_steps": 258
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task03-state21-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 258,
+          "common_support_steps": 258
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state21-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 202,
+          "common_support_steps": 202
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state21-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 202,
+          "common_support_steps": 202
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 204,
+          "common_support_steps": 204
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 204,
+          "common_support_steps": 204
+        },
+        {
+          "block_id": "libero_10-task04-state27",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state27-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 220,
+          "common_support_steps": 220
+        },
+        {
+          "block_id": "libero_10-task04-state27",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state27-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 220,
+          "common_support_steps": 220
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state28-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 215,
+          "common_support_steps": 215
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state28-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 215,
+          "common_support_steps": 215
+        },
+        {
+          "block_id": "libero_10-task04-state30",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state30-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 209,
+          "common_support_steps": 209
+        },
+        {
+          "block_id": "libero_10-task04-state30",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state30-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 209,
+          "common_support_steps": 209
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task04-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 271,
+          "common_support_steps": 271
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task04-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 271,
+          "common_support_steps": 271
+        },
+        {
+          "block_id": "libero_10-task06-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task06-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 209,
+          "common_support_steps": 209
+        },
+        {
+          "block_id": "libero_10-task06-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task06-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 209,
+          "common_support_steps": 209
+        },
+        {
+          "block_id": "libero_10-task07-state20",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task07-state20-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task07-state20",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task07-state20-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task07-state22-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 251,
+          "common_support_steps": 251
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task07-state22-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 251,
+          "common_support_steps": 251
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task07-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task07-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task09-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 242,
+          "common_support_steps": 242
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task09-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 242,
+          "common_support_steps": 242
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task09-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 250,
+          "common_support_steps": 250
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task09-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 250,
+          "common_support_steps": 250
+        },
+        {
+          "block_id": "libero_10-task09-state38",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "development_h2-libero_10-task09-state38-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 382,
+          "common_support_steps": 382
+        },
+        {
+          "block_id": "libero_10-task09-state38",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "development_h2-libero_10-task09-state38-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 382,
+          "common_support_steps": 382
+        }
+      ]
+    },
+    {
+      "contrast": "phase1_h4",
+      "total_paired_blocks": 350,
+      "paired_counts": {
+        "both_succeed": 129,
+        "both_fail": 154,
+        "rescue": 47,
+        "harm": 20
+      },
+      "baseline_failures": 201,
+      "baseline_failures_never_reached_opportunity": 21,
+      "baseline_failures_reached_opportunity": 180,
+      "opportunity_reaching_baseline_failure_treatment_rescue": 43,
+      "opportunity_reaching_baseline_failure_treatment_still_fail": 137,
+      "full_cohort_rescue": 47,
+      "full_cohort_harm": 20,
+      "net_rescue_minus_harm": 27,
+      "rescue_failure_stage_distribution": {
+        "LATER_STAGE_FAILURE": 38,
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 5,
+        "PRE_OPPORTUNITY_FAILURE": 4
+      },
+      "harm_failure_stage_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 2,
+        "LATER_STAGE_FAILURE": 18
+      },
+      "rescue_task_stage_distribution": {
+        "acquire_tomato_sauce": 4,
+        "place_alphabet_soup": 7,
+        "acquire_butter": 1,
+        "acquire_moka_pot": 6,
+        "close_bottom_drawer": 1,
+        "place_yellow_white_mug_right": 2,
+        "acquire_yellow_white_mug": 5,
+        "place_white_mug_left": 1,
+        "place_book_back_compartment": 1,
+        "acquire_chocolate_pudding": 1,
+        "place_cream_cheese": 1,
+        "acquire_right_moka_pot": 8,
+        "close_microwave": 7,
+        "place_mug_in_microwave": 2
+      },
+      "harm_task_stage_distribution": {
+        "acquire_cream_cheese": 2,
+        "acquire_moka_pot": 1,
+        "close_bottom_drawer": 6,
+        "place_white_mug_left": 1,
+        "acquire_white_mug": 1,
+        "place_book_back_compartment": 1,
+        "place_white_mug_on_plate": 2,
+        "place_chocolate_pudding_right": 4,
+        "acquire_chocolate_pudding": 1,
+        "place_mug_in_microwave": 1
+      },
+      "rescue_later_stage_detail_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 13,
+        "PRE_OPPORTUNITY_FAILURE": 21,
+        "POST_ACQUISITION_LOSS": 3,
+        "INTERACTION_EXECUTION_FAILURE": 1
+      },
+      "harm_later_stage_detail_distribution": {
+        "ACQUISITION_OR_ENGAGEMENT_FAILURE": 4,
+        "POST_ACQUISITION_LOSS": 5,
+        "PRE_OPPORTUNITY_FAILURE": 6,
+        "INTERACTION_EXECUTION_FAILURE": 3
+      },
+      "component_swap_summary": {
+        "rescue": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 46,
+            "SUCCESS": 1
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 44,
+            "SUCCESS": 3
+          }
+        },
+        "harm": {
+          "baseline_arm_plus_treatment_gripper": {
+            "CENSORED": 16,
+            "SUCCESS": 4
+          },
+          "treatment_arm_plus_baseline_gripper": {
+            "CENSORED": 20
+          }
+        }
+      },
+      "primary_rescue_swap_success": 1,
+      "primary_rescue_swap_censored": 46,
+      "component_swap_rows": [
+        {
+          "block_id": "libero_10-task00-state23",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state23-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 281,
+          "common_support_steps": 281
+        },
+        {
+          "block_id": "libero_10-task00-state23",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state23-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 281,
+          "common_support_steps": 281
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 228,
+          "common_support_steps": 228
+        },
+        {
+          "block_id": "libero_10-task00-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 228,
+          "common_support_steps": 228
+        },
+        {
+          "block_id": "libero_10-task00-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task00-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 282,
+          "common_support_steps": 282
+        },
+        {
+          "block_id": "libero_10-task00-state27",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state27-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 381,
+          "common_support_steps": 381
+        },
+        {
+          "block_id": "libero_10-task00-state27",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state27-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 381,
+          "common_support_steps": 381
+        },
+        {
+          "block_id": "libero_10-task00-state34",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state34-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 277,
+          "common_support_steps": 277
+        },
+        {
+          "block_id": "libero_10-task00-state34",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state34-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 277,
+          "common_support_steps": 277
+        },
+        {
+          "block_id": "libero_10-task00-state35",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state35-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task00-state35",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task00-state35-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task01-state15",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task01-state15-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 469,
+          "common_support_steps": 469
+        },
+        {
+          "block_id": "libero_10-task01-state15",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task01-state15-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 469,
+          "common_support_steps": 469
+        },
+        {
+          "block_id": "libero_10-task01-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task01-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 329,
+          "common_support_steps": 329
+        },
+        {
+          "block_id": "libero_10-task01-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task01-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 329,
+          "common_support_steps": 329
+        },
+        {
+          "block_id": "libero_10-task02-state20",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state20-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task02-state20",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state20-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task02-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 249,
+          "common_support_steps": 249
+        },
+        {
+          "block_id": "libero_10-task02-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 249,
+          "common_support_steps": 249
+        },
+        {
+          "block_id": "libero_10-task02-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 229,
+          "common_support_steps": 229
+        },
+        {
+          "block_id": "libero_10-task02-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 229,
+          "common_support_steps": 229
+        },
+        {
+          "block_id": "libero_10-task02-state35",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state35-baseline_arm_plus_treatment_gripper",
+          "result": "SUCCESS",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task02-state35",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state35-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task02-state36",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task02-state36",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 239,
+          "common_support_steps": 239
+        },
+        {
+          "block_id": "libero_10-task02-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 236,
+          "common_support_steps": 236
+        },
+        {
+          "block_id": "libero_10-task02-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 236,
+          "common_support_steps": 236
+        },
+        {
+          "block_id": "libero_10-task02-state45",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state45-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task02-state45",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task02-state45-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task03-state19",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state19-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 220,
+          "common_support_steps": 220
+        },
+        {
+          "block_id": "libero_10-task03-state19",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state19-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 220,
+          "common_support_steps": 220
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state21-baseline_arm_plus_treatment_gripper",
+          "result": "SUCCESS",
+          "steps": 233,
+          "common_support_steps": 233
+        },
+        {
+          "block_id": "libero_10-task03-state21",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state21-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 233,
+          "common_support_steps": 233
+        },
+        {
+          "block_id": "libero_10-task03-state24",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 297,
+          "common_support_steps": 297
+        },
+        {
+          "block_id": "libero_10-task03-state24",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 297,
+          "common_support_steps": 297
+        },
+        {
+          "block_id": "libero_10-task03-state25",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task03-state25",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task03-state29",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 243,
+          "common_support_steps": 243
+        },
+        {
+          "block_id": "libero_10-task03-state29",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 243,
+          "common_support_steps": 243
+        },
+        {
+          "block_id": "libero_10-task03-state40",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state40-baseline_arm_plus_treatment_gripper",
+          "result": "SUCCESS",
+          "steps": 215,
+          "common_support_steps": 215
+        },
+        {
+          "block_id": "libero_10-task03-state40",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state40-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 215,
+          "common_support_steps": 215
+        },
+        {
+          "block_id": "libero_10-task03-state41",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 304,
+          "common_support_steps": 304
+        },
+        {
+          "block_id": "libero_10-task03-state41",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task03-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 304,
+          "common_support_steps": 304
+        },
+        {
+          "block_id": "libero_10-task04-state17",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state17-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 248,
+          "common_support_steps": 248
+        },
+        {
+          "block_id": "libero_10-task04-state17",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state17-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 248,
+          "common_support_steps": 248
+        },
+        {
+          "block_id": "libero_10-task04-state19",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state19-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task04-state19",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state19-treatment_arm_plus_baseline_gripper",
+          "result": "SUCCESS",
+          "steps": 218,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state21-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state21",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state21-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state24",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task04-state24",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state25-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 212,
+          "common_support_steps": 212
+        },
+        {
+          "block_id": "libero_10-task04-state25",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state25-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 212,
+          "common_support_steps": 212
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state28-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 219,
+          "common_support_steps": 219
+        },
+        {
+          "block_id": "libero_10-task04-state28",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state28-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 219,
+          "common_support_steps": 219
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 216,
+          "common_support_steps": 216
+        },
+        {
+          "block_id": "libero_10-task04-state40",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state40-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 236,
+          "common_support_steps": 236
+        },
+        {
+          "block_id": "libero_10-task04-state40",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state40-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 236,
+          "common_support_steps": 236
+        },
+        {
+          "block_id": "libero_10-task04-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 222,
+          "common_support_steps": 222
+        },
+        {
+          "block_id": "libero_10-task04-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task04-state41-treatment_arm_plus_baseline_gripper",
+          "result": "SUCCESS",
+          "steps": 218,
+          "common_support_steps": 222
+        },
+        {
+          "block_id": "libero_10-task05-state19",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task05-state19-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 231,
+          "common_support_steps": 231
+        },
+        {
+          "block_id": "libero_10-task05-state19",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task05-state19-treatment_arm_plus_baseline_gripper",
+          "result": "SUCCESS",
+          "steps": 229,
+          "common_support_steps": 231
+        },
+        {
+          "block_id": "libero_10-task05-state36",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task05-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 260,
+          "common_support_steps": 260
+        },
+        {
+          "block_id": "libero_10-task05-state36",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task05-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 260,
+          "common_support_steps": 260
+        },
+        {
+          "block_id": "libero_10-task06-state16",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state16-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 251,
+          "common_support_steps": 251
+        },
+        {
+          "block_id": "libero_10-task06-state16",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state16-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 251,
+          "common_support_steps": 251
+        },
+        {
+          "block_id": "libero_10-task06-state17",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state17-baseline_arm_plus_treatment_gripper",
+          "result": "SUCCESS",
+          "steps": 227,
+          "common_support_steps": 227
+        },
+        {
+          "block_id": "libero_10-task06-state17",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state17-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 227,
+          "common_support_steps": 227
+        },
+        {
+          "block_id": "libero_10-task06-state18",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state18-baseline_arm_plus_treatment_gripper",
+          "result": "SUCCESS",
+          "steps": 229,
+          "common_support_steps": 229
+        },
+        {
+          "block_id": "libero_10-task06-state18",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state18-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 229,
+          "common_support_steps": 229
+        },
+        {
+          "block_id": "libero_10-task06-state29",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 295,
+          "common_support_steps": 295
+        },
+        {
+          "block_id": "libero_10-task06-state29",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 295,
+          "common_support_steps": 295
+        },
+        {
+          "block_id": "libero_10-task06-state34",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state34-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 205,
+          "common_support_steps": 205
+        },
+        {
+          "block_id": "libero_10-task06-state34",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state34-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 205,
+          "common_support_steps": 205
+        },
+        {
+          "block_id": "libero_10-task06-state38",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state38-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 327,
+          "common_support_steps": 327
+        },
+        {
+          "block_id": "libero_10-task06-state38",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state38-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 327,
+          "common_support_steps": 327
+        },
+        {
+          "block_id": "libero_10-task06-state40",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state40-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 221,
+          "common_support_steps": 221
+        },
+        {
+          "block_id": "libero_10-task06-state40",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state40-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 221,
+          "common_support_steps": 221
+        },
+        {
+          "block_id": "libero_10-task06-state49",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state49-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task06-state49",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task06-state49-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task07-state15",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state15-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task07-state15",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state15-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 240,
+          "common_support_steps": 240
+        },
+        {
+          "block_id": "libero_10-task07-state16",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state16-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task07-state16",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state16-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state22-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task07-state22",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state22-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task07-state24",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state24-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task07-state24",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state24-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 268,
+          "common_support_steps": 268
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task07-state29",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 237,
+          "common_support_steps": 237
+        },
+        {
+          "block_id": "libero_10-task07-state30",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state30-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task07-state30",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state30-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 280,
+          "common_support_steps": 280
+        },
+        {
+          "block_id": "libero_10-task07-state42",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state42-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 238,
+          "common_support_steps": 238
+        },
+        {
+          "block_id": "libero_10-task07-state42",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task07-state42-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 238,
+          "common_support_steps": 238
+        },
+        {
+          "block_id": "libero_10-task08-state15",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state15-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 455,
+          "common_support_steps": 455
+        },
+        {
+          "block_id": "libero_10-task08-state15",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state15-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 455,
+          "common_support_steps": 455
+        },
+        {
+          "block_id": "libero_10-task08-state16",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state16-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 452,
+          "common_support_steps": 452
+        },
+        {
+          "block_id": "libero_10-task08-state16",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state16-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 452,
+          "common_support_steps": 452
+        },
+        {
+          "block_id": "libero_10-task08-state26",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state26-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 459,
+          "common_support_steps": 459
+        },
+        {
+          "block_id": "libero_10-task08-state26",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state26-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 459,
+          "common_support_steps": 459
+        },
+        {
+          "block_id": "libero_10-task08-state27",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state27-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 438,
+          "common_support_steps": 438
+        },
+        {
+          "block_id": "libero_10-task08-state27",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state27-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 438,
+          "common_support_steps": 438
+        },
+        {
+          "block_id": "libero_10-task08-state29",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 501,
+          "common_support_steps": 501
+        },
+        {
+          "block_id": "libero_10-task08-state29",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 501,
+          "common_support_steps": 501
+        },
+        {
+          "block_id": "libero_10-task08-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 363,
+          "common_support_steps": 363
+        },
+        {
+          "block_id": "libero_10-task08-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 363,
+          "common_support_steps": 363
+        },
+        {
+          "block_id": "libero_10-task08-state32",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state32-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 380,
+          "common_support_steps": 380
+        },
+        {
+          "block_id": "libero_10-task08-state32",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state32-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 380,
+          "common_support_steps": 380
+        },
+        {
+          "block_id": "libero_10-task08-state38",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state38-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 405,
+          "common_support_steps": 405
+        },
+        {
+          "block_id": "libero_10-task08-state38",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task08-state38-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 405,
+          "common_support_steps": 405
+        },
+        {
+          "block_id": "libero_10-task09-state15",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state15-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state15",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state15-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state16",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state16-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 250,
+          "common_support_steps": 250
+        },
+        {
+          "block_id": "libero_10-task09-state16",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state16-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 250,
+          "common_support_steps": 250
+        },
+        {
+          "block_id": "libero_10-task09-state18",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state18-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 275,
+          "common_support_steps": 275
+        },
+        {
+          "block_id": "libero_10-task09-state18",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state18-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 275,
+          "common_support_steps": 275
+        },
+        {
+          "block_id": "libero_10-task09-state23",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state23-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 265,
+          "common_support_steps": 265
+        },
+        {
+          "block_id": "libero_10-task09-state23",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state23-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 265,
+          "common_support_steps": 265
+        },
+        {
+          "block_id": "libero_10-task09-state29",
+          "pair_type": "harm",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state29-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 377,
+          "common_support_steps": 377
+        },
+        {
+          "block_id": "libero_10-task09-state29",
+          "pair_type": "harm",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state29-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 377,
+          "common_support_steps": 377
+        },
+        {
+          "block_id": "libero_10-task09-state30",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state30-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state30",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state30-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 306,
+          "common_support_steps": 306
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state31-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task09-state31",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state31-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 234,
+          "common_support_steps": 234
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state36-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task09-state36",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state36-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 256,
+          "common_support_steps": 256
+        },
+        {
+          "block_id": "libero_10-task09-state41",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state41-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task09-state41",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state41-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 257,
+          "common_support_steps": 257
+        },
+        {
+          "block_id": "libero_10-task09-state42",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state42-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 370,
+          "common_support_steps": 370
+        },
+        {
+          "block_id": "libero_10-task09-state42",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state42-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 370,
+          "common_support_steps": 370
+        },
+        {
+          "block_id": "libero_10-task09-state49",
+          "pair_type": "rescue",
+          "hybrid": "baseline_arm_plus_treatment_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state49-baseline_arm_plus_treatment_gripper",
+          "result": "CENSORED",
+          "steps": 472,
+          "common_support_steps": 472
+        },
+        {
+          "block_id": "libero_10-task09-state49",
+          "pair_type": "rescue",
+          "hybrid": "treatment_arm_plus_baseline_gripper",
+          "replay_id": "phase1_h4-libero_10-task09-state49-treatment_arm_plus_baseline_gripper",
+          "result": "CENSORED",
+          "steps": 472,
+          "common_support_steps": 472
+        }
+      ]
+    }
+  ]
+}

@@ -345,18 +345,24 @@ class StageTracker:
         else:
             index = self.active_index()
             if index is None:
-                raise RuntimeError("all mapped stages completed but environment did not report success")
-            state = self.states[index]
-            failed_stage = state["id"]
-            if not state["opportunity_reached"]:
-                detail = "PRE_OPPORTUNITY_FAILURE"
-            elif not state["attempted"]:
-                detail = "INTERACTION_EXECUTION_FAILURE"
-            elif state["lost"]:
-                detail = "POST_ACQUISITION_LOSS"
+                # Frozen fallback for an internally inconsistent automatic
+                # record: every ordered predicate was credited at some time,
+                # but the environment never reported its full BDDL condition.
+                category = "BLIND_MANUAL_REVIEW"
+                detail = None
+                failed_stage = None
             else:
-                detail = "ACQUISITION_OR_ENGAGEMENT_FAILURE"
-            category = detail if index == 0 else "LATER_STAGE_FAILURE"
+                state = self.states[index]
+                failed_stage = state["id"]
+                if not state["opportunity_reached"]:
+                    detail = "PRE_OPPORTUNITY_FAILURE"
+                elif not state["attempted"]:
+                    detail = "INTERACTION_EXECUTION_FAILURE"
+                elif state["lost"]:
+                    detail = "POST_ACQUISITION_LOSS"
+                else:
+                    detail = "ACQUISITION_OR_ENGAGEMENT_FAILURE"
+                category = detail if index == 0 else "LATER_STAGE_FAILURE"
         return {
             "failure_category": category,
             "later_stage_detail": detail if category == "LATER_STAGE_FAILURE" else None,
@@ -717,7 +723,7 @@ def selected_sources(
     return selected, videos, roles
 
 
-def run_source_cohort(cohort: str) -> None:
+def run_source_cohort(cohort: str, task_ids: set[int] | None = None) -> None:
     frozen_commit()
     assert_canary_passed()
     maps = task_map()
@@ -754,9 +760,14 @@ def run_source_cohort(cohort: str) -> None:
     for source in all_selected.values():
         by_task[int(source["task_id"])].append(source)
     for task_id in sorted(by_task):
-        environment = ReplayEnvironment(task_id)
-        try:
-            for source in sorted(by_task[task_id], key=lambda v: (int(v["state_id"]), str(v["method"]))):
+        if task_ids is not None and task_id not in task_ids:
+            continue
+        for source in sorted(by_task[task_id], key=lambda v: (int(v["state_id"]), str(v["method"]))):
+            # Match the source runner's one-new-environment-per-cell isolation.
+            # MuJoCo flat state omits controller and wrapper fields, so a reused
+            # environment can retain hidden history despite an exact flat state.
+            environment = ReplayEnvironment(task_id)
+            try:
                 replay_id = str(source["cell_id"])
                 run_replay(
                     environment,
@@ -767,8 +778,8 @@ def run_source_cohort(cohort: str) -> None:
                     replay_id,
                     write_video=source["_source_path"] in all_videos,
                 )
-        finally:
-            environment.close()
+            finally:
+                environment.close()
 
 
 def hybrid_commands(
@@ -788,9 +799,29 @@ def hybrid_commands(
     return commands.astype(float).tolist()
 
 
-def run_swaps(cohort: str) -> None:
+def assert_source_reproduction(cohort: str) -> None:
+    manifest = read_json(ROOT / f"{cohort}_replay_manifest.json")
+    expected = int(manifest["selected_episode_count"])
+    rows = [read_json(path) for path in sorted((SUMMARY_ROOT / cohort).glob("*.json"))]
+    problems = [
+        row["replay_id"]
+        for row in rows
+        if not row["initial_state_exact"]
+        or int(row["command_mismatch_count"]) != 0
+        or bool(row["replay_success"]) != bool(row["source_success"])
+        or int(row["replay_steps"]) != int(row["source_steps"])
+    ]
+    if len(rows) != expected or problems:
+        raise RuntimeError(
+            f"{cohort} source replay reproduction gate failed: "
+            f"expected={expected}, observed={len(rows)}, problems={problems[:20]}"
+        )
+
+
+def run_swaps(cohort: str, task_ids: set[int] | None = None) -> None:
     frozen_commit()
     assert_canary_passed()
+    assert_source_reproduction(cohort)
     maps = task_map()
     if cohort == "development":
         root = TRACK_A_RESULTS
@@ -835,9 +866,11 @@ def run_swaps(cohort: str) -> None:
                 )
     atomic_json(ROOT / f"{cohort}_swap_manifest.json", {"cohort": cohort, "rows": manifest_rows})
     for task_id in sorted(work):
-        environment = ReplayEnvironment(task_id)
-        try:
-            for replay_id, source, commands in work[task_id]:
+        if task_ids is not None and task_id not in task_ids:
+            continue
+        for replay_id, source, commands in work[task_id]:
+            environment = ReplayEnvironment(task_id)
+            try:
                 result = run_replay(
                     environment,
                     source,
@@ -851,8 +884,8 @@ def run_swaps(cohort: str) -> None:
                 result["swap_semantic_result"] = "SUCCESS" if result["replay_success"] else "CENSORED"
                 result["common_support_steps"] = len(commands)
                 atomic_json(summary_path(f"{cohort}_swaps", replay_id), result)
-        finally:
-            environment.close()
+            finally:
+                environment.close()
 
 
 def percentile_interval(values: np.ndarray) -> list[float]:
@@ -923,9 +956,21 @@ def unblind_phase1() -> None:
 
 
 def load_summaries(cohort: str) -> dict[str, dict[str, Any]]:
+    manual_decisions = {}
+    decision_path = ROOT / "BLIND_MANUAL_REVIEW_DECISIONS.json"
+    if not cohort.endswith("_swaps") and decision_path.is_file():
+        for decision in read_json(decision_path)["decisions"]:
+            manual_decisions[str(decision["replay_id"])] = decision
     result = {}
     for path in sorted((SUMMARY_ROOT / cohort).glob("*.json")):
         value = read_json(path)
+        decision = manual_decisions.get(str(value["replay_id"]))
+        if decision is not None:
+            value["automatic_failure_category"] = value["failure_category"]
+            value["failure_category"] = decision["failure_category"]
+            value["later_stage_detail"] = decision.get("later_stage_detail")
+            value["failed_stage"] = decision.get("failed_stage")
+            value["blind_manual_review_packet"] = decision["packet_id"]
         key = str(value["replay_id"] if cohort.endswith("_swaps") else value.get("source_path") or value["replay_id"])
         result[key] = value
     return result
@@ -946,20 +991,53 @@ def attribution_for_contrast(
         (reaching if summary["ever_manipulation_opportunity"] else nonreaching).append((b, t, summary))
     rescue_stage = Counter()
     harm_stage = Counter()
+    rescue_task_stage = Counter()
+    harm_task_stage = Counter()
+    rescue_later_detail = Counter()
+    harm_later_detail = Counter()
     for b, t in blocks:
         kind = pair_type(b, t)
         if kind == "rescue":
             summary = source_summaries[b["_source_path"]]
             rescue_stage[summary["failure_category"]] += 1
+            rescue_task_stage[str(summary.get("failed_stage") or "UNSPECIFIED")] += 1
+            if summary.get("later_stage_detail"):
+                rescue_later_detail[str(summary["later_stage_detail"])] += 1
         elif kind == "harm":
             summary = source_summaries[t["_source_path"]]
             harm_stage[summary["failure_category"]] += 1
+            harm_task_stage[str(summary.get("failed_stage") or "UNSPECIFIED")] += 1
+            if summary.get("later_stage_detail"):
+                harm_later_detail[str(summary["later_stage_detail"])] += 1
+    hybrid_labels = (
+        "baseline_arm_plus_treatment_gripper",
+        "treatment_arm_plus_baseline_gripper",
+    )
+    swap_counts: dict[str, dict[str, Counter]] = {
+        kind: {hybrid: Counter() for hybrid in hybrid_labels} for kind in ("rescue", "harm")
+    }
     swap_rows = []
-    for value in swap_summaries.values():
-        if value["replay_id"].startswith(f"{contrast_name}-"):
+    for b, t in blocks:
+        kind = pair_type(b, t)
+        if kind not in swap_counts:
+            continue
+        for hybrid in hybrid_labels:
+            replay_id = f"{contrast_name}-{b['block_id']}-{hybrid}"
+            value = swap_summaries[replay_id]
             label = "SUCCESS" if value["replay_success"] else "CENSORED"
-            swap_rows.append({"replay_id": value["replay_id"], "result": label, "steps": value["replay_steps"], "common_support_steps": value["common_support_steps"]})
-    primary_rescue_swaps = [row for row in swap_rows if "baseline_arm_plus_treatment_gripper" in row["replay_id"] and any(b["block_id"] in row["replay_id"] and pair_type(b, t) == "rescue" for b, t in blocks)]
+            swap_counts[kind][hybrid][label] += 1
+            swap_rows.append(
+                {
+                    "block_id": b["block_id"],
+                    "pair_type": kind,
+                    "hybrid": hybrid,
+                    "replay_id": replay_id,
+                    "result": label,
+                    "steps": value["replay_steps"],
+                    "common_support_steps": value["common_support_steps"],
+                }
+            )
+    primary = swap_counts["rescue"]["baseline_arm_plus_treatment_gripper"]
     return {
         "contrast": contrast_name,
         "total_paired_blocks": len(blocks),
@@ -974,8 +1052,16 @@ def attribution_for_contrast(
         "net_rescue_minus_harm": counts["rescue"] - counts["harm"],
         "rescue_failure_stage_distribution": dict(rescue_stage),
         "harm_failure_stage_distribution": dict(harm_stage),
-        "primary_rescue_swap_success": sum(row["result"] == "SUCCESS" for row in primary_rescue_swaps),
-        "primary_rescue_swap_censored": sum(row["result"] == "CENSORED" for row in primary_rescue_swaps),
+        "rescue_task_stage_distribution": dict(rescue_task_stage),
+        "harm_task_stage_distribution": dict(harm_task_stage),
+        "rescue_later_stage_detail_distribution": dict(rescue_later_detail),
+        "harm_later_stage_detail_distribution": dict(harm_later_detail),
+        "component_swap_summary": {
+            kind: {hybrid: dict(counter) for hybrid, counter in hybrids.items()}
+            for kind, hybrids in swap_counts.items()
+        },
+        "primary_rescue_swap_success": primary["SUCCESS"],
+        "primary_rescue_swap_censored": primary["CENSORED"],
         "component_swap_rows": swap_rows,
     }
 
@@ -984,6 +1070,7 @@ def analyze() -> None:
     frozen_commit()
     assert_canary_passed()
     outputs = []
+    discordant_video_rows = []
     for cohort, contrast_names, result_root in (
         ("development", ["development_h4", "development_h2"], TRACK_A_RESULTS),
         ("phase1", ["phase1_h4"], PHASE1_RESULTS),
@@ -998,6 +1085,32 @@ def analyze() -> None:
             baseline, treatment = CONTRASTS[contrast_name]
             blocks = paired_blocks(index, baseline, treatment)
             outputs.append(attribution_for_contrast(contrast_name, blocks, source_summaries, swap_summaries))
+            for baseline_row, treatment_row in blocks:
+                kind = pair_type(baseline_row, treatment_row)
+                if kind not in {"rescue", "harm"}:
+                    continue
+                baseline_summary = source_summaries[baseline_row["_source_path"]]
+                treatment_summary = source_summaries[treatment_row["_source_path"]]
+                primary_id = f"{contrast_name}-{baseline_row['block_id']}-baseline_arm_plus_treatment_gripper"
+                reverse_id = f"{contrast_name}-{baseline_row['block_id']}-treatment_arm_plus_baseline_gripper"
+                primary_summary = swap_summaries[primary_id]
+                reverse_summary = swap_summaries[reverse_id]
+                row = {
+                    "contrast": contrast_name,
+                    "block_id": baseline_row["block_id"],
+                    "pair_type": kind,
+                    "task_id": baseline_row["task_id"],
+                    "state_id": baseline_row["state_id"],
+                }
+                for prefix, summary in (
+                    ("baseline", baseline_summary),
+                    ("treatment", treatment_summary),
+                    ("baseline_arm_treatment_gripper", primary_summary),
+                    ("treatment_arm_baseline_gripper", reverse_summary),
+                ):
+                    for view in ("agent", "wrist"):
+                        row[f"{prefix}_{view}"] = summary.get("videos", {}).get(view, "")
+                discordant_video_rows.append(row)
     atomic_json(ROOT / "paired_rescue_harm_attribution.json", {"contrasts": outputs})
 
     table_path = ROOT / "paired_rescue_harm_attribution.csv"
@@ -1008,7 +1121,7 @@ def analyze() -> None:
             "opportunity_reaching_baseline_failure_treatment_still_fail", "full_cohort_rescue", "full_cohort_harm",
             "net_rescue_minus_harm", "primary_rescue_swap_success", "primary_rescue_swap_censored",
         ]
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows(outputs)
 
@@ -1016,7 +1129,7 @@ def analyze() -> None:
     for output in outputs:
         swap_rows.extend({"contrast": output["contrast"], **row} for row in output["component_swap_rows"])
     with (ROOT / "component_swap_results.csv").open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=["contrast", "replay_id", "result", "steps", "common_support_steps"])
+        writer = csv.DictWriter(stream, fieldnames=["contrast", "block_id", "pair_type", "hybrid", "replay_id", "result", "steps", "common_support_steps"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(swap_rows)
 
@@ -1026,11 +1139,44 @@ def analyze() -> None:
             for view, path in summary.get("videos", {}).items():
                 video_rows.append({"cohort": cohort, "replay_id": summary["replay_id"], "view": view, "path": path})
     with (ROOT / "video_manifest.csv").open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=["cohort", "replay_id", "view", "path"])
+        writer = csv.DictWriter(stream, fieldnames=["cohort", "replay_id", "view", "path"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(video_rows)
 
-    report = ["# Phase-D scientific report", "", "All rates and counts below retain the complete paired-block denominator.", ""]
+    pair_video_fields = ["contrast", "block_id", "pair_type", "task_id", "state_id"] + [
+        f"{prefix}_{view}"
+        for prefix in (
+            "baseline",
+            "treatment",
+            "baseline_arm_treatment_gripper",
+            "treatment_arm_baseline_gripper",
+        )
+        for view in ("agent", "wrist")
+    ]
+    with (ROOT / "discordant_video_pairs.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=pair_video_fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(discordant_video_rows)
+
+    unblinding = read_json(ROOT / "PHASE1_UNBLINDING_RECORD.json")
+    report = [
+        "# Phase-D scientific report",
+        "",
+        "All rates and counts below retain the complete paired-block denominator.",
+        "",
+        "## Integrity and provenance",
+        "",
+        "The task predicates, failure taxonomy, replay schema, and component-swap protocol were frozen at "
+        f"`2026-09-04T16:31:26+08:00` in commit `{frozen_commit()}`. Phase-1 success outcomes were first read at "
+        f"`{unblinding['unblinded_at']}`.",
+        "",
+        "The stored Track-A LIBERO-10 cohort contains task-specific official state IDs mostly in 20--44, not states 0--14. "
+        "It overlaps Phase-1 states 15--49, so Phase-1 is described as a complete confirmation execution cohort, not as state-held-out.",
+        "",
+        "Exact open-loop reproduction passed for all 248 selected development source episodes and all 288 selected Phase-1 source episodes: "
+        "zero initial-state, terminal-success, episode-length, or command mismatches.",
+        "",
+    ]
     for output in outputs:
         counts = output["paired_counts"]
         report.extend(
@@ -1045,7 +1191,11 @@ def analyze() -> None:
                 "",
                 f"Rescue failure stages: `{json.dumps(output['rescue_failure_stage_distribution'], sort_keys=True)}`. Harm failure stages: `{json.dumps(output['harm_failure_stage_distribution'], sort_keys=True)}`.",
                 "",
-                f"Baseline-arm + treatment-gripper rescue swaps: {output['primary_rescue_swap_success']} SUCCESS, {output['primary_rescue_swap_censored']} CENSORED. Censored swaps do not establish failure.",
+                f"Rescue task stages: `{json.dumps(output['rescue_task_stage_distribution'], sort_keys=True)}`. Harm task stages: `{json.dumps(output['harm_task_stage_distribution'], sort_keys=True)}`.",
+                "",
+                f"Later-stage physical detail among rescues: `{json.dumps(output['rescue_later_stage_detail_distribution'], sort_keys=True)}`; among harms: `{json.dumps(output['harm_later_stage_detail_distribution'], sort_keys=True)}`.",
+                "",
+                f"Both-direction rescue/harm swap table (SUCCESS/CENSORED): `{json.dumps(output['component_swap_summary'], sort_keys=True)}`. Censored swaps do not establish failure.",
                 "",
             ]
         )
@@ -1084,27 +1234,140 @@ def analyze() -> None:
     atomic_json(ROOT / "phase_d_result.json", {"result": label, "h4_rescues": rescues, "h4_harms": harms, "h4_post_opportunity_rescues": post_opportunity, "h4_primary_swap_success": swap_success, "h4_primary_swap_total": swap_total})
 
 
+def validate_outputs() -> None:
+    required_step_fields = {
+        "step_index",
+        "replay_command_7d",
+        "eef_position",
+        "eef_quaternion_xyzw",
+        "gripper_qpos",
+        "gripper_qvel",
+        "relevant_body_and_site_poses",
+        "fixture_joint_qpos",
+        "stage_predicates",
+        "relevant_contact_pairs",
+        "reward",
+        "success",
+        "terminated",
+        "truncated",
+        "termination_reason",
+        "manipulation_opportunity",
+        "stage_label",
+    }
+    expected = {}
+    problems = []
+    for cohort in ("development", "phase1"):
+        source_expected = int(read_json(ROOT / f"{cohort}_replay_manifest.json")["selected_episode_count"])
+        swap_expected = len(read_json(ROOT / f"{cohort}_swap_manifest.json")["rows"])
+        expected[cohort] = {"source": source_expected, "swaps": swap_expected}
+        for summary_cohort, count, is_swap in (
+            (cohort, source_expected, False),
+            (f"{cohort}_swaps", swap_expected, True),
+        ):
+            paths = sorted((SUMMARY_ROOT / summary_cohort).glob("*.json"))
+            if len(paths) != count:
+                problems.append(f"{summary_cohort}: expected {count} summaries, found {len(paths)}")
+            for path in paths:
+                row = read_json(path)
+                if not row["initial_state_exact"] or int(row["command_mismatch_count"]) != 0:
+                    problems.append(f"{row['replay_id']}: state or command mismatch")
+                if is_swap:
+                    if int(row["replay_steps"]) > int(row["common_support_steps"]):
+                        problems.append(f"{row['replay_id']}: common-support overrun")
+                    expected_semantic = "SUCCESS" if row["replay_success"] else "CENSORED"
+                    if row["swap_semantic_result"] != expected_semantic:
+                        problems.append(f"{row['replay_id']}: bad swap semantic label")
+                elif bool(row["replay_success"]) != bool(row["source_success"]) or int(row["replay_steps"]) != int(row["source_steps"]):
+                    problems.append(f"{row['replay_id']}: source reproduction mismatch")
+                log_path = Path(row["raw_log"])
+                if not log_path.is_file():
+                    problems.append(f"{row['replay_id']}: missing raw log")
+                else:
+                    with gzip.open(log_path, "rt", encoding="utf-8") as stream:
+                        metadata = json.loads(next(stream))
+                        step = json.loads(next(stream))
+                    if metadata.get("record_type") != "metadata" or metadata.get("act_queries") != 0:
+                        problems.append(f"{row['replay_id']}: bad raw-log metadata")
+                    if step.get("record_type") != "step" or not required_step_fields.issubset(step) or len(step["replay_command_7d"]) != 7:
+                        problems.append(f"{row['replay_id']}: bad raw-log step schema")
+                for video in row.get("videos", {}).values():
+                    if not Path(video).is_file():
+                        problems.append(f"{row['replay_id']}: missing video {video}")
+
+    with (ROOT / "discordant_video_pairs.csv").open(newline="", encoding="utf-8") as stream:
+        pair_rows = list(csv.DictReader(stream))
+    if len(pair_rows) != 122:
+        problems.append(f"expected 122 discordant video rows, found {len(pair_rows)}")
+    for row in pair_rows:
+        for key, value in row.items():
+            if key.endswith(("_agent", "_wrist")) and not Path(value).is_file():
+                problems.append(f"{row['contrast']}/{row['block_id']}: missing paired video {key}")
+
+    analysis = read_json(ROOT / "paired_rescue_harm_attribution.json")["contrasts"]
+    expected_blocks = {"development_h4": 150, "development_h2": 150, "phase1_h4": 350}
+    for row in analysis:
+        if int(row["total_paired_blocks"]) != expected_blocks[row["contrast"]]:
+            problems.append(f"{row['contrast']}: paired denominator mismatch")
+        if sum(row["paired_counts"].values()) != int(row["total_paired_blocks"]):
+            problems.append(f"{row['contrast']}: paired cells do not sum")
+        if sum(row["rescue_failure_stage_distribution"].values()) != int(row["full_cohort_rescue"]):
+            problems.append(f"{row['contrast']}: rescue stages do not sum")
+        if sum(row["harm_failure_stage_distribution"].values()) != int(row["full_cohort_harm"]):
+            problems.append(f"{row['contrast']}: harm stages do not sum")
+
+    result = {
+        "status": "PASS" if not problems else "FAIL",
+        "source_and_swap_expectations": expected,
+        "discordant_video_blocks": len(pair_rows),
+        "raw_logs_checked": sum(v["source"] + v["swaps"] for v in expected.values()),
+        "problems": problems,
+    }
+    atomic_json(ROOT / "FINAL_AUDIT.json", result)
+    lines = [
+        "# Phase-D final artifact audit",
+        "",
+        f"Status: `{result['status']}`",
+        "",
+        f"Raw replay logs checked: {result['raw_logs_checked']}.",
+        f"Discordant video blocks checked: {result['discordant_video_blocks']}.",
+        f"Problems: {len(problems)}.",
+    ]
+    (ROOT / "FINAL_AUDIT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    if problems:
+        raise RuntimeError(f"Phase-D final audit failed: {problems[:20]}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "command",
-        choices=["canary", "development", "development-swaps", "unblind-phase1", "phase1", "phase1-swaps", "analyze"],
+        choices=["canary", "development", "development-swaps", "unblind-phase1", "phase1", "phase1-swaps", "analyze", "validate"],
+    )
+    parser.add_argument(
+        "--task-ids",
+        type=int,
+        nargs="*",
+        choices=range(10),
+        help="Optional disjoint LIBERO-10 task shard; scientific selection is unchanged.",
     )
     args = parser.parse_args()
+    task_ids = set(args.task_ids) if args.task_ids else None
     if args.command == "canary":
         canary()
     elif args.command == "development":
-        run_source_cohort("development")
+        run_source_cohort("development", task_ids)
     elif args.command == "development-swaps":
-        run_swaps("development")
+        run_swaps("development", task_ids)
     elif args.command == "unblind-phase1":
         unblind_phase1()
     elif args.command == "phase1":
-        run_source_cohort("phase1")
+        run_source_cohort("phase1", task_ids)
     elif args.command == "phase1-swaps":
-        run_swaps("phase1")
-    else:
+        run_swaps("phase1", task_ids)
+    elif args.command == "analyze":
         analyze()
+    else:
+        validate_outputs()
 
 
 if __name__ == "__main__":

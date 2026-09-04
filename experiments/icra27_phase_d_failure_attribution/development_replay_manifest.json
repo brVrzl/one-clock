@@ -1,0 +1,1783 @@
+{
+  "cohort": "development",
+  "selected_episode_count": 248,
+  "video_episode_count": 110,
+  "roles": [
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state22-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state23-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state23-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state23-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state25-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state25-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state27-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state27-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state27-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state28-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state32-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state34-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state34-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state30-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state32-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state37-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state37"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state38-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state38"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state39-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state39"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state40-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state40"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state41-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state41-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task01-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state41-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task01-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state42-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state42"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state43-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state43"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state20-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state20"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state20-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task02-state20"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state20-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task02-state20"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state25-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task02-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state25-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task02-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state26-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state31-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task02-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state31-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task02-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state24-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task03-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state24-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task03-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state21-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task04-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state21-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task04-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state22-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state24-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task04-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state24-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task04-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state26-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state29-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state30-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state24-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state20-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state20"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state21-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state23-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state26-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state27-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state28-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state29-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task06-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state29-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task06-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state30-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state34-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task06-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state34-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task06-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state21-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state23-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state24-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state24-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state24-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state26-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state27-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state28-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state30-H4.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task07-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state30-ARM4_GRIP32.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task07-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state32-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state20-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state20"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state21-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state21"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state22-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state22"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state23-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state23"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state24-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state24"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state25-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state25"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state26-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state26-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task08-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state26-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task08-state26"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state27-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state27-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task08-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state27-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task08-state27"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state28-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state28"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state29-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state29-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task08-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state29-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task08-state29"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state30-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state31-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task08-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state31-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task08-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state32-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state32-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task08-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state32-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task08-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state33-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state33"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state30-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state30-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state30-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state30"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state32-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state32"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state34-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state34"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state35-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state35"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state37-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state37"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state38-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state38"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state39-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state39"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state40-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state40"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state41-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state41-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state41-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state41"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state42-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state42"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state42-H4.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state42"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state42-ARM4_GRIP32.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state42"
+    },
+    {
+      "contrast": "development_h4",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state44-H4.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state44"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state20-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state20-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state20-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state24-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task00-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state26-H2.json",
+      "role": "harm_baseline",
+      "block_id": "libero_10-task00-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state26-ARM2_GRIP16.json",
+      "role": "harm_treatment",
+      "block_id": "libero_10-task00-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state28-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state32-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state32"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task00-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task00-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state32-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state32"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state36-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state36-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task01-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state36-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task01-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state37-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state37"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state38-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state38-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task01-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state38-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task01-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state39-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state39"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state40-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state40"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state40-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task01-state40"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state40-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task01-state40"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state41-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state41"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state42-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state42"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state43-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state43"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state44-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task01-state44"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state44-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task01-state44"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task01-state44-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task01-state44"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state20-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state23-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task02-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state23-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task02-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state26-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state26-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task02-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state26-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task02-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task02-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task02-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task03-state21-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task03-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state21-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state21-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state21-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state22-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state22"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state24-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state25-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state26-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state27-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state27-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state28-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state29-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state30-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state30-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task04-state31-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task04-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state24-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task05-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task05-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state20-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state21-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state24-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state24-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task06-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state24-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task06-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state26-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state28-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state29-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task06-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task06-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state20-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state20-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state20-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state21-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state22-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state22"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state26-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state28-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state29-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task07-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state32-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state32"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task07-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task07-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state20-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state20"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state21-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state21"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state22-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state22"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state23-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state23"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state24-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state24"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state25-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state25"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state26-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state26"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state27-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state27"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state28-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state28"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state29-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state29"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state32-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state32"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state33-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state33"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task08-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task08-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state30-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state30"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state31-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state31"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state32-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state32"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state34-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state34"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state36-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state36"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state37-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state37"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state38-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state38-H2.json",
+      "role": "rescue_baseline",
+      "block_id": "libero_10-task09-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state38-ARM2_GRIP16.json",
+      "role": "rescue_treatment",
+      "block_id": "libero_10-task09-state38"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state39-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state39"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state40-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state40"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state42-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state42"
+    },
+    {
+      "contrast": "development_h2",
+      "source_path": "/home/wjq/workspace/one-clock-icra27-crosssuite-query-allocation/experiments/icra27_crosssuite_query_allocation/track_a/results/libero_10-task09-state44-H2.json",
+      "role": "baseline_failure",
+      "block_id": "libero_10-task09-state44"
+    }
+  ]
+}
